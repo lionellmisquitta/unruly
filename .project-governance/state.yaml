@@ -1,0 +1,270 @@
+schema_version: '1.3'
+project:
+  id: ''
+  name: UNRULY
+  type: greenfield
+  intake_path: greenfield
+  stack_profile: undecided-native-cross-platform
+  risk_class: standard
+  delivery_mode: build
+conversation:
+  audience_mode: adaptive
+  question_policy: one_at_a_time
+  current_phase: G00
+  active_gate: G00
+  next_question_id: Q-014
+control:
+  build_authorized: false
+  authorization_status: blocked
+  gatekeeper_review_id: ''
+  contradictions_open: 0
+  blocking_contradictions_open: 0
+  critical_assumptions_open: 0
+  blocking_items:
+  - Pre-build gates incomplete
+  - Native input/runtime feasibility unverified
+  - UX baseline and acceptance criteria not locked
+  - Local controller tools/authentication not verified
+upstream:
+  delivery_handoff_ref: null
+  context_package_ref: null
+  application_id: null
+  source_decision_refs: []
+  source_contradiction_refs: []
+  ux_route: unknown
+  handoff_status: null
+  validation_status: not_supplied
+hotfix:
+  active: false
+  hotfix_id: null
+  authorized_by: null
+  authorized_at: null
+  reconcile_by: null
+  characterisation_test_refs: []
+  rollback_ref: null
+  reconciled_at: null
+baselines:
+  requirements: null
+  interaction: null
+  visual: null
+  domain: null
+  data: null
+  architecture: null
+  security: null
+  testing: null
+thresholds:
+  default: 95
+  gates: {}
+gates:
+  G00:
+    status: active
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts:
+    - PROJECT_STATE.md
+    blocking_gaps:
+    - Runtime feasibility and hardware baseline pending; no gate score assessed
+    accepted_risk_ids: []
+  G01:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G02:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G03:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G04:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G05:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G06:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G07:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G08:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G09:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G10:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G11:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G12:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G13:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G14:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G15:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+questions:
+  answered:
+  - id: Q-001
+    answer: Surface/Surface Pen; Lenovo MT14/pen second screen; Xiaomi Pad/Xiaomi
+      Pen
+  - id: Q-002
+    answer: Painting and whiteboarding equally from release one; add timelapse
+  - id: Q-003
+    answer: Google Drive sync from day one; open source
+  - id: Q-004
+    answer: Personal across devices; add vector/raster, gap fill, node/intersection
+      eraser and colour/texture controls
+  - id: Q-005
+    answer: Portable Windows folder app and Android APK; automated cross-model build/QA/Gatekeeper
+      loop
+  - id: Q-006
+    answer: Surface Pro 9 screenshot confirms i7-1265U and 32 GB RAM; user confirms
+      64-bit OS, Xiaomi Pad 7 Pro target and incremental graph requirement.
+  - id: Q-007
+    answer: AI included in release one after base validation; human review in checkpoint
+      batches.
+  - id: Q-008
+    answer: Pen draws/fingers navigate; include finger smudge and reference Procreate
+      behaviour.
+  - id: Q-009
+    answer: Experimental Procreate brush import accepted.
+  - id: Q-010
+    answer: Both images and selected PDF pages.
+  - id: Q-011
+    answer: All text boxes/sticky notes/attached connectors; fonts/size; reference
+      panel, colour workflows, inking, dimensions/DPI and exchange research requested.
+  - id: Q-012
+    answer: Stationary hold eyedropper and draw-and-hold shape recognition accepted.
+  - id: Q-013
+    answer: Keep both sync-conflicting revisions and let user choose continuing version.
+  - id: Q-014
+    answer: Private personal GitHub repository lionellmisquitta/unruly; user created
+      it and connector verified private visibility and push permissions.
+  pending: []
+requirements: []
+decisions: []
+assumptions: []
+accepted_risks: []
+contradictions: []
+traceability: []
+checkpoint:
+  version: null
+  status: not_started
+  objective: ''
+  files_allowed: []
+  commands: []
+  evidence_required: []
+  rollback: []
+vapt:
+  required: false
+  status: not_required
+  report_ref: ''
+  open_findings: []
+release:
+  authorized: false
+  version: null
+  evidence: []
+verification_ledger: []
+remediation_plan: []
+next_action: Complete runtime feasibility and pre-build decisions for UNRULY; no production
+  coding authorized.
+updated_at: '2026-10-03T06:36:52+00:00'
