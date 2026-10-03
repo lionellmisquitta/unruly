@@ -240,22 +240,38 @@ questions:
     answer: Private personal GitHub repository lionellmisquitta/unruly; user created
       it and connector verified private visibility and push permissions.
   - id: Q-015
-    answer: Both object and camera motion; manual and timed playback; presentation restore default with optional commit.
+    answer: Both object and camera motion; manual and timed playback; presentation
+      restore default with optional commit.
   pending: []
 requirements: []
-decisions: [{"id":"GDEC-018","statement":"Motion Trace supports object movement and camera pan/zoom","status":"confirmed"},{"id":"GDEC-019","statement":"Manual and automatic cue playback; manual default","status":"confirmed"},{"id":"GDEC-020","statement":"Presentation restore default; explicit undoable board commit","status":"confirmed"}]
+decisions:
+- id: GDEC-018
+  statement: Motion Trace supports object movement and camera pan/zoom
+  status: confirmed
+- id: GDEC-019
+  statement: Manual and automatic cue playback; manual default
+  status: confirmed
+- id: GDEC-020
+  statement: Presentation restore default; explicit undoable board commit
+  status: confirmed
 assumptions: []
 accepted_risks: []
 contradictions: []
 traceability: []
 checkpoint:
-  version: null
-  status: not_started
-  objective: ''
-  files_allowed: []
+  version: P0a
+  status: created
+  objective: Quarantined raw-pen capture probe; no production authorization
+  files_allowed:
+  - prototypes/p0-pen-input/
+  - docs/review/BUILD_START.md
   commands: []
-  evidence_required: []
-  rollback: []
+  evidence_required:
+  - Capture-model QA
+  - Native build logs
+  - Device-input recordings
+  rollback:
+  - Remove probe build directory; no user document writes
 vapt:
   required: false
   status: not_required
@@ -267,6 +283,6 @@ release:
   evidence: []
 verification_ledger: []
 remediation_plan: []
-next_action: Complete runtime feasibility and pre-build decisions for UNRULY; no production
-  coding authorized.
-updated_at: '2026-10-03T06:36:52+00:00'
+next_action: Run P0a capture QA; obtain native build/device evidence and complete
+  engineering baselines before independent pre-build review
+updated_at: '2026-10-03T08:56:40.809493+00:00'
