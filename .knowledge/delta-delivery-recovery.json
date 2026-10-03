@@ -1,0 +1,56 @@
+{
+  "kind": "evidence_backed_incremental_delta",
+  "base_commit": "c7801f968279f25b8c9612197add1cc41466ed96",
+  "record": {
+    "checkpoint": "P0a-WIN-D1",
+    "classification": "quarantined feasibility",
+    "plan": "UNRULY-PLAN-2026-10-04-R1",
+    "user_hold_lifted_for_this_packet_only": true,
+    "source_commit": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7",
+    "branch": "prep/native-windows-input-2026-10-04",
+    "ci_run": 37149560536,
+    "ci_conclusion": "success",
+    "host_model_cases_passed": 9,
+    "windows_model_cases_passed": 9,
+    "native_windows_compile": "PASS",
+    "native_window_startup_close": "PASS",
+    "painted_status": "NOT_VERIFIED",
+    "physical_surface_lenovo_pen": "NOT_VERIFIED",
+    "original_windows_nine_case_regression": "BLOCKED; separate suite and source",
+    "android": "NOT_VERIFIED",
+    "source_repair_cycles_this_packet": 0,
+    "p0a_cumulative_repairs_used": 2,
+    "production_authorized": false,
+    "main_merge_authorized": false,
+    "product_checkpoints_closed": 0,
+    "external_paid_model_subprocesses": 0,
+    "artifact_id": 11283555927,
+    "artifact_zip_sha256": "23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e",
+    "independent_final_review": "candidate accepted for bounded physical test handover; overall packet blocked; docs/delivery/GATEKEEPER_WINDOWS_CANDIDATE_REVIEW.md",
+    "employer_security_changes": false
+  },
+  "relations": [
+    {
+      "subject": "P0a-WIN-D1",
+      "predicate": "implemented_in_quarantine_at",
+      "object": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7"
+    },
+    {
+      "subject": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7",
+      "predicate": "verified_native_compile_and_window_smoke_by",
+      "object": "github-actions/run/37149560536"
+    },
+    {
+      "subject": "P0a-WIN-D1",
+      "predicate": "requires_unverified",
+      "object": "physical Surface/Lenovo pen"
+    }
+  ],
+  "not_claimed": [
+    "production authorization",
+    "Qt runtime closure",
+    "physical feel",
+    "Android coverage",
+    "original blocked Windows regression closure"
+  ]
+}

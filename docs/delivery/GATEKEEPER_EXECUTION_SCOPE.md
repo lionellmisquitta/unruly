@@ -40,3 +40,9 @@ Parent P0 and all14 product checkpoints stay unclosed unless their complete inde
 ## Immediate next action
 
 Reconcile current control documents to this narrowly lifted hold, bind the first packet source identity and emit the independent QA handoff; execute only the permitted diagnostic slice. Stop after its reviewed candidate/evidence or a concrete blocker. Do not advance the queue to a second packet.
+
+## Narrow portable-state append addendum
+
+The scope additionally permits **factual append-only continuation records** in root `PROJECT_STATE.md` and `.project-governance/state.yaml`, plus `.knowledge/delta-delivery-recovery.json`, to satisfy the skill's portable state requirement. Preserve every preexisting historical byte; do not rewrite old records or change any build authorization, gate score, checkpoint status/count or accepted risk. The new record may identify this packet's narrowly lifted user hold, isolated personal branch/base/candidate hashes, actual independent host/static outcomes and the Windows CI run with its current QUEUED/RUNNING/completed disposition. Unknown or pending CI/device outcomes stay NOT_VERIFIED/BLOCKED, never PASS. Records are evidence, not new permission or G14 approval.
+
+The YAML append must use a distinct continuation key without duplicate keys and preserve schema meaning; validate the updated document's parse/schema before publishing. If the existing schema rejects a top-level additive record, do not alter existing bytes to force it: keep the current receipt in docs and report the schema restriction. Later factual CI updates belong to a new uniquely identified appended receipt, not rewriting a prior queued receipt. A knowledge delta may point to these source/result identities with their exact truthful status. Production remains false and product checkpoints closed remain0/14.

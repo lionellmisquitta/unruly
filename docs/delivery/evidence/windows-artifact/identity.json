@@ -1,0 +1,36 @@
+{
+  "commit": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7",
+  "physical_pen": "NOT_VERIFIED",
+  "files": [
+    {
+      "path": "capture_model.hpp",
+      "sha256": "4ADD1126E954E1ED0C50038C4CA4777843801BA756D1DD8E0DBC85AA467D2F84"
+    },
+    {
+      "path": "windows_main.cpp",
+      "sha256": "8B90A5ED00E5E3EF4EE850A82B480F43E0807449CA10C7B3CF2183E6F7B52731"
+    },
+    {
+      "path": "model_tests.cpp",
+      "sha256": "D18C1400696C7173D9031FC6A8F773CE5118AC427AE5144DF7D493E4F66091D6"
+    },
+    {
+      "path": "build-windows.cmd",
+      "sha256": "2812A50D85EAD1927E8E28A0A4B8EBA776D83C2B857926029DE34E543F70EEDA"
+    },
+    {
+      "path": "smoke-windows.ps1",
+      "sha256": "13E39281D481511EF8BCA150960E2ABF79536A582015F9FD482352379B04AB07"
+    },
+    {
+      "path": "build/unruly-windows-input.exe",
+      "sha256": "875F5AACF8661E92DB4C186799A181A081E5061E82F070E5EB9F964AA6467A75"
+    },
+    {
+      "path": "build/model_tests.exe",
+      "sha256": "D9879E4803BBF3C0558E8ED9B5BBB7D759AA5A516F32D9F3A287FA4E54F6352A"
+    }
+  ],
+  "production_authorized": false,
+  "runner": "windows-2022"
+}

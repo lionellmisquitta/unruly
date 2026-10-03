@@ -13,3 +13,11 @@ Minor diagnostic limitation: release/hover can replace the textual `LIMIT reache
 **Overall QA: BLOCKED pending Windows compile/startup and real Surface/Lenovo pen evidence.** Windows compilation, painted status/clear interaction, real pressure, hover/mouse/touch policy, API failure behaviour and launch clearance remain NOT_VERIFIED. Post-merge regression NOT_VERIFIED (no merged commit). Nine Linux model passes do not close those categories or authorize production. Gatekeeper owns closure. Zero repair cycles consumed.
 
 Recommendation to Gatekeeper: candidate workflow may be published/run for bounded evidence collection; no material static blocker was found. Do not mark checkpoint PASSED from compilation or synthetic smoke alone.
+
+## Actual Windows candidate evidence reviewed
+
+GitHub run **37149560536**, job **111280335890**, tested commit **fb7ab408c8dabb48e31415e51e0201ba7bce1ab7**. MSVC 19.44.35229 x64 warnings-as-errors compilation passed. Native W01–W09 model cases **9/9 PASS**. Window smoke **PASS** for main HWND, visibility, expected title, WM_CLOSE and zero exit. This is target Windows execution evidence, superseding earlier NOT_VERIFIED entries for those bounded categories only.
+
+QA independently read actual CI output, identity and window-smoke records; recomputed exact ZIP SHA256 **23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e** and both contained executable hashes. All five Windows source hashes exactly match repository LF bytes converted to CRLF during checkout. Raw LF hashes differ, so both identities are retained; no blanket raw-byte identity claim. Candidate executable SHA256 **875f5aacf8661e92db4c186799a181a081e5061e82f070e5eb9f964aa6467a75**. Artifact ID **11283555927**.
+
+**Overall remains BLOCKED:** painted diagnostics, Clear interaction, physical pen pressure/hover/touch policy and employer-machine launch clearance are not proved by CI. Physical pen remains NOT_VERIFIED. Post-merge regression remains NOT_VERIFIED. No source repairs or additional model calls were required. This candidate can be handed to the user for bounded native Windows physical testing; Gatekeeper remains closure authority.

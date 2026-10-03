@@ -1,0 +1,20 @@
+{
+  "repository": "lionellmisquitta/unruly",
+  "branch": "prep/native-windows-input-2026-10-04",
+  "base_commit": "c7801f968279f25b8c9612197add1cc41466ed96",
+  "tested_source_commit": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7",
+  "windows_ci_run": 37149560536,
+  "windows_ci_conclusion": "success",
+  "artifact": 11283555927,
+  "artifact_sha256": "23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e",
+  "final_review": "GATEKEEPER_WINDOWS_CANDIDATE_REVIEW.md",
+  "candidate_physical_handover": "ACCEPTED",
+  "physical_pen": "NOT_VERIFIED",
+  "product_checkpoints_closed": 0,
+  "production_authorized": false,
+  "main_merge": false,
+  "source_repairs": 0,
+  "paid_model_subprocesses": 0,
+  "ci_job_log_span_seconds": 27.2,
+  "publication_scope": "This evidence-only commit does not change tested source or trigger another diagnostic build."
+}

@@ -437,3 +437,33 @@ native_wslg_milestone_2026_10_03:
   published_source_tree: "a711d208eb77b424daf39df4139d765c6e8e91c3"
   publication_receipt: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/publication-receipt.json"
   publication_note: "Separate local branch matches remote; main and original index remain unchanged; no integration merge."
+
+
+windows_input_candidate_2026_10_04:
+  checkpoint: P0a-WIN-D1
+  classification: quarantined feasibility
+  plan: UNRULY-PLAN-2026-10-04-R1
+  user_hold_lifted_for_this_packet_only: true
+  source_commit: fb7ab408c8dabb48e31415e51e0201ba7bce1ab7
+  branch: prep/native-windows-input-2026-10-04
+  ci_run: 37149560536
+  ci_conclusion: success
+  host_model_cases_passed: 9
+  windows_model_cases_passed: 9
+  native_windows_compile: PASS
+  native_window_startup_close: PASS
+  painted_status: NOT_VERIFIED
+  physical_surface_lenovo_pen: NOT_VERIFIED
+  original_windows_nine_case_regression: BLOCKED; separate suite and source
+  android: NOT_VERIFIED
+  source_repair_cycles_this_packet: 0
+  p0a_cumulative_repairs_used: 2
+  production_authorized: false
+  main_merge_authorized: false
+  product_checkpoints_closed: 0
+  external_paid_model_subprocesses: 0
+  artifact_id: 11283555927
+  artifact_zip_sha256: 23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e
+  independent_final_review: pending; see docs/delivery/GATEKEEPER_WINDOWS_CANDIDATE_REVIEW.md
+    when created
+  employer_security_changes: false

@@ -18,21 +18,46 @@
     "host_model_executed": 9,
     "passed": 9,
     "failed": 0,
-    "windows_compile": "NOT_VERIFIED",
-    "windows_smoke": "NOT_VERIFIED",
+    "windows_compile": "PASS",
+    "windows_smoke": "PASS",
     "physical_pen": "NOT_VERIFIED",
-    "post_merge_regression": "NOT_VERIFIED"
+    "post_merge_regression": "NOT_VERIFIED",
+    "windows_model_executed": 9,
+    "windows_model_passed": 9,
+    "painted_status": "NOT_VERIFIED"
   },
   "repair_cycles": 0,
   "paid_external_calls": 0,
   "status": "BLOCKED",
-  "status_reason": "Host model passed; Windows compilation/runtime and physical-device criteria require target evidence; no checkpoint closure or production authorization.",
+  "status_reason": "Host and Windows model suites and native Windows startup/title/visibility/close passed. Painted diagnostics and physical-device input/pressure criteria remain NOT_VERIFIED. No merged commit/regression or production authorization.",
   "static_review": "No material release-blocking defect found in bounded diagnostic code or candidate workflow; diagnostics note in QA report.",
   "production_authorized": false,
   "evidence": [
     "WINDOWS_QA_PLAN.md",
     "evidence/host-model-output.txt",
-    "WINDOWS_QA_RESULT.md"
+    "WINDOWS_QA_RESULT.md",
+    "evidence/windows-ci-job.log",
+    "evidence/windows-artifact/identity.json",
+    "evidence/windows-artifact/window-smoke.json",
+    "evidence/windows-artifact/hash-verification.json"
   ],
-  "merged_commit": null
+  "merged_commit": null,
+  "windows_evidence": {
+    "commit": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7",
+    "run_id": 37149560536,
+    "job_id": 111280335890,
+    "artifact_id": 11283555927,
+    "zip_sha256": "23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e",
+    "exe_sha256": "875f5aacf8661e92db4c186799a181a081e5061e82f070e5eb9f964aa6467a75",
+    "source_checkout": "All five raw Windows source identities independently reproduced from repository LF bytes converted to CRLF. Source bytes not otherwise changed.",
+    "compiler": "MSVC 19.44.35229 x64, /W4 /WX",
+    "window_checks": [
+      "main HWND exists",
+      "IsWindowVisible true",
+      "expected title",
+      "WM_CLOSE",
+      "exit 0"
+    ],
+    "independent_artifact_check": "Exact ZIP digest and both contained binary SHA256 hashes matched CI identities."
+  }
 }
