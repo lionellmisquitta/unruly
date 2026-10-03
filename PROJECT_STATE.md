@@ -138,3 +138,6 @@ Consolidated proposed UX review and checkpoint batches: docs/review/UX_REVIEW.md
 Product name: UNRULY. Personal GitHub repository: https://github.com/lionellmisquitta/unruly
 Visibility: private. Connector confirms push/admin permission. Initial repository was empty with default branch main. This project must not push to organizational GitLab. Preparation documents are being committed; this is not production implementation authorization.
 Next action: complete architecture/runtime feasibility and remaining pre-build decisions; maintain proposed UX separately from locked UX.
+
+## Motion Trace — confirmed scope
+REQ-017: Support moving selected/lassoed content along a path and audience-view pan/zoom. Both manual and timed playback are included; manual advance is default. Offer presentation-only motion with original layout restored (default) and an explicit commit-to-board option. Add a dedicated checkpoint after selection/transforms are validated. Individual cue parameters and recording semantics remain proposed.
