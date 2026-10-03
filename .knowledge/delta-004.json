@@ -1,0 +1,35 @@
+{
+  "id": "DELTA-004",
+  "mode": "capture",
+  "created_at": "2026-10-03T14:10:02+05:30",
+  "decisions": [
+    {
+      "id": "GDEC-018",
+      "statement": "Motion Trace includes object movement and camera pan/zoom",
+      "status": "confirmed",
+      "basis": "user: both"
+    },
+    {
+      "id": "GDEC-019",
+      "statement": "Manual and automatic playback; manual default",
+      "status": "confirmed",
+      "basis": "user selected C"
+    },
+    {
+      "id": "GDEC-020",
+      "statement": "Presentation-only restore default and explicit commit-to-board option",
+      "status": "confirmed",
+      "basis": "user selected C"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-017",
+      "name": "Motion Trace",
+      "status": "confirmed"
+    }
+  ],
+  "proposed_checkpoint": "C09M",
+  "implementation_status": "not_started",
+  "test_status": "not_verified"
+}
