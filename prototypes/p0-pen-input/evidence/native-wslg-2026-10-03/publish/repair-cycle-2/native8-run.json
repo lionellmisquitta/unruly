@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/repair-cycle-2/native8"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "platform=xcb\nPASS P0N-001\nPASS P0N-002\nPASS P0N-003\nPASS P0N-004\nPASS P0N-005\nPASS P0N-006\nPASS P0N-007\nPASS P0N-008\nTOTAL 8 PASS 8 FAIL 0\n",
+  "stderr": "",
+  "started_at_utc": "2026-10-03T15:12:51.336313+00:00",
+  "completed_at_utc": "2026-10-03T15:12:51.426632+00:00"
+}

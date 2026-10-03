@@ -1,0 +1,67 @@
+[
+  {
+    "id": "P0N-001",
+    "title": "Release leaves no zero-pressure tail",
+    "criteria": "A press and two left-button moves give 3 samples. A release at a new position with pressure 0 adds no sample, so no pressure-0 sample and no sample at the release position. Capture is inactive afterwards, a later left-button move adds nothing, and every tablet event is accepted.",
+    "traces": [
+      "REQ-005"
+    ]
+  },
+  {
+    "id": "P0N-002",
+    "title": "Hover with no left button does not ink or bridge",
+    "criteria": "A hover move with no prior press adds no sample and starts no stroke. Mid-stroke, a move without the left button ends capture. A later left-button move adds no sample, so no bridge appears. A fresh press then starts a new stroke id.",
+    "traces": [
+      "REQ-005"
+    ]
+  },
+  {
+    "id": "P0N-003",
+    "title": "Invalid press and move rejected",
+    "criteria": "A press with NaN x, pressure 1.5, pressure -0.1 or infinite y adds no sample and does not advance the stroke counter. During a stroke, an invalid move (NaN or out-of-range pressure) is rejected, the sample count is unchanged, and the stroke keeps going. An invalid press mid-stroke ends the active stroke.",
+    "traces": [
+      "REQ-005"
+    ]
+  },
+  {
+    "id": "P0N-004",
+    "title": "FocusOut, WindowDeactivate and Hide end capture",
+    "criteria": "Each of these three events is sent via QApplication::sendEvent to an active Pad (QFocusEvent FocusOut, QEvent WindowDeactivate, QHideEvent). After each, capture is inactive and a left-button move adds no sample until a new press.",
+    "traces": [
+      "REQ-005"
+    ]
+  },
+  {
+    "id": "P0N-005",
+    "title": "8000 limit, limit status and reset",
+    "criteria": "At 7999 samples capture is active and not full. The 8000th sample sets full, makes capture inactive, and puts 'LIMIT: Clear to continue' in the label immediately. Further moves and presses add nothing and keep the count at 8000. reset() clears samples, full and the stroke counter, sets the label to 'Cleared. Draw with the pen.', and allows a new press.",
+    "traces": [
+      "REQ-005"
+    ]
+  },
+  {
+    "id": "P0N-006",
+    "title": "Mouse exclusion and tablet acceptance",
+    "criteria": "Synthetic QMouseEvents (press and move with left button) add no samples, both idle and during an active tablet stroke. Tablet press, move, hover and release events all come back accepted after sendEvent, even if the test marked them ignored first.",
+    "traces": [
+      "REQ-005"
+    ]
+  },
+  {
+    "id": "P0N-007",
+    "title": "Separate strokes and non-left press",
+    "criteria": "Two press/release pairs give distinct stroke ids (1 and 2) in the recorded samples. A right-button press and a press with no button mid-stroke each end capture without adding a sample.",
+    "traces": [
+      "REQ-005"
+    ]
+  },
+  {
+    "id": "P0N-008",
+    "title": "Raw values, pressure boundaries and status text",
+    "criteria": "Position and pressure are stored exactly (12.5, 34.25, 0.25). Pressures 0.0 and 1.0 on left-button moves are valid and stored raw. The status label contains 'Samples N / 8000', 'pressure 0.250' and 'raw input'.",
+    "traces": [
+      "REQ-005",
+      "REQ-012"
+    ]
+  }
+]

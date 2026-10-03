@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "g++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fPIC",
+    "-I<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/include/x86_64-linux-gnu/qt6",
+    "-I<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/include/x86_64-linux-gnu/qt6/QtWidgets",
+    "-I<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/include/x86_64-linux-gnu/qt6/QtGui",
+    "-I<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/include/x86_64-linux-gnu/qt6/QtCore",
+    "prototypes/p0-pen-input/qa-native-wslg/native_tests.cpp",
+    "-L<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/lib/x86_64-linux-gnu",
+    "-lQt6Widgets",
+    "-lQt6Gui",
+    "-lQt6Core",
+    "-o",
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/native_tests"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "recorded_at_utc": "2026-10-03T15:09:47.050052+00:00"
+}

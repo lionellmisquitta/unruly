@@ -1,0 +1,80 @@
+{
+  "phase": "repair-cycle-2",
+  "suites": [
+    {
+      "suite": "existing10",
+      "compile_exit": 0,
+      "run_exit": 0,
+      "passed_cases": 10,
+      "planned_cases": 10,
+      "case_ids": [
+        "P0-M01 idle hover and repeated end",
+        "P0-M02 distinct strokes and release",
+        "P0-M03 pressure endpoints and exact values",
+        "P0-M04 invalid press is rejected",
+        "P0-M05 invalid move does not append",
+        "P0-M06 replacement press terminates old stroke",
+        "P0-M07 exact capacity and overflow",
+        "P0-M08 clear recovery from full",
+        "P0-M09 end preserves ink and splits resumed stroke",
+        "P0-M10 repeated capacity clear cycles"
+      ],
+      "binary_sha256": "01e2abc5d0ba8902655f5244c393859588a0c2aa8d360152f0beba395c159eee",
+      "diagnostic_only": false
+    },
+    {
+      "suite": "adversarial9",
+      "compile_exit": 0,
+      "run_exit": 0,
+      "passed_cases": 9,
+      "planned_cases": 9,
+      "case_ids": [
+        "QA-A02 invalid press mid-stroke ends stroke, id unchanged",
+        "QA-A03 full stays full on invalid and valid press",
+        "QA-A04 extreme finite values preserved exactly",
+        "QA-A05 pressure one ulp outside range rejected",
+        "QA-A06 stroke ids strictly increase across 500 presses",
+        "QA-A07 begin at limit-1 accepted, then append overflows",
+        "QA-A08 clear mid-stroke kills active stroke",
+        "QA-A09 invalid moves keep stroke, valid move continues it",
+        "QA-A10 multi-stroke fill never exceeds limit"
+      ],
+      "binary_sha256": "36bc9853f6af73916d2a4fc8901327ea34b04557f771089c0d9ea98aae68b865",
+      "diagnostic_only": false
+    },
+    {
+      "suite": "capacity2",
+      "compile_exit": 0,
+      "run_exit": 0,
+      "passed_cases": 2,
+      "planned_cases": 2,
+      "case_ids": [
+        "QA-CAP-01",
+        "QA-CAP-02"
+      ],
+      "binary_sha256": "bc18799acf8cb2ca52b64b29761ec141f1777d9a85e3f8c8a40b11ae1ac9f1c2",
+      "diagnostic_only": false
+    },
+    {
+      "suite": "native8",
+      "compile_exit": 0,
+      "run_exit": 0,
+      "passed_cases": 8,
+      "planned_cases": 8,
+      "case_ids": [
+        "P0N-001",
+        "P0N-002",
+        "P0N-003",
+        "P0N-004",
+        "P0N-005",
+        "P0N-006",
+        "P0N-007",
+        "P0N-008"
+      ],
+      "binary_sha256": "e1ed03367619d580567515c76ab66eba7bf3ff604e334cb50417f9b6d99ff480",
+      "diagnostic_only": false
+    }
+  ],
+  "source_unchanged_during_execution": true,
+  "scope": "Linux model + synthetic native Qt adapter; no hardware/Windows/Android claim"
+}

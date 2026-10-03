@@ -26,6 +26,8 @@ public:
         if (!active || !valid(x, y, pressure)) return false;
         if (samples.size() >= limit) { full = true; active = false; return false; }
         samples.push_back({x, y, pressure, stroke});
+        // Reaching the bound must stop capture and show the limit immediately.
+        if (samples.size() == limit) { full = true; active = false; }
         return true;
     }
     void end() { active = false; }
@@ -55,6 +57,8 @@ public:
     explicit Pad(QLabel *label) : status(label) {
         setMinimumSize(300, 300);
         setFocusPolicy(Qt::StrongFocus);
+        // Deliver buttonless hover moves so the lost-release guard can end ink.
+        setTabletTracking(true);
         setAutoFillBackground(true);
         auto colors = palette(); colors.setColor(QPalette::Window, Qt::white);
         setPalette(colors);

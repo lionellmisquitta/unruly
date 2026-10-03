@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "g++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "<repository>/prototypes/p0-pen-input/model_tests.cpp",
+    "-o",
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/repair-cycle-2/existing10"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "started_at_utc": "2026-10-03T15:12:44.371886+00:00",
+  "completed_at_utc": "2026-10-03T15:12:45.366261+00:00"
+}

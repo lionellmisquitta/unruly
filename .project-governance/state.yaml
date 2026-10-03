@@ -16,15 +16,15 @@ conversation:
 control:
   build_authorized: false
   authorization_status: blocked
-  gatekeeper_review_id: ''
-  contradictions_open: 0
+  gatekeeper_review_id: 'GK-UNRULY-P0A-NATIVE-WSLG-2026-10-03-R1'
+  contradictions_open: 1
   blocking_contradictions_open: 0
   critical_assumptions_open: 0
   blocking_items:
   - Pre-build gates incomplete
   - Native input/runtime feasibility unverified
   - UX baseline and acceptance criteria not locked
-  - Local controller tools/authentication not verified
+  - End-to-end controller isolation, unattended budgets and promotion not verified
 upstream:
   delivery_handoff_ref: null
   context_package_ref: null
@@ -243,7 +243,24 @@ questions:
     answer: Both object and camera motion; manual and timed playback; presentation
       restore default with optional commit.
   pending: []
-requirements: []
+requirements:
+  - {"id": "REQ-001", "statement": "Infinite canvas, zoom, pan, multiple saved boards, cut/copy/paste, lasso, ruler, eraser.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-002", "statement": "Vector and raster drawing on one board; editable curve control points and dedicated curve pen tool.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-003", "statement": "Pen, pencil, marker, airbrush, watercolour, imported texture brushes.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-004", "statement": "Layers, clipping masks, transparency/opacity and blending modes; brush size and opacity controls, layer transforms.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-005", "statement": "Pressure-sensitive drawing and adjustable stabilization for handwriting.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-006", "statement": "Two-finger double tap undo, three-finger double tap redo, stationary hold colour picker and held-stroke endpoint shape/line recognition (GDEC-016).", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-007", "statement": "Gaussian blur and gap-aware paint bucket inspired by Clip Studio Paint.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-008", "statement": "Colour wheel, hue/saturation controls and different paper options; review Concepts colour/workspace UX alongside Procreate and HiPaint.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-009", "statement": "Local timelapse recording and video export; framing and retention remain unresolved.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-010", "statement": "Google Drive synchronization with local offline work.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-011", "statement": "Optional BYOK AI to summarize/diagram selected ideas and export DOCX, PDF, JPG. Included in first release after base validation (GDEC-010); provider support remains unresolved.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-012", "statement": "Automated checkpoint coding, adversarial frontend and backend/engine tests, Gatekeeper review, merge and merged regression, with resumable state.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-013", "statement": "Maintain the project knowledge graph during design and coding, not retrospectively at release. Graph Generator capture mode is active. This snapshot includes an initial capture delta and update protocol, not a validated full KGP export or viewer package.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-014", "statement": "Reference image box, colour picker, good inking pens, long-touch colour sampling, Concepts-inspired colour shades/palettes and transient pop-out controls.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-015", "statement": "Canvas/artboard dimensions and DPI controls.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-016", "statement": "Exchange artwork with Clip Studio Paint and Procreate. Native-format or PSD route is not yet approved.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-017", "statement": "Support moving selected/lassoed content along a path and audience-view pan/zoom. Both manual and timed playback are included; manual advance is default. Offer presentation-only motion with original layout restored (default) and an explicit commit-to-board option. Add a dedicated checkpoint after selection/transforms are validated. Individual cue parameters and recording semantics remain proposed.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
 decisions:
 - id: GDEC-018
   statement: Motion Trace supports object movement and camera pan/zoom
@@ -256,11 +273,13 @@ decisions:
   status: confirmed
 assumptions: []
 accepted_risks: []
-contradictions: []
+contradictions:
+  - {"id": "GCON-001", "statement": "Historical adversarial fixture literal full-lags/proposed output conflicts with current immediate-full behavior and actual execution; diagnostic labels only.", "status": "open", "blocks_build": false, "owner": "independent QA", "scope": "test-output wording; immutable historical evidence preserved", "resolution": "Correct QA labels in a separate QA-owned change, preserve assertions and rerun/rehash before reuse."}
+
 traceability: []
 checkpoint:
   version: P0a
-  status: created
+  status: blocked_target_device_and_windows_verification
   objective: Quarantined raw-pen capture probe; no production authorization
   files_allowed:
   - prototypes/p0-pen-input/
@@ -283,6 +302,134 @@ release:
   evidence: []
 verification_ledger: []
 remediation_plan: []
-next_action: Run P0a capture QA; obtain native build/device evidence and complete
-  engineering baselines before independent pre-build review
-updated_at: '2026-10-03T08:56:40.809493+00:00'
+next_action: Run the single WSLg human test card; prepare native target kits and P0b fixtures.
+  Publish the independently reviewed curated personal preparation branch; production remains blocked.
+updated_at: '2026-10-03T15:16:14.853022+00:00'
+
+continuation_windows_2026_10_03:
+  source_commit: cb1d52089c5cdd159050dc375b92750eb84d8271
+  report: docs/review/WINDOWS_CONTINUATION.md
+  baseline_candidate: docs/review/ENGINEERING_BASELINES.md
+  evidence_identity: prototypes/p0-pen-input/evidence/windows-2026-10-03/identity.json
+  builder_model_compile_exit: 0
+  builder_model_test_exit: 0
+  builder_model_cases_passed: 10
+  fixture_repair_cycles: 1
+  native_configure_exit: 1
+  independent_qa: model_review_completed_regression_blocked
+  independent_gatekeeper: pending_independent_review
+  native_device_status: not_verified
+  production_authorization_changed: false
+claude_continuation_2026_10_03:
+  skills_installed: true
+  codex_skill_root: .agents/skills
+  claude_skill_root: .claude/skills
+  installed_files_verified: 180
+  hooks_registered: false
+  extension_id: anthropic.claude-code
+  executable_version: '2.1.288 (Claude Code)'
+  smoke_exit_code: 0
+  smoke_elapsed_seconds: 5.157
+  smoke_parsed_response: UNRULY_QA_READY
+  existing_authentication_verified: true
+  independent_qa_launched: true
+  independent_qa_status: blocked_app_control_and_native_dependencies
+  qa_block_reason: Repaired adversarial executable blocked by Windows App Control; native dependencies absent
+  next_launch_plan: prototypes/p0-pen-input/evidence/claude-2026-10-03/qa-launch-plan.json
+  evidence_directory: prototypes/p0-pen-input/evidence/claude-2026-10-03
+  executable_path_update_sensitive: true
+  production_authorization_changed: false
+  recorded_at_utc: '2026-10-03T09:52:17.610371+00:00'
+
+claude_qa_cycle_2026_10_03:
+  source_transfer_explicitly_approved: true
+  source_payload_allowlisted: true
+  model_tools_disabled: true
+  qa_report: prototypes/p0-pen-input/qa-claude/QA_REPORT.md
+  qa_result: prototypes/p0-pen-input/qa-claude/QA_CHECKPOINT_RESULT.json
+  exact_source_identity: prototypes/p0-pen-input/evidence/claude-2026-10-03/current-source-identity.json
+  application_repair_cycles_used: 1
+  maximum_application_repair_cycles: 3
+  initial_model_cases_passed: 19
+  red_capacity_cases_failed: 2
+  repaired_model_cases_passed: 12
+  repaired_adversarial_cases_blocked: 9
+  qa_status: BLOCKED
+  capacity_defect_status: fixed_model_scope
+  execution_blocker: Windows Application Control WinError4551
+  native_device_android: BLOCKED
+  merged_regression: NOT_VERIFIED
+  checkpoint_closed: false
+  production_authorization_changed: false
+
+linux_continuation_2026_10_03:
+  report: "docs/review/LINUX_CONTINUATION.md"
+  evidence_directory: "prototypes/p0-pen-input/evidence/linux-2026-10-03"
+  environment: "Ubuntu 26.04 x86_64 WSL2"
+  source_commit: "cb1d52089c5cdd159050dc375b92750eb84d8271"
+  source_dirty: true
+  source_matches_saved_windows_hashes: true
+  source_changed: false
+  claude_available: true
+  claude_version: "2.1.288"
+  claude_authenticated_model_execution: true
+  smoke_exit_code: 0
+  smoke_response: "UNRULY_QA_READY"
+  independent_adversary: "claude-code"
+  model_tools_disabled: true
+  linux_model_cases_executed: 21
+  linux_model_cases_passed: 21
+  linux_model_cases_failed: 0
+  model_scope_status: "PASSED_LINUX_MODEL_ONLY"
+  qa_status: "BLOCKED"
+  application_repair_cycles_used: 1
+  new_application_repair_cycles: 0
+  windows_regression: "BLOCKED"
+  native_pen_verification: "BLOCKED"
+  android_verification: "BLOCKED"
+  merged_regression: "NOT_VERIFIED"
+  independent_gatekeeper: "pending_independent_review"
+  checkpoint_closed: false
+  employer_security_policies_changed: false
+  production_authorization_changed: false
+  recorded_at_utc: "2026-10-03T14:24:41.596526+00:00"
+
+native_wslg_milestone_2026_10_03:
+  checkpoint_id: "P0a-NATIVE-WSLG"
+  report: "docs/review/NATIVE_P0_MILESTONE.md"
+  human_card: "docs/review/P0_HUMAN_TEST_CARD.md"
+  contracts: "docs/review/CHECKPOINT_CONTRACTS.json"
+  engineering_decisions: "docs/review/ENGINEERING_DECISIONS.md"
+  queue: "docs/review/READY_BLOCKED_QUEUE.md"
+  evidence_directory: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03"
+  qt_version: "6.10.2"
+  cmake_version: "4.2.3"
+  user_owned_tools: true
+  native_build_exit: 0
+  mapped_wslg_window: true
+  runnable_artifact: "prototypes/p0-pen-input/build/native-wslg-2026-10-03/unruly_pen_probe"
+  launch_command: "bash prototypes/p0-pen-input/launch-linux.sh"
+  source_sha256: "56e2e448855a55f205dc85a8f160e59e562fb2f6102193c6ebcd94e45baa3f90"
+  binary_sha256: "4c635605b7a6e86e58694bb79a8a686a7fe6339c84596edab24cbe2e4814ea3d"
+  repair_cycles_used: 2
+  repair_cycles_max: 3
+  model_cases_passed: 21
+  native_synthetic_cases_passed: 8
+  total_current_cases_passed: 29
+  initial_native_cases_failed: 2
+  qa_status: "BLOCKED"
+  qa_final_response: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/qa-final-response.json"
+  gatekeeper_readiness: "BLOCKED_FOR_PRODUCTION"
+  closed_checkpoint_count: 0
+  human_device_review: "NOT_VERIFIED"
+  windows_regression: "BLOCKED"
+  android_verification: "BLOCKED"
+  merged_regression: "NOT_VERIFIED"
+  production_authorization_changed: false
+  employer_policy_changes: false
+  preparation_branch: "prep/p0-native-wslg-2026-10-03"
+  publication_status: "independently_approved_preparation_scope"
+  recorded_at_utc: "2026-10-03T15:16:14.853022+00:00"
+  gatekeeper_review_id: "GK-UNRULY-P0A-NATIVE-WSLG-2026-10-03-R1"
+  gatekeeper_result: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/gatekeeper-response.json"
+  historical_run_scope_note: "Windows12 plus9 blocked, Linux21 and WSLg29 are distinct exact-source runs; no counts are combined or promoted across platforms."

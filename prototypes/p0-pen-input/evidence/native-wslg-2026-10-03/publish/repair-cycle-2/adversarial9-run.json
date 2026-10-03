@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/repair-cycle-2/adversarial9"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "PASS QA-A02 invalid press mid-stroke ends stroke, id unchanged\nPASS QA-A03 full stays full on invalid and valid press\nPASS QA-A04 extreme finite values preserved exactly\nPASS QA-A05 pressure one ulp outside range rejected\nPASS QA-A06 stroke ids strictly increase across 500 presses\nPASS QA-A07 begin at limit-1 accepted, then append overflows\nPASS QA-A08 clear mid-stroke kills active stroke\nPASS QA-A09 invalid moves keep stroke, valid move continues it\nPASS QA-A10 multi-stroke fill never exceeds limit\nOBSERVATION QA-A01 size=8000 full=1 (QA-F01: full lags until next rejected input)\nRESULT 9 passed, 0 failed; model only, proposed\n",
+  "stderr": "",
+  "started_at_utc": "2026-10-03T15:12:46.580415+00:00",
+  "completed_at_utc": "2026-10-03T15:12:46.597498+00:00"
+}

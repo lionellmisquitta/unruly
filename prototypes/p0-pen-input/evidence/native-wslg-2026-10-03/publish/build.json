@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/bin/cmake",
+    "--build",
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03",
+    "--parallel",
+    "2"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "[1/4] Automatic MOC and UIC for target unruly_pen_probe\n[2/4] Building CXX object CMakeFiles/unruly_pen_probe.dir/unruly_pen_probe_autogen/mocs_compilation.cpp.o\n[3/4] Building CXX object CMakeFiles/unruly_pen_probe.dir/main.cpp.o\n[4/4] Linking CXX executable unruly_pen_probe\n",
+  "stderr": "",
+  "recorded_at_utc": "2026-10-03T15:06:51.176981+00:00"
+}

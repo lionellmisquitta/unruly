@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "bash",
+    "prototypes/p0-pen-input/launch-linux.sh",
+    "--build"
+  ],
+  "exit_code": 0,
+  "stdout": "-- Could NOT find OpenGL (missing: OPENGL_glx_LIBRARY) \n-- Configuring done (20.0s)\n-- Generating done (0.6s)\n-- Build files have been written to: <repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03\n[1/4] Automatic MOC and UIC for target unruly_pen_probe\n[2/3] Building CXX object CMakeFiles/unruly_pen_probe.dir/main.cpp.o\n[3/3] Linking CXX executable unruly_pen_probe\n",
+  "stderr": "",
+  "recorded_at_utc": "2026-10-03T15:13:13.497997+00:00"
+}

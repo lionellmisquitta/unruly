@@ -1,0 +1,157 @@
+{
+  "scope": "Curated preparation/prototype receipts, no checkpoint closure",
+  "recorded_at_utc": "2026-10-03T15:19:51.441830+00:00",
+  "raw_logs_and_model_packets_excluded": true,
+  "generated_executables_and_packages_excluded": true,
+  "credentials_and_device_recordings_excluded": true,
+  "files": [
+    {
+      "path": "QA_CHECKPOINT_RESULT.json",
+      "sha256": "476d6c28e400523ea486c538919a985c9efb6bb260e92ec3d5459e3db4dfcdb2"
+    },
+    {
+      "path": "build-source-identity.json",
+      "sha256": "4fde06e71e4010eeadd58f427f05ab063b1cb0862ad6f65f12e39ecd07968acd"
+    },
+    {
+      "path": "build.json",
+      "sha256": "be343c18e9d152f2bc752e06f072d9cc652a1a7f28863fd6a979525668de3f97"
+    },
+    {
+      "path": "checkpoint.json",
+      "sha256": "9fec6bec8c3a70b4f69ce6c997ac442b4ec2bf23859864a253b5027e7a04930e"
+    },
+    {
+      "path": "configure.json",
+      "sha256": "4e358a0f37015a22764562dc133596132484d36c0de62a2a3837d1ff3998400b"
+    },
+    {
+      "path": "diagnostic/diagnostic-compile.json",
+      "sha256": "5eeff7851000ff48807915be862eed1ba1567923ed1e3e93ec13cffd8d357105"
+    },
+    {
+      "path": "diagnostic/diagnostic-run.json",
+      "sha256": "31563bf70a823dc65ea954bb85521652249b51e7313d64169baee29293116b62"
+    },
+    {
+      "path": "gatekeeper-invocation.json",
+      "sha256": "4c50b8d670081c3d9ef6ce676dd79b00c3ee73ab06fbf4c320a07257fa9d1db1"
+    },
+    {
+      "path": "gatekeeper-response.json",
+      "sha256": "4a76cb2cb2fdd36aa63869909e603b84d85f3d415d47f414c2d9d7c05842dbc4"
+    },
+    {
+      "path": "governance-validation.json",
+      "sha256": "9b8a5eea6a4924f489e8dc5933c5b7f5c60871c34f120a8dae3f23d15fe1196b"
+    },
+    {
+      "path": "launch.json",
+      "sha256": "8fed51c1b07b35bc538f3939f872e4b77c554f959546453511ab73fc6e6e4a1d"
+    },
+    {
+      "path": "native-diagnosis-invocation.json",
+      "sha256": "dde2f57c9337c53441b7cd6bbe36a4bab8b2ff268c4bd41cb26b578184b438c2"
+    },
+    {
+      "path": "native-diagnosis-response.json",
+      "sha256": "769ca4de2112ce01a4380650e5a76ed69986de256b5626adbf0a11f5677feeec"
+    },
+    {
+      "path": "native-test-design-invocation.json",
+      "sha256": "b12274ec48e3d1f26ff731b817d43584ecc700ce5eff8d34f273dfe5f59221b7"
+    },
+    {
+      "path": "native-tests-compile.json",
+      "sha256": "c36f82c03832bd22c47a5ef1b300e1f753229485471637dbe4aa309579eca7e3"
+    },
+    {
+      "path": "native-tests-run.json",
+      "sha256": "db017dfc64234d3fcfd6b87fe94fb268dc8ec1bc8a06ea6f22c467f69e7a39a5"
+    },
+    {
+      "path": "preservation-after.json",
+      "sha256": "00116502bda56ba291140638f99d004ca58a3453cd19ec5620d8d51de1bd49ee"
+    },
+    {
+      "path": "qa-final-invocation.json",
+      "sha256": "23e9df0ca27e71e58832f51cc95725d866a19ce9c6589ebc8e54e739f19adef7"
+    },
+    {
+      "path": "qa-final-response.json",
+      "sha256": "7153a836f4b2e56abe71457bb0443fb5f0720f4754d75d626a0a3867858912e0"
+    },
+    {
+      "path": "repair-cycle-2/adversarial9-compile.json",
+      "sha256": "a1604da8fd7168f886e215f780952340379bfda8c436dfa6bbdf713190539340"
+    },
+    {
+      "path": "repair-cycle-2/adversarial9-run.json",
+      "sha256": "5e610470f3277bdbeabd2dd7c983260bfa96ad4537a619f2e177f37893635fa8"
+    },
+    {
+      "path": "repair-cycle-2/capacity2-compile.json",
+      "sha256": "a466a7ae124d1257bd8fe628f6cad77333cdab3421b9a3893c28fc4316ded7ff"
+    },
+    {
+      "path": "repair-cycle-2/capacity2-run.json",
+      "sha256": "91fc6dcad19c1c227a9b53c8643e191823250c63eecc688e53a636e5fb34b7ce"
+    },
+    {
+      "path": "repair-cycle-2/existing10-compile.json",
+      "sha256": "fa68c544209491e97f27aaf3e8a89693567478aba82b5c814805c3ba41abb407"
+    },
+    {
+      "path": "repair-cycle-2/existing10-run.json",
+      "sha256": "1ac7582347412cdbf9477d10a4ff77f623c6a1c21d4f94642a207af206b2f57c"
+    },
+    {
+      "path": "repair-cycle-2/native8-compile.json",
+      "sha256": "ee86c2d17d2617ff322c8614e83a9244358f54cc9ca9014103facb044e8d3d73"
+    },
+    {
+      "path": "repair-cycle-2/native8-run.json",
+      "sha256": "85d33b872c698866ffd2df32d5bf1a0d1a64f4bff5422f6325945cddc5905188"
+    },
+    {
+      "path": "repair-cycle-2/results.json",
+      "sha256": "6ec7bf32715f4451cb60c1ba6be65a12de6670ab7b8a68c409ea0f7181c8ac04"
+    },
+    {
+      "path": "repair-cycle-2/source-after.json",
+      "sha256": "f4cd0ffdab644784f6238c2134cb056c85d9c31daa0ffe3e89b90ad46a42155f"
+    },
+    {
+      "path": "repair-cycle-2/source-before.json",
+      "sha256": "f4cd0ffdab644784f6238c2134cb056c85d9c31daa0ffe3e89b90ad46a42155f"
+    },
+    {
+      "path": "repair-cycle-2.json",
+      "sha256": "b08ab302cf518c2cf74a447b3353596b6f9fe018a0b9bb74717609e7f36eb0d4"
+    },
+    {
+      "path": "repaired-launch.json",
+      "sha256": "7f84d2d6eb3ee95c5bcf518c592dc3ed7837846fc8b6f19be5af4ee54e6400df"
+    },
+    {
+      "path": "repaired-native-build.json",
+      "sha256": "29d16976e1ffa2c859a250af1e5fbd8ee8aff14de684dc870828e19a43e3e5ea"
+    },
+    {
+      "path": "repaired-probe-window.png",
+      "sha256": "47cd0dc387f52f4e9a9e5bc483935c7824e6768db6b9764f73621fec38dfb168"
+    },
+    {
+      "path": "repaired-window-inspection.json",
+      "sha256": "1d9ee77cf42b1c2360c8a99b1061fea794224863c570ed00ea68847e08768333"
+    },
+    {
+      "path": "toolchain-packages.json",
+      "sha256": "0c7d544bedec92e66d683252b8b90cbf2d03fbe2955436f4792b98d0c757c0b8"
+    },
+    {
+      "path": "window-inspection.json",
+      "sha256": "1cd05093bf198320b213e674a9efb7bbb7c63298e78c8451b9dd3776e0df465a"
+    }
+  ]
+}

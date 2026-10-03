@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/bin/cmake",
+    "-S",
+    "prototypes/p0-pen-input",
+    "-B",
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03",
+    "-G",
+    "Ninja",
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DCMAKE_PREFIX_PATH=<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr",
+    "-DCMAKE_FIND_ROOT_PATH=<user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6",
+    "-DCMAKE_CXX_FLAGS=-Wall -Wextra -Werror"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "-- The CXX compiler identification is GNU 15.2.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n-- Found Threads: TRUE\n-- Performing Test HAVE_STDATOMIC\n-- Performing Test HAVE_STDATOMIC - Success\n-- Found WrapAtomic: TRUE\n-- Could NOT find OpenGL (missing: OPENGL_glx_LIBRARY) \n-- Found OpenGL: <user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL\n-- Found WrapOpenGL: TRUE\n-- Found WrapVulkanHeaders: <user-home>/.local/share/unruly/toolchains/ubuntu-26.04-qt6/usr/include\n-- Configuring done (42.3s)\n-- Generating done (0.7s)\n-- Build files have been written to: <repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03\n",
+  "stderr": "",
+  "recorded_at_utc": "2026-10-03T15:06:43.552568+00:00"
+}

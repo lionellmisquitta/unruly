@@ -1,0 +1,30 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 30.474,
+  "timed_out": false,
+  "input_sha256": "ec9718cbe11c5739d7d56723c1546eb1f04de8a89f285486e8f0d1b6d95387c8",
+  "output_sha256": "abf2a3259a2db1472b387b578afe15678245f1bdc85ff2251efcaa7908d8c26e",
+  "is_error": false,
+  "subtype": "success",
+  "model_usage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3240,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 99000,
+      "webSearchRequests": 0,
+      "costUSD": 0.428404,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "reported_cost_usd": 0.428404,
+  "tools_disabled": true,
+  "approved_payload_only": true,
+  "parsed_response": true,
+  "stderr_bytes": 0
+}

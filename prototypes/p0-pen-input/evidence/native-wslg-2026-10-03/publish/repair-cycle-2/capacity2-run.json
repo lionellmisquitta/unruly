@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/repair-cycle-2/capacity2"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "DONE QA-CAP-01 size=8000 full=1 active=0\nDONE QA-CAP-02 size=8000 full=1 active=0\nRESULT PASS, 0 failed checks; model only\n",
+  "stderr": "",
+  "started_at_utc": "2026-10-03T15:12:47.385401+00:00",
+  "completed_at_utc": "2026-10-03T15:12:47.400593+00:00"
+}

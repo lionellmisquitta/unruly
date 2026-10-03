@@ -1,0 +1,14 @@
+{
+  "preexisting_files_checked": 310,
+  "changed_preexisting_files": [
+    "docs/review/ENGINEERING_BASELINES.md",
+    ".project-governance/state.yaml",
+    "PROJECT_STATE.md",
+    "prototypes/p0-pen-input/README.md",
+    "prototypes/p0-pen-input/main.cpp"
+  ],
+  "allowed_changes": "Two-line quarantined tablet-tracking repair and appended state/readiness documentation only",
+  "historical_windows_linux_evidence_and_skills_preserved": true,
+  "resets_cleans_pulls": false,
+  "employer_policy_changes": false
+}

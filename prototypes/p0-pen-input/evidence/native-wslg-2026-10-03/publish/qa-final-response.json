@@ -1,0 +1,131 @@
+{
+  "qa_status": "BLOCKED",
+  "scope_status": "PARTIAL: Linux model plus synthetic native Qt adapter on WSLg/xcb only. Not full P0 PASSED. Windows, native hardware pen and Android are fully blocked, and merged regression is NOT_VERIFIED.",
+  "counts": {
+    "existing10": {
+      "planned": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "adversarial9": {
+      "planned": 9,
+      "passed": 9,
+      "failed": 0
+    },
+    "capacity2": {
+      "planned": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "native8": {
+      "planned": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "total_planned": 29,
+    "total_passed_on_repaired_source": 29,
+    "total_failed_on_repaired_source": 0,
+    "preserved_red_native8_pre_repair": {
+      "passed": 6,
+      "failed": 2,
+      "failed_ids": [
+        "P0N-002",
+        "P0N-006"
+      ]
+    },
+    "diagnostic_cases": {
+      "count": 4,
+      "counted_as_acceptance": false,
+      "note": "Diagnostic matrix of shown/hidden by tracking off/on. It is evidence of root cause only, not a passing acceptance case."
+    },
+    "windows_prior_source_passes": 12,
+    "windows_nine_repaired_cases": "BLOCKED (WinError 4551)",
+    "blocked": "Windows run of current source, native hardware pen/pressure/palm/tilt, Android, merged regression",
+    "not_verified": "merged regression, instrumented rendering/latency, paintEvent output"
+  },
+  "repair_cycles": {
+    "used": 2,
+    "max": 3,
+    "note": "The handoff records 2 used. Cycle 1 was the initial native run, which proved the failures. Diagnosis only was not a repair. Cycle 2 was the Codex two-line setTabletTracking(true) repair, with the diagnostic showing hover delivered only with tracking on. Native assertions are unchanged, and the source hash for native_tests.cpp is the same before and after. I classify the defect as PRODUCT_DEFECT. The earlier diagnosis said 'unknown, leaning product'. The diagnostic evidence now supports PRODUCT_DEFECT, and the repair is consistent with the Qt documentation reference given. I have not independently verified that documentation.",
+    "preserved_red": "native-tests-run.json (6 pass, 2 fail), native-diagnosis-response.json and diagnostic-run.json retained unmodified"
+  },
+  "unresolved_findings": [
+    {
+      "id": "F-MERGE",
+      "severity": "high",
+      "text": "Merged regression is NOT_VERIFIED. No integration merge exists, so the checkpoint cannot be PASSED.",
+      "status": "open"
+    },
+    {
+      "id": "F-SRC-DIRTY",
+      "severity": "medium",
+      "text": "The source is dirty at commit cb1d520, with uncommitted repair. The hashes bind the evidence, but the commit identity does not.",
+      "status": "open"
+    },
+    {
+      "id": "F-HASH-MISMATCH",
+      "severity": "medium",
+      "text": "The earlier native-tests-run used a binary built from the pre-repair main.cpp (a0cfc97d...). The repaired-launch binary hash (4c635605...) differs from the first launch hash (91c61d5c...), consistent with the repair. The native8 test binary hash for the repaired run was recorded, but no source-to-binary provenance for it was bound beyond the unchanged-source flag.",
+      "status": "open, low risk"
+    },
+    {
+      "id": "F-SCREENSHOT",
+      "severity": "low",
+      "text": "Original and repaired window screenshots have identical sha256 (47cd0dc3...). This is plausible for an identical blank pad, but it does not show that the repaired window was freshly captured, and it proves nothing about input.",
+      "status": "open"
+    },
+    {
+      "id": "F-EXISTING-OBS",
+      "severity": "medium",
+      "text": "The existing10 observation says a missing-release zero-pressure move is accepted (samples=2). The UI contact guard requires native verification. The synthetic native tests cover the guard but not hardware.",
+      "status": "open"
+    },
+    {
+      "id": "F-QA-F01",
+      "severity": "low",
+      "text": "The adversarial9 observation QA-A01 shows that full lags until the next rejected input in the model. The 8000th append now sets full immediately, so this appears to be stale or a historical label. It should be reconciled.",
+      "status": "open"
+    },
+    {
+      "id": "F-REQ005",
+      "severity": "medium",
+      "text": "REQ-005 text was not supplied. The requirement that hover must end capture after a lost release is inferred from the source comments and tests, so the product-defect classification depends on that inference.",
+      "status": "open"
+    },
+    {
+      "id": "F-ERASER",
+      "severity": "low",
+      "text": "The human card admits an eraser end currently inks. This is a known product limitation and is not a regression.",
+      "status": "documented"
+    },
+    {
+      "id": "F-NOT-TESTED",
+      "severity": "medium",
+      "text": "The following were not tested: paintEvent rendering, pressure-to-width mapping on screen, and the status label under real pen events.",
+      "status": "open"
+    }
+  ],
+  "platform_limits": [
+    "Evidence is limited to Linux WSLg/XWayland with the xcb platform. It is not Windows pen or Android.",
+    "Synthetic QTabletEvents prove adapter logic only. They prove nothing about hardware pen routing, pressure, tilt, palm rejection or hover delivery from a real device.",
+    "Windows App Control (WinError 4551) blocks Windows regression. The current native source has not been compiled on Windows.",
+    "Android kits and device are unverified.",
+    "No latency, performance or rendering claim is made.",
+    "The Lenovo-display interrupted-input task is a human observation only. Display and focus loss through the WSLg path cannot establish native behaviour.",
+    "Startup evidence is a mapped, viewable exact-PID window only. It is not evidence of input."
+  ],
+  "card_assessment": {
+    "verdict": "ACCEPTABLE_WITH_CAVEATS",
+    "supports": "The card has three tasks, which match the acceptance criteria. They are slow handwriting and curves, fast pressure strokes, and interrupted Lenovo-display input.",
+    "strengths": "It labels the probe as a Linux Qt probe through WSLg, not Windows or Android. It tells the user to record 'WSLg pen routing unavailable/unverified' and not to substitute mouse drawing. It tells the user not to change Windows policy. It states the limits (no smoothing, 8,000 sample limit, eraser inks, closing loses marks), and it requests a short structured note.",
+    "caveats": [
+      "Task 3 depends on display and focus behaviour that WSLg may not reproduce for native Windows.",
+      "Observations are human evidence only, not measured latency or palm rejection.",
+      "The card says the user-owned Qt kit is prepared 'for this checkout'. The user must have run the launch successfully, which is shown only by agent startup evidence."
+    ],
+    "human_execution": "NOT_EXECUTED. No human pen result is in the evidence."
+  },
+  "production_authorized": false,
+  "closed_checkpoint_count": 0,
+  "closure_note": "The full P0 closed count stays at zero until the target platform and merged regression are verified. P0a-NATIVE-WSLG has partial synthetic and startup evidence only. Gatekeeper owns closure, and this result does not authorize release."
+}

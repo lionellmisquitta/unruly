@@ -1,0 +1,1027 @@
+{
+  "status": "proposed_for_independent_review",
+  "production_authorized": false,
+  "source_requirements": "PROJECT_STATE.md; ENGINEERING_BASELINES.md; CHECKPOINT_PLAN.md",
+  "common_contract": {
+    "entry": "Production contracts cannot execute until G00-G14 evidence/readiness is accepted independently and control.build_authorized is true. P0 remains quarantined.",
+    "identity": "Base commit + dirty source SHA256 before build; compiler/SDK/package hashes; build artifact SHA256; exact argv/cwd/exits; pre-merge and merged identities kept distinct.",
+    "ownership": "Codex builder; Claude independent QA; separate Gatekeeper review. QA cannot repair application source.",
+    "repair_limit": 3,
+    "repair_cycles_already_used_in_P0a": 1,
+    "qa_evidence": [
+      "validated handoff",
+      "deterministic fixture manifest",
+      "case IDs and stdout/exits",
+      "classified findings",
+      "independent QA result",
+      "Gatekeeper verdict",
+      "post-merge regression when a checkpoint is merged"
+    ],
+    "closure": "No full checkpoint closes without all required platform evidence, independent acceptance, integration identity and merged regression. Human device outcomes cannot be synthesized.",
+    "rollback": "Retain preceding checkpoint commit and authoritative local boards; revert source integration by a new revert commit only after identifying data/external-effect reversal. Never reset/clean a dirty checkout.",
+    "repository": "Only https://github.com/lionellmisquitta/unruly.git; personal preparation/prototype branch allowed; no organizational GitLab; preview/offline-canvas is optional discussion only."
+  },
+  "checkpoints": [
+    {
+      "checkpoint_id": "P0a",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Raw native pen routing feasibility",
+      "dependencies": [],
+      "requirements": [
+        "REQ-005",
+        "REQ-012"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "P0a-AC-01",
+          "statement": "Build unchanged Qt probe with matched native kit and launch a visible mapped window.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0a-AC-02",
+          "statement": "Capture separates strokes, rejects nonfinite/invalid pressure, stops immediately at sample 8000 and Clear restarts.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0a-AC-03",
+          "statement": "Execute existing10 + Claude adversarial9 + capacity2 on exact source; synthetic adapter tests are labeled synthetic.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0a-AC-04",
+          "statement": "Run human card on Surface and Lenovo; record OS/driver/pen, display/DPI, pressure range, unwanted bridges and whether WSLg routes tablet events. Android is independently required for overall P0.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "synthetic finite/NaN/ULP samples",
+        "capacity 7999/8000/8001",
+        "three human card tasks, blank canvas only"
+      ],
+      "required_test_categories": [
+        "Pressure event routing",
+        "focus/hide/deactivate/contact loss",
+        "mouse/finger exclusion",
+        "limit and Clear"
+      ],
+      "blocked_until": [
+        "Qt desktop >=6.8",
+        "legitimate Windows execution clearance",
+        "Android native kit and device"
+      ],
+      "allowed_scope_proposal": "prototypes/p0-pen-input/",
+      "prohibited_behavior": [
+        "Promoting QPainter probe into production",
+        "claiming WSLg as Windows pen evidence",
+        "adding save/sync/AI to probe"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "quarantined_preparation"
+    },
+    {
+      "checkpoint_id": "P0b",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Input identity and lifecycle feasibility",
+      "dependencies": [
+        "P0a"
+      ],
+      "requirements": [
+        "REQ-005",
+        "REQ-006"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "P0b-AC-01",
+          "statement": "Retain pointer/device IDs, tool type and raw timestamps separately from geometry.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0b-AC-02",
+          "statement": "Pen/eraser/finger/hover/cancel decisions use native event identity, never pressure alone.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0b-AC-03",
+          "statement": "Changing focus, screen, orientation, background or losing device ends active stroke without bridges; unknown identity gets a diagnostic.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0b-AC-04",
+          "statement": "Compare Surface, Lenovo and Xiaomi; palm handling must be tested physically, and requested gesture arbitration is tested with recorded sequences.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "replayed press/move/release/cancel streams",
+        "mixed two-device pointers",
+        "finger hold vs moving-smudge scenarios"
+      ],
+      "required_test_categories": [
+        "contact/tool identity",
+        "coordinate/DPI transforms",
+        "multitouch arbitration",
+        "Android pause/resume"
+      ],
+      "blocked_until": [
+        "actual native routing from P0a",
+        "physical targets and driver identities"
+      ],
+      "allowed_scope_proposal": "prototypes/p0-input-identity/",
+      "prohibited_behavior": [
+        "silently treating unknown input as a verified pen",
+        "inferred palm rejection from synthetic tests"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "P0c",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Rendering and runtime selection feasibility",
+      "dependencies": [
+        "P0b"
+      ],
+      "requirements": [
+        "REQ-003",
+        "REQ-004",
+        "REQ-005",
+        "REQ-009"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "P0c-AC-01",
+          "statement": "Compare mature tiled rendering candidates with identical deterministic workloads on both platforms.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0c-AC-02",
+          "statement": "Record p50/p95/p99 frame duration, instrumented input-to-visible latency, delivered/dropped samples, memory and background-load impact.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0c-AC-03",
+          "statement": "Demonstrate candidate Windows folder deployment and Android APK; assess dependency/license obligations.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "P0c-AC-04",
+          "statement": "Independent Gatekeeper chooses runtime only after measured device evidence and accepted engineering budgets.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "10k vector segments",
+        "finite 4096-square raster artboard",
+        "30-minute draw/clear replay",
+        "autosave/fill/export background loads"
+      ],
+      "required_test_categories": [
+        "render references/tile seams",
+        "performance instrumentation",
+        "packaging/ABI",
+        "device feel"
+      ],
+      "blocked_until": [
+        "P0b input identity",
+        "Windows/Android packaging kits",
+        "measurement protocol and agreed budgets"
+      ],
+      "allowed_scope_proposal": "prototypes/p0-rendering/",
+      "prohibited_behavior": [
+        "selecting runtime from WSLg startup",
+        "inventing latency from wall-clock process lifetime"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C01",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Reproducible shell and packaging",
+      "dependencies": [
+        "P0c",
+        "G14"
+      ],
+      "requirements": [
+        "REQ-012",
+        "GDEC-001",
+        "GDEC-002"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C01-AC-01",
+          "statement": "Clean permitted developer environment builds both target packages with pinned dependencies.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C01-AC-02",
+          "statement": "Portable Windows folder launches offline as standard user without installed dev kits; APK installs and launches offline on Xiaomi.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C01-AC-03",
+          "statement": "Controller verifies repo destination, exact identity, auth, tool restrictions, timeout/budget and stop/resume; no main promotion without reviewed result.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C01-AC-04",
+          "statement": "Choose equivalent native environment/Docker strategy in Gatekeeper; do not add fictitious backend/database for a native app.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "fresh user-data directory",
+        "clean copied Windows folder",
+        "fresh Android install",
+        "CLI success/timeout/malformed-result fixtures"
+      ],
+      "required_test_categories": [
+        "offline native startup",
+        "platform lifecycle",
+        "controller failure/identity",
+        "clean-machine package"
+      ],
+      "blocked_until": [
+        "locked runtime/license",
+        "approved build guard and CI",
+        "controller token/cost limits"
+      ],
+      "allowed_scope_proposal": "src/platform/; build configuration; quality controller",
+      "prohibited_behavior": [
+        "production implementation before authorization",
+        "writing credentials into project files"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C02",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Board lifecycle, initial ink and recovery",
+      "dependencies": [
+        "C01"
+      ],
+      "requirements": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-005"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C02-AC-01",
+          "statement": "Create two independent boards; vector and raster strokes have stable IDs and pressure/size/opacity; stabilization preserves separately recorded raw samples.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C02-AC-02",
+          "statement": "Save/reopen yields identical committed document state; malformed/unsupported versions do not modify input.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C02-AC-03",
+          "statement": "Every interrupted save either reopens previous validated revision or identifies recovery; cannot report an unconfirmed save as successful.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C02-AC-04",
+          "statement": "Cancel background work leaves document unchanged; local use never requires an app account.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "two-board seeded fixture",
+        "corrupt/truncated/checksum/version files",
+        "save interruption at every stage",
+        "pressure fixtures"
+      ],
+      "required_test_categories": [
+        "engine unit/property",
+        "storage fault injection",
+        "native save/reopen",
+        "pressure/stabilization"
+      ],
+      "blocked_until": [
+        "board-v1 serialization/resource proposal approved",
+        "platform atomic-write evidence",
+        "ink/reference acceptance budgets"
+      ],
+      "allowed_scope_proposal": "src/document/; src/ink/; src/storage/",
+      "prohibited_behavior": [
+        "silently overwriting corrupt originals",
+        "background network in local editing"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C03",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Navigation, history and input arbitration",
+      "dependencies": [
+        "C02"
+      ],
+      "requirements": [
+        "REQ-001",
+        "REQ-004",
+        "REQ-006"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C03-AC-01",
+          "statement": "View pan/zoom/rotation preserves document coordinates; separate basic vector/raster layers survive reopen.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C03-AC-02",
+          "statement": "Undo/redo is transaction-based; two/three-finger double tap maps to undo/redo and visible controls remain available.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C03-AC-03",
+          "statement": "Stationary hold picker vs moving smudge and endpoint hold recognition have documented cancellation/arbitration; recognition itself lands at C06.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C03-AC-04",
+          "statement": "Focus/display/background interruptions end ink safely; pointer isolation is retained.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "coordinate transform roundtrips",
+        "history branch/replay fixtures",
+        "two/three-finger traces",
+        "focus/display disruption"
+      ],
+      "required_test_categories": [
+        "history determinism",
+        "native UI/accessibility",
+        "input replay",
+        "DPI/multidisplay"
+      ],
+      "blocked_until": [
+        "P0b arbitration and locked UX thresholds"
+      ],
+      "allowed_scope_proposal": "src/navigation/; src/history/; src/input/",
+      "prohibited_behavior": [
+        "gesture-created accidental ink",
+        "saved geometry changed by camera"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C04",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Native brushes and smudge",
+      "dependencies": [
+        "C03"
+      ],
+      "requirements": [
+        "REQ-003",
+        "REQ-014",
+        "GDEC-012"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C04-AC-01",
+          "statement": "Pen/pencil/marker/airbrush/watercolour and original inking presets have explicit reference behavior and supported settings.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C04-AC-02",
+          "statement": "Texture tip/grain inputs are bounded; Paint/Smudge/Erase share brush library, size/strength and held-icon transfer.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C04-AC-03",
+          "statement": "Active-raster smudge previews/commits as history operation; finger movement and picker hold arbitrate.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C04-AC-04",
+          "statement": "Unsupported brush capabilities cannot claim parity with another app.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "original deterministic brush stamps",
+        "alpha/colour reference patches",
+        "malformed texture inputs",
+        "smudge/picker event traces"
+      ],
+      "required_test_categories": [
+        "reference images/tolerances",
+        "stroke determinism",
+        "invalid texture",
+        "native settings UX"
+      ],
+      "blocked_until": [
+        "colour/alpha reference contract",
+        "fidelity targets and perf budget"
+      ],
+      "allowed_scope_proposal": "src/brush/; src/raster/; src/tool-ui/",
+      "prohibited_behavior": [
+        "copied vendor brush assets",
+        "silent unsupported setting fallback"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C05",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Composition and finite artboards",
+      "dependencies": [
+        "C04"
+      ],
+      "requirements": [
+        "REQ-004",
+        "REQ-008",
+        "REQ-015"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C05-AC-01",
+          "statement": "Groups/visibility/locks/opacity/clipping/masks/blend operations match declared reference fixtures and undo/save roundtrip.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C05-AC-02",
+          "statement": "Wheel/hue/saturation/shades/palettes are usable; paper, grid, export background and brush grain are independent.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C05-AC-03",
+          "statement": "Artboard physical units/pixels/DPI resolve deterministically; metadata-only DPI change never resamples; explicit resampling previews and undoes.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "layer/mask reference grid",
+        "locked/hidden fixtures",
+        "pixel/mm/DPI conversions"
+      ],
+      "required_test_categories": [
+        "render math",
+        "layer/history roundtrip",
+        "unit conversion",
+        "native accessibility"
+      ],
+      "blocked_until": [
+        "supported blend set/colour-space lock",
+        "native UX baseline"
+      ],
+      "allowed_scope_proposal": "src/layers/; src/colour/; src/artboards/",
+      "prohibited_behavior": [
+        "hidden/locked content modified silently",
+        "metadata-only DPI resampling"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C06",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Selection, curves and geometry editing",
+      "dependencies": [
+        "C05"
+      ],
+      "requirements": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-004",
+        "REQ-006"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C06-AC-01",
+          "statement": "Lasso/copy/cut/paste and transforms preserve vector/raster relationships and unaffected geometry.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C06-AC-02",
+          "statement": "Curve pen/control points and vector point/segment/intersection erasing remain editable after reopen.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C06-AC-03",
+          "statement": "Endpoint hold recognizes supported shapes with preview/cancel; no surprise destructive replacement.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C06-AC-04",
+          "statement": "Every selection/edit is undoable; locked targets cannot be altered.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "crossing/self-intersecting curves",
+        "empty/mixed selections",
+        "degenerate transforms",
+        "hold/cancel samples"
+      ],
+      "required_test_categories": [
+        "geometry property/reference",
+        "selection history",
+        "native interaction",
+        "locked-target boundaries"
+      ],
+      "blocked_until": [
+        "topology and supported shape contract"
+      ],
+      "allowed_scope_proposal": "src/selection/; src/vector/; src/shapes/",
+      "prohibited_behavior": [
+        "rewriting unaffected topology",
+        "tool holds inventing nonexistent recognition results"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C07",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Bounded fill, blur and experimental import",
+      "dependencies": [
+        "C06"
+      ],
+      "requirements": [
+        "REQ-003",
+        "REQ-007",
+        "GDEC-013"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C07-AC-01",
+          "statement": "Gap-aware bucket and Gaussian blur require finite bounds, validate arithmetic, preview/cancel and commit once.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C07-AC-02",
+          "statement": "Cancel/error/resource exhaustion leaves original unchanged.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C07-AC-03",
+          "statement": "Experimental Procreate import follows native brush validation; reports every unsupported setting and previews differences.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "gaps at declared tolerance boundaries",
+        "tile-edge/large-region fixtures",
+        "traversal/zip-bomb/malformed brush archives"
+      ],
+      "required_test_categories": [
+        "fill/blur reference",
+        "cancel/history",
+        "resource rejection",
+        "archive security"
+      ],
+      "blocked_until": [
+        "gap policy, sigma/radius and decoded-memory limits approved",
+        "documented import subset/license"
+      ],
+      "allowed_scope_proposal": "src/fill/; src/filters/; src/import/brush/",
+      "prohibited_behavior": [
+        "unbounded infinite flood",
+        "universal Procreate fidelity promise"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C08",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Editable whiteboard objects",
+      "dependencies": [
+        "C06"
+      ],
+      "requirements": [
+        "GDEC-015"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C08-AC-01",
+          "statement": "Editable text with font/size, sticky notes and attached connectors survive edits, transforms, undo and recovery.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C08-AC-02",
+          "statement": "Deleting/moving a target updates attached endpoints or gives explicit missing-target state; IDs never redirect.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C08-AC-03",
+          "statement": "Unavailable fonts have disclosed fallback; invalid text/shaping input is bounded.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "multiscript/font-fallback text",
+        "two connected notes",
+        "deleted/locked endpoint fixtures"
+      ],
+      "required_test_categories": [
+        "object relationships/history",
+        "text reference",
+        "font fallback",
+        "native editing UX"
+      ],
+      "blocked_until": [
+        "text shaping/font licensing and attachment model"
+      ],
+      "allowed_scope_proposal": "src/whiteboard/; src/text/",
+      "prohibited_behavior": [
+        "rasterizing editable text without disclosure",
+        "redirecting stale connectors"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C09",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Image/PDF reference workflow",
+      "dependencies": [
+        "C08"
+      ],
+      "requirements": [
+        "REQ-014",
+        "GDEC-014"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C09-AC-01",
+          "statement": "Import image and selected PDF pages with bounded decoding and explicit page selection.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C09-AC-02",
+          "statement": "Reference companion floats/resizes/docks, independently navigates and samples colour.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C09-AC-03",
+          "statement": "Cancellation/malformed input preserves original board; imported originals stay identifiable.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "small image",
+        "multipage PDF with selected pages",
+        "corrupt/oversized/path-traversal fixtures"
+      ],
+      "required_test_categories": [
+        "parser security",
+        "selected-page content",
+        "reference colour",
+        "native panel UX"
+      ],
+      "blocked_until": [
+        "image/PDF parser license and limits"
+      ],
+      "allowed_scope_proposal": "src/import/media/; src/reference/",
+      "prohibited_behavior": [
+        "automatic import of all PDF pages",
+        "executing embedded scripts"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C09M",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Motion Trace presentation",
+      "dependencies": [
+        "C06",
+        "C09"
+      ],
+      "requirements": [
+        "REQ-017",
+        "GDEC-018",
+        "GDEC-019",
+        "GDEC-020"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C09M-AC-01",
+          "statement": "Select group, define path and preview; manual Next defaults with explicit timed mode.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C09M-AC-02",
+          "statement": "Object and camera cues replay without drift; presentation restores original layout on end/cancel.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C09M-AC-03",
+          "statement": "Explicit commit is one geometry/history transaction; autosave/sync sees committed revision only.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C09M-AC-04",
+          "statement": "Deleted/locked/missing targets diagnose without redirecting IDs; cues validate on reopen.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "mixed vector/raster/text group",
+        "overlapping cues",
+        "missing/locked target",
+        "100 replay cycles"
+      ],
+      "required_test_categories": [
+        "replay determinism",
+        "commit/undo",
+        "pause/background",
+        "audience native UX"
+      ],
+      "blocked_until": [
+        "cue schema/clock and restoration contract"
+      ],
+      "allowed_scope_proposal": "src/motion/; src/presentation/",
+      "prohibited_behavior": [
+        "implicit geometry mutation during presentation",
+        "camera cues altering saved objects"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C10",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Artwork export, timelapse and exchange",
+      "dependencies": [
+        "C07",
+        "C09M"
+      ],
+      "requirements": [
+        "REQ-009",
+        "REQ-015",
+        "REQ-016"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C10-AC-01",
+          "statement": "Finite frame/artboard exports PNG/JPG/PDF with declared DPI/background and no unbounded allocations.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C10-AC-02",
+          "statement": "Timelapse retention, framing, undo/replay and interrupted export behavior are explicit; export preserves board.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C10-AC-03",
+          "statement": "PSD candidate can execute only after exchange decision; test roundtrips in actual Procreate/Clip Studio and disclose rasterization/mask/blend losses.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "reference layered artwork",
+        "undo/replay capture",
+        "interrupted export",
+        "real-app roundtrip manifest"
+      ],
+      "required_test_categories": [
+        "export parsing/reference",
+        "replay/history",
+        "resource interruption",
+        "external-app roundtrip"
+      ],
+      "blocked_until": [
+        "exchange route approval",
+        "timelapse semantics/retention",
+        "export codecs/license"
+      ],
+      "allowed_scope_proposal": "src/export/; src/timelapse/; src/exchange/",
+      "prohibited_behavior": [
+        "claiming native .clip/.procreate support",
+        "erasing recording evidence through history compaction"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C11",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Drive synchronization",
+      "dependencies": [
+        "C10"
+      ],
+      "requirements": [
+        "REQ-010",
+        "GDEC-017"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C11-AC-01",
+          "statement": "Local editing/save works offline without OAuth; queue survives restart.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C11-AC-02",
+          "statement": "Simulated OAuth expiry, outages, duplicate retry and partial transfers converge without silent loss.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C11-AC-03",
+          "statement": "Conflicting revisions both retain content/lineage and require user continuing-version choice.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C11-AC-04",
+          "statement": "Disconnect preserves local boards; secrets stay in platform store and never enter exports/logs/graphs.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "synthetic two-device revisions",
+        "sanitized versioned OAuth/Drive samples",
+        "outage/expiry/partial transfer simulator"
+      ],
+      "required_test_categories": [
+        "contract/simulator",
+        "conflict idempotency",
+        "secret/log boundaries",
+        "offline native UI"
+      ],
+      "blocked_until": [
+        "Drive scope/consent and OAuth release contract",
+        "simulation adapter with zero live egress",
+        "credential adapter proof"
+      ],
+      "allowed_scope_proposal": "src/sync/; src/integrations/drive/",
+      "prohibited_behavior": [
+        "silent overwrite",
+        "clock-only convergence",
+        "live OAuth tests with private boards"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C12",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "BYOK AI selection and review",
+      "dependencies": [
+        "C11"
+      ],
+      "requirements": [
+        "REQ-011"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C12-AC-01",
+          "statement": "User explicitly reviews selected-content payload and provider before sending.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C12-AC-02",
+          "statement": "Malformed/unsafe AI output stays preview-only; user can review/edit/insert or discard.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C12-AC-03",
+          "statement": "Provider outage or absent key does not block drawing or offline exports.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C12-AC-04",
+          "statement": "Keys remain in platform credentials; adapters have sanitized deterministic simulator contracts.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "synthetic idea selection",
+        "malformed/tool-injection/oversized output",
+        "offline/no-key/provider-error fixtures"
+      ],
+      "required_test_categories": [
+        "payload minimization",
+        "response security",
+        "outage/cancel",
+        "native review/insert history"
+      ],
+      "blocked_until": [
+        "provider/capability choice",
+        "data disclosure UX",
+        "simulation samples and cost ceilings"
+      ],
+      "allowed_scope_proposal": "src/ai/; src/integrations/ai/",
+      "prohibited_behavior": [
+        "automatic whole-board upload",
+        "executing model code",
+        "inserting unreviewed output"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    },
+    {
+      "checkpoint_id": "C13",
+      "builder_agent": "codex",
+      "branch": "future bounded checkpoint worktree",
+      "commit_sha": "must_bind_at_execution",
+      "objective": "Summary export and release readiness",
+      "dependencies": [
+        "C12"
+      ],
+      "requirements": [
+        "REQ-011",
+        "REQ-012",
+        "GDEC-001",
+        "GDEC-002"
+      ],
+      "acceptance_criteria": [
+        {
+          "id": "C13-AC-01",
+          "statement": "DOCX/PDF/JPG artifacts validate and preserve selected content without requiring AI credentials.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C13-AC-02",
+          "statement": "Both final target packages pass clean-machine offline startup, core workflows and full affected merged regression.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        },
+        {
+          "id": "C13-AC-03",
+          "statement": "Independent release review resolves security/license/dependency/device risks; release authorization is separately recorded.",
+          "verification": "both target platforms unless explicitly synthetic/model or integration"
+        }
+      ],
+      "deterministic_fixtures": [
+        "synthetic summary/diagram fixtures",
+        "document format validators",
+        "fresh Windows folder and Android install"
+      ],
+      "required_test_categories": [
+        "format compatibility",
+        "full regression/security",
+        "clean-machine/device",
+        "backup/rollback"
+      ],
+      "blocked_until": [
+        "all prior independent checkpoint acceptances",
+        "target-device batch feedback",
+        "project/dependency licenses and release checklist"
+      ],
+      "allowed_scope_proposal": "src/export/; packaging; quality regression/",
+      "prohibited_behavior": [
+        "public release without separate authorization",
+        "claiming branch-level QA is merged regression"
+      ],
+      "regression_scope": "changed-component neighborhood + mandatory local save/reopen, input termination, undo/replay and offline startup smoke; after merge rerun on merged identity",
+      "rollback": "P0: close/remove only its named generated build; implementation: preceding checkpoint and data-compatible reversal, originals retained",
+      "status": "blocked_execution_pending_readiness"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/diagnostic/diagnostic"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "DIAGNOSTIC shown=0 tracking=0 hoverAccepted=0 activeAfterHover=1 samples=1\nDIAGNOSTIC shown=0 tracking=1 hoverAccepted=1 activeAfterHover=0 samples=1\nDIAGNOSTIC shown=1 tracking=0 hoverAccepted=0 activeAfterHover=1 samples=1\nDIAGNOSTIC shown=1 tracking=1 hoverAccepted=1 activeAfterHover=0 samples=1\n",
+  "stderr": "",
+  "started_at_utc": "2026-10-03T15:12:24.591218+00:00",
+  "completed_at_utc": "2026-10-03T15:12:24.663202+00:00"
+}
