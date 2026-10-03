@@ -55,3 +55,7 @@ Human evaluates real drawing feel and task usability in batches of 2–4 checkpo
 
 ## Not yet locked
 Runtime/graphics engine, board format, precise performance thresholds, blend-mode set, timelapse semantics, provider adapters, license, release credentials, controller budget and remote repository. This review is a concrete proposal for feedback, not a claim those engineering decisions have been made.
+
+## Motion Trace — approved behaviour and proposed details
+Confirmed: object/group movement plus camera pan/zoom; manual and timed playback, manual default; presentation-only playback restores layout, explicit commit option is available.
+Proposed: separate cue track stores target IDs, path, view framing, duration and easing. A presentation preview transform must not mutate saved artwork. Cancellation restores pre-playback state. Commit is an explicit undoable document operation, independent of camera movement. Locked/hidden/deleted targets and overlapping cues require defined outcomes before implementation. Repeated playback must not accumulate positional drift. No live collaboration is implied.
