@@ -1,9 +1,5 @@
 {
-  "scope": "Curated preparation/prototype receipts, no checkpoint closure",
-  "recorded_at_utc": "2026-10-03T15:19:51.441830+00:00",
-  "raw_logs_and_model_packets_excluded": true,
-  "generated_executables_and_packages_excluded": true,
-  "credentials_and_device_recordings_excluded": true,
+  "scope": "Curated prototype evidence; publication receipt binds source snapshot, not checkpoint closure",
   "files": [
     {
       "path": "QA_CHECKPOINT_RESULT.json",
@@ -20,6 +16,10 @@
     {
       "path": "checkpoint.json",
       "sha256": "9fec6bec8c3a70b4f69ce6c997ac442b4ec2bf23859864a253b5027e7a04930e"
+    },
+    {
+      "path": "committed-byte-verification.json",
+      "sha256": "21709b235f50b54d490cec21a4748c8857623df751dafd3c3a8e5a7bd3e35393"
     },
     {
       "path": "configure.json",
@@ -72,6 +72,10 @@
     {
       "path": "preservation-after.json",
       "sha256": "00116502bda56ba291140638f99d004ca58a3453cd19ec5620d8d51de1bd49ee"
+    },
+    {
+      "path": "publication-receipt.json",
+      "sha256": "20f77486622e06985de4160338c77b83bd32b6c178847ff004ce35b38a03df08"
     },
     {
       "path": "qa-final-invocation.json",
@@ -153,5 +157,6 @@
       "path": "window-inspection.json",
       "sha256": "1cd05093bf198320b213e674a9efb7bbb7c63298e78c8451b9dd3776e0df465a"
     }
-  ]
+  ],
+  "credentials_raw_logs_executables_excluded": true
 }

@@ -1,0 +1,32 @@
+{
+  "id": "DELTA-011",
+  "mode": "capture",
+  "created_at": "2026-10-03T15:24:06.734014+00:00",
+  "events": [
+    {
+      "id": "EVT-P0-PREPARATION-PUBLISHED",
+      "status": "executed",
+      "artifact": "https://github.com/lionellmisquitta/unruly/commit/02772d4b6c672b389cc5f634f330905437d06907",
+      "statement": "Curated preparation/prototype source/evidence branch published via authenticated connector; exact local branch/tree and tested source SHA verified."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "EVT-P0-NATIVE-REPAIR-2",
+      "relation": "preserved_at",
+      "to": "EVT-P0-PREPARATION-PUBLISHED",
+      "scope": "Tested source SHA256 and native repair preserved, not integration or merged regression"
+    },
+    {
+      "from": "REQ-013",
+      "relation": "partially_verified_by",
+      "to": "EVT-P0-PREPARATION-PUBLISHED",
+      "scope": "Bounded capture and source/evidence preservation; no full graph export claim"
+    }
+  ],
+  "source_commit": "02772d4b6c672b389cc5f634f330905437d06907",
+  "source_sha256": "56e2e448855a55f205dc85a8f160e59e562fb2f6102193c6ebcd94e45baa3f90",
+  "build_authorized": false,
+  "closed_checkpoint_count": 0,
+  "merged_regression": "NOT_VERIFIED"
+}

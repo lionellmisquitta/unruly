@@ -304,7 +304,7 @@ verification_ledger: []
 remediation_plan: []
 next_action: Run the single WSLg human test card; prepare native target kits and P0b fixtures.
   Publish the independently reviewed curated personal preparation branch; production remains blocked.
-updated_at: '2026-10-03T15:16:14.853022+00:00'
+updated_at: '2026-10-03T15:24:06.734014+00:00'
 
 continuation_windows_2026_10_03:
   source_commit: cb1d52089c5cdd159050dc375b92750eb84d8271
@@ -428,8 +428,12 @@ native_wslg_milestone_2026_10_03:
   production_authorization_changed: false
   employer_policy_changes: false
   preparation_branch: "prep/p0-native-wslg-2026-10-03"
-  publication_status: "independently_approved_preparation_scope"
+  publication_status: "published_via_authenticated_github_connector"
   recorded_at_utc: "2026-10-03T15:16:14.853022+00:00"
   gatekeeper_review_id: "GK-UNRULY-P0A-NATIVE-WSLG-2026-10-03-R1"
   gatekeeper_result: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/gatekeeper-response.json"
   historical_run_scope_note: "Windows12 plus9 blocked, Linux21 and WSLg29 are distinct exact-source runs; no counts are combined or promoted across platforms."
+  published_source_commit: "02772d4b6c672b389cc5f634f330905437d06907"
+  published_source_tree: "a711d208eb77b424daf39df4139d765c6e8e91c3"
+  publication_receipt: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/publication-receipt.json"
+  publication_note: "Separate local branch matches remote; main and original index remain unchanged; no integration merge."
