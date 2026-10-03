@@ -141,3 +141,6 @@ Next action: complete architecture/runtime feasibility and remaining pre-build d
 
 ## Motion Trace — confirmed scope
 REQ-017: Support moving selected/lassoed content along a path and audience-view pan/zoom. Both manual and timed playback are included; manual advance is default. Offer presentation-only motion with original layout restored (default) and an explicit commit-to-board option. Add a dedicated checkpoint after selection/transforms are validated. Individual cue parameters and recording semantics remain proposed.
+
+## Coding start boundary — 3 October 2026
+User requested coding to begin. Quarantined P0a raw-pen input source created in prototypes/p0-pen-input; Qt remains an evaluation candidate. Production build authorization remains false. Native build/device tests and full P0 closure are not verified. Independent capture-model QA is recorded beside the probe. See docs/review/BUILD_START.md for readiness gaps, execution constraints and the production start sequence.
