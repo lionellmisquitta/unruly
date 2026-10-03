@@ -239,9 +239,11 @@ questions:
   - id: Q-014
     answer: Private personal GitHub repository lionellmisquitta/unruly; user created
       it and connector verified private visibility and push permissions.
+  - id: Q-015
+    answer: Both object and camera motion; manual and timed playback; presentation restore default with optional commit.
   pending: []
 requirements: []
-decisions: []
+decisions: [{"id":"GDEC-018","statement":"Motion Trace supports object movement and camera pan/zoom","status":"confirmed"},{"id":"GDEC-019","statement":"Manual and automatic cue playback; manual default","status":"confirmed"},{"id":"GDEC-020","statement":"Presentation restore default; explicit undoable board commit","status":"confirmed"}]
 assumptions: []
 accepted_risks: []
 contradictions: []
