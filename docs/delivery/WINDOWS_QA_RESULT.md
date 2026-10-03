@@ -1,0 +1,15 @@
+# P0a-WIN-D1 independent QA result
+
+Fresh isolated Codex adversary (`windows_slice_qa`), same-model fallback from separate Builder session. No paid external calls. Tests designed from contract before source. QA owns `model_tests.cpp`; no application source repairs performed.
+
+**Host model: 9/9 grouped cases PASS**, C++17 `g++ -Wall -Wextra -Werror`. Exact hashes, compiler/platform and executable identity are recorded in `QA_CHECKPOINT_RESULT.json`; actual output in `evidence/host-model-output.txt`. W01–W09 cover empty state, coordinates and pressure endpoints, unknown pressure, NaN/infinity, pointer ownership/duplicate begin, cancellation, 7999/8000/8001 limit and Clear recovery. Tests use explicit exceptions, not assertions that could disappear in release builds.
+
+**Static adapter review:** pen kind resolved through GetPointerType; raw pointer ID checked by core, GetPointerPenInfo used, pressure mask distinguishes unavailable pressure, pressure divided by 1024, screen coordinates converted to client pixels. Contact required for ink; mouse and touch count without ink. Release/hover/cancel/focus loss end capture; distinct contacts have separate stroke IDs; samples remain bounded. Error codes surface on pointer API failures; registration/window creation/event-loop failures use a message box. SDK/GDI only, no credential/document/network IO. No claim that static review proves Windows event delivery or device behaviour.
+
+**Candidate Windows CI and smoke reviewed before publication:** isolated branch/path trigger, read-only repository permissions, pinned checkout/upload actions, checkout credentials not retained, 10-minute ceiling, no paid models/dependency download step, 7-day artifact retention. MSVC warnings-as-errors/static runtime and independent tests precede window smoke. Smoke checks process ownership, nonzero main HWND, IsWindowVisible, expected title, WM_CLOSE and zero exit within bounded deadlines; finally terminates its own leftover process. It explicitly marks painted status and physical pen NOT_VERIFIED. Artifact includes source/build identities. These are reasonable bounded tests to execute; they have not been run by QA in Windows here.
+
+Minor diagnostic limitation: release/hover can replace the textual `LIMIT reached` message even while samples remain visibly `8000 / 8000`. Capacity remains enforced and Clear recovers. Human test should confirm the retained limit indication is understandable; this is not evidence of a model safety failure.
+
+**Overall QA: BLOCKED pending Windows compile/startup and real Surface/Lenovo pen evidence.** Windows compilation, painted status/clear interaction, real pressure, hover/mouse/touch policy, API failure behaviour and launch clearance remain NOT_VERIFIED. Post-merge regression NOT_VERIFIED (no merged commit). Nine Linux model passes do not close those categories or authorize production. Gatekeeper owns closure. Zero repair cycles consumed.
+
+Recommendation to Gatekeeper: candidate workflow may be published/run for bounded evidence collection; no material static blocker was found. Do not mark checkpoint PASSED from compilation or synthetic smoke alone.

@@ -1,0 +1,116 @@
+{
+  "checkpoint_id": "P0a-WIN-D1",
+  "classification": "quarantined pre-build feasibility task inside existing P0a; not a production checkpoint",
+  "status": "QUARANTINED_EXECUTION_PERMITTED",
+  "production_authorized": false,
+  "objective": "Native Windows pen draws visible ink, with permanently visible event/sample/pressure diagnostics, without requiring Qt or WSLg.",
+  "requirements": [
+    "REQ-005",
+    "REQ-012"
+  ],
+  "dependencies": [
+    "explicit user confirmation of UNRULY-PLAN-2026-10-04-R1 and this exact packet",
+    "independent bounded prototype review",
+    "Windows MSVC/SDK for compile",
+    "legitimate executable launch permission for physical verification"
+  ],
+  "allowed_paths": [
+    "prototypes/windows-input-slice/",
+    "docs/delivery/",
+    ".github/workflows/windows-input-slice.yml",
+    ".knowledge/delta-delivery-recovery.json",
+    "LICENSE"
+  ],
+  "prohibited": [
+    "production src writes",
+    "main merge",
+    "new SaaS backend",
+    "policy changes",
+    "secrets or private boards",
+    "passing synthetic input off as physical pen verification",
+    "declaring a native runtime selected"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "WIN-AC-01",
+      "statement": "A standalone x64 executable opens an ordinary native Windows window; initial status explicitly shows zero pen events/samples and unknown pressure."
+    },
+    {
+      "id": "WIN-AC-02",
+      "statement": "WM_POINTER pen events use GetPointerPenInfo and preserve raw input kind, pointer ID, pressure availability and normalized pressure; absent pressure is explicitly unavailable, never fabricated."
+    },
+    {
+      "id": "WIN-AC-03",
+      "statement": "Pen contact draws strokes; hover, mouse and touch cannot create ink. Mouse events are counted diagnostically so missing PT_PEN is visible."
+    },
+    {
+      "id": "WIN-AC-04",
+      "statement": "Distinct pointers cannot append into another active stroke; release/cancel/focus loss ends capture. Each new contact has a new stroke identity."
+    },
+    {
+      "id": "WIN-AC-05",
+      "statement": "Nonfinite coordinates or invalid pressure are rejected; capacity 8000 stops immediately with visible limit; Clear resets input and ink."
+    },
+    {
+      "id": "WIN-AC-06",
+      "statement": "Window close exits; failure to create/register window produces a visible actionable error; no filesystem or network side effects except explicit build/test evidence."
+    },
+    {
+      "id": "WIN-AC-07",
+      "statement": "Independent QA owns tests and classifies Windows compile/UI/physical pen as separate outcomes; exact source/build hashes bind results."
+    }
+  ],
+  "ux_contract": {
+    "screen": "Single diagnostic canvas",
+    "status": "Always visible above canvas: pen events, mouse events, retained samples, pressure or unavailable, input state",
+    "actions": [
+      "draw with pen",
+      "Clear",
+      "close"
+    ],
+    "states": [
+      "ready, zero events",
+      "pen contact",
+      "hover/end",
+      "no pressure available",
+      "API failure with error code",
+      "capacity reached",
+      "focus canceled"
+    ]
+  },
+  "data_contract": {
+    "persistent_data": "none",
+    "sample_limit": 8000,
+    "pressure_range": [
+      0,
+      1
+    ],
+    "coordinates": "client pixels",
+    "history": "stroke identity only; no undo claim",
+    "unknown_pressure": "retained explicitly as unavailable; constant diagnostic width disclosed"
+  },
+  "test_categories": [
+    "independent C++ model cases on host",
+    "native Windows compile with warnings as errors",
+    "Windows window startup smoke if runtime available",
+    "manual real Surface/Lenovo pen"
+  ],
+  "test_data": [
+    "two contacts separated by hover",
+    "wrong pointer id",
+    "release/focus cancel then hover",
+    "zero/max/unknown/nonfinite pressure",
+    "sample 7999/8000/8001",
+    "touch/mouse identity",
+    "Clear then new contact"
+  ],
+  "performance": "This diagnostic uses bounded samples/GDI; no production smoothness or latency claim. Frame budget and renderer evaluation remain P0c obligations.",
+  "security": "SDK only, no network/credentials/document IO. Default-user launch. App Control failures stop; no bypass.",
+  "rollback": "Delete new build output or revert isolated branch; preserve all prior source and state.",
+  "execution_limits": {
+    "external_model_calls": 0,
+    "windows_ci_minutes_max": 10,
+    "max_new_builder_repair_cycles": 1
+  },
+  "closure": "Gatekeeper must receive independent QA result; physical criteria cannot pass in Linux or by compilation. Parent P0a/P0b/P0c and product checkpoint counts remain unchanged until all their requirements close."
+}

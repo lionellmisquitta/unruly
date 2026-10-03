@@ -1,0 +1,24 @@
+{
+  "kind": "CHECKPOINT_TEST_HANDOFF",
+  "packet": "P0a-WIN-D1",
+  "builder": "Codex root",
+  "production_authorized": false,
+  "base_commit": "c7801f968279f25b8c9612197add1cc41466ed96",
+  "scope_contract": "WINDOWS_INPUT_CONTRACT.json",
+  "qa_owns": "tests, test data, diagnosis and retest",
+  "categories": [
+    "host model",
+    "native Windows compile",
+    "native startup/close",
+    "physical pen"
+  ],
+  "physical_pen": "NOT_VERIFIED",
+  "remaining_repair_cycles": 1,
+  "paid_model_subprocesses": 0,
+  "source_identity": {
+    "capture_model.hpp": "e9fab3be87a4bb6591f038613febffba32f957046d943a67cc5b6e0cbf2bc877",
+    "windows_main.cpp": "0afff682c0f547962c6b15b1dafe39d6273e6d5433dd3be39a3e5c0ce7debf2d",
+    "build-windows.cmd": "b689c26a2c85e1817f657037935d57fda077a4e93079435e2293e47f6eac2661",
+    "smoke-windows.ps1": "fd8add7e0b45991e8d25ef6fc538ac4a77afadd6852a1ee35bc85bc359853c00"
+  }
+}

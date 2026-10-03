@@ -1,0 +1,38 @@
+{
+  "checkpoint_id": "P0a-WIN-D1",
+  "builder": "Codex root",
+  "adversary": "Codex windows_slice_qa, fresh isolated same-model fallback",
+  "source_sha256": {
+    "capture_model.hpp": "e9fab3be87a4bb6591f038613febffba32f957046d943a67cc5b6e0cbf2bc877",
+    "windows_main.cpp": "0afff682c0f547962c6b15b1dafe39d6273e6d5433dd3be39a3e5c0ce7debf2d",
+    "model_tests.cpp": "98c1d1b3fcb9bbfe7b39d12e398b3df285230b1d5d438136a83184faecc86e53",
+    "build-windows.cmd": "b689c26a2c85e1817f657037935d57fda077a4e93079435e2293e47f6eac2661",
+    "smoke-windows.ps1": "fd8add7e0b45991e8d25ef6fc538ac4a77afadd6852a1ee35bc85bc359853c00"
+  },
+  "host": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "compile_command": "g++ -std=c++17 -Wall -Wextra -Werror prototypes/windows-input-slice/model_tests.cpp -o /tmp/unruly-windows-slice-model-tests",
+  "build_sha256": "18f34ff41e786bde3d426944c8f7941d009ad3e83d0374954c07c555a4f4e8b4",
+  "test_result": {
+    "designed_cases": 12,
+    "host_model_executed": 9,
+    "passed": 9,
+    "failed": 0,
+    "windows_compile": "NOT_VERIFIED",
+    "windows_smoke": "NOT_VERIFIED",
+    "physical_pen": "NOT_VERIFIED",
+    "post_merge_regression": "NOT_VERIFIED"
+  },
+  "repair_cycles": 0,
+  "paid_external_calls": 0,
+  "status": "BLOCKED",
+  "status_reason": "Host model passed; Windows compilation/runtime and physical-device criteria require target evidence; no checkpoint closure or production authorization.",
+  "static_review": "No material release-blocking defect found in bounded diagnostic code or candidate workflow; diagnostics note in QA report.",
+  "production_authorized": false,
+  "evidence": [
+    "WINDOWS_QA_PLAN.md",
+    "evidence/host-model-output.txt",
+    "WINDOWS_QA_RESULT.md"
+  ],
+  "merged_commit": null
+}
