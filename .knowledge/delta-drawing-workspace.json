@@ -5,31 +5,31 @@
     {
       "id": "WB1",
       "kind": "delivery_batch",
-      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "status": "HOSTED_REVIEWED_PREVIEW",
       "evidence": "docs/delivery/WORKSPACE_BATCH_CONTRACT.md"
     },
     {
       "id": "workspace-v2",
       "kind": "document_schema",
-      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "status": "HOSTED_REVIEWED_PREVIEW",
       "evidence": "prototypes/browser-workspace/model.js"
     },
     {
       "id": "vector-brushes",
       "kind": "drawing_renderer",
-      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "status": "HOSTED_REVIEWED_PREVIEW",
       "evidence": "prototypes/browser-workspace/render.js"
     },
     {
       "id": "vector-erasers",
       "kind": "drawing_geometry",
-      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "status": "HOSTED_REVIEWED_PREVIEW",
       "evidence": "tests/browser-workspace/model.test.mjs"
     },
     {
       "id": "legacy-copy",
       "kind": "migration",
-      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "status": "HOSTED_REVIEWED_PREVIEW",
       "evidence": "prototypes/browser-workspace/storage.js"
     }
   ],
@@ -77,5 +77,13 @@
     "source_hashes_verified": 16,
     "surface_count": 3,
     "synthetic_input": true
+  },
+  "hosted": {
+    "url": "https://lionellmisquitta.github.io/unruly/",
+    "deployment_run": 37224013072,
+    "assets_matched": 9,
+    "old_board_copy_observed": 1,
+    "drawing_layers_paper_save_reload": "OBSERVED",
+    "evidence": "docs/delivery/WORKSPACE_HOSTED_STATUS.md"
   }
 }

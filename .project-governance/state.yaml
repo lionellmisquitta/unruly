@@ -575,3 +575,23 @@ browser_workspace_candidate_acceptance_2026_10_04:
   physical_pen: NOT_VERIFIED
   production_authorization: false
   product_checkpoints_closed: 0
+
+browser_workspace_hosted_preview_2026_10_04:
+  url: https://lionellmisquitta.github.io/unruly/
+  deployment_run: 37224013072
+  deployment: SUCCESS
+  immutable_app_commit: 80c5bbe86cde4c41a81e354f296ff5d203019888
+  hosted_assets_matched: 9
+  safe_saved_update: OBSERVED
+  old_board_copy_and_retained_ink: OBSERVED
+  native_keyboard_size_opacity_controls: OBSERVED
+  colour_paper_layers_draw_save_reload: OBSERVED
+  offline_ready_indicator: OBSERVED
+  hosted_network_disable: NOT_RERUN_CI_CANDIDATE_PASS
+  physical_pen_feel: NOT_VERIFIED
+  human_review: ONE_COMBINED_CARD_DELIVERED
+  source_repair_cycles_used: 2
+  ci_runs_used: 2
+  paid_external_model_calls: 0
+  production_authorization: false
+  product_checkpoints_closed: 0

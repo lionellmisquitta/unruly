@@ -215,3 +215,8 @@ Initial actual CI37222940471:16modelPASS/12of14ChromiumPASS. Endpoint and select
 ## WB1 independent candidate acceptance
 
 Exact80c5bbe86cde4c41a81e354f296ff5d203019888 CI37223520128 passed16model/15Chromiumjourneys; artifact11310983072 SHA25601f381c6457c3f58204b9578cef58b8176ebe841aa9a13a4d41fe932b8ee65ce. Independent QA reproduced16sourceidentities and accepted candidate. Independent Gatekeeper authorised exacttestedworkspace preview via existing ownerallowedPagesbranch, no main/release grant. Renderer syntheticp95/max62.7ms notpenfeel/60Hzcertification. Repairs2/2,CI2/3,paidmodelcalls0. Deployment/live verificationpending; see WORKSPACE_FINAL_GATEKEEPER.md and WORKSPACE_QA_REPORT.md. Formal product0/14, productionfalse.
+
+
+## WB1 hosted workspace verified
+
+Pages37224013072 succeeded;9hostedappassetsHTTP200 andexactmatchtested80c5bbe86cde4c41a81e354f296ff5d203019888. RemoteChrome savedupdatecopied1oldboard, retainedexistingdrawing, nativekeyboardcontrols/color/paper/layer/newink/save/reloadobserved. Hostedofflinereadyindicatorobserved,networkdisableCIonly; physicalpenfeelNOTVERIFIED. Onecombinedhumantestcard delivered. CurrentpreviewcompleteWB1threeinternalslices; fullproduct0/14closure,productionfalse. No native/history/security/defaultmainchanges; no paidexternalmodelcalls. See WORKSPACE_HOSTED_STATUS.md.
