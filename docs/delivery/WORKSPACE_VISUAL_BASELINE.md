@@ -1,0 +1,6 @@
+# WB1 visual baseline
+UI Design Director consumes the existing canvas-first UX baseline, user-authorized next-batch controls. Existing warm paper/teal character retained: quiet original drawing space, system font, subordinate labelled tools, canvas dominant, restrained borders/focus orange. Curated retrieval returned Aurora/Swiss/HUD; selected restrained Swiss-like functional hierarchy, rejected theatrical gradient/HUD because they compete with drawing. No new workflow or navigational screen. No external fonts/assets/CDNs.
+
+Tokens in style.css: panel/surface/text/muted/line/accent/focus/warning/radius. Desktop two inspectors; tablet right inspector explicitly toggled overlay; mobile smaller scrollable brush rail and header actions wrap, no page overflow. Focus visible; error status text explicit, not colour-only. Drawing palette colours are content controls rather than decorative UI accents.
+
+Static validator: zero errors, warnings tiny-type (metadata11px and mobile density, drawing canvas dominates; primary controls remain44px), form-labels (hidden file input triggered by labelled Import button; add explicit aria-label in final repair). Gallery canonical exemplars currently pending, not quality-floor references. Actual desktop/tablet/mobile screenshot review and rubric pending browser evidence; no invented visual score.

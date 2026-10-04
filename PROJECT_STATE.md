@@ -200,3 +200,8 @@ GitHub Pages run37218275559 attempt3 succeeded after owner corrected permitted b
 ## Human drawing-workspace feedback — 4 October 2026 22:53 IST
 
 User confirms basic drawing worked and states foundation is below expected feature set. Requests selectable paper, three erasers (intersection/partial-path/whole-line), usable thickness/transparency/colour, layers and brushstyles. These belong to original requirements; no feature completeness inferred from21foundation checks. Opacity/layers/papers/brushlibrary absent; onlywhole-strokeeraser exists. Colour/size usability reportedfailed remainsopen; remote desktop keyboard changes size5->40, colour-wellclick showsno picker here; device-specific causeunknown. Physicalpressure/latency notverified. Next proposed combinedworkspacebatch in docs/delivery/BROWSER_WORKSPACE_FEEDBACK_PLAN.md; independent readinessreviewpending. No appsource/deploy changed fromfeedback and no productclosure or productionauthorization.
+
+
+## WB1 drawing workspace batch — 4 October 2026
+
+User authorised next batch: controls/paper/layers, four original vector brushes, three erasers. Independent Gatekeeper accepted quarantined implementation after exact precision/work/history/render limits were recorded. Isolated source written under prototypes/browser-workspace;16 independent model cases pass after repair1/2. Actual browser QA pending; initial live foundation remains unchanged. One combined human review follows actual QA and separately reviewed immutable deployment. Zero paid external model calls; product checkpoints closed0/14, production/main/G14 false. See docs/delivery/WORKSPACE_EXECUTION_STATE.md.
