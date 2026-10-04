@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: M01 schema metadata/global identity/finite pressure rejects malformed inputs
+ok 1 - M01 schema metadata/global identity/finite pressure rejects malformed inputs
+  ---
+  duration_ms: 2.672243
+  type: 'test'
+  ...
+# Subtest: M02 global layer/stroke/point/serialized limits
+ok 2 - M02 global layer/stroke/point/serialized limits
+  ---
+  duration_ms: 55.267524
+  type: 'test'
+  ...
+# Subtest: M03 document commands immutable rejected edits preserve source
+ok 3 - M03 document commands immutable rejected edits preserve source
+  ---
+  duration_ms: 1.272822
+  type: 'test'
+  ...
+# Subtest: M04 layer lifecycle metadata/order/active/delete undo and last-layer refusal
+ok 4 - M04 layer lifecycle metadata/order/active/delete undo and last-layer refusal
+  ---
+  duration_ms: 0.600304
+  type: 'test'
+  ...
+# Subtest: M05 hidden/locked layer refuses stroke and erase; zero-opacity no command
+ok 5 - M05 hidden/locked layer refuses stroke and erase; zero-opacity no command
+  ---
+  duration_ms: 0.640785
+  type: 'test'
+  ...
+# Subtest: M06 history count and16MiB byte bounds retain truthful eviction
+ok 6 - M06 history count and16MiB byte bounds retain truthful eviction
+  ---
+  duration_ms: 949.441437
+  type: 'test'
+  ...
+# Subtest: M07 legacy migration and import preserve input and remap every identity
+ok 7 - M07 legacy migration and import preserve input and remap every identity
+  ---
+  duration_ms: 4.489359
+  type: 'test'
+  ...
+# Subtest: M08 whole sparse sweep removes multiple hits onlyactive layer; source unchanged
+ok 8 - M08 whole sparse sweep removes multiple hits onlyactive layer; source unchanged
+  ---
+  duration_ms: 0.945127
+  type: 'test'
+  ...
+# Subtest: M09 partial capsule cuts into two fresh styled pressure-interpolated fragments
+ok 9 - M09 partial capsule cuts into two fresh styled pressure-interpolated fragments
+  ---
+  duration_ms: 0.74505
+  type: 'test'
+  ...
+# Subtest: M10 partial dot and precision exhaustion preserve entireoriginal
+ok 10 - M10 partial dot and precision exhaustion preserve entireoriginal
+  ---
+  duration_ms: 0.853163
+  type: 'test'
+  ...
+# Subtest: M11 intersection removes only25..75 interval and preserves exactundo
+ok 11 - M11 intersection removes only25..75 interval and preserves exactundo
+  ---
+  duration_ms: 0.70106
+  type: 'test'
+  ...
+# Subtest: M12 intersection endpoints/zeroalpha/collinear boundaries
+ok 12 - M12 intersection endpoints/zeroalpha/collinear boundaries
+  ---
+  duration_ms: 0.296441
+  type: 'test'
+  ...
+# Subtest: M13 tangent V touching line is notintersection boundary
+ok 13 - M13 tangent V touching line is notintersection boundary
+  ---
+  duration_ms: 0.250489
+  type: 'test'
+  ...
+# Subtest: M14 intersection nonadjacent self crossing splits atpropercrossing
+ok 14 - M14 intersection nonadjacent self crossing splits atpropercrossing
+  ---
+  duration_ms: 0.160939
+  type: 'test'
+  ...
+# Subtest: M15 immutable repeatedbaseline erasure and boundedwork exhaustion
+ok 15 - M15 immutable repeatedbaseline erasure and boundedwork exhaustion
+  ---
+  duration_ms: 0.417718
+  type: 'test'
+  ...
+# Subtest: M16 zoom model invalid values cannotpoison view
+ok 16 - M16 zoom model invalid values cannotpoison view
+  ---
+  duration_ms: 0.219655
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1076.759059

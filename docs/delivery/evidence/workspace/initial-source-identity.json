@@ -1,0 +1,19 @@
+{
+  "source": {
+    "prototypes/browser-workspace/sw.js": "8357b6e108af7474a4d8ebba4fd5481627179a052179b6e55d48a8d3d600e86c",
+    "prototypes/browser-workspace/manifest.webmanifest": "86e2ecbe10b5e4eda170efe463ca730f7195fef2ef232420c0782d0958ba9598",
+    "prototypes/browser-workspace/app.js": "114949535236cccc1c5c7b69547ce16dfb41078ccef4aa598b49848db40a055d",
+    "prototypes/browser-workspace/model.js": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+    "prototypes/browser-workspace/icon.svg": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+    "prototypes/browser-workspace/render.js": "db0b0cf8cb95c3ec2826518a7ce74be71adf9d05d7ec0265b5f1da2d2e5b8bec",
+    "prototypes/browser-workspace/storage.js": "379c00ea59f623ae1bb6d75790ef786e9b1f9c892ca4d8f2f1910101e9e50964",
+    "prototypes/browser-workspace/style.css": "1c3d7aeb03a3a8de109a03ddaaea96f954acfb1bab5b8fa2bdcdbf6b1a2982cf",
+    "prototypes/browser-workspace/index.html": "46d52866266104e9c32562b05096769a9e53c8a76dc0101fb02946685235d4ac",
+    "prototypes/browser-workspace/README.md": "3c8207bcf0e71f1e4b11d9092a20fa6c00b49801afcc47d71836250035eedd00"
+  },
+  "model_cases": 16,
+  "local_model_pass": 16,
+  "browser": "PENDING",
+  "repairs_consumed": 1,
+  "production_authorization": false
+}

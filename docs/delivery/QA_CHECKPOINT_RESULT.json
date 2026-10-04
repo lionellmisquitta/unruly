@@ -1,63 +1,73 @@
 {
-  "checkpoint_id": "P0a-WIN-D1",
+  "packet": "WB1",
+  "adversary": "Isolated same-model Codex QA fallback; independent tests/evidence assessment; no application repairs by QA",
   "builder": "Codex root",
-  "adversary": "Codex windows_slice_qa, fresh isolated same-model fallback",
-  "source_sha256": {
-    "capture_model.hpp": "e9fab3be87a4bb6591f038613febffba32f957046d943a67cc5b6e0cbf2bc877",
-    "windows_main.cpp": "0afff682c0f547962c6b15b1dafe39d6273e6d5433dd3be39a3e5c0ce7debf2d",
-    "model_tests.cpp": "98c1d1b3fcb9bbfe7b39d12e398b3df285230b1d5d438136a83184faecc86e53",
-    "build-windows.cmd": "b689c26a2c85e1817f657037935d57fda077a4e93079435e2293e47f6eac2661",
-    "smoke-windows.ps1": "fd8add7e0b45991e8d25ef6fc538ac4a77afadd6852a1ee35bc85bc359853c00"
+  "candidate_status": "AUTOMATED_CANDIDATE_PASS",
+  "overall_status": "BLOCKED_FOR_FULL_PRODUCT_RELEASE",
+  "commit": "80c5bbe86cde4c41a81e354f296ff5d203019888",
+  "ci_run": 37223520128,
+  "artifact_id": 11310983072,
+  "artifact_sha256_independently_verified": "01f381c6457c3f58204b9578cef58b8176ebe841aa9a13a4d41fe932b8ee65ce",
+  "source_identity": {
+    "entries": 16,
+    "all_match": true,
+    "receipt": "evidence/workspace/ci-2/qa-source-hash-verification.json"
   },
-  "host": "Linux-6.18.44-x86_64-with-glibc2.39",
-  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
-  "compile_command": "g++ -std=c++17 -Wall -Wextra -Werror prototypes/windows-input-slice/model_tests.cpp -o /tmp/unruly-windows-slice-model-tests",
-  "build_sha256": "18f34ff41e786bde3d426944c8f7941d009ad3e83d0374954c07c555a4f4e8b4",
-  "test_result": {
-    "designed_cases": 12,
-    "host_model_executed": 9,
-    "passed": 9,
+  "model": {
+    "executed": 16,
+    "passed": 16,
     "failed": 0,
-    "windows_compile": "PASS",
-    "windows_smoke": "PASS",
-    "physical_pen": "NOT_VERIFIED",
-    "post_merge_regression": "NOT_VERIFIED",
-    "windows_model_executed": 9,
-    "windows_model_passed": 9,
-    "painted_status": "NOT_VERIFIED"
+    "skipped": 0,
+    "receipt": "evidence/workspace/ci-2/model-output.txt"
   },
-  "repair_cycles": 0,
-  "paid_external_calls": 0,
-  "status": "BLOCKED",
-  "status_reason": "Host and Windows model suites and native Windows startup/title/visibility/close passed. Painted diagnostics and physical-device input/pressure criteria remain NOT_VERIFIED. No merged commit/regression or production authorization.",
-  "static_review": "No material release-blocking defect found in bounded diagnostic code or candidate workflow; diagnostics note in QA report.",
-  "production_authorized": false,
-  "evidence": [
-    "WINDOWS_QA_PLAN.md",
-    "evidence/host-model-output.txt",
-    "WINDOWS_QA_RESULT.md",
-    "evidence/windows-ci-job.log",
-    "evidence/windows-artifact/identity.json",
-    "evidence/windows-artifact/window-smoke.json",
-    "evidence/windows-artifact/hash-verification.json"
-  ],
-  "merged_commit": null,
-  "windows_evidence": {
-    "commit": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7",
-    "run_id": 37149560536,
-    "job_id": 111280335890,
-    "artifact_id": 11283555927,
-    "zip_sha256": "23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e",
-    "exe_sha256": "875f5aacf8661e92db4c186799a181a081e5061e82f070e5eb9f964aa6467a75",
-    "source_checkout": "All five raw Windows source identities independently reproduced from repository LF bytes converted to CRLF. Source bytes not otherwise changed.",
-    "compiler": "MSVC 19.44.35229 x64, /W4 /WX",
-    "window_checks": [
-      "main HWND exists",
-      "IsWindowVisible true",
-      "expected title",
-      "WM_CLOSE",
-      "exit 0"
-    ],
-    "independent_artifact_check": "Exact ZIP digest and both contained binary SHA256 hashes matched CI identities."
-  }
+  "browser": {
+    "version": "151.0.7922.34",
+    "node": "v22.23.3",
+    "executed": 15,
+    "passed": 15,
+    "failed": 0,
+    "uncaught_console_errors": 0,
+    "synthetic_cdp_input": true,
+    "receipt": "evidence/workspace/ci-2/browser-results.json"
+  },
+  "renderer_measurement": {
+    "p50_ms": 54,
+    "p95_ms": 62.70000000001164,
+    "maximum_ms": 62.70000000001164,
+    "p95_bound_ms": 250,
+    "maximum_bound_ms": 1000,
+    "workload": "8layers/10000points1440x950DPR1",
+    "surfaces": 3,
+    "physical_feel": "NOT_VERIFIED"
+  },
+  "budget": {
+    "application_repairs_used": 2,
+    "application_repairs_maximum": 2,
+    "ci_attempts_used": 2,
+    "ci_attempts_maximum": 3,
+    "paid_model_calls": 0
+  },
+  "initial_failures_retained": {
+    "model": "evidence/workspace/initial-model-output.txt",
+    "browser": "evidence/workspace/ci-1/browser-results.json",
+    "browser_defects": [
+      "W03 release endpoint omitted",
+      "W11 reopened-board selection lost on reload"
+    ]
+  },
+  "backend": "N/A: no product server/API/Drive/AI integration in WB1; real IndexedDB migration, transactions, conflicts and recovery were tested",
+  "physical_pen": "NOT_VERIFIED",
+  "device_feel": "NOT_VERIFIED",
+  "native_windows_android_packages": "NOT_VERIFIED by this browser run",
+  "hosted_updated_candidate": "NOT_VERIFIED",
+  "merged_product_regression": "NOT_VERIFIED",
+  "tablet_device_performance": "NOT_VERIFIED; responsive screenshot only, measured renderer workload desktop synthetic",
+  "production_authorization": false,
+  "checkpoint_closed": false,
+  "promotion_authority": "Software Delivery Gatekeeper",
+  "screenshots_reviewed": [
+    "W02-brush-controls-and-reopen.png",
+    "W01-mobile-controls.png",
+    "W06-paper-layers-controls.png"
+  ]
 }

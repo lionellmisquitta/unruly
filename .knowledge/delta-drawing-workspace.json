@@ -2,19 +2,80 @@
   "id": "delta-drawing-workspace-2026-10-04",
   "source": "User next-batch instruction and WB1 contract/readiness",
   "nodes": [
-    {"id":"WB1","kind":"delivery_batch","status":"QUARANTINED_IMPLEMENTATION","evidence":"docs/delivery/WORKSPACE_BATCH_CONTRACT.md"},
-    {"id":"workspace-v2","kind":"document_schema","status":"IMPLEMENTED_NOT_BROWSER_VERIFIED","evidence":"prototypes/browser-workspace/model.js"},
-    {"id":"vector-brushes","kind":"drawing_renderer","status":"IMPLEMENTED_NOT_BROWSER_VERIFIED","evidence":"prototypes/browser-workspace/render.js"},
-    {"id":"vector-erasers","kind":"drawing_geometry","status":"MODEL_TESTED_BROWSER_PENDING","evidence":"tests/browser-workspace/model.test.mjs"},
-    {"id":"legacy-copy","kind":"migration","status":"IMPLEMENTED_NOT_BROWSER_VERIFIED","evidence":"prototypes/browser-workspace/storage.js"}
+    {
+      "id": "WB1",
+      "kind": "delivery_batch",
+      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "evidence": "docs/delivery/WORKSPACE_BATCH_CONTRACT.md"
+    },
+    {
+      "id": "workspace-v2",
+      "kind": "document_schema",
+      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "evidence": "prototypes/browser-workspace/model.js"
+    },
+    {
+      "id": "vector-brushes",
+      "kind": "drawing_renderer",
+      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "evidence": "prototypes/browser-workspace/render.js"
+    },
+    {
+      "id": "vector-erasers",
+      "kind": "drawing_geometry",
+      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "evidence": "tests/browser-workspace/model.test.mjs"
+    },
+    {
+      "id": "legacy-copy",
+      "kind": "migration",
+      "status": "AUTOMATED_CANDIDATE_PASS_PREVIEW_REVIEW_PENDING",
+      "evidence": "prototypes/browser-workspace/storage.js"
+    }
   ],
   "edges": [
-    {"from":"WB1","to":"workspace-v2","relation":"delivers"},
-    {"from":"WB1","to":"vector-brushes","relation":"delivers"},
-    {"from":"WB1","to":"vector-erasers","relation":"delivers"},
-    {"from":"workspace-v2","to":"legacy-copy","relation":"copies_without_overwriting_foundation"}
+    {
+      "from": "WB1",
+      "to": "workspace-v2",
+      "relation": "delivers"
+    },
+    {
+      "from": "WB1",
+      "to": "vector-brushes",
+      "relation": "delivers"
+    },
+    {
+      "from": "WB1",
+      "to": "vector-erasers",
+      "relation": "delivers"
+    },
+    {
+      "from": "workspace-v2",
+      "to": "legacy-copy",
+      "relation": "copies_without_overwriting_foundation"
+    }
   ],
-  "durable_decisions": ["Browser-first GitHub Pages", "MIT original algorithms", "One combined human review", "No paid external model CLI/API calls", "Original v1 database and native evidence preserved"],
-  "unverified": ["Actual browser QA", "Physical Surface/Lenovo/Xiaomi pressure and feel", "Google Drive sync", "Raster/smudge/watercolour/clipping/blends", "Full product checkpoint closure"],
-  "production_authorization": false
+  "durable_decisions": [
+    "Browser-first GitHub Pages",
+    "MIT original algorithms",
+    "One combined human review",
+    "No paid external model CLI/API calls",
+    "Original v1 database and native evidence preserved"
+  ],
+  "unverified": [
+    "Physical Surface/Lenovo/Xiaomi pressure and feel",
+    "Google Drive sync",
+    "Raster/smudge/watercolour/clipping/blends",
+    "Full product checkpoint closure"
+  ],
+  "production_authorization": false,
+  "actual_qa": {
+    "source_commit": "80c5bbe86cde4c41a81e354f296ff5d203019888",
+    "ci_run": 37223520128,
+    "model_cases": 16,
+    "browser_journeys": 15,
+    "source_hashes_verified": 16,
+    "surface_count": 3,
+    "synthetic_input": true
+  }
 }

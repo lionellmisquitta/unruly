@@ -210,3 +210,8 @@ User authorised next batch: controls/paper/layers, four original vector brushes,
 ## WB1 initial browser QA and final bounded repair
 
 Initial actual CI37222940471:16modelPASS/12of14ChromiumPASS. Endpoint and selected-board persistence failures repaired in cycle2/2; queued preview/mode/export issues fixed. Retest pending with15 browser journeys including partialmigrationquota. No remaining source repair budget; current live app unchanged. Source/test identities and initial receipts retained; productionfalse0/14.
+
+
+## WB1 independent candidate acceptance
+
+Exact80c5bbe86cde4c41a81e354f296ff5d203019888 CI37223520128 passed16model/15Chromiumjourneys; artifact11310983072 SHA25601f381c6457c3f58204b9578cef58b8176ebe841aa9a13a4d41fe932b8ee65ce. Independent QA reproduced16sourceidentities and accepted candidate. Independent Gatekeeper authorised exacttestedworkspace preview via existing ownerallowedPagesbranch, no main/release grant. Renderer syntheticp95/max62.7ms notpenfeel/60Hzcertification. Repairs2/2,CI2/3,paidmodelcalls0. Deployment/live verificationpending; see WORKSPACE_FINAL_GATEKEEPER.md and WORKSPACE_QA_REPORT.md. Formal product0/14, productionfalse.

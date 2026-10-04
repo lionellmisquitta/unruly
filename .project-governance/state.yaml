@@ -558,3 +558,20 @@ browser_workspace_repair_2_2026_10_04:
   source_budget_stop_on_further_defect: true
   production_authorization: false
   product_checkpoints_closed: 0
+
+browser_workspace_candidate_acceptance_2026_10_04:
+  exact_source_commit: 80c5bbe86cde4c41a81e354f296ff5d203019888
+  successful_ci_run: 37223520128
+  model_pass: 16
+  browser_pass: 15
+  source_hashes_verified: 16
+  independent_qa: AUTOMATED_CANDIDATE_PASS
+  independent_gatekeeper: REVIEWED_PREVIEW_DEPLOYMENT_AUTHORIZED
+  actual_pages_workflow_reviewed: true
+  deployment_status: PENDING
+  source_repairs_used: 2
+  ci_runs_used: 2
+  paid_external_model_calls: 0
+  physical_pen: NOT_VERIFIED
+  production_authorization: false
+  product_checkpoints_closed: 0

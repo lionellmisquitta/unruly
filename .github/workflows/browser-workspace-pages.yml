@@ -1,0 +1,38 @@
+name: Reviewed UNRULY workspace preview
+on:
+  push:
+    branches: ['preview/browser-foundation-2026-10-04']
+    paths: ['.github/workflows/browser-workspace-pages.yml']
+permissions:
+  contents: read
+concurrency:
+  group: unruly-workspace-pages
+  cancel-in-progress: false
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 80c5bbe86cde4c41a81e354f296ff5d203019888
+          persist-credentials: false
+      - name: Verify reviewed candidate identity
+        run: test "$(git rev-parse HEAD)" = "80c5bbe86cde4c41a81e354f296ff5d203019888"
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+        with:
+          enablement: false
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: prototypes/browser-workspace
+      - name: Deploy reviewed static preview
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+

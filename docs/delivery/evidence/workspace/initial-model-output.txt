@@ -1,0 +1,62 @@
+✔ M01 schema metadata/global identity/finite pressure rejects malformed inputs (2.594172ms)
+✔ M02 global layer/stroke/point/serialized limits (64.178379ms)
+✔ M03 document commands immutable rejected edits preserve source (1.737954ms)
+✔ M04 layer lifecycle metadata/order/active/delete undo and last-layer refusal (0.725652ms)
+✔ M05 hidden/locked layer refuses stroke and erase; zero-opacity no command (0.744069ms)
+✔ M06 history count and16MiB byte bounds retain truthful eviction (1130.496972ms)
+✔ M07 legacy migration and import preserve input and remap every identity (4.409112ms)
+✔ M08 whole sparse sweep removes multiple hits onlyactive layer; source unchanged (1.113525ms)
+✔ M09 partial capsule cuts into two fresh styled pressure-interpolated fragments (0.623277ms)
+✔ M10 partial dot and precision exhaustion preserve entireoriginal (0.736097ms)
+✔ M11 intersection removes only25..75 interval and preserves exactundo (0.575596ms)
+✔ M12 intersection endpoints/zeroalpha/collinear boundaries (0.377007ms)
+✖ M13 tangent V touching line is notintersection boundary (0.728186ms)
+✔ M14 intersection nonadjacent self crossing splits atpropercrossing (0.268073ms)
+✔ M15 immutable repeatedbaseline erasure and boundedwork exhaustion (0.457918ms)
+✖ M16 zoom model invalid values cannotpoison view (0.309556ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 14
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1314.1342
+
+✖ failing tests:
+
+test at unruly-workspace-batch/tests/browser-workspace/model.test.mjs:19:1
+✖ M13 tangent V touching line is notintersection boundary (0.728186ms)
+  AssertionError [ERR_ASSERTION]: tangent must not retain targetinterval
+      at TestContext.<anonymous> (file:///workspace/scratch/361b0c571efe/unruly-workspace-batch/tests/browser-workspace/model.test.mjs:19:264)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at unruly-workspace-batch/tests/browser-workspace/model.test.mjs:22:1
+✖ M16 zoom model invalid values cannotpoison view (0.309556ms)
+  AssertionError [ERR_ASSERTION]: finite safe view or rejection
+      at TestContext.<anonymous> (file:///workspace/scratch/361b0c571efe/unruly-workspace-batch/tests/browser-workspace/model.test.mjs:22:268)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
