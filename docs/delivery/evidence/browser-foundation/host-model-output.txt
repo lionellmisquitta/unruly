@@ -1,0 +1,17 @@
+✔ U01 valid board identity/unknown pressure and finite endpoints (4.659776ms)
+✔ U02 malformed header/version/title/revision/stroke identity rejected (1.410733ms)
+✔ U03 invalid finite coordinates/pressure/brush and missing points rejected (1.28676ms)
+✔ U04 stroke/point/serialized limits are enforced at boundary (140.685463ms)
+✔ U05 immutable add/undo/redo and branch clears redo (0.766473ms)
+✔ U06 whole-stroke eraser undo preserves stroke and revision (0.752338ms)
+✔ U07 empty history no-op and bounded undo retention (17.483151ms)
+✔ U08 zoom anchor remains stable and clamps finite transform (0.984544ms)
+✔ U09 invalid zoom cannot poison transform (0.398695ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 279.632916

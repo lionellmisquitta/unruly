@@ -1,0 +1,5 @@
+# WEB-F1 bounded repair record
+
+Independent QA identified missing pointerup endpoint, update protocol mismatch, synchronous IndexedDB quota exception propagation, save/transition input races, absent-record board-limit bypass and inactive rename selection changes. One consolidated Builder repair batch corrected these before the first CI run. Recovery validates record identity/revision and preserves a last-good previous snapshot; offline install redundancy reports setup failure. QA assertions remain independently owned. Syntax checks passed; nine independent model cases passed locally. Actual browser evidence pending at this record's creation.
+
+Recovery allowance consumed: 1 of 1. Historical P0a two repair cycles remain preserved. Further diagnosed source failure stops this packet and requires a bounded replan; no automatic loop or cap reset. No paid external model CLI/API calls. Source identity: evidence/browser-foundation/repaired-source-sha256.txt. No production or product-checkpoint closure.

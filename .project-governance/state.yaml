@@ -467,3 +467,21 @@ windows_input_candidate_2026_10_04:
   independent_final_review: pending; see docs/delivery/GATEKEEPER_WINDOWS_CANDIDATE_REVIEW.md
     when created
   employer_security_changes: false
+
+
+browser_foundation_2026_10_04:
+  plan: UNRULY-WEB-2026-10-04-R2
+  packet: WEB-F1
+  branch: preview/browser-foundation-2026-10-04
+  independent_prebuild_review: QUARANTINED_EXECUTION_PERMITTED
+  qa: PENDING_BROWSER_EXECUTION
+  product_checkpoints_closed: 0
+  product_checkpoints_total: 14
+  production_authorization: false
+  main_merge_authorized: false
+  pages_enabled: false
+  paid_model_subprocess_calls: 0
+  maximum_recovery_repairs: 1
+  native_history_preserved: true
+
+  recovery_repairs_consumed: 1

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "id": "delta-browser-foundation",
+  "date": "2026-10-04",
+  "scope": "WEB-F1",
+  "base_commit": "e7a408d0348ca436771fee41330436dc73d1d48f",
+  "decisions": [
+    {
+      "id": "browser-first",
+      "status": "user-selected",
+      "evidence": "conversation:GitHub URL approach"
+    },
+    {
+      "id": "WEB-F1-quarantine",
+      "status": "execution-permitted",
+      "evidence": "docs/delivery/BROWSER_GATEKEEPER_READINESS.md"
+    }
+  ],
+  "claims": {
+    "product_checkpoints_closed": 0,
+    "production_authorization": false,
+    "browser_runtime_tests": "pending",
+    "live_deployment": "not performed",
+    "native_hardware": "not verified",
+    "recovery_repairs_consumed": 1
+  },
+  "preservation": "Prior native evidence and P0a repair history retained; no pass edges inferred."
+}

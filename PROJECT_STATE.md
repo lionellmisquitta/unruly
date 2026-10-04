@@ -175,3 +175,9 @@ Curated preparation/prototype snapshot published via authenticated GitHub connec
 Latest user approval lifts the hold only for P0a-WIN-D1; see docs/delivery/EXECUTION_APPROVAL.json and GATEKEEPER_EXECUTION_SCOPE.md. Independent host nine cases passed; actual Windows MSVC compile, the same nine model cases, and visible-window/startup/title/close smoke passed against fb7ab408c8dabb48e31415e51e0201ba7bce1ab7 (CI run 37149560536).
 
 Candidate is on personal prep/native-windows-input-2026-10-04. Physical Surface/Lenovo input and painted status remain NOT_VERIFIED. Original blocked Windows nine-case regression and Android are distinct and remain open. No repair, employer security change, laptop agent launch, main merge or release. Production authorization false; product checkpoints closed 0/14. Final independent candidate review is recorded separately under docs/delivery.
+
+
+## Browser foundation continuation — 4 October 2026
+
+User selected browser-first delivery at a GitHub Pages URL; native enhancements deferred. WEB-F1 is a quarantined foundation preview under UNRULY-WEB-2026-10-04-R2, independently reviewed before implementation. Drawing/navigation/history/local-board storage and offline-update candidate is now under independent QA; no executed browser PASS or live deployment is claimed here. Native source/evidence preserved. Product checkpoints closed: 0/14. Production authorization false; no main merge. External paid model CLI/API calls: 0. One recovery repair maximum is reserved; historical P0a cycles remain preserved. Repository Pages setup remains blocked (has_pages=false); no administrative workaround or repo visibility change.
+
