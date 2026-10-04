@@ -41,13 +41,21 @@
       "physical_pen": "NOT_VERIFIED"
     },
     "native_hardware": "not verified",
-    "recovery_repairs_consumed": 1
+    "recovery_repairs_consumed": 1,
+    "human_feedback": {
+      "basic_drawing": "worked",
+      "features": "below expectation",
+      "control_issue": "open",
+      "paper_layers_brushes_erasers": "pending",
+      "device": "not specified"
+    }
   },
   "preservation": "Prior native evidence and P0a repair history retained; no pass edges inferred.",
   "evidence": [
     "docs/delivery/BROWSER_QA_RESULT.json",
     "docs/delivery/evidence/browser-foundation/ci-37180183813/browser-results.json",
     "docs/delivery/evidence/browser-foundation/hosted-assets.json",
-    "docs/delivery/evidence/browser-foundation/hosted-bundle-boundary.json"
+    "docs/delivery/evidence/browser-foundation/hosted-bundle-boundary.json",
+    "docs/delivery/BROWSER_WORKSPACE_FEEDBACK_PLAN.md"
   ]
 }
