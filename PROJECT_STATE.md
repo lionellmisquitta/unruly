@@ -185,3 +185,8 @@ User selected browser-first delivery at a GitHub Pages URL; native enhancements 
 ### Browser foundation executable result
 
 Reviewed source/test identity: 66152b32e9544bd383587adbbacbd495e0be3a2f. CI 37180183813 passed all nine model cases and twelve actual Chromium journeys. Independent QA validated fourteen hashes, recovery/quota/concurrent-tabs/offline/update safety and desktop/tablet/360px screenshots. Earlier CI 37179952664 retained eleven browser passes and one test synchronization failure; bounded fixture-only wait preserved the assertion and app bytes. Chromium 151.0.7922.34, Node 22.23.3. Automated candidate passes; hosted URL, physical pens/feel and merged product regression remain unverified. One source repair consumed; no automatic continuation. Pages still not enabled; prepared deployment uses only the immutable tested static directory and requires legitimate owner setup. No main merge, production authorization or product checkpoint closure.
+
+
+## Pages setup and deployment attempt — 4 October 2026 evening IST
+
+Owner enabled GitHub Actions Pages and explicitly accepted public repository visibility. API confirms Pages enabled/public repo. Reviewed deployment run37218275559 on d6db892c37641dff0648e09df9f899d8e50dfd19 was rejected before execution: github-pages environment branch protections exclude preview/browser-foundation-2026-10-04. No application change, no live URL, no security-policy bypass or main merge. Owner must add only that exact branch under Settings/Environments/github-pages/Deployment branches and tags. Successful9model/12Chromium candidate unchanged; production false,0/14 checkpoints closed. Details docs/delivery/BROWSER_HOSTING_STATUS.md.

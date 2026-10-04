@@ -492,3 +492,13 @@ browser_foundation_2026_10_04:
   hosted_url_verified: false
   physical_pen_verified: false
   fixture_diagnostic_reruns: 1
+
+browser_pages_evening_2026_10_04:
+  owner_public_visibility_accepted: true
+  pages_enabled: true
+  deployment_run: 37218275559
+  deployment_status: BLOCKED_ENVIRONMENT_BRANCH_POLICY
+  exact_branch_required: preview/browser-foundation-2026-10-04
+  hosted_url_verified: false
+  production_authorization: false
+  main_merge: false

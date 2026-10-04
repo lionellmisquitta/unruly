@@ -14,6 +14,12 @@
       "id": "WEB-F1-quarantine",
       "status": "execution-permitted",
       "evidence": "docs/delivery/BROWSER_GATEKEEPER_READINESS.md"
+    },
+    {
+      "id": "owner-public-pages-setup",
+      "status": "user-confirmed and repository-verified",
+      "date": "2026-10-04",
+      "evidence": "conversation + repository API private=false/has_pages=true"
     }
   ],
   "claims": {
@@ -26,7 +32,7 @@
       "ci_run": 37180183813,
       "commit": "66152b32e9544bd383587adbbacbd495e0be3a2f"
     },
-    "live_deployment": "blocked Pages owner setup",
+    "live_deployment": "blocked github-pages environment branch policy; run37218275559",
     "native_hardware": "not verified",
     "recovery_repairs_consumed": 1
   },
