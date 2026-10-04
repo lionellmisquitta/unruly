@@ -12,14 +12,23 @@
     "node": "v24.19.0"
   },
   "browser": {
-    "run_id": 37179952664,
-    "commit": "41cd77ffbe2dc1b3a935faa25058b26d84464636",
+    "run_id": 37180183813,
+    "artifact_id": 11294578505,
+    "artifact_sha256_receipt": "f5c8e891f6224c4ff660f1bfed9caf66de761b21a8ff316b253f5f40073895ab",
+    "commit": "66152b32e9544bd383587adbbacbd495e0be3a2f",
     "version": "151.0.7922.34",
+    "node": "22.23.3",
     "executed": 12,
-    "passed": 11,
-    "failed": 1,
-    "classification": "F05 test synchronization defect, remaining assertions NOT_VERIFIED",
-    "diagnosis": "BROWSER_QA_FIXTURE_DIAGNOSIS.md"
+    "passed": 12,
+    "failed": 0,
+    "uncaught_console_errors": 0,
+    "source_identity_checks": "All14 SHA256 entries independently reproduced against current local files; app sources identical to initialrun; only QA wait synchronization changed",
+    "screenshots_reviewed": [
+      "F01-mobile.png",
+      "F01-tablet.png",
+      "F05-reopen-new-export.png"
+    ],
+    "status": "AUTOMATED_CANDIDATE_PASS"
   },
   "workflow_static_review": "PERMITTED for bounded QA-only evidence: branch/path scope, contents:read, pinned official actions verified by parent,10min,7day retention,npm ci lock,no deployment or secrets",
   "lock_generation": {
@@ -45,6 +54,25 @@
   },
   "physical_pen": "NOT_VERIFIED",
   "production_authorized": false,
-  "status": "BLOCKED pending bounded fixture retest and Gatekeeper",
-  "closure_authority": "Gatekeeper"
+  "status": "BLOCKED for full checkpoint closure: physical input/feel, hosting verification and merged product regression outstanding",
+  "closure_authority": "Gatekeeper",
+  "initial_browser_run": {
+    "run_id": 37179952664,
+    "commit": "41cd77ffbe2dc1b3a935faa25058b26d84464636",
+    "version": "151.0.7922.34",
+    "executed": 12,
+    "passed": 11,
+    "failed": 1,
+    "classification": "F05 test synchronization defect, remaining assertions NOT_VERIFIED",
+    "diagnosis": "BROWSER_QA_FIXTURE_DIAGNOSIS.md"
+  },
+  "hosted_url": "NOT_VERIFIED",
+  "merged_product_regression": "NOT_VERIFIED",
+  "candidate_handover_recommendation": "Eligible for independently reviewed quarantine publication/human device testing; no automation defect remains",
+  "evidence": [
+    "evidence/browser-foundation/ci-37180183813/browser-results.json",
+    "evidence/browser-foundation/ci-37180183813/model-output.txt",
+    "evidence/browser-foundation/ci-37180183813/source-sha256.txt",
+    "BROWSER_QA_FIXTURE_DIAGNOSIS.md"
+  ]
 }

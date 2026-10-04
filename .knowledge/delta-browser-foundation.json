@@ -19,10 +19,20 @@
   "claims": {
     "product_checkpoints_closed": 0,
     "production_authorization": false,
-    "browser_runtime_tests": "pending",
-    "live_deployment": "not performed",
+    "browser_runtime_tests": {
+      "status": "PASS",
+      "model": 9,
+      "browser_journeys": 12,
+      "ci_run": 37180183813,
+      "commit": "66152b32e9544bd383587adbbacbd495e0be3a2f"
+    },
+    "live_deployment": "blocked Pages owner setup",
     "native_hardware": "not verified",
     "recovery_repairs_consumed": 1
   },
-  "preservation": "Prior native evidence and P0a repair history retained; no pass edges inferred."
+  "preservation": "Prior native evidence and P0a repair history retained; no pass edges inferred.",
+  "evidence": [
+    "docs/delivery/BROWSER_QA_RESULT.json",
+    "docs/delivery/evidence/browser-foundation/ci-37180183813/browser-results.json"
+  ]
 }

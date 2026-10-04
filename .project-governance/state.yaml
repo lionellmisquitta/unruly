@@ -474,7 +474,7 @@ browser_foundation_2026_10_04:
   packet: WEB-F1
   branch: preview/browser-foundation-2026-10-04
   independent_prebuild_review: QUARANTINED_EXECUTION_PERMITTED
-  qa: PENDING_BROWSER_EXECUTION
+  qa: AUTOMATED_CANDIDATE_PASS
   product_checkpoints_closed: 0
   product_checkpoints_total: 14
   production_authorization: false
@@ -485,3 +485,10 @@ browser_foundation_2026_10_04:
   native_history_preserved: true
 
   recovery_repairs_consumed: 1
+  tested_commit: 66152b32e9544bd383587adbbacbd495e0be3a2f
+  successful_ci_run: 37180183813
+  model_cases_passed: 9
+  chromium_journeys_passed: 12
+  hosted_url_verified: false
+  physical_pen_verified: false
+  fixture_diagnostic_reruns: 1
