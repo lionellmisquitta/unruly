@@ -16,8 +16,8 @@
   "artifact_expires": "2026-10-11T05:33:44Z",
   "qa": "AUTOMATED_CANDIDATE_PASS",
   "gatekeeper": "QUARANTINED_PREVIEW_ACCEPTED",
-  "pages_enabled": false,
-  "hosted_url_verified": false,
+  "pages_enabled": true,
+  "hosted_url_verified": true,
   "physical_pen_verified": false,
   "product_checkpoints_closed": 0,
   "production_authorization": false,
@@ -26,6 +26,13 @@
   "fixture_diagnostic_reruns": 1,
   "external_model_subprocess_calls": 0,
   "original_state_prefix": "Exact original bytes restored/preserved before browser append; candidate intermediate line endings were normalized, semantic original text remained intact",
-  "deploy": "Prepared immutable candidate workflow, not enabled; requires legitimate owner Pages setup"
+  "deploy": "Successful reviewed quarantine preview; physical feel and production closure remain open",
+  "preview_url": "https://lionellmisquitta.github.io/unruly/",
+  "pages_run": 37218275559,
+  "pages_attempt": 3,
+  "deployment_workflow_commit": "d6db892c37641dff0648e09df9f899d8e50dfd19",
+  "pages_artifact": 11309396919,
+  "hosted_assets_matched": 8,
+  "hosted_mouse_smoke": "draw/Undo/Redo/save/reload observed",
+  "hosted_offline": "ready indicator observed; network-disabled hosting test not rerun"
 }
-

@@ -32,13 +32,22 @@
       "ci_run": 37180183813,
       "commit": "66152b32e9544bd383587adbbacbd495e0be3a2f"
     },
-    "live_deployment": "blocked github-pages environment branch policy; run37218275559",
+    "live_deployment": {
+      "status": "verified hosted preview",
+      "url": "https://lionellmisquitta.github.io/unruly/",
+      "run": 37218275559,
+      "attempt": 3,
+      "matched_assets": 8,
+      "physical_pen": "NOT_VERIFIED"
+    },
     "native_hardware": "not verified",
     "recovery_repairs_consumed": 1
   },
   "preservation": "Prior native evidence and P0a repair history retained; no pass edges inferred.",
   "evidence": [
     "docs/delivery/BROWSER_QA_RESULT.json",
-    "docs/delivery/evidence/browser-foundation/ci-37180183813/browser-results.json"
+    "docs/delivery/evidence/browser-foundation/ci-37180183813/browser-results.json",
+    "docs/delivery/evidence/browser-foundation/hosted-assets.json",
+    "docs/delivery/evidence/browser-foundation/hosted-bundle-boundary.json"
   ]
 }

@@ -190,3 +190,8 @@ Reviewed source/test identity: 66152b32e9544bd383587adbbacbd495e0be3a2f. CI 3718
 ## Pages setup and deployment attempt — 4 October 2026 evening IST
 
 Owner enabled GitHub Actions Pages and explicitly accepted public repository visibility. API confirms Pages enabled/public repo. Reviewed deployment run37218275559 on d6db892c37641dff0648e09df9f899d8e50dfd19 was rejected before execution: github-pages environment branch protections exclude preview/browser-foundation-2026-10-04. No application change, no live URL, no security-policy bypass or main merge. Owner must add only that exact branch under Settings/Environments/github-pages/Deployment branches and tags. Successful9model/12Chromium candidate unchanged; production false,0/14 checkpoints closed. Details docs/delivery/BROWSER_HOSTING_STATUS.md.
+
+
+## Hosted preview verified — 4 October 2026, 22:34–22:40 IST
+
+GitHub Pages run37218275559 attempt3 succeeded after owner corrected permitted branch to preview/browser-foundation-2026-10-04. Exact URL https://lionellmisquitta.github.io/unruly/ opened in remote Chrome. Mouse drawing, Undo/Redo, durable save and retained drawing after reload observed; “Ready for offline use” displayed. All8 deployed prototype files HTTP200 and byte-identical to reviewed candidate66152b32e9544bd383587adbbacbd495e0be3a2f. Root state/governance/QA paths return404 on site (repository itself public by owner decision). Captured logs contained browser-extension metadata errors; no app-origin error in returned entries. Hosted offline network-disable not rerun; prior CI verified offline. Surface/Lenovo/Xiaomi pressure/feel still NOT_VERIFIED. Human test card handed over; no advanced-feature continuation, main merge or product closure; productionfalse0/14.

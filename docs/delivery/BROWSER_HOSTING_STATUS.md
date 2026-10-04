@@ -1,7 +1,9 @@
-# Browser preview hosting — 4 October 2026, evening IST
+# Browser preview hosted — 4 October 2026
 
-Owner confirmed GitHub Actions Pages setup and explicitly accepted making lionellmisquitta/unruly public. Repository API confirms private=false and has_pages=true. Preview application source remains immutable reviewed/tested commit66152b32e9544bd383587adbbacbd495e0be3a2f:9model/12Chromium journeys passed. No feature code changed, no main merge or product closure.
+Live verified URL: https://lionellmisquitta.github.io/unruly/
 
-Reviewed Pages workflow activated on preview/browser-foundation-2026-10-04 by commitd6db892c37641dff0648e09df9f899d8e50dfd19. Run37218275559 rejected before runner execution. Actual check-run111483174886 annotation: Branch "preview/browser-foundation-2026-10-04" is not allowed to deploy to github-pages due to environment protection rules. No live URL or successful deployment is claimed.
+Reviewed Pages deployment run37218275559 attempt3 SUCCESS; Pages artifact11309396919. Immutable tested app66152b32e9544bd383587adbbacbd495e0be3a2f. All8 hosted app assets match; state/governance/QA site paths404. Remote Chrome mouse drawing, Undo/Redo, save and reload persistence observed. Offline-ready indicator observed; actual network-disabled offline verified in prior CI, not rerun on hosted origin. Browser extension metadata errors were recorded separately from app errors.
 
-Legitimate owner setup: Settings -> Environments -> github-pages -> Deployment branches and tags. Retain existing restrictions and add exact branch preview/browser-foundation-2026-10-04. Connector excludes administrative environment writes; no alternate environment, protection removal, default-branch merge or security bypass attempted. After owner confirms, rerun the reviewed Pages deployment and verify the actual URL/assets before physical test handover. BUILD_AUTHORIZED/production remain false, product checkpoint closures0/14; advanced features remain pending.
+Earlier attempts1/2 blocked by environment branch protection; owner corrected missing year prefix in branch policy, retaining main. No protection bypass or alternate environment used.
+
+Human Surface/Lenovo/Xiaomi pen pressure/latency/palm feel remains NOT_VERIFIED. Use BROWSER_HUMAN_TEST_CARD.md for batch feedback. Preview is quarantined, no main merge,0/14 product checkpoints closed, productionauthorizationfalse.

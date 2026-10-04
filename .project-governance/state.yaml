@@ -502,3 +502,17 @@ browser_pages_evening_2026_10_04:
   hosted_url_verified: false
   production_authorization: false
   main_merge: false
+
+browser_hosted_preview_2026_10_04:
+  url: https://lionellmisquitta.github.io/unruly/
+  deployment_run: 37218275559
+  deployment_attempt: 3
+  deployment_status: SUCCESS
+  immutable_app_commit: 66152b32e9544bd383587adbbacbd495e0be3a2f
+  hosted_assets_matched: 8
+  hosted_mouse_draw_save_undo_redo_reload: PASSED
+  offline_ready_indicator: OBSERVED
+  hosted_network_disabled_test: NOT_VERIFIED
+  physical_pen_feel: NOT_VERIFIED
+  production_authorization: false
+  product_checkpoints_closed: 0
