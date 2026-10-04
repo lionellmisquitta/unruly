@@ -205,3 +205,8 @@ User confirms basic drawing worked and states foundation is below expected featu
 ## WB1 drawing workspace batch — 4 October 2026
 
 User authorised next batch: controls/paper/layers, four original vector brushes, three erasers. Independent Gatekeeper accepted quarantined implementation after exact precision/work/history/render limits were recorded. Isolated source written under prototypes/browser-workspace;16 independent model cases pass after repair1/2. Actual browser QA pending; initial live foundation remains unchanged. One combined human review follows actual QA and separately reviewed immutable deployment. Zero paid external model calls; product checkpoints closed0/14, production/main/G14 false. See docs/delivery/WORKSPACE_EXECUTION_STATE.md.
+
+
+## WB1 initial browser QA and final bounded repair
+
+Initial actual CI37222940471:16modelPASS/12of14ChromiumPASS. Endpoint and selected-board persistence failures repaired in cycle2/2; queued preview/mode/export issues fixed. Retest pending with15 browser journeys including partialmigrationquota. No remaining source repair budget; current live app unchanged. Source/test identities and initial receipts retained; productionfalse0/14.

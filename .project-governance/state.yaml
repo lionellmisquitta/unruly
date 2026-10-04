@@ -545,3 +545,16 @@ browser_workspace_2026_10_04:
   production_authorization: false
   main_merge_authorized: false
   product_checkpoints_closed: 0
+
+browser_workspace_repair_2_2026_10_04:
+  initial_ci_run: 37222940471
+  initial_source_commit: 652c239ad8ccbd282af2a1c4e99c94ca696b69e5
+  initial_model_pass: 16
+  initial_browser_pass: 12
+  initial_browser_failed: 2
+  cumulative_source_repairs: 2
+  remaining_source_repairs: 0
+  next_actual_retest: PENDING
+  source_budget_stop_on_further_defect: true
+  production_authorization: false
+  product_checkpoints_closed: 0

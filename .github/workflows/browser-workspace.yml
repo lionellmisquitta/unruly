@@ -1,4 +1,4 @@
-name: Quarantined drawing workspace QA
+name: Quarantined browser foundation QA
 on:
   push:
     branches: ['preview/drawing-workspace-2026-10-04']

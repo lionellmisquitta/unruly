@@ -31,3 +31,13 @@ No Pages deployment is authorized by this preliminary report. Actual final indep
 ## State and evidence return
 
 Retain original WEB-F1 consumed1/1 and P0a2 histories. Record WB1 repair1 now and eventual repair2 separately, actualCI attempts<=3, fixture fixes versus application defects, tested identities and truthful target results. Existing0/14 product checkpoint closures, G14open and production/mainfalse remain unchanged. After exact evidence, Gatekeeper assesses the combined candidate for one human batch handover. No unrelated feature queue or paid CLI/API calls.
+
+## Repair2 static follow-up — actual initial CI preserved
+
+Read WORKSPACE_REPAIR_2.md and repaired app/storage/render source. Initial CI37222940471 on652c239ad8ccbd282af2a1c4e99c94ca696b69e5 remains16modelPASS,12/14browserPASS with W03 final endpoint and W11 selected-board failures. Artifact11310344074 / SHA2564eed4224dccee5f88d8810a38b052dbfeb3890b6e1a6e3d0cb7c3d6cbf008059 is the reported initial evidence receipt, not a final candidate pass.
+
+Static inspection confirms repair2 changes are present: pointerup location/final eraser sweep precede commit; eraser mode/radius captured once at contact; preview now reuses the existing two scratch surfaces with image output rather than allocating a second renderer; compact JSON export aligns with import byte limit; storage selection transaction exists. Actual tests must prove selection completion/reload, global3-surface behavior, endpoint/cancel and migration/quota/frozen-control paths. Source presence alone is not PASS.
+
+All WB1 Builder source repair budget is now consumed2/2. The bounded actual retest may proceed with independent assertions and exact identities; no more application repairs are authorized from this report. QA-owned fixture/tooling defects, if demonstrated from actual evidence, are classified separately and cannot weaken application expectations or reset the source cap. Actual runtime failure requiring more app changes stops/replans.
+
+Prospective immutable Pages workflow must use the **eventual passing retest source SHA**, which is not supplied yet and must not be guessed. It may be introduced on the existing owner-approved preview/browser-foundation branch while checking out that exact reviewed workspace commit and uploading only prototypes/browser-workspace. QA workflow remains non-deploying. No activation until independent actual QA + Gatekeeper final candidate disposition and actual workflow inspection. Preserve original rollback and bothDB namespaces.
