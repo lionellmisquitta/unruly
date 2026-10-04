@@ -1,0 +1,68 @@
+{
+  "browser": "151.0.7922.34",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "F01-desktop",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F01-mobile",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F01-tablet",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F02-pen-lifecycle",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F03-touch-mouse-navigation",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F04-history-tools",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F05-reopen-new-export",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(await page.getByRole('dialog').isVisible())\n\n    at /home/runner/work/unruly/unruly/tests/browser-foundation/browser.test.cjs:33:847\n    at async run (/home/runner/work/unruly/unruly/tests/browser-foundation/browser.test.cjs:25:453)\n    at async /home/runner/work/unruly/unruly/tests/browser-foundation/browser.test.cjs:33:1",
+      "console_errors": []
+    },
+    {
+      "id": "F06-corrupt-recovery",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F07-write-failure-recovery",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F08-concurrent-tabs",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F09-offline-reload",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "F10-worker-update-safety",
+      "status": "PASS",
+      "console_errors": []
+    }
+  ]
+}

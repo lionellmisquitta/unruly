@@ -12,9 +12,14 @@
     "node": "v24.19.0"
   },
   "browser": {
-    "journeys_authored": 12,
-    "status": "NOT_VERIFIED",
-    "reason": "Actual Chromium CI required; no local installed browser execution claimed"
+    "run_id": 37179952664,
+    "commit": "41cd77ffbe2dc1b3a935faa25058b26d84464636",
+    "version": "151.0.7922.34",
+    "executed": 12,
+    "passed": 11,
+    "failed": 1,
+    "classification": "F05 test synchronization defect, remaining assertions NOT_VERIFIED",
+    "diagnosis": "BROWSER_QA_FIXTURE_DIAGNOSIS.md"
   },
   "workflow_static_review": "PERMITTED for bounded QA-only evidence: branch/path scope, contents:read, pinned official actions verified by parent,10min,7day retention,npm ci lock,no deployment or secrets",
   "lock_generation": {
@@ -34,12 +39,12 @@
     "tests/browser-foundation/package.json": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
     "tests/browser-foundation/TEST_PLAN.md": "3643f02c847eca8496a043bf7551d425839f51c230633dafc2f5ca2fa2055c6c",
     "tests/browser-foundation/server.cjs": "c7c30a4dd38352441a6c01ba93f7253e7c8ec84e6c75d1ae37b1b7c7019f0acd",
-    "tests/browser-foundation/browser.test.cjs": "39dffc91eaad54be752d94133ed718dd6a430a78bdbecc138a50d36465c4612d",
+    "tests/browser-foundation/browser.test.cjs": "af3365af65618d97a49c23189fe5de4910a5d66e48f0640ed8dac7892a18f21a",
     "tests/browser-foundation/model.test.mjs": "e95f915f02f502280f2fd82fef290324180794f16ad80a2b45fd9e6c80cae73c",
     ".github/workflows/browser-foundation.yml": "a16d7186788559344d544f8cf24cb82a66102f320b474a6e9e4325fdf500fdda"
   },
   "physical_pen": "NOT_VERIFIED",
   "production_authorized": false,
-  "status": "BLOCKED pending actual browser evidence",
+  "status": "BLOCKED pending bounded fixture retest and Gatekeeper",
   "closure_authority": "Gatekeeper"
 }
