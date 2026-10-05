@@ -1,7 +1,7 @@
 name: Quarantined browser foundation QA
 on:
   push:
-    branches: ['preview/drawing-workspace-2026-10-04']
+    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06']
     paths:
       - 'prototypes/browser-workspace/**'
       - 'tests/browser-workspace/**'
@@ -30,7 +30,7 @@ jobs:
           set -euo pipefail
           mkdir -p tests/browser-workspace/evidence
           node --version > tests/browser-workspace/evidence/node-version.txt
-          node --test tests/browser-workspace/model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1
+          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/server.log 2>&1 &
           qa_server_pid=$!
           trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
@@ -39,6 +39,15 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/browser.test.cjs > tests/browser-workspace/evidence/browser-output.txt 2>&1
+          kill "$qa_server_pid"
+          wait "$qa_server_pid" || true
+          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/server.log 2>&1 &
+          qa_server_pid=$!
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/selection.browser.cjs > tests/browser-workspace/evidence/selection-browser-output.txt 2>&1
       - name: Bind tested identities
         if: always()
         shell: bash
