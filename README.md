@@ -6,7 +6,7 @@ A browser-first, MIT-licensed personal drawing and infinite whiteboard project. 
 
 ## Current preview
 
-Paper backgrounds, Ink/Pencil/Marker/Airbrush, colour/size/opacity controls, layers, three vector eraser modes, undo/redo and local JSON boards are in the reviewed workspace. The next tested slice adds vector lasso, move and page-session copy/cut/paste/delete. See the current feature record for publication status. Device pen feel still requires human testing.
+Paper backgrounds, Ink/Pencil/Marker/Airbrush, colour/size/opacity controls, layers, three vector eraser modes, undo/redo and local JSON boards are in the reviewed workspace. The live reviewed preview also includes vector lasso, move and page-session copy/cut/paste/delete. See the current feature record for exact source and QA identities. Device pen feel still requires human testing.
 
 ## Continue browser delivery
 

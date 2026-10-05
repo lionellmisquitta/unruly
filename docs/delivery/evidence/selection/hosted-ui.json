@@ -1,0 +1,16 @@
+{
+  "url": "https://lionellmisquitta.github.io/unruly/",
+  "deployment_run": 37366698881,
+  "source": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+  "safeupdate_observed": true,
+  "existing_saved_drawing_retained": true,
+  "lasso_realclick_pressed_state": true,
+  "dottedpaper_saved": true,
+  "offline_ready_indicator": true,
+  "hosted_network_disabled_test": "NOT_REPEATED",
+  "full_hosted_selection_suite": "NOT_REPEATED; matching-source CI21journeysPASS",
+  "physical_pen": "NOT_VERIFIED",
+  "screenshot": "unruly-selection-live-20261006.jpg",
+  "broad_root_states_remote_unchanged": true,
+  "production_authorization": false
+}
