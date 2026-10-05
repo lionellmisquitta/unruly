@@ -1,0 +1,32 @@
+✔ M01 schema metadata/global identity/finite pressure rejects malformed inputs (2.339176ms)
+✔ M02 global layer/stroke/point/serialized limits (44.620652ms)
+✔ M03 document commands immutable rejected edits preserve source (1.999893ms)
+✔ M04 layer lifecycle metadata/order/active/delete undo and last-layer refusal (0.89759ms)
+✔ M05 hidden/locked layer refuses stroke and erase; zero-opacity no command (2.484812ms)
+✔ M06 history count and16MiB byte bounds retain truthful eviction (1133.819364ms)
+✔ M07 legacy migration and import preserve input and remap every identity (4.965086ms)
+✔ M08 whole sparse sweep removes multiple hits onlyactive layer; source unchanged (1.034663ms)
+✔ M09 partial capsule cuts into two fresh styled pressure-interpolated fragments (0.66138ms)
+✔ M10 partial dot and precision exhaustion preserve entireoriginal (0.726587ms)
+✔ M11 intersection removes only25..75 interval and preserves exactundo (0.57398ms)
+✔ M12 intersection endpoints/zeroalpha/collinear boundaries (0.37162ms)
+✔ M13 tangent V touching line is notintersection boundary (0.255539ms)
+✔ M14 intersection nonadjacent self crossing splits atpropercrossing (0.241057ms)
+✔ M15 immutable repeatedbaseline erasure and boundedwork exhaustion (0.510005ms)
+✔ M16 zoom model invalid values cannotpoison view (0.304111ms)
+✔ S01 centreline/dot/concave/edge truth, not bounding boxes (2.824014ms)
+✔ S02 polygon boundaries/area/work rejection leaves originals (2.346988ms)
+✔ S03 missing/nonactive/duplicate IDs and editable protection (1.275139ms)
+✔ S04 copy deep clone and hostile clipboard validation/bounds (22.781985ms)
+✔ S05 move exact style/pressure/ID and atomic coordinate rejection (0.806676ms)
+✔ S06 delete undo/redo and branching one command (0.378491ms)
+✔ S07 acrossboard repeated paste remaps all IDs and preserves clip (0.56021ms)
+✔ S08 combined capacity and retained bounded history atomicity (227.953008ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1286.775251

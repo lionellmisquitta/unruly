@@ -1,1 +1,31 @@
-{"checkpoint":"C06-S1","source_repair_batches":1,"limit":2,"qa_ci_runs":0,"qa_ci_limit":3,"repairs":[{"batch":1,"evidence":"Independent pre-CI source review","defects":["SVG hidden property did not reflect original hidden attribute","Inherited W12 update message assertion compatibility"],"changes":["SVG hidden attribute explicitly reflected","Update status retains Finish your stroke text and adds selection gesture"]}],"prior_WB1_source_batches":"2/2 unchanged","production_authorization":false}
+{
+  "checkpoint": "C06-S1",
+  "source_repair_batches": 1,
+  "limit": 2,
+  "qa_ci_runs": 2,
+  "qa_ci_limit": 3,
+  "repairs": [
+    {
+      "batch": 1,
+      "evidence": "Independent pre-CI source review",
+      "defects": [
+        "SVG hidden property did not reflect original hidden attribute",
+        "Inherited W12 update message assertion compatibility"
+      ],
+      "changes": [
+        "SVG hidden attribute explicitly reflected",
+        "Update status retains Finish your stroke text and adds selection gesture"
+      ]
+    }
+  ],
+  "prior_WB1_source_batches": "2/2 unchanged",
+  "production_authorization": false,
+  "qa_tooling_corrections": [
+    {
+      "ci": 1,
+      "cause": "fractional wheel-anchor fixture",
+      "application_changed": false,
+      "strict_assertions_retained": true
+    }
+  ]
+}

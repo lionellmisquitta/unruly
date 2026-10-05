@@ -1,0 +1,16 @@
+✔ S01 centreline/dot/concave/edge truth, not bounding boxes (3.726511ms)
+✔ S02 polygon boundaries/area/work rejection leaves originals (2.266018ms)
+✔ S03 missing/nonactive/duplicate IDs and editable protection (1.166348ms)
+✔ S04 copy deep clone and hostile clipboard validation/bounds (19.326938ms)
+✔ S05 move exact style/pressure/ID and atomic coordinate rejection (0.794687ms)
+✔ S06 delete undo/redo and branching one command (0.410208ms)
+✔ S07 acrossboard repeated paste remaps all IDs and preserves clip (0.531407ms)
+✔ S08 combined capacity and retained bounded history atomicity (201.457845ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 327.708713

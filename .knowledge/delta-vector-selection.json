@@ -1,1 +1,55 @@
-{"version":1,"checkpoint":"C06-S1","parent":"730280cf1e7424580ee9bb175fb116616f6d4a36","status":"IMPLEMENTED_QA_PENDING","as_built":["whole-vector-stroke lasso on active layer","move with one-command undo","page-session copy cut paste delete","passive SVG selection overlay","unchanged v2 persistence"],"evidence":{"local_unit":"24/24 PASS","actual_browser":"PENDING","independent_gatekeeper":"SELECTION_READINESS.md and SELECTION_CANDIDATE_REVIEW.md"},"repair_budget":{"source_batches":1,"maximum":2,"qa_ci_runs":0,"maximum_runs":3,"prior_WB1":"2/2 unchanged"},"pending":["actual Chromium added6 and retained15 journeys","reviewed immutable Pages publish","tablet physical feel","later C06 scaling rotation pointediting shapes ruler stabilizer"],"relationships":[{"from":"C06-S1","to":"C05/WB1 layers","type":"selects active editable layer"},{"from":"C06-S1","to":"C03/WB1 history","type":"one command per edit"},{"from":"C06-S1","to":"v2 device-local board","type":"preserves schema"}],"formal_checkpoints_closed":0,"production_authorization":false,"main_merge":false}
+{
+  "version": 1,
+  "checkpoint": "C06-S1",
+  "parent": "730280cf1e7424580ee9bb175fb116616f6d4a36",
+  "status": "PREVIEW_ACCEPTED_DEPLOY_PENDING",
+  "as_built": [
+    "whole-vector-stroke lasso on active layer",
+    "move with one-command undo",
+    "page-session copy cut paste delete",
+    "passive SVG selection overlay",
+    "unchanged v2 persistence"
+  ],
+  "evidence": {
+    "local_unit": "24/24 PASS",
+    "actual_browser": "21/21 PASS (15 inherited +6 selection)",
+    "independent_gatekeeper": "SELECTION_FINAL_GATEKEEPER.md",
+    "candidate": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+    "ci_unit": "24/24 PASS",
+    "ci_run": 37364993048,
+    "artifact_sha256": "da7b1d996623ef1a1043bc91b83c2682017398118839eb434adc1ad1072eacf1",
+    "independent_qa": "SELECTION_QA_REPORT.md"
+  },
+  "repair_budget": {
+    "source_batches": 1,
+    "maximum": 2,
+    "qa_ci_runs": 2,
+    "maximum_runs": 3,
+    "prior_WB1": "2/2 unchanged"
+  },
+  "pending": [
+    "reviewed immutable Pages publish",
+    "tablet physical feel",
+    "later C06 scaling rotation pointediting shapes ruler stabilizer"
+  ],
+  "relationships": [
+    {
+      "from": "C06-S1",
+      "to": "C05/WB1 layers",
+      "type": "selects active editable layer"
+    },
+    {
+      "from": "C06-S1",
+      "to": "C03/WB1 history",
+      "type": "one command per edit"
+    },
+    {
+      "from": "C06-S1",
+      "to": "v2 device-local board",
+      "type": "preserves schema"
+    }
+  ],
+  "formal_checkpoints_closed": 0,
+  "production_authorization": false,
+  "main_merge": false
+}
