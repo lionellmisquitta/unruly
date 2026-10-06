@@ -1,7 +1,7 @@
 // Compatibility adapter for inherited pre-popover UI journeys. Opens real controls
 // through actual visible toolbar/menu buttons; never invokes app handlers directly.
 const roleNames={New:'New board',Boards:'Gallery',Export:'Export JSON',Import:'Import JSON',Pen:'Brush',Pan:'Pan canvas',Lasso:'Lasso selection',Move:'Move selected strokes',Panels:'Layers','Close panels':'Close layers'};
-const ids={New:'new',Boards:'boards',Export:'export',Import:'import',Pen:'pen',Pan:'pan',Lasso:'lasso',Move:'move-selection',Panels:'layers-toggle','Close panels':'close-panels'};
+const ids={New:'new',Boards:'boards',Export:'export',Import:'import',Pen:'pen',Pan:'pan',Lasso:'lasso',Move:'move-selection',Panels:'layers-toggle','Close panels':'close-panels',Copy:'copy-selection',Cut:'cut-selection',Paste:'paste-selection','Delete selection':'delete-selection','Clear selection':'clear-selection'};
 const labels={'Size value':'Size in document units',Brush:'Brush type',Erase:'Erase mode',Background:'Pattern'};
 async function closeForDrawing(page){if(await page.locator('.popover:visible').count())await page.keyboard.press('Escape');}
 function install(page){const role=page.getByRole.bind(page),label=page.getByLabel.bind(page);
