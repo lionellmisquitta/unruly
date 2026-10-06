@@ -4,29 +4,54 @@
   "name": "unruly",
   "package_id": "urn:kgp:package:unruly",
   "created_at": "2026-10-06T12:32:05Z",
-  "updated_at": "2026-10-06T12:36:34Z",
+  "updated_at": "2026-10-06T16:12:00Z",
   "canonical_format": "jsonl",
-  "content_sha256": "e3cd981002b7eb2818d1a381973fa7e978ca6a81cca8ef60228ac41751af572f",
-  "validation": {"status":"valid","validated_at":"2026-10-06T12:36:34Z"},
+  "content_sha256": "07bceec26e5122498e326dcbeaab93ae2a81d8421b5baac7c31d563b0eb82244",
+  "validation": {
+    "status": "valid",
+    "validated_at": "2026-10-06T16:12:00Z"
+  },
   "counts": {
-    "graph/entities.jsonl": 81,
-    "graph/relationships.jsonl": 113,
-    "knowledge/confirmed.jsonl": 5,
+    "graph/entities.jsonl": 91,
+    "graph/relationships.jsonl": 131,
+    "knowledge/confirmed.jsonl": 8,
     "knowledge/tribal_knowledge.jsonl": 0,
-    "knowledge/tactical.jsonl": 2,
-    "knowledge/decisions.jsonl": 5,
+    "knowledge/tactical.jsonl": 3,
+    "knowledge/decisions.jsonl": 6,
     "knowledge/ideas.jsonl": 1,
     "knowledge/contradictions.jsonl": 2,
     "knowledge/unknowns.jsonl": 8,
-    "evidence/evidence.jsonl": 9,
-    "evidence/source_inventory.jsonl": 8
+    "evidence/evidence.jsonl": 12,
+    "evidence/source_inventory.jsonl": 11
   },
   "source_policy": "include accessible originals after sensitivity/confidentiality warning and user acknowledgement",
   "notes": [
     "Baseline reconstructed from Design Offline Whiteboard conversation, GitHub branch/compare metadata, project/governance state and selected delivery evidence.",
     "Graphify deterministic AST import deferred; container could not materialize GitHub repository.",
-    "Update cadence: after each 2-4 checkpoint review batch."
+    "Update cadence: after each 2-4 checkpoint review batch.",
+    "U1+U2 review batch merged: U1 and U2 promoted to accepted with exact checkpoint/CI evidence; U3 remains planned."
   ],
-  "scope": {"topic":"UNRULY offline browser-first whiteboard","expected_terms":["UNRULY","browser","whiteboard","drawing","selection","Procreate"]},
-  "visualization": {"status":"complete","overview_mode":"concepts","concept_count":54,"lenses":["overview","business","functional","technical","evidence"]}
+  "scope": {
+    "topic": "UNRULY offline browser-first whiteboard",
+    "expected_terms": [
+      "UNRULY",
+      "browser",
+      "whiteboard",
+      "drawing",
+      "selection",
+      "Procreate"
+    ]
+  },
+  "visualization": {
+    "status": "complete",
+    "overview_mode": "concepts",
+    "concept_count": 55,
+    "lenses": [
+      "overview",
+      "business",
+      "functional",
+      "technical",
+      "evidence"
+    ]
+  }
 }
