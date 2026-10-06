@@ -3,7 +3,7 @@
   "checkpoint": "P01",
   "preview_version": "0.3.0",
   "parent_source": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
-  "status": "CANDIDATE_PREPARATION",
+  "status": "REVIEWED_PREVIEW_DEPLOY_PENDING",
   "relationships": [
     {
       "from": "P01 retained live ink",
@@ -33,5 +33,22 @@
   ],
   "implemented_next_planned": false,
   "main_merge": false,
-  "production_authorization": false
+  "production_authorization": false,
+  "source": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "evidence": {
+    "qa_ci": 37396458278,
+    "qa_job": 112053501071,
+    "artifact": 11383418553,
+    "artifact_sha256": "a926a703f52a583d4ca85947ce75f1a716a47c9b1678fd1ca68c645987260302",
+    "model_passed": 24,
+    "browser_passed": 37,
+    "source_hashes_verified": 21,
+    "cached_renderer_p95_ms": 1.7,
+    "reference_renderer_p95_ms": 83.1,
+    "transient_nominal_bytes_peak": 83886080
+  },
+  "source_repairs": 1,
+  "qa_runs": 2,
+  "gatekeeper": "PERFORMANCE_FINAL_GATEKEEPER.md",
+  "physical_feel": "NOT_VERIFIED"
 }

@@ -4,7 +4,7 @@
   "builder_agent": "codex-root",
   "adversary": "isolated-same-model Quality Engineering Adversary; external alternate CLI unavailable here",
   "branch": "preview/performance-foundation-2026-10-06",
-  "commit_sha": "PENDING_IMPLEMENTATION_COMMIT",
+  "commit_sha": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
   "baseline_source": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
   "requirements": [
     "REQ-005 responsive pressure-sensitive handwriting",
@@ -63,5 +63,14 @@
   "environment": "GitHub Actions ubuntu24.04 Node pinned lock Playwright1.62.1 Chromium; local browser unavailable",
   "repair_limit": 2,
   "qa_run_limit": 3,
-  "production_authorization": false
+  "production_authorization": false,
+  "changed_files": [
+    "render.js",
+    "app.js",
+    "sw.js",
+    "prototype README",
+    "QA tests/reference fixture/workflow",
+    "scoped docs/knowledge"
+  ],
+  "actual_qa_run": 37396458278
 }

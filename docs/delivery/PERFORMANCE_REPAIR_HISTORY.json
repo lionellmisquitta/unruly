@@ -15,14 +15,18 @@
       "acceptance_threshold_changed": false,
       "local_geometry_probe_original": "FAIL peak134217728bytes",
       "local_geometry_probe_repaired": "PASS peak83886080bytes",
-      "actual_browser_retest": "PENDING"
+      "actual_browser_retest": "PASSED exact5b source37396458278 including60setter64snapshotbudgetcase"
     }
   ],
   "source_repairs_used": 1,
   "source_repairs_limit": 2,
-  "qa_runs_used": 1,
+  "qa_runs_used": 2,
   "qa_runs_limit": 3,
   "paid_external_model_calls": 0,
   "prior_budgets": "unchanged",
-  "production_authorization": false
+  "production_authorization": false,
+  "final_source": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "final_ci": 37396458278,
+  "final_qa": "PASSED",
+  "gatekeeper": "ACCEPTED_BOUNDED_IMMUTABLE_PREVIEW"
 }

@@ -22,10 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: e30e861745c48c5029c7f9f0d23a974ae8190c54
+          ref: 5bfe786d8018200b89049d1a8073a0eb78ab6077
           persist-credentials: false
       - name: Verify reviewed candidate identity
-        run: test "$(git rev-parse HEAD)" = "e30e861745c48c5029c7f9f0d23a974ae8190c54"
+        run: test "$(git rev-parse HEAD)" = "5bfe786d8018200b89049d1a8073a0eb78ab6077"
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
         with:
           enablement: false

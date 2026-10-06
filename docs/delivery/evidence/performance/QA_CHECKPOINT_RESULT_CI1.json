@@ -1,0 +1,74 @@
+{
+  "checkpoint_id": "P01",
+  "builder": "Codex",
+  "adversary": "Fresh isolated same-model Codex fallback; Claude local laptop unavailable; no paid external model invoked",
+  "branch": "preview/performance-foundation-2026-10-06",
+  "pre_merge_commit": "a3cda6ca13ce711b77a2eed24233aa3ae6958406",
+  "merged_commit": null,
+  "ci": {
+    "run_id": 37396036080,
+    "job_id": 112052095200,
+    "artifact_id": 11382953870,
+    "reported_zip_sha256": "b3b9d39e93fe6f5e69e805c9bd222fd4af5d85fa1b31138b0a8f694c5ebfb0ac",
+    "artifact_identity_note": "ZIP hash supplied by parent; extracted source hashes and result files independently inspected"
+  },
+  "repair_cycle_count": 1,
+  "qa_ci_runs_consumed": 1,
+  "source_repair_batches_started": 1,
+  "status": "FAILED",
+  "preview_publication_status": "BLOCKED",
+  "reason": "P01-A4 intermediate canvas allocation exceeds80MiB despite all original CI assertions passing. Known product defect overrides green prior suite. Repaired source/new native setter case require second CI.",
+  "execution_counts": {
+    "model_pass": 24,
+    "inherited_browser_pass": 21,
+    "performance_browser_pass": 15,
+    "original_ci_failures": 0,
+    "proven_additional_product_defects": 1
+  },
+  "tests_designed": "See QA_TEST_PLAN.md, including new native setter test",
+  "test_data_manifest": "QA_TEST_PLAN.md",
+  "benchmark": {
+    "cached_p95_ms": 2.7999999999883585,
+    "reference_p95_ms": 91,
+    "cached_reference_ratio": 0.030769230769102842,
+    "cached_target_ms": 16.7,
+    "relative_limit": 0.5,
+    "recomputed_nearest_rank_p95": true,
+    "cold_rebuild_max_ms": 77.10000000003492
+  },
+  "defects": [
+    {
+      "id": "P01-D01",
+      "classification": "PRODUCT_DEFECT",
+      "requirement": "P01-A4",
+      "reproduction": "DPR2 renderer1024x4096\u21924096x1024; first width assignment retains old4096 height while other4 surfaces remain16MiB each",
+      "expected_peak_bytes": 83886080,
+      "observed_candidate_peak_bytes": 134217728,
+      "evidence": "tests/browser-workspace/evidence/performance-transient-allocation-node-baseline.json",
+      "candidate_renderer_sha256": "731f23e8c287d238525db98137f7278fbcfcd2e84158527a7418775302b09eeb",
+      "status": "Repair staged; native Chromium regression pending",
+      "staged_repair_renderer_sha256": "eab54781655ad966e9baf9e516c1767a0d4aead884717f61e95529065390b843",
+      "staged_geometry_probe_peak_bytes": 83886080,
+      "scope_note": "Node probe runs actual renderer geometry with minimalcanvas dimension setters, no native pixel or GPU memory claim"
+    }
+  ],
+  "regression_scope": "Complete24-model/21-browser inherited core smoke and15 original performance groups; all original CI results passed. New native intermediate-allocation regression not yet executed.",
+  "source_binding": "21 source hashes checked against local originals;19 unchanged matches, render/performance test differ only as staged repair/test changes",
+  "evidence_locations": [
+    "ci-1/commit.txt",
+    "ci-1/source-sha256.txt",
+    "ci-1/model-output.txt",
+    "ci-1/browser-results.json",
+    "ci-1/selection-browser-results.json",
+    "ci-1/performance-browser-results.json",
+    "ci-1/performance-benchmark.json",
+    "../../../../tests/browser-workspace/evidence/performance-transient-allocation-node-baseline.json",
+    "../../../../tests/browser-workspace/evidence/performance-transient-allocation-node.json"
+  ],
+  "limits": [
+    "Physical pen feel NOT_VERIFIED",
+    "Full product/merged checkpoint closure remains separate",
+    "Native setter allocation regression requires secondCI",
+    "No production/main release authorization implied"
+  ]
+}

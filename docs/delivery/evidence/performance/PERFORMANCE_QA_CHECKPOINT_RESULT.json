@@ -1,0 +1,141 @@
+{
+  "checkpoint_id": "P01",
+  "objective": "Bounded retained live-ink performance preview v0.3.0",
+  "final_qa_status": "PASSED",
+  "scope": "Quarantined browser preview slice; no production/main/merged/physical checkpoint closure",
+  "builder_identity": "Codex",
+  "adversary_identity": "Fresh isolated same-model Codex fallback; preferred Claude local laptop unavailable; no paid external-model calls",
+  "branch": "preview/performance-foundation-2026-10-06",
+  "tested_source_commit": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "pre_merge_commit": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "merged_commit": null,
+  "merged_regression_status": "NOT_VERIFIED; separate checkpoint",
+  "repair_cycle_count": 1,
+  "source_repair_batches_consumed": 1,
+  "qa_ci_runs_consumed": 2,
+  "qa_ci_run_budget": 3,
+  "ci": {
+    "run_id": 37396458278,
+    "job_id": 112053501071,
+    "artifact_id": 11383418553,
+    "zip_sha256": "a926a703f52a583d4ca85947ce75f1a716a47c9b1678fd1ca68c645987260302",
+    "zip_digest_verification": "Root separately verified ZIP digest; adversary independently inspected extracted artifact and all21 bound source hashes",
+    "browser": "Chromium151.0.7922.34",
+    "node": "v22.23.3"
+  },
+  "execution_counts": {
+    "model_pass": 24,
+    "foundation_browser_pass": 15,
+    "selection_browser_pass": 6,
+    "performance_browser_pass": 16,
+    "total_groups_pass": 61,
+    "fail": 0,
+    "blocked": 0
+  },
+  "test_data_manifest": "QA_TEST_PLAN.md",
+  "tests_designed": "performance.browser.cjs, independently authored; only inherited W01/W04/W05/U05 fixed surface assertions changed3\u21925",
+  "pixel_evidence": {
+    "baseline_reference_cases": 1440,
+    "baseline_dpr": [
+      1,
+      2
+    ],
+    "cached_reference_cases": 1620,
+    "comparison": "every RGBA byte exact; zero tolerance"
+  },
+  "performance": {
+    "fixture": "8 layers / 10000 completed points / 4 brush mix / top active L7 / 128 point live ink / 1440x950 CSS / DPR1",
+    "warmup_pairs": 5,
+    "measured_pairs": 20,
+    "cached_p95_ms": 1.7000000000116415,
+    "reference_p95_ms": 83.10000000000582,
+    "cached_reference_ratio": 0.020457280385216877,
+    "target_ms": 16.7,
+    "relative_limit": 0.5,
+    "cold_rebuild_max_ms": 67.79999999998836,
+    "p95_independently_recomputed_from_raw_samples": true,
+    "measurement": "Renderer CPU duration only"
+  },
+  "allocation": {
+    "surfaces": 5,
+    "native_setter_assignments_inspected": 60,
+    "snapshots_inspected": 64,
+    "peak_nominal_rgba_bytes": 83886080,
+    "budget_bytes": 83886080,
+    "all_native_assignment_snapshots_within_budget": true,
+    "note": "Nominal canvas backing pixels; complete browser/GPU/process memory not measured"
+  },
+  "controller": {
+    "live_move_refresh_calls": 0,
+    "live_move_selection_bounds_calls": 0,
+    "live_move_paint_calls": 2,
+    "start_end_cancel_refresh_verified": true,
+    "coalesced_pressure_samples": [
+      0.31,
+      0.72
+    ]
+  },
+  "defect_history": [
+    {
+      "id": "P01-D01",
+      "classification": "PRODUCT_DEFECT",
+      "initial_source": "a3cda6ca13ce711b77a2eed24233aa3ae6958406",
+      "initial_ci_run": 37396036080,
+      "description": "Portrait\u2192landscape resize transiently exceeded80MiB while dimension setters multiplied new width by old height",
+      "initial_observed_peak_bytes": 134217728,
+      "initial_qa_status": "FAILED",
+      "initial_publication_status": "BLOCKED",
+      "repair": "Release every old backing store to1x1 before allocating new dimensions",
+      "status": "RESOLVED in tested repair commit",
+      "geometry_probe_original": "FAIL134217728bytes",
+      "geometry_probe_repair": "PASS83886080bytes",
+      "native_ci_repair": "PASS60settersteps peak83886080bytes"
+    }
+  ],
+  "unresolved_defects": [],
+  "contradictions": [],
+  "regression_scope": "Full inherited24model/21browser journeys plus16performance groups; selection, persistence, quota/conflict/recovery, migration, erasers, offline and explicitSaved/update safety retained",
+  "evidence_locations": [
+    "ci-2/commit.txt",
+    "ci-2/source-sha256.txt",
+    "ci-2/model-output.txt",
+    "ci-2/browser-results.json",
+    "ci-2/selection-browser-results.json",
+    "ci-2/performance-browser-results.json",
+    "ci-2/performance-benchmark.json",
+    "ci-2/performance-transient-allocation.json",
+    "QA_CHECKPOINT_RESULT_CI1.json",
+    "QA_TEST_PLAN.md",
+    "../../../../tests/browser-workspace/evidence/performance-transient-allocation-node-baseline.json",
+    "../../../../tests/browser-workspace/evidence/performance-transient-allocation-node.json"
+  ],
+  "source_sha256": {
+    "prototypes/browser-workspace/README.md": "4ca50ad88b5805c69bc13e7addb3317b56280d8c25a04627f853dbd861316bcc",
+    "prototypes/browser-workspace/app.js": "b9fdd952b212061e8c1be519f0f8633cdc7775e4a8caa2d4a0b8a0ed1ca0e357",
+    "prototypes/browser-workspace/icon.svg": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+    "prototypes/browser-workspace/index.html": "acb20e36bcabf0e7fdd48f6c76f251444f96124bee1b165a8c1fa508e3d9119a",
+    "prototypes/browser-workspace/manifest.webmanifest": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+    "prototypes/browser-workspace/model.js": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+    "prototypes/browser-workspace/render.js": "eab54781655ad966e9baf9e516c1767a0d4aead884717f61e95529065390b843",
+    "prototypes/browser-workspace/selection.js": "2b8aff9073f13ecbad5900202d0578388222a19c3d12150e66477f98bd222203",
+    "prototypes/browser-workspace/storage.js": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+    "prototypes/browser-workspace/style.css": "380ccbde6d16e884b768ec0ef1e07dc83c53e94544c5b4abc71407a533dae4c9",
+    "prototypes/browser-workspace/sw.js": "eb0e459ae68246f25d588bbf6d6a62985476d2123650b82008415e044f81ac35",
+    "tests/browser-workspace/browser.test.cjs": "76a039600b8454518ad0894f302ed368f48e23d16a4149ce711255fa8ac6ffd0",
+    "tests/browser-workspace/performance.browser.cjs": "b253bb7b351f284398fbfecc365ddf5bf0e59272296885e187225c509a2632fd",
+    "tests/browser-workspace/selection.browser.cjs": "58dfc147c97cd83d8242d0cda30a4bc85aeec111c27fb8eab418e218a585d537",
+    "tests/browser-workspace/server.cjs": "0f0ea13978ec217492e6c4009deec02c9d2c7c955e9e9f777238175c255e94b4",
+    "tests/browser-workspace/model.test.mjs": "e0f0f0dfc7b5eb48280c84cb812d0a9fcfe7877b4be793cc6691941f0057bf2c",
+    "tests/browser-workspace/selection.test.mjs": "1c4e9c9cb6e8447b31a3f882a465b52161b32d2340115f0d767ebdd6cc8216f1",
+    "tests/browser-workspace/package.json": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+    "tests/browser-workspace/package-lock.json": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+    "tests/browser-workspace/fixtures/reference-render.js.txt": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+    ".github/workflows/browser-workspace.yml": "d0b42a35d9c434414ccff6f50f29d540023c6c9e8f0474ebde944ced1449d805"
+  },
+  "limits": [
+    "Physical Surface/Xiaomi pen feel remainsNOT_VERIFIED",
+    "Main and production authorization remainfalse",
+    "No merged regression or formal product checkpoint closure claimed",
+    "Gatekeeper owns publication/release decision"
+  ]
+}

@@ -6,10 +6,11 @@ A browser-first, MIT-licensed personal drawing and infinite whiteboard project. 
 
 ## Current preview
 
-Paper backgrounds, Ink/Pencil/Marker/Airbrush, colour/size/opacity controls, layers, three vector eraser modes, undo/redo and local JSON boards are in the reviewed workspace. The live reviewed preview also includes vector lasso, move and page-session copy/cut/paste/delete. See the current feature record for exact source and QA identities. Device pen feel still requires human testing.
+Paper backgrounds, Ink/Pencil/Marker/Airbrush, colour/size/opacity controls, layers, three vector eraser modes, undo/redo and local JSON boards are in the reviewed workspace. The live reviewed preview also includes vector lasso, move and page-session copy/cut/paste/delete. See the current feature record for exact source and QA identities. The performance foundation adds retained live ink on the top visible layer, a bounded backing-memory budget and measured renderer regression. Device pen feel still requires human testing.
 
 ## Continue browser delivery
 
+- [Current performance checkpoint](docs/delivery/PERFORMANCE_PUBLIC_STATE.md) and [version history](docs/delivery/VERSION_HISTORY.md): exact tested source, development notes, QA and publication status.
 - [Current vector-selection state](docs/delivery/SELECTION_PUBLIC_STATE.md): exact tested source, QA evidence, publication status and next action.
 - [Independent QA](docs/delivery/SELECTION_QA_REPORT.md) and [Gatekeeper disposition](docs/delivery/SELECTION_FINAL_GATEKEEPER.md).
 - [Combined tablet test card](docs/delivery/COMBINED_TABLET_TEST_CARD.md).
