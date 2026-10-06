@@ -14,3 +14,5 @@ Next publication must record source SHA, branch, QA run/artifact, immutable Page
 ## DUX1-U1 / candidate v0.4.0 — 6 October 2026
 
 User-authorized compact controls/layers implementation after independent U1 readiness. New schema/storage v3, read-only migration, eight browser blend modes, protected layer actions, top-first compact rows and independent popovers. Initial local35pure groups including model tests/unsupportedblendoracle pass; full Chromium CI pending. Repairbatch1/2 closes four source-review findings;CI1/3 prepared. This is an unpublished candidate, not checkpoint closure or production release. U2/U3 and combined publication remain.
+
+| U2 / preview v0.5.0 | fd15c607d5b9a605b1e8a1164250803832830591 | 41/41 model and 58/58 browser groups PASS; 12 original brush presets + Brush Library + Color Disc; checkpoint/u2-v0.5.0 exact tested pointer; reviewed Pages publication authorized |
