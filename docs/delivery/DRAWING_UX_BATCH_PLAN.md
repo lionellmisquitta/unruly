@@ -1,5 +1,7 @@
 # DUX1 — Drawing workspace UX and tools batch (proposed)
 
+> **Current authority — 6 October 2026:** `PROCREATE_HANDBOOK_UX_BASELINE.md` supersedes conflicting visual/gesture/shape/lock statements below. The user selected the Procreate PDF UI and confirmed Procreate gestures: two-finger SINGLE tap Undo, three-finger SINGLE tap Redo. That reference decision is settled; older “human layout/default pending” and DOUBLE-default wording is historical. U1/U2/U3 checkpoint-specific handoff/readiness and actual QA remain required. This research amendment is not an implementation or deployment.
+
 6 October 2026. Planning-only continuation of hosted P01 preview v0.3.0. No app, tests, workflow, production/main or deployment change authorized by this document. Current application source: `5bfe786d8018200b89049d1a8073a0eb78ab6077`; metadata/preview head verified `994283217c2321c6de20913db8724f1a82cf4a60`. MIT, browser-first, offline/device-local remain governing decisions. This scoped document preserves prior public-state/disclosure boundaries; do not republish historical root state files.
 
 ## UX checkpoints A and B — proposed for one human lock

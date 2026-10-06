@@ -1,4 +1,6 @@
-# DUX1 — Planning continuation, human layout lock pending
+# DUX1 — Current handbook reference settled; implementation readiness pending
+
+> **Current authority — 6 October 2026:** `PROCREATE_HANDBOOK_UX_BASELINE.md` supersedes conflicting visual/gesture/shape/lock statements below. The user selected the Procreate PDF UI and confirmed Procreate gestures: two-finger SINGLE tap Undo, three-finger SINGLE tap Redo. That reference decision is settled; older “human layout/default pending” and DOUBLE-default wording is historical. U1/U2/U3 checkpoint-specific handoff/readiness and actual QA remain required. This research amendment is not an implementation or deployment.
 
 The13 user feedback items are captured in DRAWING_UX_BATCH_PLAN.md. Proposed checkpoints: U1 controls/layers, U2 original brushes/colour, U3 gestures/held shapes/selection transforms. One combined preview publication and one tablet feedback card follow actual independent QA and Gatekeeper review. No code or tests were changed; all21 files in the P01 source/test/workflow manifest still match tested5bfe786d8018200b89049d1a8073a0eb78ab6077. This comparison is preservation evidence, not newly executed product testing.
 
@@ -10,3 +12,11 @@ Current live app remains preview v0.3.0 at https://lionellmisquitta.github.io/un
 ## User-selected reference update —6October2026
 
 The user selected the Procreate Fundamentals PDF UI/icons/layers/behaviour. `PROCREATE_REFERENCE_UX_UPDATE.md` now supersedes the earlier visual mockup and conflicting visual contracts. The old mockup is historical. Independent readiness must review the bounded reference additions; the single-vs-double gesture default awaits the user. App/test/workflow unchanged; no implementation or deployment occurred.
+
+## Complete handbook research continuation — 6 October 2026
+
+All 104 named navigation pages plus the Introduction landing alias were retrieved successfully and fully reviewed across four specialist reports. Coverage and digests: HANDBOOK_REVIEW_MANIFEST.json. Current requirements and next-step authority: PROCREATE_HANDBOOK_UX_BASELINE.md. The chosen layout and SINGLE gesture default are no longer open questions. Remaining engineering handoffs belong to Gatekeeper/QA, not another discovery interview.
+
+Next implementation slice is U1 compact controls/layers with v3 compatibility and inherited P01 safeguards. U2/U3 follow; one combined preview and one human tablet feedback card remain the batch approach. G02 explicitly plans remaining native gesture/shape coverage; no G02 build/budget authorization is issued here. First-release paint, sharing, sync and AI requirements remain the roadmap. No code/tests/workflows/worker changes or test reruns occurred. Preservation checks are separate from executed product QA. Current live v0.3.0/P01 remains unchanged; production/main/full-release closure stays false.
+
+Independent Gatekeeper research review: HANDBOOK_GATEKEEPER_REVIEW.md. Research/reference reconciliation accepted for U1 preparation; draft-history/timer ambiguities resolved on targeted recheck. BUILD_AUTHORIZED remains false until the concrete U1 source-bound handoff/readiness. No additional human reference choice is pending.

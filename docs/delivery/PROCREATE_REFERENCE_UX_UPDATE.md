@@ -1,5 +1,7 @@
 # Procreate Fundamentals — authoritative visual reference update
 
+> **Current authority — 6 October 2026:** `PROCREATE_HANDBOOK_UX_BASELINE.md` supersedes conflicting visual/gesture/shape/lock statements below. The user selected the Procreate PDF UI and confirmed Procreate gestures: two-finger SINGLE tap Undo, three-finger SINGLE tap Redo. That reference decision is settled; older “human layout/default pending” and DOUBLE-default wording is historical. U1/U2/U3 checkpoint-specific handoff/readiness and actual QA remain required. This research amendment is not an implementation or deployment.
+
 6 October2026. User explicitly selected this PDF's UI, icons, layers and behaviour over the earlier labelled-button mockup:
 https://education-downloads.procreate.art/pdfs/part1-the-fundamentals.pdf
 
