@@ -220,3 +220,9 @@ Exact80c5bbe86cde4c41a81e354f296ff5d203019888 CI37223520128 passed16model/15Chro
 ## WB1 hosted workspace verified
 
 Pages37224013072 succeeded;9hostedappassetsHTTP200 andexactmatchtested80c5bbe86cde4c41a81e354f296ff5d203019888. RemoteChrome savedupdatecopied1oldboard, retainedexistingdrawing, nativekeyboardcontrols/color/paper/layer/newink/save/reloadobserved. Hostedofflinereadyindicatorobserved,networkdisableCIonly; physicalpenfeelNOTVERIFIED. Onecombinedhumantestcard delivered. CurrentpreviewcompleteWB1threeinternalslices; fullproduct0/14closure,productionfalse. No native/history/security/defaultmainchanges; no paidexternalmodelcalls. See WORKSPACE_HOSTED_STATUS.md.
+
+
+## U2 Brush Library + Colour closure — 6 October 2026
+Exact tested source: `fd15c607d5b9a605b1e8a1164250803832830591`.
+CI3 GitHub Actions run `37474125489` passed 41/41 model tests and all browser suites: foundation 15/15, selection 6/6, performance 16/16, U1 16/16, U2 5/5; total browser groups 58/58 PASS. QA artifact `11419065857`, digest `sha256:619a805dc99c3acca642e71f3873ec6e005432cc1d0a19cad5e26d563cd75d0c`.
+U2 delivered 12 original immutable brush presets, per-preset local size/opacity memory and reset, deterministic optional v3 preset identity with legacy-stroke compatibility, a two-column Brush Library, hue-ring + saturation/value colour disc, precise Hex/H/S/V controls, generated shades, recent colours and saved palette. One U2 application repair batch was consumed after CI2 exposed missing shared size/opacity model-state handlers; CI3 proved the repaired behavior and inherited eraser regression. Physical pen feel remains NOT_VERIFIED. U3/G02 remain out of scope. Main and production authorization remain false.
