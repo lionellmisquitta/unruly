@@ -158,3 +158,8 @@ The user receives the layout mockup plus three-checkpoint summary. One explicit 
 ### Recovery artifact scope clarification
 
 The rollback candidate alone may add `prototypes/browser-workspace/recovery-v3/` with the exact final v3 runtime files and a separately reviewed SW scope/cache-prefix adjustment, and may change its top-level old-source SW cache version. The recovery candidate is a different immutable source from both5b and the final normal v3 source. No runtime dependency, privileged API or native executable is introduced. Bind the entire rollback artifact's hashes and run its update/offline/source-store-preservation/recovery browser checks in U3's existing CI/repair budget. The final combined normal source and the separate rollback source require their own exact test evidence; neither is assumed proven by the other. This path is a rollback safety artifact, not an extra feature checkpoint or budget reset.
+
+
+## User-selected reference update —6October2026
+
+The user selected the Procreate Fundamentals PDF UI/icons/layers/behaviour. `PROCREATE_REFERENCE_UX_UPDATE.md` now supersedes the earlier visual mockup and conflicting visual contracts. The old mockup is historical. Independent readiness must review the bounded reference additions; the single-vs-double gesture default awaits the user. App/test/workflow unchanged; no implementation or deployment occurred.

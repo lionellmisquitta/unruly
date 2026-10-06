@@ -5,3 +5,8 @@ The13 user feedback items are captured in DRAWING_UX_BATCH_PLAN.md. Proposed che
 Proposed layout is DRAWING_UX_LAYOUT_PROPOSAL.png. Independent planning reviews: DRAWING_UX_READINESS.md and DRAWING_UX_QA_PLAN.md. Technical review findings are resolved in the authoritative precisions section; a human layout lock and checkpoint-specific Gatekeeper authorization remain required before implementation. No automated job is running after this planning turn.
 
 Current live app remains preview v0.3.0 at https://lionellmisquitta.github.io/unruly/. This plan is not a built release; no UI deployment occurred. Historical source, evidence and consumed repair budgets remain preserved. Main and production authorization remain false. No paid external-model calls, employer policy changes or historical root state publication.
+
+
+## User-selected reference update —6October2026
+
+The user selected the Procreate Fundamentals PDF UI/icons/layers/behaviour. `PROCREATE_REFERENCE_UX_UPDATE.md` now supersedes the earlier visual mockup and conflicting visual contracts. The old mockup is historical. Independent readiness must review the bounded reference additions; the single-vs-double gesture default awaits the user. App/test/workflow unchanged; no implementation or deployment occurred.

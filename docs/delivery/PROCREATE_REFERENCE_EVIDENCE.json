@@ -1,0 +1,18 @@
+{
+  "url": "https://education-downloads.procreate.art/pdfs/part1-the-fundamentals.pdf",
+  "bytes": 24546835,
+  "sha256": "047f99014589ee69070b09b5fa8199e20523d81cfb32ac2acec4fcc1ceb9839a",
+  "pages_read": 38,
+  "pages_visually_inspected": [
+    8,
+    9,
+    14,
+    23,
+    27,
+    28,
+    29
+  ],
+  "workbook_version": "July2022, Procreate5.2",
+  "reference_file_republished": false,
+  "review_type": "text and rendered-page inspection; no app implementation or tests"
+}
