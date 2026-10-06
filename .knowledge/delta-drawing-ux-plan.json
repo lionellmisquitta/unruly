@@ -1,0 +1,35 @@
+{
+  "id": "DUX1-plan",
+  "status": "PROPOSED_HUMAN_UX_LOCK_PENDING",
+  "baseline": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "requirements": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "checkpoints": [
+    "U1-layout-layers",
+    "U2-brushes-colour",
+    "U3-gestures-shapes-transform"
+  ],
+  "authorities": [
+    "docs/delivery/DRAWING_UX_BATCH_PLAN.md",
+    "docs/delivery/DRAWING_UX_READINESS.md",
+    "docs/delivery/DRAWING_UX_QA_PLAN.md"
+  ],
+  "implementation_started": false,
+  "production_authorization": false,
+  "main_merge": false,
+  "evidence": "All21 P01 source/test/workflow hashes unchanged; planning reviews are not executable QA",
+  "human_test": "One combined tablet test after reviewed publication"
+}
