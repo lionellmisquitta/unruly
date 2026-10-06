@@ -5,8 +5,8 @@ This is a human-readable navigation/index for the canonical `UNRULY.kgp.zip`. Th
 ## Current truth
 
 - **Architecture:** browser-first, offline/local-first; native Windows/Android work is historical/optional enhancement, not the primary app direction.
-- **Current implementation lineage:** `preview/drawing-ux-u1-2026-10-06`.
-- **Historical implementation milestones:** `preview/vector-selection-2026-10-06`, `checkpoint/p01-v0.3.0`, P0a native feasibility.
+- **Current accepted implementation:** `checkpoint/u2-v0.5.0` at `fd15c607d5b9a605b1e8a1164250803832830591`.
+- **Accepted implementation milestones:** U2 v0.5.0, U1 v0.4.0, P01 v0.3.0, vector selection, WB1. P0a native feasibility is historical/superseded.
 - **Graph branch:** `knowledge/unruly-kgp`; build branches and `main` are untouched by graph maintenance.
 - **Graph update cadence:** after each human review batch of roughly 2–4 accepted checkpoints.
 - **Trust rule:** discussed/planned != implemented != verified. Implementation and verification require deterministic repository/test evidence.
@@ -16,11 +16,11 @@ This is a human-readable navigation/index for the canonical `UNRULY.kgp.zip`. Th
 - **Offline local-first operation** — Core drawing and board editing work without a hosted SaaS backend; local storage is authoritative while offline. `[current]`
 - **Infinite canvas** — Infinite pan/zoom workspace with multiple saved boards and finite export/artboard frames when needed. `[current]`
 - **Drawing engine** — Pen-first vector and raster drawing with pressure-aware strokes and responsive live ink. `[current]`
-- **Brush system** — Pen, pencil, marker, airbrush, watercolor direction, original texture brushes and future experimental Procreate brush import. `[current]`
+- **Brush system** — U2 verified: 12 original immutable presets across Pencil, Pen, Marker and Airbrush; per-preset size/opacity memory/reset; optional v3 preset identity with legacy no-preset rendering compatibility. Watercolour/texture/import remain later. `[verified]`
 - **Layer system** — Top-first layers with add-above-active behavior, visibility, opacity, blending, locks, masks and transforms. `[current]`
 - **Selection and transform** — Prominent lasso selection with move, copy, cut, paste, delete and explicit transform workflows. `[current]`
 - **Gesture system** — Procreate-inspired browser-safe gestures for undo/redo, pan/zoom, eyedropper and held-shape workflows. `[current]`
-- **Color system** — Hue ring/inner saturation-value disc, shade suggestions, HSL/hex readouts, palettes and color history. `[current]`
+- **Color system** — U2 verified: hue ring + inner saturation/value disc, precise Hex/H/S/V controls, 12 generated shades, recent colours, saved palette and toolbar current-colour indicator. `[verified]`
 - **Effects and fill** — Gaussian blur, HSL-style adjustments and gap-aware raster fill planned with preview/apply/cancel boundaries. `[current]`
 - **Whiteboarding objects** — Editable text boxes, sticky notes, connectors and reference images in addition to drawing. `[current]`
 - **Timelapse** — Local deterministic process replay and video export; retention/framing details remain unresolved. `[current]`
@@ -42,7 +42,7 @@ This is a human-readable navigation/index for the canonical `UNRULY.kgp.zip`. Th
 - **Compact icon toolbar** — Dark compact toolbars with original icons; document/actions/selection/transform left and brush/smudge/eraser/layers/color roles right. `[current]`
 - **Independent left size/opacity rail** — Narrow size/opacity/undo-redo rail that collapses independently from Layers. `[current]`
 - **Compact layers popover** — Topmost-first compact layers UI with add above active, drag reorder, swipe actions and independent collapse. `[current]`
-- **Brush library popover** — Two-column category/preset browser with per-preset size/opacity memory. `[current]`
+- **Brush library popover** — Implemented and QA-verified two-column category/preset browser with renderer-backed previews, per-preset size/opacity memory and reset defaults. `[verified]`
 - **Two-finger single tap Undo** — Confirmed default; supersedes earlier double-tap wording. `[current]`
 - **Three-finger single tap Redo** — Confirmed default; separate from two-finger admission. `[current]`
 - **Finger stationary hold eyedropper** — Long hold samples the visible composite and commits color on release. `[current]`
@@ -84,7 +84,9 @@ This is a human-readable navigation/index for the canonical `UNRULY.kgp.zip`. Th
 - **main** — Historical default branch; does not contain the latest browser build lineage. `[historical]`
 - **preview/vector-selection-2026-10-06** — Selection milestone branch; accepted as an implemented milestone but not latest lineage. `[accepted]`
 - **checkpoint/p01-v0.3.0** — Named pointer to exact tested P01 source. `[accepted]`
-- **preview/drawing-ux-u1-2026-10-06** — Current code lineage baseline for graph reconstruction; descendant of P01 and vector-selection work. `[current]`
+- **checkpoint/u1-v0.4.0** — Accepted U1 exact tested pointer (`699d6fb...`): 35/35 model and 53/53 browser groups PASS. `[accepted]`
+- **checkpoint/u2-v0.5.0** — Current accepted exact tested pointer (`fd15c607...`): 41/41 model and 58/58 browser groups PASS. `[accepted]`
+- **preview/drawing-ux-u2-2026-10-06** — Working U2 branch; checkpoint pointer is authoritative for the accepted build. `[current-workline]`
 - **knowledge/unruly-kgp** — Dedicated branch for portable knowledge graph package; build branches remain untouched. `[current]`
 
 ## Open questions
@@ -155,7 +157,12 @@ This is a human-readable navigation/index for the canonical `UNRULY.kgp.zip`. Th
 - P01 v0.3.0 performance checkpoint — **SOURCED_FROM** → PERFORMANCE_FINAL_GATEKEEPER.md
 - Vector selection checkpoint — **SOURCED_FROM** → .knowledge/delta-vector-selection.json
 - U1 compact reference UI and layers — **SOURCED_FROM** → U1_CANDIDATE_REVIEW.md
-- knowledge/unruly-kgp — **DEPENDS_ON** → preview/drawing-ux-u1-2026-10-06
+- U2 brush library and color — **IMPLEMENTED_BY** → prototypes/browser-workspace/brushes.js
+- U2 brush library and color — **IMPLEMENTED_BY** → prototypes/browser-workspace/u2.js
+- U2 brush library and color — **SUPPORTED_BY** → tests/browser-workspace/u2.model.test.mjs
+- U2 brush library and color — **SUPPORTED_BY** → tests/browser-workspace/u2.browser.cjs
+- U2 brush library and color — **SUPPORTED_BY** → GitHub Actions run 37474125489
+- knowledge/unruly-kgp — **DEPENDS_ON** → checkpoint/u2-v0.5.0
 
 ## Required continuation behavior
 
@@ -163,3 +170,11 @@ This is a human-readable navigation/index for the canonical `UNRULY.kgp.zip`. Th
 - Preserve contradictions and superseded decisions; never erase history to make the graph look clean.
 - At batch review, merge checkpoint deltas, regenerate both `graph-explorer.html` and `OnAir - unruly.html`, validate, run Scope Guard, update the package, and append changelog.
 - A later Graphify/AST pass should enrich implementation detail when deterministic repository materialization is available; it must not replace the concept-first product graph.
+
+
+## Review batch update — U1 + U2 — 6 October 2026
+
+- U1 accepted at `699d6fb29b2debe1ad3721a2c7a3ee86bd374792`; CI run `37468847640`; 35/35 model + 53/53 browser groups PASS.
+- U2 accepted at `fd15c607d5b9a605b1e8a1164250803832830591`; CI run `37474125489`; artifact `11419065857`, SHA-256 `619a805dc99c3acca642e71f3873ec6e005432cc1d0a19cad5e26d563cd75d0c`; 41/41 model + 58/58 browser groups PASS.
+- U2 CI2 exposed a genuine missing shared size/opacity state handler. Source repair 1 restored the inherited control contract and per-preset persistence; CI3 proved both U2 and inherited eraser behavior.
+- U3 remains planned. Physical pen feel remains NOT_VERIFIED.
