@@ -3,13 +3,13 @@
 This branch is the durable project memory for UNRULY.
 
 Start here:
-1. `GRAPH_SNAPSHOT.md` — cheap human/model-readable current graph state.
-2. `HANDOVER.md` — continuation instructions.
-3. `GRAPH_PROTOCOL.md` — update rules.
-4. `manifest.json` — validated package counts and scope.
+1. `GRAPH_SNAPSHOT.md`
+2. `HANDOVER.md`
+3. `manifest.json`
+4. `GRAPH_PROTOCOL.md`
 
-Key truth: **browser-first is current**. Earlier native-first preparation is historical and explicitly superseded.
+Current accepted baseline: **U2 v0.5.0** — `checkpoint/u2-v0.5.0` at `fd15c607d5b9a605b1e8a1164250803832830591`.
 
-The canonical full KGP, 2D explorer and OnAir export were generated and validated in the recovery session. The GitHub connector truncated the binary ZIP upload during verification, so the invalid repo copy was removed rather than retained. The readable snapshot/protocol on this branch are authoritative navigation for future coding sessions; regenerate the full KGP at each 2–4 checkpoint review batch.
+Browser-first is authoritative. U1 and U2 are accepted from deterministic CI evidence. U3/G02 remain planned; physical pen feel remains NOT_VERIFIED.
 
-The graph distinguishes requirements/design intent from implementation and test evidence. A feature mentioned in research or chat is not automatically implemented.
+A regenerated full KGP for the U1+U2 review batch validated successfully with 91 entities / 131 relationships and complete 2D + OnAir viewers. The GitHub connector previously truncated binary KGP ZIP uploads, so the repo stores the readable/canonical continuation records while the validated package is delivered separately.
