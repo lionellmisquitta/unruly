@@ -1,0 +1,28 @@
+{
+  "checkpoint": "P01",
+  "initial_source": "a3cda6ca13ce711b77a2eed24233aa3ae6958406",
+  "initial_ci": 37396036080,
+  "initial_job": 112052095200,
+  "initial_artifact": 11382953870,
+  "initial_artifact_sha256": "b3b9d39e93fe6f5e69e805c9bd222fd4af5d85fa1b31138b0a8f694c5ebfb0ac",
+  "initial_result": "24model +21inheritedbrowser +15performance PASS; NOTpublishable independent static transient-allocation defect",
+  "repairs": [
+    {
+      "batch": 1,
+      "defect": "orientation resize allocates128MiB transient despite80MiB final budget",
+      "source_change": "release every backing store to1x1 before allocating shared target dimensions",
+      "independent_adversarial_case": "P01-A4-transient-setter-budget",
+      "acceptance_threshold_changed": false,
+      "local_geometry_probe_original": "FAIL peak134217728bytes",
+      "local_geometry_probe_repaired": "PASS peak83886080bytes",
+      "actual_browser_retest": "PENDING"
+    }
+  ],
+  "source_repairs_used": 1,
+  "source_repairs_limit": 2,
+  "qa_runs_used": 1,
+  "qa_runs_limit": 3,
+  "paid_external_model_calls": 0,
+  "prior_budgets": "unchanged",
+  "production_authorization": false
+}

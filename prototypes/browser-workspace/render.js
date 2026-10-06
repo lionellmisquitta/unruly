@@ -28,7 +28,13 @@ export function createRenderer(canvas){
   const rect=canvas.getBoundingClientRect(),cssW=Math.max(1,rect.width),cssH=Math.max(1,rect.height),deviceDpr=window.devicePixelRatio||1;
   const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt(rendererBudget.backingBytes/(surfaces.length*4*cssW*cssH)));
   const w=Math.max(1,Math.floor(cssW*d)),h=Math.max(1,Math.floor(cssH*d));
-  if(surfaces.some(c=>c.width!==w||c.height!==h)){invalidate();for(const c of surfaces){c.width=w;c.height=h;}}
+  if(surfaces.some(c=>c.width!==w||c.height!==h)){
+   invalidate();
+   // Release every old backing store before reallocating: portrait/landscape
+   // assignments must not transiently multiply old height by new width.
+   for(const c of surfaces){c.width=1;c.height=1;}
+   for(const c of surfaces){c.width=w;c.height=h;}
+  }
   return {cssW,cssH,d,w,h,deviceDpr};
  }
  function strokeToLayer(s,v,g){
