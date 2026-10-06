@@ -1,6 +1,6 @@
 // Independent requirement-derived U1 tests. No application internals duplicated.
-import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
-const m=await import('data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../../prototypes/browser-workspace/model.js',import.meta.url),'utf8')).toString('base64'));
+import test from 'node:test';import assert from 'node:assert/strict';
+const m=await import(new URL('../../prototypes/browser-workspace/model.js',import.meta.url).href);
 const modes=['normal','multiply','screen','overlay','darken','lighten','difference','exclusion'];
 const stroke=(id='qa-stroke')=>({id,brush:'ink',color:'#4080c0',size:12,opacity:.6,points:[{x:10,y:20,pressure:null},{x:30,y:40,pressure:0},{x:50,y:60,pressure:1}]});
 const board=()=>{const b=m.createBoard('qa-u1','QA U1');b.layers[0].strokes=[stroke()];return b;};

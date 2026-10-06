@@ -1,5 +1,5 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
-const m=await import('data:text/javascript;base64,'+Buffer.from(await readFile(new URL('../../prototypes/browser-workspace/model.js',import.meta.url),'utf8')).toString('base64'));
+import test from 'node:test';import assert from 'node:assert/strict';
+const m=await import(new URL('../../prototypes/browser-workspace/model.js',import.meta.url).href);
 const board=()=>m.createBoard('qa-board','QA workspace');const stroke=(id='s1',points=[{x:0,y:0,pressure:0},{x:100,y:0,pressure:1}])=>({id,brush:'ink',color:'#123abc',size:1,opacity:1,points});const clone=structuredClone;
 const withStrokes=(strokes)=>{const b=board();b.layers[0].strokes=strokes;return b;};
 const sweep=(x,y=0)=>[{a:{x,y},b:{x,y}}];
