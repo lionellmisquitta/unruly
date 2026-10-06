@@ -1,0 +1,50 @@
+{
+  "checkpoint_id": "U1",
+  "status": "PASSED",
+  "branch": "preview/drawing-ux-u1-2026-10-06",
+  "pre_merge_commit": "699d6fb29b2debe1ad3721a2c7a3ee86bd374792",
+  "builder_identity": "recovered U1 build plus bounded stabilization",
+  "adversary_identity": "existing independent U1 QA suite executed by GitHub Actions",
+  "stabilization": true,
+  "original_u1_repairs_consumed": "2/2",
+  "ci_runs_consumed": "3/3",
+  "tests": {
+    "model": {
+      "passed": 35,
+      "failed": 0
+    },
+    "browser": {
+      "foundation": {
+        "passed": 15,
+        "failed": 0
+      },
+      "selection": {
+        "passed": 6,
+        "failed": 0
+      },
+      "performance": {
+        "passed": 16,
+        "failed": 0
+      },
+      "u1": {
+        "passed": 16,
+        "failed": 0
+      },
+      "total": {
+        "passed": 53,
+        "failed": 0
+      }
+    }
+  },
+  "physical_pen": "NOT_VERIFIED",
+  "github_actions": {
+    "run_id": 37468847640,
+    "artifact_id": 11416116944,
+    "artifact_sha256": "338699d578104a9cf55ec4d2c3766f9281773804679c62ec8faa09cbf116449c"
+  },
+  "unresolved": [
+    "Physical Surface/Xiaomi pen feel remains not verified.",
+    "U2/U3/G02 are outside U1 closure."
+  ],
+  "qa_status": "PASSED"
+}
