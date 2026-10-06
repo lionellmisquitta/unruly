@@ -1,0 +1,100 @@
+{
+  "checkpoint_id": "DUX1-U1",
+  "adversary": "independent same-model Codex session; different-model runtime unavailable",
+  "pre_merge_commit": "72094fc741b16277b37e950afc83cb57cec1054d",
+  "ci_run": 37423089580,
+  "ci_runs_consumed": 1,
+  "source_manifest_verified_before_qa_mutation": true,
+  "browser": "Chromium151.0.7922.34 / Playwright1.62.1",
+  "counts": {
+    "model_pass": 35,
+    "model_fail": 0,
+    "browser_pass": 39,
+    "browser_fail": 13,
+    "browser_total": 52
+  },
+  "suite_counts": {
+    "foundation": {
+      "pass": 12,
+      "fail": 3
+    },
+    "selection": {
+      "pass": 1,
+      "fail": 5
+    },
+    "P01": {
+      "pass": 16,
+      "fail": 0
+    },
+    "U1": {
+      "pass": 10,
+      "fail": 5
+    }
+  },
+  "proven_passes": [
+    "eight independent sRGB blend modes + full/retained exact pixels",
+    "1440 frozen legacy pixel comparisons across DPR1/2 plus1620 retained matrix",
+    "five surfaces/80MiB nominal and every allocation setter",
+    "P01 cache/frame/controller workload",
+    "32 thumbnails80x48, five surfaces, no penmove encoding",
+    "read-only v1/v2 source snapshot equality, idempotency, stable dedup, v3 collision mapping, current/previous fallback warning, damaged-v2 foundation fallback",
+    "quota mapping+target atomicity, retry resumes, original sources unchanged",
+    "malformed blend/preset imports preserve saved artwork",
+    "captured pen rejects layer controls; dismissal consumed"
+  ],
+  "diagnoses": [
+    {
+      "classification": "TEST_DEFECT",
+      "tests": [
+        "W01-mobile",
+        "W06"
+      ],
+      "cause": "Obsolete Background accessible label, actual Pattern; trace summary opens correctly",
+      "repair": "alias Pattern; keep mutation assertions"
+    },
+    {
+      "classification": "TEST_DATA_DEFECT",
+      "tests": [
+        "U01",
+        "U02",
+        "U03",
+        "U04"
+      ],
+      "cause": "Lasso mouse polygon starts inside newly opened Selection popover; screenshot Copy text selected and zero selection",
+      "repair": "actual Escape dismissal before polygon; retain geometry/history/clipboard assertions"
+    },
+    {
+      "classification": "TEST_DEFECT",
+      "tests": [
+        "W12",
+        "U06"
+      ],
+      "cause": "QA server literal CACHE rewrite obsolete for NORMAL_PREFIX expression; async wait predicate can resolve before actual waiting worker",
+      "repair": "rewrite full CACHE expression in normal namespace and poll resolved registration state"
+    },
+    {
+      "classification": "TEST_DATA_DEFECT",
+      "tests": [
+        "UB01-desktop",
+        "UB01-tablet",
+        "UB01-phone",
+        "UB10",
+        "UB12"
+      ],
+      "cause": "Prior Saved message read before500ms autosave; screenshot says Unsaved and rows reorder already reflected while storage stale",
+      "repair": "550ms wait then strict Saved predicate; separate startup recovery readiness"
+    }
+  ],
+  "source_findings": [
+    {
+      "id": "U1-D01",
+      "classification": "PRODUCT_DEFECT",
+      "evidence_kind": "source-proven; runtime retest pending",
+      "description": "Layer lock/unlock uses changed() clearing selected; locked lasso prohibited, so allowed Copy cannot actually be used in UI",
+      "expected": "Preserve selected IDs on lock/unlock, keep all content guards",
+      "regression": "UB15 locked-copy real UI journey"
+    }
+  ],
+  "qa_status": "FAILED",
+  "note": "CI1 is retained, none of its failed assertions deleted or weakened. Full premerge green and merged verification remain outstanding; physical pen feel NOT_VERIFIED."
+}

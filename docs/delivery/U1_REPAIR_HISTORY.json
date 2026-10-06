@@ -14,11 +14,30 @@
         "CR003legacyIDkeyboardfocus",
         "CR004capturedpointerselect"
       ]
+    },
+    {
+      "batch": 2,
+      "status": "source_review_verified_runtime_pending",
+      "reason": "D01 active-layer lock/unlock must preserve selection for permitted Copy; unchanged content-write guards",
+      "findings": [
+        "D01 locked-copy selection"
+      ],
+      "failed_ci": 37423089580
     }
   ],
   "ci_runs": [
     {
       "run": 1,
+      "status": "FAIL",
+      "source_sha": "72094fc741b16277b37e950afc83cb57cec1054d",
+      "github_run_id": 37423089580,
+      "model_pass": 35,
+      "browser_pass": 39,
+      "browser_fail": 13,
+      "diagnosis": "All thirteen runtime failures traced to QA fixtures; separate source-proven lock-copy repair adds UB15"
+    },
+    {
+      "run": 2,
       "status": "candidate_prepared",
       "source_sha": "assigned_after_commit"
     }

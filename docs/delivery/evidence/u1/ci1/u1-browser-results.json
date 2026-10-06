@@ -1,0 +1,416 @@
+{
+  "browser": "151.0.7922.34",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "UB01-desktop",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'e24b09c8-1bba-4bd3-ac32-9953f1d60675',\n    '79f28763-fd49-47b7-ac03-603c9a80b087'\n  ]\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:19:276\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:6:951)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:17:139",
+      "errors": [],
+      "external": []
+    },
+    {
+      "id": "UB01-tablet",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'ba02ea01-b30c-41b2-9e3f-a59f7abd6762',\n    'f6e9eefd-0572-47ff-bf40-ab75c7ca6807'\n  ]\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:19:276\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:6:951)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:17:139",
+      "errors": [],
+      "external": []
+    },
+    {
+      "id": "UB01-phone",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'e51ea8e8-c333-4590-baf3-ef5203676e6f',\n    '9cc06f46-c1bb-45d7-8997-573933cfad6f'\n  ]\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:19:276\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:6:951)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:17:139",
+      "errors": [],
+      "external": []
+    },
+    {
+      "id": "UB02-captured-pen-rejects-controls-dismiss-consumed",
+      "status": "PASS"
+    },
+    {
+      "id": "UB08-thumbnails-scratch-bound-and-no-penmove",
+      "status": "PASS",
+      "evidence": {
+        "board": "qa-thumbs",
+        "dimensions": [
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          }
+        ],
+        "before": {
+          "canvases": 5,
+          "encodes": 34
+        },
+        "start": {
+          "canvases": 5,
+          "encodes": 34
+        }
+      }
+    },
+    {
+      "id": "UB10-keyboard-grip-opacity-single-history",
+      "status": "FAIL",
+      "message": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('[data-layer-id=\"undefined\"] .layer-select')\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:35:372\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:6:951)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:34:1",
+      "errors": [],
+      "external": []
+    },
+    {
+      "id": "UB11-malformed-import-retains-artwork",
+      "status": "PASS"
+    },
+    {
+      "id": "UB12-punctuated-layer-ID-keyboard-safe-and-text-scale",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'fb7a4012-8cde-4437-9782-6a63739df62d'\n- 'qa-quote\"][data-x=\"legacy'\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:41:759\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:6:951)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/u1.browser.cjs:40:1",
+      "errors": [],
+      "external": []
+    },
+    {
+      "id": "UB03-independent-eight-mode-pixels-and-retained",
+      "status": "PASS",
+      "evidence": [
+        {
+          "mode": "normal",
+          "pixel": [
+            128,
+            128,
+            127,
+            255
+          ],
+          "want": [
+            128,
+            128,
+            128
+          ]
+        },
+        {
+          "mode": "multiply",
+          "pixel": [
+            56,
+            96,
+            120,
+            255
+          ],
+          "want": [
+            56,
+            96,
+            120
+          ]
+        },
+        {
+          "mode": "screen",
+          "pixel": [
+            136,
+            160,
+            200,
+            255
+          ],
+          "want": [
+            136,
+            160,
+            200
+          ]
+        },
+        {
+          "mode": "overlay",
+          "pixel": [
+            80,
+            128,
+            176,
+            255
+          ],
+          "want": [
+            80,
+            128,
+            176
+          ]
+        },
+        {
+          "mode": "darken",
+          "pixel": [
+            64,
+            128,
+            128,
+            255
+          ],
+          "want": [
+            64,
+            128,
+            128
+          ]
+        },
+        {
+          "mode": "lighten",
+          "pixel": [
+            128,
+            128,
+            192,
+            255
+          ],
+          "want": [
+            128,
+            128,
+            192
+          ]
+        },
+        {
+          "mode": "difference",
+          "pixel": [
+            96,
+            64,
+            160,
+            255
+          ],
+          "want": [
+            96,
+            64,
+            160
+          ]
+        },
+        {
+          "mode": "exclusion",
+          "pixel": [
+            112,
+            128,
+            176,
+            255
+          ],
+          "want": [
+            112,
+            128,
+            176
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UB04-v2-foundation-read-only-retry",
+      "status": "PASS",
+      "evidence": {
+        "names": [
+          "unruly-foundation",
+          "unruly-workspace",
+          "unruly-workspace-v3"
+        ],
+        "mappings": [
+          {
+            "key": "[\"unruly-foundation\",\"qa-foundation\"]",
+            "source": "unruly-foundation",
+            "sourceBoardID": "qa-foundation",
+            "sourceRevision": 2,
+            "sourceDbRevision": 4,
+            "targetID": "qa-foundation",
+            "completed": true,
+            "completedIdentity": {
+              "id": "qa-foundation",
+              "revision": 2,
+              "dbRevision": 1
+            },
+            "recovered": false,
+            "fallback": false
+          },
+          {
+            "key": "[\"unruly-workspace\",\"qa-old\"]",
+            "source": "unruly-workspace",
+            "sourceBoardID": "qa-old",
+            "sourceRevision": 7,
+            "sourceDbRevision": 3,
+            "targetID": "qa-old",
+            "completed": true,
+            "completedIdentity": {
+              "id": "qa-old",
+              "revision": 7,
+              "dbRevision": 1
+            },
+            "recovered": false,
+            "fallback": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "UB05-source-ID-collision-durable-mapping",
+      "status": "PASS",
+      "evidence": [
+        {
+          "key": "[\"unruly-foundation\",\"qa-foundation\"]",
+          "source": "unruly-foundation",
+          "sourceBoardID": "qa-foundation",
+          "sourceRevision": 2,
+          "sourceDbRevision": 4,
+          "targetID": "qa-foundation",
+          "completed": true,
+          "completedIdentity": {
+            "id": "qa-foundation",
+            "revision": 2,
+            "dbRevision": 1
+          },
+          "recovered": false,
+          "fallback": false
+        },
+        {
+          "key": "[\"unruly-workspace\",\"qa-old\"]",
+          "source": "unruly-workspace",
+          "sourceBoardID": "qa-old",
+          "sourceRevision": 7,
+          "sourceDbRevision": 3,
+          "targetID": "2ef1a6b8-a67b-44ae-b129-41f2a117aed4",
+          "completed": true,
+          "completedIdentity": {
+            "id": "2ef1a6b8-a67b-44ae-b129-41f2a117aed4",
+            "revision": 7,
+            "dbRevision": 1
+          },
+          "recovered": false,
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "id": "UB06-damaged-current-previous-fallback-warning",
+      "status": "PASS"
+    },
+    {
+      "id": "UB13-stable-source-dedup-prefer-valid-v2",
+      "status": "PASS"
+    },
+    {
+      "id": "UB14-damaged-v2-foundation-fallback-explicit",
+      "status": "PASS"
+    },
+    {
+      "id": "UB07-quota-atomic-mapping-resume",
+      "status": "PASS",
+      "evidence": {
+        "initial": 0,
+        "after": 2
+      }
+    }
+  ]
+}

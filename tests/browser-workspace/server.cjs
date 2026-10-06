@@ -9,6 +9,6 @@ http.createServer((req,res)=>{
  let name=decodeURIComponent(u.pathname.slice('/unruly/'.length))||'index.html';
  if(name.includes('/')||name.includes('\\')||!fs.existsSync(path.join(root,name))){res.writeHead(404);res.end();return;}
  let data=fs.readFileSync(path.join(root,name));
- if(name==='sw.js'&&updated)data=Buffer.from(data.toString().replace(/(const CACHE\s*=\s*)['"][^'"]+['"]/, '$1"unruly-workspace-qa-update"'));
+ if(name==='sw.js'&&updated)data=Buffer.from(data.toString().replace(/const CACHE\s*=[^;]+;/, 'const CACHE=NORMAL_PREFIX+"qa-update";'));
  res.setHeader('Content-Type',types[path.extname(name)]||'application/octet-stream');res.setHeader('Cache-Control','no-store');res.end(data);
 }).listen(Number(process.env.PORT||4173),'127.0.0.1',()=>console.log('QA fixture server ready'));

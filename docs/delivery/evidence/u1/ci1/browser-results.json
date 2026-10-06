@@ -1,0 +1,85 @@
+{
+  "browser": "151.0.7922.34",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "W01-desktop-controls",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W01-mobile-controls",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(await page.getByLabel('Background',{exact:true}).isVisible())\n\n    at run.width (/home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:32:324)\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:32:1",
+      "console_errors": []
+    },
+    {
+      "id": "W01-tablet-controls",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W02-brush-controls-and-reopen",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W03-pen-cancel-touch-history",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W04-render-alpha-brush-paper",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W05-render-layer-order-and-benchmark",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W06-paper-layers-controls",
+      "status": "FAIL",
+      "message": "locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByLabel('Background', { exact: true })\n\n    at Proxy.<anonymous> (/home/runner/work/unruly/unruly/tests/browser-workspace/u1.compat.cjs:8:464)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:38:52\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:38:1",
+      "console_errors": []
+    },
+    {
+      "id": "W07-import-export-and-rejection",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W08-legacy-copy-original-unchanged",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W09-quota-conflict-recovery",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W10-all-erasers-undo-cancel",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W11-board-selection-and-import-limit",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W13-migration-partial-quota-restart",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W12-offline-update-safety",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(await page.evaluate(async()=>Boolean((await navigator.serviceWorker.getRegistration())?.waiting)))\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:45:1131\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:45:1",
+      "console_errors": []
+    }
+  ]
+}

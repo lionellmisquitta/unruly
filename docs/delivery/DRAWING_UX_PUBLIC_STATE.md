@@ -24,3 +24,8 @@ Independent Gatekeeper research review: HANDBOOK_GATEKEEPER_REVIEW.md. Research/
 ## User-authorized build — 6 October 2026
 
 User explicitly requested adding all worthwhile handbook additions and proceeding with build. HANDBOOK_ADDITIONS_RELEASE_PLAN.md records stabilization/reference/text/guides/Smudge/gap-fill additions with existing masks/blur/share roadmap. U1_CHECKPOINT_TEST_HANDOFF.json binds the immediate slice to inspected source and allowed files. Independent U1 readiness is in progress; no app source changed at this entry. User no longer owes a build/layout/default confirmation.
+
+
+## U1 CI1 and bounded repair — 6 October 2026
+
+Actual candidate72094fc, run37423089580:35/35 model and39/52 browser groups PASS,13 browser FAIL. All16 inherited P01 performance groups passed, including frozen pixels and every-setter80MiB ceiling. Independent trace diagnosis attributes13 failures to obsolete UI locators, popup dismissal, stale-save polling and worker-update fixtures; original failed evidence retained. Separate source-proven locked-copy gap repaired by preserving active-layer selection on lock/unlock only; all content-write guards remain. New real-browser UB15 covers this contract. U1 source repairs2/2 consumed; CI2/3 candidate prepared, not executed at this entry. U1 remains open; U2 source, Pages publication, main and production remain unauthorized. No physical pen-feel claim or paid external model calls.
