@@ -1,1 +1,22 @@
-{"checkpoint_id":"U3","status":"scope_locked"}
+{
+  "checkpoint_id": "U3",
+  "title": "Core Gestures + Geometry",
+  "status": "scope_locked",
+  "parent_checkpoint": "checkpoint/u2-v0.5.0",
+  "parent_sha": "fd15c607d5b9a605b1e8a1164250803832830591",
+  "candidate_branch": "preview/drawing-ux-u3-2026-10-07",
+  "acceptance": [
+    "Two-finger single tap Undo and three-finger single tap Redo fire once only under bounded movement/time/contact rules",
+    "Stationary finger hold samples visible composite colour on release without document-history change",
+    "Held pen stroke recognizes bounded line/circle geometry, remains provisional until Apply, and commits once",
+    "Lasso transform previews translation/scale/rotation, Cancel preserves baseline, Apply commits once while preserving stroke style and pressure",
+    "Inherited U1/U2, selection, offline and performance regression remain green on the exact tested integration identity"
+  ],
+  "scope_out": ["G02 gestures", "Smudge", "advanced fill/blur", "Story Paths", "Drive sync", "timelapse", "AI", "native packaging"],
+  "repair_budget": {"application_source_batches_max": 2, "ci_runs_max": 3},
+  "rollback": "Keep checkpoint/u2-v0.5.0 as the cumulative reviewed preview; never rewrite accepted refs.",
+  "physical_pen": "NOT_VERIFIED",
+  "production_authorized": false,
+  "main_merge_authorized": false,
+  "note": "Candidate implementation pre-existed this monitor run; this file reconciles and freezes its bounded U3 scope. Further application-source changes require a QA-proven defect."
+}
