@@ -1,10 +1,11 @@
+import {getPreset,presetCompatible,replayWork} from './brushes.js';
 // UNRULY original vector workspace model. MIT. Pure operations, no browser storage.
 export const limits=Object.freeze({layers:32,strokes:2000,points:100000,bytes:8*1024*1024,boards:100,history:100,historyBytes:16*1024*1024,eraseSamples:20000,comparisons:200000});
 const copy=x=>structuredClone(x), bytes=x=>new TextEncoder().encode(JSON.stringify(x)).length;
 const fail=m=>{throw Error(m);}, idOK=x=>typeof x==='string'&&x.length>0&&x.length<=128;
 const num=(x,a,b)=>typeof x==='number'&&Number.isFinite(x)&&x>=a&&x<=b;
 export const blends=Object.freeze(['normal','multiply','screen','overlay','darken','lighten','difference','exclusion']);
-const rejectPreset=x=>{if(Object.keys(x).some(k=>/^preset/i.test(k)))fail('Brush presets are not supported in U1');};
+const rejectPreset=x=>{if(Object.keys(x).some(k=>/^preset/i.test(k)))fail('Brush presets are not supported in legacy documents');};
 const color=x=>typeof x==='string'&&/^#[0-9a-f]{6}$/i.test(x);
 function validateVersion(b,version){
  if(!b||b.version!==version||!idOK(b.id)||typeof b.title!=='string'||b.title.length>128||!Number.isSafeInteger(b.revision)||b.revision<0)fail('Invalid board');
@@ -12,8 +13,8 @@ function validateVersion(b,version){
  rejectPreset(b);const p=b.paper;if(!p||!['plain','dotted','grid','ruled','textured'].includes(p.kind)||!color(p.color)||!num(p.spacing,10,100)||!Number.isInteger(p.seed)||p.seed<0||p.seed>4294967295)fail('Invalid paper');
  const ids=new Set([b.id]);let ns=0,np=0;
  for(const l of b.layers){if(!idOK(l.id)||ids.has(l.id)||typeof l.name!=='string'||l.name.length>64||typeof l.visible!=='boolean'||typeof l.locked!=='boolean'||!num(l.opacity,0,1)||!Array.isArray(l.strokes))fail('Invalid layer');rejectPreset(l);if(version===3&&!blends.includes(l.blend))fail('Invalid layer blend');if(version===2&&Object.hasOwn(l,'blend'))fail('Invalid legacy layer blend');ids.add(l.id);
- for(const s of l.strokes){if(!idOK(s.id)||ids.has(s.id)||!['ink','pencil','marker','airbrush'].includes(s.brush)||!color(s.color)||!num(s.size,1,40)||!num(s.opacity,0,1)||!Array.isArray(s.points)||!s.points.length)fail('Invalid stroke');rejectPreset(s);ids.add(s.id);ns++;np+=s.points.length;
- if(s.brush!=='ink'){const step=Math.max(.5,s.size*(s.brush==='pencil'?.22:s.brush==='airbrush'?.3:.2));let dabs=0;for(let i=1;i<s.points.length;i++){dabs+=Math.max(1,Math.ceil(Math.hypot(s.points[i].x-s.points[i-1].x,s.points[i].y-s.points[i-1].y)/step));if(dabs>20000)fail('Brush replay limit reached');}}
+ for(const s of l.strokes){if(!idOK(s.id)||ids.has(s.id)||!['ink','pencil','marker','airbrush'].includes(s.brush)||!color(s.color)||!num(s.size,1,40)||!num(s.opacity,0,1)||!Array.isArray(s.points)||!s.points.length)fail('Invalid stroke');if(version===2)rejectPreset(s);else{if(Object.keys(s).some(k=>/^preset/i.test(k)&&k!=='preset'))fail('Invalid brush preset field');if(Object.hasOwn(s,'preset')&&(!idOK(s.preset)||!getPreset(s.preset)||!presetCompatible(s.brush,s.preset)))fail('Invalid brush preset');}ids.add(s.id);ns++;np+=s.points.length;
+ if(version===3&&s.preset){const work=replayWork(s);if(work.dabs>20000)fail('Brush replay limit reached');if(work.particles>600000)fail('Brush particle limit reached');}else if(s.brush!=='ink'){const step=Math.max(.5,s.size*(s.brush==='pencil'?.22:s.brush==='airbrush'?.3:.2));let dabs=0;for(let i=1;i<s.points.length;i++){dabs+=Math.max(1,Math.ceil(Math.hypot(s.points[i].x-s.points[i-1].x,s.points[i].y-s.points[i-1].y)/step));if(dabs>20000)fail('Brush replay limit reached');}}
  for(const q of s.points)if(!q||!num(q.x,-1e7,1e7)||!num(q.y,-1e7,1e7)||!(q.pressure===null||num(q.pressure,0,1)))fail('Invalid point/pressure');}}
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;
