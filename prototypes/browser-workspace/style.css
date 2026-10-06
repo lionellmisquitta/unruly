@@ -45,3 +45,9 @@ input[type=range]{min-height:44px}.canvas-badge button,footer button{min-height:
 .colour-swatches button{aspect-ratio:1;min-height:38px;padding:0;border:2px solid #ffffff24;border-radius:7px}
 #colour-hex-label{font-size:11px;color:var(--muted)}
 @media(max-width:480px){#brush-popover,#colour-popover{left:8px;right:8px;width:auto}.brush-library{grid-template-columns:108px minmax(0,1fr)}.colour-disc{width:200px;height:200px}.hue-marker{transform-origin:7px 7px}}
+
+/* U3 provisional geometry editing. */
+#selection-overlay .edit-handle{pointer-events:auto;fill:var(--panel);stroke:#f0bd78;stroke-width:2;vector-effect:non-scaling-stroke;cursor:grab}
+#selection-overlay .rotate-handle{fill:#405d73}
+#selection-overlay .shape-handle{fill:#bd591a}
+.edit-panel{width:260px}.edit-panel label{margin-top:7px}.edit-panel input{min-height:40px}.edit-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
