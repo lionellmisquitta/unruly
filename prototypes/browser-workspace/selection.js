@@ -16,3 +16,12 @@ function checkClipboard(payload){if(!payload||payload.version!==1||!Array.isArra
 export function deleteSelection(h,ids){chosen(h.board,ids,true);if(!ids.length)return h;const set=new Set(ids);return command(h,b=>{editable(b).strokes=editable(b).strokes.filter(s=>!set.has(s.id));});}
 export function moveSelection(h,ids,dx,dy){chosen(h.board,ids,true);if(!finite(dx)||!finite(dy))fail('Invalid movement');if(!ids.length||dx===0&&dy===0)return h;const set=new Set(ids);return command(h,b=>{for(const s of editable(b).strokes)if(set.has(s.id))for(const p of s.points){p.x+=dx;p.y+=dy;}});}
 export function pasteSelection(h,payload,x,y){editable(h.board);if(!finite(x)||!finite(y))fail('Invalid paste position');const {strokes,bounds}=checkClipboard(payload),dx=x-bounds.cx,dy=y-bounds.cy;return command(h,b=>{for(const s of strokes){s.id=crypto.randomUUID();for(const p of s.points){p.x+=dx;p.y+=dy;}}editable(b).strokes.push(...strokes);});}
+
+export function transformSelection(h,ids,params={}){
+ const strokes=chosen(h.board,ids,true);if(!strokes.length)return h;
+ const bounds=selectionBounds(h.board,ids),dx=Number(params.dx??0),dy=Number(params.dy??0),scale=Number(params.scale??1),angle=Number(params.angle??0),cx=Number(params.cx??bounds.cx),cy=Number(params.cy??bounds.cy);
+ if(![dx,dy,scale,angle,cx,cy].every(finite)||scale<.05||scale>20||Math.abs(angle)>360)fail('Invalid transform');
+ if(dx===0&&dy===0&&scale===1&&angle===0)return h;
+ const rad=angle*Math.PI/180,cos=Math.cos(rad),sin=Math.sin(rad),set=new Set(ids);
+ return command(h,b=>{for(const s of editable(b).strokes)if(set.has(s.id))for(const p of s.points){const x=(p.x-cx)*scale,y=(p.y-cy)*scale;p.x=cx+x*cos-y*sin+dx;p.y=cy+x*sin+y*cos+dy;}});
+}
