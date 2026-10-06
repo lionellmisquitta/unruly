@@ -1,0 +1,57 @@
+{
+  "review_batch": "U1+U2",
+  "timestamp": "2026-10-06T16:12:00Z",
+  "mode": "Graph-aware",
+  "accepted": [
+    {
+      "checkpoint": "U1",
+      "branch": "checkpoint/u1-v0.4.0",
+      "sha": "699d6fb29b2debe1ad3721a2c7a3ee86bd374792",
+      "qa": {
+        "run": 37468847640,
+        "model": "35/35",
+        "browser": "53/53"
+      }
+    },
+    {
+      "checkpoint": "U2",
+      "branch": "checkpoint/u2-v0.5.0",
+      "sha": "fd15c607d5b9a605b1e8a1164250803832830591",
+      "qa": {
+        "run": 37474125489,
+        "artifact": 11419065857,
+        "digest": "619a805dc99c3acca642e71f3873ec6e005432cc1d0a19cad5e26d563cd75d0c",
+        "model": "41/41",
+        "browser": "58/58"
+      }
+    }
+  ],
+  "u2": {
+    "implemented": [
+      "12 original immutable presets",
+      "two-column Brush Library",
+      "per-preset size/opacity memory + reset",
+      "optional v3 preset identity",
+      "legacy no-preset rendering compatibility",
+      "hue-ring + SV colour disc",
+      "Hex/H/S/V controls",
+      "12 generated shades",
+      "recent colours",
+      "saved palette"
+    ],
+    "repair": "CI2 found missing shared size/opacity application-state handlers; source repair 1 restored contract; CI3 passed."
+  },
+  "next": {
+    "checkpoint": "U3",
+    "status": "planned"
+  },
+  "open": [
+    "Physical Surface/Xiaomi pen feel NOT_VERIFIED",
+    "Open-source license",
+    "Drive OAuth/release setup",
+    "Procreate brush import fidelity",
+    "Layered exchange fidelity",
+    "BYOK AI provider details",
+    "Timelapse framing/retention"
+  ]
+}
