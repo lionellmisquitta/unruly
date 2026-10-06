@@ -32,5 +32,5 @@ export function initU2UI({settings,renderer,$,blocked,status,sample}){
  $('save-colour').onclick=()=>{const c=settings.color.toLowerCase();saved.palette=[c,...saved.palette.filter(x=>x.toLowerCase()!==c)].slice(0,16);persist();renderList('saved-palette',saved.palette,'Saved colour');};
  $('clear-recents').onclick=()=>{saved.recent=[];persist();renderList('recent-colours',saved.recent,'Recent colour');};
  syncColourControls();
- return {syncPresetSettings:rememberPreset,currentPresetName:()=>presetLabel(settings.preset)};
+ return {syncPresetSettings:rememberPreset,currentPresetName:()=>presetLabel(settings.preset),setColour:(hex,commit=true)=>setHex(hex,commit)};
 }
