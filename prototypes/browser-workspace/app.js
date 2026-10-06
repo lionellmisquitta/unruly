@@ -17,7 +17,7 @@ const contacts=new Map();
 const status=(text,error=false)=>{$('save').textContent=text;$('save').dataset.error=String(error);};
 function paint(){frame=0;if(!h)return;try{const board=pending?.kind==='transform'?pending.preview.board:opacityDraft?.board||active?.moved?.board||active?.erased||h.board;const live=pending?.kind==='shape'?pending.stroke:active?.stroke||null;renderer.render(board,view,live);}catch(e){status('Render limit · '+e.message,true);}}
 function schedulePaint(){if(!frame)frame=requestAnimationFrame(paint);}
-function refresh(){if(!h)return;selectionUI();$('undo').disabled=!h.past.length;$('redo').disabled=!h.future.length;$('title').value=h.board.title;$('zoom').textContent=Math.round(view.scale*100)+'%';$('hint').hidden=h.board.layers.some(l=>l.strokes.length)||!!active;const l=h.board.layers.find(l=>l.id===h.board.activeLayer);$('layer-warning').textContent=l.locked||!l.visible?'Active layer is '+(l.locked?'locked':'hidden')+'. Select another layer to draw.':h.evicted?'Older undo states were released to keep memory bounded.':'';schedulePaint();}
+function refresh(){if(!h)return;selectionUI();geometryUI();$('undo').disabled=!h.past.length;$('redo').disabled=!h.future.length;$('title').value=h.board.title;$('zoom').textContent=Math.round(view.scale*100)+'%';$('hint').hidden=h.board.layers.some(l=>l.strokes.length)||!!active;const l=h.board.layers.find(l=>l.id===h.board.activeLayer);$('layer-warning').textContent=l.locked||!l.visible?'Active layer is '+(l.locked?'locked':'hidden')+'. Select another layer to draw.':h.evicted?'Older undo states were released to keep memory bounded.':'';schedulePaint();}
 function panels(){
  if(!h||active||opacityDraft||layerDrag)return;
  const b=h.board;$('paper').value=b.paper.kind;$('paper-color').value=b.paper.color;$('spacing').value=b.paper.spacing;
@@ -73,6 +73,18 @@ function gesturePoint(e){const p=pos(e);return toDocument(p.x,p.y,active?.frozen
 function lassoPoint(e){const p=gesturePoint(e),last=active.polygon.at(-1);if(Math.hypot(p.x-last.x,p.y-last.y)>1e-7){if(active.polygon.length>=512)throw Error('Lasso limit reached · selection unchanged');active.polygon.push(p);}}
 function movePreview(e){const p=gesturePoint(e);active.dx=p.x-active.start.x;active.dy=p.y-active.start.y;active.moved=moveSelection(active.baseHistory,active.ids,active.dx,active.dy);}
 
+function geometryUI(){
+ for(const id of ['transform-scale-handle','transform-rotate-handle','shape-handle-a','shape-handle-b'])$(id).setAttribute('hidden','');
+ const css=p=>({x:p.x*view.scale+view.x,y:p.y*view.scale+view.y});
+ if(pending?.kind==='transform')try{const b=selectionBounds(pending.preview.board,pending.ids);if(b){const s=css({x:b.maxX,y:b.maxY}),r=css({x:b.cx,y:b.minY-30/Math.max(view.scale,.001)});for(const [id,p]of [['transform-scale-handle',s],['transform-rotate-handle',r]]){$(id).setAttribute('cx',p.x);$(id).setAttribute('cy',p.y);$(id).removeAttribute('hidden');}}}catch{}
+ if(pending?.kind==='shape'){const q=pending.recognized,a=q.kind==='line'?q.points[0]:q.center,b=q.kind==='line'?q.points[1]:{x:q.center.x+q.radius,y:q.center.y},aa=css(a),bb=css(b);for(const [id,p]of [['shape-handle-a',aa],['shape-handle-b',bb]]){$(id).setAttribute('cx',p.x);$(id).setAttribute('cy',p.y);$(id).removeAttribute('hidden');}}
+}
+function localRecord(before){if(!pending)return;pending.localPast.push(structuredClone(before));if(pending.localPast.length>32)pending.localPast.shift();pending.localFuture=[];}
+function syncTransformInputs(){if(pending?.kind!=='transform')return;const p=pending.params;$('transform-x').value=p.dx;$('transform-y').value=p.dy;$('transform-scale').value=p.scale*100;$('transform-angle').value=p.angle;}
+function updateTransform(next,record=false){if(pending?.kind!=='transform')return false;const before={...pending.params},p={...pending.params,...next};try{const preview=transformSelection(pending.baseHistory,pending.ids,p);if(record)localRecord(before);pending.params=p;pending.preview=preview;syncTransformInputs();refresh();return true;}catch(e){status(e.message,true);return false;}}
+function beginTransform(){if(blocked()||!selected.length)return;try{editable(h.board);selectionBounds(h.board,selected);}catch(e){status(e.message,true);return;}closePopovers();pending={kind:'transform',baseHistory:h,ids:[...selected],params:{dx:0,dy:0,scale:1,angle:0},preview:h,localPast:[],localFuture:[]};$('transform-controls').hidden=false;syncTransformInputs();status('Transform preview · Apply or Cancel');refresh();}
+function applyTransform(){if(pending?.kind!=='transform')return;const q=pending;pending=null;$('transform-controls').hidden=true;if(q.preview!==q.baseHistory)changed(q.preview,false,true);else refresh();status('Transform applied');}
+function cancelTransform(){if(pending?.kind!=='transform')return;pending=null;$('transform-controls').hidden=true;status('Transform cancelled');refresh();}
 $('undo').onclick=()=>act(()=>undo(h));$('redo').onclick=()=>act(()=>redo(h));$('title').onchange=()=>act(()=>command(h,b=>b.title=$('title').value));$('add-layer').onclick=()=>editLayer('add');
 for(const id of ['paper','paper-color','spacing'])$(id).onchange=()=>act(()=>command(h,b=>{b.paper.kind=$('paper').value;b.paper.color=$('paper-color').value;b.paper.spacing=Number($('spacing').value);}));
 const popovers=['actions-popover','selection-controls','brush-popover','eraser-popover','colour-popover','inspector'];
