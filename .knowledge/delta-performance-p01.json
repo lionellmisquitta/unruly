@@ -3,7 +3,7 @@
   "checkpoint": "P01",
   "preview_version": "0.3.0",
   "parent_source": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
-  "status": "REVIEWED_PREVIEW_DEPLOY_PENDING",
+  "status": "HOSTED_REVIEWED_PREVIEW",
   "relationships": [
     {
       "from": "P01 retained live ink",
@@ -45,10 +45,15 @@
     "source_hashes_verified": 21,
     "cached_renderer_p95_ms": 1.7,
     "reference_renderer_p95_ms": 83.1,
-    "transient_nominal_bytes_peak": 83886080
+    "transient_nominal_bytes_peak": 83886080,
+    "pages_run": 37397255190,
+    "pages_job": 112056053920,
+    "hosted_files_matched": 11,
+    "hosted_saved_update_mouse_draw_undo_redo_reload": "OBSERVED"
   },
   "source_repairs": 1,
   "qa_runs": 2,
   "gatekeeper": "PERFORMANCE_FINAL_GATEKEEPER.md",
-  "physical_feel": "NOT_VERIFIED"
+  "physical_feel": "NOT_VERIFIED",
+  "version_branch": "checkpoint/p01-v0.3.0"
 }

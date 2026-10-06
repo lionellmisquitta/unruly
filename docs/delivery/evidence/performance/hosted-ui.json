@@ -1,0 +1,20 @@
+{
+  "source": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "publication_commit": "334f65768f37f4faa41ae47d2a865918b53b97eb",
+  "pages_run": 37397255190,
+  "pages_job": 112056053920,
+  "deployment": "SUCCESS",
+  "url": "https://lionellmisquitta.github.io/unruly/",
+  "hosted_assets_matched": 11,
+  "safe_explicit_update": "OBSERVED",
+  "preupdate_saved_title_and_two_strokes_retained": true,
+  "postupdate_mouse_draw_undo_redo_save_reload": "OBSERVED",
+  "postreload_three_strokes_visible": true,
+  "offline_ready_indicator": "OBSERVED",
+  "hosted_network_disable": "NOT_REPEATED; CI offline/update regression PASSED",
+  "physical_pen_latency": "NOT_VERIFIED",
+  "screenshot": "live-preview.jpg",
+  "screenshot_sha256": "ffbdeee5ab58cb0eb8d15ffe1e449d4ac2279cb5a1d37ebd5111a561844322d5",
+  "main_merge": false,
+  "production_authorization": false
+}
