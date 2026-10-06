@@ -595,3 +595,22 @@ browser_workspace_hosted_preview_2026_10_04:
   paid_external_model_calls: 0
   production_authorization: false
   product_checkpoints_closed: 0
+
+
+u1_closure_2026_10_06:
+  checkpoint: U1
+  status: passed
+  source_commit: 699d6fb29b2debe1ad3721a2c7a3ee86bd374792
+  qa_run_id: 37468847640
+  qa_artifact_id: 11416116944
+  qa_artifact_sha256: 338699d578104a9cf55ec4d2c3766f9281773804679c62ec8faa09cbf116449c
+  model_tests: {passed: 35, failed: 0}
+  browser_groups:
+    foundation: {passed: 15, failed: 0}
+    selection: {passed: 6, failed: 0}
+    performance: {passed: 16, failed: 0}
+    u1: {passed: 16, failed: 0}
+  physical_pen_feel: not_verified
+  preview_publication: authorized
+  main_authorization: false
+  production_authorization: false
