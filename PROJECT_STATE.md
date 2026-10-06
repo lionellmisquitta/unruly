@@ -226,3 +226,7 @@ Pages37224013072 succeeded;9hostedappassetsHTTP200 andexactmatchtested80c5bbe86c
 Exact tested source: `699d6fb29b2debe1ad3721a2c7a3ee86bd374792`.
 Stabilization followed CI2 evidence rather than hiding a third U1 repair cycle. CI3 GitHub Actions run `37468847640` passed the complete bounded suite: 35/35 model tests; browser foundation 15/15; selection 6/6; performance 16/16; U1 16/16. Total browser groups: 53/53 PASS. QA artifact `11416116944`, digest `sha256:338699d578104a9cf55ec4d2c3766f9281773804679c62ec8faa09cbf116449c`.
 U1 behavior is accepted for reviewed preview publication. Physical Surface/Xiaomi pen feel remains NOT_VERIFIED. U2/U3/G02 are not implied by U1 closure. Main and production authorization remain false.
+
+
+## U1 reviewed preview publication — 6 October 2026
+GitHub Pages workflow run `37469955021` completed successfully after its identity gate verified exact reviewed source `699d6fb29b2debe1ad3721a2c7a3ee86bd374792`. GitHub reported the Pages environment URL as `https://lionellmisquitta.github.io/unruly/`. The chat runtime could not independently fetch that public URL, so hosted HTTP/hash verification is not claimed beyond GitHub's successful deployment evidence. Main/production remain unchanged and unauthorized.
