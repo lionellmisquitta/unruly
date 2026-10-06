@@ -220,3 +220,9 @@ Exact80c5bbe86cde4c41a81e354f296ff5d203019888 CI37223520128 passed16model/15Chro
 ## WB1 hosted workspace verified
 
 Pages37224013072 succeeded;9hostedappassetsHTTP200 andexactmatchtested80c5bbe86cde4c41a81e354f296ff5d203019888. RemoteChrome savedupdatecopied1oldboard, retainedexistingdrawing, nativekeyboardcontrols/color/paper/layer/newink/save/reloadobserved. Hostedofflinereadyindicatorobserved,networkdisableCIonly; physicalpenfeelNOTVERIFIED. Onecombinedhumantestcard delivered. CurrentpreviewcompleteWB1threeinternalslices; fullproduct0/14closure,productionfalse. No native/history/security/defaultmainchanges; no paidexternalmodelcalls. See WORKSPACE_HOSTED_STATUS.md.
+
+
+## U1 compact reference UI/layers closure — 6 October 2026
+Exact tested source: `699d6fb29b2debe1ad3721a2c7a3ee86bd374792`.
+Stabilization followed CI2 evidence rather than hiding a third U1 repair cycle. CI3 GitHub Actions run `37468847640` passed the complete bounded suite: 35/35 model tests; browser foundation 15/15; selection 6/6; performance 16/16; U1 16/16. Total browser groups: 53/53 PASS. QA artifact `11416116944`, digest `sha256:338699d578104a9cf55ec4d2c3766f9281773804679c62ec8faa09cbf116449c`.
+U1 behavior is accepted for reviewed preview publication. Physical Surface/Xiaomi pen feel remains NOT_VERIFIED. U2/U3/G02 are not implied by U1 closure. Main and production authorization remain false.
