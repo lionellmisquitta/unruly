@@ -1,0 +1,67 @@
+{
+  "artifact": "CHECKPOINT_TEST_HANDOFF",
+  "checkpoint_id": "P01",
+  "builder_agent": "codex-root",
+  "adversary": "isolated-same-model Quality Engineering Adversary; external alternate CLI unavailable here",
+  "branch": "preview/performance-foundation-2026-10-06",
+  "commit_sha": "PENDING_IMPLEMENTATION_COMMIT",
+  "baseline_source": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+  "requirements": [
+    "REQ-005 responsive pressure-sensitive handwriting",
+    "GDEC-006 smooth pen interaction"
+  ],
+  "acceptance_criteria": [
+    "P01-A1",
+    "P01-A2",
+    "P01-A3",
+    "P01-A4",
+    "P01-A5",
+    "P01-A6",
+    "P01-A7"
+  ],
+  "contract": "PERFORMANCE_P01_CONTRACT.md",
+  "allowed_scope": [
+    "render.js",
+    "app.js bounded hot-path scheduling",
+    "sw.js version",
+    "independently authored renderer/browser tests",
+    "QA workflow",
+    "scoped docs and knowledge delta"
+  ],
+  "dependencies": [
+    "reviewed C06-S1 source",
+    "existing v2 immutable document contract"
+  ],
+  "ux_references": [
+    "existing browser-workspace locked controls and pen-first drawing interaction"
+  ],
+  "known_risks": [
+    "first cache miss still replays completed board",
+    "middle active layer remains reference path",
+    "RGBA backing cap is not total GPU memory guarantee",
+    "automated renderer duration does not certify physical pen feel"
+  ],
+  "required_test_categories": [
+    "baseline/new reference pixel contract",
+    "cached/reference exact pixels",
+    "cache invalidation and recovery",
+    "memory budget",
+    "paired renderer CPU benchmark",
+    "24 model plus21 browser inherited regression",
+    "offline update and local persistence"
+  ],
+  "regression_scope": [
+    "model",
+    "storage",
+    "selection",
+    "brushes",
+    "erasers",
+    "controls",
+    "save/reload/undo/redo",
+    "offline/update safety"
+  ],
+  "environment": "GitHub Actions ubuntu24.04 Node pinned lock Playwright1.62.1 Chromium; local browser unavailable",
+  "repair_limit": 2,
+  "qa_run_limit": 3,
+  "production_authorization": false
+}
