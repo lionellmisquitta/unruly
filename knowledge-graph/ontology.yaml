@@ -1,0 +1,19 @@
+# UNRULY ontology extension
+entity_types:
+  - Capability
+  - Integration
+  - Screen
+  - Action
+relationship_types:
+  - OWNS
+  - USES
+  - IMPLEMENTED_BY
+  - SUPPORTS
+  - SOURCED_FROM
+  - PART_OF
+  - DEPENDS_ON
+  - SUPERSEDES
+  - APPLIES_TO
+notes:
+  - Concept-first product/UX structure is authoritative for navigation.
+  - Technical artifacts are linked only where supported by repository evidence.
