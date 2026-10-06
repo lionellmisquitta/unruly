@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "checkpoint": "P01",
+  "preview_version": "0.3.0",
+  "parent_source": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+  "status": "CANDIDATE_PREPARATION",
+  "relationships": [
+    {
+      "from": "P01 retained live ink",
+      "relation": "preserves",
+      "to": "v2 board/model/storage/selection contracts"
+    },
+    {
+      "from": "cached active layer",
+      "relation": "composes live stroke before",
+      "to": "layer opacity"
+    },
+    {
+      "from": "live pen interaction",
+      "relation": "does not wait for",
+      "to": "saving/cloud/AI"
+    },
+    {
+      "from": "P01",
+      "relation": "requires",
+      "to": "exact pixels + bounded memory + paired benchmark + independent QA/Gatekeeper"
+    }
+  ],
+  "next_planned": [
+    "P02 spatial/tiled rendering",
+    "P03 delta history/disk paging",
+    "P04 worker/GPU measured kernels"
+  ],
+  "implemented_next_planned": false,
+  "main_merge": false,
+  "production_authorization": false
+}

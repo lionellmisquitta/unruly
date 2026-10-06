@@ -1,7 +1,7 @@
 name: Quarantined browser foundation QA
 on:
   push:
-    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06']
+    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06']
     paths:
       - 'prototypes/browser-workspace/**'
       - 'tests/browser-workspace/**'
@@ -48,13 +48,22 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/selection.browser.cjs > tests/browser-workspace/evidence/selection-browser-output.txt 2>&1
+          kill "$qa_server_pid"
+          wait "$qa_server_pid" || true
+          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/server.log 2>&1 &
+          qa_server_pid=$!
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/performance.browser.cjs > tests/browser-workspace/evidence/performance-browser-output.txt 2>&1
       - name: Bind tested identities
         if: always()
         shell: bash
         run: |
           mkdir -p tests/browser-workspace/evidence
           git rev-parse HEAD > tests/browser-workspace/evidence/commit.txt
-          sha256sum prototypes/browser-workspace/* tests/browser-workspace/*.cjs tests/browser-workspace/*.mjs tests/browser-workspace/package.json tests/browser-workspace/package-lock.json .github/workflows/browser-workspace.yml > tests/browser-workspace/evidence/source-sha256.txt
+          sha256sum prototypes/browser-workspace/* tests/browser-workspace/*.cjs tests/browser-workspace/*.mjs tests/browser-workspace/package.json tests/browser-workspace/package-lock.json tests/browser-workspace/fixtures/reference-render.js.txt .github/workflows/browser-workspace.yml > tests/browser-workspace/evidence/source-sha256.txt
       - name: Upload bounded QA evidence only
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

@@ -1,0 +1,34 @@
+# Independent P01 QA plan / data manifest
+
+Checkpoint: P01 retained live-ink renderer, preview v0.3.0. Governing source: `docs/delivery/PERFORMANCE_P01_CONTRACT.md`. Builder Codex; adversary fresh isolated same-model session. Claude local laptop unavailable, no paid external model invocation. This is a quarantined browser preview; physical pen feel and merged/production closure remain outside this run. Source/CI identities will be bound from actual execution rather than inferred from this local directory (which has no `.git`).
+
+## Independent coverage
+
+| Test ID | Contract | Attack / expected result |
+|---|---|---|
+| P01-A1-exact-pixel-matrix | A1/A2 | 1620 exact RGBA comparisons across four brushes, five papers, three stroke and layer opacities (zero/translucent/opaque), null/zero/varying pressure, three fractional/transformed views, crossing/overlapping completed and live strokes. Independent reference renderer, no tolerance. Warm eligible previews replay zero completed strokes. |
+| P01-A2-topmost-middle-fallback | A1/A2 | Middle active layer with visible nonzero upper layer uses reference replay; hidden/zero-alpha upper permits retained rendering. Exact output in each case. |
+| P01-A2-invalidation-and-preview-changes | A2 | Changed preview length and pressure use retained content yet display exact new pixels. Board object identity with unchanged revision and changed colour, revision, active layer, x/y/scale, CSS resize, DPR, explicit full render/cancel, explicit reference render, brush sample, explicit invalidation following in-place mutation, immutable command, undo and redo all cause cold rebuild followed by warm zero replay. |
+| P01-A2-replay-error-recovery | A2 | Oversized pencil live preview exhausts brush replay, throws existing limit error and invalidates cache; valid subsequent preview rebuilds and exactly matches reference. |
+| P01-A4-budget-desktop/tablet-DPR1/2/3 | A4 | Five fixed renderer surfaces, exact nominal RGBA accounting <=80MiB, each dimension <=4096, backing DPR <=2. Desktop and tablet at DPR1/2/3, resize, 5000x5000 stress, repeated board/preview transitions, sample/reference. Surface object identities never change. |
+| P01-A3-paired-live-renderer-benchmark | A3 | Locked deterministic 8-layer/10000-completed-point/four-brush fixture, top active L7, 128-point live ink, 1440x950 CSS DPR1. Five warmup pairs and twenty measured pairs, alternating timing order. Separate reference renderer. Nearest-rank p95 cached <=16.7ms and <=50% uncached reference. No fixture/threshold relaxation. Raw samples saved before assertions. |
+| P01-A5-cancel-commit-history-cache-recovery | A5 | Actual Chromium pen pointer contact/pressure, cancel leaves saved board identical; commit/undo/redo/reload preserve exact stroke data. |
+| Inherited M01–M16/S01–S08, W/U browser journeys | A5/A6 | Entire inherited 24-model / 21-browser suite required. Four fixed-budget assertions changed exactly 3→5 per amended contract: W01/W04/W05/U05. Other inherited assertions unchanged. Offline, update/Saved safety, quota/conflict recovery, selection and mobile controls remain required. |
+
+## Deterministic test data
+
+Fixture generator lives only in `tests/browser-workspace/performance.browser.cjs`; no packages or application code changed. Pixel fixture: board `p01-small`, three layers `L0/L1/L2` in bottom→top order; each completed stroke uses fixed crossing points, deterministic colours and style; active `L2`. Paper seed 173, spacing 24. Live stroke has five crossing points; pressure cases include null, zero, .2/.5/1. Geometry192x160 CSS, transformed views (0,0,1), (12.25,-7.5,.67), (-18.5,6.75,1.4). Opacity values completed .6, lower layers .8, active0/.45/1, live0/.35/1.
+
+Benchmark: `p01-benchmark`, eight layers `L0…L7`, one completed stroke per layer with1250 points, brushes ink/pencil/marker/airbrush twice; `x=j`, `y=70+i*90+sin(j*.01)*20`, pressure .5, size5, opacity .8, layer opacity .8. ActiveTOP `L7`. Live128-point ink: `x=400+j*2`, `y=760+sin(j*.08)*15`, pressure `j/127`, size6, opacity .7. Plain white paper, seed173. Validated by existing model. The fixture is locked before measurement; no random data. Renderer duration only, no claim of physical pen-to-display latency.
+
+Error fixture: two-point live pencil from(0,0) to(1e7,1e7), pressure1; deliberately bypasses model only to attack renderer exception recovery. It is never persisted. UI fixture uses supported app IndexedDB state/save paths; reads existing records for assertions. Each test uses a fresh isolated Playwright context; cleanup closes contexts, retaining only result JSON/failure screenshot/trace and benchmark samples.
+
+## Execution and verdict
+
+Exact commands: `node --check tests/browser-workspace/performance.browser.cjs`; `node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs`; start `node tests/browser-workspace/server.cjs`; then inherited `browser.test.cjs`, fresh server, inherited `selection.browser.cjs`, fresh server, `performance.browser.cjs`. Existing pinned Playwright harness reused; no unbounded browser install. CI must bind actual tested commit, source/test hashes, browser/Node versions, full results and failures. Paired benchmark is mandatory; missing execution is NOT_VERIFIED/BLOCKED, never passed. At most three QA CI runs and two source repair batches per locked contract.
+
+Local readiness evidence: syntax checks pass; inherited24 model tests executed and passed on6 October2026. Chromium unavailable locally; browser/benchmark results pending actual CI. No invented screenshots or benchmark figures.
+
+Addendum for independent reference and controller checks: frozen baseline renderer fixture SHA256 `04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d`, copied byte-for-byte from the local e30 baseline to `tests/browser-workspace/fixtures/reference-render.js.txt`; hash enforced by test runner before launch. Two DPR1/2 runs each compare720 new-reference/baseline pixel cases with identical backing dimensions; original code is executed only as a QA fixture, never published. Baseline checks cover four brushes, five papers, translucent/opaque layers, stroke0/.35/1, null/zero/full pressure, and two views. Independent cache matrix remains1620 cases.
+
+A7 controller test instruments only served response copies of app `refresh`/`paint` and selection `selectionBounds` to count invocations; it does not alter production files or remove validation. Actual pointer move must schedule paint with zero refresh/bounds calls; start/end/cancel must refresh; empty selections must never invoke bounds. It verifies pressure reporting and injects two deterministic coalesced samples(.31/.72) whose persisted pressure values must survive. Instrumentation itself is asserted present. Five additional cold rebuild timings are reported and checked against the inherited250ms renderer envelope. Full CI required before any PASS verdict.
