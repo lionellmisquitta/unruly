@@ -1,0 +1,17 @@
+{
+  "id": "DUX1-user-build-start",
+  "date": "2026-10-06",
+  "user_build_authorization": true,
+  "added_requirements": [
+    "stroke stabilization",
+    "floating reference image",
+    "drawing guides and symmetry/snapping",
+    "editable text/fonts",
+    "real Smudge",
+    "gap-aware paint bucket"
+  ],
+  "release_plan": "docs/delivery/HANDBOOK_ADDITIONS_RELEASE_PLAN.md",
+  "next_checkpoint": "U1",
+  "production_authorization": false,
+  "independent_u1_readiness": "pending"
+}

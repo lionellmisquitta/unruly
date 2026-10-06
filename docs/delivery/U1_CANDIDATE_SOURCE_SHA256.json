@@ -1,0 +1,32 @@
+{
+  "checkpoint": "DUX1-U1",
+  "parent": "16d63942d8268b5a89eaf2e42e69e20821ee486b",
+  "app_files": {
+    "prototypes/browser-workspace/render.js": "b0c39b17e3b4fe56f4bd76245e6ff0908774609d8df045cc7fc047efa38224ba",
+    "prototypes/browser-workspace/index.html": "12aa3ef011b7de3b092fb286be1b03e24714f5a327b0f5151144b4e31a9f4e8e",
+    "prototypes/browser-workspace/icon.svg": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+    "prototypes/browser-workspace/app.js": "36fec0b104ec7efa54c68f2840ec9fa94f88bdba7d122d95f23b5b975f3f8efa",
+    "prototypes/browser-workspace/model.js": "d313c3ad44b338c8bf641cf7b87aacee62fca827f7ab38275342649b154a762c",
+    "prototypes/browser-workspace/manifest.webmanifest": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+    "prototypes/browser-workspace/selection.js": "0c9d4041dd5646eadb8a9c2d422027a27e0710d6e8a9013937c70ad2c05bd536",
+    "prototypes/browser-workspace/storage.js": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+    "prototypes/browser-workspace/sw.js": "527395bcd73d9ad4bd54184288e21387ec90305cf0d79035edb259303c321624",
+    "prototypes/browser-workspace/style.css": "ddc889e31c1cfd341a568863bd78e4ee0228b2f46e69ee77a85e590c21f27881",
+    "prototypes/browser-workspace/README.md": "3067a214433b4d8be2ba736f5b745b09aa624bcdbe40db30f2be4a9a4422c3b4"
+  },
+  "QA_sha256": {
+    "tests/browser-workspace/selection.test.mjs": "f594e882db9bcaf6cd925229128bf295fdcd110d1203e9ca45cac4f0c224794e",
+    "tests/browser-workspace/TEST_PLAN.md": "93bee8917bb2f490f0fb36e1a4422f22ccaaeb71b9eb34508c11f3a6fe216ea3",
+    "tests/browser-workspace/package.json": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+    "tests/browser-workspace/browser.test.cjs": "7afcc791d6556c0dcb66060b1504aefc81e0b68d5f7b851e3d8469b9109da2bd",
+    "tests/browser-workspace/u1.model.test.mjs": "9e41dceafc46490a93f30dd1aa89a2834179e3d8fbf488f2aaac44e4f8c2a251",
+    "tests/browser-workspace/package-lock.json": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+    "tests/browser-workspace/performance.browser.cjs": "045a1fca6bf8d0d2a3e9eed5059c465e19ffd8150a300089eb982fdda2ef54f2",
+    "tests/browser-workspace/server.cjs": "0f0ea13978ec217492e6c4009deec02c9d2c7c955e9e9f777238175c255e94b4",
+    "tests/browser-workspace/u1.browser.cjs": "93baea37deefc0221dea5df2a3e0d4310cab4a57c368fb2c85472ad1dc6d030d",
+    "tests/browser-workspace/model.test.mjs": "23d84ef4e350bdcb0c0bd3e8df20d7023a38323d9de17d3a36243fc8df3c44f5",
+    "tests/browser-workspace/selection.browser.cjs": "e951f6a743daf5743a7c7316e77312ffab62fcf95eccd5cceb683c8ba3c298b4",
+    "tests/browser-workspace/u1.compat.cjs": "a0b8a7345f5a356f0144228b6b777d75a90ee45177410b6e2f09d3ad6818db77"
+  },
+  "workflow_sha256": "d1c83cc1a02caed5d58e72195eb1e8536489416869dff36ae909ee2adfd61f97"
+}

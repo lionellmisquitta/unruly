@@ -23,7 +23,7 @@ export function createRenderer(canvas){
  const surfaces=[canvas,layer,scratch,lower,retained];
  let cache=null;
  const invalidate=()=>{cache=null;};
- function clear(c){const ctx=c.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.clearRect(0,0,c.width,c.height);return ctx;}
+ function clear(c){const ctx=c.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,c.width,c.height);return ctx;}
  function geometry(){
   const rect=canvas.getBoundingClientRect(),cssW=Math.max(1,rect.width),cssH=Math.max(1,rect.height),deviceDpr=window.devicePixelRatio||1;
   const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt(rendererBudget.backingBytes/(surfaces.length*4*cssW*cssH)));
@@ -40,10 +40,18 @@ export function createRenderer(canvas){
  function strokeToLayer(s,v,g){
   if(s.opacity===0)return;
   const sc=clear(scratch);sc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);drawStroke(sc,s);
-  const lc=layer.getContext('2d');lc.setTransform(1,0,0,1,0,0);lc.globalAlpha=s.opacity;lc.drawImage(scratch,0,0);
+  const lc=layer.getContext('2d');lc.setTransform(1,0,0,1,0,0);lc.globalCompositeOperation='source-over';lc.globalAlpha=s.opacity;lc.drawImage(scratch,0,0);
  }
  function replayLayer(l,v,g,live=null){clear(layer);for(const s of l.strokes)strokeToLayer(s,v,g);if(live)strokeToLayer(live,v,g);}
- function composite(target,l){const ctx=target.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=l.opacity;ctx.drawImage(layer,0,0);ctx.globalAlpha=1;}
+ function composite(target,l){
+  const ctx=target.getContext('2d'),operation=l.blend==='normal'||!l.blend?'source-over':l.blend;
+  ctx.setTransform(1,0,0,1,0,0);
+  try{
+   ctx.globalAlpha=l.opacity;ctx.globalCompositeOperation=operation;
+   if(ctx.globalCompositeOperation!==operation)throw Error('This browser does not support the '+l.blend+' layer blend. Use a browser that supports this blend mode.');
+   ctx.drawImage(layer,0,0);
+  }finally{ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';}
+ }
  function background(target,b,v,g){const ctx=clear(target);ctx.setTransform(g.d,0,0,g.d,0,0);paper(ctx,b.paper,v,g.cssW,g.cssH);}
  function full(board,v,live,g){
   background(canvas,board,v,g);let count=0;
@@ -58,7 +66,7 @@ export function createRenderer(canvas){
   if(!live||!active?.visible||active.opacity===0||board.layers.slice(index+1).some(l=>l.visible&&l.opacity!==0)){
    invalidate();try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}
   }
-  const key=[board.revision,board.activeLayer,view.x,view.y,view.scale,g.cssW,g.cssH,g.w,g.h,g.d,g.deviceDpr].join('|');
+  const key=[board.revision,board.activeLayer,view.x,view.y,view.scale,g.cssW,g.cssH,g.w,g.h,g.d,g.deviceDpr,...board.layers.map(l=>l.blend||'normal')].join('|');
   let count=0,mode='retained-hit';
   try{
    if(!cache||cache.board!==board||cache.key!==key){
@@ -72,10 +80,25 @@ export function createRenderer(canvas){
    return metrics(t,g,mode,count);
   }catch(e){invalidate();throw e;}
  }
+ function scratchSize(width,height){
+  const shared=[layer,scratch],others=surfaces.filter(c=>!shared.includes(c));
+  if(others.reduce((n,c)=>n+c.width*c.height*4,0)+shared.length*width*height*4>rendererBudget.backingBytes)throw Error('Renderer backing budget exceeded');
+  // Release both stores before either dimensional setter grows a backing store.
+  for(const c of shared){c.width=1;c.height=1;}
+  for(const c of shared){c.width=width;c.height=height;}
+ }
+ function thumbnail(l){
+  invalidate();scratchSize(80,48);
+  let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+  for(const s of l.strokes){if(s.opacity===0)continue;const radius=s.size/2+1;for(const p of s.points){x0=Math.min(x0,p.x-radius);y0=Math.min(y0,p.y-radius);x1=Math.max(x1,p.x+radius);y1=Math.max(y1,p.y+radius);}}
+  const scale=Number.isFinite(x0)?Math.min(1,72/Math.max(1,x1-x0),40/Math.max(1,y1-y0)):1;
+  const v=Number.isFinite(x0)?{x:40-(x0+x1)/2*scale,y:24-(y0+y1)/2*scale,scale}:{x:0,y:0,scale:1};
+  replayLayer(l,v,{d:1});const ctx=clear(scratch);ctx.globalAlpha=l.opacity;ctx.drawImage(layer,0,0);ctx.globalAlpha=1;return scratch.toDataURL();
+ }
  function preview(stroke,width=180,height=56){
   invalidate();width=Math.min(400,Math.max(1,Math.round(width)));height=Math.min(100,Math.max(1,Math.round(height)));
-  for(const c of [layer,scratch]){c.width=width;c.height=height;}
+  scratchSize(width,height);
   const sc=clear(scratch),lc=clear(layer);sc.setTransform(Math.min(1,width/180),0,0,1,0,0);drawStroke(sc,stroke);lc.fillStyle='#f4f3ef';lc.fillRect(0,0,width,height);lc.globalAlpha=stroke.opacity;lc.drawImage(scratch,0,0);return layer.toDataURL();
  }
- return {render,renderReference,preview,invalidate,surfaces};
+ return {render,renderReference,preview,thumbnail,invalidate,surfaces};
 }

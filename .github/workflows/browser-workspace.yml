@@ -1,7 +1,7 @@
 name: Quarantined browser foundation QA
 on:
   push:
-    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06']
+    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06']
     paths:
       - 'prototypes/browser-workspace/**'
       - 'tests/browser-workspace/**'
@@ -28,9 +28,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          qa_result_code=0
           mkdir -p tests/browser-workspace/evidence
           node --version > tests/browser-workspace/evidence/node-version.txt
-          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1
+          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/server.log 2>&1 &
           qa_server_pid=$!
           trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
@@ -38,7 +39,7 @@ jobs:
             if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
             sleep 0.1
           done
-          node tests/browser-workspace/browser.test.cjs > tests/browser-workspace/evidence/browser-output.txt 2>&1
+          node tests/browser-workspace/browser.test.cjs > tests/browser-workspace/evidence/browser-output.txt 2>&1 || qa_result_code=1
           kill "$qa_server_pid"
           wait "$qa_server_pid" || true
           node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/server.log 2>&1 &
@@ -47,7 +48,7 @@ jobs:
             if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
             sleep 0.1
           done
-          node tests/browser-workspace/selection.browser.cjs > tests/browser-workspace/evidence/selection-browser-output.txt 2>&1
+          node tests/browser-workspace/selection.browser.cjs > tests/browser-workspace/evidence/selection-browser-output.txt 2>&1 || qa_result_code=1
           kill "$qa_server_pid"
           wait "$qa_server_pid" || true
           node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/server.log 2>&1 &
@@ -56,7 +57,9 @@ jobs:
             if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
             sleep 0.1
           done
-          node tests/browser-workspace/performance.browser.cjs > tests/browser-workspace/evidence/performance-browser-output.txt 2>&1
+          node tests/browser-workspace/performance.browser.cjs > tests/browser-workspace/evidence/performance-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/u1.browser.cjs > tests/browser-workspace/evidence/u1-browser-output.txt 2>&1 || qa_result_code=1
+          exit "$qa_result_code"
       - name: Bind tested identities
         if: always()
         shell: bash

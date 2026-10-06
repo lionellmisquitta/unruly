@@ -1,0 +1,17 @@
+// Compatibility adapter for inherited pre-popover UI journeys. Opens real controls
+// through actual visible toolbar/menu buttons; never invokes app handlers directly.
+const roleNames={New:'New board',Boards:'Gallery',Export:'Export JSON',Import:'Import JSON',Pen:'Brush',Pan:'Pan canvas',Lasso:'Lasso selection',Move:'Move selected strokes',Panels:'Layers','Close panels':'Close layers'};
+const ids={New:'new',Boards:'boards',Export:'export',Import:'import',Pen:'pen',Pan:'pan',Lasso:'lasso',Move:'move-selection',Panels:'layers-toggle','Close panels':'close-panels'};
+const labels={'Size value':'Size in document units',Brush:'Brush type',Erase:'Erase mode'};
+async function closeForDrawing(page){if(await page.locator('.popover:visible').count())await page.keyboard.press('Escape');}
+function install(page){const role=page.getByRole.bind(page),label=page.getByLabel.bind(page);
+ function wrap(locator,ensure){return new Proxy(locator,{get(target,key){const value=target[key];if(typeof value!=='function')return value;if(['click','fill','selectOption','focus','isVisible','scrollIntoViewIfNeeded'].includes(key))return async(...args)=>{await ensure();if(key==='fill'&&await target.getAttribute('id')==='layer-opacity'){await target.evaluate((e,v)=>{e.value=v;e.dispatchEvent(new Event('input',{bubbles:true}));},args[0]);return;}return value.apply(target,args);};if(key==='dispatchEvent')return async(...args)=>{if(args[0]==='change'&&await target.getAttribute('id')==='layer-opacity')await target.dispatchEvent('input');return value.apply(target,args);};return value.bind(target);}});}
+ async function expose(locator,name){if(await locator.isVisible())return;const layer=/^(Hide|Show|Lock|Unlock|Delete|Duplicate|Up|Down|Select|Layer name|Opacity) (.+)$/.exec(name);if(layer||name==='Background'||name==='Add layer'){if(!await page.locator('#inspector').isVisible())await page.locator('#layers-toggle').click();if(name==='Background'&&!await locator.isVisible())await page.locator('#inspector .paper-row summary').click();if(layer&&['Lock','Unlock','Delete','Duplicate','Up','Down','Layer name'].includes(layer[1])){const menu=role('button',{name:'Actions '+layer[2],exact:true});if(await menu.getAttribute('aria-expanded')!=='true')await menu.click();}return;}
+ const actions=['New','Export','Import','Pan'];if(actions.includes(name)){if(!await page.locator('#actions-popover').isVisible())await page.locator('#actions-toggle').click();return;}
+ const panel=name==='Brush'?'brush-popover':name==='Hex colour'?'colour-popover':['Copy','Cut','Paste','Delete selection','Clear selection'].includes(name)?'selection-controls':name==='Erase'?'eraser-popover':null;
+ if(panel){const toggle={'brush-popover':'pen','colour-popover':'colour-toggle','selection-controls':'lasso','eraser-popover':'eraser'}[panel];if(!await page.locator('#'+panel).isVisible())await page.locator('#'+toggle).click();}
+ }
+ page.getByRole=(kind,opts={})=>{if(kind!=='button'||typeof opts.name!=='string')return role(kind,opts);const name=opts.name;const l=ids[name]?page.locator('#'+ids[name]):role(kind,{...opts,name:roleNames[name]||name});return wrap(l,()=>expose(l,name));};
+ page.getByLabel=(name,opts={})=>{if(typeof name!=='string')return label(name,opts);const l=name.startsWith('Opacity ')?page.locator('#layer-opacity'):label(labels[name]||name,opts);return wrap(l,()=>expose(l,name));};
+}
+module.exports={install,closeForDrawing};

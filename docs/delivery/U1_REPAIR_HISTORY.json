@@ -1,0 +1,28 @@
+{
+  "checkpoint": "DUX1-U1",
+  "repairs_max": 2,
+  "ci_runs_max": 3,
+  "repair_batches": [
+    {
+      "batch": 1,
+      "status": "source_review_verified",
+      "reason": "Independent candidate review: reject unsupported Canvas blend operation via readback and resetstate",
+      "failed_ci": null,
+      "findings": [
+        "CR001 unsupportedblendguard",
+        "CR00244pxtargets/expandablerows",
+        "CR003legacyIDkeyboardfocus",
+        "CR004capturedpointerselect"
+      ]
+    }
+  ],
+  "ci_runs": [
+    {
+      "run": 1,
+      "status": "candidate_prepared",
+      "source_sha": "assigned_after_commit"
+    }
+  ],
+  "prior_budgets_reset": false,
+  "paid_external_model_calls": 0
+}

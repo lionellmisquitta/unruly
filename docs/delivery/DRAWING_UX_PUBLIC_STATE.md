@@ -20,3 +20,7 @@ All 104 named navigation pages plus the Introduction landing alias were retrieve
 Next implementation slice is U1 compact controls/layers with v3 compatibility and inherited P01 safeguards. U2/U3 follow; one combined preview and one human tablet feedback card remain the batch approach. G02 explicitly plans remaining native gesture/shape coverage; no G02 build/budget authorization is issued here. First-release paint, sharing, sync and AI requirements remain the roadmap. No code/tests/workflows/worker changes or test reruns occurred. Preservation checks are separate from executed product QA. Current live v0.3.0/P01 remains unchanged; production/main/full-release closure stays false.
 
 Independent Gatekeeper research review: HANDBOOK_GATEKEEPER_REVIEW.md. Research/reference reconciliation accepted for U1 preparation; draft-history/timer ambiguities resolved on targeted recheck. BUILD_AUTHORIZED remains false until the concrete U1 source-bound handoff/readiness. No additional human reference choice is pending.
+
+## User-authorized build — 6 October 2026
+
+User explicitly requested adding all worthwhile handbook additions and proceeding with build. HANDBOOK_ADDITIONS_RELEASE_PLAN.md records stabilization/reference/text/guides/Smudge/gap-fill additions with existing masks/blur/share roadmap. U1_CHECKPOINT_TEST_HANDOFF.json binds the immediate slice to inspected source and allowed files. Independent U1 readiness is in progress; no app source changed at this entry. User no longer owes a build/layout/default confirmation.
