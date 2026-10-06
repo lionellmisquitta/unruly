@@ -16,3 +16,5 @@ Next publication must record source SHA, branch, QA run/artifact, immutable Page
 User-authorized compact controls/layers implementation after independent U1 readiness. New schema/storage v3, read-only migration, eight browser blend modes, protected layer actions, top-first compact rows and independent popovers. Initial local35pure groups including model tests/unsupportedblendoracle pass; full Chromium CI pending. Repairbatch1/2 closes four source-review findings;CI1/3 prepared. This is an unpublished candidate, not checkpoint closure or production release. U2/U3 and combined publication remain.
 
 | U1 / preview v0.4.0 | 699d6fb29b2debe1ad3721a2c7a3ee86bd374792 | 35/35 model and 53/53 browser groups PASS; stabilization checkpoint accepted; checkpoint/u1-v0.4.0 exact tested pointer; Pages publication authorized |
+
+U1 reviewed Pages deployment: run `37469955021`, exact source `699d6fb29b2debe1ad3721a2c7a3ee86bd374792`, GitHub Pages deployment success. Independent external fetch from this runtime unavailable; physical pen feel remains not verified.
