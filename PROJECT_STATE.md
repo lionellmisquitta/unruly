@@ -220,3 +220,9 @@ Exact80c5bbe86cde4c41a81e354f296ff5d203019888 CI37223520128 passed16model/15Chro
 ## WB1 hosted workspace verified
 
 Pages37224013072 succeeded;9hostedappassetsHTTP200 andexactmatchtested80c5bbe86cde4c41a81e354f296ff5d203019888. RemoteChrome savedupdatecopied1oldboard, retainedexistingdrawing, nativekeyboardcontrols/color/paper/layer/newink/save/reloadobserved. Hostedofflinereadyindicatorobserved,networkdisableCIonly; physicalpenfeelNOTVERIFIED. Onecombinedhumantestcard delivered. CurrentpreviewcompleteWB1threeinternalslices; fullproduct0/14closure,productionfalse. No native/history/security/defaultmainchanges; no paidexternalmodelcalls. See WORKSPACE_HOSTED_STATUS.md.
+
+
+## Continuation reconciliation — 7 October 2026
+U1 accepted: `checkpoint/u1-v0.4.0` @ `699d6fb29b2debe1ad3721a2c7a3ee86bd374792` (CI 37468847640 success).
+U2 accepted/current reviewed source: `checkpoint/u2-v0.5.0` @ `fd15c607d5b9a605b1e8a1164250803832830591` (CI 37474125489 success). `preview/drawing-ux-u2-2026-10-06` adds only governance/evidence after that source SHA.
+Current checkpoint U3 on `preview/drawing-ux-u3-2026-10-07` @ `c357b2e0c4a093b928a68e8093c7c07979664dfe` is NOT accepted. `main` remains `cb1d52089c5cdd159050dc375b92750eb84d8271`; production/main merge unauthorized; physical pen feel NOT_VERIFIED.
