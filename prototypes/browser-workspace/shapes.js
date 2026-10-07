@@ -64,7 +64,8 @@ export function editRecognized(recognized,values){
   return {...recognized,points:[{x:x1,y:y1,pressure:recognized.pressure},{x:x2,y:y2,pressure:recognized.pressure}]};
  }
  const cx=Number(values.cx??recognized.center.x),cy=Number(values.cy??recognized.center.y),r=Number(values.radius??recognized.radius);
- if(!finite(cx)||!finite(cy)||!finite(r)||r<=0||r>1e7)throw Error('Invalid circle geometry');
+ if(!finite(cx)||!finite(cy)||!finite(r)||r<=0||Math.abs(cx)+r>1e7||Math.abs(cy)+r>1e7)throw Error('Invalid circle geometry');
  const out=[];for(let i=0;i<=128;i++){const a=Math.PI*2*i/128;out.push({x:cx+Math.cos(a)*r,y:cy+Math.sin(a)*r,pressure:recognized.pressure});}
  return {...recognized,center:{x:cx,y:cy},radius:r,points:out};
 }
+

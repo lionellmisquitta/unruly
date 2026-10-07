@@ -36,3 +36,11 @@ test('U3M06 affine transform is one immutable history command and preserves brus
  const n=q.transformSelection(h,['s'],{dx:3,dy:0,scale:2,angle:90});assert.equal(h.board.layers[0].strokes[0].points[0].x,0);assert.equal(n.past.length,1);const out=n.board.layers[0].strokes[0];assert.equal(out.size,4);assert.equal(out.preset,'ink-fineliner');assert.deepEqual(out.points.map(p=>p.pressure),[0,1]);assert(Math.abs(out.points[0].x-8)<1e-9&&Math.abs(out.points[0].y+10)<1e-9);assert(Math.abs(out.points[1].x-8)<1e-9&&Math.abs(out.points[1].y-10)<1e-9);
  assert.throws(()=>q.transformSelection(h,['s'],{scale:.01}),/transform/i);assert.throws(()=>q.transformSelection(h,['s'],{angle:361}),/transform/i);
 });
+
+
+test('U3M07 circle coordinate extent boundary rejects invalid geometry without mutating origin',()=>{
+ const circle={kind:'circle',pressure:.4,center:{x:0,y:0},radius:2,points:[]},before=structuredClone(circle);
+ const boundary=s.editRecognized(circle,{cx:1e7-2,radius:2});assert.equal(boundary.points.length,129);assert(boundary.points.every(p=>Math.abs(p.x)<=1e7&&Math.abs(p.y)<=1e7&&p.pressure===.4));
+ for(const values of [{cx:1e7-1,radius:2},{cy:-1e7,radius:1},{cx:Infinity},{radius:NaN},{radius:0}])assert.throws(()=>s.editRecognized(circle,values),/circle/i);
+ assert.deepEqual(circle,before,'rejected edits preserve provisional origin');
+});

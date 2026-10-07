@@ -60,6 +60,7 @@ jobs:
           node tests/browser-workspace/performance.browser.cjs > tests/browser-workspace/evidence/performance-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/u1.browser.cjs > tests/browser-workspace/evidence/u1-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/u2.browser.cjs > tests/browser-workspace/evidence/u2-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/u3.browser.cjs > tests/browser-workspace/evidence/u3-browser-output.txt 2>&1 || qa_result_code=1
           exit "$qa_result_code"
       - name: Bind tested identities
         if: always()
@@ -76,3 +77,4 @@ jobs:
           path: tests/browser-workspace/evidence/
           if-no-files-found: error
           retention-days: 7
+
