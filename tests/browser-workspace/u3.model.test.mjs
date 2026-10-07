@@ -27,7 +27,7 @@ test('U3M04 circle recognition returns closed 129-point geometry and rejects rev
 });
 test('U3M05 shape reshape/edit keeps explicit line/circle semantics',()=>{
  const line={kind:'line',pressure:.4,points:[{x:0,y:0,pressure:.4},{x:10,y:0,pressure:.4}]};
- const snap=s.reshapeRecognized(line,{x:10,y:2},{snap15:true});const angle=Math.atan2(snap.points[1].y,snap.points[1].x)*180/Math.PI;assert(Math.abs(angle%15)<1e-8);
+ const snap=s.reshapeRecognized(line,{x:10,y:2},{snap15:true});const angle=Math.atan2(snap.points[1].y,snap.points[1].x)*180/Math.PI;const nearest15=Math.round(angle/15)*15;assert(Math.abs(angle-nearest15)<1e-8);
  const edited=s.editRecognized(line,{x2:30,y2:40});assert.deepEqual(edited.points[1],{x:30,y:40,pressure:.4});
  const circle=s.editRecognized({kind:'circle',pressure:null,center:{x:0,y:0},radius:5,points:[]},{cx:2,cy:3,radius:10});assert.equal(circle.points.length,129);assert.deepEqual(circle.center,{x:2,y:3});assert.throws(()=>s.editRecognized(circle,{radius:0}),/circle/i);
 });
