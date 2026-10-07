@@ -635,3 +635,33 @@ drawing_ux_u3_closed_2026_10_07:
   production_authorization: false
   paid_external_model_calls: 0
   next_action: HUMAN_TABLET_REVIEW_THEN_ONE_BOUNDED_HANDOFF
+
+pen_input_preview:
+  checkpoint: PEN1
+  status: verified_preview
+  checkpoint_ref: checkpoint/pen1-v0.7.0
+  integration_commit: 93af0a256b57932288f57239612bd4cc5516b7fc
+  rollback_ref: checkpoint/u3-v0.6.0
+  qa_run: 37633247724
+  model_checks_passed: 57
+  browser_checks_passed: 108
+  pen_browser_checks_passed: 18
+  checks_failed: 0
+  source_hashes_verified: 36
+  source_repairs_used: 1
+  source_repairs_max: 2
+  qa_ci_runs_used: 2
+  qa_ci_runs_max: 3
+  deployment_run: 37634720112
+  deployment_commit: 87551668949770beaf2b346a3227dab83f00f4d5
+  hosted_assets_matched: 16
+  hosted_status: VERIFIED
+  url: https://lionellmisquitta.github.io/unruly/
+  prior_ink_retained: OBSERVED
+  new_ink_save_reload: OBSERVED_AFTER_SAVED_INDICATOR
+  physical_pen: NOT_VERIFIED
+  trusted_cdp_eraser_mask32: NOT_VERIFIED
+  eraser_browser_contract: PASSED_SYNTHETIC_ONLY
+  main_merge_authorized: false
+  production_authorization: false
+  next_action: HUMAN_DEVICE_PRESSURE_BUTTON_REVIEW

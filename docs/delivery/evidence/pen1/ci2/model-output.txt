@@ -1,0 +1,352 @@
+TAP version 13
+# Subtest: M01 schema metadata/global identity/finite pressure rejects malformed inputs
+ok 1 - M01 schema metadata/global identity/finite pressure rejects malformed inputs
+  ---
+  duration_ms: 5.491718
+  type: 'test'
+  ...
+# Subtest: M02 global layer/stroke/point/serialized limits
+ok 2 - M02 global layer/stroke/point/serialized limits
+  ---
+  duration_ms: 118.458918
+  type: 'test'
+  ...
+# Subtest: M03 document commands immutable rejected edits preserve source
+ok 3 - M03 document commands immutable rejected edits preserve source
+  ---
+  duration_ms: 3.641568
+  type: 'test'
+  ...
+# Subtest: M04 layer lifecycle metadata/order/active/delete undo and last-layer refusal
+ok 4 - M04 layer lifecycle metadata/order/active/delete undo and last-layer refusal
+  ---
+  duration_ms: 1.683167
+  type: 'test'
+  ...
+# Subtest: M05 hidden/locked layer refuses stroke and erase; zero-opacity no command
+ok 5 - M05 hidden/locked layer refuses stroke and erase; zero-opacity no command
+  ---
+  duration_ms: 1.533866
+  type: 'test'
+  ...
+# Subtest: M06 history count and16MiB byte bounds retain truthful eviction
+ok 6 - M06 history count and16MiB byte bounds retain truthful eviction
+  ---
+  duration_ms: 1676.387587
+  type: 'test'
+  ...
+# Subtest: M07 legacy migration and import preserve input and remap every identity
+ok 7 - M07 legacy migration and import preserve input and remap every identity
+  ---
+  duration_ms: 5.526447
+  type: 'test'
+  ...
+# Subtest: M08 whole sparse sweep removes multiple hits onlyactive layer; source unchanged
+ok 8 - M08 whole sparse sweep removes multiple hits onlyactive layer; source unchanged
+  ---
+  duration_ms: 1.746596
+  type: 'test'
+  ...
+# Subtest: M09 partial capsule cuts into two fresh styled pressure-interpolated fragments
+ok 9 - M09 partial capsule cuts into two fresh styled pressure-interpolated fragments
+  ---
+  duration_ms: 1.308527
+  type: 'test'
+  ...
+# Subtest: M10 partial dot and precision exhaustion preserve entireoriginal
+ok 10 - M10 partial dot and precision exhaustion preserve entireoriginal
+  ---
+  duration_ms: 1.377798
+  type: 'test'
+  ...
+# Subtest: M11 intersection removes only25..75 interval and preserves exactundo
+ok 11 - M11 intersection removes only25..75 interval and preserves exactundo
+  ---
+  duration_ms: 1.264934
+  type: 'test'
+  ...
+# Subtest: M12 intersection endpoints/zeroalpha/collinear boundaries
+ok 12 - M12 intersection endpoints/zeroalpha/collinear boundaries
+  ---
+  duration_ms: 0.608056
+  type: 'test'
+  ...
+# Subtest: M13 tangent V touching line is notintersection boundary
+ok 13 - M13 tangent V touching line is notintersection boundary
+  ---
+  duration_ms: 0.492608
+  type: 'test'
+  ...
+# Subtest: M14 intersection nonadjacent self crossing splits atpropercrossing
+ok 14 - M14 intersection nonadjacent self crossing splits atpropercrossing
+  ---
+  duration_ms: 0.338413
+  type: 'test'
+  ...
+# Subtest: M15 immutable repeatedbaseline erasure and boundedwork exhaustion
+ok 15 - M15 immutable repeatedbaseline erasure and boundedwork exhaustion
+  ---
+  duration_ms: 1.021128
+  type: 'test'
+  ...
+# Subtest: M16 zoom model invalid values cannotpoison view
+ok 16 - M16 zoom model invalid values cannotpoison view
+  ---
+  duration_ms: 0.391731
+  type: 'test'
+  ...
+# Subtest: PENM01 immutable original12 plus8 compatible original options
+ok 17 - PENM01 immutable original12 plus8 compatible original options
+  ---
+  duration_ms: 1.780442
+  type: 'test'
+  ...
+# Subtest: PENM02 extra presets render with bounded existing families and reject excessive work
+ok 18 - PENM02 extra presets render with bounded existing families and reject excessive work
+  ---
+  duration_ms: 3.676465
+  type: 'test'
+  ...
+# Subtest: PENM03 dynamics inclusive bounds validate; absent metadata retained
+ok 19 - PENM03 dynamics inclusive bounds validate; absent metadata retained
+  ---
+  duration_ms: 0.825465
+  type: 'test'
+  ...
+# Subtest: PENM04 malformed or unknown dynamics reject atomically at validation/import/command
+ok 20 - PENM04 malformed or unknown dynamics reject atomically at validation/import/command
+  ---
+  duration_ms: 4.672013
+  type: 'test'
+  ...
+# Subtest: PENM05 accepted old board metadata and migration remain unchanged
+ok 21 - PENM05 accepted old board metadata and migration remain unchanged
+  ---
+  duration_ms: 0.32311
+  type: 'test'
+  ...
+# Subtest: PENM06 import duplicate copy paste affine and history preserve pressure snapshot
+ok 22 - PENM06 import duplicate copy paste affine and history preserve pressure snapshot
+  ---
+  duration_ms: 2.963167
+  type: 'test'
+  ...
+# Subtest: PENM07 partial eraser fragments retain dynamics without mutating input
+ok 23 - PENM07 partial eraser fragments retain dynamics without mutating input
+  ---
+  duration_ms: 1.457163
+  type: 'test'
+  ...
+# Subtest: PENM08 width/opacity are bounded monotonic; mouse null and disabled full
+ok 24 - PENM08 width/opacity are bounded monotonic; mouse null and disabled full
+  ---
+  duration_ms: 0.73475
+  type: 'test'
+  ...
+# Subtest: PENM09 browser pen bitmasks map only pen, eraser precedence and None
+ok 25 - PENM09 browser pen bitmasks map only pen, eraser precedence and None
+  ---
+  duration_ms: 0.513422
+  type: 'test'
+  ...
+# Subtest: S01 centreline/dot/concave/edge truth, not bounding boxes
+ok 26 - S01 centreline/dot/concave/edge truth, not bounding boxes
+  ---
+  duration_ms: 6.836545
+  type: 'test'
+  ...
+# Subtest: S02 polygon boundaries/area/work rejection leaves originals
+ok 27 - S02 polygon boundaries/area/work rejection leaves originals
+  ---
+  duration_ms: 4.826342
+  type: 'test'
+  ...
+# Subtest: S03 missing/nonactive/duplicate IDs and editable protection
+ok 28 - S03 missing/nonactive/duplicate IDs and editable protection
+  ---
+  duration_ms: 2.834526
+  type: 'test'
+  ...
+# Subtest: S04 copy deep clone and hostile clipboard validation/bounds
+ok 29 - S04 copy deep clone and hostile clipboard validation/bounds
+  ---
+  duration_ms: 42.082593
+  type: 'test'
+  ...
+# Subtest: S05 move exact style/pressure/ID and atomic coordinate rejection
+ok 30 - S05 move exact style/pressure/ID and atomic coordinate rejection
+  ---
+  duration_ms: 1.389201
+  type: 'test'
+  ...
+# Subtest: S06 delete undo/redo and branching one command
+ok 31 - S06 delete undo/redo and branching one command
+  ---
+  duration_ms: 0.743434
+  type: 'test'
+  ...
+# Subtest: S07 acrossboard repeated paste remaps all IDs and preserves clip
+ok 32 - S07 acrossboard repeated paste remaps all IDs and preserves clip
+  ---
+  duration_ms: 1.031841
+  type: 'test'
+  ...
+# Subtest: S08 combined capacity and retained bounded history atomicity
+ok 33 - S08 combined capacity and retained bounded history atomicity
+  ---
+  duration_ms: 365.325682
+  type: 'test'
+  ...
+# Subtest: UM01 new schema v3 and exact bounded blends
+ok 34 - UM01 new schema v3 and exact bounded blends
+  ---
+  duration_ms: 7.603012
+  type: 'test'
+  ...
+# Subtest: UM02 unknown preset fields never silently render as legacy
+ok 35 - UM02 unknown preset fields never silently render as legacy
+  ---
+  duration_ms: 0.839166
+  type: 'test'
+  ...
+# Subtest: UM03 real v2 import upgrades normal preserving pixels and remaps every identity
+ok 36 - UM03 real v2 import upgrades normal preserving pixels and remaps every identity
+  ---
+  duration_ms: 1.633834
+  type: 'test'
+  ...
+# Subtest: UM04 add inserts immediately above active middle, disk stays bottom-first
+ok 37 - UM04 add inserts immediately above active middle, disk stays bottom-first
+  ---
+  duration_ms: 3.443179
+  type: 'test'
+  ...
+# Subtest: UM05 duplicate locked layer unlocked new IDs preserved style pressure one undo
+ok 38 - UM05 duplicate locked layer unlocked new IDs preserved style pressure one undo
+  ---
+  duration_ms: 0.964371
+  type: 'test'
+  ...
+# Subtest: UM06 protective lock rejects content properties/delete but permits metadata/stack
+ok 39 - UM06 protective lock rejects content properties/delete but permits metadata/stack
+  ---
+  duration_ms: 2.796339
+  type: 'test'
+  ...
+# Subtest: UM07 last layer deletion rejected even unlocked
+ok 40 - UM07 last layer deletion rejected even unlocked
+  ---
+  duration_ms: 0.343069
+  type: 'test'
+  ...
+# Subtest: UM08 no-op boundary reorders/properties produce no history; valid reorder one undo
+ok 41 - UM08 no-op boundary reorders/properties produce no history; valid reorder one undo
+  ---
+  duration_ms: 0.865244
+  type: 'test'
+  ...
+# Subtest: UM09 capacity rejection atomically preserves IDs input and history
+ok 42 - UM09 capacity rejection atomically preserves IDs input and history
+  ---
+  duration_ms: 62.67893
+  type: 'test'
+  ...
+# Subtest: UM10 malformed reorder and locked layer import cannot poison history
+ok 43 - UM10 malformed reorder and locked layer import cannot poison history
+  ---
+  duration_ms: 2.855437
+  type: 'test'
+  ...
+# Subtest: UM11 unsupported blend assignment rejects visibly and resets scratch state
+ok 44 - UM11 unsupported blend assignment rejects visibly and resets scratch state
+  ---
+  duration_ms: 4.848915
+  type: 'test'
+  ...
+# Subtest: U2M01 immutable preset catalogue is exact 12 / four compatible families
+ok 45 - U2M01 immutable preset catalogue is exact 12 / four compatible families
+  ---
+  duration_ms: 2.342666
+  type: 'test'
+  ...
+# Subtest: U2M02 v3 accepts category-compatible preset and rejects unknown/mismatched/alias atomically
+ok 46 - U2M02 v3 accepts category-compatible preset and rejects unknown/mismatched/alias atomically
+  ---
+  duration_ms: 3.951904
+  type: 'test'
+  ...
+# Subtest: U2M03 absent preset remains valid legacy state and v2 migration never invents a preset
+ok 47 - U2M03 absent preset remains valid legacy state and v2 migration never invents a preset
+  ---
+  duration_ms: 0.760138
+  type: 'test'
+  ...
+# Subtest: U2M04 import and duplicate preserve preset identity but remap stroke/layer IDs
+ok 48 - U2M04 import and duplicate preserve preset identity but remap stroke/layer IDs
+  ---
+  duration_ms: 1.44943
+  type: 'test'
+  ...
+# Subtest: U2M05 pressure rule and work accounting are bounded and deterministic
+ok 49 - U2M05 pressure rule and work accounting are bounded and deterministic
+  ---
+  duration_ms: 0.50536
+  type: 'test'
+  ...
+# Subtest: U2M06 excessive preset replay rejects before board admission
+ok 50 - U2M06 excessive preset replay rejects before board admission
+  ---
+  duration_ms: 0.666539
+  type: 'test'
+  ...
+# Subtest: U3M01 two/three finger single chords fire exactly once at inclusive boundaries
+ok 51 - U3M01 two/three finger single chords fire exactly once at inclusive boundaries
+  ---
+  duration_ms: 1.430503
+  type: 'test'
+  ...
+# Subtest: U3M02 movement, late arrival, long duration and fourth contact cancel history
+ok 52 - U3M02 movement, late arrival, long duration and fourth contact cancel history
+  ---
+  duration_ms: 0.594201
+  type: 'test'
+  ...
+# Subtest: U3M03 line recognition is bounded and preserves mean reported pressure
+ok 53 - U3M03 line recognition is bounded and preserves mean reported pressure
+  ---
+  duration_ms: 0.794359
+  type: 'test'
+  ...
+# Subtest: U3M04 circle recognition returns closed 129-point geometry and rejects reversal-heavy trace
+ok 54 - U3M04 circle recognition returns closed 129-point geometry and rejects reversal-heavy trace
+  ---
+  duration_ms: 1.06495
+  type: 'test'
+  ...
+# Subtest: U3M05 shape reshape/edit keeps explicit line/circle semantics
+ok 55 - U3M05 shape reshape/edit keeps explicit line/circle semantics
+  ---
+  duration_ms: 7.581389
+  type: 'test'
+  ...
+# Subtest: U3M06 affine transform is one immutable history command and preserves brush width/preset/pressure
+ok 56 - U3M06 affine transform is one immutable history command and preserves brush width/preset/pressure
+  ---
+  duration_ms: 6.435059
+  type: 'test'
+  ...
+# Subtest: U3M07 circle coordinate extent boundary rejects invalid geometry without mutating origin
+ok 57 - U3M07 circle coordinate extent boundary rejects invalid geometry without mutating origin
+  ---
+  duration_ms: 0.629004
+  type: 'test'
+  ...
+1..57
+# tests 57
+# suites 0
+# pass 57
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1920.298716

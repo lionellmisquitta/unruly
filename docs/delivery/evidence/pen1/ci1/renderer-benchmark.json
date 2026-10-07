@@ -1,0 +1,42 @@
+{
+  "top": [
+    0,
+    0,
+    255,
+    255
+  ],
+  "hidden": [
+    255,
+    0,
+    0,
+    255
+  ],
+  "p50": 49.30000000000291,
+  "p95": 60.09999999999127,
+  "max": 60.09999999999127,
+  "dimensions": [
+    {
+      "width": 1440,
+      "height": 950
+    },
+    {
+      "width": 1440,
+      "height": 950
+    },
+    {
+      "width": 1440,
+      "height": 950
+    },
+    {
+      "width": 1440,
+      "height": 950
+    },
+    {
+      "width": 1440,
+      "height": 950
+    }
+  ],
+  "surfaces": 5,
+  "workload": "8layers/10000points1440x950DPR1",
+  "physical_feel": "NOT_VERIFIED"
+}

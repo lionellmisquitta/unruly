@@ -1,6 +1,6 @@
 {
   "checkpoint_id": "PEN1",
-  "status": "independent_readiness_passed_initial_ci_pending",
+  "status": "closed_verified_quarantined_preview",
   "objective": "Make stylus pressure visibly adjustable and diagnosable; correct canvas browser-menu interference; expose more original brushes and browser-reported pen button mappings in the one cumulative app.",
   "user_authorization": "Explicit user request 7 October 2026 after U3 closure; quarantined browser preview only.",
   "parent_source_commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
@@ -49,5 +49,15 @@
     "previous_u3_budget_remains": "2/2 repairs and3/3QA runs consumed"
   },
   "physical_pen": "NOT_VERIFIED_UNTIL_HUMAN_DEVICE_TEST",
-  "rollback": "Keep acceptedU3 ref/source unchanged; export new-dynamics boards before reverting because older preview ignores newer dynamics metadata and may reject added presetIDs."
+  "rollback": "Keep acceptedU3 ref/source unchanged; export new-dynamics boards before reverting because older preview ignores newer dynamics metadata and may reject added presetIDs.",
+  "accepted_source_commit": "93af0a256b57932288f57239612bd4cc5516b7fc",
+  "checkpoint_ref": "checkpoint/pen1-v0.7.0",
+  "closure": {
+    "qa_run": 37633247724,
+    "checks_passed": 165,
+    "application_repair_batches_used": 1,
+    "qa_ci_runs_used": 2,
+    "deployment_run": 37634720112,
+    "hosted_assets_matched": 16
+  }
 }

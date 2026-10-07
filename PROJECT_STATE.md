@@ -232,3 +232,10 @@ Independent QA and independent Gatekeeper accepted CI3 run37605503902:48 model a
 Reviewed Pages deployment37606536465 succeeded on workflow commitcb1dc0a27713f59f1fbea526a3a285d7068ea764, pinned to accepted source. All15 hosted app assets byte-matched. Remote Chrome observed safe Update preserving prior ink, held-line recognition, native numeric edit700, Apply, Saved on this device, and retained prior ink + edited line after reload. Offline-ready indicator observed; actual network-disabled offline regression passed in CI. Returned extension metadata errors were extension-origin, with no app-origin error observed. Physical pen pressure/latency/feel remains NOT_VERIFIED. One cumulative U1–U3 app and handheld review card delivered.
 
 Knowledge capture delta .knowledge/delta-u3-closure.json records acceptance, evidence, defect disposition and smaller-increment delivery decision. It extends existing capture records; no complete KGP export is claimed. Next: human tablet review of U3, then one bounded next interaction at a time with a fresh handoff/budget. No automatic G02 implementation.
+
+
+## PEN1 closed — pen input preview, 7 October 2026
+
+User authorized adjustable pressure, brush choices, pen-button mapping and the drawing-surface context-menu fix, then explicitly authorized public repository publication. Exact `93af0a256b57932288f57239612bd4cc5516b7fc` is accepted and hosted at the existing UNRULY URL. Checkpoint `checkpoint/pen1-v0.7.0`; U3 rollback preserved.57model+108browser checks passed,36source identities verified; all16hosted assets match. One repair batch/two CI runs, no budget reset for U3.
+
+Twenty brushes retain original12 appearance. New strokes snapshot adjustable width/opacity response. Browser-reported barrel and eraser signals map to temporary Lasso/Eraser/Pan/None. Manual Lasso automatically admits Move inside the selection. Actual pen pressure/button capability remains NOT_VERIFIED; trusted CDP eraser transport unavailable, synthetic handler contract passed. See PEN1_QA_CHECKPOINT_RESULT.json, PEN1_FINAL_GATEKEEPER.md and PEN1_HOSTED_CLOSURE.md under docs/delivery. Main/full-production authorization remains false.
