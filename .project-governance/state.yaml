@@ -595,3 +595,17 @@ browser_workspace_hosted_preview_2026_10_04:
   paid_external_model_calls: 0
   production_authorization: false
   product_checkpoints_closed: 0
+
+
+continuation_reconciliation_2026_10_07:
+  invariant_violation: "Root continuation ledgers lagged accepted U1/U2 graph state"
+  status: resolved_before_build_resume
+  u1: "checkpoint/u1-v0.4.0@699d6fb29b2debe1ad3721a2c7a3ee86bd374792; CI 37468847640 success"
+  u2: "checkpoint/u2-v0.5.0@fd15c607d5b9a605b1e8a1164250803832830591; CI 37474125489 success"
+  reviewed_preview: "preview/drawing-ux-u2-2026-10-06@6ad87caf9d5f9ee528c08f943f1d37e347997fa7; app source unchanged after accepted U2 SHA"
+  current_checkpoint: "U3 Core Gestures + Geometry"
+  u3_candidate: "preview/drawing-ux-u3-2026-10-07@c357b2e0c4a093b928a68e8093c7c07979664dfe; NOT_ACCEPTED"
+  main: "cb1d52089c5cdd159050dc375b92750eb84d8271"
+  physical_pen_feel: NOT_VERIFIED
+  main_merge_authorized: false
+  production_authorized: false
