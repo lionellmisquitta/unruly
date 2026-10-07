@@ -1,6 +1,6 @@
 {
   "checkpoint_id": "CURVE1",
-  "status": "prebuild_and_source_review_passed_ready_for_ci1",
+  "status": "fixture_correction_pending_ci2",
   "objective": "Personal pressure response graph with three draggable control points, disposable live test pad, preset/reset and local device persistence in the cumulative preview.",
   "builder": "root Codex",
   "parent_source": "93af0a256b57932288f57239612bd4cc5516b7fc",
@@ -27,7 +27,10 @@
   "test_paths": [
     "tests/browser-workspace/curve.model.test.mjs",
     "tests/browser-workspace/curve.browser.cjs",
-    ".github/workflows/browser-workspace.yml"
+    ".github/workflows/browser-workspace.yml",
+    "tests/browser-workspace/browser.test.cjs",
+    "tests/browser-workspace/selection.browser.cjs",
+    "tests/browser-workspace/u1.browser.cjs"
   ],
   "budget": {
     "application_repair_batches_max": 2,
@@ -42,5 +45,13 @@
     "brushengine rewrite",
     "main/production release"
   ],
-  "interpolation": "Piecewise-linear between fixed inputs0,.25,.5,.75,1; continuous, monotonic, no overshoot"
+  "interpolation": "Piecewise-linear between fixed inputs0,.25,.5,.75,1; continuous, monotonic, no overshoot",
+  "ci1": {
+    "run": 37642810671,
+    "source": "6900349f70822b8765c37c825da9f19dd96ad68c",
+    "model_passed": 66,
+    "browser_passed": 113,
+    "browser_failed": 5,
+    "classification": "Independent QA/Gatekeeper fixture diagnosis:3canvas oracle scope updates preserving board5+pad1 bound;2CDPpad reachability failures require scrollandhit target. No apprepair."
+  }
 }
