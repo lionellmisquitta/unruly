@@ -1,0 +1,30 @@
+{
+  "checkpoint_id": "U3",
+  "defect_id": "U3-D01",
+  "classification": "PRODUCT_DEFECT",
+  "severity": "material",
+  "commit": "e835e57f8ca10d43e29727e6220f558a187586c0",
+  "ci_run": "37604552212",
+  "browser": "151.0.7922.34",
+  "test_id": "U3B11b-transform-handle-cancel-and-history-owner",
+  "contract": "An active handle drag owns input and suppresses history; cancelled handle edits preserve their baseline.",
+  "reproduction": [
+    "Load deterministic single-stroke fixture, lasso select it, open Transform.",
+    "Fill Move X with 30 and dispatch its change; input retains keyboard focus.",
+    "Mouse down on real scale handle at (636,412), move to (666,432), retaining capture.",
+    "Press Ctrl+Z during the captured handle drag."
+  ],
+  "expected": "Move X remains 30 and native/application history is suppressed until handle completion or cancellation.",
+  "actual": "Scale changes to 159.52324936200165, proving actual handle admission; Ctrl+Z leaves scale unchanged but Move X input becomes 0 instead of 30.",
+  "diagnosis": "Native input Undo bypasses the document capture keydown guard because that guard omitted editDrag; SVG handle admission did not remove numeric-input focus, and the window shortcut handler ignores input targets.",
+  "evidence": [
+    "https://github.com/lionellmisquitta/unruly/actions/runs/37604552212",
+    "U3B11b-transform-handle-cancel-and-history-owner-trace.zip",
+    "U3B11b-transform-handle-cancel-and-history-owner-failure.png",
+    "u3-browser-results.json"
+  ],
+  "builder_disposition": "Application repair batch2 adds editDrag and touch ownership to input guards; original valid test retained unchanged. Retest required on CI3 integration identity.",
+  "repair_batches_used_at_failure": 1,
+  "ci_runs_used_at_failure": 2,
+  "status": "AWAITING_RETEST"
+}

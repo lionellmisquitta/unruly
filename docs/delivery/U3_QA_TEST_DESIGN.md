@@ -13,7 +13,7 @@ Adversary: fresh isolated same-model QA session, because neither Claude Code nor
 | U3B09 | Lasso translation + uniform scale + rotation | Analytic endpoint coordinates; exact style/pressure preservation; Cancel and single document Undo/Redo |
 | U3B10, 10a–10d | Local history ownership; no-op/rejection; redo invalidation; bounded combined history | Touch/button/keyboard routes; 40-edit retention; document1 + local99 capacity; rejection cannot evict document history |
 | U3B11, 11a–11c, 12 | Pending transition guards; handle ownership/cancellation; pen/lasso interference | Wheel/touch view unchanged; New blocked; real handle capture, pointercancel/lostcapture/blur restoring baseline; selection retained |
-| U3B13, 13a | Palm/history arbitration while pen owns input; live touch navigation/picker owns history and pen admission | Actual simultaneous touch/pen sequence, unchanged document/view and frozen drawing origin |
+| U3B13, 13a, 13b | Palm/history arbitration while pen owns input; live touch navigation/picker owns history, pen and toolbar/property admission | Actual simultaneous touch/pen sequence, unchanged document/view and frozen drawing origin |
 | U3B14 | Offline U3 assets and shape interaction | Controlled service-worker reload offline; successful gesture/shape/selection module fetches; held shape Cancel |
 | U3M01–07 | Exact threshold and recognition boundaries; immutable affine/style; invalid circle extents | Existing six tests retained; new circle coordinate extent/invalid-number case |
 
@@ -25,9 +25,9 @@ Browser evidence follows the existing CJS suite: `tests/browser-workspace/eviden
 
 - Local browser syntax: `node --check tests/browser-workspace/u3.browser.cjs` passed.
 - Local U3 unit suite: `node --test tests/browser-workspace/u3.model.test.mjs` passed 7/7 after Builder geometry repairs.
-- Browser execution: **NOT_VERIFIED** locally. Playwright resolves, but its Chromium headless-shell executable is absent. No browser pass is claimed. Root must execute the complete new suite in CI2 with inherited unit/browser/selection/U1/U2/offline/performance regression; QA did not publish or launch CI.
+- Browser execution: **NOT_VERIFIED** locally. CI2 executed 30 U3 cases, 29 passed and one material native-input Undo ownership defect failed (U3-D01); see `U3_CI2_DEFECT.json`. Playwright resolves, but its Chromium headless-shell executable is absent. No browser pass is claimed. Root must execute the complete new suite in CI2 with inherited unit/browser/selection/U1/U2/offline/performance regression; QA did not publish or launch CI.
 - Physical pen/device feel: **NOT_VERIFIED**; synthetic browser pen events prove controller contracts only.
 
 Static defect handoff to Builder identified missing pending input/navigation guards, shape Enter/outside/new-stroke commit boundaries, hold rearming/final-release sampling, no-op history recording, silent 32-step draft truncation, handle ownership/termination and circle coordinate extent bounds. These findings were source-based; browser product-failure proof requires CI. Corresponding tests retain contractual expectations through repair. Combined history capacity covers entry admission; a deterministic browser byte-ceiling stress fixture is not claimed here. The inherited model history budget tests remain required.
 
-Repair/CI accounting belongs to Gatekeeper: inherited CI1 consumed; root prepares application repair batch1; CI2 and CI3 remain bounded. Gatekeeper owns closure, including exact merged/integrated verification.
+Repair/CI accounting belongs to Gatekeeper: inherited CI1 consumed; application repair batch1 and CI2 consumed; batch2 addresses U3-D01 plus touch toolbar ownership, and CI3 is the final permitted run. Gatekeeper owns closure, including exact merged/integrated verification.
