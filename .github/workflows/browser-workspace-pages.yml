@@ -22,10 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: fd15c607d5b9a605b1e8a1164250803832830591
+          ref: 41019aa0b7991bbe5bd56b71b9516da9bb454cd0
           persist-credentials: false
       - name: Verify reviewed candidate identity
-        run: test "$(git rev-parse HEAD)" = "fd15c607d5b9a605b1e8a1164250803832830591"
+        run: test "$(git rev-parse HEAD)" = "41019aa0b7991bbe5bd56b71b9516da9bb454cd0"
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
         with:
           enablement: false
@@ -36,3 +36,22 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
 
+
+      - name: Verify every hosted application asset against reviewed bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/unruly-hosted
+          for source in prototypes/browser-workspace/*; do
+            asset=$(basename "$source")
+            matched=false
+            for attempt in $(seq 1 12); do
+              if curl --fail --silent --show-error "https://lionellmisquitta.github.io/unruly/$asset?u3=41019aa0b7991bbe5bd56b71b9516da9bb454cd0" -o "/tmp/unruly-hosted/$asset" && cmp --silent "$source" "/tmp/unruly-hosted/$asset"; then
+                matched=true
+                break
+              fi
+              sleep 5
+            done
+            test "$matched" = true
+            sha256sum "/tmp/unruly-hosted/$asset"
+          done
