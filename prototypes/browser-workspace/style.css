@@ -51,3 +51,7 @@ input[type=range]{min-height:44px}.canvas-badge button,footer button{min-height:
 #selection-overlay .rotate-handle{fill:#405d73}
 #selection-overlay .shape-handle{fill:#bd591a}
 .edit-panel{width:260px}.edit-panel label{margin-top:7px}.edit-panel input{min-height:40px}.edit-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+
+/* PEN1 keeps the existing categories and adds bounded dynamics controls. */
+#extra-brush-presets{display:grid;grid-template-columns:1fr;gap:6px}.pen-options{border:1px solid var(--line,#555);border-radius:8px;padding:10px;margin:12px 0;display:grid;gap:8px}.pen-options label{display:block}.pen-options input[type=checkbox]{width:auto}.pen-options input[type=number],.pen-options select{max-width:100%;width:100%}#pen-status{display:block;font-size:12px;line-height:1.5;margin:10px 0;overflow-wrap:anywhere}#canvas,#selection-overlay{touch-action:none;-webkit-touch-callout:none;user-select:none}
+.brush-library>.brush-categories{grid-row:1 / span 3}.brush-library>h3,.brush-library>#extra-brush-presets{grid-column:2}.brush-library>h3{font-size:12px;margin:8px}.brush-library>.pen-options{grid-column:1 / -1;min-width:0}

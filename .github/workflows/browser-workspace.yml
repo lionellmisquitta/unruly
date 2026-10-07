@@ -1,7 +1,7 @@
 name: Quarantined browser foundation QA
 on:
   push:
-    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07']
+    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07', 'preview/pen-input-p1-2026-10-07']
     paths:
       - 'prototypes/browser-workspace/**'
       - 'tests/browser-workspace/**'
@@ -31,7 +31,7 @@ jobs:
           qa_result_code=0
           mkdir -p tests/browser-workspace/evidence
           node --version > tests/browser-workspace/evidence/node-version.txt
-          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
+          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/server.log 2>&1 &
           qa_server_pid=$!
           trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
@@ -61,6 +61,7 @@ jobs:
           node tests/browser-workspace/u1.browser.cjs > tests/browser-workspace/evidence/u1-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/u2.browser.cjs > tests/browser-workspace/evidence/u2-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/u3.browser.cjs > tests/browser-workspace/evidence/u3-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/pen.browser.cjs > tests/browser-workspace/evidence/pen-browser-output.txt 2>&1 || qa_result_code=1
           exit "$qa_result_code"
       - name: Bind tested identities
         if: always()
@@ -68,7 +69,7 @@ jobs:
         run: |
           mkdir -p tests/browser-workspace/evidence
           git rev-parse HEAD > tests/browser-workspace/evidence/commit.txt
-          sha256sum prototypes/browser-workspace/* tests/browser-workspace/*.cjs tests/browser-workspace/*.mjs tests/browser-workspace/package.json tests/browser-workspace/package-lock.json tests/browser-workspace/fixtures/reference-render.js.txt .github/workflows/browser-workspace.yml > tests/browser-workspace/evidence/source-sha256.txt
+          sha256sum prototypes/browser-workspace/* tests/browser-workspace/*.cjs tests/browser-workspace/*.mjs tests/browser-workspace/package.json tests/browser-workspace/package-lock.json tests/browser-workspace/fixtures/*.txt .github/workflows/browser-workspace.yml > tests/browser-workspace/evidence/source-sha256.txt
       - name: Upload bounded QA evidence only
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
