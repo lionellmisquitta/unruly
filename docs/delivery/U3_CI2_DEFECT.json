@@ -26,5 +26,12 @@
   "builder_disposition": "Application repair batch2 adds editDrag and touch ownership to input guards; original valid test retained unchanged. Retest required on CI3 integration identity.",
   "repair_batches_used_at_failure": 1,
   "ci_runs_used_at_failure": 2,
-  "status": "AWAITING_RETEST"
+  "status": "RESOLVED_AND_RETESTED",
+  "retest": {
+    "commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
+    "ci_run": "37605503902",
+    "test_id": "U3B11b-transform-handle-cancel-and-history-owner",
+    "status": "PASS",
+    "original_assertions_preserved": true
+  }
 }

@@ -220,3 +220,15 @@ Exact80c5bbe86cde4c41a81e354f296ff5d203019888 CI37223520128 passed16model/15Chro
 ## WB1 hosted workspace verified
 
 Pages37224013072 succeeded;9hostedappassetsHTTP200 andexactmatchtested80c5bbe86cde4c41a81e354f296ff5d203019888. RemoteChrome savedupdatecopied1oldboard, retainedexistingdrawing, nativekeyboardcontrols/color/paper/layer/newink/save/reloadobserved. Hostedofflinereadyindicatorobserved,networkdisableCIonly; physicalpenfeelNOTVERIFIED. Onecombinedhumantestcard delivered. CurrentpreviewcompleteWB1threeinternalslices; fullproduct0/14closure,productionfalse. No native/history/security/defaultmainchanges; no paidexternalmodelcalls. See WORKSPACE_HOSTED_STATUS.md.
+
+
+
+## U3 closed — cumulative browser preview, 7 October 2026
+
+U3 Core Gestures + Geometry is accepted and hosted at https://lionellmisquitta.github.io/unruly/. Immutable-by-governance checkpoint branch `checkpoint/u3-v0.6.0` points to tested cumulative integration `41019aa0b7991bbe5bd56b71b9516da9bb454cd0`; accepted U2 rollback `fd15c607d5b9a605b1e8a1164250803832830591` remains preserved. This closes the drawing-UX preview checkpoint; broad product/main/production authorization remains false.
+
+Independent QA and independent Gatekeeper accepted CI3 run37605503902:48 model and90 actual Chromium checks passed, including32 U3. Exact32 source/test/workflow identities verified. CI2 native-input Undo defect retained and repaired; no unresolved blocking finding. Repair batches2/2 and QA CI runs3/3 consumed. Evidence and receipts are durable under docs/delivery/evidence/u3; QA and Gatekeeper reports accompany them. Same-model independent-session fallback used; no alternate runtime or paid external model call.
+
+Reviewed Pages deployment37606536465 succeeded on workflow commitcb1dc0a27713f59f1fbea526a3a285d7068ea764, pinned to accepted source. All15 hosted app assets byte-matched. Remote Chrome observed safe Update preserving prior ink, held-line recognition, native numeric edit700, Apply, Saved on this device, and retained prior ink + edited line after reload. Offline-ready indicator observed; actual network-disabled offline regression passed in CI. Returned extension metadata errors were extension-origin, with no app-origin error observed. Physical pen pressure/latency/feel remains NOT_VERIFIED. One cumulative U1–U3 app and handheld review card delivered.
+
+Knowledge capture delta .knowledge/delta-u3-closure.json records acceptance, evidence, defect disposition and smaller-increment delivery decision. It extends existing capture records; no complete KGP export is claimed. Next: human tablet review of U3, then one bounded next interaction at a time with a fresh handoff/budget. No automatic G02 implementation.

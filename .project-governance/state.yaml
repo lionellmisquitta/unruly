@@ -595,3 +595,43 @@ browser_workspace_hosted_preview_2026_10_04:
   paid_external_model_calls: 0
   production_authorization: false
   product_checkpoints_closed: 0
+
+
+
+drawing_ux_u3_closed_2026_10_07:
+  checkpoint_id: U3
+  kind: quarantined_drawing_ux_preview
+  status: passed
+  checkpoint_ref: checkpoint/u3-v0.6.0
+  integration_commit: 41019aa0b7991bbe5bd56b71b9516da9bb454cd0
+  rollback_ref: checkpoint/u2-v0.5.0
+  rollback_commit: fd15c607d5b9a605b1e8a1164250803832830591
+  qa_status: PASSED
+  independent_gatekeeper: ACCEPTED_PREVIEW_PUBLICATION_AUTHORIZED
+  qa_run: 37605503902
+  model_checks_passed: 48
+  browser_checks_passed: 90
+  u3_browser_checks_passed: 32
+  checks_failed: 0
+  source_hashes_verified: 32
+  source_repairs_used: 2
+  source_repairs_max: 2
+  qa_ci_runs_used: 3
+  qa_ci_runs_max: 3
+  deployment_run: 37606536465
+  deployment_commit: cb1dc0a27713f59f1fbea526a3a285d7068ea764
+  hosted_status: VERIFIED
+  url: https://lionellmisquitta.github.io/unruly/
+  hosted_assets_matched: 15
+  hosted_safe_update_prior_ink_retained: OBSERVED
+  hosted_held_line_native_edit_apply_save_reload: OBSERVED
+  evidence_directory: docs/delivery/evidence/u3
+  qa_result: docs/delivery/U3_QA_CHECKPOINT_RESULT.json
+  gatekeeper_result: docs/delivery/U3_FINAL_GATEKEEPER.md
+  knowledge_delta: .knowledge/delta-u3-closure.json
+  physical_pen_feel: NOT_VERIFIED
+  browser_local_history_byte_ceiling_stress: NOT_EXECUTED_MODEL_BUDGETS_PASSED
+  main_merge_authorized: false
+  production_authorization: false
+  paid_external_model_calls: 0
+  next_action: HUMAN_TABLET_REVIEW_THEN_ONE_BOUNDED_HANDOFF
