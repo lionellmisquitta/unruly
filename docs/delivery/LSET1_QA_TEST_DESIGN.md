@@ -13,3 +13,7 @@ Accepted source: CURVE1 `d522e76417a91b8d1a4636010ae10a2c7d53f9b7`. Scope: `LSET
 | LSETB07–08 | Live pen, pending shape and curve editor own controls; settings/clear cannot mutate document or profile |
 
 Fixtures: disposable contexts, two deterministic layers with nondefault metadata and pressure/custom-curve strokes; active layer editable, second hidden/locked. Browser cases assert persisted board/revision and local pen-config equality. Seeded selections and document history provide meaningful cancellation/Undo boundaries. Existing184 regression tests remain untouched. Budgets: maximum2 application repairs and3 complete CI runs.
+
+## Hosted-update repair regression
+
+LSETB09 adds a real HTTP-cache transition on an isolated loopback origin, without request routing. The old fixture uses `cache.addAll(FILES)`, unexpired `max-age=3600` asset responses, old HTML/JS markers, and hidden new controls. An uncontrolled same-context client proves old HTML and JavaScript remain in Chromium's HTTP cache after the server switches epochs. The new worker serves exact production worker bytes; Update must obtain new HTML/JS, retain the exact persisted ink board, expose Clear and global Pen settings, and repeat these assertions after an offline reload. The fixture represents old/new asset generations; it does not claim to reproduce every historical CURVE1 asset byte. All prior 198 assertions remain intact. This follows the separately observed hosted defect and consumes application repair 1/2; CI2 is pending.

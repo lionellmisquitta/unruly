@@ -1,0 +1,17 @@
+{
+  "checkpoint": "LSET1",
+  "source": "d7d31b0d630a045055ef569e6a04517788aa14f9",
+  "parent_ledger": "ae5abcc443c3f69d109df43772217938d1496c2f",
+  "qa_run": 37738555167,
+  "application_repairs_used": 1,
+  "application_repairs_max": 2,
+  "qa_ci_runs_used": 1,
+  "qa_ci_runs_max": 3,
+  "status": "PAUSED_REPAIR1_APPLIED_CI2_NOT_RUN",
+  "source_tree": "a97940f9d8fd647dd89c3000fa606f107d5db650",
+  "artifact_id": 11533051078,
+  "artifact_sha256": "dfd5ceef74a7c0802236063f6643a7a0d92ec16fe52afbe324c4a2224d4e5ede",
+  "model_pass": 72,
+  "browser_pass": 126,
+  "source_hashes": 41
+}

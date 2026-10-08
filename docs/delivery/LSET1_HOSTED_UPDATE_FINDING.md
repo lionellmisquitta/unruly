@@ -1,0 +1,5 @@
+# LSET1 hosted update finding
+
+CI1 accepted source d7d31b0d630a045055ef569e6a04517788aa14f9 passed198 checks; Pages run37739311854 pinned that source and byte-matched17 hosted assets. A remote Chrome session loaded CURVE1 immediately before publication, saved a disposable reference line, then applied Reload to update. The reference remained saved, but Actions lacked Pen settings and Layers lacked Clear active layer. A subsequent normal reload also showed the older controls. Hosted identity is correct; cached installation did not yield the new UI.
+
+Likely cause is browser HTTP-cache reuse by cache.addAll for unchanged asset URLs immediately after the prior deployment. Repair batch1 changes only service-worker installation requests to cache:reload and bumps cache generation. Explicit user activation and atomic addAll remain. Independent stale HTTP-cache update regression must demonstrate marker replacement, retained ink, new controls and offline reload before final source acceptance. No user artwork or private board data is copied into evidence. Prior hosted source is not closed as successful live interaction.
