@@ -65,7 +65,8 @@ export function layerCommand(h,action,id,value){return command(h,b=>{
   if(value!==i){b.layers.splice(i,1);b.layers.splice(value,0,l);}
  }else if(action==='up'||action==='down'){
   const j=i+(action==='up'?1:-1);if(j>=0&&j<b.layers.length)[b.layers[i],b.layers[j]]=[b.layers[j],b.layers[i]];
- }else if(['name','visible','locked','opacity','blend'].includes(action))l[action]=value;
+ }else if(action==='clear')l.strokes=[];
+ else if(['name','visible','locked','opacity','blend'].includes(action))l[action]=value;
  else fail('Unknown layer action');
 });}
 
