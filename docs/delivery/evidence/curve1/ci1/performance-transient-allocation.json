@@ -1,0 +1,1911 @@
+{
+  "nominalBudget": 83886080,
+  "trackedSurfaces": 5,
+  "peakBytes": 83886080,
+  "snapshots": [
+    {
+      "event": "initial",
+      "bytes": 900000,
+      "dimensions": [
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 720600,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 720004,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 540604,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 540008,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 360608,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 360012,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 300,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 180612,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 150
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 180016,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 300,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 616,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 150
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 20,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 4112,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 16777232,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 16781324,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 33554444,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 33558536,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 50331656,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 50335748,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 67108868,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 67112960,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 83886080,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": "after 1024x4096",
+      "bytes": 83886080,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 67125248,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 67108868,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 50348036,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 50331656,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 33570824,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 33554444,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 16793612,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 16777232,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 16400,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 20,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "width",
+        "value": 4096
+      },
+      "bytes": 16400,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "height",
+        "value": 1024
+      },
+      "bytes": 16777232,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "width",
+        "value": 4096
+      },
+      "bytes": 16793612,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "height",
+        "value": 1024
+      },
+      "bytes": 33554444,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "width",
+        "value": 4096
+      },
+      "bytes": 33570824,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "height",
+        "value": 1024
+      },
+      "bytes": 50331656,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "width",
+        "value": 4096
+      },
+      "bytes": 50348036,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "height",
+        "value": 1024
+      },
+      "bytes": 67108868,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "width",
+        "value": 4096
+      },
+      "bytes": 67125248,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "height",
+        "value": 1024
+      },
+      "bytes": 83886080,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": "after 4096x1024",
+      "bytes": 83886080,
+      "dimensions": [
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 67112960,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 67108868,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 50335748,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 50331656,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 33558536,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 33554444,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 16781324,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1024
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 16777232,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 4096,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "width",
+        "value": 1
+      },
+      "bytes": 4112,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1024
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "height",
+        "value": 1
+      },
+      "bytes": 20,
+      "dimensions": [
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 4112,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 0,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 16777232,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 16781324,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 1,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 33554444,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 33558536,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 2,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 50331656,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 50335748,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 3,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 67108868,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "width",
+        "value": 1024
+      },
+      "bytes": 67112960,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 1
+        }
+      ]
+    },
+    {
+      "event": {
+        "surface": 4,
+        "property": "height",
+        "value": 4096
+      },
+      "bytes": 83886080,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "event": "after 1024x4096",
+      "bytes": 83886080,
+      "dimensions": [
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        },
+        {
+          "width": 1024,
+          "height": 4096
+        }
+      ]
+    }
+  ]
+}

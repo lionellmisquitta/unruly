@@ -1,0 +1,1 @@
+[{"id":"U2B01-brush-library-memory-reset-and-no-history","status":"PASS"},{"id":"U2B02-selected-preset-serializes-on-new-stroke","status":"PASS"},{"id":"U2B03-colour-disc-precise-values-recents-and-palette-no-history","status":"PASS"},{"id":"U2B04-outside-dismissal-consumes-canvas-tap","status":"PASS"},{"id":"U2B05-mobile-panels-fit-and-offline-assets","status":"PASS"}]

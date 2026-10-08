@@ -1,0 +1,38 @@
+{
+  "browser": "151.0.7922.34",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "U01-lasso-move-final-save-history",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "U02-session-clipboard-acrossboard-and-delete",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "U03-cancel-frozen-touch-zero-outside",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "U04-invalidation-and-failed-transition",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "U05-mobile-real-selection-controls",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n6 !== 5\n\n    at run.width (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:42:465)\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:27:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:42:1",
+      "console_errors": []
+    },
+    {
+      "id": "U06-offline-and-active-selection-update",
+      "status": "PASS",
+      "console_errors": []
+    }
+  ]
+}

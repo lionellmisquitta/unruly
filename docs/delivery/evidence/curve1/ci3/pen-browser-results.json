@@ -1,0 +1,588 @@
+{
+  "browser": "151.0.7922.34",
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "PENB01-real-variable-pressure-width-release0-replay",
+      "status": "PASS",
+      "evidence": {
+        "low": 6,
+        "high": 36,
+        "canvas": {
+          "hash": 270332554,
+          "width": 1440,
+          "height": 864
+        }
+      }
+    },
+    {
+      "id": "PENB02-mouse-full-width-pressure-off",
+      "status": "PASS",
+      "evidence": {
+        "mouse": 40,
+        "disabledPen": 40
+      }
+    },
+    {
+      "id": "PENB03-optional-pressure-opacity-legacy-render",
+      "status": "PASS",
+      "evidence": {
+        "colours": [
+          [
+            195,
+            201,
+            200,
+            255
+          ],
+          [
+            53,
+            79,
+            88,
+            255
+          ]
+        ]
+      }
+    },
+    {
+      "id": "PENB04-settings-mappings-persist-no-history",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB05-20-reachable-distinct-presets-new-id-save",
+      "status": "PASS",
+      "evidence": {
+        "name": "Airbrush · Detail spray",
+        "preset": "airbrush-detail"
+      }
+    },
+    {
+      "id": "PENB06-real-barrel-lasso-auto-move-restores",
+      "status": "PASS",
+      "evidence": {
+        "events": [
+          {
+            "type": "pointerdown",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": 2,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 2,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 2,
+            "pressure": 0,
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "PENB07-lasso-hover-auto-move-outside-lasso",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB08-eraser-mask-integration-and-cdp-capability",
+      "status": "PASS",
+      "evidence": {
+        "cdp32": {
+          "status": "NOT_VERIFIED_CDP_DOES_NOT_EXPOSE_MASK32",
+          "events": [
+            {
+              "type": "pointermove",
+              "pointerType": "pen",
+              "buttons": 0,
+              "button": -1,
+              "pressure": 0,
+              "id": 2
+            },
+            {
+              "type": "pointermove",
+              "pointerType": "pen",
+              "buttons": 0,
+              "button": -1,
+              "pressure": 0,
+              "id": 2
+            },
+            {
+              "type": "pointermove",
+              "pointerType": "pen",
+              "buttons": 0,
+              "button": -1,
+              "pressure": 0,
+              "id": 2
+            }
+          ]
+        },
+        "eraserMaskIntegration": "SYNTHETIC_POINTEREVENT_CONTRACT_ONLY",
+        "physicalPen": "NOT_VERIFIED"
+      }
+    },
+    {
+      "id": "PENB09-active-transition-frozen-cancel-restores",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB10-contextmenu-scoped-and-mouse-right-no-ink",
+      "status": "PASS",
+      "evidence": {
+        "flags": [
+          {
+            "id": "canvas",
+            "prevented": true
+          },
+          {
+            "id": "selection-overlay",
+            "prevented": true
+          },
+          {
+            "id": "pen",
+            "prevented": false
+          },
+          {
+            "id": "title",
+            "prevented": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "PENB11-telemetry-honest-constant-vs-variable-no-release0",
+      "status": "PASS",
+      "evidence": {
+        "constant": "Pen · latest 0.50 · range 0.50–0.50 · constant report · hardware support unconfirmed · buttons 1",
+        "variable": "Pen · latest 0.90 · range 0.10–0.90 · varying pressure observed · buttons 1"
+      }
+    },
+    {
+      "id": "PENB11a-zero-incontact-pressure-observed",
+      "status": "PASS",
+      "evidence": {
+        "report": "Pen · latest 0.60 · range 0.00–0.60 · varying pressure observed · buttons 1",
+        "events": [
+          {
+            "type": "pointerdown",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": -1,
+            "pressure": 0.6000000238418579,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": -1,
+            "pressure": 0.6000000238418579,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": -1,
+            "pressure": 0.6000000238418579,
+            "id": 2
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "PENB12-offline-pen-assets-settings-extra-brushes",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB13-barrel-contact-arrives-as-pointermove",
+      "status": "PASS",
+      "evidence": {
+        "events": [
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": -1,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": -1,
+            "pressure": 0,
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "PENB13b-move-admitted-unexpected-captureloss-cancels",
+      "status": "PASS",
+      "evidence": {
+        "capture": {
+          "id": 2,
+          "captured": true
+        },
+        "events": [
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 3,
+            "button": -1,
+            "pressure": 0.4000000059604645,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "PENB14-mapped-eraser-blur-restores-cancels",
+      "status": "PASS",
+      "evidence": {
+        "capture": {
+          "id": 2,
+          "captured": true
+        },
+        "termination": "blur",
+        "events": [
+          {
+            "type": "pointerdown",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": 2,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 2,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 2,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "pointerdown",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": 0,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": -1,
+            "pressure": 0.800000011920929,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": -1,
+            "pressure": 0.800000011920929,
+            "id": 2
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "PENB14-mapped-eraser-lostcapture-restores-cancels",
+      "status": "PASS",
+      "evidence": {
+        "capture": {
+          "id": 2,
+          "captured": true
+        },
+        "termination": "lostcapture",
+        "events": [
+          {
+            "type": "pointerdown",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": 2,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 2,
+            "button": -1,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 2,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 2,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "pointerdown",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": 0,
+            "pressure": 0.5,
+            "id": 2
+          },
+          {
+            "type": "gotpointercapture",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": -1,
+            "pressure": 0.800000011920929,
+            "id": 2
+          },
+          {
+            "type": "pointermove",
+            "pointerType": "pen",
+            "buttons": 1,
+            "button": -1,
+            "pressure": 0.800000011920929,
+            "id": 2
+          },
+          {
+            "type": "pointerup",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          },
+          {
+            "type": "lostpointercapture",
+            "pointerType": "pen",
+            "buttons": 0,
+            "button": 0,
+            "pressure": 0,
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "PENB15-original12-absent-dynamics-exact-u3-pixels",
+      "status": "PASS",
+      "evidence": {
+        "cases": 48,
+        "comparison": "exact RGBA vs independently frozen accepted U3 preset kernel",
+        "devicePixelRatio": 1
+      }
+    }
+  ]
+}

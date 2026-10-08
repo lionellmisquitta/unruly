@@ -1,0 +1,246 @@
+{
+  "browser": "151.0.7922.34",
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "U3B01-captured-single-tap-history-no-duplicate",
+      "status": "PASS",
+      "evidence": {
+        "events": [
+          {
+            "type": "pointerdown",
+            "id": 3,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerdown",
+            "id": 4,
+            "pointerType": "touch"
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 4,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerup",
+            "id": 4,
+            "pointerType": "touch"
+          },
+          {
+            "type": "lostpointercapture",
+            "id": 4,
+            "pointerType": "touch"
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 3,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerup",
+            "id": 3,
+            "pointerType": "touch"
+          },
+          {
+            "type": "lostpointercapture",
+            "id": 3,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerdown",
+            "id": 5,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerdown",
+            "id": 6,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerdown",
+            "id": 7,
+            "pointerType": "touch"
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 6,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerup",
+            "id": 6,
+            "pointerType": "touch"
+          },
+          {
+            "type": "lostpointercapture",
+            "id": 6,
+            "pointerType": "touch"
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 7,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerup",
+            "id": 7,
+            "pointerType": "touch"
+          },
+          {
+            "type": "lostpointercapture",
+            "id": 7,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerup",
+            "id": 8,
+            "pointerType": "touch"
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 5,
+            "pointerType": "touch"
+          },
+          {
+            "type": "pointerup",
+            "id": 5,
+            "pointerType": "touch"
+          },
+          {
+            "type": "lostpointercapture",
+            "id": 5,
+            "pointerType": "touch"
+          }
+        ]
+      }
+    },
+    {
+      "id": "U3B02-history-rejects-move",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B02-history-rejects-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B02-history-rejects-hold",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B02-history-rejects-fourth",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B03-colour-hold-composite-release-and-cancel",
+      "status": "PASS",
+      "evidence": {
+        "expected": "#576e85"
+      }
+    },
+    {
+      "id": "U3B03a-colour-picker-drag-samples-final-release",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B04-colour-hold-rearms-after-movement",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B05-line-provisional-local-history-apply-one-entry",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B05a-held-line-second-finger-snap-and-continued-drag",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B06-circle-cancel-then-apply",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B07-shape-enter-commits",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B08-shape-outside-dismissal-consumed",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B08a-shape-next-stroke-separate-transactions",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B09-transform-affine-cancel-apply-style-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10-transform-local-history-no-op-and-redo-invalidation",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10a-transform-no-op-edit-has-no-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10b-local-history-retains-more-than-32-edits",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10c-invalid-transform-does-not-change-preview",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10d-combined-history-capacity-rejects-without-eviction",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11-transform-navigation-and-board-transition-guard",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11a-transform-touch-navigation-guard",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11b-transform-handle-cancel-and-history-owner",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11c-handle-lostcapture-cancels",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11c-handle-blur-cancels",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B12-pending-transform-rejects-pen-and-selection-interference",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13-live-pen-rejects-palm-and-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13a-live-touch-navigation-suppresses-history-and-pen",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13a-live-touch-picker-suppresses-history-and-pen",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13b-live-touch-navigation-suppresses-toolbar-transition",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13b-live-touch-picker-suppresses-toolbar-transition",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B14-offline-u3-assets-and-draft-cancel",
+      "status": "PASS"
+    }
+  ]
+}
