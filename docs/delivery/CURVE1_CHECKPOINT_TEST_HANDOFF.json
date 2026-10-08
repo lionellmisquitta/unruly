@@ -1,6 +1,6 @@
 {
   "checkpoint_id": "CURVE1",
-  "status": "fixture_correction_pending_ci2",
+  "status": "paint_readiness_fixture_pending_final_ci3",
   "objective": "Personal pressure response graph with three draggable control points, disposable live test pad, preset/reset and local device persistence in the cumulative preview.",
   "builder": "root Codex",
   "parent_source": "93af0a256b57932288f57239612bd4cc5516b7fc",
@@ -30,7 +30,8 @@
     ".github/workflows/browser-workspace.yml",
     "tests/browser-workspace/browser.test.cjs",
     "tests/browser-workspace/selection.browser.cjs",
-    "tests/browser-workspace/u1.browser.cjs"
+    "tests/browser-workspace/u1.browser.cjs",
+    "tests/browser-workspace/pen.browser.cjs"
   ],
   "budget": {
     "application_repair_batches_max": 2,
@@ -53,5 +54,13 @@
     "browser_passed": 113,
     "browser_failed": 5,
     "classification": "Independent QA/Gatekeeper fixture diagnosis:3canvas oracle scope updates preserving board5+pad1 bound;2CDPpad reachability failures require scrollandhit target. No apprepair."
+  },
+  "ci2": {
+    "run": 37644325380,
+    "source": "0011da2f4e7b0ac7e910a39e892ee07ddac6e51e",
+    "model_passed": 66,
+    "browser_passed": 117,
+    "browser_failed": 1,
+    "classification": "Independent QA/Gatekeeper confirmed TEST_PAINT_READINESS_RACE. Saved storage status preceded first scheduledpaint; exact comparison read HTMLdefault300x150. Fixture waits expectedcanvasdimensions/opaquepaint then unchanged exactpixel equality. No applicationrepair."
   }
 }

@@ -1,0 +1,11 @@
+# CURVE1 CI2 independent Gatekeeper review
+
+Verdict: **FINAL_FIXTURE_ONLY_CI3_PERMITTED; CHECKPOINT_NOT_YET_ACCEPTED**. Run `37644325380`, source `0011da2f4e7b0ac7e910a39e892ee07ddac6e51e`, received artifact digest `1d72324581a9898b97d2fd2e802375efac95703440b1c2c5e53719ba1f0b3e54`. Independently consumed raw reports/trace/screenshot in `/tmp/curve-ci2`. All39 source-manifest rows match current local bytes. Every application asset hash is identical between CI1 and CI2: no application repair batch consumed.
+
+Actual66/66 model tests and117/118 browser journeys passed. All10 CURVE1 journeys, repaired calibrated-canvas resource oracles and original-preset pixel comparisons passed. Sole failure: `PENB01-real-variable-pressure-width-release0-replay`, save/reload pixel equality read a default300x150 canvas instead of the already-recorded1440x864 backing dimensions.
+
+Independent trace shows reload returning around2904ms, Saved-label readiness returning2924ms, then immediate canvas read before first scheduled paint. The actual failure screenshot completed3035ms and visibly shows the correct variable-width ink on the full-size drawing canvas. Source schedules paint through requestAnimationFrame after updating the Saved label; the label therefore proves storage readiness, not paint completion. This is a test synchronization defect, not evidence of saved-artwork loss or an application pressure-curve defect.
+
+QA may add bounded conditional paint geometry readiness before raster reads, preferably backing width/height equal the previously observed expected dimensions. Do not poll for the expected hash or change/remove exact raster equality. Keep the valid save/reload assertion and failure evidence. Document the extra PEN1 test-path scope change; QA owns the test correction. CI3 must run full exact-source cumulative regression and return an independent QA result. No new application source change is justified by this fixture failure.
+
+Budget: QA CI2/3 consumed; application repairs0/2. CI3 is the final automatic verification allowance. Any failure after CI3 requires a bounded replan; do not add a fourth automatic run or weaken assertions. Main/production authorization remains false, physical pen and trusted mask32 hardware compatibility remain NOT_VERIFIED, and preview publication acceptance remains pending.
