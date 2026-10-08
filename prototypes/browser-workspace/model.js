@@ -81,7 +81,7 @@ export function eraseGesture(board,mode,sweeps,radius,options={}){
  const b=copy(validateBoard(board)),layer=editable(b);if(!['whole','partial','intersection'].includes(mode)||!num(radius,.1,1000)||!Array.isArray(sweeps)||sweeps.length>2000)fail('Invalid eraser gesture');
  let work=0;const workLimit=options.comparisons??limits.comparisons;const check=()=>{if(++work>workLimit)fail('Eraser work limit reached; gesture cancelled');};
  const paths=sweeps.map(q=>({a:q.a,b:q.b}));for(const q of paths)for(const p of [q.a,q.b])if(!p||!num(p.x,-1e7,1e7)||!num(p.y,-1e7,1e7))fail('Invalid sweep');
- const original=layer.strokes;const bounds=new Map(original.map(o=>{const xs=o.points.map(p=>p.x),ys=o.points.map(p=>p.y);return [o.id,{left:Math.min(...xs),right:Math.max(...xs),top:Math.min(...ys),bottom:Math.max(...ys)}];}));let changed=false;
+ const original=layer.strokes;const bounds=new Map(original.map(o=>{let left=Infinity,right=-Infinity,top=Infinity,bottom=-Infinity;for(const p of o.points){left=Math.min(left,p.x);right=Math.max(right,p.x);top=Math.min(top,p.y);bottom=Math.max(bottom,p.y);}return [o.id,{left,right,top,bottom}];}));let changed=false;
  layer.strokes=original.flatMap(s=>{
  const pts=s.points,ls=lengths(pts),total=ls.at(-1),rr=radius+s.size/2;let hit=false,hitAt=[];
  for(const sw of paths){let best=Infinity,at=0;if(pts.length===1){check();best=segmentDistance(pts[0],sw.a,sw.b);}else for(let i=1;i<pts.length;i++){check();const dd=segDistance(pts[i-1],pts[i],sw.a,sw.b);if(dd<best){best=dd;const a=pts[i-1],z=pts[i],dx=z.x-a.x,dy=z.y-a.y,t=Math.max(0,Math.min(1,((sw.b.x-a.x)*dx+(sw.b.y-a.y)*dy)/(dx*dx+dy*dy||1)));at=ls[i-1]+t*(ls[i]-ls[i-1]);}}if(best<=rr){hit=true;hitAt.push(at);}}
