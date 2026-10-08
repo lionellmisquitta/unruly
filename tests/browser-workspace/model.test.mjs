@@ -20,3 +20,12 @@ test('M13 tangent V touching line is notintersection boundary',()=>{const b=with
 test('M14 intersection nonadjacent self crossing splits atpropercrossing',()=>{const b=withStrokes([stroke('bow',[{x:0,y:0,pressure:0},{x:100,y:100,pressure:.3},{x:0,y:100,pressure:.6},{x:100,y:0,pressure:1}])]);const r=m.eraseGesture(b,'intersection',sweep(20,20),1);assert.equal(r.layers[0].strokes.length,1);assert(Math.abs(r.layers[0].strokes[0].points[0].x-50)<1e-6);assert(Math.abs(r.layers[0].strokes[0].points[0].y-50)<1e-6);});
 test('M15 immutable repeatedbaseline erasure and boundedwork exhaustion',()=>{const b=crossed(),before=clone(b);const a=m.eraseGesture(b,'intersection',sweep(50),1);const repeat=m.eraseGesture(b,'intersection',[...sweep(50),...sweep(50)],1);assert.deepEqual(repeat.layers[0].strokes.map(s=>s.points),a.layers[0].strokes.map(s=>s.points));assert.throws(()=>m.eraseGesture(b,'intersection',sweep(50),1,{comparisons:1}),/work limit/);assert.deepEqual(b,before);assert.throws(()=>m.eraseGesture(b,'whole',sweep(NaN),1));});
 test('M16 zoom model invalid values cannotpoison view',()=>{const v={x:10,y:-20,scale:2},p=m.toDocument(100,80,v),z=m.zoomAt(v,100,80,3);assert.deepEqual(m.toDocument(100,80,z),p);for(const value of [NaN,Infinity,-Infinity]){try{const result=m.zoomAt(v,100,80,value);assert([result.x,result.y,result.scale].every(Number.isFinite),'finite safe view or rejection');}catch(e){if(e.code==='ERR_ASSERTION')throw e;}}try{const result=m.zoomAt({...v,x:NaN},100,80,3);assert([result.x,result.y,result.scale].every(Number.isFinite),'invalid view rejects or finite fallback');}catch(e){if(e.code==='ERR_ASSERTION')throw e;}});
+
+// ERASE1 characterization: dense, non-crossing parallel strokes must not consume the entire intersection budget.
+test('ERASE1-C01 dense parallel strokes erase to intersection without work-limit failure',()=>{
+ const points=(y)=>Array.from({length:525},(_,i)=>({x:i,y,pressure:null}));
+ const b=withStrokes([stroke('target',points(0)),stroke('other',points(20))]);
+ const before=clone(b);
+ assert.doesNotThrow(()=>m.eraseGesture(b,'intersection',sweep(250,0),2));
+ assert.deepEqual(b,before);
+});
