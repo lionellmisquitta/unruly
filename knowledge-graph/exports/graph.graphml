@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<graph id="G" edgedefault="directed">
+<node id="urn:unruly:project"><data key="type">Project</data><data key="name">UNRULY</data></node>
+<node id="urn:unruly:architecture:browser-first"><data key="type">Decision</data><data key="name">Browser-first architecture</data></node>
+<node id="urn:unruly:architecture:local-first"><data key="type">Capability</data><data key="name">Offline local-first operation</data></node>
+<node id="urn:unruly:architecture:drive-sync"><data key="type">Integration</data><data key="name">Google Drive sync</data></node>
+<node id="urn:unruly:architecture:no-saas-backend"><data key="type">Decision</data><data key="name">No required hosted SaaS backend</data></node>
+<node id="urn:unruly:architecture:open-source"><data key="type">Decision</data><data key="name">Open-source release</data></node>
+<node id="urn:unruly:cap:canvas"><data key="type">Capability</data><data key="name">Infinite canvas</data></node>
+<node id="urn:unruly:cap:drawing"><data key="type">Capability</data><data key="name">Drawing engine</data></node>
+<node id="urn:unruly:cap:brushes"><data key="type">Capability</data><data key="name">Brush system</data></node>
+<node id="urn:unruly:cap:layers"><data key="type">Capability</data><data key="name">Layer system</data></node>
+<node id="urn:unruly:cap:selection"><data key="type">Capability</data><data key="name">Selection and transform</data></node>
+<node id="urn:unruly:cap:gestures"><data key="type">Capability</data><data key="name">Gesture system</data></node>
+<node id="urn:unruly:cap:color"><data key="type">Capability</data><data key="name">Color system</data></node>
+<node id="urn:unruly:cap:effects"><data key="type">Capability</data><data key="name">Effects and fill</data></node>
+<node id="urn:unruly:cap:whiteboard"><data key="type">Capability</data><data key="name">Whiteboarding objects</data></node>
+<node id="urn:unruly:cap:timelapse"><data key="type">Capability</data><data key="name">Timelapse</data></node>
+<node id="urn:unruly:cap:motiontrace"><data key="type">Capability</data><data key="name">Motion Trace</data></node>
+<node id="urn:unruly:cap:exchange"><data key="type">Capability</data><data key="name">Import/export and exchange</data></node>
+<node id="urn:unruly:cap:ai"><data key="type">Capability</data><data key="name">BYOK AI assistance</data></node>
+<node id="urn:unruly:cap:qa"><data key="type">Capability</data><data key="name">Governed delivery and QA</data></node>
+<node id="urn:unruly:cap:performance"><data key="type">Capability</data><data key="name">Performance foundation</data></node>
+<node id="urn:unruly:ux:procreate-baseline"><data key="type">Decision</data><data key="name">Procreate-inspired UX baseline</data></node>
+<node id="urn:unruly:ux:compact-toolbar"><data key="type">Screen</data><data key="name">Compact icon toolbar</data></node>
+<node id="urn:unruly:ux:left-rail"><data key="type">Screen</data><data key="name">Independent left size/opacity rail</data></node>
+<node id="urn:unruly:ux:layers-popover"><data key="type">Screen</data><data key="name">Compact layers popover</data></node>
+<node id="urn:unruly:ux:brush-popover"><data key="type">Screen</data><data key="name">Brush library popover</data></node>
+<node id="urn:unruly:ux:color-picker"><data key="type">Decision</data><data key="name">Hue disc color picker</data></node>
+<node id="urn:unruly:ux:pen-first"><data key="type">Decision</data><data key="name">Pen-first interaction</data></node>
+<node id="urn:unruly:gesture:undo"><data key="type">Action</data><data key="name">Two-finger single tap Undo</data></node>
+<node id="urn:unruly:gesture:redo"><data key="type">Action</data><data key="name">Three-finger single tap Redo</data></node>
+<node id="urn:unruly:gesture:eyedropper"><data key="type">Action</data><data key="name">Finger stationary hold eyedropper</data></node>
+<node id="urn:unruly:gesture:shape"><data key="type">Action</data><data key="name">Pen draw then hold shape recognition</data></node>
+<node id="urn:unruly:gesture:panzoom"><data key="type">Action</data><data key="name">Two-finger pan/zoom</data></node>
+<node id="urn:unruly:gesture:rotate"><data key="type">Action</data><data key="name">Two-finger twist rotate view</data></node>
+<node id="urn:unruly:gesture:fit"><data key="type">Action</data><data key="name">Quick pinch fit artwork</data></node>
+<node id="urn:unruly:gesture:clipboard"><data key="type">Action</data><data key="name">Three-finger downward swipe clipboard menu</data></node>
+<node id="urn:unruly:gesture:chrome"><data key="type">Action</data><data key="name">Four-finger tap hide/show chrome</data></node>
+<node id="urn:unruly:gesture:scrub"><data key="type">Action</data><data key="name">Three-finger scrub clear layer</data></node>
+<node id="urn:unruly:checkpoint:p0a"><data key="type">Process</data><data key="name">P0a native pen feasibility</data></node>
+<node id="urn:unruly:checkpoint:wb1"><data key="type">Process</data><data key="name">WB1 browser workspace</data></node>
+<node id="urn:unruly:checkpoint:p01"><data key="type">Process</data><data key="name">P01 v0.3.0 performance checkpoint</data></node>
+<node id="urn:unruly:checkpoint:selection"><data key="type">Process</data><data key="name">Vector selection checkpoint</data></node>
+<node id="urn:unruly:checkpoint:u1"><data key="type">Process</data><data key="name">U1 compact reference UI and layers</data></node>
+<node id="urn:unruly:checkpoint:u2"><data key="type">Process</data><data key="name">U2 brush library and color</data></node>
+<node id="urn:unruly:checkpoint:u3"><data key="type">Process</data><data key="name">U3 core gestures and geometry</data></node>
+<node id="urn:unruly:checkpoint:g02"><data key="type">Process</data><data key="name">G02 remaining reference gestures</data></node>
+<node id="urn:unruly:code:app"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/app.js</data></node>
+<node id="urn:unruly:code:model"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/model.js</data></node>
+<node id="urn:unruly:code:render"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/render.js</data></node>
+<node id="urn:unruly:code:selection"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/selection.js</data></node>
+<node id="urn:unruly:code:storage"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/storage.js</data></node>
+<node id="urn:unruly:code:sw"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/sw.js</data></node>
+<node id="urn:unruly:code:ui"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/index.html + style.css</data></node>
+<node id="urn:unruly:code:tests-model"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/model.test.mjs</data></node>
+<node id="urn:unruly:code:tests-browser"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/browser.test.cjs</data></node>
+<node id="urn:unruly:code:tests-selection"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/selection.test.mjs + selection.browser.cjs</data></node>
+<node id="urn:unruly:code:tests-performance"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/performance.browser.cjs</data></node>
+<node id="urn:unruly:code:tests-u1"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/u1.*</data></node>
+<node id="urn:unruly:code:workflow"><data key="type">CodeArtifact</data><data key="name"> .github/workflows/browser-workspace.yml</data></node>
+<node id="urn:unruly:doc:project-state"><data key="type">Document</data><data key="name">PROJECT_STATE.md</data></node>
+<node id="urn:unruly:doc:governance"><data key="type">Document</data><data key="name"> .project-governance/state.yaml</data></node>
+<node id="urn:unruly:doc:handbook"><data key="type">Document</data><data key="name">PROCREATE_HANDBOOK_UX_BASELINE.md</data></node>
+<node id="urn:unruly:doc:u1-review"><data key="type">Document</data><data key="name">U1_CANDIDATE_REVIEW.md</data></node>
+<node id="urn:unruly:doc:perf-gate"><data key="type">Document</data><data key="name">PERFORMANCE_FINAL_GATEKEEPER.md</data></node>
+<node id="urn:unruly:doc:vector-delta"><data key="type">Document</data><data key="name">.knowledge/delta-vector-selection.json</data></node>
+<node id="urn:unruly:doc:drawing-plan"><data key="type">Document</data><data key="name">.knowledge/delta-drawing-ux-plan.json</data></node>
+<node id="urn:unruly:doc:handbook-delta"><data key="type">Document</data><data key="name">.knowledge/delta-procreate-handbook.json</data></node>
+<node id="urn:unruly:doc:chat"><data key="type">Document</data><data key="name">Design Offline Whiteboard conversation</data></node>
+<node id="urn:unruly:branch:main"><data key="type">SourceFile</data><data key="name">main</data></node>
+<node id="urn:unruly:branch:vector"><data key="type">SourceFile</data><data key="name">preview/vector-selection-2026-10-06</data></node>
+<node id="urn:unruly:branch:p01"><data key="type">SourceFile</data><data key="name">checkpoint/p01-v0.3.0</data></node>
+<node id="urn:unruly:branch:u1"><data key="type">SourceFile</data><data key="name">preview/drawing-ux-u1-2026-10-06</data></node>
+<node id="urn:unruly:branch:kgp"><data key="type">SourceFile</data><data key="name">knowledge/unruly-kgp</data></node>
+<node id="urn:unruly:question:physical-pen"><data key="type">Question</data><data key="name">Physical pen feel verification</data></node>
+<node id="urn:unruly:question:android"><data key="type">Question</data><data key="name">Android packaging/runtime</data></node>
+<node id="urn:unruly:question:license"><data key="type">Question</data><data key="name">Open-source license</data></node>
+<node id="urn:unruly:question:brush-import"><data key="type">Question</data><data key="name">Procreate brush import fidelity</data></node>
+<node id="urn:unruly:question:psd"><data key="type">Question</data><data key="name">Layered exchange fidelity</data></node>
+<node id="urn:unruly:question:drive-oauth"><data key="type">Question</data><data key="name">Drive OAuth/release setup</data></node>
+<node id="urn:unruly:question:ai-provider"><data key="type">Question</data><data key="name">BYOK AI provider support</data></node>
+<node id="urn:unruly:question:timelapse-retention"><data key="type">Question</data><data key="name">Timelapse framing/retention</data></node>
+<node id="urn:unruly:branch:checkpoint-u1"><data key="type">Artifact</data><data key="name">checkpoint/u1-v0.4.0</data></node>
+<node id="urn:unruly:branch:checkpoint-u2"><data key="type">Artifact</data><data key="name">checkpoint/u2-v0.5.0</data></node>
+<node id="urn:unruly:code:brushes"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/brushes.js</data></node>
+<node id="urn:unruly:code:u2-ui"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/u2.js</data></node>
+<node id="urn:unruly:test:u2-model"><data key="type">TestCase</data><data key="name">tests/browser-workspace/u2.model.test.mjs</data></node>
+<node id="urn:unruly:test:u2-browser"><data key="type">TestCase</data><data key="name">tests/browser-workspace/u2.browser.cjs</data></node>
+<node id="urn:unruly:evidence:u1-ci3"><data key="type">Evidence</data><data key="name">U1 CI3 passing QA</data></node>
+<node id="urn:unruly:evidence:u2-ci3"><data key="type">Evidence</data><data key="name">U2 CI3 passing QA</data></node>
+<node id="urn:unruly:evidence:u2-repair"><data key="type">Evidence</data><data key="name">U2 shared size-state repair</data></node>
+<node id="urn:unruly:batch:u1-u2"><data key="type">Process</data><data key="name">U1 + U2 human review batch</data></node>
+<node id="urn:unruly:source:oct8:21176d94b62a"><data key="type">Document</data><data key="name">PROJECT_STATE.md</data></node>
+<node id="urn:unruly:source:oct8:48abce83f5d2"><data key="type">Document</data><data key="name">.project-governance/state.yaml</data></node>
+<node id="urn:unruly:source:oct8:6f06b4f727cc"><data key="type">Document</data><data key="name">historical-capture/delta-performance-p01.json</data></node>
+<node id="urn:unruly:source:oct8:ee2734e0360d"><data key="type">Document</data><data key="name">historical-capture/delta-004.json</data></node>
+<node id="urn:unruly:source:oct8:b3ee017cf90b"><data key="type">Document</data><data key="name">historical-capture/initial-capture-delta.json</data></node>
+<node id="urn:unruly:source:oct8:1cc1e55f60ee"><data key="type">Document</data><data key="name">historical-capture/delta-011.json</data></node>
+<node id="urn:unruly:source:oct8:f6bf37e82e77"><data key="type">Document</data><data key="name">historical-capture/delta-delivery-recovery.json</data></node>
+<node id="urn:unruly:source:oct8:044977aa543d"><data key="type">Document</data><data key="name">historical-capture/delta-drawing-workspace.json</data></node>
+<node id="urn:unruly:source:oct8:3c02af48f68c"><data key="type">Document</data><data key="name">historical-capture/delta-vector-selection.json</data></node>
+<node id="urn:unruly:source:oct8:c9ddf9ceb5f2"><data key="type">Document</data><data key="name">historical-capture/delta-007.json</data></node>
+<node id="urn:unruly:source:oct8:8e44cb46f681"><data key="type">Document</data><data key="name">historical-capture/delta-003.json</data></node>
+<node id="urn:unruly:source:oct8:34a87dc3ebe6"><data key="type">Document</data><data key="name">historical-capture/delta-006.json</data></node>
+<node id="urn:unruly:source:oct8:85b932f73eb6"><data key="type">Document</data><data key="name">historical-capture/delta-010.json</data></node>
+<node id="urn:unruly:source:oct8:3f3e08002dfc"><data key="type">Document</data><data key="name">historical-capture/delta-002.json</data></node>
+<node id="urn:unruly:source:oct8:b5960c995c42"><data key="type">Document</data><data key="name">historical-capture/delta-009.json</data></node>
+<node id="urn:unruly:source:oct8:26250eb58c57"><data key="type">Document</data><data key="name">historical-capture/delta-procreate-handbook.json</data></node>
+<node id="urn:unruly:source:oct8:44936af13181"><data key="type">Document</data><data key="name">historical-capture/delta-008.json</data></node>
+<node id="urn:unruly:source:oct8:d5b6827cbfa4"><data key="type">Document</data><data key="name">historical-capture/delta-browser-foundation.json</data></node>
+<node id="urn:unruly:source:oct8:81f42096314b"><data key="type">Document</data><data key="name">historical-capture/delta-handbook-build-start.json</data></node>
+<node id="urn:unruly:source:oct8:dbcbc3b3d520"><data key="type">Document</data><data key="name">historical-capture/delta-drawing-ux-plan.json</data></node>
+<node id="urn:unruly:source:oct8:b8bbbd713ea5"><data key="type">Document</data><data key="name">historical-capture/delta-procreate-reference.json</data></node>
+<node id="urn:unruly:source:oct8:c21500c32534"><data key="type">Document</data><data key="name">historical-capture/delta-005.json</data></node>
+<node id="urn:unruly:source:oct8:cc2bdf8c3a6b"><data key="type">Document</data><data key="name">.knowledge/delta-u3-closure.json</data></node>
+<node id="urn:unruly:source:oct8:1952cd3a63c7"><data key="type">Document</data><data key="name">.knowledge/delta-curve1-closure.json</data></node>
+<node id="urn:unruly:source:oct8:b7089608dbed"><data key="type">Document</data><data key="name">.knowledge/delta-pen1-closure.json</data></node>
+<node id="urn:unruly:source:oct8:3827dd86d05b"><data key="type">Document</data><data key="name">docs/delivery/LSET1_QA_CHECKPOINT_RESULT.json</data></node>
+<node id="urn:unruly:source:oct8:c2e4af8fdf77"><data key="type">Document</data><data key="name">docs/delivery/LSET1_CONTINUE_HERE.md</data></node>
+<node id="urn:unruly:source:oct8:ae5193cc1f40"><data key="type">Document</data><data key="name">docs/delivery/LSET1_CHECKPOINT_TEST_HANDOFF.json</data></node>
+<node id="urn:unruly:source:oct8:2d0f10082b59"><data key="type">Document</data><data key="name">docs/delivery/LSET1_QA_REPORT.md</data></node>
+<node id="urn:unruly:source:oct8:e3ed77a8dd91"><data key="type">Document</data><data key="name">docs/delivery/LSET1_HOSTED_UPDATE_FINDING.md</data></node>
+<node id="urn:unruly:source:oct8:c538138700dd"><data key="type">Document</data><data key="name">docs/delivery/LSET1_QA_TEST_DESIGN.md</data></node>
+<node id="urn:unruly:source:oct8:3f1d10c3e47e"><data key="type">Document</data><data key="name">docs/delivery/LSET1_FINAL_GATEKEEPER.md</data></node>
+<node id="urn:unruly:source:oct8:17e08c1be997"><data key="type">Document</data><data key="name">docs/delivery/LSET1_REPAIR_BATCH1.md</data></node>
+<node id="urn:unruly:source:oct8:0fd542e4d94b"><data key="type">Document</data><data key="name">docs/delivery/LSET1_PREBUILD_GATEKEEPER.md</data></node>
+<node id="urn:unruly:source:oct8:fee51e370bd5"><data key="type">Document</data><data key="name">docs/delivery/LSET1_SOURCE_GATEKEEPER.md</data></node>
+<node id="urn:unruly:source:oct8:04de3ffeb1d8"><data key="type">Document</data><data key="name">docs/delivery/U3_CHECKPOINT_TEST_HANDOFF.json</data></node>
+<node id="urn:unruly:source:oct8:e1a7a0e11e08"><data key="type">Document</data><data key="name">docs/delivery/U3_QA_CHECKPOINT_RESULT.json</data></node>
+<node id="urn:unruly:source:oct8:198f7b3bb8e0"><data key="type">Document</data><data key="name">docs/delivery/U3_QA_REPORT.md</data></node>
+<node id="urn:unruly:source:oct8:37b080be5111"><data key="type">Document</data><data key="name">docs/delivery/U3_FINAL_GATEKEEPER.md</data></node>
+<node id="urn:unruly:source:oct8:6929324b5cd0"><data key="type">Document</data><data key="name">docs/delivery/U3_HOSTED_CLOSURE.md</data></node>
+<node id="urn:unruly:source:oct8:2839d9519e9c"><data key="type">Document</data><data key="name">docs/delivery/PEN1_CHECKPOINT_TEST_HANDOFF.json</data></node>
+<node id="urn:unruly:source:oct8:ba6d0f8713e0"><data key="type">Document</data><data key="name">docs/delivery/PEN1_QA_CHECKPOINT_RESULT.json</data></node>
+<node id="urn:unruly:source:oct8:21c1e8edf991"><data key="type">Document</data><data key="name">docs/delivery/PEN1_QA_REPORT.md</data></node>
+<node id="urn:unruly:source:oct8:c04e69ad0357"><data key="type">Document</data><data key="name">docs/delivery/PEN1_FINAL_GATEKEEPER.md</data></node>
+<node id="urn:unruly:source:oct8:a8781857967e"><data key="type">Document</data><data key="name">docs/delivery/PEN1_HOSTED_CLOSURE.md</data></node>
+<node id="urn:unruly:source:oct8:b859ea1295b5"><data key="type">Document</data><data key="name">docs/delivery/CURVE1_CHECKPOINT_TEST_HANDOFF.json</data></node>
+<node id="urn:unruly:source:oct8:44e544895809"><data key="type">Document</data><data key="name">docs/delivery/CURVE1_QA_CHECKPOINT_RESULT.json</data></node>
+<node id="urn:unruly:source:oct8:f6c20621943d"><data key="type">Document</data><data key="name">docs/delivery/CURVE1_QA_REPORT.md</data></node>
+<node id="urn:unruly:source:oct8:292b6f01444c"><data key="type">Document</data><data key="name">docs/delivery/CURVE1_FINAL_GATEKEEPER.md</data></node>
+<node id="urn:unruly:source:oct8:c3d61b480ed7"><data key="type">Document</data><data key="name">docs/delivery/CURVE1_HOSTED_CLOSURE.md</data></node>
+<node id="urn:unruly:source:oct8:40043893725e"><data key="type">Document</data><data key="name">docs/delivery/PROCREATE_HANDBOOK_UX_BASELINE.md</data></node>
+<node id="urn:unruly:source:oct8:00a86b482d4d"><data key="type">Document</data><data key="name">docs/delivery/DRAWING_UX_BATCH_PLAN.md</data></node>
+<node id="urn:unruly:source:oct8:57910e06991a"><data key="type">Document</data><data key="name">docs/delivery/DRAWING_UX_QA_PLAN.md</data></node>
+<node id="GDEC-001"><data key="type">Decision</data><data key="name">GDEC-001 · Windows distribution is a portable folder containing an executable and bundled dependencies; no</data></node>
+<node id="GDEC-002"><data key="type">Decision</data><data key="name">GDEC-002 · Android APK distribution is acceptable</data></node>
+<node id="GDEC-003"><data key="type">Decision</data><data key="name">GDEC-003 · Painting and whiteboarding are equally important in release one</data></node>
+<node id="GDEC-004"><data key="type">Decision</data><data key="name">GDEC-004 · Personal use across devices; collaborative editing is outside release one</data></node>
+<node id="GDEC-005"><data key="type">Decision</data><data key="name">GDEC-005 · Open-source release; license remains undecided</data></node>
+<node id="GDEC-006"><data key="type">Decision</data><data key="name">GDEC-006 · Smooth, responsive pen interaction is a primary release criterion</data></node>
+<node id="GDEC-007"><data key="type">Decision</data><data key="name">GDEC-007 · Prepare requirements, architecture, UX, tests and automation before production coding</data></node>
+<node id="GDEC-008"><data key="type">Decision</data><data key="name">GDEC-008 · Independent cross-model QA is desired: Codex builder with Claude Code QA, or the reverse</data></node>
+<node id="REQ-001"><data key="type">Requirement</data><data key="name">REQ-001 · Infinite canvas, zoom, pan, multiple saved boards, cut/copy/paste, lasso, ruler, eraser</data></node>
+<node id="REQ-002"><data key="type">Requirement</data><data key="name">REQ-002 · Vector and raster drawing on one board; editable curve control points and dedicated curve pen t</data></node>
+<node id="REQ-003"><data key="type">Requirement</data><data key="name">REQ-003 · Pen, pencil, marker, airbrush, watercolour, imported texture brushes</data></node>
+<node id="REQ-004"><data key="type">Requirement</data><data key="name">REQ-004 · Layers, clipping masks, transparency/opacity and blending modes; brush size and opacity control</data></node>
+<node id="REQ-005"><data key="type">Requirement</data><data key="name">REQ-005 · Pressure-sensitive drawing and adjustable stabilization for handwriting</data></node>
+<node id="REQ-006"><data key="type">Requirement</data><data key="name">REQ-006 · Two-finger double tap undo, three-finger double tap redo, stationary hold colour picker and hel</data></node>
+<node id="REQ-007"><data key="type">Requirement</data><data key="name">REQ-007 · Gaussian blur and gap-aware paint bucket inspired by Clip Studio Paint</data></node>
+<node id="REQ-008"><data key="type">Requirement</data><data key="name">REQ-008 · Colour wheel, hue/saturation controls and different paper options; review Concepts colour/works</data></node>
+<node id="REQ-009"><data key="type">Requirement</data><data key="name">REQ-009 · Local timelapse recording and video export; framing and retention remain unresolved</data></node>
+<node id="REQ-010"><data key="type">Requirement</data><data key="name">REQ-010 · Google Drive synchronization with local offline work</data></node>
+<node id="REQ-011"><data key="type">Requirement</data><data key="name">REQ-011 · Optional BYOK AI to summarize/diagram selected ideas and export DOCX, PDF, JPG</data></node>
+<node id="REQ-012"><data key="type">Requirement</data><data key="name">REQ-012 · Automated checkpoint coding, adversarial frontend and backend/engine tests, Gatekeeper review, </data></node>
+<node id="REQ-013"><data key="type">Requirement</data><data key="name">REQ-013 · Maintain the project knowledge graph during design and coding, not retrospectively at release</data></node>
+<node id="GDEC-009"><data key="type">Decision</data><data key="name">GDEC-009 · Human review occurs in batches of approximately 2–4 checkpoints, not after every checkpoint</data></node>
+<node id="GDEC-010"><data key="type">Decision</data><data key="name">GDEC-010 · AI summarization/diagramming is included in release one, after validation of base features</data></node>
+<node id="GDEC-011"><data key="type">Decision</data><data key="name">GDEC-011 · Default pen draws; fingers navigate and invoke gestures</data></node>
+<node id="GDEC-012"><data key="type">Decision</data><data key="name">GDEC-012 · Include smudge/blending brush using documented Procreate interactions: shared Paint/Smudge/Eras</data></node>
+<node id="GDEC-013"><data key="type">Decision</data><data key="name">GDEC-013 · Experimental Procreate brush import is accepted after native brush validation</data></node>
+<node id="GDEC-014"><data key="type">Decision</data><data key="name">GDEC-014 · Both image and selected PDF-page import are included</data></node>
+<node id="GDEC-015"><data key="type">Decision</data><data key="name">GDEC-015 · Editable text boxes, sticky notes and attached connectors are included</data></node>
+<node id="REQ-014"><data key="type">Requirement</data><data key="name">REQ-014 · Reference image box, colour picker, good inking pens, long-touch colour sampling, Concepts-insp</data></node>
+<node id="REQ-015"><data key="type">Requirement</data><data key="name">REQ-015 · Canvas/artboard dimensions and DPI controls</data></node>
+<node id="REQ-016"><data key="type">Requirement</data><data key="name">REQ-016 · Exchange artwork with Clip Studio Paint and Procreate</data></node>
+<node id="GDEC-016"><data key="type">Decision</data><data key="name">GDEC-016 · Stationary hold colour picker; draw then hold endpoint for straightening/shape recognition</data></node>
+<node id="GDEC-017"><data key="type">Decision</data><data key="name">GDEC-017 · Drive sync preserves both conflicting board revisions; user chooses which to continue</data></node>
+<node id="REQ-017"><data key="type">Requirement</data><data key="name">REQ-017 · Support moving selected/lassoed content along a path and audience-view pan/zoom</data></node>
+<node id="GDEC-018"><data key="type">Decision</data><data key="name">GDEC-018 · Motion Trace</data></node>
+<node id="GDEC-019"><data key="type">Decision</data><data key="name">GDEC-019 · Motion Trace</data></node>
+<node id="GDEC-020"><data key="type">Decision</data><data key="name">GDEC-020 · Motion Trace</data></node>
+<node id="EVT-P0-PREPARATION-PUBLISHED"><data key="type">Event</data><data key="name">EVT-P0-PREPARATION-PUBLISHED</data></node>
+<node id="EVT-DELIVERY-SKILLS-INSTALLED"><data key="type">Event</data><data key="name">EVT-DELIVERY-SKILLS-INSTALLED</data></node>
+<node id="EVT-CLAUDE-AUTH-SMOKE"><data key="type">Event</data><data key="name">EVT-CLAUDE-AUTH-SMOKE</data></node>
+<node id="EVT-CLAUDE-QA-LAUNCH"><data key="type">Event</data><data key="name">EVT-CLAUDE-QA-LAUNCH</data></node>
+<node id="EVT-CLAUDE-QA-PREPARED"><data key="type">Event</data><data key="name">EVT-CLAUDE-QA-PREPARED</data></node>
+<node id="EVT-WINDOWS-ENV"><data key="type">Event</data><data key="name">EVT-WINDOWS-ENV</data></node>
+<node id="EVT-P0A-WINDOWS-MODEL"><data key="type">Event</data><data key="name">EVT-P0A-WINDOWS-MODEL</data></node>
+<node id="EVT-P0A-WINDOWS-NATIVE"><data key="type">Event</data><data key="name">EVT-P0A-WINDOWS-NATIVE</data></node>
+<node id="EVT-BASELINE-CANDIDATE"><data key="type">Event</data><data key="name">EVT-BASELINE-CANDIDATE</data></node>
+<node id="EVT-REVIEW-SKILLS-MISSING"><data key="type">Event</data><data key="name">EVT-REVIEW-SKILLS-MISSING</data></node>
+<node id="EVT-P0-WSLG-NATIVE-STARTUP"><data key="type">Event</data><data key="name">EVT-P0-WSLG-NATIVE-STARTUP</data></node>
+<node id="EVT-P0-NATIVE-HOVER-DEFECT"><data key="type">Event</data><data key="name">EVT-P0-NATIVE-HOVER-DEFECT</data></node>
+<node id="EVT-P0-NATIVE-REPAIR-2"><data key="type">Event</data><data key="name">EVT-P0-NATIVE-REPAIR-2</data></node>
+<node id="EVT-P0-NATIVE-GATEKEEPER"><data key="type">Event</data><data key="name">EVT-P0-NATIVE-GATEKEEPER</data></node>
+<node id="EVT-P0-LINUX-MODEL-RETEST"><data key="type">Event</data><data key="name">EVT-P0-LINUX-MODEL-RETEST</data></node>
+<node id="EVT-P0-LINUX-INDEPENDENT-ASSESSMENT"><data key="type">Event</data><data key="name">EVT-P0-LINUX-INDEPENDENT-ASSESSMENT</data></node>
+<node id="EVT-CLAUDE-P0-INDEPENDENT-QA"><data key="type">Event</data><data key="name">EVT-CLAUDE-P0-INDEPENDENT-QA</data></node>
+<node id="EVT-P0-CAPACITY-DEFECT"><data key="type">Event</data><data key="name">EVT-P0-CAPACITY-DEFECT</data></node>
+<node id="EVT-P0-CAPACITY-REPAIR"><data key="type">Event</data><data key="name">EVT-P0-CAPACITY-REPAIR</data></node>
+<node id="EVT-P0-ADVERSARIAL-REGRESSION-BLOCK"><data key="type">Event</data><data key="name">EVT-P0-ADVERSARIAL-REGRESSION-BLOCK</data></node>
+<node id="EVT-P0A-SOURCE"><data key="type">Event</data><data key="name">EVT-P0A-SOURCE</data></node>
+<node id="EVT-P0A-MODEL-QA"><data key="type">Event</data><data key="name">EVT-P0A-MODEL-QA</data></node>
+<node id="EVT-P0A-NATIVE"><data key="type">Event</data><data key="name">EVT-P0A-NATIVE</data></node>
+<node id="urn:unruly:checkpoint:pen1"><data key="type">Process</data><data key="name">Pen input and brush dynamics</data></node>
+<node id="urn:unruly:checkpoint:curve1"><data key="type">Process</data><data key="name">Personal pressure response curve</data></node>
+<node id="urn:unruly:checkpoint:lset1"><data key="type">Process</data><data key="name">LSET1 clear layer and global pen settings</data></node>
+<node id="urn:unruly:cap:pressure"><data key="type">Capability</data><data key="name">Adjustable pressure dynamics</data></node>
+<node id="urn:unruly:cap:pen-map"><data key="type">Capability</data><data key="name">Pen-button mapping</data></node>
+<node id="urn:unruly:cap:curve"><data key="type">Capability</data><data key="name">Personal pressure curve</data></node>
+<node id="urn:unruly:cap:clear-layer"><data key="type">Capability</data><data key="name">Clear active layer</data></node>
+<node id="urn:unruly:cap:global-pen-settings"><data key="type">Capability</data><data key="name">Global pen settings panel</data></node>
+<node id="urn:unruly:cap:pressure-hierarchy"><data key="type">Capability</data><data key="name">Global pressure with optional brush override</data></node>
+<node id="urn:unruly:code:pen-input"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/pen-input.js</data></node>
+<node id="urn:unruly:code:pressure-ui"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/pressure-ui.js</data></node>
+<node id="urn:unruly:code:lset-tests"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/lset.browser.cjs</data></node>
+<node id="urn:unruly:decision:graph-freshness"><data key="type">Decision</data><data key="name">Timestamped current graph</data></node>
+<node id="urn:unruly:decision:bounded-increments"><data key="type">Decision</data><data key="name">One bounded increment at a time</data></node>
+<node id="urn:unruly:question:hosted-cache"><data key="type">Question</data><data key="name">Hosted cached-update compatibility</data></node>
+<edge id="urn:rel:0001" source="urn:unruly:project" target="urn:unruly:cap:canvas"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0002" source="urn:unruly:project" target="urn:unruly:cap:drawing"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0003" source="urn:unruly:project" target="urn:unruly:cap:brushes"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0004" source="urn:unruly:project" target="urn:unruly:cap:layers"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0005" source="urn:unruly:project" target="urn:unruly:cap:selection"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0006" source="urn:unruly:project" target="urn:unruly:cap:gestures"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0007" source="urn:unruly:project" target="urn:unruly:cap:color"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0008" source="urn:unruly:project" target="urn:unruly:cap:effects"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0009" source="urn:unruly:project" target="urn:unruly:cap:whiteboard"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0010" source="urn:unruly:project" target="urn:unruly:cap:timelapse"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0011" source="urn:unruly:project" target="urn:unruly:cap:motiontrace"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0012" source="urn:unruly:project" target="urn:unruly:cap:exchange"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0013" source="urn:unruly:project" target="urn:unruly:cap:ai"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0014" source="urn:unruly:project" target="urn:unruly:cap:qa"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0015" source="urn:unruly:project" target="urn:unruly:cap:performance"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0016" source="urn:unruly:project" target="urn:unruly:ux:procreate-baseline"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0017" source="urn:unruly:project" target="urn:unruly:ux:compact-toolbar"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0018" source="urn:unruly:project" target="urn:unruly:ux:left-rail"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0019" source="urn:unruly:project" target="urn:unruly:ux:layers-popover"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0020" source="urn:unruly:project" target="urn:unruly:ux:brush-popover"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0021" source="urn:unruly:project" target="urn:unruly:ux:color-picker"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0022" source="urn:unruly:project" target="urn:unruly:ux:pen-first"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0023" source="urn:unruly:project" target="urn:unruly:architecture:browser-first"><data key="type">IMPLEMENTS</data></edge>
+<edge id="urn:rel:0024" source="urn:unruly:architecture:browser-first" target="urn:unruly:checkpoint:p0a"><data key="type">SUPERSEDES</data></edge>
+<edge id="urn:rel:0025" source="urn:unruly:project" target="urn:unruly:architecture:local-first"><data key="type">USES</data></edge>
+<edge id="urn:rel:0026" source="urn:unruly:project" target="urn:unruly:architecture:drive-sync"><data key="type">USES</data></edge>
+<edge id="urn:rel:0027" source="urn:unruly:project" target="urn:unruly:architecture:no-saas-backend"><data key="type">USES</data></edge>
+<edge id="urn:rel:0028" source="urn:unruly:project" target="urn:unruly:architecture:open-source"><data key="type">USES</data></edge>
+<edge id="urn:rel:0029" source="urn:unruly:cap:drawing" target="urn:unruly:ux:compact-toolbar"><data key="type">USES</data></edge>
+<edge id="urn:rel:0030" source="urn:unruly:cap:drawing" target="urn:unruly:ux:left-rail"><data key="type">USES</data></edge>
+<edge id="urn:rel:0031" source="urn:unruly:cap:drawing" target="urn:unruly:ux:layers-popover"><data key="type">USES</data></edge>
+<edge id="urn:rel:0032" source="urn:unruly:cap:drawing" target="urn:unruly:ux:brush-popover"><data key="type">USES</data></edge>
+<edge id="urn:rel:0033" source="urn:unruly:cap:drawing" target="urn:unruly:ux:color-picker"><data key="type">USES</data></edge>
+<edge id="urn:rel:0034" source="urn:unruly:cap:drawing" target="urn:unruly:ux:pen-first"><data key="type">USES</data></edge>
+<edge id="urn:rel:0035" source="urn:unruly:cap:drawing" target="urn:unruly:ux:procreate-baseline"><data key="type">USES</data></edge>
+<edge id="urn:rel:0036" source="urn:unruly:cap:layers" target="urn:unruly:ux:layers-popover"><data key="type">USES</data></edge>
+<edge id="urn:rel:0037" source="urn:unruly:cap:brushes" target="urn:unruly:ux:brush-popover"><data key="type">USES</data></edge>
+<edge id="urn:rel:0038" source="urn:unruly:cap:color" target="urn:unruly:ux:color-picker"><data key="type">USES</data></edge>
+<edge id="urn:rel:0039" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:undo"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0040" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:redo"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0041" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:eyedropper"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0042" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:shape"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0043" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:panzoom"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0044" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:rotate"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0045" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:fit"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0046" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:clipboard"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0047" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:chrome"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0048" source="urn:unruly:cap:gestures" target="urn:unruly:gesture:scrub"><data key="type">OWNS</data></edge>
+<edge id="urn:rel:0049" source="urn:unruly:checkpoint:wb1" target="urn:unruly:checkpoint:p0a"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0050" source="urn:unruly:checkpoint:selection" target="urn:unruly:checkpoint:wb1"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0051" source="urn:unruly:checkpoint:p01" target="urn:unruly:checkpoint:selection"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0052" source="urn:unruly:checkpoint:u1" target="urn:unruly:checkpoint:p01"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0053" source="urn:unruly:checkpoint:u2" target="urn:unruly:checkpoint:u1"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0054" source="urn:unruly:checkpoint:u3" target="urn:unruly:checkpoint:u2"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0055" source="urn:unruly:checkpoint:g02" target="urn:unruly:checkpoint:u3"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0056" source="urn:unruly:checkpoint:wb1" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0057" source="urn:unruly:checkpoint:wb1" target="urn:unruly:code:model"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0058" source="urn:unruly:checkpoint:wb1" target="urn:unruly:code:render"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0059" source="urn:unruly:checkpoint:wb1" target="urn:unruly:code:storage"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0060" source="urn:unruly:checkpoint:wb1" target="urn:unruly:code:sw"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0061" source="urn:unruly:checkpoint:wb1" target="urn:unruly:code:ui"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0062" source="urn:unruly:checkpoint:selection" target="urn:unruly:code:selection"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0063" source="urn:unruly:checkpoint:selection" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0064" source="urn:unruly:checkpoint:selection" target="urn:unruly:code:model"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0065" source="urn:unruly:checkpoint:p01" target="urn:unruly:code:render"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0066" source="urn:unruly:checkpoint:p01" target="urn:unruly:code:tests-performance"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0067" source="urn:unruly:checkpoint:p01" target="urn:unruly:code:workflow"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0068" source="urn:unruly:checkpoint:u1" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0069" source="urn:unruly:checkpoint:u1" target="urn:unruly:code:model"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0070" source="urn:unruly:checkpoint:u1" target="urn:unruly:code:render"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0071" source="urn:unruly:checkpoint:u1" target="urn:unruly:code:storage"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0072" source="urn:unruly:checkpoint:u1" target="urn:unruly:code:ui"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0073" source="urn:unruly:checkpoint:u1" target="urn:unruly:code:tests-u1"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0074" source="urn:unruly:cap:canvas" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0075" source="urn:unruly:cap:drawing" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0076" source="urn:unruly:cap:layers" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0077" source="urn:unruly:cap:selection" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0078" source="urn:unruly:cap:gestures" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0079" source="urn:unruly:cap:color" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0080" source="urn:unruly:cap:performance" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0081" source="urn:unruly:cap:drawing" target="urn:unruly:code:render"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0082" source="urn:unruly:cap:selection" target="urn:unruly:code:selection"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0083" source="urn:unruly:architecture:local-first" target="urn:unruly:code:storage"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0084" source="urn:unruly:architecture:local-first" target="urn:unruly:code:sw"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0085" source="urn:unruly:code:tests-model" target="urn:unruly:checkpoint:wb1"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:rel:0086" source="urn:unruly:code:tests-browser" target="urn:unruly:checkpoint:wb1"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:rel:0087" source="urn:unruly:code:tests-selection" target="urn:unruly:checkpoint:selection"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:rel:0088" source="urn:unruly:code:tests-performance" target="urn:unruly:checkpoint:p01"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:rel:0089" source="urn:unruly:code:tests-u1" target="urn:unruly:checkpoint:u1"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:rel:0090" source="urn:unruly:project" target="urn:unruly:doc:project-state"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0091" source="urn:unruly:project" target="urn:unruly:doc:governance"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0092" source="urn:unruly:project" target="urn:unruly:doc:handbook"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0093" source="urn:unruly:project" target="urn:unruly:doc:u1-review"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0094" source="urn:unruly:project" target="urn:unruly:doc:perf-gate"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0095" source="urn:unruly:project" target="urn:unruly:doc:vector-delta"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0096" source="urn:unruly:project" target="urn:unruly:doc:drawing-plan"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0097" source="urn:unruly:project" target="urn:unruly:doc:handbook-delta"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0098" source="urn:unruly:project" target="urn:unruly:doc:chat"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0099" source="urn:unruly:ux:procreate-baseline" target="urn:unruly:doc:handbook"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0100" source="urn:unruly:checkpoint:p01" target="urn:unruly:doc:perf-gate"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0101" source="urn:unruly:checkpoint:selection" target="urn:unruly:doc:vector-delta"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0102" source="urn:unruly:checkpoint:u1" target="urn:unruly:doc:u1-review"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0103" source="urn:unruly:branch:vector" target="urn:unruly:branch:u1"><data key="type">PART_OF</data></edge>
+<edge id="urn:rel:0104" source="urn:unruly:branch:p01" target="urn:unruly:branch:u1"><data key="type">PART_OF</data></edge>
+<edge id="urn:rel:0105" source="urn:unruly:branch:kgp" target="urn:unruly:branch:u1"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:rel:0106" source="urn:unruly:question:physical-pen" target="urn:unruly:cap:drawing"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0107" source="urn:unruly:question:android" target="urn:unruly:cap:drawing"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0108" source="urn:unruly:question:brush-import" target="urn:unruly:cap:brushes"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0109" source="urn:unruly:question:psd" target="urn:unruly:cap:exchange"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0110" source="urn:unruly:question:drive-oauth" target="urn:unruly:architecture:drive-sync"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0111" source="urn:unruly:question:ai-provider" target="urn:unruly:cap:ai"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0112" source="urn:unruly:question:timelapse-retention" target="urn:unruly:cap:timelapse"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0113" source="urn:unruly:question:license" target="urn:unruly:architecture:open-source"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:rel:0114" source="urn:unruly:checkpoint:u2" target="urn:unruly:code:brushes"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0115" source="urn:unruly:checkpoint:u2" target="urn:unruly:code:u2-ui"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0116" source="urn:unruly:checkpoint:u2" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0117" source="urn:unruly:checkpoint:u2" target="urn:unruly:code:model"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0118" source="urn:unruly:checkpoint:u2" target="urn:unruly:code:render"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0119" source="urn:unruly:checkpoint:u2" target="urn:unruly:code:sw"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0120" source="urn:unruly:cap:brushes" target="urn:unruly:code:brushes"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0121" source="urn:unruly:cap:brushes" target="urn:unruly:code:u2-ui"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0122" source="urn:unruly:cap:color" target="urn:unruly:code:u2-ui"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:rel:0123" source="urn:unruly:checkpoint:u2" target="urn:unruly:test:u2-model"><data key="type">SUPPORTED_BY</data></edge>
+<edge id="urn:rel:0124" source="urn:unruly:checkpoint:u2" target="urn:unruly:test:u2-browser"><data key="type">SUPPORTED_BY</data></edge>
+<edge id="urn:rel:0125" source="urn:unruly:checkpoint:u2" target="urn:unruly:evidence:u2-ci3"><data key="type">SUPPORTED_BY</data></edge>
+<edge id="urn:rel:0126" source="urn:unruly:checkpoint:u2" target="urn:unruly:evidence:u2-repair"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:rel:0127" source="urn:unruly:checkpoint:u2" target="urn:unruly:branch:checkpoint-u2"><data key="type">VERSIONED_BY</data></edge>
+<edge id="urn:rel:0128" source="urn:unruly:checkpoint:u1" target="urn:unruly:evidence:u1-ci3"><data key="type">SUPPORTED_BY</data></edge>
+<edge id="urn:rel:0129" source="urn:unruly:checkpoint:u1" target="urn:unruly:branch:checkpoint-u1"><data key="type">VERSIONED_BY</data></edge>
+<edge id="urn:rel:0130" source="urn:unruly:batch:u1-u2" target="urn:unruly:checkpoint:u1"><data key="type">INCLUDES</data></edge>
+<edge id="urn:rel:0131" source="urn:unruly:batch:u1-u2" target="urn:unruly:checkpoint:u2"><data key="type">INCLUDES</data></edge>
+<edge id="urn:unruly:edge:20261008:1" source="urn:unruly:project" target="GDEC-001"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:2" source="urn:unruly:project" target="GDEC-002"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:3" source="urn:unruly:project" target="GDEC-003"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:4" source="urn:unruly:project" target="GDEC-004"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:5" source="urn:unruly:project" target="GDEC-005"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:6" source="urn:unruly:project" target="GDEC-006"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:7" source="urn:unruly:project" target="GDEC-007"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:8" source="urn:unruly:project" target="GDEC-008"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:9" source="urn:unruly:project" target="REQ-001"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:10" source="urn:unruly:project" target="REQ-002"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:11" source="urn:unruly:project" target="REQ-003"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:12" source="urn:unruly:project" target="REQ-004"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:13" source="urn:unruly:project" target="REQ-005"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:14" source="urn:unruly:project" target="REQ-006"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:15" source="urn:unruly:project" target="REQ-007"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:16" source="urn:unruly:project" target="REQ-008"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:17" source="urn:unruly:project" target="REQ-009"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:18" source="urn:unruly:project" target="REQ-010"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:19" source="urn:unruly:project" target="REQ-011"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:20" source="urn:unruly:project" target="REQ-012"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:21" source="urn:unruly:project" target="REQ-013"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:22" source="urn:unruly:project" target="GDEC-009"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:23" source="urn:unruly:project" target="GDEC-010"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:24" source="urn:unruly:project" target="GDEC-011"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:25" source="urn:unruly:project" target="GDEC-012"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:26" source="urn:unruly:project" target="GDEC-013"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:27" source="urn:unruly:project" target="GDEC-014"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:28" source="urn:unruly:project" target="GDEC-015"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:29" source="urn:unruly:project" target="REQ-014"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:30" source="urn:unruly:project" target="REQ-015"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:31" source="urn:unruly:project" target="REQ-016"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:32" source="urn:unruly:project" target="GDEC-016"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:33" source="urn:unruly:project" target="GDEC-017"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:34" source="urn:unruly:project" target="REQ-017"><data key="type">REQUIRES</data></edge>
+<edge id="urn:unruly:edge:20261008:35" source="urn:unruly:project" target="GDEC-018"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:36" source="urn:unruly:project" target="GDEC-019"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:37" source="urn:unruly:project" target="GDEC-020"><data key="type">USES</data></edge>
+<edge id="urn:unruly:edge:20261008:38" source="urn:unruly:architecture:browser-first" target="GDEC-001"><data key="type">SUPERSEDES</data></edge>
+<edge id="urn:unruly:edge:20261008:39" source="urn:unruly:gesture:undo" target="REQ-006"><data key="type">SUPERSEDES</data></edge>
+<edge id="urn:unruly:edge:20261008:40" source="urn:unruly:checkpoint:p0a" target="EVT-P0-PREPARATION-PUBLISHED"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:41" source="urn:unruly:checkpoint:p0a" target="EVT-DELIVERY-SKILLS-INSTALLED"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:42" source="urn:unruly:checkpoint:p0a" target="EVT-CLAUDE-AUTH-SMOKE"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:43" source="urn:unruly:checkpoint:p0a" target="EVT-CLAUDE-QA-LAUNCH"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:44" source="urn:unruly:checkpoint:p0a" target="EVT-CLAUDE-QA-PREPARED"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:45" source="urn:unruly:checkpoint:p0a" target="EVT-WINDOWS-ENV"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:46" source="urn:unruly:checkpoint:p0a" target="EVT-P0A-WINDOWS-MODEL"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:47" source="urn:unruly:checkpoint:p0a" target="EVT-P0A-WINDOWS-NATIVE"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:48" source="urn:unruly:checkpoint:p0a" target="EVT-BASELINE-CANDIDATE"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:49" source="urn:unruly:checkpoint:p0a" target="EVT-REVIEW-SKILLS-MISSING"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:50" source="urn:unruly:checkpoint:p0a" target="EVT-P0-WSLG-NATIVE-STARTUP"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:51" source="urn:unruly:checkpoint:p0a" target="EVT-P0-NATIVE-HOVER-DEFECT"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:52" source="urn:unruly:checkpoint:p0a" target="EVT-P0-NATIVE-REPAIR-2"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:53" source="urn:unruly:checkpoint:p0a" target="EVT-P0-NATIVE-GATEKEEPER"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:54" source="urn:unruly:checkpoint:p0a" target="EVT-P0-LINUX-MODEL-RETEST"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:55" source="urn:unruly:checkpoint:p0a" target="EVT-P0-LINUX-INDEPENDENT-ASSESSMENT"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:56" source="urn:unruly:checkpoint:p0a" target="EVT-CLAUDE-P0-INDEPENDENT-QA"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:57" source="urn:unruly:checkpoint:p0a" target="EVT-P0-CAPACITY-DEFECT"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:58" source="urn:unruly:checkpoint:p0a" target="EVT-P0-CAPACITY-REPAIR"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:59" source="urn:unruly:checkpoint:p0a" target="EVT-P0-ADVERSARIAL-REGRESSION-BLOCK"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:60" source="urn:unruly:checkpoint:p0a" target="EVT-P0A-SOURCE"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:61" source="urn:unruly:checkpoint:p0a" target="EVT-P0A-MODEL-QA"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:62" source="urn:unruly:checkpoint:p0a" target="EVT-P0A-NATIVE"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:63" source="urn:unruly:checkpoint:u3" target="urn:unruly:source:oct8:e1a7a0e11e08"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:64" source="urn:unruly:checkpoint:pen1" target="urn:unruly:checkpoint:u3"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:edge:20261008:65" source="urn:unruly:checkpoint:pen1" target="urn:unruly:source:oct8:ba6d0f8713e0"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:66" source="urn:unruly:checkpoint:curve1" target="urn:unruly:checkpoint:pen1"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:edge:20261008:67" source="urn:unruly:checkpoint:curve1" target="urn:unruly:source:oct8:44e544895809"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:68" source="urn:unruly:checkpoint:lset1" target="urn:unruly:checkpoint:curve1"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:edge:20261008:69" source="urn:unruly:checkpoint:lset1" target="urn:unruly:source:oct8:3827dd86d05b"><data key="type">SOURCED_FROM</data></edge>
+<edge id="urn:unruly:edge:20261008:70" source="urn:unruly:cap:pressure" target="urn:unruly:project"><data key="type">PART_OF</data></edge>
+<edge id="urn:unruly:edge:20261008:71" source="urn:unruly:checkpoint:pen1" target="urn:unruly:cap:pressure"><data key="type">IMPLEMENTS</data></edge>
+<edge id="urn:unruly:edge:20261008:72" source="urn:unruly:cap:pen-map" target="urn:unruly:project"><data key="type">PART_OF</data></edge>
+<edge id="urn:unruly:edge:20261008:73" source="urn:unruly:checkpoint:pen1" target="urn:unruly:cap:pen-map"><data key="type">IMPLEMENTS</data></edge>
+<edge id="urn:unruly:edge:20261008:74" source="urn:unruly:cap:curve" target="urn:unruly:project"><data key="type">PART_OF</data></edge>
+<edge id="urn:unruly:edge:20261008:75" source="urn:unruly:checkpoint:curve1" target="urn:unruly:cap:curve"><data key="type">IMPLEMENTS</data></edge>
+<edge id="urn:unruly:edge:20261008:76" source="urn:unruly:cap:clear-layer" target="urn:unruly:project"><data key="type">PART_OF</data></edge>
+<edge id="urn:unruly:edge:20261008:77" source="urn:unruly:checkpoint:lset1" target="urn:unruly:cap:clear-layer"><data key="type">IMPLEMENTS</data></edge>
+<edge id="urn:unruly:edge:20261008:78" source="urn:unruly:cap:global-pen-settings" target="urn:unruly:project"><data key="type">PART_OF</data></edge>
+<edge id="urn:unruly:edge:20261008:79" source="urn:unruly:checkpoint:lset1" target="urn:unruly:cap:global-pen-settings"><data key="type">IMPLEMENTS</data></edge>
+<edge id="urn:unruly:edge:20261008:80" source="urn:unruly:cap:pressure-hierarchy" target="urn:unruly:project"><data key="type">PART_OF</data></edge>
+<edge id="urn:unruly:edge:20261008:81" source="urn:unruly:cap:clear-layer" target="urn:unruly:code:model"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:edge:20261008:82" source="urn:unruly:cap:global-pen-settings" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:edge:20261008:83" source="urn:unruly:cap:pen-map" target="urn:unruly:code:app"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:edge:20261008:84" source="urn:unruly:cap:pressure" target="urn:unruly:code:render"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:edge:20261008:85" source="urn:unruly:cap:curve" target="urn:unruly:code:pressure-ui"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:edge:20261008:86" source="urn:unruly:decision:graph-freshness" target="urn:unruly:project"><data key="type">APPLIES_TO</data></edge>
+<edge id="urn:unruly:edge:20261008:87" source="urn:unruly:question:hosted-cache" target="urn:unruly:checkpoint:lset1"><data key="type">APPLIES_TO</data></edge>
+</graph>
+</graphml>

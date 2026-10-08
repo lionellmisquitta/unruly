@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "delta-browser-foundation",
+  "date": "2026-10-04",
+  "scope": "WEB-F1",
+  "base_commit": "e7a408d0348ca436771fee41330436dc73d1d48f",
+  "decisions": [
+    {
+      "id": "browser-first",
+      "status": "user-selected",
+      "evidence": "conversation:GitHub URL approach"
+    },
+    {
+      "id": "WEB-F1-quarantine",
+      "status": "execution-permitted",
+      "evidence": "docs/delivery/BROWSER_GATEKEEPER_READINESS.md"
+    },
+    {
+      "id": "owner-public-pages-setup",
+      "status": "user-confirmed and repository-verified",
+      "date": "2026-10-04",
+      "evidence": "conversation + repository API private=false/has_pages=true"
+    }
+  ],
+  "claims": {
+    "product_checkpoints_closed": 0,
+    "production_authorization": false,
+    "browser_runtime_tests": {
+      "status": "PASS",
+      "model": 9,
+      "browser_journeys": 12,
+      "ci_run": 37180183813,
+      "commit": "66152b32e9544bd383587adbbacbd495e0be3a2f"
+    },
+    "live_deployment": {
+      "status": "verified hosted preview",
+      "url": "https://lionellmisquitta.github.io/unruly/",
+      "run": 37218275559,
+      "attempt": 3,
+      "matched_assets": 8,
+      "physical_pen": "NOT_VERIFIED"
+    },
+    "native_hardware": "not verified",
+    "recovery_repairs_consumed": 1,
+    "human_feedback": {
+      "basic_drawing": "worked",
+      "features": "below expectation",
+      "control_issue": "open",
+      "paper_layers_brushes_erasers": "pending",
+      "device": "not specified"
+    }
+  },
+  "preservation": "Prior native evidence and P0a repair history retained; no pass edges inferred.",
+  "evidence": [
+    "docs/delivery/BROWSER_QA_RESULT.json",
+    "docs/delivery/evidence/browser-foundation/ci-37180183813/browser-results.json",
+    "docs/delivery/evidence/browser-foundation/hosted-assets.json",
+    "docs/delivery/evidence/browser-foundation/hosted-bundle-boundary.json",
+    "docs/delivery/BROWSER_WORKSPACE_FEEDBACK_PLAN.md"
+  ]
+}

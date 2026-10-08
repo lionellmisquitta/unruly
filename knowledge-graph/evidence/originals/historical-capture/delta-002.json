@@ -1,0 +1,134 @@
+{
+  "id": "DELTA-002",
+  "mode": "capture",
+  "created_at": "2026-10-03T13:00:05+05:30",
+  "entities": [
+    {
+      "id": "GDEC-009",
+      "entity_type": "Decision",
+      "name": "Batched human review",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "GDEC-010",
+      "entity_type": "Decision",
+      "name": "AI in release one after base validation",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "GDEC-011",
+      "entity_type": "Decision",
+      "name": "Pen and touch defaults",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "GDEC-012",
+      "entity_type": "Decision",
+      "name": "Procreate smudge interaction reference",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "GDEC-013",
+      "entity_type": "Decision",
+      "name": "Experimental Procreate brush import",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "GDEC-014",
+      "entity_type": "Decision",
+      "name": "Image and PDF import",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "GDEC-015",
+      "entity_type": "Decision",
+      "name": "Text, notes and attached connectors",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "REQ-014",
+      "entity_type": "Requirement",
+      "name": "Reference image and colour/inking UX",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "REQ-015",
+      "entity_type": "Requirement",
+      "name": "Dimensions and DPI",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "REQ-016",
+      "entity_type": "Requirement",
+      "name": "Artwork interoperability",
+      "status": "confirmed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "current-conversation"
+      ]
+    },
+    {
+      "id": "urn:whiteboard:proposal:psd",
+      "entity_type": "Idea",
+      "name": "Layered PSD exchange",
+      "status": "proposed",
+      "created_at": "2026-10-03T13:00:05+05:30",
+      "updated_at": "2026-10-03T13:00:05+05:30",
+      "evidence_refs": [
+        "https://help.procreate.com/procreate/handbook/gallery/gallery-file-types",
+        "https://help.clip-studio.com/en-us/manual_en/210_file/Open_file.htm"
+      ]
+    }
+  ],
+  "relationships": [],
+  "notes": [
+    "AI scope unknown in DELTA-001 is resolved by GDEC-010; preserve history and supersede unknown at canonical graph merge.",
+    "No production code or test execution has occurred."
+  ]
+}

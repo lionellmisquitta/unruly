@@ -1,0 +1,26 @@
+{
+  "id": "DELTA-003",
+  "mode": "capture",
+  "created_at": "2026-10-03T13:15:37+05:30",
+  "decisions": [
+    {
+      "id": "GDEC-016",
+      "status": "confirmed",
+      "statement": "Stationary hold eyedropper; draw-and-hold shape recognition",
+      "basis": "user accepted recommendation"
+    },
+    {
+      "id": "GDEC-017",
+      "status": "confirmed",
+      "statement": "Preserve both conflicting sync revisions; user chooses continuation",
+      "basis": "user accepted recommendation"
+    }
+  ],
+  "proposed_artifacts": [
+    "docs/review/UX_REVIEW.md",
+    "docs/review/CHECKPOINT_PLAN.md"
+  ],
+  "notes": [
+    "UX is proposed, not locked; implementation not authorized."
+  ]
+}

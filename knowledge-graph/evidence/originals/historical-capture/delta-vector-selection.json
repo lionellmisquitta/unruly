@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "checkpoint": "C06-S1",
+  "parent": "730280cf1e7424580ee9bb175fb116616f6d4a36",
+  "status": "HOSTED_REVIEWED_PREVIEW",
+  "as_built": [
+    "whole-vector-stroke lasso on active layer",
+    "move with one-command undo",
+    "page-session copy cut paste delete",
+    "passive SVG selection overlay",
+    "unchanged v2 persistence"
+  ],
+  "evidence": {
+    "local_unit": "24/24 PASS",
+    "actual_browser": "21/21 PASS (15 inherited +6 selection)",
+    "independent_gatekeeper": "SELECTION_FINAL_GATEKEEPER.md",
+    "candidate": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+    "ci_unit": "24/24 PASS",
+    "ci_run": 37364993048,
+    "artifact_sha256": "da7b1d996623ef1a1043bc91b83c2682017398118839eb434adc1ad1072eacf1",
+    "independent_qa": "SELECTION_QA_REPORT.md",
+    "deployment_run": 37366698881,
+    "deployment_job": 111953508997,
+    "hosted_assets": "10/10 HTTP200 exact bytes",
+    "hosted_ui": "safeupdate; savedexistingdrawingretained; Lassointeractive; dottedpaperSaved",
+    "metadata_commit": "b2cf436996c72ccb93e59ab0d7d868b7726d3c90"
+  },
+  "repair_budget": {
+    "source_batches": 1,
+    "maximum": 2,
+    "qa_ci_runs": 2,
+    "maximum_runs": 3,
+    "prior_WB1": "2/2 unchanged"
+  },
+  "pending": [
+    "combinedphysicaltabletfeedback",
+    "fullC06 scaling rotation pointediting shapes ruler stabilizer",
+    "later raster/smudge/masks/Drive/AI"
+  ],
+  "relationships": [
+    {
+      "from": "C06-S1",
+      "to": "C05/WB1 layers",
+      "type": "selects active editable layer"
+    },
+    {
+      "from": "C06-S1",
+      "to": "C03/WB1 history",
+      "type": "one command per edit"
+    },
+    {
+      "from": "C06-S1",
+      "to": "v2 device-local board",
+      "type": "preserves schema"
+    }
+  ],
+  "formal_checkpoints_closed": 0,
+  "production_authorization": false,
+  "main_merge": false,
+  "public_state": "docs/delivery/SELECTION_PUBLIC_STATE.md",
+  "historical_root_states": "unchanged remotely; scoped continuation only"
+}

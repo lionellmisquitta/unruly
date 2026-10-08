@@ -1,0 +1,21 @@
+{
+  "revision_id": "unruly-kgp-20261008T102809Z",
+  "entrypoint": "HANDOVER.md",
+  "anchors": {
+    "active_work": "urn:unruly:checkpoint:lset1",
+    "accepted_rollback": "urn:unruly:checkpoint:curve1",
+    "pressure_override_request": "urn:unruly:cap:pressure-hierarchy",
+    "cache_finding": "urn:unruly:question:hosted-cache",
+    "freshness_policy": "urn:unruly:decision:graph-freshness",
+    "small_increments": "urn:unruly:decision:bounded-increments",
+    "product": "urn:unruly:project"
+  },
+  "canonical_files": [
+    "graph/entities.jsonl",
+    "graph/relationships.jsonl",
+    "knowledge/decisions.jsonl",
+    "knowledge/contradictions.jsonl",
+    "knowledge/tactical.jsonl"
+  ],
+  "retrieval": "Use tools/query_graph.py --anchor ID --depth 1; increase to2 only if needed. Full source originals are fallback evidence."
+}

@@ -1,9 +1,9 @@
-# UNRULY graph protocol
+# Graph-aware continuation protocol
 
-- Canonical truth is JSONL under `graph/`, `knowledge/`, and `evidence/`.
-- Preserve stable IDs; supersede rather than delete.
-- Human decisions may confirm intent; implementation/verification require repository/runtime/test evidence.
-- Before coding, retrieve the relevant bounded capability/checkpoint/code subgraph and linked evidence.
-- During a 2-4 checkpoint batch, accumulate deltas. At human review, merge deltas, re-evaluate contradictions, append changelog, regenerate 2D + OnAir exports, run Scope Guard and validation, and commit to `knowledge/unruly-kgp`.
-- Keep `main` and build/preview branches untouched by graph maintenance.
-- Do not copy the full chat transcript into Git; retain distilled durable decisions and provenance references.
+Canonical JSONL lives on knowledge/unruly-kgp. Read CURRENT_GRAPH.json + HANDOVER + manifest before work; verify revision and hash. Retrieve anchor → bounded traversal → supporting evidence. Avoid rescanning unchanged source or whole conversations.
+
+Accumulate small deltas during work; merge after a meaningful decision/checkpoint closeout or explicit user request. Preserve original IDs/created_at; update changed records’ updated_at, append prior values to changelog, preserve superseded/rejected/unknown states. Never promote passing source tests to hardware or successful hosted update without corresponding evidence.
+
+Use UTC ISO8601 canonical timestamps plus Asia/Kolkata display timestamps. Do not invent the time of historical decisions. New versions retain package created_at and advance updated_at/revision_id. Regenerate both viewers only at export milestones, validate KGP + scope + inlineJS, then update current pointer with content/package/manifest hashes.
+
+Repo originals are project evidence only. Never store private user boards, credentials or API keys. Graph is a decision/context memory, not a merge authority. Main/build branches change only under source-bound delivery scope.

@@ -1,35 +1,41 @@
 {
   "format": "KGP",
-  "format_version": 1,
+  "format_version": 2,
   "name": "unruly",
   "package_id": "urn:kgp:package:unruly",
   "created_at": "2026-10-06T12:32:05Z",
-  "updated_at": "2026-10-06T16:12:00Z",
+  "updated_at": "2026-10-08T10:32:47Z",
   "canonical_format": "jsonl",
-  "content_sha256": "07bceec26e5122498e326dcbeaab93ae2a81d8421b5baac7c31d563b0eb82244",
+  "content_sha256": "edf5e2c04b6488669f03c5501b8267fa9b7fdaa956aaf1db175af03b4436e73f",
   "validation": {
     "status": "valid",
-    "validated_at": "2026-10-06T16:12:00Z"
+    "validated_at": "2026-10-08T10:31:26Z"
   },
   "counts": {
-    "graph/entities.jsonl": 91,
-    "graph/relationships.jsonl": 131,
-    "knowledge/confirmed.jsonl": 8,
+    "graph/entities.jsonl": 219,
+    "graph/relationships.jsonl": 218,
+    "knowledge/confirmed.jsonl": 11,
     "knowledge/tribal_knowledge.jsonl": 0,
-    "knowledge/tactical.jsonl": 3,
-    "knowledge/decisions.jsonl": 6,
-    "knowledge/ideas.jsonl": 1,
-    "knowledge/contradictions.jsonl": 2,
-    "knowledge/unknowns.jsonl": 8,
-    "evidence/evidence.jsonl": 12,
-    "evidence/source_inventory.jsonl": 11
+    "knowledge/tactical.jsonl": 4,
+    "knowledge/decisions.jsonl": 33,
+    "knowledge/ideas.jsonl": 2,
+    "knowledge/contradictions.jsonl": 4,
+    "knowledge/unknowns.jsonl": 10,
+    "evidence/evidence.jsonl": 66,
+    "evidence/source_inventory.jsonl": 65,
+    "conversations/index.jsonl": 1,
+    "conversations/active": 1,
+    "conversations/archived": 0
   },
-  "source_policy": "include accessible originals after sensitivity/confidentiality warning and user acknowledgement",
+  "source_policy": "Project-only accessible originals included; user private boards/credentials excluded",
   "notes": [
     "Baseline reconstructed from Design Offline Whiteboard conversation, GitHub branch/compare metadata, project/governance state and selected delivery evidence.",
     "Graphify deterministic AST import deferred; container could not materialize GitHub repository.",
     "Update cadence: after each 2-4 checkpoint review batch.",
-    "U1+U2 review batch merged: U1 and U2 promoted to accepted with exact checkpoint/CI evidence; U3 remains planned."
+    "Original91 entity/131edge baseline IDs retained; U2-only metadata superseded by evidence through CURVE1 and paused LSET1.",
+    "Graphify/AST import was not executed: this is a decisions/functional graph, not a deterministic code-call graph.",
+    "Record timestamps describe graph record creation/update; historical decision occurrence precision is separately recorded, never fabricated.",
+    "Current deployed CI1 differs from last fully hosted-verified CURVE1 and unverified repair handoff."
   ],
   "scope": {
     "topic": "UNRULY offline browser-first whiteboard",
@@ -45,7 +51,7 @@
   "visualization": {
     "status": "complete",
     "overview_mode": "concepts",
-    "concept_count": 55,
+    "concept_count": 104,
     "lenses": [
       "overview",
       "business",
@@ -53,5 +59,21 @@
       "technical",
       "evidence"
     ]
-  }
+  },
+  "updated_at_local": "2026-10-08T16:02:47+05:30",
+  "timezone": "Asia/Kolkata",
+  "revision_id": "unruly-kgp-20261008T102809Z",
+  "graph_branch": "knowledge/unruly-kgp",
+  "handoff_source_commit": "5d45ee6ecf43efef6466450abb207b89d7e3eac0",
+  "mode": "graph-aware decision-triggered update",
+  "conversation_policy": {
+    "raw_trust": "supporting_only",
+    "raw_full_transcript_available": false,
+    "default_retrieval": "canonical_first_bounded_neighborhood",
+    "active_retention_days": 90
+  },
+  "created_at_local": "2026-10-06T18:02:05+05:30",
+  "last_knowledge_update_at": "2026-10-08T10:28:09Z",
+  "last_knowledge_update_at_local": "2026-10-08T15:58:09+05:30",
+  "freshness_pointer_path": ".knowledge/CURRENT_GRAPH.json"
 }

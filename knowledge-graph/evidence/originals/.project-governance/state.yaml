@@ -1,0 +1,695 @@
+schema_version: '1.3'
+project:
+  id: ''
+  name: UNRULY
+  type: greenfield
+  intake_path: greenfield
+  stack_profile: undecided-native-cross-platform
+  risk_class: standard
+  delivery_mode: build
+conversation:
+  audience_mode: adaptive
+  question_policy: one_at_a_time
+  current_phase: G00
+  active_gate: G00
+  next_question_id: Q-014
+control:
+  build_authorized: false
+  authorization_status: blocked
+  gatekeeper_review_id: 'GK-UNRULY-P0A-NATIVE-WSLG-2026-10-03-R1'
+  contradictions_open: 1
+  blocking_contradictions_open: 0
+  critical_assumptions_open: 0
+  blocking_items:
+  - Pre-build gates incomplete
+  - Native input/runtime feasibility unverified
+  - UX baseline and acceptance criteria not locked
+  - End-to-end controller isolation, unattended budgets and promotion not verified
+upstream:
+  delivery_handoff_ref: null
+  context_package_ref: null
+  application_id: null
+  source_decision_refs: []
+  source_contradiction_refs: []
+  ux_route: unknown
+  handoff_status: null
+  validation_status: not_supplied
+hotfix:
+  active: false
+  hotfix_id: null
+  authorized_by: null
+  authorized_at: null
+  reconcile_by: null
+  characterisation_test_refs: []
+  rollback_ref: null
+  reconciled_at: null
+baselines:
+  requirements: null
+  interaction: null
+  visual: null
+  domain: null
+  data: null
+  architecture: null
+  security: null
+  testing: null
+thresholds:
+  default: 95
+  gates: {}
+gates:
+  G00:
+    status: active
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts:
+    - PROJECT_STATE.md
+    blocking_gaps:
+    - Runtime feasibility and hardware baseline pending; no gate score assessed
+    accepted_risk_ids: []
+  G01:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G02:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G03:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G04:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G05:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G06:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G07:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G08:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G09:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G10:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G11:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G12:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G13:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G14:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+  G15:
+    status: not_started
+    score: 0
+    threshold: 95
+    evidence: []
+    artifacts: []
+    blocking_gaps:
+    - pending discovery
+    accepted_risk_ids: []
+questions:
+  answered:
+  - id: Q-001
+    answer: Surface/Surface Pen; Lenovo MT14/pen second screen; Xiaomi Pad/Xiaomi
+      Pen
+  - id: Q-002
+    answer: Painting and whiteboarding equally from release one; add timelapse
+  - id: Q-003
+    answer: Google Drive sync from day one; open source
+  - id: Q-004
+    answer: Personal across devices; add vector/raster, gap fill, node/intersection
+      eraser and colour/texture controls
+  - id: Q-005
+    answer: Portable Windows folder app and Android APK; automated cross-model build/QA/Gatekeeper
+      loop
+  - id: Q-006
+    answer: Surface Pro 9 screenshot confirms i7-1265U and 32 GB RAM; user confirms
+      64-bit OS, Xiaomi Pad 7 Pro target and incremental graph requirement.
+  - id: Q-007
+    answer: AI included in release one after base validation; human review in checkpoint
+      batches.
+  - id: Q-008
+    answer: Pen draws/fingers navigate; include finger smudge and reference Procreate
+      behaviour.
+  - id: Q-009
+    answer: Experimental Procreate brush import accepted.
+  - id: Q-010
+    answer: Both images and selected PDF pages.
+  - id: Q-011
+    answer: All text boxes/sticky notes/attached connectors; fonts/size; reference
+      panel, colour workflows, inking, dimensions/DPI and exchange research requested.
+  - id: Q-012
+    answer: Stationary hold eyedropper and draw-and-hold shape recognition accepted.
+  - id: Q-013
+    answer: Keep both sync-conflicting revisions and let user choose continuing version.
+  - id: Q-014
+    answer: Private personal GitHub repository lionellmisquitta/unruly; user created
+      it and connector verified private visibility and push permissions.
+  - id: Q-015
+    answer: Both object and camera motion; manual and timed playback; presentation
+      restore default with optional commit.
+  pending: []
+requirements:
+  - {"id": "REQ-001", "statement": "Infinite canvas, zoom, pan, multiple saved boards, cut/copy/paste, lasso, ruler, eraser.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-002", "statement": "Vector and raster drawing on one board; editable curve control points and dedicated curve pen tool.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-003", "statement": "Pen, pencil, marker, airbrush, watercolour, imported texture brushes.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-004", "statement": "Layers, clipping masks, transparency/opacity and blending modes; brush size and opacity controls, layer transforms.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-005", "statement": "Pressure-sensitive drawing and adjustable stabilization for handwriting.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-006", "statement": "Two-finger double tap undo, three-finger double tap redo, stationary hold colour picker and held-stroke endpoint shape/line recognition (GDEC-016).", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-007", "statement": "Gaussian blur and gap-aware paint bucket inspired by Clip Studio Paint.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-008", "statement": "Colour wheel, hue/saturation controls and different paper options; review Concepts colour/workspace UX alongside Procreate and HiPaint.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-009", "statement": "Local timelapse recording and video export; framing and retention remain unresolved.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-010", "statement": "Google Drive synchronization with local offline work.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-011", "statement": "Optional BYOK AI to summarize/diagram selected ideas and export DOCX, PDF, JPG. Included in first release after base validation (GDEC-010); provider support remains unresolved.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-012", "statement": "Automated checkpoint coding, adversarial frontend and backend/engine tests, Gatekeeper review, merge and merged regression, with resumable state.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-013", "statement": "Maintain the project knowledge graph during design and coding, not retrospectively at release. Graph Generator capture mode is active. This snapshot includes an initial capture delta and update protocol, not a validated full KGP export or viewer package.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-014", "statement": "Reference image box, colour picker, good inking pens, long-touch colour sampling, Concepts-inspired colour shades/palettes and transient pop-out controls.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-015", "statement": "Canvas/artboard dimensions and DPI controls.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-016", "statement": "Exchange artwork with Clip Studio Paint and Procreate. Native-format or PSD route is not yet approved.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+  - {"id": "REQ-017", "statement": "Support moving selected/lassoed content along a path and audience-view pan/zoom. Both manual and timed playback are included; manual advance is default. Offer presentation-only motion with original layout restored (default) and an explicit commit-to-board option. Add a dedicated checkpoint after selection/transforms are validated. Individual cue parameters and recording semantics remain proposed.", "status": "confirmed_scope", "source_ref": "PROJECT_STATE.md"}
+decisions:
+- id: GDEC-018
+  statement: Motion Trace supports object movement and camera pan/zoom
+  status: confirmed
+- id: GDEC-019
+  statement: Manual and automatic cue playback; manual default
+  status: confirmed
+- id: GDEC-020
+  statement: Presentation restore default; explicit undoable board commit
+  status: confirmed
+assumptions: []
+accepted_risks: []
+contradictions:
+  - {"id": "GCON-001", "statement": "Historical adversarial fixture literal full-lags/proposed output conflicts with current immediate-full behavior and actual execution; diagnostic labels only.", "status": "open", "blocks_build": false, "owner": "independent QA", "scope": "test-output wording; immutable historical evidence preserved", "resolution": "Correct QA labels in a separate QA-owned change, preserve assertions and rerun/rehash before reuse."}
+
+traceability: []
+checkpoint:
+  version: P0a
+  status: blocked_target_device_and_windows_verification
+  objective: Quarantined raw-pen capture probe; no production authorization
+  files_allowed:
+  - prototypes/p0-pen-input/
+  - docs/review/BUILD_START.md
+  commands: []
+  evidence_required:
+  - Capture-model QA
+  - Native build logs
+  - Device-input recordings
+  rollback:
+  - Remove probe build directory; no user document writes
+vapt:
+  required: false
+  status: not_required
+  report_ref: ''
+  open_findings: []
+release:
+  authorized: false
+  version: null
+  evidence: []
+verification_ledger: []
+remediation_plan: []
+next_action: Run the single WSLg human test card; prepare native target kits and P0b fixtures.
+  Publish the independently reviewed curated personal preparation branch; production remains blocked.
+updated_at: '2026-10-03T15:24:06.734014+00:00'
+
+continuation_windows_2026_10_03:
+  source_commit: cb1d52089c5cdd159050dc375b92750eb84d8271
+  report: docs/review/WINDOWS_CONTINUATION.md
+  baseline_candidate: docs/review/ENGINEERING_BASELINES.md
+  evidence_identity: prototypes/p0-pen-input/evidence/windows-2026-10-03/identity.json
+  builder_model_compile_exit: 0
+  builder_model_test_exit: 0
+  builder_model_cases_passed: 10
+  fixture_repair_cycles: 1
+  native_configure_exit: 1
+  independent_qa: model_review_completed_regression_blocked
+  independent_gatekeeper: pending_independent_review
+  native_device_status: not_verified
+  production_authorization_changed: false
+claude_continuation_2026_10_03:
+  skills_installed: true
+  codex_skill_root: .agents/skills
+  claude_skill_root: .claude/skills
+  installed_files_verified: 180
+  hooks_registered: false
+  extension_id: anthropic.claude-code
+  executable_version: '2.1.288 (Claude Code)'
+  smoke_exit_code: 0
+  smoke_elapsed_seconds: 5.157
+  smoke_parsed_response: UNRULY_QA_READY
+  existing_authentication_verified: true
+  independent_qa_launched: true
+  independent_qa_status: blocked_app_control_and_native_dependencies
+  qa_block_reason: Repaired adversarial executable blocked by Windows App Control; native dependencies absent
+  next_launch_plan: prototypes/p0-pen-input/evidence/claude-2026-10-03/qa-launch-plan.json
+  evidence_directory: prototypes/p0-pen-input/evidence/claude-2026-10-03
+  executable_path_update_sensitive: true
+  production_authorization_changed: false
+  recorded_at_utc: '2026-10-03T09:52:17.610371+00:00'
+
+claude_qa_cycle_2026_10_03:
+  source_transfer_explicitly_approved: true
+  source_payload_allowlisted: true
+  model_tools_disabled: true
+  qa_report: prototypes/p0-pen-input/qa-claude/QA_REPORT.md
+  qa_result: prototypes/p0-pen-input/qa-claude/QA_CHECKPOINT_RESULT.json
+  exact_source_identity: prototypes/p0-pen-input/evidence/claude-2026-10-03/current-source-identity.json
+  application_repair_cycles_used: 1
+  maximum_application_repair_cycles: 3
+  initial_model_cases_passed: 19
+  red_capacity_cases_failed: 2
+  repaired_model_cases_passed: 12
+  repaired_adversarial_cases_blocked: 9
+  qa_status: BLOCKED
+  capacity_defect_status: fixed_model_scope
+  execution_blocker: Windows Application Control WinError4551
+  native_device_android: BLOCKED
+  merged_regression: NOT_VERIFIED
+  checkpoint_closed: false
+  production_authorization_changed: false
+
+linux_continuation_2026_10_03:
+  report: "docs/review/LINUX_CONTINUATION.md"
+  evidence_directory: "prototypes/p0-pen-input/evidence/linux-2026-10-03"
+  environment: "Ubuntu 26.04 x86_64 WSL2"
+  source_commit: "cb1d52089c5cdd159050dc375b92750eb84d8271"
+  source_dirty: true
+  source_matches_saved_windows_hashes: true
+  source_changed: false
+  claude_available: true
+  claude_version: "2.1.288"
+  claude_authenticated_model_execution: true
+  smoke_exit_code: 0
+  smoke_response: "UNRULY_QA_READY"
+  independent_adversary: "claude-code"
+  model_tools_disabled: true
+  linux_model_cases_executed: 21
+  linux_model_cases_passed: 21
+  linux_model_cases_failed: 0
+  model_scope_status: "PASSED_LINUX_MODEL_ONLY"
+  qa_status: "BLOCKED"
+  application_repair_cycles_used: 1
+  new_application_repair_cycles: 0
+  windows_regression: "BLOCKED"
+  native_pen_verification: "BLOCKED"
+  android_verification: "BLOCKED"
+  merged_regression: "NOT_VERIFIED"
+  independent_gatekeeper: "pending_independent_review"
+  checkpoint_closed: false
+  employer_security_policies_changed: false
+  production_authorization_changed: false
+  recorded_at_utc: "2026-10-03T14:24:41.596526+00:00"
+
+native_wslg_milestone_2026_10_03:
+  checkpoint_id: "P0a-NATIVE-WSLG"
+  report: "docs/review/NATIVE_P0_MILESTONE.md"
+  human_card: "docs/review/P0_HUMAN_TEST_CARD.md"
+  contracts: "docs/review/CHECKPOINT_CONTRACTS.json"
+  engineering_decisions: "docs/review/ENGINEERING_DECISIONS.md"
+  queue: "docs/review/READY_BLOCKED_QUEUE.md"
+  evidence_directory: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03"
+  qt_version: "6.10.2"
+  cmake_version: "4.2.3"
+  user_owned_tools: true
+  native_build_exit: 0
+  mapped_wslg_window: true
+  runnable_artifact: "prototypes/p0-pen-input/build/native-wslg-2026-10-03/unruly_pen_probe"
+  launch_command: "bash prototypes/p0-pen-input/launch-linux.sh"
+  source_sha256: "56e2e448855a55f205dc85a8f160e59e562fb2f6102193c6ebcd94e45baa3f90"
+  binary_sha256: "4c635605b7a6e86e58694bb79a8a686a7fe6339c84596edab24cbe2e4814ea3d"
+  repair_cycles_used: 2
+  repair_cycles_max: 3
+  model_cases_passed: 21
+  native_synthetic_cases_passed: 8
+  total_current_cases_passed: 29
+  initial_native_cases_failed: 2
+  qa_status: "BLOCKED"
+  qa_final_response: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/qa-final-response.json"
+  gatekeeper_readiness: "BLOCKED_FOR_PRODUCTION"
+  closed_checkpoint_count: 0
+  human_device_review: "NOT_VERIFIED"
+  windows_regression: "BLOCKED"
+  android_verification: "BLOCKED"
+  merged_regression: "NOT_VERIFIED"
+  production_authorization_changed: false
+  employer_policy_changes: false
+  preparation_branch: "prep/p0-native-wslg-2026-10-03"
+  publication_status: "published_via_authenticated_github_connector"
+  recorded_at_utc: "2026-10-03T15:16:14.853022+00:00"
+  gatekeeper_review_id: "GK-UNRULY-P0A-NATIVE-WSLG-2026-10-03-R1"
+  gatekeeper_result: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/gatekeeper-response.json"
+  historical_run_scope_note: "Windows12 plus9 blocked, Linux21 and WSLg29 are distinct exact-source runs; no counts are combined or promoted across platforms."
+  published_source_commit: "02772d4b6c672b389cc5f634f330905437d06907"
+  published_source_tree: "a711d208eb77b424daf39df4139d765c6e8e91c3"
+  publication_receipt: "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/publication-receipt.json"
+  publication_note: "Separate local branch matches remote; main and original index remain unchanged; no integration merge."
+
+
+windows_input_candidate_2026_10_04:
+  checkpoint: P0a-WIN-D1
+  classification: quarantined feasibility
+  plan: UNRULY-PLAN-2026-10-04-R1
+  user_hold_lifted_for_this_packet_only: true
+  source_commit: fb7ab408c8dabb48e31415e51e0201ba7bce1ab7
+  branch: prep/native-windows-input-2026-10-04
+  ci_run: 37149560536
+  ci_conclusion: success
+  host_model_cases_passed: 9
+  windows_model_cases_passed: 9
+  native_windows_compile: PASS
+  native_window_startup_close: PASS
+  painted_status: NOT_VERIFIED
+  physical_surface_lenovo_pen: NOT_VERIFIED
+  original_windows_nine_case_regression: BLOCKED; separate suite and source
+  android: NOT_VERIFIED
+  source_repair_cycles_this_packet: 0
+  p0a_cumulative_repairs_used: 2
+  production_authorized: false
+  main_merge_authorized: false
+  product_checkpoints_closed: 0
+  external_paid_model_subprocesses: 0
+  artifact_id: 11283555927
+  artifact_zip_sha256: 23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e
+  independent_final_review: pending; see docs/delivery/GATEKEEPER_WINDOWS_CANDIDATE_REVIEW.md
+    when created
+  employer_security_changes: false
+
+
+browser_foundation_2026_10_04:
+  plan: UNRULY-WEB-2026-10-04-R2
+  packet: WEB-F1
+  branch: preview/browser-foundation-2026-10-04
+  independent_prebuild_review: QUARANTINED_EXECUTION_PERMITTED
+  qa: AUTOMATED_CANDIDATE_PASS
+  product_checkpoints_closed: 0
+  product_checkpoints_total: 14
+  production_authorization: false
+  main_merge_authorized: false
+  pages_enabled: false
+  paid_model_subprocess_calls: 0
+  maximum_recovery_repairs: 1
+  native_history_preserved: true
+
+  recovery_repairs_consumed: 1
+  tested_commit: 66152b32e9544bd383587adbbacbd495e0be3a2f
+  successful_ci_run: 37180183813
+  model_cases_passed: 9
+  chromium_journeys_passed: 12
+  hosted_url_verified: false
+  physical_pen_verified: false
+  fixture_diagnostic_reruns: 1
+
+browser_pages_evening_2026_10_04:
+  owner_public_visibility_accepted: true
+  pages_enabled: true
+  deployment_run: 37218275559
+  deployment_status: BLOCKED_ENVIRONMENT_BRANCH_POLICY
+  exact_branch_required: preview/browser-foundation-2026-10-04
+  hosted_url_verified: false
+  production_authorization: false
+  main_merge: false
+
+browser_hosted_preview_2026_10_04:
+  url: https://lionellmisquitta.github.io/unruly/
+  deployment_run: 37218275559
+  deployment_attempt: 3
+  deployment_status: SUCCESS
+  immutable_app_commit: 66152b32e9544bd383587adbbacbd495e0be3a2f
+  hosted_assets_matched: 8
+  hosted_mouse_draw_save_undo_redo_reload: PASSED
+  offline_ready_indicator: OBSERVED
+  hosted_network_disabled_test: NOT_VERIFIED
+  physical_pen_feel: NOT_VERIFIED
+  production_authorization: false
+  product_checkpoints_closed: 0
+
+browser_human_feedback_2026_10_04:
+  basic_drawing: USER_REPORTED_WORKING
+  feature_completeness: BELOW_USER_EXPECTATION
+  brush_control_usability: OPEN_REPORTED_DEFECT
+  physical_pressure_latency: NOT_VERIFIED
+  next_scope_plan: docs/delivery/BROWSER_WORKSPACE_FEEDBACK_PLAN.md
+  next_scope_readiness: PENDING_REVIEW
+  implementation_started: false
+  production_authorization: false
+
+
+browser_workspace_2026_10_04:
+  packet: WB1
+  branch: preview/drawing-workspace-2026-10-04
+  independent_prebuild_review: QUARANTINED_EXECUTION_PERMITTED_AFTER_RECORDED_CORRECTIONS
+  implementation: ISOLATED_CANDIDATE
+  local_model_cases_passed: 16
+  actual_browser_qa: PENDING
+  source_repair_cycles_consumed: 1
+  maximum_repair_cycles: 2
+  ci_runs_consumed: 0
+  maximum_ci_runs: 3
+  external_paid_model_calls: 0
+  legacy_database_policy: COPY_WITHOUT_MODIFYING_ORIGINAL
+  prior_repair_histories_preserved: true
+  production_authorization: false
+  main_merge_authorized: false
+  product_checkpoints_closed: 0
+
+browser_workspace_repair_2_2026_10_04:
+  initial_ci_run: 37222940471
+  initial_source_commit: 652c239ad8ccbd282af2a1c4e99c94ca696b69e5
+  initial_model_pass: 16
+  initial_browser_pass: 12
+  initial_browser_failed: 2
+  cumulative_source_repairs: 2
+  remaining_source_repairs: 0
+  next_actual_retest: PENDING
+  source_budget_stop_on_further_defect: true
+  production_authorization: false
+  product_checkpoints_closed: 0
+
+browser_workspace_candidate_acceptance_2026_10_04:
+  exact_source_commit: 80c5bbe86cde4c41a81e354f296ff5d203019888
+  successful_ci_run: 37223520128
+  model_pass: 16
+  browser_pass: 15
+  source_hashes_verified: 16
+  independent_qa: AUTOMATED_CANDIDATE_PASS
+  independent_gatekeeper: REVIEWED_PREVIEW_DEPLOYMENT_AUTHORIZED
+  actual_pages_workflow_reviewed: true
+  deployment_status: PENDING
+  source_repairs_used: 2
+  ci_runs_used: 2
+  paid_external_model_calls: 0
+  physical_pen: NOT_VERIFIED
+  production_authorization: false
+  product_checkpoints_closed: 0
+
+browser_workspace_hosted_preview_2026_10_04:
+  url: https://lionellmisquitta.github.io/unruly/
+  deployment_run: 37224013072
+  deployment: SUCCESS
+  immutable_app_commit: 80c5bbe86cde4c41a81e354f296ff5d203019888
+  hosted_assets_matched: 9
+  safe_saved_update: OBSERVED
+  old_board_copy_and_retained_ink: OBSERVED
+  native_keyboard_size_opacity_controls: OBSERVED
+  colour_paper_layers_draw_save_reload: OBSERVED
+  offline_ready_indicator: OBSERVED
+  hosted_network_disable: NOT_RERUN_CI_CANDIDATE_PASS
+  physical_pen_feel: NOT_VERIFIED
+  human_review: ONE_COMBINED_CARD_DELIVERED
+  source_repair_cycles_used: 2
+  ci_runs_used: 2
+  paid_external_model_calls: 0
+  production_authorization: false
+  product_checkpoints_closed: 0
+
+
+
+drawing_ux_u3_closed_2026_10_07:
+  checkpoint_id: U3
+  kind: quarantined_drawing_ux_preview
+  status: passed
+  checkpoint_ref: checkpoint/u3-v0.6.0
+  integration_commit: 41019aa0b7991bbe5bd56b71b9516da9bb454cd0
+  rollback_ref: checkpoint/u2-v0.5.0
+  rollback_commit: fd15c607d5b9a605b1e8a1164250803832830591
+  qa_status: PASSED
+  independent_gatekeeper: ACCEPTED_PREVIEW_PUBLICATION_AUTHORIZED
+  qa_run: 37605503902
+  model_checks_passed: 48
+  browser_checks_passed: 90
+  u3_browser_checks_passed: 32
+  checks_failed: 0
+  source_hashes_verified: 32
+  source_repairs_used: 2
+  source_repairs_max: 2
+  qa_ci_runs_used: 3
+  qa_ci_runs_max: 3
+  deployment_run: 37606536465
+  deployment_commit: cb1dc0a27713f59f1fbea526a3a285d7068ea764
+  hosted_status: VERIFIED
+  url: https://lionellmisquitta.github.io/unruly/
+  hosted_assets_matched: 15
+  hosted_safe_update_prior_ink_retained: OBSERVED
+  hosted_held_line_native_edit_apply_save_reload: OBSERVED
+  evidence_directory: docs/delivery/evidence/u3
+  qa_result: docs/delivery/U3_QA_CHECKPOINT_RESULT.json
+  gatekeeper_result: docs/delivery/U3_FINAL_GATEKEEPER.md
+  knowledge_delta: .knowledge/delta-u3-closure.json
+  physical_pen_feel: NOT_VERIFIED
+  browser_local_history_byte_ceiling_stress: NOT_EXECUTED_MODEL_BUDGETS_PASSED
+  main_merge_authorized: false
+  production_authorization: false
+  paid_external_model_calls: 0
+  next_action: HUMAN_TABLET_REVIEW_THEN_ONE_BOUNDED_HANDOFF
+
+pen_input_preview:
+  checkpoint: PEN1
+  status: verified_preview
+  checkpoint_ref: checkpoint/pen1-v0.7.0
+  integration_commit: 93af0a256b57932288f57239612bd4cc5516b7fc
+  rollback_ref: checkpoint/u3-v0.6.0
+  qa_run: 37633247724
+  model_checks_passed: 57
+  browser_checks_passed: 108
+  pen_browser_checks_passed: 18
+  checks_failed: 0
+  source_hashes_verified: 36
+  source_repairs_used: 1
+  source_repairs_max: 2
+  qa_ci_runs_used: 2
+  qa_ci_runs_max: 3
+  deployment_run: 37634720112
+  deployment_commit: 87551668949770beaf2b346a3227dab83f00f4d5
+  hosted_assets_matched: 16
+  hosted_status: VERIFIED
+  url: https://lionellmisquitta.github.io/unruly/
+  prior_ink_retained: OBSERVED
+  new_ink_save_reload: OBSERVED_AFTER_SAVED_INDICATOR
+  physical_pen: NOT_VERIFIED
+  trusted_cdp_eraser_mask32: NOT_VERIFIED
+  eraser_browser_contract: PASSED_SYNTHETIC_ONLY
+  main_merge_authorized: false
+  production_authorization: false
+  next_action: HUMAN_DEVICE_PRESSURE_BUTTON_REVIEW
+
+personal_pressure_curve_preview:
+  checkpoint: CURVE1
+  status: verified_preview
+  checkpoint_ref: checkpoint/curve1-v0.8.0
+  integration_commit: d522e76417a91b8d1a4636010ae10a2c7d53f9b7
+  rollback_ref: checkpoint/pen1-v0.7.0
+  qa_run: 37721411537
+  model_checks_passed: 66
+  browser_checks_passed: 118
+  checks_failed: 0
+  source_hashes_verified: 39
+  source_repairs_used: 0
+  source_repairs_max: 2
+  qa_ci_runs_used: 3
+  qa_ci_runs_max: 3
+  deployment_run: 37722268828
+  deployment_commit: 25bb1b28bd9f6442806bf257506b568e6ada4ac7
+  hosted_assets_matched: 17
+  hosted_status: VERIFIED
+  url: https://lionellmisquitta.github.io/unruly/
+  prior_ink_retained: OBSERVED
+  new_ink_save_reload: OBSERVED_AFTER_SAVED_INDICATOR
+  profile_native_graph_numeric_persistence: OBSERVED
+  physical_pen: NOT_VERIFIED
+  main_merge_authorized: false
+  production_authorization: false
+  next_action: HUMAN_DEVICE_PRESSURE_REVIEW

@@ -1,0 +1,220 @@
+id,entity_type,name,status
+urn:unruly:project,Project,UNRULY,current
+urn:unruly:architecture:browser-first,Decision,Browser-first architecture,current
+urn:unruly:architecture:local-first,Capability,Offline local-first operation,current
+urn:unruly:architecture:drive-sync,Integration,Google Drive sync,planned
+urn:unruly:architecture:no-saas-backend,Decision,No required hosted SaaS backend,current
+urn:unruly:architecture:open-source,Decision,Open-source release,current
+urn:unruly:cap:canvas,Capability,Infinite canvas,current
+urn:unruly:cap:drawing,Capability,Drawing engine,current
+urn:unruly:cap:brushes,Capability,Brush system,current
+urn:unruly:cap:layers,Capability,Layer system,current
+urn:unruly:cap:selection,Capability,Selection and transform,current
+urn:unruly:cap:gestures,Capability,Gesture system,current
+urn:unruly:cap:color,Capability,Color system,current
+urn:unruly:cap:effects,Capability,Effects and fill,planned
+urn:unruly:cap:whiteboard,Capability,Whiteboarding objects,planned
+urn:unruly:cap:timelapse,Capability,Timelapse,planned
+urn:unruly:cap:motiontrace,Capability,Motion Trace,planned
+urn:unruly:cap:exchange,Capability,Import/export and exchange,planned
+urn:unruly:cap:ai,Capability,BYOK AI assistance,planned
+urn:unruly:cap:qa,Capability,Governed delivery and QA,current
+urn:unruly:cap:performance,Capability,Performance foundation,current
+urn:unruly:ux:procreate-baseline,Decision,Procreate-inspired UX baseline,current
+urn:unruly:ux:compact-toolbar,Screen,Compact icon toolbar,current
+urn:unruly:ux:left-rail,Screen,Independent left size/opacity rail,current
+urn:unruly:ux:layers-popover,Screen,Compact layers popover,current
+urn:unruly:ux:brush-popover,Screen,Brush library popover,current
+urn:unruly:ux:color-picker,Decision,Hue disc color picker,current
+urn:unruly:ux:pen-first,Decision,Pen-first interaction,current
+urn:unruly:gesture:undo,Action,Two-finger single tap Undo,current
+urn:unruly:gesture:redo,Action,Three-finger single tap Redo,current
+urn:unruly:gesture:eyedropper,Action,Finger stationary hold eyedropper,current
+urn:unruly:gesture:shape,Action,Pen draw then hold shape recognition,current
+urn:unruly:gesture:panzoom,Action,Two-finger pan/zoom,current
+urn:unruly:gesture:rotate,Action,Two-finger twist rotate view,planned
+urn:unruly:gesture:fit,Action,Quick pinch fit artwork,planned
+urn:unruly:gesture:clipboard,Action,Three-finger downward swipe clipboard menu,planned
+urn:unruly:gesture:chrome,Action,Four-finger tap hide/show chrome,planned
+urn:unruly:gesture:scrub,Action,Three-finger scrub clear layer,planned
+urn:unruly:checkpoint:p0a,Process,P0a native pen feasibility,historical
+urn:unruly:checkpoint:wb1,Process,WB1 browser workspace,implemented
+urn:unruly:checkpoint:p01,Process,P01 v0.3.0 performance checkpoint,accepted
+urn:unruly:checkpoint:selection,Process,Vector selection checkpoint,accepted
+urn:unruly:checkpoint:u1,Process,U1 compact reference UI and layers,accepted
+urn:unruly:checkpoint:u2,Process,U2 brush library and color,accepted
+urn:unruly:checkpoint:u3,Process,U3 core gestures and geometry,verified_preview
+urn:unruly:checkpoint:g02,Process,G02 remaining reference gestures,planned
+urn:unruly:code:app,CodeArtifact,prototypes/browser-workspace/app.js,current
+urn:unruly:code:model,CodeArtifact,prototypes/browser-workspace/model.js,current
+urn:unruly:code:render,CodeArtifact,prototypes/browser-workspace/render.js,current
+urn:unruly:code:selection,CodeArtifact,prototypes/browser-workspace/selection.js,current
+urn:unruly:code:storage,CodeArtifact,prototypes/browser-workspace/storage.js,current
+urn:unruly:code:sw,CodeArtifact,prototypes/browser-workspace/sw.js,current
+urn:unruly:code:ui,CodeArtifact,prototypes/browser-workspace/index.html + style.css,current
+urn:unruly:code:tests-model,CodeArtifact,tests/browser-workspace/model.test.mjs,current
+urn:unruly:code:tests-browser,CodeArtifact,tests/browser-workspace/browser.test.cjs,current
+urn:unruly:code:tests-selection,CodeArtifact,tests/browser-workspace/selection.test.mjs + selection.browser.cjs,current
+urn:unruly:code:tests-performance,CodeArtifact,tests/browser-workspace/performance.browser.cjs,current
+urn:unruly:code:tests-u1,CodeArtifact,tests/browser-workspace/u1.*,current
+urn:unruly:code:workflow,CodeArtifact, .github/workflows/browser-workspace.yml,current
+urn:unruly:doc:project-state,Document,PROJECT_STATE.md,current
+urn:unruly:doc:governance,Document, .project-governance/state.yaml,current
+urn:unruly:doc:handbook,Document,PROCREATE_HANDBOOK_UX_BASELINE.md,current
+urn:unruly:doc:u1-review,Document,U1_CANDIDATE_REVIEW.md,current
+urn:unruly:doc:perf-gate,Document,PERFORMANCE_FINAL_GATEKEEPER.md,current
+urn:unruly:doc:vector-delta,Document,.knowledge/delta-vector-selection.json,current
+urn:unruly:doc:drawing-plan,Document,.knowledge/delta-drawing-ux-plan.json,current
+urn:unruly:doc:handbook-delta,Document,.knowledge/delta-procreate-handbook.json,current
+urn:unruly:doc:chat,Document,Design Offline Whiteboard conversation,current
+urn:unruly:branch:main,SourceFile,main,historical
+urn:unruly:branch:vector,SourceFile,preview/vector-selection-2026-10-06,accepted
+urn:unruly:branch:p01,SourceFile,checkpoint/p01-v0.3.0,accepted
+urn:unruly:branch:u1,SourceFile,preview/drawing-ux-u1-2026-10-06,current
+urn:unruly:branch:kgp,SourceFile,knowledge/unruly-kgp,current
+urn:unruly:question:physical-pen,Question,Physical pen feel verification,open
+urn:unruly:question:android,Question,Android packaging/runtime,open
+urn:unruly:question:license,Question,Open-source license,open
+urn:unruly:question:brush-import,Question,Procreate brush import fidelity,open
+urn:unruly:question:psd,Question,Layered exchange fidelity,open
+urn:unruly:question:drive-oauth,Question,Drive OAuth/release setup,open
+urn:unruly:question:ai-provider,Question,BYOK AI provider support,open
+urn:unruly:question:timelapse-retention,Question,Timelapse framing/retention,open
+urn:unruly:branch:checkpoint-u1,Artifact,checkpoint/u1-v0.4.0,accepted
+urn:unruly:branch:checkpoint-u2,Artifact,checkpoint/u2-v0.5.0,accepted
+urn:unruly:code:brushes,CodeArtifact,prototypes/browser-workspace/brushes.js,current
+urn:unruly:code:u2-ui,CodeArtifact,prototypes/browser-workspace/u2.js,current
+urn:unruly:test:u2-model,TestCase,tests/browser-workspace/u2.model.test.mjs,verified
+urn:unruly:test:u2-browser,TestCase,tests/browser-workspace/u2.browser.cjs,verified
+urn:unruly:evidence:u1-ci3,Evidence,U1 CI3 passing QA,verified
+urn:unruly:evidence:u2-ci3,Evidence,U2 CI3 passing QA,verified
+urn:unruly:evidence:u2-repair,Evidence,U2 shared size-state repair,verified
+urn:unruly:batch:u1-u2,Process,U1 + U2 human review batch,accepted
+urn:unruly:source:oct8:21176d94b62a,Document,PROJECT_STATE.md,current
+urn:unruly:source:oct8:48abce83f5d2,Document,.project-governance/state.yaml,current
+urn:unruly:source:oct8:6f06b4f727cc,Document,historical-capture/delta-performance-p01.json,current
+urn:unruly:source:oct8:ee2734e0360d,Document,historical-capture/delta-004.json,current
+urn:unruly:source:oct8:b3ee017cf90b,Document,historical-capture/initial-capture-delta.json,current
+urn:unruly:source:oct8:1cc1e55f60ee,Document,historical-capture/delta-011.json,current
+urn:unruly:source:oct8:f6bf37e82e77,Document,historical-capture/delta-delivery-recovery.json,current
+urn:unruly:source:oct8:044977aa543d,Document,historical-capture/delta-drawing-workspace.json,current
+urn:unruly:source:oct8:3c02af48f68c,Document,historical-capture/delta-vector-selection.json,current
+urn:unruly:source:oct8:c9ddf9ceb5f2,Document,historical-capture/delta-007.json,current
+urn:unruly:source:oct8:8e44cb46f681,Document,historical-capture/delta-003.json,current
+urn:unruly:source:oct8:34a87dc3ebe6,Document,historical-capture/delta-006.json,current
+urn:unruly:source:oct8:85b932f73eb6,Document,historical-capture/delta-010.json,current
+urn:unruly:source:oct8:3f3e08002dfc,Document,historical-capture/delta-002.json,current
+urn:unruly:source:oct8:b5960c995c42,Document,historical-capture/delta-009.json,current
+urn:unruly:source:oct8:26250eb58c57,Document,historical-capture/delta-procreate-handbook.json,current
+urn:unruly:source:oct8:44936af13181,Document,historical-capture/delta-008.json,current
+urn:unruly:source:oct8:d5b6827cbfa4,Document,historical-capture/delta-browser-foundation.json,current
+urn:unruly:source:oct8:81f42096314b,Document,historical-capture/delta-handbook-build-start.json,current
+urn:unruly:source:oct8:dbcbc3b3d520,Document,historical-capture/delta-drawing-ux-plan.json,current
+urn:unruly:source:oct8:b8bbbd713ea5,Document,historical-capture/delta-procreate-reference.json,current
+urn:unruly:source:oct8:c21500c32534,Document,historical-capture/delta-005.json,current
+urn:unruly:source:oct8:cc2bdf8c3a6b,Document,.knowledge/delta-u3-closure.json,current
+urn:unruly:source:oct8:1952cd3a63c7,Document,.knowledge/delta-curve1-closure.json,current
+urn:unruly:source:oct8:b7089608dbed,Document,.knowledge/delta-pen1-closure.json,current
+urn:unruly:source:oct8:3827dd86d05b,Document,docs/delivery/LSET1_QA_CHECKPOINT_RESULT.json,current
+urn:unruly:source:oct8:c2e4af8fdf77,Document,docs/delivery/LSET1_CONTINUE_HERE.md,current
+urn:unruly:source:oct8:ae5193cc1f40,Document,docs/delivery/LSET1_CHECKPOINT_TEST_HANDOFF.json,current
+urn:unruly:source:oct8:2d0f10082b59,Document,docs/delivery/LSET1_QA_REPORT.md,current
+urn:unruly:source:oct8:e3ed77a8dd91,Document,docs/delivery/LSET1_HOSTED_UPDATE_FINDING.md,current
+urn:unruly:source:oct8:c538138700dd,Document,docs/delivery/LSET1_QA_TEST_DESIGN.md,current
+urn:unruly:source:oct8:3f1d10c3e47e,Document,docs/delivery/LSET1_FINAL_GATEKEEPER.md,current
+urn:unruly:source:oct8:17e08c1be997,Document,docs/delivery/LSET1_REPAIR_BATCH1.md,current
+urn:unruly:source:oct8:0fd542e4d94b,Document,docs/delivery/LSET1_PREBUILD_GATEKEEPER.md,current
+urn:unruly:source:oct8:fee51e370bd5,Document,docs/delivery/LSET1_SOURCE_GATEKEEPER.md,current
+urn:unruly:source:oct8:04de3ffeb1d8,Document,docs/delivery/U3_CHECKPOINT_TEST_HANDOFF.json,current
+urn:unruly:source:oct8:e1a7a0e11e08,Document,docs/delivery/U3_QA_CHECKPOINT_RESULT.json,current
+urn:unruly:source:oct8:198f7b3bb8e0,Document,docs/delivery/U3_QA_REPORT.md,current
+urn:unruly:source:oct8:37b080be5111,Document,docs/delivery/U3_FINAL_GATEKEEPER.md,current
+urn:unruly:source:oct8:6929324b5cd0,Document,docs/delivery/U3_HOSTED_CLOSURE.md,current
+urn:unruly:source:oct8:2839d9519e9c,Document,docs/delivery/PEN1_CHECKPOINT_TEST_HANDOFF.json,current
+urn:unruly:source:oct8:ba6d0f8713e0,Document,docs/delivery/PEN1_QA_CHECKPOINT_RESULT.json,current
+urn:unruly:source:oct8:21c1e8edf991,Document,docs/delivery/PEN1_QA_REPORT.md,current
+urn:unruly:source:oct8:c04e69ad0357,Document,docs/delivery/PEN1_FINAL_GATEKEEPER.md,current
+urn:unruly:source:oct8:a8781857967e,Document,docs/delivery/PEN1_HOSTED_CLOSURE.md,current
+urn:unruly:source:oct8:b859ea1295b5,Document,docs/delivery/CURVE1_CHECKPOINT_TEST_HANDOFF.json,current
+urn:unruly:source:oct8:44e544895809,Document,docs/delivery/CURVE1_QA_CHECKPOINT_RESULT.json,current
+urn:unruly:source:oct8:f6c20621943d,Document,docs/delivery/CURVE1_QA_REPORT.md,current
+urn:unruly:source:oct8:292b6f01444c,Document,docs/delivery/CURVE1_FINAL_GATEKEEPER.md,current
+urn:unruly:source:oct8:c3d61b480ed7,Document,docs/delivery/CURVE1_HOSTED_CLOSURE.md,current
+urn:unruly:source:oct8:40043893725e,Document,docs/delivery/PROCREATE_HANDBOOK_UX_BASELINE.md,current
+urn:unruly:source:oct8:00a86b482d4d,Document,docs/delivery/DRAWING_UX_BATCH_PLAN.md,current
+urn:unruly:source:oct8:57910e06991a,Document,docs/delivery/DRAWING_UX_QA_PLAN.md,current
+GDEC-001,Decision,GDEC-001 · Windows distribution is a portable folder containing an executable and bundled dependencies; no,superseded
+GDEC-002,Decision,GDEC-002 · Android APK distribution is acceptable,approved_future_option
+GDEC-003,Decision,GDEC-003 · Painting and whiteboarding are equally important in release one,approved_intent
+GDEC-004,Decision,GDEC-004 · Personal use across devices; collaborative editing is outside release one,approved_intent
+GDEC-005,Decision,GDEC-005 · Open-source release; license remains undecided,approved_intent
+GDEC-006,Decision,"GDEC-006 · Smooth, responsive pen interaction is a primary release criterion",approved_intent
+GDEC-007,Decision,"GDEC-007 · Prepare requirements, architecture, UX, tests and automation before production coding",approved_intent
+GDEC-008,Decision,"GDEC-008 · Independent cross-model QA is desired: Codex builder with Claude Code QA, or the reverse",approved_intent
+REQ-001,Requirement,"REQ-001 · Infinite canvas, zoom, pan, multiple saved boards, cut/copy/paste, lasso, ruler, eraser",approved_intent
+REQ-002,Requirement,REQ-002 · Vector and raster drawing on one board; editable curve control points and dedicated curve pen t,approved_intent
+REQ-003,Requirement,"REQ-003 · Pen, pencil, marker, airbrush, watercolour, imported texture brushes",approved_intent
+REQ-004,Requirement,"REQ-004 · Layers, clipping masks, transparency/opacity and blending modes; brush size and opacity control",approved_intent
+REQ-005,Requirement,REQ-005 · Pressure-sensitive drawing and adjustable stabilization for handwriting,approved_intent
+REQ-006,Requirement,"REQ-006 · Two-finger double tap undo, three-finger double tap redo, stationary hold colour picker and hel",superseded_gesture_wording
+REQ-007,Requirement,REQ-007 · Gaussian blur and gap-aware paint bucket inspired by Clip Studio Paint,approved_intent
+REQ-008,Requirement,"REQ-008 · Colour wheel, hue/saturation controls and different paper options; review Concepts colour/works",approved_intent
+REQ-009,Requirement,REQ-009 · Local timelapse recording and video export; framing and retention remain unresolved,approved_intent
+REQ-010,Requirement,REQ-010 · Google Drive synchronization with local offline work,approved_intent
+REQ-011,Requirement,"REQ-011 · Optional BYOK AI to summarize/diagram selected ideas and export DOCX, PDF, JPG",approved_intent
+REQ-012,Requirement,"REQ-012 · Automated checkpoint coding, adversarial frontend and backend/engine tests, Gatekeeper review, ",approved_intent
+REQ-013,Requirement,"REQ-013 · Maintain the project knowledge graph during design and coding, not retrospectively at release",approved_intent
+GDEC-009,Decision,"GDEC-009 · Human review occurs in batches of approximately 2–4 checkpoints, not after every checkpoint",approved_intent
+GDEC-010,Decision,"GDEC-010 · AI summarization/diagramming is included in release one, after validation of base features",approved_intent
+GDEC-011,Decision,GDEC-011 · Default pen draws; fingers navigate and invoke gestures,approved_intent
+GDEC-012,Decision,GDEC-012 · Include smudge/blending brush using documented Procreate interactions: shared Paint/Smudge/Eras,approved_intent
+GDEC-013,Decision,GDEC-013 · Experimental Procreate brush import is accepted after native brush validation,approved_intent
+GDEC-014,Decision,GDEC-014 · Both image and selected PDF-page import are included,approved_intent
+GDEC-015,Decision,"GDEC-015 · Editable text boxes, sticky notes and attached connectors are included",approved_intent
+REQ-014,Requirement,"REQ-014 · Reference image box, colour picker, good inking pens, long-touch colour sampling, Concepts-insp",approved_intent
+REQ-015,Requirement,REQ-015 · Canvas/artboard dimensions and DPI controls,approved_intent
+REQ-016,Requirement,REQ-016 · Exchange artwork with Clip Studio Paint and Procreate,approved_intent
+GDEC-016,Decision,GDEC-016 · Stationary hold colour picker; draw then hold endpoint for straightening/shape recognition,approved_intent
+GDEC-017,Decision,GDEC-017 · Drive sync preserves both conflicting board revisions; user chooses which to continue,approved_intent
+REQ-017,Requirement,REQ-017 · Support moving selected/lassoed content along a path and audience-view pan/zoom,approved_intent
+GDEC-018,Decision,GDEC-018 · Motion Trace,approved_intent
+GDEC-019,Decision,GDEC-019 · Motion Trace,approved_intent
+GDEC-020,Decision,GDEC-020 · Motion Trace,approved_intent
+EVT-P0-PREPARATION-PUBLISHED,Event,EVT-P0-PREPARATION-PUBLISHED,historical_executed
+EVT-DELIVERY-SKILLS-INSTALLED,Event,EVT-DELIVERY-SKILLS-INSTALLED,historical_executed
+EVT-CLAUDE-AUTH-SMOKE,Event,EVT-CLAUDE-AUTH-SMOKE,historical_passed
+EVT-CLAUDE-QA-LAUNCH,Event,EVT-CLAUDE-QA-LAUNCH,historical_blocked
+EVT-CLAUDE-QA-PREPARED,Event,EVT-CLAUDE-QA-PREPARED,historical_proposed
+EVT-WINDOWS-ENV,Event,EVT-WINDOWS-ENV,historical_observed
+EVT-P0A-WINDOWS-MODEL,Event,EVT-P0A-WINDOWS-MODEL,historical_passed
+EVT-P0A-WINDOWS-NATIVE,Event,EVT-P0A-WINDOWS-NATIVE,historical_blocked
+EVT-BASELINE-CANDIDATE,Event,EVT-BASELINE-CANDIDATE,historical_proposed
+EVT-REVIEW-SKILLS-MISSING,Event,EVT-REVIEW-SKILLS-MISSING,historical_blocked
+EVT-P0-WSLG-NATIVE-STARTUP,Event,EVT-P0-WSLG-NATIVE-STARTUP,historical_passed
+EVT-P0-NATIVE-HOVER-DEFECT,Event,EVT-P0-NATIVE-HOVER-DEFECT,historical_failed
+EVT-P0-NATIVE-REPAIR-2,Event,EVT-P0-NATIVE-REPAIR-2,historical_passed
+EVT-P0-NATIVE-GATEKEEPER,Event,EVT-P0-NATIVE-GATEKEEPER,historical_executed
+EVT-P0-LINUX-MODEL-RETEST,Event,EVT-P0-LINUX-MODEL-RETEST,historical_passed
+EVT-P0-LINUX-INDEPENDENT-ASSESSMENT,Event,EVT-P0-LINUX-INDEPENDENT-ASSESSMENT,historical_executed
+EVT-CLAUDE-P0-INDEPENDENT-QA,Event,EVT-CLAUDE-P0-INDEPENDENT-QA,historical_executed
+EVT-P0-CAPACITY-DEFECT,Event,EVT-P0-CAPACITY-DEFECT,historical_failed
+EVT-P0-CAPACITY-REPAIR,Event,EVT-P0-CAPACITY-REPAIR,historical_passed
+EVT-P0-ADVERSARIAL-REGRESSION-BLOCK,Event,EVT-P0-ADVERSARIAL-REGRESSION-BLOCK,historical_blocked
+EVT-P0A-SOURCE,Event,EVT-P0A-SOURCE,historical_created
+EVT-P0A-MODEL-QA,Event,EVT-P0A-MODEL-QA,historical_passed
+EVT-P0A-NATIVE,Event,EVT-P0A-NATIVE,historical_not_verified
+urn:unruly:checkpoint:pen1,Process,Pen input and brush dynamics,verified_preview
+urn:unruly:checkpoint:curve1,Process,Personal pressure response curve,verified_preview
+urn:unruly:checkpoint:lset1,Process,LSET1 clear layer and global pen settings,paused_repair_pending_ci2
+urn:unruly:cap:pressure,Capability,Adjustable pressure dynamics,verified_preview
+urn:unruly:cap:pen-map,Capability,Pen-button mapping,verified_preview
+urn:unruly:cap:curve,Capability,Personal pressure curve,verified_preview
+urn:unruly:cap:clear-layer,Capability,Clear active layer,implemented_ci1_hosted_pending
+urn:unruly:cap:global-pen-settings,Capability,Global pen settings panel,implemented_ci1_hosted_pending
+urn:unruly:cap:pressure-hierarchy,Capability,Global pressure with optional brush override,requested_not_implemented
+urn:unruly:code:pen-input,CodeArtifact,prototypes/browser-workspace/pen-input.js,current
+urn:unruly:code:pressure-ui,CodeArtifact,prototypes/browser-workspace/pressure-ui.js,current
+urn:unruly:code:lset-tests,CodeArtifact,tests/browser-workspace/lset.browser.cjs,current
+urn:unruly:decision:graph-freshness,Decision,Timestamped current graph,approved
+urn:unruly:decision:bounded-increments,Decision,One bounded increment at a time,current_delivery_policy
+urn:unruly:question:hosted-cache,Question,Hosted cached-update compatibility,open

@@ -1,15 +1,11 @@
-# UNRULY Knowledge Graph
+# UNRULY — current knowledge graph
 
-This branch is the durable project memory for UNRULY.
+Created: 2026-10-06T12:32:05Z (2026-10-06T18:02:05+05:30).
+Knowledge recorded/updated: 2026-10-08T10:28:09Z (2026-10-08T15:58:09+05:30).
+Revision: unruly-kgp-20261008T102809Z.
 
-Start here:
-1. `GRAPH_SNAPSHOT.md`
-2. `HANDOVER.md`
-3. `manifest.json`
-4. `GRAPH_PROTOCOL.md`
+Before using a downloaded copy, compare its revision_id and content_sha256 with the live repository .knowledge/CURRENT_GRAPH.json on knowledge/unruly-kgp. A timestamp alone does not guarantee latest. A mismatch means the copy is stale; fetch current canonical files. If repository access is unavailable, label the snapshot freshness unverified.
 
-Current accepted baseline: **U2 v0.5.0** — `checkpoint/u2-v0.5.0` at `fd15c607d5b9a605b1e8a1164250803832830591`.
+Read HANDOVER.md first, then manifest.json, then only the relevant graph/knowledge records and their evidence. JSONL is canonical; 2D/OnAir are derived. Do not load all evidence or raw conversations by default. Planned != implemented != automated verified != hosted verified != physical device verified.
 
-Browser-first is authoritative. U1 and U2 are accepted from deterministic CI evidence. U3/G02 remain planned; physical pen feel remains NOT_VERIFIED.
-
-A regenerated full KGP for the U1+U2 review batch validated successfully with 91 entities / 131 relationships and complete 2D + OnAir viewers. The GitHub connector previously truncated binary KGP ZIP uploads, so the repo stores the readable/canonical continuation records while the validated package is delivered separately.
+Last fully hosted-verified preview: CURVE1. LSET1 CI1 passed198 tests but old-session update is unresolved; cache repair applied, CI2 NOT RUN. Use the handoff branch, not main or the knowledge branch, for application continuation.
