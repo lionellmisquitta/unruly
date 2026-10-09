@@ -9,6 +9,12 @@ import {initU2UI} from './u2.js';
 import {createTouchTracker,createHistoryHold,twoFingerViewReset,threeFingerFocusToggle,threeFingerClipboardSwipe,fitArtworkView,TOUCH_LIMITS} from './gestures.js';
 import {recognizeHeldShape,reshapeRecognized,editRecognized} from './shapes.js';
 const $=id=>document.getElementById(id),canvas=$('canvas'),renderer=createRenderer(canvas);
+const fullscreenButton=$('fullscreen-toggle');
+function syncFullscreenButton(){const on=!!document.fullscreenElement;fullscreenButton.setAttribute('aria-pressed',String(on));fullscreenButton.setAttribute('aria-label',on?'Exit fullscreen':'Enter fullscreen');fullscreenButton.title=on?'Exit fullscreen (Esc)':'Enter fullscreen';}
+fullscreenButton.addEventListener('click',async()=>{try{if(document.fullscreenElement){await document.exitFullscreen();}else if(document.documentElement.requestFullscreen){await document.documentElement.requestFullscreen();}else{status('Fullscreen not supported in this browser',true);}}catch(e){status('Fullscreen unavailable: '+e.message,true);}syncFullscreenButton();});
+document.addEventListener('fullscreenchange',()=>{syncFullscreenButton();requestAnimationFrame(()=>renderer.invalidate?.());});
+syncFullscreenButton();
+
 let store,h,expected=0,saved=-1,saveTimer,saveChain=Promise.resolve(),view={x:0,y:0,scale:1},tool='pen',settings={brush:'ink',preset:'ink-fineliner',size:3,opacity:1,color:'#203d48'},active=null,space=false,frame=0,busy=false,waitingWorker=null,requestedUpdate=false;
 let selected=[],clipboard=null,opacityDraft=null,layerDrag=null,pending=null;
 const penConfig=readPenConfig();penConfig.overrides=penConfig.overrides||{};settings.dynamics=resolveBrushDynamics(penConfig.dynamics,penConfig.overrides,settings.preset);let lassoAutoMove=false,penObserved={count:0,min:1,max:0,latest:null,buttons:0};
