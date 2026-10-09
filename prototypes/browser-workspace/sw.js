@@ -1,5 +1,5 @@
 const NORMAL_PREFIX='unruly-workspace-u1-normal-';
-const CACHE=NORMAL_PREFIX+'v3-20261009-g02-fit-artwork-1';
+const CACHE=NORMAL_PREFIX+'v3-20261009-c04-graphite-1';
 const FILES=['./','./index.html','./style.css','./selection.js','./brushes.js','./u2.js','./pen-input.js','./pressure-ui.js','./gestures.js','./shapes.js','./model.js','./render.js','./storage.js','./app.js','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES.map(path=>new Request(path,{cache:'reload'}))))));
 self.addEventListener('message',e=>{if(e.data?.type==='ACTIVATE_UPDATE')self.skipWaiting();});
