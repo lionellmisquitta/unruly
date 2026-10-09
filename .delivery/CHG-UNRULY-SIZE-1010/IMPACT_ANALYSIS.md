@@ -1,0 +1,9 @@
+# CHG-UNRULY-SIZE-1010 — Percent test contract repair
+
+Base: 4e0260600d1ded9647956ddd8e9b016bea001adf (October 10 source branch). Live baseline remains 81af47ee43c5f97f4ddfc217f1d4a2bdd8c34775. October 10 candidate Actions run 37982002533 failed; detailed artifact retrieval was blocked, so findings below are direct source analysis rather than an artifact diagnosis.
+
+Target: test setup and UI contract expectations only; no app behavior, renderer, migration or native code changes. PENB02 selects 100% to retain its original 40-document-unit pixel assertion and disabled-pen equivalence. W02 checks independently calculated, two-decimal nonlinear document widths. W10 selects 70% (20.11 document units), with its expected partial-erasure geometry updated by the same 0.11 width delta; existing tight tolerance, pressure, exact undo and cancel checks remain. U2 expects the 6B default 9 raw units to display as 45%. The compatibility adapter resolves the actual number control by ID because the range and number fields share the new accessible label.
+
+Added regression: portrait and landscape tablet journeys through every family at 0, 40 and 100%, recorded mouse pressure, remembered preset sizes, unchanged stored strokes and exact reload pixels. Existing 98-model and cumulative browser suite remain required, including frozen original-preset pixels, shape/selection transforms, pressure curves, layers, offline, quotas, gestures and performance.
+
+Exclusions: native main, rotation, advanced brush features/smudge, deployment workflow and private Brush Lab. Rollback: retain the live Pages pin until exact-source CI and separate review pass; restore original test files if rejected. Same-session local checking is self-verification; required independent review and live CI are not inferred from these files.
