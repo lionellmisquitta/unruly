@@ -64,6 +64,7 @@ jobs:
           node tests/browser-workspace/pen.browser.cjs > tests/browser-workspace/evidence/pen-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/curve.browser.cjs > tests/browser-workspace/evidence/curve-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/lset.browser.cjs > tests/browser-workspace/evidence/lset-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/g02.browser.cjs > tests/browser-workspace/evidence/g02-browser-output.txt 2>&1 || qa_result_code=1
           exit "$qa_result_code"
       - name: Bind tested identities
         if: always()
