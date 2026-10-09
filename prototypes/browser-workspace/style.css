@@ -65,3 +65,6 @@ input[type=range]{min-height:44px}.canvas-badge button,footer button{min-height:
 #focus-exit[hidden]{display:none}#focus-exit{position:absolute;right:12px;top:12px;z-index:8}
 body.focus-mode header,body.focus-mode #tools,body.focus-mode #modifiers-toggle,body.focus-mode #inspector,body.focus-mode .popover{display:none!important}
 body.focus-mode #focus-exit{display:block}
+
+#gesture-clipboard[hidden]{display:none}#gesture-clipboard{position:absolute;top:15%;left:50%;transform:translateX(-50%);z-index:9;display:flex;gap:6px;background:var(--panel);padding:8px;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px #0007}
+#gesture-clipboard button{white-space:nowrap}
