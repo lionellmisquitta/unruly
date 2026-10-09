@@ -14,6 +14,10 @@ let selected=[],clipboard=null,opacityDraft=null,layerDrag=null,pending=null;
 const penConfig=readPenConfig();penConfig.overrides=penConfig.overrides||{};settings.dynamics=resolveBrushDynamics(penConfig.dynamics,penConfig.overrides,settings.preset);let lassoAutoMove=false,penObserved={count:0,min:1,max:0,latest:null,buttons:0};
 const touchTracker=createTouchTracker();let touchHoldTimer=null,touchPicked=null,touchBaseView=null;
 let cancelLayerGesture=null,editDrag=null,touchAnchor=null,curveUI=null,gestureClipboardPending=false;
+const fullscreenButton=$('fullscreen-toggle');
+function syncFullscreenButton(){const active=!!document.fullscreenElement;fullscreenButton.setAttribute('aria-label',active?'Exit fullscreen':'Enter fullscreen');fullscreenButton.title=active?'Exit fullscreen':'Enter fullscreen (F11 on desktop)';fullscreenButton.setAttribute('aria-pressed',String(active));schedulePaint();}
+fullscreenButton.addEventListener('click',async()=>{try{if(document.fullscreenElement){await document.exitFullscreen();}else if(document.documentElement.requestFullscreen){await document.documentElement.requestFullscreen();}else{status('Fullscreen is not supported here · try F11',true);}}catch{status('Browser blocked fullscreen · try F11 or Add to Home screen',true);}syncFullscreenButton();});
+document.addEventListener('fullscreenchange',syncFullscreenButton);
 const thumbnails=new Map();
 const blocked=()=>!!active||busy||!!layerDrag||!!opacityDraft||!!pending||!!touchTracker.snapshot()||!!curveUI?.editing();
 const contacts=new Map();
