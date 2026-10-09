@@ -48,3 +48,13 @@ export function createHistoryHold({step,schedule=setTimeout,cancel=clearTimeout,
 export function twoFingerViewReset(ended,holdMs=650){
  return !!ended&&ended.count===2&&ended.candidate===true&&ended.moved===false&&Number.isFinite(ended.duration)&&ended.duration>=holdMs;
 }
+
+export function fitArtworkView(board,width,height,padding=40){
+ if(!board||!Array.isArray(board.layers)||!Number.isFinite(width)||!Number.isFinite(height)||width<=0||height<=0||!Number.isFinite(padding)||padding<0)throw Error('Invalid fit view');
+ let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity,seen=false;
+ for(const layer of board.layers){if(layer.visible===false)continue;for(const stroke of layer.strokes||[]){for(const p of stroke.points||[]){if(!Number.isFinite(p.x)||!Number.isFinite(p.y))throw Error('Invalid fit point');seen=true;minX=Math.min(minX,p.x);maxX=Math.max(maxX,p.x);minY=Math.min(minY,p.y);maxY=Math.max(maxY,p.y);}}}
+ if(!seen)return {x:0,y:0,scale:1};
+ const usableW=Math.max(1,width-2*padding),usableH=Math.max(1,height-2*padding);
+ const scale=Math.max(.1,Math.min(8,usableW/Math.max(1,maxX-minX),usableH/Math.max(1,maxY-minY)));
+ return {x:width/2-(minX+maxX)/2*scale,y:height/2-(minY+maxY)/2*scale,scale};
+}
