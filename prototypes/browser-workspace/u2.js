@@ -1,3 +1,7 @@
+// C04 size percentages are UI-only; saved brush settings and strokes retain document units.
+export const sizeMax=brush=>brush==='airbrush'?160:40;
+export function percentToSize(percent,brush){if(!Number.isFinite(percent)||percent<0||percent>100)throw Error('Invalid percentage');return +(1+(sizeMax(brush)-1)*(percent/100)**2).toFixed(4);}
+export function sizeToPercent(size,brush){if(!Number.isFinite(size))throw Error('Invalid size');const n=Math.max(1,Math.min(sizeMax(brush),size));return Math.round(100*Math.sqrt((n-1)/(sizeMax(brush)-1)));}
 import {EXTRA_BRUSH_PRESETS,BRUSH_PRESETS,BRUSH_CATEGORIES,getPreset,presetsFor,presetLabel} from './brushes.js';
 const KEY='unruly-u2-ui-v1';
 const DEFAULT_PALETTE=['#203d48','#171c24','#c14f43','#d69b28','#517a58','#4877a3','#8a63a2','#f2eee3'];
@@ -9,7 +13,7 @@ function hslHex(h,s,l){s/=100;l/=100;const a=s*Math.min(l,1-l);return '#'+[0,8,4
 export function initU2UI({settings,renderer,$,blocked,status,sample,onPresetChange=()=>{}}){
  const saved=read(),sampleCache=new Map();let family=getPreset(settings.preset)?.family||'ink',hsv=hsvFromHex(settings.color,195),draft=null;
  const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{}};
- const syncControls=()=>{const max=settings.brush==='airbrush'?160:40;$('size').max=String(max);$('size-number').max=String(max);$('size').value=settings.size;$('size-number').value=settings.size;$('opacity').value=Math.round(settings.opacity*100);$('opacity-number').value=Math.round(settings.opacity*100);};
+ const syncControls=()=>{$('size').max='100';$('size-number').max='100';const percent=sizeToPercent(settings.size,settings.brush);$('size').value=percent;$('size-number').value=percent;$('opacity').value=Math.round(settings.opacity*100);$('opacity-number').value=Math.round(settings.opacity*100);};
  function rememberPreset(){const p=getPreset(settings.preset);if(!p)return;saved.presets[p.id]={size:settings.size,opacity:settings.opacity};persist();}
  function renderCategories(){$('brush-categories').replaceChildren();for(const f of BRUSH_CATEGORIES){const p=BRUSH_PRESETS.find(x=>x.family===f),b=document.createElement('button');b.type='button';b.className='brush-category';b.textContent=p.category;b.dataset.active=String(f===family);b.setAttribute('aria-pressed',String(f===family));b.onclick=()=>{family=f;renderCategories();renderPresets();};$('brush-categories').append(b);}}
  function previewFor(p){if(sampleCache.has(p.id))return sampleCache.get(p.id);const stroke={id:'preview',brush:p.family,preset:p.id,color:'#203d48',size:p.defaultSize,opacity:p.defaultOpacity,points:[{x:16,y:30,pressure:.2},{x:50,y:16,pressure:.55},{x:92,y:36,pressure:1},{x:135,y:20,pressure:.65},{x:168,y:30,pressure:.35}]};const src=renderer.preview(stroke,180,56);sampleCache.set(p.id,src);return src;}
