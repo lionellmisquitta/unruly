@@ -60,3 +60,8 @@ input[type=range]{min-height:44px}.canvas-badge button,footer button{min-height:
 #pressure-graph{display:block;width:100%;height:auto;max-width:360px;touch-action:none;user-select:none;background:#252629;border-radius:6px}#pressure-graph text{fill:var(--muted);font-size:11px}.curve-axis{fill:none;stroke:var(--muted);stroke-width:1}.curve-grid{fill:none;stroke:#ffffff18;stroke-width:1}.curve-reference{fill:none;stroke:#ffffff38;stroke-dasharray:4 4}.curve-line{fill:none;stroke:var(--accent);stroke-width:2.5}.curve-hit{fill:transparent;cursor:ns-resize}.curve-handle{fill:var(--accent);stroke:var(--panel);stroke-width:2;pointer-events:none}#pressure-graph [role=slider]:focus .curve-handle{stroke:var(--focus);stroke-width:4}.curve-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.curve-values label{display:block;margin:4px 0;font-size:11px}.curve-values input{min-width:0;margin-top:5px}#pressure-test{display:block;width:100%;max-width:360px;height:140px;background:#faf8f3;border-radius:6px;touch-action:none;user-select:none}#pressure-test-status{display:block;font-size:11px;line-height:1.5;margin:8px 0}.pressure-profile>button{width:100%;margin-top:8px}.pressure-profile summary{cursor:pointer;min-height:44px;padding-top:12px}
 
 #clear-layer,#pen-settings-toggle{width:100%;margin-top:10px}
+
+/* G02 reversible presentation focus; the escape control stays reachable without touch gestures. */
+#focus-exit[hidden]{display:none}#focus-exit{position:absolute;right:12px;top:12px;z-index:8}
+body.focus-mode header,body.focus-mode #tools,body.focus-mode #modifiers-toggle,body.focus-mode #inspector,body.focus-mode .popover{display:none!important}
+body.focus-mode #focus-exit{display:block}
