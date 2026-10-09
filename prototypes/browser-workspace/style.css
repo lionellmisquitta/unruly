@@ -68,3 +68,6 @@ body.focus-mode #focus-exit{display:block}
 
 #gesture-clipboard[hidden]{display:none}#gesture-clipboard{position:absolute;top:15%;left:50%;transform:translateX(-50%);z-index:9;display:flex;gap:6px;background:var(--panel);padding:8px;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px #0007}
 #gesture-clipboard button{white-space:nowrap}
+
+/* Fullscreen action: nine toolbar icons must fit narrow phone widths without horizontal overflow. */
+@media(max-width:600px){header .icon-button{width:40px;min-width:40px;padding:8px}}
