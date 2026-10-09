@@ -9,7 +9,7 @@ const evidence=path.join(__dirname,'evidence');fs.mkdirSync(evidence,{recursive:
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(process.env.UNRULY_TEST_URL||'http://127.0.0.1:4173/unruly/');
   await page.waitForFunction(()=>/Saved on this device|Copied \\d+ old boards|Recovery warning/.test(document.querySelector('#save')?.textContent),null,{timeout:10000});
-  const touch=async(type,ids)=>page.evaluate(({type,ids})=>{const el=document.querySelector('#canvas'),r=el.getBoundingClientRect();ids.forEach((id,i)=>el.dispatchEvent(new PointerEvent(type,{bubbles:true,cancelable:true,pointerType:'touch',pointerId:id,clientX:r.left+100+i*25,clientY:r.top+150,button:0,buttons:type==='pointerup'?0:1})));},{type,ids});
+  const touch=async(type,ids,dy=0)=>page.evaluate(({type,ids,dy})=>{const el=document.querySelector('#canvas'),r=el.getBoundingClientRect();ids.forEach((id,i)=>el.dispatchEvent(new PointerEvent(type,{bubbles:true,cancelable:true,pointerType:'touch',pointerId:id,clientX:r.left+100+i*25,clientY:r.top+150+dy,button:0,buttons:type==='pointerup'?0:1})));},{type,ids,dy});
   await touch('pointerdown',[101,102,103]);await page.waitForTimeout(730);await touch('pointerup',[101,102,103]);
   assert(await page.locator('body').evaluate(el=>el.classList.contains('focus-mode')),'three-finger held chrome toggle');
   assert(await page.locator('#focus-exit').isVisible(),'keyboard/mouse escape remains');
@@ -21,6 +21,7 @@ const evidence=path.join(__dirname,'evidence');fs.mkdirSync(evidence,{recursive:
   assert(await page.locator('body').evaluate(el=>el.classList.contains('focus-mode')),'repeat gesture opens focus');
   await touch('pointerdown',[211,212,213]);await page.waitForTimeout(730);await touch('pointerup',[211,212,213]);
   assert(!(await page.locator('body').evaluate(el=>el.classList.contains('focus-mode'))),'repeat gesture exits focus');
+  await touch('pointerdown',[301,302,303]);await touch('pointermove',[301,302,303],110);await touch('pointerup',[301,302,303],110);assert(await page.locator('#gesture-clipboard').isVisible(),'downward three-finger swipe opens clipboard');assert(await page.locator('#gesture-copy').isDisabled(),'empty board copy disabled');assert(await page.locator('#gesture-cut').isDisabled(),'empty board cut disabled');await page.locator('#gesture-clipboard-close').click();assert(!(await page.locator('#gesture-clipboard').isVisible()));
   assert.deepEqual(errors,[]);
   fs.writeFileSync(path.join(evidence,'g02-browser-output.json'),JSON.stringify({G02B01:'PASS',G02B02:'PASS',pageErrors:errors},null,2));
  }finally{await browser.close();}
