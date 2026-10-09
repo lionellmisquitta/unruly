@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {brushWidthFromPercent,brushPercentFromWidth,maxBrushWidth} from '../../prototypes/browser-workspace/brush-size.js';
+test('PERCENT01 endpoints across families are usable, never invisible',()=>{for(const f of ['pencil','ink','marker','airbrush']){assert.equal(brushWidthFromPercent(0,f),1);assert.equal(brushWidthFromPercent(100,f),maxBrushWidth(f));}});
+test('PERCENT02 nonlinear progressive fine control',()=>{assert(brushWidthFromPercent(10,'airbrush')-brushWidthFromPercent(0,'airbrush')<brushWidthFromPercent(100,'airbrush')-brushWidthFromPercent(90,'airbrush'));});
+test('PERCENT03 inverse legacy widths remain stable to nearest percent',()=>{for(const f of ['pencil','airbrush'])for(const width of [1,2,3,8,15,30,40,100,160]){if(width>maxBrushWidth(f))continue;const p=brushPercentFromWidth(width,f);assert(p>=0&&p<=100);assert(Math.abs(brushWidthFromPercent(p,f)-width)<=Math.max(1,maxBrushWidth(f)*.011));}});
+test('PERCENT04 reject malformed UI percentages',()=>{for(const n of [-1,101,NaN,Infinity])assert.throws(()=>brushWidthFromPercent(n,'airbrush'));});
