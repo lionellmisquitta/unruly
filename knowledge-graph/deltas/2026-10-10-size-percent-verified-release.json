@@ -1,0 +1,25 @@
+{
+  "format": "UNRULY_RELEASE_DELTA",
+  "recorded_at": "2026-10-09T23:10:00Z",
+  "checkpoint": "0–100 brush-size checkpoint",
+  "source_branch": "CHG-UNRULY-SIZE-1010/percent-contract",
+  "source_commit": "c22767361c06ff68d9a5004370906adc3b8b0e2c",
+  "cumulative_qa": {
+    "run_id": 38001944341,
+    "conclusion": "success"
+  },
+  "preview_deployment": {
+    "run_id": 38002529102,
+    "conclusion": "success",
+    "workflow_commit": "ddbb177c350fee66666d250bf83b5937cb4d8874",
+    "hosted_asset_comparison": "passed",
+    "url": "https://lionellmisquitta.github.io/unruly/"
+  },
+  "native_main": {
+    "commit": "cb1d52089c5cdd159050dc375b92750eb84d8271",
+    "changed": false
+  },
+  "coverage": "PENB02 fixed using explicit 100% legacy-width fixture; original width oracle retained. Added percentage-size browser journey and retained cumulative suites.",
+  "canonical_repository_kgp": "Historical baseline remains unchanged; this release delta records the newer verified checkpoint.",
+  "next_checkpoint": "C04 advanced brush controls and smudge; whole-canvas rotation remains deferred"
+}
