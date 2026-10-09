@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createTouchTracker,TOUCH_LIMITS,twoFingerViewReset,threeFingerFocusToggle,fitArtworkView} from '../../prototypes/browser-workspace/gestures.js';
+import {createTouchTracker,TOUCH_LIMITS,twoFingerViewReset,threeFingerFocusToggle,threeFingerClipboardSwipe,fitArtworkView} from '../../prototypes/browser-workspace/gestures.js';
 function touch(duration,move=false){const q=createTouchTracker();q.down(1,20,20,1000);q.down(2,50,20,1040);if(move)q.move(2,70,20);q.up(1,1000+duration);return q.up(2,1000+duration).ended;}
 test('G02F01 stationary two-finger hold resets viewport, not undo',()=>assert.equal(twoFingerViewReset(touch(850),TOUCH_LIMITS.holdMs),true));
 test('G02F02 quick two-finger undo is preserved',()=>{const q=createTouchTracker();q.down(1,20,20,1000);q.down(2,40,20,1040);q.up(1,1150);const result=q.up(2,1160);assert.equal(result.action,'undo');assert.equal(twoFingerViewReset(result.ended),false);});
@@ -12,3 +12,5 @@ test('G02F06 empty fit, invalid size and bad coordinates',()=>{assert.deepEqual(
 
 test('G02F07 stationary three-finger focus does not mask quick redo',()=>{const q=createTouchTracker();q.down(1,0,0,1000);q.down(2,12,0,1020);q.down(3,20,0,1030);q.up(1,1800);q.up(2,1810);const h=q.up(3,1820);assert.equal(threeFingerFocusToggle(h.ended),true);assert.equal(h.action,null);const z=createTouchTracker();z.down(1,0,0,1000);z.down(2,12,0,1020);z.down(3,20,0,1030);z.up(1,1120);z.up(2,1130);const quick=z.up(3,1140);assert.equal(quick.action,'redo');assert.equal(threeFingerFocusToggle(quick.ended),false);});
 test('G02F08 moving three fingers cannot toggle focus',()=>{assert.equal(threeFingerFocusToggle({count:3,candidate:false,moved:true,duration:850}),false);assert.equal(threeFingerFocusToggle({count:3,candidate:true,moved:false,duration:250}),false);});
+
+test('G02F09 three-finger downward clipboard swipe is geometric not stationary',()=>{const active=[1,2,3].map(id=>({id,start:{x:id*20,y:0},current:{x:id*20+3,y:100}}));assert.equal(threeFingerClipboardSwipe({maxCount:3,active}),true);assert.equal(threeFingerClipboardSwipe({maxCount:3,active:active.map(a=>({...a,current:{x:a.start.x+90,y:100}}))}),false);assert.equal(threeFingerClipboardSwipe({maxCount:2,active}),false);});
