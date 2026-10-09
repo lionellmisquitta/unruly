@@ -1,7 +1,7 @@
 name: Quarantined browser foundation QA
 on:
   push:
-    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07', 'preview/pen-input-p1-2026-10-07', 'preview/pressure-curve-c1-2026-10-07', 'preview/layer-pen-settings-l1-2026-10-08', 'work/erase1-intersection-limit-2026-10-08', 'preview/cumulative-erase1-press2-2026-10-09', 'work/g02-held-history-2026-10-09', 'work/g02-view-fit-2026-10-09', 'work/c04-pencil-grain-2026-10-09']
+    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07', 'preview/pen-input-p1-2026-10-07', 'preview/pressure-curve-c1-2026-10-07', 'preview/layer-pen-settings-l1-2026-10-08', 'work/erase1-intersection-limit-2026-10-08', 'preview/cumulative-erase1-press2-2026-10-09', 'work/g02-held-history-2026-10-09', 'work/g02-view-fit-2026-10-09', 'work/c04-pencil-grain-2026-10-09', 'work/ui-fullscreen-toggle-2026-10-09']
     paths:
       - 'prototypes/browser-workspace/**'
       - 'tests/browser-workspace/**'
@@ -65,6 +65,7 @@ jobs:
           node tests/browser-workspace/curve.browser.cjs > tests/browser-workspace/evidence/curve-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/lset.browser.cjs > tests/browser-workspace/evidence/lset-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/g02.browser.cjs > tests/browser-workspace/evidence/g02-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/fullscreen.browser.cjs > tests/browser-workspace/evidence/fullscreen-browser-output.txt 2>&1 || qa_result_code=1
           exit "$qa_result_code"
       - name: Bind tested identities
         if: always()
