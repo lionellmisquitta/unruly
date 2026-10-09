@@ -43,3 +43,8 @@ export function createHistoryHold({step,schedule=setTimeout,cancel=clearTimeout,
  const abort=()=>{clear();pointer=null;repeating=false;};
  return {begin,end,abort,active:()=>pointer!==null};
 }
+
+// G02 two-finger stationary hold: distinct from fast two-finger undo and moving pinch.
+export function twoFingerViewReset(ended,holdMs=650){
+ return !!ended&&ended.count===2&&ended.candidate===true&&ended.moved===false&&Number.isFinite(ended.duration)&&ended.duration>=holdMs;
+}
