@@ -2,7 +2,7 @@
 // through actual visible toolbar/menu buttons; never invokes app handlers directly.
 const roleNames={New:'New board',Boards:'Gallery',Export:'Export JSON',Import:'Import JSON',Pen:'Brush',Pan:'Pan canvas',Lasso:'Lasso selection',Move:'Move selected strokes',Panels:'Layers','Close panels':'Close layers'};
 const ids={New:'new',Boards:'boards',Export:'export',Import:'import',Pen:'pen',Pan:'pan',Lasso:'lasso',Move:'move-selection',Panels:'layers-toggle','Close panels':'close-panels',Copy:'copy-selection',Cut:'cut-selection',Paste:'paste-selection','Delete selection':'delete-selection','Clear selection':'clear-selection'};
-const labels={'Size value':'Size in document units',Brush:'Brush type',Erase:'Erase mode',Background:'Pattern'};
+const labels={'Size value':'Brush size percent',Brush:'Brush type',Erase:'Erase mode',Background:'Pattern'};
 async function closeForDrawing(page){if(await page.locator('.popover:visible').count())await page.keyboard.press('Escape');}
 function install(page){const role=page.getByRole.bind(page),label=page.getByLabel.bind(page);
  function wrap(locator,ensure){return new Proxy(locator,{get(target,key){const value=target[key];if(typeof value!=='function')return value;if(['click','fill','selectOption','focus','isVisible','scrollIntoViewIfNeeded'].includes(key))return async(...args)=>{await ensure();if(key==='fill'&&await target.getAttribute('id')==='layer-opacity'){await target.evaluate((e,v)=>{e.value=v;e.dispatchEvent(new Event('input',{bubbles:true}));},args[0]);return;}return value.apply(target,args);};if(key==='dispatchEvent')return async(...args)=>{if(args[0]==='change'&&await target.getAttribute('id')==='layer-opacity')await target.dispatchEvent('input');return value.apply(target,args);};return value.bind(target);}});}
