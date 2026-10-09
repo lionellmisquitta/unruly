@@ -58,3 +58,5 @@ export function fitArtworkView(board,width,height,padding=40){
  const scale=Math.max(.1,Math.min(8,usableW/Math.max(1,maxX-minX),usableH/Math.max(1,maxY-minY)));
  return {x:width/2-(minX+maxX)/2*scale,y:height/2-(minY+maxY)/2*scale,scale};
 }
+
+export function threeFingerFocusToggle(ended,holdMs=650){return !!ended&&ended.count===3&&ended.candidate===true&&ended.moved===false&&Number.isFinite(ended.duration)&&ended.duration>=holdMs;}
