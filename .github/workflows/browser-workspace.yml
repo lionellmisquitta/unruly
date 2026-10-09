@@ -31,7 +31,7 @@ jobs:
           qa_result_code=0
           mkdir -p tests/browser-workspace/evidence
           node --version > tests/browser-workspace/evidence/node-version.txt
-          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
+          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs tests/browser-workspace/press2.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/server.log 2>&1 &
           qa_server_pid=$!
           trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
