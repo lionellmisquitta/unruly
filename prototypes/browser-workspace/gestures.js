@@ -60,3 +60,10 @@ export function fitArtworkView(board,width,height,padding=40){
 }
 
 export function threeFingerFocusToggle(ended,holdMs=650){return !!ended&&ended.count===3&&ended.candidate===true&&ended.moved===false&&Number.isFinite(ended.duration)&&ended.duration>=holdMs;}
+
+// Procreate-style three-finger downward swipe, independent of stationary redo/focus.
+export function threeFingerClipboardSwipe(snapshot,minDistance=70){
+ if(!snapshot||snapshot.maxCount!==3||snapshot.active?.length!==3||!Number.isFinite(minDistance)||minDistance<20)return false;
+ const dx=snapshot.active.map(t=>t.current.x-t.start.x),dy=snapshot.active.map(t=>t.current.y-t.start.y);
+ return dy.every(y=>y>=minDistance)&&dx.every((x,i)=>Math.abs(x)<Math.max(35,dy[i]/2));
+}
