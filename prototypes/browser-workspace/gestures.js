@@ -33,3 +33,13 @@ export function createTouchTracker(limits=TOUCH_LIMITS){
  function cancel(){const ended=snapshot();reset();return ended;}
  return {down,move,up,cancel,snapshot};
 }
+
+// G02: non-destructive long-press history scrub controller. A short tap remains a click.
+export function createHistoryHold({step,schedule=setTimeout,cancel=clearTimeout,delayMs=550,intervalMs=160}){
+ let pointer=null,timer=null,repeating=false;
+ const clear=()=>{if(timer!==null)cancel(timer);timer=null;};
+ const begin=(id,kind)=>{if(pointer!==null)return false;pointer={id,kind};repeating=false;timer=schedule(function tick(){if(!pointer)return;repeating=true;if(step(pointer.kind)===false){clear();return;}timer=schedule(tick,intervalMs);},delayMs);return true;};
+ const end=id=>{if(!pointer||pointer.id!==id)return false;const consumed=repeating;clear();pointer=null;repeating=false;return consumed;};
+ const abort=()=>{clear();pointer=null;repeating=false;};
+ return {begin,end,abort,active:()=>pointer!==null};
+}
