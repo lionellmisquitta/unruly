@@ -16,3 +16,13 @@ export function pressureWidth(preset,pressure,dynamics){
 export function pressureOpacity(pressure,dynamics){if(pressure===null||!dynamics?.opacity)return 1;return dynamics.minOpacity+(1-dynamics.minOpacity)*responsePressure(pressure,dynamics);}
 export function penAction(e,mappings){if(e.pointerType!=='pen')return null;const action=e.buttons&32?mappings.eraser:e.buttons&2?mappings.barrel:null;return ['lasso','eraser','pan'].includes(action)?action:null;}
 export function readPenConfig(){const defaults={dynamics:{...DEFAULT_DYNAMICS},mappings:{barrel:'lasso',eraser:'eraser'}};try{const x=JSON.parse(localStorage.getItem('unruly-pen-ui-v1')||'null');if(x?.dynamics)defaults.dynamics=structuredClone(validateDynamics(x.dynamics));for(const k of ['barrel','eraser'])if(['lasso','eraser','pan','none'].includes(x?.mappings?.[k]))defaults.mappings[k]=x.mappings[k];}catch{}return defaults;}
+
+// PRESS2: resolve only explicit per-preset overrides; never mutate the global profile.
+export function resolveBrushDynamics(globalDynamics, overrides, presetId){
+ const base=structuredClone(validateDynamics(globalDynamics));
+ if(overrides===undefined||overrides===null)return base;
+ if(!overrides||typeof overrides!=='object'||Array.isArray(overrides))throw Error('Invalid pressure overrides');
+ if(typeof presetId!=='string'||!presetId||presetId.length>64)throw Error('Invalid pressure preset');
+ const selected=Object.hasOwn(overrides,presetId)?overrides[presetId]:null;
+ return selected===null||selected===undefined?base:structuredClone(validateDynamics(selected));
+}
