@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {sizeMax,percentToSize,sizeToPercent} from '../../prototypes/browser-workspace/u2.js';
+test('SIZEP01 nonlinear 0-100 mapping respects brush family maximum',()=>{assert.equal(percentToSize(0,'airbrush'),1);assert.equal(percentToSize(100,'airbrush'),160);assert.equal(percentToSize(100,'pencil'),40);assert.equal(sizeMax('ink'),40);assert(percentToSize(50,'airbrush')<81);});
+test('SIZEP02 stored legacy units map to percentage and restore within rounding',()=>{for(const brush of ['pencil','airbrush'])for(const size of [1,2,5,20,sizeMax(brush)]){const percent=sizeToPercent(size,brush);const restored=percentToSize(percent,brush);assert(Math.abs(restored-size)<=sizeMax(brush)*.011);}});
+test('SIZEP03 rejects invalid percent and size',()=>{assert.throws(()=>percentToSize(-1,'airbrush'));assert.throws(()=>percentToSize(101,'pencil'));assert.throws(()=>sizeToPercent(NaN,'pencil'));});
