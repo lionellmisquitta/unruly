@@ -1,0 +1,11 @@
+change_id: CHG-UNRULY-UX2-1010
+baseline_commit: 22d43ffe2011870feffbbdfd4ccbeb9b1e7902e0
+publication_target: existing GitHub Pages cumulative preview
+steps:
+- diagnose
+- implement exact lasso and scoped transforms
+- run all model suites and actual Chromium journeys
+- bind evidence to exact source
+- pin verified source to existing Pages
+- refresh private graph and safe public release delta
+no_main_merge: true
