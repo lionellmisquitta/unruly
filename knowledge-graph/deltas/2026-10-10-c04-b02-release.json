@@ -1,0 +1,26 @@
+{
+  "format": "UNRULY_RELEASE_DELTA",
+  "checkpoint": "C04-B02 advanced brush controls",
+  "source_commit": "8185ebf7e38d870c244c0be0ae9bcd01f179f3d1",
+  "source_branch": "CHG-UNRULY-B02-1010/advanced-brush-controls",
+  "qa": {
+    "run": 38063641659,
+    "conclusion": "success",
+    "model_tests": 112
+  },
+  "pages": {
+    "run": 38064127443,
+    "conclusion": "success",
+    "hosted_asset_bytes": "matched tested source",
+    "url": "https://lionellmisquitta.github.io/unruly/"
+  },
+  "features": "Opt-in per-preset density, spacing, pencil grain, preset/round/flat tips; validated version-1 stroke recipes, shared work accounting, original preset pixels preserved, custom recipe comparison.",
+  "native_main": "cb1d52089c5cdd159050dc375b92750eb84d8271 unchanged",
+  "limits": {
+    "dabs": 20000,
+    "particles": 600000
+  },
+  "next": "C04-B03 smudge, separate raster/sampling/history contract; whole-canvas rotation deferred",
+  "physical_device": "NOT_VERIFIED",
+  "full_knowledge_archive": "Private; public repository contains release deltas and historical canonical archive."
+}

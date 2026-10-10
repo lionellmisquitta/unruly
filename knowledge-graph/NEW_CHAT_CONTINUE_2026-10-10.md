@@ -1,22 +1,11 @@
-# Continue UNRULY — cumulative product
+# Continue UNRULY — C04-B02 completed
 
-Use https://lionellmisquitta.github.io/unruly/ as the single cumulative application. Increment that product rather than delivering separate test slices.
+Single cumulative product: https://lionellmisquitta.github.io/unruly/
 
-Latest verified application source: `e0c98dc2ff1ca08d03feefce982e77283d70495c` on `CHG-UNRULY-CUMULATIVE-1010/brush-comparison`.
-Cumulative QA run 38030638512 passed. Pages run 38031010653 passed, including hosted application asset byte comparisons.
+Current verified source `8185ebf7e38d870c244c0be0ae9bcd01f179f3d1` on `CHG-UNRULY-B02-1010/advanced-brush-controls`. Cumulative QA 38063641659 passed with112 model tests and all Chromium journeys. Pages 38064127443 passed, including hosted application asset byte comparison.
 
-The full app includes 0–100 brush sizes, global/per-brush pressure curves, diagnostics, presets and disposable A/B comparison inside Brush Library. Comparison uses identical calibration contact samples and never writes board/history/brush settings.
+Brush Library → Advanced brush controls: per-preset opt-in density, spacing, pencil grain and preset/round/flat tips. Saved strokes snapshot version1 recipes. Absent/neutral recipes preserve originals. Controls/reset leave existing strokes unchanged; comparison captures custom recipes. Work limits remain20,000 dabs/600,000 particles. Older app versions cannot replay custom recipes; UI advises backups.
 
-Native main `cb1d52089c5cdd159050dc375b92750eb84d8271` remains unchanged. Physical tablet feel is NOT_VERIFIED. Next: C04 advanced controls and smudge; whole-canvas rotation deferred.
+NEXT C04-B03 smudge. Define bounded raster sampling/history/persistence before implementation; shared library, size/strength and finger-smudge arbitration. Smudge remains unimplemented. Keep whole-canvas rotation deferred; native main `cb1d52089c5cdd159050dc375b92750eb84d8271` unchanged. Physical hardware feel NOT_VERIFIED.
 
-See `deltas/2026-10-10-cumulative-brush-comparison.json`. The repository's `releases/UNRULY-Current.kgp.zip` remains historical. The latest complete refreshed package is saved privately, not synchronized into this public repository.
-
-## October 10 continuity addendum (verified against GitHub)
-
-- Latest cumulative source `e0c98dc2ff1ca08d03feefce982e77283d70495c`, branch `CHG-UNRULY-CUMULATIVE-1010/brush-comparison`.
-- Full application CI run `38030638512` passed. Pages run `38031010653` passed. Published URL remains `https://lionellmisquitta.github.io/unruly/`.
-- The earlier `work/brush-size-percent-2026-10-09` CI run `37947624527` failed due to PENB02 legacy expected-width assumptions. This is historical; percent-sized functionality was subsequently corrected and released in the cumulative source. Do not confuse an old red workflow with the latest passing release.
-- C04 graphite, responsive fullscreen control, airbrush size and scrollbars, nonlinear 0–100% size UI and Brush Library A/B comparison are cumulative features. Native main remains untouched. Tablet pen feel still NOT_VERIFIED.
-- Full-canvas rotation deferred to final polish. Next scoped C04 work: grain, density, spacing and smudge. Do not introduce separate public demo URLs.
-- CI takes several minutes because its workflow installs pinned Chromium dependencies and runs many separate document-model, rendering, persistence, browser and regression journeys, gathers evidence and validates release identity. It also cancels superseded runs on active branch. A long run is not itself an error.
-- The historical `knowledge-graph/GRAPH_SNAPSHOT.md`, `HANDOVER.md`, `INDEX.json` and `.knowledge/CURRENT_GRAPH.json` are October 8 and MUST NOT be read as current state without October 10 release deltas. The current main graph archive under `knowledge-graph/releases` is also historical; preserve its identity, do not silently overwrite its hash or revision.
+See `deltas/2026-10-10-c04-b02-release.json`. The repository's canonical full archive remains historical. The refreshed complete graph is saved privately; only public release evidence is synchronized here. Maintain this same cumulative app and URL.
