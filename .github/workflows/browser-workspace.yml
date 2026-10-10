@@ -1,3 +1,4 @@
+# C04-B03 final candidate includes versioned bounded delivery handoff.
 name: Quarantined browser foundation QA
 on:
   push:
