@@ -1,3 +1,4 @@
+import {initBrushComparison} from './brush-compare.js';
 import {brushWidthFromPercent,brushPercentFromWidth} from './brush-size.js';
 import {initPressureUI} from './pressure-ui.js';
 import {readPenConfig,validateDynamics,resolveBrushDynamics,penAction} from './pen-input.js';
@@ -76,7 +77,8 @@ function persistPen(){if(Object.hasOwn(penConfig.overrides,settings.preset))penC
 $('pressure-brush-override').addEventListener('change',()=>{if(blocked()){syncPenControls();return;}if($('pressure-brush-override').checked)penConfig.overrides[settings.preset]=structuredClone(settings.dynamics);else delete penConfig.overrides[settings.preset];settings.dynamics=resolveBrushDynamics(penConfig.dynamics,penConfig.overrides,settings.preset);persistPen();syncPenControls();curveUI?.sync();sample();});
 for(const id of ['pressure-width','pressure-opacity','pressure-min-width','pressure-min-opacity','pressure-curve'])$(id).addEventListener('change',()=>{if(blocked()){syncPenControls();return;}try{const d={size:$('pressure-width').checked,opacity:$('pressure-opacity').checked,minWidth:Number($('pressure-min-width').value)/100,minOpacity:Number($('pressure-min-opacity').value)/100,exponent:$('pressure-curve').value==='custom'?settings.dynamics.exponent:Number($('pressure-curve').value)};if($('pressure-curve').value==='custom'&&settings.dynamics.curve)d.curve=[...settings.dynamics.curve];validateDynamics(d);settings.dynamics=d;persistPen();sample();curveUI?.sync();}catch(e){syncPenControls();status(e.message,true);}});
 for(const [id,key] of [['pen-barrel-map','barrel'],['pen-eraser-map','eraser'],['global-pen-barrel-map','barrel'],['global-pen-eraser-map','eraser']])$(id).addEventListener('change',()=>{if(blocked()){syncPenControls();return;}if(['lasso','eraser','pan','none'].includes($(id).value)){penConfig.mappings[key]=$(id).value;persistPen();}syncPenControls();});syncPenControls();
-curveUI=initPressureUI({$,getDynamics:()=>settings.dynamics,blocked,status,onChange:d=>{validateDynamics(d);settings.dynamics=structuredClone(d);persistPen();syncPenControls();sample();}});
+const brushComparison=initBrushComparison({$,renderer,getSettings:()=>settings,getConfig:()=>penConfig,blocked});
+curveUI=initPressureUI({$,onSamples:s=>brushComparison.samples(s),getDynamics:()=>settings.dynamics,blocked,status,onChange:d=>{validateDynamics(d);settings.dynamics=structuredClone(d);persistPen();syncPenControls();sample();}});
 function insideSelection(p){try{const b=selectionBounds(h.board,selected);return b&&p.x>=b.minX&&p.x<=b.maxX&&p.y>=b.minY&&p.y<=b.maxY;}catch{return false;}}
 function restorePenTool(done){if(done?.previousTool!==undefined){setTool(done.previousTool);lassoAutoMove=done.previousAutoMove;}}
 

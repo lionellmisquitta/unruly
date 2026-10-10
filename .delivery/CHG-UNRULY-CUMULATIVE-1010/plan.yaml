@@ -1,0 +1,24 @@
+change_id: CHG-UNRULY-CUMULATIVE-1010
+route: standard_change
+prohibited_paths: [src/, native/]
+checkpoints:
+  - id: comparison
+    allowed_paths:
+      - prototypes/browser-workspace/brush-compare.js
+      - prototypes/browser-workspace/pressure-ui.js
+      - prototypes/browser-workspace/app.js
+      - prototypes/browser-workspace/index.html
+      - prototypes/browser-workspace/style.css
+      - prototypes/browser-workspace/sw.js
+      - tests/browser-workspace/compare.browser.cjs
+      - .github/workflows/browser-workspace.yml
+      - .delivery/CHG-UNRULY-CUMULATIVE-1010/
+    test_paths: [tests/browser-workspace/]
+    tests:
+      - id: comparison-browser
+        command: [node, tests/browser-workspace/compare.browser.cjs]
+        timeout_seconds: 120
+      - id: cumulative-browser
+        command: [bash, .delivery/CHG-UNRULY-SIZE-1010/run-cumulative.sh]
+        timeout_seconds: 600
+test_config_changes: [.github/workflows/browser-workspace.yml]

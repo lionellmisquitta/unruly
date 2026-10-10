@@ -74,3 +74,5 @@ body.focus-mode #focus-exit{display:block}
 
 /* Keep pen modifier controls scrollable without exposed vertical/horizontal bars. */
 #tools{overflow-y:auto;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior:contain}#tools::-webkit-scrollbar{display:none}#tools input[type=number],#tools input[type=range]{max-width:100%;min-width:0}
+
+.compare-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}.compare-pair section{min-width:0}.compare-pair img{display:block;width:100%;height:auto;border:1px solid #ccc;border-radius:6px}.compare-pair select,.compare-pair button{width:100%;min-height:44px}.compare-pair output{display:block;font-size:11px;margin:6px 0}

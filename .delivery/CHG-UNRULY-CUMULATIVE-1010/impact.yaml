@@ -1,0 +1,18 @@
+change_id: CHG-UNRULY-CUMULATIVE-1010
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - prototypes/browser-workspace/brush-compare.js
+  - prototypes/browser-workspace/pressure-ui.js
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/style.css
+  - prototypes/browser-workspace/sw.js
+regression_obligations:
+  - id: board-unchanged
+    reason: comparison cannot alter real board or history
+    test_id: comparison-browser
+  - id: cumulative
+    reason: retain all previous release contracts
+    test_id: cumulative-browser
