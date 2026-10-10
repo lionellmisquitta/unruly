@@ -58,6 +58,10 @@ async function ui(p){
  const bounds=await p.locator('#canvas').boundingBox(),cdp=await p.context().newCDPSession(p),samples=[];
  const send=async(type,x,y)=>{await cdp.send('Input.dispatchMouseEvent',{type,x:bounds.x+x,y:bounds.y+y,button:'left',buttons:type==='mouseReleased'?0:1,pointerType:'pen',force:type==='mouseReleased'?0:.55,clickCount:1});samples.push(await p.evaluate(()=>new Promise(ok=>{const t=performance.now();requestAnimationFrame(()=>ok(performance.now()-t));})));};
  await send('mousePressed',200,200);for(let i=1;i<=8;i++)await send('mouseMoved',200+i*8,200+Math.sin(i)*8);await send('mouseReleased',264,208);await cdp.detach();
+ // Slow synchronous replay can cross the real hold timer. Honour the visible
+ // draft contract instead of assuming that releasing the pen commits a shape.
+ const shapeAssistActivatedDuringSlowDrawing=await p.locator('#shape-controls').isVisible();
+ if(shapeAssistActivatedDuringSlowDrawing){const draftBoard=await p.evaluate(async()=>{const{openStore}=await import('./storage.js'),s=await openStore(),b=(await s.load(await s.last())).board;s.close();return b;});assert.deepEqual(draftBoard.layers,before.layers,'shape draft must not commit before Apply');await p.locator('#apply-shape').click();}
  await p.waitForTimeout(700);const after=await p.evaluate(async()=>{const{openStore}=await import('./storage.js'),s=await openStore(),b=(await s.load(await s.last())).board;s.close();return b;});
  assert.equal(after.layers[0].strokes.length,before.layers[0].strokes.length+1);assert.deepEqual(after.layers.slice(1),before.layers.slice(1));
  await p.locator('#undo').click();await p.waitForTimeout(600);const undone=await p.evaluate(async()=>{const{openStore}=await import('./storage.js'),s=await openStore(),b=(await s.load(await s.last())).board;s.close();return b;});assert.deepEqual(undone.layers,before.layers);
@@ -69,7 +73,7 @@ async function ui(p){
  await p.waitForTimeout(50);assert.equal(await p.evaluate(()=>replays),0,'lasso overlay must not replay artwork');await c.send('Input.dispatchMouseEvent',{type:'mouseReleased',x:bounds.x+170,y:bounds.y+170,button:'left',buttons:0,pointerType:'pen',force:0,clickCount:1});await c.detach();
  await p.evaluate(()=>{for(const [key,value]of Object.entries(originals))CanvasRenderingContext2D.prototype[key]=value;});
  await p.screenshot({path:path.join(out,'PERF1-layered-ui.png')});
- return{layers:30,mixedRasterVector:true,activeLayerBelowOutlines:true,penSaveUndoRedoReload:true,artworkReplaysDuringLasso:0,postDispatchNextRafMs:await p.evaluate(samples=>perf1.summary(samples),samples),measurementNote:'Post-dispatch next-rAF wait excludes driver/pen/display latency and may include scheduling noise.'};
+ return{layers:30,mixedRasterVector:true,activeLayerBelowOutlines:true,penSaveUndoRedoReload:true,shapeAssistActivatedDuringSlowDrawing,artworkReplaysDuringLasso:0,postDispatchNextRafMs:await p.evaluate(samples=>perf1.summary(samples),samples),measurementNote:'Post-dispatch next-rAF wait excludes driver/pen/display latency and may include scheduling noise. Slow drawing may activate the hold-to-shape draft; if so its unchanged document and explicit Apply are verified.'};
 }
 (async()=>{
  browser=await chromium.launch({headless:true});
