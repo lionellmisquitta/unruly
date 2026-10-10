@@ -1,5 +1,5 @@
 import {pressureWidth,pressureOpacity} from './pen-input.js';
-import {getPreset,samplingStep} from './brushes.js';
+import {getPreset,effectivePreset,samplingStep} from './brushes.js';
 // Canvas2D reference replay plus retained top-layer live ink. Alpha applied by stage.
 const hash=(x,y,seed=173)=>{let n=Math.imul(Math.round(x)*374761393^Math.round(y)*668265263^seed,1274126177);n=(n^(n>>>13))>>>0;return n/4294967296;};
 // C04 deterministic graphite tooth. Only opt-in pencil variants use this path;
@@ -28,14 +28,15 @@ function drawPresetStroke(ctx,s,preset){ctx.fillStyle=s.color;ctx.strokeStyle=s.
  const w=p=>s.size*pressureWidth(preset,p.pressure,s.dynamics),alpha=p=>pressureOpacity(p.pressure,s.dynamics);
  if(preset.kind==='continuous'){const a=s.points[0];ctx.globalAlpha=preset.coverage*alpha(a);ctx.beginPath();ctx.arc(a.x,a.y,w(a)/2,0,Math.PI*2);ctx.fill();for(let i=1;i<s.points.length;i++){const p=s.points[i-1],q=s.points[i];ctx.globalAlpha=preset.coverage*(alpha(p)+alpha(q))/2;ctx.lineWidth=(w(p)+w(q))/2;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}ctx.globalAlpha=1;return;}
  presetResample(s,preset,(p,angle,serial)=>{const width=w(p),radius=width/2;
-  if(preset.kind==='pencil'){for(let k=0;k<preset.particles;k++){const dot=preset.dot,usable=Math.max(0,radius-dot/2),a=hash(p.x+k*13+serial,p.y+k*7)*Math.PI*2,r=Math.sqrt(hash(p.x+k*31,p.y-k*17+serial))*usable;ctx.globalAlpha=preset.coverage*alpha(p)*(.45+hash(p.y+k,p.x-k+serial)*.55)*graphiteGrain(preset.id,p.x+Math.cos(a)*r,p.y+Math.sin(a)*r,serial);ctx.fillRect(p.x+Math.cos(a)*r-dot/2,p.y+Math.sin(a)*r-dot/2,dot,dot);}ctx.globalAlpha=1;}
+  if(preset.kind==='pencil'){for(let k=0;k<preset.particles;k++){const dot=preset.dot,usable=Math.max(0,radius-dot/2),a=hash(p.x+k*13+serial,p.y+k*7)*Math.PI*2,r=Math.sqrt(hash(p.x+k*31,p.y-k*17+serial))*usable;ctx.globalAlpha=preset.coverage*alpha(p)*(.45+hash(p.y+k,p.x-k+serial)*.55)*graphiteGrain(preset.id,p.x+Math.cos(a)*r,p.y+Math.sin(a)*r,serial)*(1-(s.recipe?.grain||0)*(1-hash(Math.floor((p.x+Math.cos(a)*r)*2),Math.floor((p.y+Math.sin(a)*r)*2),9341)));ctx.fillRect(p.x+Math.cos(a)*r-dot/2,p.y+Math.sin(a)*r-dot/2,dot,dot);}ctx.globalAlpha=1;}
   else if(preset.kind==='chisel'){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(-Math.PI/5+angle*.12);ctx.globalAlpha=preset.coverage*alpha(p);ctx.fillRect(-radius,-width*.18,width,width*.36);ctx.restore();ctx.globalAlpha=1;}
+  else if(preset.kind==='flat'){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(-Math.PI/5+angle*.12);ctx.globalAlpha=preset.coverage*alpha(p);ctx.fillRect(-width*.45,-width*.18,width*.9,width*.36);ctx.restore();ctx.globalAlpha=1;}
   else if(preset.kind==='round'){ctx.globalAlpha=preset.coverage*alpha(p);ctx.beginPath();ctx.arc(p.x,p.y,radius,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;}
   else if(preset.kind==='airbrush-soft'||preset.kind==='airbrush-firm'){const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,Math.max(.1,radius));if(preset.kind==='airbrush-soft'){g.addColorStop(0,rgba(s.color,preset.coverage*alpha(p)));g.addColorStop(.5,rgba(s.color,preset.coverage*.4*alpha(p)));}else{g.addColorStop(0,rgba(s.color,preset.coverage*alpha(p)));g.addColorStop(.6,rgba(s.color,preset.coverage/1.5*alpha(p)));}g.addColorStop(1,rgba(s.color,0));ctx.fillStyle=g;ctx.fillRect(p.x-radius,p.y-radius,width,width);ctx.fillStyle=s.color;}
   else if(preset.kind==='mist'){const dot=Math.min(1.2,Math.max(.5,width*.04)),usable=Math.max(0,radius-dot/2);for(let k=0;k<preset.particles;k++){const a=hash(p.x+k*17+serial,p.y+k*11)*Math.PI*2,r=Math.sqrt(hash(p.x-k*19,p.y+k*23+serial))*usable;ctx.globalAlpha=preset.coverage*alpha(p)*(.45+hash(k+serial,p.x+p.y)*.55);ctx.fillRect(p.x+Math.cos(a)*r-dot/2,p.y+Math.sin(a)*r-dot/2,dot,dot);}ctx.globalAlpha=1;}
  });
 }
-function drawStroke(ctx,s){const preset=s.preset&&getPreset(s.preset);if(!preset)return drawLegacyStroke(ctx,s);return drawPresetStroke(ctx,s,preset);}
+function drawStroke(ctx,s){const preset=s.preset&&effectivePreset(s);if(!preset)return drawLegacyStroke(ctx,s);return drawPresetStroke(ctx,s,preset);}
 function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kind==='plain')return;ctx.save();ctx.translate(v.x,v.y);ctx.scale(v.scale,v.scale);const space=Math.max(b.spacing,8/v.scale),x0=Math.floor(-v.x/v.scale/space)*space,y0=Math.floor(-v.y/v.scale/space)*space,x1=(w-v.x)/v.scale,y1=(h-v.y)/v.scale;ctx.strokeStyle='#70868b35';ctx.fillStyle='#70868b55';ctx.lineWidth=.7/v.scale;
  if(b.kind==='dotted'){for(let x=x0;x<=x1;x+=space)for(let y=y0;y<=y1;y+=space){ctx.beginPath();ctx.arc(x,y,1/v.scale,0,Math.PI*2);ctx.fill();}}
  else if(b.kind==='textured'){ctx.fillStyle='#6b5b4420';const s=Math.max(5,4/v.scale);for(let x=Math.floor(x0/s)*s;x<=x1;x+=s)for(let y=Math.floor(y0/s)*s;y<=y1;y+=s){const a=hash(x,y,b.seed);ctx.globalAlpha=.15+a*.5;ctx.fillRect(x+a*s,y+hash(y,x,b.seed)*s,.7/v.scale,.7/v.scale);}ctx.globalAlpha=1;}

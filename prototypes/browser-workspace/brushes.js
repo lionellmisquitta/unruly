@@ -1,3 +1,4 @@
+import {applyRecipe} from './brush-recipe.js';
 // UNRULY U2 immutable original brush presets. MIT.
 export const BRUSH_PRESETS=Object.freeze([
  Object.freeze({family:'pencil',category:'Pencil',id:'pencil-hb',name:'HB',kind:'pencil',particles:12,coverage:.35,dot:.55,stepFactor:.18,minWidth:.25,exponent:1,defaultSize:3,defaultOpacity:1}),
@@ -32,9 +33,11 @@ export const presetCompatible=(family,id)=>getPreset(id)?.family===family;
 export function pressureScale(preset,pressure){if(pressure===null)return 1;const p=Math.max(0,Math.min(1,pressure));return preset.minWidth+(1-preset.minWidth)*Math.pow(p,preset.exponent);}
 export const samplingStep=(preset,size)=>Math.max(.5,size*(preset.stepFactor||.2));
 export function replayWork(stroke){
- const preset=getPreset(stroke.preset);if(!preset)return {dabs:0,particles:0};
+ const preset=effectivePreset(stroke);if(!preset)return {dabs:0,particles:0};
  if(preset.kind==='continuous')return {dabs:0,particles:0};
  const step=samplingStep(preset,stroke.size);let dabs=1;
  for(let i=1;i<stroke.points.length;i++)dabs+=Math.max(1,Math.ceil(Math.hypot(stroke.points[i].x-stroke.points[i-1].x,stroke.points[i].y-stroke.points[i-1].y)/step));
  return {dabs,particles:dabs*(preset.particles||1)};
 }
+
+export function effectivePreset(stroke){const p=getPreset(stroke.preset);return p?applyRecipe(p,stroke.recipe):null;}

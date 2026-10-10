@@ -1,0 +1,25 @@
+change_id: CHG-UNRULY-B02-1010
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - prototypes/browser-workspace/brush-recipe.js
+  - prototypes/browser-workspace/brush-recipe-ui.js
+  - prototypes/browser-workspace/brushes.js
+  - prototypes/browser-workspace/render.js
+  - prototypes/browser-workspace/model.js
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/u2.js
+  - prototypes/browser-workspace/brush-compare.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/sw.js
+regression_obligations:
+  - id: model-admission-and-metadata
+    reason: reject malformed recipes and preserve admitted stroke recipes across edits
+    test_id: recipe-model
+  - id: original-pixels-and-tablet-replay
+    reason: originals unchanged; custom controls and exact persisted rendering
+    test_id: recipe-browser
+  - id: cumulative-regression
+    reason: every previously delivered contract remains required
+    test_id: cumulative-browser
