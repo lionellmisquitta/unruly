@@ -1,0 +1,16 @@
+change_id: CHG-UNRULY-PERF1-1011
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- tests/browser-workspace/layered-baseline.browser.cjs
+- .github/workflows/browser-workspace.yml
+- docs/delivery/DECISIONS.md
+- docs/delivery/CURRENT_CHECKPOINT.md
+regression_obligations:
+- id: layered-correctness-and-measurement
+  reason: Representative layers, reference pixels, bounded memory, transform/history and storage
+  test_id: layered-baseline
+- id: prior-interactions
+  reason: Preserve all previously accepted cumulative journeys and model tests
+  test_id: cumulative-qa

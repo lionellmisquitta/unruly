@@ -2,7 +2,7 @@
 name: Quarantined browser foundation QA
 on:
   push:
-    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07', 'preview/pen-input-p1-2026-10-07', 'preview/pressure-curve-c1-2026-10-07', 'preview/layer-pen-settings-l1-2026-10-08', 'work/erase1-intersection-limit-2026-10-08', 'preview/cumulative-erase1-press2-2026-10-09', 'work/g02-held-history-2026-10-09', 'work/g02-view-fit-2026-10-09', 'work/c04-pencil-grain-2026-10-09', 'work/ui-fullscreen-toggle-2026-10-09', 'work/airbrush-size-panel-2026-10-09', 'work/brush-size-percent-2026-10-10', 'CHG-UNRULY-SIZE-1010/percent-contract', 'CHG-UNRULY-CUMULATIVE-1010/brush-comparison', 'CHG-UNRULY-B02-1010/advanced-brush-controls', 'CHG-UNRULY-B03-1010/smudge', 'CHG-UNRULY-UX1-1010/tablet-gestures', 'CHG-UNRULY-UX2-1010/layer-transforms-performance']
+    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07', 'preview/pen-input-p1-2026-10-07', 'preview/pressure-curve-c1-2026-10-07', 'preview/layer-pen-settings-l1-2026-10-08', 'work/erase1-intersection-limit-2026-10-08', 'preview/cumulative-erase1-press2-2026-10-09', 'work/g02-held-history-2026-10-09', 'work/g02-view-fit-2026-10-09', 'work/c04-pencil-grain-2026-10-09', 'work/ui-fullscreen-toggle-2026-10-09', 'work/airbrush-size-panel-2026-10-09', 'work/brush-size-percent-2026-10-10', 'CHG-UNRULY-SIZE-1010/percent-contract', 'CHG-UNRULY-CUMULATIVE-1010/brush-comparison', 'CHG-UNRULY-B02-1010/advanced-brush-controls', 'CHG-UNRULY-B03-1010/smudge', 'CHG-UNRULY-UX1-1010/tablet-gestures', 'CHG-UNRULY-UX2-1010/layer-transforms-performance', 'CHG-UNRULY-PERF1-1011/layered-baseline']
     paths:
       - 'prototypes/browser-workspace/**'
       - 'tests/browser-workspace/**'
@@ -74,6 +74,7 @@ jobs:
           node tests/browser-workspace/smudge.browser.cjs > tests/browser-workspace/evidence/smudge-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/smudge-browser-output.txt; qa_result_code=1; }
           node tests/browser-workspace/tablet-ux.browser.cjs > tests/browser-workspace/evidence/tablet-ux-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/tablet-ux-browser-output.txt; qa_result_code=1; }
           node tests/browser-workspace/layer-transform.browser.cjs > tests/browser-workspace/evidence/layer-transform-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layer-transform-browser-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/layered-baseline.browser.cjs > tests/browser-workspace/evidence/layered-baseline-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layered-baseline-output.txt; qa_result_code=1; }
           exit "$qa_result_code"
       - name: Bind tested identities
         if: always()

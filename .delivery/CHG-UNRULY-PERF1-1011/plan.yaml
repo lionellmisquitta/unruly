@@ -1,0 +1,27 @@
+schema_version: '1.0'
+change_id: CHG-UNRULY-PERF1-1011
+route: standard_change
+prohibited_paths:
+- prototypes/
+- src/
+- native/
+- .github/workflows/browser-workspace-pages.yml
+checkpoints:
+- id: layered-baseline
+  allowed_paths:
+  - tests/browser-workspace/layered-baseline.browser.cjs
+  - .github/workflows/browser-workspace.yml
+  - docs/delivery/DECISIONS.md
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - .delivery/CHG-UNRULY-PERF1-1011/
+  test_paths:
+  - tests/browser-workspace/
+  tests:
+  - id: layered-baseline
+    command: [node, tests/browser-workspace/layered-baseline.browser.cjs]
+    timeout_seconds: 240
+  - id: cumulative-qa
+    command: [bash, .delivery/CHG-UNRULY-PERF1-1011/run-qa.sh]
+    timeout_seconds: 600
+test_config_changes:
+- .github/workflows/browser-workspace.yml
