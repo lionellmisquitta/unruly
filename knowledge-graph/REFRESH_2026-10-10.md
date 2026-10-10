@@ -1,20 +1,15 @@
-# UNRULY current browser checkpoint
+# UNRULY current cumulative preview
 
-Tablet UX1 is hosted and verified at https://lionellmisquitta.github.io/unruly/.
+Live: https://lionellmisquitta.github.io/unruly/
+Source: a216d616f057a2ab1f3fb883e3788979291eda23 on CHG-UNRULY-UX2-1010/layer-transforms-performance.
+Cumulative QA: 38077138430 SUCCESS; 140 model tests and 154 structured Chromium journeys. Pages: 38077742013 SUCCESS, including every hosted asset byte comparison. Native main remains cb1d52089c5cdd159050dc375b92750eb84d8271.
 
-Source: 22d43ffe2011870feffbbdfd4ccbeb9b1e7902e0 on CHG-UNRULY-UX1-1010/tablet-gestures.
-Cumulative QA: 38073524003 passed; 133 model tests, 12 new actual Chromium tablet journeys, and all older browser suites. All 32 existing U3 gesture tests passed, including two-finger Undo whose first contact hits a transform handle.
-Pages deployment: 38074115756 passed, including every hosted application asset byte comparison.
-Native main remains cb1d52089c5cdd159050dc375b92750eb84d8271. Verification is self-review with real Chromium artifacts, not separate human merge approval. Physical tablet acceptance remains unverified.
+Tablet UX2 adds exact indexed lasso, overlay-only lasso refresh, Ctrl/Cmd and 44px checkbox layer scope, shared layer-preserving transforms and two-finger selection pinch/twist/translation. Apply is one document undo; local Undo/Redo and Cancel remain. Partial-release cancel, third finger and blur restore the preview. Hidden/locked scoped layers reject the whole write. Copy flattens the page clipboard; Paste targets active drawing layer. Whole-canvas rotation remains deferred.
 
-Hold stationary 650 ms to snap a line, smooth curve, circle, ellipse or rectangle. Hold jitter tolerance is 14 CSS px; line recognition allows max(8 CSS px, 7.5% chord) with reversal rejection. Keep the pen down and drag to scale from the actual hold endpoint. One finger constrains line angles, ellipse to circle, rectangle to square, or curve to circular arc. Removing that finger before releasing the pen restores unconstrained geometry. Release enters the existing Apply/Cancel draft; Apply is one undo step. Geometry stays ordinary pressure-bearing points with unchanged persisted schema.
+Dense fixture: 100,000 points, 512 polygon edges, 4650 exact comparisons, 71.3 ms on the Chromium runner, zero artwork replays while drawing the lasso. This is runner/fixture evidence, not physical tablet latency or proof of all maximum-size documents. Original 200,000 comparison cap and document/history/renderer limits remain. App assets are about 228 KB; no canvas surface was added.
 
-Stationary finger hold opens a magnifier, exact source marker, crosshair, hex and swatch. Drag updates the sample; release uses the final colour. Cancel or a second finger dismisses without changing colour. Empty Smudge layers still support the picker; moving fingers retain smudge behaviour. Magnifier reuses renderer scratch; five backing surfaces / 80 MiB remain bounded.
+Cumulative features retained through C04-B03 smudge and UX1: 0–100 size, pressure profiles, comparison, advanced recipes, active-layer smudge, held geometry with finger constraints, magnified touch picker and tablet transform handles. Persisted schema unchanged by UX2; v4 smudge still requires a compatible app. Physical tablet acceptance remains NOT_VERIFIED.
 
-Lasso selection exposes Transform / rotate. Gold scale and blue rotation handles have 44 CSS px hit areas and use relative drag baselines. Numeric controls, Apply/Cancel and local/document undo remain. A second finger cancels a handle preview and routes the contacts into the multi-finger history gesture. Whole-canvas rotation remains deferred.
+Read CONTINUE_IN_NEW_CHAT.md and HANDOVER.md, then the current canonical graph. Verify actual branch heads and CI before changes. Keep native main untouched; deploy only verified exact-source updates to this existing preview. Next proposed scope is raster capacity/layer masks before effects/fill; exact scope not locked. Planning estimate remains 6–9 focused checkpoints for everyday drawing, 12–20 for full browser vision; native packaging/proprietary exchange excluded pending feasibility.
 
-C04-B03 smudge remains cumulative: only the active layer is converted to pixels; Undo restores vectors. Current raster limit: 1024 per dimension / 1 MP. Other layers retain their data. V4 smudged boards cannot open in older versions; export backups before rollback.
-
-Proposed next checkpoint: raster capacity and layer masks. Exact scope remains to be locked. Planning estimate: 6–9 additional focused checkpoints for everyday personal drawing; approximately 12–20 for the full browser vision. Native packaging and proprietary compatibility feasibility are outside these estimates.
-
-The full graph/archive on this repository is older and is not the current canonical baseline. This public update records the verified release only; the current full knowledge graph remains private.
+Repository contains safe project release deltas and this current handover. The full current canonical graph is maintained privately; the older full repository archive is not current. No separate human merge approval or physical tablet validation is claimed.
