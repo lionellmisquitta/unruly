@@ -1,0 +1,24 @@
+change_id: CHG-UNRULY-B03-1010
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - prototypes/browser-workspace/raster.js
+  - prototypes/browser-workspace/smudge.js
+  - prototypes/browser-workspace/smudge-ui.js
+  - prototypes/browser-workspace/model.js
+  - prototypes/browser-workspace/render.js
+  - prototypes/browser-workspace/selection.js
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/sw.js
+regression_obligations:
+  - id: raster-admission-history
+    reason: validate pixels and preserve atomic history, legacy boards and transformed clipboard
+    test_id: smudge-model
+  - id: tablet-persistence-gestures
+    reason: actual pigment change, rollback, exact reload/import, isolated layers and touch arbitration
+    test_id: smudge-browser
+  - id: cumulative-drawing
+    reason: preserve all existing vector, brush, pressure, storage and rendering obligations
+    test_id: cumulative-model

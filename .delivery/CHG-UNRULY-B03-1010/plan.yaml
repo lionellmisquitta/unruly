@@ -1,0 +1,31 @@
+change_id: CHG-UNRULY-B03-1010
+route: standard_change
+prohibited_paths: [src/, native/, .github/workflows/browser-workspace-pages.yml]
+checkpoints:
+  - id: smudge
+    allowed_paths:
+      - prototypes/browser-workspace/raster.js
+      - prototypes/browser-workspace/smudge.js
+      - prototypes/browser-workspace/smudge-ui.js
+      - prototypes/browser-workspace/model.js
+      - prototypes/browser-workspace/render.js
+      - prototypes/browser-workspace/selection.js
+      - prototypes/browser-workspace/app.js
+      - prototypes/browser-workspace/index.html
+      - prototypes/browser-workspace/sw.js
+      - tests/browser-workspace/smudge.model.test.mjs
+      - tests/browser-workspace/smudge.browser.cjs
+      - .github/workflows/browser-workspace.yml
+      - .delivery/CHG-UNRULY-B03-1010/
+    test_paths: [tests/browser-workspace/]
+    tests:
+      - id: smudge-model
+        command: [node, --test, tests/browser-workspace/smudge.model.test.mjs]
+        timeout_seconds: 120
+      - id: smudge-browser
+        command: [node, tests/browser-workspace/smudge.browser.cjs]
+        timeout_seconds: 180
+      - id: cumulative-model
+        command: [node, --test, tests/browser-workspace/model.test.mjs, tests/browser-workspace/selection.test.mjs, tests/browser-workspace/recipe.model.test.mjs]
+        timeout_seconds: 120
+test_config_changes: [.github/workflows/browser-workspace.yml]

@@ -1,0 +1,3 @@
+# Smudge contract
+
+One atomic history command on commit; no commit for taps/zero strength/blank/cancellation. Premultiplied pigment transport between successive dabs; deterministic radial soft/hard, flat and textured footprint weights from shared catalog. Global pressure curve controls smudge strength; local settings are snapshotted at pointerdown. Pen remains primary; one finger only paints when Smudge is selected. Additional touch cancels tentative finger paint before two-finger navigation. Lock/hidden layers reject. Memory/work failures discard the entire gesture. Layer conversion and v4 compatibility warning are shown in the tool popover before use. Paint and Smudge settings are isolated; hold transfers paint preset, width and opacity to smudge.

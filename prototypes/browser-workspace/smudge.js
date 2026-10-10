@@ -1,0 +1,13 @@
+import {getPreset,effectivePreset} from './brushes.js';
+import {rasterLimits,smudgeDab,rasterStroke} from './raster.js';
+import {pressureOpacity} from './pen-input.js';
+export const SMUDGE_PRESETS=Object.freeze([{id:'soft',name:'Soft blend',soft:true},{id:'round',name:'Round drag',soft:false}]);
+export function createSmudgeSession(snapshot,settings,first){
+ if(!snapshot||!snapshot.data||snapshot.width*snapshot.height>rasterLimits.pixels||!Number.isFinite(settings.size)||settings.size<1||settings.size>160||!Number.isFinite(settings.strength)||settings.strength<0||settings.strength>1||!SMUDGE_PRESETS.some(p=>p.id===settings.preset))throw Error('Invalid smudge settings');
+ const selected=settings.brushPreset&&getPreset(settings.brushPreset);if(settings.brushPreset&&!selected)throw Error('Unknown smudge brush');const tip=selected&&effectivePreset({brush:selected.family,preset:selected.id,...(settings.recipe?{recipe:settings.recipe}:{})});
+ const mask=(distance,x,y)=>{let weight=config.preset==='soft'?(1-distance)**2:1;if(!tip)return weight;if(tip.kind==='flat')weight*=Math.abs((y-last.y+snapshot.y)*Math.cos(.35)+(x-last.x+snapshot.x)*Math.sin(.35))<config.size*.18?1:0;if(tip.kind==='pencil'||tip.kind==='mist'){const n=((Math.imul(Math.floor(x)*73856093^Math.floor(y)*19349663,83492791)>>>0)%1000)/1000;weight*=n<(tip.kind==='pencil'?.65:.45)?1:0;}return weight*(tip.coverage??1);};
+ const data=new Uint8ClampedArray(snapshot.data),config=structuredClone(settings),budget={work:0};let last={...first},changed=false,dabs=0;
+ return {advance(point){if(![point.x,point.y].every(Number.isFinite))throw Error('Invalid smudge point');const distance=Math.hypot(point.x-last.x,point.y-last.y),n=Math.max(1,Math.ceil(distance/Math.max(1,config.size*.15)));if(dabs+n>rasterLimits.dabs)throw Error('Smudge dab limit; gesture cancelled');
+ if(point.x<snapshot.x||point.y<snapshot.y||point.x>snapshot.x+snapshot.width||point.y>snapshot.y+snapshot.height)throw Error('Smudge reached the layer edge · use a smaller gesture');
+ for(let j=1;j<=n;j++){const t=j/n,p={x:last.x+(point.x-last.x)*t-snapshot.x,y:last.y+(point.y-last.y)*t-snapshot.y,pressure:last.pressure===null||point.pressure===null?null:last.pressure+(point.pressure-last.pressure)*t},previous={x:last.x+(point.x-last.x)*(j-1)/n-snapshot.x,y:last.y+(point.y-last.y)*(j-1)/n-snapshot.y};changed=smudgeDab(data,snapshot.width,snapshot.height,previous,p,config.size/2,config.strength*pressureOpacity(p.pressure,config.dynamics),mask,budget)||changed;dabs++;}last={...point};return changed;},stroke(){return rasterStroke(data,snapshot.width,snapshot.height,snapshot.x,snapshot.y,snapshot.id);},get changed(){return changed;},get work(){return budget.work;}};
+}
