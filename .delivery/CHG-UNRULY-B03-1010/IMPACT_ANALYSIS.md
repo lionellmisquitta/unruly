@@ -15,3 +15,5 @@ Candidate c18368674653f809dc167dac2cfc91dd54081896: smudge and all other browser
 ## Visual regression correction
 
 The final hard-tip screenshot exposed repeated transparency notches at full strength despite behavioral QA passing. Use premultiplied source-over pigment transfer so smudging does not lift alpha from already opaque pixels; partial erase remains the explicit alpha-removal tool. Add opaque-pigment retention regression SM13 and rerun cumulative Chromium on the revised source.
+
+Minimum-size boundary: document-space radius 0.5 must select the containing pixel on integer paths rather than leaving all pixel centers outside the circle. SM14 and real 0%-size browser movement/undo prove a functioning one-pixel sampler.
