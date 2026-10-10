@@ -1,0 +1,22 @@
+{
+  "checkpoint": "C04-B03",
+  "status": "HOSTED_VERIFIED",
+  "source_commit": "9942d7f57376d2f59929d74018aa7138ce4fd322",
+  "qa_run": 38071117695,
+  "pages_run": 38071676820,
+  "model_tests": 126,
+  "cumulative_browser": "PASSED",
+  "physical_tablet": "NOT_VERIFIED",
+  "live_url": "https://lionellmisquitta.github.io/unruly/",
+  "native_main": "cb1d52089c5cdd159050dc375b92750eb84d8271 unchanged",
+  "independent_human_merge_approval": "NOT_CLAIMED",
+  "self_review": "Executed with actual Chromium artifacts and tablet screenshots; not a separate reviewer session",
+  "limits": {
+    "dimension": 1024,
+    "pixels": 1048576,
+    "dabs": 2048,
+    "pixel_visits": 12000000
+  },
+  "compatibility": "v4 for raster; v3 vectors unchanged; legacy versions cannot open smudged boards",
+  "next_proposed": "raster capacity/layer masks; exact scope not locked"
+}
