@@ -11,3 +11,7 @@ Risks: raster conversion is a visible product tradeoff; physical stylus feel not
 ## Evidence and revision 2
 
 Candidate c18368674653f809dc167dac2cfc91dd54081896: smudge and all other browser suites passed, except UB01 across three layouts, whose undelivered-tool oracle forbids the newly implemented Smudge. Preserve its contextual Transform, target-size and overflow assertions; replace the Smudge prohibition with explicit enabled tool/popover/catalog checks. Smudge browser journeys exercise pigment/history/persistence/gestures independently. Tablet screenshots inspected. Bilinear premultiplied transport and a one-pixel edge feather remove nearest-neighbor hard-tip banding. Shared preset kind mapping, density/grain/spacing and narrower toolbar wrapping refined before release.
+
+## Visual regression correction
+
+The final hard-tip screenshot exposed repeated transparency notches at full strength despite behavioral QA passing. Use premultiplied source-over pigment transfer so smudging does not lift alpha from already opaque pixels; partial erase remains the explicit alpha-removal tool. Add opaque-pigment retention regression SM13 and rerun cumulative Chromium on the revised source.
