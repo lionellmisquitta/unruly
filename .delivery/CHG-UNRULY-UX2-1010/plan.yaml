@@ -1,11 +1,65 @@
+schema_version: '1.0'
 change_id: CHG-UNRULY-UX2-1010
-baseline_commit: 22d43ffe2011870feffbbdfd4ccbeb9b1e7902e0
-publication_target: existing GitHub Pages cumulative preview
-steps:
-- diagnose
-- implement exact lasso and scoped transforms
-- run all model suites and actual Chromium journeys
-- bind evidence to exact source
-- pin verified source to existing Pages
-- refresh private graph and safe public release delta
-no_main_merge: true
+route: standard_change
+prohibited_paths:
+- src/
+- native/
+- .github/workflows/browser-workspace-pages.yml
+checkpoints:
+- id: layer-transforms-performance
+  allowed_paths:
+  - prototypes/browser-workspace/selection.js
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/style.css
+  - prototypes/browser-workspace/sw.js
+  - tests/browser-workspace/u3.browser.cjs
+  - tests/browser-workspace/layer-transform.test.mjs
+  - tests/browser-workspace/layer-transform.browser.cjs
+  - .github/workflows/browser-workspace.yml
+  - tests/browser-workspace/performance.browser.cjs
+  - .delivery/CHG-UNRULY-UX2-1010/
+  test_paths:
+  - tests/browser-workspace/
+  tests:
+  - id: layer-transform-model-and-browser
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/layer-transform.test.mjs
+    timeout_seconds: 120
+  - id: layer-transform-browser
+    command:
+    - node
+    - tests/browser-workspace/layer-transform.browser.cjs
+    timeout_seconds: 180
+  - id: cumulative-model-and-browser
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/airbrush-size.model.test.mjs
+    - tests/browser-workspace/brush-size-percent.model.test.mjs
+    - tests/browser-workspace/c04.model.test.mjs
+    - tests/browser-workspace/curve.model.test.mjs
+    - tests/browser-workspace/g02.fit.model.test.mjs
+    - tests/browser-workspace/g02.model.test.mjs
+    - tests/browser-workspace/layer-transform.test.mjs
+    - tests/browser-workspace/lset.model.test.mjs
+    - tests/browser-workspace/model.test.mjs
+    - tests/browser-workspace/pen.model.test.mjs
+    - tests/browser-workspace/press2.model.test.mjs
+    - tests/browser-workspace/recipe.model.test.mjs
+    - tests/browser-workspace/selection.test.mjs
+    - tests/browser-workspace/smudge.model.test.mjs
+    - tests/browser-workspace/tablet-ux.model.test.mjs
+    - tests/browser-workspace/u1.model.test.mjs
+    - tests/browser-workspace/u2.model.test.mjs
+    - tests/browser-workspace/u3.model.test.mjs
+    timeout_seconds: 120
+  - id: cumulative-performance-browser
+    command:
+    - node
+    - tests/browser-workspace/performance.browser.cjs
+    timeout_seconds: 240
+test_config_changes:
+- .github/workflows/browser-workspace.yml

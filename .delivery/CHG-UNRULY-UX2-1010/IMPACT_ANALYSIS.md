@@ -11,3 +11,5 @@ Two fingers pinch/twist/translate selection preview in Transform mode, with froz
 Declared changed regression: U3B11a now expects preview translation, while retaining viewport immobility, persistence guard and Cancel restoration. All other old regressions remain mandatory. New tests include exact-oracle concavity, 100k points/512-edge polygon, group ownership/pivot, locked atomicity, real Chromium touch cancellation/undo/redo and zero artwork replay during lasso. Physical tablet feel is not verified by Chromium.
 
 No source merge into main. Deploy only this exact tested source to existing Pages pin after full CI and artifact verification. No new site or public private-conversation evidence.
+
+QA run 38076397892 caught an instrumentation signature mismatch in P01-A7. Its route injection now matches scoped selectionBounds; all existing refresh, bounds, coalesced pressure, paint and cancellation assertions remain unchanged. All seven new Chromium journeys and 140 models passed in that run, but it was not deployable. Full cumulative CI must rerun on the updated exact commit.

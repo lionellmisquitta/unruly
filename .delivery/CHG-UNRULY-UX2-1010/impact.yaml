@@ -12,6 +12,7 @@ targets:
 - tests/browser-workspace/layer-transform.test.mjs
 - tests/browser-workspace/layer-transform.browser.cjs
 - .github/workflows/browser-workspace.yml
+- tests/browser-workspace/performance.browser.cjs
 regression_obligations:
 - id: exact-bounded-lasso
   reason: Exact edge truth and original work cap; no unchanged artwork replay
@@ -22,3 +23,7 @@ regression_obligations:
 - id: cumulative-compatibility
   reason: All prior suites including amended stronger U3B11a are required
   test_id: cumulative-model-and-browser
+- id: retained-live-inking-performance
+  reason: Update selectionBounds instrumentation for explicit scope parameter while
+    retaining all P01 live controller counters and assertions
+  test_id: cumulative-performance-browser
