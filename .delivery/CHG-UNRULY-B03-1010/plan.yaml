@@ -11,9 +11,11 @@ checkpoints:
       - prototypes/browser-workspace/render.js
       - prototypes/browser-workspace/selection.js
       - prototypes/browser-workspace/app.js
+      - prototypes/browser-workspace/style.css
       - prototypes/browser-workspace/index.html
       - prototypes/browser-workspace/sw.js
       - tests/browser-workspace/smudge.model.test.mjs
+      - tests/browser-workspace/u1.browser.cjs
       - tests/browser-workspace/smudge.browser.cjs
       - .github/workflows/browser-workspace.yml
       - .delivery/CHG-UNRULY-B03-1010/
