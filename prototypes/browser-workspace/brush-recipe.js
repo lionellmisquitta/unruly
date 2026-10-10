@@ -10,5 +10,5 @@ export function applyRecipe(p,r){
  if(r.density===1&&r.spacing===1&&r.grain===0&&r.tip==='preset')return p;
  const kind=r.tip==='flat'?'flat':r.tip==='round'?'round':p.kind==='continuous'&&r.spacing!==1?'round':p.kind;
  const particles=['pencil','mist'].includes(kind)?Math.max(1,Math.round(p.particles*r.density)):undefined;
- return {...p,kind,...(particles?{particles}:{}),coverage:p.coverage*(particles?1:r.density),stepFactor:(p.stepFactor||.2)*r.spacing};
+ return {...p,kind,particles,coverage:p.coverage*(particles?1:r.density),stepFactor:(p.stepFactor||.2)*r.spacing};
 }
