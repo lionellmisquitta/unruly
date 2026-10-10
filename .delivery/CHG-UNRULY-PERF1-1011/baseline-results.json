@@ -1,0 +1,277 @@
+{
+  "schema": 1,
+  "checkpoint": "CHG-UNRULY-PERF1-1011",
+  "recordedAt": "2026-10-10T23:44:12.451Z",
+  "environment": {
+    "browser": "151.0.7922.34",
+    "node": "v22.23.3",
+    "platform": "linux",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "cpuCount": 4,
+    "runnerRamBytes": 16766414848,
+    "headless": true
+  },
+  "sourceHashes": {
+    "model.js": "de5692b2301e7dc31a402975c6185d0c2aec511ff101f7354d06f75b53b19273",
+    "render.js": "2d18d52d86589bac65e3ab9ab6fb1d0a296165b683c3d3aca256a66cd1d9e506",
+    "selection.js": "541498344ebef1ffe220bd33815fe9060c08b19a5e3372ff7ea78bba03ca8a52",
+    "storage.js": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+    "raster.js": "749d832b343c1353fff11c364db1deee2944660dd31d8e732e675a0dbbc21ba2",
+    "app.js": "4c0232a3260d978e2bac5e40f6fe2e5069c133d568f2b9e40ea9d23530d80628"
+  },
+  "physicalTablet": "NOT_VERIFIED",
+  "totalBrowserGpuRam": "NOT_MEASURED",
+  "timings": "Descriptive runner timings; correctness PASS does not establish acceptable tablet latency. Pixel readback is excluded from render timings.",
+  "results": [
+    {
+      "id": "PERF1-small-top",
+      "status": "PASS",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dpr": 1,
+      "metrics": {
+        "layers": 30,
+        "strokes": 240,
+        "points": 2880,
+        "documentBytes": 168173,
+        "rasterPixelBytes": 0,
+        "rendererBackingBytes": 15728640,
+        "coldRenderMs": 426.70000000001164,
+        "warmRenderMs": {
+          "samples": 8,
+          "p50": 0.6000000000349246,
+          "p95": 0.8999999999650754,
+          "max": 0.8999999999650754
+        },
+        "mode": "retained-hit",
+        "replayedCompletedStrokesPerWarmFrame": 0,
+        "validationMs": 1.6000000000349246,
+        "addStrokeMs": 6.899999999965075,
+        "undoMs": 4.400000000023283,
+        "redoMs": 4.400000000023283,
+        "historyBytes": 168173,
+        "lassoMs": 2.3999999999650754,
+        "lassoComparisons": 720,
+        "transformMs": 8.299999999988358,
+        "exactReferencePixels": true
+      }
+    },
+    {
+      "id": "PERF1-small-below",
+      "status": "PASS",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dpr": 1,
+      "metrics": {
+        "layers": 30,
+        "strokes": 240,
+        "points": 2880,
+        "documentBytes": 168171,
+        "rasterPixelBytes": 0,
+        "rendererBackingBytes": 15728640,
+        "coldRenderMs": 390.5,
+        "warmRenderMs": {
+          "samples": 8,
+          "p50": 384.20000000001164,
+          "p95": 385.5999999999767,
+          "max": 385.5999999999767
+        },
+        "mode": "reference",
+        "replayedCompletedStrokesPerWarmFrame": 240,
+        "validationMs": 1.8000000000465661,
+        "addStrokeMs": 5.7000000000116415,
+        "undoMs": 3.7999999999883585,
+        "redoMs": 4.100000000034925,
+        "historyBytes": 168171,
+        "lassoMs": 2.2000000000116415,
+        "lassoComparisons": 720,
+        "transformMs": 7.899999999965075,
+        "exactReferencePixels": true
+      }
+    },
+    {
+      "id": "PERF1-dense-top",
+      "status": "PASS",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dpr": 1,
+      "metrics": {
+        "layers": 32,
+        "strokes": 800,
+        "points": 96000,
+        "documentBytes": 4817981,
+        "rasterPixelBytes": 0,
+        "rendererBackingBytes": 15728640,
+        "coldRenderMs": 1335.2999999999884,
+        "warmRenderMs": {
+          "samples": 8,
+          "p50": 0.5999999999767169,
+          "p95": 0.7000000000116415,
+          "max": 0.7000000000116415
+        },
+        "mode": "retained-hit",
+        "replayedCompletedStrokesPerWarmFrame": 0,
+        "validationMs": 23.600000000034925,
+        "addStrokeMs": 134.20000000001164,
+        "undoMs": 95.20000000001164,
+        "redoMs": 132.40000000002328,
+        "historyBytes": 4817981,
+        "lassoMs": 32.09999999997672,
+        "lassoComparisons": 2400,
+        "transformMs": 161.60000000003492,
+        "exactReferencePixels": true
+      }
+    },
+    {
+      "id": "PERF1-dense-below",
+      "status": "PASS",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dpr": 1,
+      "metrics": {
+        "layers": 32,
+        "strokes": 800,
+        "points": 96000,
+        "documentBytes": 4817979,
+        "rasterPixelBytes": 0,
+        "rendererBackingBytes": 15728640,
+        "coldRenderMs": 1344.9000000000233,
+        "warmRenderMs": {
+          "samples": 8,
+          "p50": 1331,
+          "p95": 1349.4000000000233,
+          "max": 1349.4000000000233
+        },
+        "mode": "reference",
+        "replayedCompletedStrokesPerWarmFrame": 800,
+        "validationMs": 23.899999999965075,
+        "addStrokeMs": 157.20000000001164,
+        "undoMs": 91.19999999995343,
+        "redoMs": 98.70000000001164,
+        "historyBytes": 4817979,
+        "lassoMs": 35.09999999997672,
+        "lassoComparisons": 2400,
+        "transformMs": 177.20000000001164,
+        "exactReferencePixels": true
+      }
+    },
+    {
+      "id": "PERF1-mixed-portrait",
+      "status": "PASS",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "dpr": 2,
+      "metrics": {
+        "layers": 30,
+        "strokes": 250,
+        "points": 2930,
+        "documentBytes": 294448,
+        "rasterPixelBytes": 92160,
+        "rendererBackingBytes": 62914560,
+        "coldRenderMs": 715.7000000000116,
+        "warmRenderMs": {
+          "samples": 8,
+          "p50": 2.5,
+          "p95": 2.8999999999650754,
+          "max": 2.8999999999650754
+        },
+        "mode": "retained-hit",
+        "replayedCompletedStrokesPerWarmFrame": 0,
+        "validationMs": 2.5,
+        "addStrokeMs": 7.300000000046566,
+        "undoMs": 5.5,
+        "redoMs": 5.5,
+        "historyBytes": 294448,
+        "lassoMs": 2.900000000023283,
+        "lassoComparisons": 750,
+        "transformMs": 13,
+        "exactReferencePixels": true
+      }
+    },
+    {
+      "id": "PERF1-mixed-below",
+      "status": "PASS",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dpr": 2,
+      "metrics": {
+        "layers": 30,
+        "strokes": 250,
+        "points": 2930,
+        "documentBytes": 294446,
+        "rasterPixelBytes": 92160,
+        "rendererBackingBytes": 62914560,
+        "coldRenderMs": 706.7999999999884,
+        "warmRenderMs": {
+          "samples": 8,
+          "p50": 708,
+          "p95": 712,
+          "max": 712
+        },
+        "mode": "reference",
+        "replayedCompletedStrokesPerWarmFrame": 250,
+        "validationMs": 4.5,
+        "addStrokeMs": 7.100000000034925,
+        "undoMs": 5.5,
+        "redoMs": 5.399999999965075,
+        "historyBytes": 294446,
+        "lassoMs": 3,
+        "lassoComparisons": 750,
+        "transformMs": 11.899999999965075,
+        "exactReferencePixels": true
+      }
+    },
+    {
+      "id": "PERF1-capacity",
+      "status": "PASS",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dpr": 1,
+      "metrics": {
+        "supportedLayerCap": 32,
+        "targetLayers": 50,
+        "targetStatus": "BLOCKED_BY_CURRENT_DOCUMENT_CAP",
+        "foldersMasksPatterns": "NOT_IMPLEMENTED"
+      }
+    },
+    {
+      "id": "PERF1-ui-save-lasso",
+      "status": "PASS",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "dpr": 1,
+      "metrics": {
+        "layers": 30,
+        "mixedRasterVector": true,
+        "activeLayerBelowOutlines": true,
+        "penSaveUndoRedoReload": true,
+        "shapeAssistActivatedDuringSlowDrawing": true,
+        "artworkReplaysDuringLasso": 0,
+        "postDispatchNextRafMs": {
+          "samples": 10,
+          "p50": 0.09999999997671694,
+          "p95": 357,
+          "max": 357
+        },
+        "measurementNote": "Post-dispatch next-rAF wait excludes driver/pen/display latency and may include scheduling noise. Slow drawing may activate the hold-to-shape draft; if so its unchanged document and explicit Apply are verified."
+      }
+    }
+  ]
+}
