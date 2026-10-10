@@ -1,8 +1,8 @@
-# C04-B03 final candidate includes versioned bounded delivery handoff.
+# Tablet UX checkpoint: additive shape, picker and touch-transform coverage.
 name: Quarantined browser foundation QA
 on:
   push:
-    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07', 'preview/pen-input-p1-2026-10-07', 'preview/pressure-curve-c1-2026-10-07', 'preview/layer-pen-settings-l1-2026-10-08', 'work/erase1-intersection-limit-2026-10-08', 'preview/cumulative-erase1-press2-2026-10-09', 'work/g02-held-history-2026-10-09', 'work/g02-view-fit-2026-10-09', 'work/c04-pencil-grain-2026-10-09', 'work/ui-fullscreen-toggle-2026-10-09', 'work/airbrush-size-panel-2026-10-09', 'work/brush-size-percent-2026-10-10', 'CHG-UNRULY-SIZE-1010/percent-contract', 'CHG-UNRULY-CUMULATIVE-1010/brush-comparison', 'CHG-UNRULY-B02-1010/advanced-brush-controls', 'CHG-UNRULY-B03-1010/smudge']
+    branches: ['preview/drawing-workspace-2026-10-04', 'preview/vector-selection-2026-10-06', 'preview/performance-foundation-2026-10-06', 'preview/drawing-ux-u1-2026-10-06', 'preview/drawing-ux-u2-2026-10-06', 'preview/drawing-ux-u3-2026-10-07', 'preview/pen-input-p1-2026-10-07', 'preview/pressure-curve-c1-2026-10-07', 'preview/layer-pen-settings-l1-2026-10-08', 'work/erase1-intersection-limit-2026-10-08', 'preview/cumulative-erase1-press2-2026-10-09', 'work/g02-held-history-2026-10-09', 'work/g02-view-fit-2026-10-09', 'work/c04-pencil-grain-2026-10-09', 'work/ui-fullscreen-toggle-2026-10-09', 'work/airbrush-size-panel-2026-10-09', 'work/brush-size-percent-2026-10-10', 'CHG-UNRULY-SIZE-1010/percent-contract', 'CHG-UNRULY-CUMULATIVE-1010/brush-comparison', 'CHG-UNRULY-B02-1010/advanced-brush-controls', 'CHG-UNRULY-B03-1010/smudge', 'CHG-UNRULY-UX1-1010/tablet-gestures']
     paths:
       - 'prototypes/browser-workspace/**'
       - 'tests/browser-workspace/**'
@@ -32,7 +32,7 @@ jobs:
           qa_result_code=0
           mkdir -p tests/browser-workspace/evidence
           node --version > tests/browser-workspace/evidence/node-version.txt
-          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs tests/browser-workspace/press2.model.test.mjs tests/browser-workspace/g02.model.test.mjs tests/browser-workspace/g02.fit.model.test.mjs tests/browser-workspace/c04.model.test.mjs tests/browser-workspace/airbrush-size.model.test.mjs tests/browser-workspace/brush-size-percent.model.test.mjs tests/browser-workspace/recipe.model.test.mjs tests/browser-workspace/smudge.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
+          node --test tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs tests/browser-workspace/press2.model.test.mjs tests/browser-workspace/g02.model.test.mjs tests/browser-workspace/g02.fit.model.test.mjs tests/browser-workspace/c04.model.test.mjs tests/browser-workspace/airbrush-size.model.test.mjs tests/browser-workspace/brush-size-percent.model.test.mjs tests/browser-workspace/recipe.model.test.mjs tests/browser-workspace/smudge.model.test.mjs tests/browser-workspace/tablet-ux.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/server.log 2>&1 &
           qa_server_pid=$!
           trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
@@ -72,6 +72,7 @@ jobs:
           node tests/browser-workspace/compare.browser.cjs > tests/browser-workspace/evidence/compare-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/recipe.browser.cjs > tests/browser-workspace/evidence/recipe-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/recipe-browser-output.txt; qa_result_code=1; }
           node tests/browser-workspace/smudge.browser.cjs > tests/browser-workspace/evidence/smudge-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/smudge-browser-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/tablet-ux.browser.cjs > tests/browser-workspace/evidence/tablet-ux-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/tablet-ux-browser-output.txt; qa_result_code=1; }
           exit "$qa_result_code"
       - name: Bind tested identities
         if: always()

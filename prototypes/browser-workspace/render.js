@@ -129,6 +129,10 @@ export function createRenderer(canvas){
   scratchSize(width,height);
   const sc=clear(scratch),lc=clear(layer);sc.setTransform(Math.min(1,width/180),0,0,1,0,0);drawStroke(sc,stroke);lc.fillStyle='#f4f3ef';lc.fillRect(0,0,width,height);lc.globalAlpha=stroke.opacity;lc.drawImage(scratch,0,0);return layer.toDataURL();
  }
+ function magnify(p){
+  invalidate();scratch.width=1;scratch.height=1;scratch.width=128;scratch.height=128;const c=clear(scratch),rect=canvas.getBoundingClientRect(),dx=canvas.width/Math.max(1,rect.width),dy=canvas.height/Math.max(1,rect.height),x=Math.max(0,Math.min(canvas.width-1,Math.floor(p.x*dx)))+.5,y=Math.max(0,Math.min(canvas.height-1,Math.floor(p.y*dy)))+.5;
+  c.fillStyle='#faf8f3';c.fillRect(0,0,128,128);c.imageSmoothingEnabled=false;c.drawImage(canvas,x-64/6,y-64/6,128/6,128/6,0,0,128,128);return scratch.toDataURL();
+ }
  function snapshotLayer(l,size,first){
   invalidate();if(!l.strokes.some(s=>s.opacity>0))return null;
   let x0=first.x,y0=first.y,x1=first.x,y1=first.y;
@@ -137,5 +141,5 @@ export function createRenderer(canvas){
   if(width>rasterLimits.dimension||height>rasterLimits.dimension||width*height>rasterLimits.pixels)throw Error('Smudge layer exceeds 1024 × 1024 document pixels · use a smaller layer');
   scratchSize(width,height);replayLayer(l,{x:-x0,y:-y0,scale:1},{d:1,w:width,h:height});const data=layer.getContext('2d').getImageData(0,0,width,height).data;return {data,width,height,x:x0,y:y0,id:crypto.randomUUID()};
  }
- return {render,renderReference,preview,thumbnail,snapshotLayer,invalidate,surfaces};
+ return {magnify,render,renderReference,preview,thumbnail,snapshotLayer,invalidate,surfaces};
 }
