@@ -1,0 +1,56 @@
+{
+  "format": "UNRULY_GRAPH_DELTA",
+  "delta_id": "unruly-delta-20261010-handover-reconciled",
+  "recorded_at": "2026-10-10",
+  "base_revision": "unruly-kgp-20261008T102809Z",
+  "classification": "append_only_release_evidence",
+  "latest": {
+    "source": "e0c98dc2ff1ca08d03feefce982e77283d70495c",
+    "branch": "CHG-UNRULY-CUMULATIVE-1010/brush-comparison",
+    "ci_run": 38030638512,
+    "ci": "success",
+    "pages_run": 38031010653,
+    "pages": "success",
+    "url": "https://lionellmisquitta.github.io/unruly/"
+  },
+  "superseded_failure": {
+    "branch": "work/brush-size-percent-2026-10-09",
+    "run": 37947624527,
+    "conclusion": "failure",
+    "reason": "PENB02 legacy expected width, later corrected in verified cumulative source"
+  },
+  "decisions": [
+    {
+      "id": "GDEC-CANVAS-ROTATION-DEFER",
+      "status": "human_confirmed",
+      "value": "Defer whole canvas rotation until final polish; preserve object rotation"
+    },
+    {
+      "id": "GDEC-SIZE-PERCENT",
+      "status": "implemented_verified",
+      "value": "0-100% nonlinear brush-size UI, preserving stored document-space widths"
+    },
+    {
+      "id": "GDEC-SINGLE-CUMULATIVE-PREVIEW",
+      "status": "human_confirmed",
+      "value": "All future changes on one cumulative GitHub Pages product"
+    },
+    {
+      "id": "GDEC-HIDE-SCROLLBARS",
+      "status": "implemented_verified",
+      "value": "Keep sidebar scroll behavior while hiding scrollbar chrome"
+    }
+  ],
+  "pending": [
+    "C04 grain density and spacing controls",
+    "C04 smudge and new textured tips",
+    "physical tablet pressure palm and feel acceptance",
+    "full KG archive revision update (current tracked canonical Oct 8)"
+  ],
+  "trust": "GitHub source and CI evidence verified; physical user acceptance not verified",
+  "previous_deltas": [
+    "2026-10-10-delivery-and-size-percent.json",
+    "2026-10-10-size-percent-verified-release.json",
+    "2026-10-10-cumulative-brush-comparison.json"
+  ]
+}
