@@ -1,0 +1,20 @@
+{
+  "format": "UNRULY_RELEASE_DELTA",
+  "checkpoint": "Cumulative brush comparison",
+  "source_commit": "e0c98dc2ff1ca08d03feefce982e77283d70495c",
+  "source_branch": "CHG-UNRULY-CUMULATIVE-1010/brush-comparison",
+  "qa": {
+    "run": 38030638512,
+    "conclusion": "success"
+  },
+  "pages": {
+    "run": 38031010653,
+    "conclusion": "success",
+    "hosted_bytes": "matched tested application source",
+    "url": "https://lionellmisquitta.github.io/unruly/"
+  },
+  "delivery_policy": "One cumulative product; subsequent increments update this existing URL. Comparison belongs inside the Brush Library.",
+  "native_main": "cb1d52089c5cdd159050dc375b92750eb84d8271 unchanged",
+  "hardware_feel": "NOT_VERIFIED",
+  "full_knowledge_archive": "Private; repository retains historical canonical archive and public release deltas."
+}
