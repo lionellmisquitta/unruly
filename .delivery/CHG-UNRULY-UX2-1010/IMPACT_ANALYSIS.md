@@ -13,3 +13,5 @@ Declared changed regression: U3B11a now expects preview translation, while retai
 No source merge into main. Deploy only this exact tested source to existing Pages pin after full CI and artifact verification. No new site or public private-conversation evidence.
 
 QA run 38076397892 caught an instrumentation signature mismatch in P01-A7. Its route injection now matches scoped selectionBounds; all existing refresh, bounds, coalesced pressure, paint and cancellation assertions remain unchanged. All seven new Chromium journeys and 140 models passed in that run, but it was not deployable. Full cumulative CI must rerun on the updated exact commit.
+
+Screenshot review caught the new layer inclusion control creating an implicit second grid row. Explicit six-column layout now retains 44px hit targets and keeps layer actions in one row. Finger-pivot fixture now centres its 90-degree group transform in the visible workspace for meaningful final screenshots.
