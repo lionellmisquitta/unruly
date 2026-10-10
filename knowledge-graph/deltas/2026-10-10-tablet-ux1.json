@@ -1,0 +1,24 @@
+{
+  "checkpoint": "Tablet UX1",
+  "status": "HOSTED_VERIFIED",
+  "source_commit": "22d43ffe2011870feffbbdfd4ccbeb9b1e7902e0",
+  "qa_run": 38073524003,
+  "pages_run": 38074115756,
+  "model_tests": 133,
+  "cumulative_browser": "PASSED",
+  "physical_tablet": "NOT_VERIFIED",
+  "live_url": "https://lionellmisquitta.github.io/unruly/",
+  "native_main": "cb1d52089c5cdd159050dc375b92750eb84d8271 unchanged",
+  "review": "self-review with actual Chromium artifacts; separate human approval not claimed",
+  "capabilities": [
+    "held line/curve/circle/ellipse/rectangle recognition",
+    "immediate finger shape constraints",
+    "held drag-to-scale anchored at pen endpoint",
+    "magnified exact touch colour sampling",
+    "visible selection Transform / rotate and 44px handles"
+  ],
+  "persisted_schema": "unchanged; shape geometry is pressure-bearing stroke points",
+  "renderer_surfaces": 5,
+  "whole_canvas_rotation": "deferred",
+  "next_proposed": "raster capacity/layer masks; exact scope not locked"
+}
