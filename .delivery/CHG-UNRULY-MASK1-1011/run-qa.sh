@@ -65,4 +65,5 @@ node tests/browser-workspace/history-cache.browser.cjs > tests/browser-workspace
 node tests/browser-workspace/layer-compositor.browser.cjs > tests/browser-workspace/evidence/layer-compositor-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layer-compositor-output.txt; qa_result_code=1; }
 node tests/browser-workspace/pixel-paint.browser.cjs > tests/browser-workspace/evidence/pixel-paint-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/pixel-paint-output.txt; qa_result_code=1; }
 node tests/browser-workspace/folders.browser.cjs > tests/browser-workspace/evidence/folders-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/folders-output.txt; qa_result_code=1; }
+node tests/browser-workspace/masks.browser.cjs > tests/browser-workspace/evidence/masks-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/masks-output.txt; qa_result_code=1; }
 exit "$qa_result_code"
