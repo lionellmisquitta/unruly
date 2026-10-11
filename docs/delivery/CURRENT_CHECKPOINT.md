@@ -2,7 +2,7 @@
 
 Verified app source `809602e23b1f575b7e3ebc33d8c6deac85c756f5`; [CI38154948945](https://github.com/lionellmisquitta/unruly/actions/runs/38154948945) SUCCESS: **220 models /216 Chromium scenarios /95 source-test-config hashes**. Read `.delivery/CHG-UNRULY-CLIP1-1011/QA_REPORT.md` and `PUBLICATION_RECEIPT.json`. Documentation closeout is not a newly tested app build.
 
-Published to the same [UNRULY page](https://lionellmisquitta.github.io/unruly/): Pages38155923420 SUCCESS; all35 hosted assets match reviewed bytes. Preview pin `ba22c4191541969fbba4a61a3ba90888adee1f76`. Native main `cb1d52089c5cdd159050dc375b92750eb84d8271` unchanged.
+Published to the same [UNRULY page](https://lionellmisquitta.github.io/unruly/): Pages38155923420 SUCCESS; all35 hosted assets match reviewed bytes. Preview pin `ba22c4191541969fbba4a61a3ba90888adee1f76`. Original native main `cb1d52089c5cdd159050dc375b92750eb84d8271` is preserved at `archive/native-main-2026-10-11`. User explicitly authorized promotion of the cumulative browser branch into `main` on2026-10-11; main is now the browser integration baseline. CLIP1 evidence below describes the original checkpoint publication.
 
 Layers → row menu → Alpha lock or Clip to. Clipping references a lower leaf or nonempty folder and multiplies displayed destination alpha by source alpha (including source masks, clipping, visibility and opacity), before destination opacity/blend. Artwork stays editable; None unclips. Delete/reorder/ungroup that would invalidate a reference rejects atomically; unclip first. Import remaps references; Undo/Redo, reload and offline persistence verified. Thumbnails, selection/clipboard and painting read original artwork.
 
@@ -13,3 +13,5 @@ These flags introduce v7; v1-v6 readers remain and mask addition preserves7. Exp
 Next **text and fonts**, then image/reference/pattern imports, magic wand and precision selection before bucket/gap-aware/lasso/enclose fills, then adjustments. Whole-canvas rotation, GPU/Rust/OPFS and proprietary brush import remain deferred/investigation.
 
 Knowledge graph **unchanged**, revision `unruly-kgp-20261011T133431Z`. **Build3 since refresh**. Wait4–5 builds, then ask and receive explicit permission before any graph update/regeneration. Routine continuation uses this brief, DECISIONS.md and relevant code/tests.
+
+Branch policy: feature branches start from current `main`; merge verified cumulative changes there. Main browser QA triggers on application/test/QA-workflow changes. Main publication workflow pins the exact reviewed candidate, retains the existing URL and compares every hosted asset. Native-main protection wording in historical evidence is superseded by this explicit user decision. No application/test bytes changed for promotion; graph unchanged; build count remains3.

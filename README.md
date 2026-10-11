@@ -2,20 +2,16 @@
 
 Ideas don’t stay in lines.
 
-A browser-first, MIT-licensed personal drawing and infinite whiteboard project. Open the reviewed preview at https://lionellmisquitta.github.io/unruly/. Drawing and local board storage need no account; offline use is available after caching finishes. Optional desktop/APK enhancements remain later work.
+UNRULY is a browser-first drawing and infinite whiteboard application. **`main` is the authoritative cumulative browser product branch.** Use the existing [UNRULY page](https://lionellmisquitta.github.io/unruly/); drawing and local board storage need no account, and offline use is available after caching finishes.
 
-## Current preview
+## Current product
 
-Paper backgrounds, Ink/Pencil/Marker/Airbrush, colour/size/opacity controls, layers, three vector eraser modes, undo/redo and local JSON boards are in the reviewed workspace. The live reviewed preview also includes vector lasso, move and page-session copy/cut/paste/delete. See the current feature record for exact source and QA identities. The performance foundation adds retained live ink on the top visible layer, a bounded backing-memory budget and measured renderer regression. Device pen feel still requires human testing.
+Pressure-aware vector brushes, global/per-brush pressure curves,0–100 size controls, brush comparison/recipes, raster round/soft painting and smudge, lasso and layer transforms, layer folders/blending, leaf masks, clipping to lower layers/folders and alpha lock are implemented. See [CURRENT_CHECKPOINT.md](docs/delivery/CURRENT_CHECKPOINT.md) for the exact tested source, limits and publication evidence. Physical tablet feel and50-layer workflows remain unverified; the current drawing-layer cap is32.
 
-## Continue browser delivery
+## Continue development
 
-- [Current performance checkpoint](docs/delivery/PERFORMANCE_PUBLIC_STATE.md) and [version history](docs/delivery/VERSION_HISTORY.md): exact tested source, development notes, QA and publication status.
-- [Current vector-selection state](docs/delivery/SELECTION_PUBLIC_STATE.md): exact tested source, QA evidence, publication status and next action.
-- [Independent QA](docs/delivery/SELECTION_QA_REPORT.md) and [Gatekeeper disposition](docs/delivery/SELECTION_FINAL_GATEKEEPER.md).
-- [Combined tablet test card](docs/delivery/COMBINED_TABLET_TEST_CARD.md).
-- [Browser execution plan](docs/delivery/BROWSER_EXECUTION_PLAN.md): planned product checkpoints; advanced raster brushes, masks, fill, smudge, text/images, sync and AI remain later work.
+Read [CURRENT_CHECKPOINT.md](docs/delivery/CURRENT_CHECKPOINT.md) and [DECISIONS.md](docs/delivery/DECISIONS.md), then affected code/tests. Create bounded feature branches from current `main`, retain cumulative regression coverage, verify before merging, and publish only exact green candidate commits through `.github/workflows/browser-workspace-pages.yml` on `main`. Deployment remains pinned to a reviewed source SHA; a main push does not publish arbitrary untested application code. The same public page remains the only cumulative preview.
 
-Historical native preparation and requirements records remain preserved. They describe earlier phases; use the feature-specific continuation record for the current browser preview. Full product release, main merge and full checkpoint closure remain unauthorized until their evidence is accepted.
+Next text/fonts, then image/reference/pattern imports. Magic wand and precision selection precede bucket/gap-aware/lasso/enclosure fills. Whole-canvas rotation remains deferred. Native history is preserved at `archive/native-main-2026-10-11`; native files retained for history are not the current product. Main promotion was explicitly authorized2026-10-11 and supersedes the earlier instruction to keep native main unchanged.
 
-Build bounded slices, retain regressions, run independent QA, document exact evidence and obtain Gatekeeper review before publishing an immutable candidate. Human drawing-feel checks happen in batches. Never label planned features or unexecuted tests as verified.
+**Do not update/regenerate the knowledge graph without explicit user permission.** Routine builds update compact checkpoint/decision notes. Wait4–5 builds before proposing a refresh; permission is still required. Branch promotion is not another feature checkpoint.
