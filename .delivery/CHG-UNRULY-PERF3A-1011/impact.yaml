@@ -1,0 +1,22 @@
+change_id: CHG-UNRULY-PERF3A-1011
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/raster.js
+- prototypes/browser-workspace/raster-tiles.js
+- prototypes/browser-workspace/model.js
+- prototypes/browser-workspace/sw.js
+regression_obligations:
+- id: sparse-lossless-admission
+  reason: Bounded canonical tile payloads preserve dimensions, hidden RGB and legacy input
+  test_id: sparse-model
+- id: raster-erase-history
+  reason: Sparse writes, transforms and erase remain atomic and undo restores exact original
+  test_id: sparse-model
+- id: reference-pixels-storage-offline
+  reason: Existing renderer must receive identical dense pixels and saved versions remain recoverable
+  test_id: sparse-browser
+- id: cumulative-product
+  reason: Existing tablet gestures, presets, document migration and performance baselines remain mandatory
+  test_id: cumulative-qa

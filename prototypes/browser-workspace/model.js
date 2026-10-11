@@ -1,4 +1,4 @@
-import {validateRaster,decodePixels,encodePixels,sampleTransform} from './raster.js';
+import {validateRaster,decodePixels,rasterPayload,sampleTransform} from './raster.js';
 import {validateRecipe} from './brush-recipe.js';
 import {validateDynamics} from './pen-input.js';
 import {getPreset,presetCompatible,replayWork} from './brushes.js';
@@ -85,7 +85,7 @@ export function eraseGesture(board,mode,sweeps,radius,options={}){
  const paths=sweeps.map(q=>({a:q.a,b:q.b}));for(const q of paths)for(const p of [q.a,q.b])if(!p||!num(p.x,-1e7,1e7)||!num(p.y,-1e7,1e7))fail('Invalid sweep');
  const original=layer.strokes;const bounds=new Map(original.map(o=>{let left=Infinity,right=-Infinity,top=Infinity,bottom=-Infinity;for(const p of o.points){left=Math.min(left,p.x);right=Math.max(right,p.x);top=Math.min(top,p.y);bottom=Math.max(bottom,p.y);}return [o.id,{left,right,top,bottom}];}));let changed=false;
  layer.strokes=original.flatMap(s=>{
- if(s.brush==='raster'){if(mode==='intersection')fail('Intersection eraser is for vector strokes; choose Partial or Whole for raster content');const r=s.raster,data=decodePixels(r.data);let hit=false;for(let y=0;y<r.height;y++)for(let x=0;x<r.width;x++){const i=(y*r.width+x)*4;if(!data[i+3])continue;const [a,b,c,d,e,f]=r.transform,p={x:a*(x+.5)+c*(y+.5)+e,y:b*(x+.5)+d*(y+.5)+f};if(paths.some(sw=>{check();return segmentDistance(p,sw.a,sw.b)<=radius;})){hit=true;if(mode==='whole')break;data.fill(0,i,i+4);}}if(!hit)return [s];changed=true;if(mode==='whole')return [];return [{...s,raster:{...r,data:encodePixels(data)}}];}
+ if(s.brush==='raster'){if(mode==='intersection')fail('Intersection eraser is for vector strokes; choose Partial or Whole for raster content');const r=s.raster,data=decodePixels(r.data);let hit=false;for(let y=0;y<r.height;y++)for(let x=0;x<r.width;x++){const i=(y*r.width+x)*4;if(!data[i+3])continue;const [a,b,c,d,e,f]=r.transform,p={x:a*(x+.5)+c*(y+.5)+e,y:b*(x+.5)+d*(y+.5)+f};if(paths.some(sw=>{check();return segmentDistance(p,sw.a,sw.b)<=radius;})){hit=true;if(mode==='whole')break;data.fill(0,i,i+4);}}if(!hit)return [s];changed=true;if(mode==='whole')return [];return [{...s,raster:{...r,...rasterPayload(data,r.width,r.height)}}];}
  const pts=s.points,ls=lengths(pts),total=ls.at(-1),rr=radius+s.size/2;let hit=false,hitAt=[];
  for(const sw of paths){let best=Infinity,at=0;if(pts.length===1){check();best=segmentDistance(pts[0],sw.a,sw.b);}else for(let i=1;i<pts.length;i++){check();const dd=segDistance(pts[i-1],pts[i],sw.a,sw.b);if(dd<best){best=dd;const a=pts[i-1],z=pts[i],dx=z.x-a.x,dy=z.y-a.y,t=Math.max(0,Math.min(1,((sw.b.x-a.x)*dx+(sw.b.y-a.y)*dy)/(dx*dx+dy*dy||1)));at=ls[i-1]+t*(ls[i]-ls[i-1]);}}if(best<=rr){hit=true;hitAt.push(at);}}
  if(!hit)return [s];changed=true;if(mode==='whole'||pts.length===1||total===0)return [];
