@@ -101,6 +101,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
      live:s=>strokeToLayer(s,view,g),composite:l=>composite(canvas,l),layer:()=>layer,
      restoreUpper:entry=>{const ctx=clear(layer);if(entry)ctx.drawImage(entry.canvas,entry.x,entry.y);}
     }});
+    if(scratch.width!==g.w||scratch.height!==g.h){scratch.width=1;scratch.height=1;scratch.width=g.w;scratch.height=g.h;}
     return {...metrics(t,g,result.mode,result.count),layerCacheApplied:result.layerCacheApplied,layerCacheBytes:result.layerCacheBytes,totalBackingBytes:result.totalBackingBytes};
    }catch(error){invalidate();/* Re-run accepted replay on cache/allocation/readback failure. */}
   }else layerCompositor?.clear();
