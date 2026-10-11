@@ -1,4 +1,8 @@
-# Current checkpoint — PERF4 completed
+# Current checkpoint — PAINT1 in progress
+
+Combined raster painting and growing native smudge authorized. Source/CI/Pages pending; live page still verified PERF4. See .delivery/CHG-UNRULY-PAINT1-1011/IMPACT_ANALYSIS.md and plan.yaml. Main unchanged. Knowledge graph unchanged; do not refresh without explicit confirmation.
+
+# Prior verified checkpoint — PERF4 completed
 
 Verified app source `293b605817adab5328ccc8717c4431a90367593a`; [CI38136342498](https://github.com/lionellmisquitta/unruly/actions/runs/38136342498) SUCCESS:176 models /182 structured browser scenarios,82 source/test/config hashes. Read DECISIONS.md and .delivery/CHG-UNRULY-PERF4-1011/QA_REPORT.md plus PUBLICATION_RECEIPT.json.
 
