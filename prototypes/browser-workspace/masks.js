@@ -33,12 +33,7 @@ export function applyLayerMask(l,layer,scratch,v,g,decode){
   // Reuse the existing scratch surface; no extra viewport allocation.
   scratch.width=1;scratch.height=1;scratch.width=r.width;scratch.height=r.height;
   const sc=scratch.getContext('2d');sc.putImageData(new ImageData(decode(r.data),r.width,r.height),0,0);
-  if(m.inverted){
-   const x=g.d*(v.x+r.transform[4]*v.scale),y=g.d*(v.y+r.transform[5]*v.scale),w=g.d*v.scale*r.width,h=g.d*v.scale*r.height;
-   lc.clearRect(0,0,layer.width,Math.max(0,y));lc.clearRect(0,y+h,layer.width,Math.max(0,layer.height-y-h));
-   lc.clearRect(0,y,Math.max(0,x),h);lc.clearRect(x+w,y,Math.max(0,layer.width-x-w),h);
-   lc.beginPath();lc.rect(x,y,w,h);lc.clip();lc.globalCompositeOperation='destination-in';
-  }else lc.globalCompositeOperation='destination-out';
+  lc.globalCompositeOperation=m.inverted?'destination-in':'destination-out';
   lc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);lc.transform(...r.transform);lc.drawImage(scratch,0,0);
  }finally{lc.restore();}
 }
