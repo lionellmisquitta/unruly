@@ -6,7 +6,7 @@ Recorded 2026-10-11 (Asia/Kolkata). Approved direction; implementation status is
 | --- | --- | --- |
 | D-P01 | Keep one cumulative application and the existing preview. Preserve native main and existing saved artwork. Incremental engine changes avoid discarding accepted behaviour. | Binding |
 | D-P02 | Benchmark populated 30–50-layer artist workflows before expanding capacity. Current application cap is 32; 50 is a target, not supported today. | Binding; baseline next |
-| D-P03 | Separate document operations from rendering before replacing rendering internals. Keep a pixel reference path and compatibility tests. | Approved direction; unimplemented |
+| D-P03 | Separate document operations from rendering before replacing rendering internals. Keep a pixel reference path and compatibility tests. | Renderer boundary implemented (PERF2); backend replacement pending |
 | D-P04 | Use sparse raster tiles, bounded residency/cache and changed-region undo. Small detail layers should store occupied areas and extend while painting. Neighbouring pixels are required for brush/filter boundaries; fills may travel offscreen. | Approved direction; design pending |
 | D-P05 | Investigate GPU compositing with fallback. Rust/WASM is an option for measured CPU bottlenecks, not a wholesale rewrite or automatic GPU acceleration. | Approved direction; unimplemented |
 | D-P06 | Preserve editable layers, folders, masks and clipping sources. Cached display composites may accelerate unchanged groups; permanent flattening is not the default. | Binding; folders/masks/clipping pending |
