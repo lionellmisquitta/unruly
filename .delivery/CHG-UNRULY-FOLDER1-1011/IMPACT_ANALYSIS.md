@@ -9,3 +9,5 @@ Risks: membership changes can alter paint order, explicitly described; inherited
 Excluded: masks/clipping/group opacity/isolated blending/text/fill/import engines/GPU/Rust/OPFS/50-layer expansion/whole-canvas rotation. Unverified: physical tablet performance and long session RAM. Rollback app to0ab2ab; v5 saves must be retained/exported, not rewritten by old readers. Existing saved v1-v4 artwork untouched unless deliberately grouped. Publish same Pages preview only after exact-source cumulative CI and artifact/hosted verification.
 
 Graph update cadence: count this as build1 since the approved refresh; wait4–5 builds, then ask and receive explicit permission. Compact notes only during builds.
+
+Revision after artifact review: first cumulative candidate passed202 models/201 browser scenarios, but screenshot showed open hierarchy stale after Undo. Restore panel refresh in historyAction and add actual DOM assertions for Undo/Redo; preserve every prior check. CI wall-clock allocation increases12 to15 minutes because observed full run38146750941 took11m39 including tooling and artifacts. No test assertion, work/memory bound or performance threshold is relaxed.

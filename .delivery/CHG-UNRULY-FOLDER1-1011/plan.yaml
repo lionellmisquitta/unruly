@@ -56,6 +56,4 @@ checkpoints:
     command:
     - bash
     - .delivery/CHG-UNRULY-FOLDER1-1011/run-qa.sh
-    timeout_seconds: 720
-publication_target: preview/browser-foundation-2026-10-04
-publication_after: verified-candidate-artifact
+    timeout_seconds: 900
