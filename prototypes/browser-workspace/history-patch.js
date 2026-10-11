@@ -59,7 +59,7 @@ function broadGeometry(before,after){
  for(const layer of before.layers){const strokes=new Map((next.get(layer.id)?.strokes||[]).map(s=>[s.id,s]));for(const stroke of layer.strokes||[]){const points=stroke.points;if(!Array.isArray(points))continue;total+=points.length;const other=strokes.get(stroke.id)?.points;if(Array.isArray(other)&&points.length&&(!same(points[0],other[0])||!same(points.at(-1),other.at(-1))))changed+=points.length;}}
  return changed>4000&&changed>total/2;
 }
-export function inverseHistory(before,after){if((before?.version===3||before?.version===4)&&broadGeometry(before,after))return copy(before);const patch=difference(before,after,true),entry={historyPatch:1,patch:patch||['object',[],[],[]]};const legacy=before?.version===3||before?.version===4;return !legacy||size(entry)<size(before)?ownStrings(entry):patch?.[0]==='set'?patch[1]:copy(before);}
+export function inverseHistory(before,after){if((before?.version===3||before?.version===4||before?.version===5)&&broadGeometry(before,after))return copy(before);const patch=difference(before,after,true),entry={historyPatch:1,patch:patch||['object',[],[],[]]};const legacy=before?.version===3||before?.version===4||before?.version===5;return !legacy||size(entry)<size(before)?ownStrings(entry):patch?.[0]==='set'?patch[1]:copy(before);}
 function apply(value,p){
  if(!Array.isArray(p))throw Error('Invalid history patch');
  switch(p[0]){
@@ -90,7 +90,7 @@ function apply(value,p){
 }
 export function restoreHistory(current,entry){
  // Accept old in-memory snapshots too; persisted boards never contain history records.
- if(entry?.version===3||entry?.version===4)return copy(entry);
+ if(entry?.version===3||entry?.version===4||entry?.version===5)return copy(entry);
  if(entry?.historyPatch!==1||Object.keys(entry).sort().join(',')!=='historyPatch,patch')throw Error('Invalid history entry');
  return apply(copy(current),entry.patch);
 }

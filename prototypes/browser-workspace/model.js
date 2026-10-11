@@ -1,3 +1,4 @@
+import {validateFolders,layerState,mutateFolder,ancestors} from './folders.js';
 import {inverseHistory,restoreHistory} from './history-patch.js';
 import {validateRaster,decodePixels,rasterPayload,sampleTransform} from './raster.js';
 import {validateRecipe} from './brush-recipe.js';
@@ -17,13 +18,14 @@ function validateVersion(b,version){
  rejectPreset(b);const p=b.paper;if(!p||!['plain','dotted','grid','ruled','textured'].includes(p.kind)||!color(p.color)||!num(p.spacing,10,100)||!Number.isInteger(p.seed)||p.seed<0||p.seed>4294967295)fail('Invalid paper');
  const ids=new Set([b.id]);let ns=0,np=0;
  for(const l of b.layers){if(!idOK(l.id)||ids.has(l.id)||typeof l.name!=='string'||l.name.length>64||typeof l.visible!=='boolean'||typeof l.locked!=='boolean'||!num(l.opacity,0,1)||!Array.isArray(l.strokes))fail('Invalid layer');rejectPreset(l);if(version>=3&&!blends.includes(l.blend))fail('Invalid layer blend');if(version===2&&Object.hasOwn(l,'blend'))fail('Invalid legacy layer blend');ids.add(l.id);
- for(const s of l.strokes){if(!idOK(s.id)||ids.has(s.id)||!['ink','pencil','marker','airbrush','raster'].includes(s.brush)||!color(s.color)||!num(s.size,1,s.brush==='airbrush'?160:40)||!num(s.opacity,0,1)||!Array.isArray(s.points)||!s.points.length)fail('Invalid stroke');if(s.brush==='raster'){if(version!==4)fail('Raster content requires v4');validateRaster(s);}else if(Object.hasOwn(s,'raster'))fail('Invalid raster field');if(version===2)rejectPreset(s);else{if(Object.keys(s).some(k=>/^preset/i.test(k)&&k!=='preset'))fail('Invalid brush preset field');if(Object.hasOwn(s,'preset')&&(!idOK(s.preset)||!getPreset(s.preset)||!presetCompatible(s.brush,s.preset)))fail('Invalid brush preset');}if(Object.hasOwn(s,'dynamics')){if(version<3)fail('Brush dynamics require v3');validateDynamics(s.dynamics);}if(Object.hasOwn(s,'recipe')){if(version<3||!s.preset)fail('Custom brush recipe requires a v3 preset');validateRecipe(s.recipe,s.brush);}ids.add(s.id);ns++;np+=s.points.length;
+ for(const s of l.strokes){if(!idOK(s.id)||ids.has(s.id)||!['ink','pencil','marker','airbrush','raster'].includes(s.brush)||!color(s.color)||!num(s.size,1,s.brush==='airbrush'?160:40)||!num(s.opacity,0,1)||!Array.isArray(s.points)||!s.points.length)fail('Invalid stroke');if(s.brush==='raster'){if(version<4)fail('Raster content requires v4');validateRaster(s);}else if(Object.hasOwn(s,'raster'))fail('Invalid raster field');if(version===2)rejectPreset(s);else{if(Object.keys(s).some(k=>/^preset/i.test(k)&&k!=='preset'))fail('Invalid brush preset field');if(Object.hasOwn(s,'preset')&&(!idOK(s.preset)||!getPreset(s.preset)||!presetCompatible(s.brush,s.preset)))fail('Invalid brush preset');}if(Object.hasOwn(s,'dynamics')){if(version<3)fail('Brush dynamics require v3');validateDynamics(s.dynamics);}if(Object.hasOwn(s,'recipe')){if(version<3||!s.preset)fail('Custom brush recipe requires a v3 preset');validateRecipe(s.recipe,s.brush);}ids.add(s.id);ns++;np+=s.points.length;
  if(version>=3&&s.preset){const work=replayWork(s);if(work.dabs>20000)fail('Brush replay limit reached');if(work.particles>600000)fail('Brush particle limit reached');}else if(!['ink','raster'].includes(s.brush)){const step=Math.max(.5,s.size*(s.brush==='pencil'?.22:s.brush==='airbrush'?.3:.2));let dabs=0;for(let i=1;i<s.points.length;i++){dabs+=Math.max(1,Math.ceil(Math.hypot(s.points[i].x-s.points[i-1].x,s.points[i].y-s.points[i-1].y)/step));if(dabs>20000)fail('Brush replay limit reached');}}
  for(const q of s.points)if(!q||!num(q.x,-1e7,1e7)||!num(q.y,-1e7,1e7)||!(q.pressure===null||num(q.pressure,0,1)))fail('Invalid point/pressure');}}
+ validateFolders(b,ids);
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;
 }
-export const validateBoard=b=>validateVersion(b,b?.version===4?4:3);
+export const validateBoard=b=>validateVersion(b,b?.version===5?5:b?.version===4?4:3);
 export function migrateV2(v){const b=copy(validateVersion(v,2));b.version=3;for(const l of b.layers)l.blend='normal';return validateBoard(b);}
 export const createBoard=(id=crypto.randomUUID(),title='Untitled board')=>{const lid=crypto.randomUUID();return {version:3,id,title,revision:0,activeLayer:lid,layers:[{id:lid,name:'Layer 1',visible:true,locked:false,opacity:1,blend:'normal',strokes:[]}],paper:{kind:'plain',color:'#faf8f3',spacing:24,seed:173}};};
 export const createHistory=b=>({board:copy(validateBoard(b)),past:[],future:[],evicted:false});
@@ -37,19 +39,20 @@ export function migrateV1(v,dbRevision=0){
  if(!v||v.version!==1||!idOK(v.id)||typeof v.title!=='string'||v.title.length>128||!Number.isSafeInteger(v.revision)||v.revision<0||!Array.isArray(v.strokes))fail('Invalid legacy board');
  rejectPreset(v);for(const s of v.strokes)rejectPreset(s);const b=createBoard(v.id,v.title);b.revision=v.revision;b.layers[0].strokes=v.strokes.map(s=>({...copy(s),brush:'ink',opacity:1}));b.lineage={source:'unruly-foundation',revision:v.revision,dbRevision};return validateBoard(b);
 }
-export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();for(const l of b.layers){const old=l.id;l.id=crypto.randomUUID();if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=crypto.randomUUID();}b.revision=0;delete b.lineage;return validateBoard(b);}
-export function editable(b){const l=b.layers.find(l=>l.id===b.activeLayer);if(!l.visible||l.locked)fail('Active layer is hidden or locked');return l;}
+export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));for(const f of b.folders||[]){f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=crypto.randomUUID();if(l.parentId)l.parentId=folderMap.get(l.parentId);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=crypto.randomUUID();}b.revision=0;delete b.lineage;return validateBoard(b);}
+export function editable(b){const l=b.layers.find(l=>l.id===b.activeLayer);const state=layerState(b,l);if(!state.visible||state.locked)fail('Active layer is hidden or locked');return l;}
 export function addStroke(h,s){if(s.opacity===0)return h;return command(h,b=>editable(b).strokes.push(copy(s)));}
 export function layerCommand(h,action,id,value){return command(h,b=>{
  const i=b.layers.findIndex(l=>l.id===id),l=b.layers[i];
  if(action==='add'){
   if(b.layers.length>=limits.layers)fail('Layer limit reached');
   const at=b.layers.findIndex(l=>l.id===b.activeLayer);
-  const n={id:crypto.randomUUID(),name:'Layer '+(b.layers.length+1),visible:true,locked:false,opacity:1,blend:'normal',strokes:[]};
+  const n={id:crypto.randomUUID(),name:'Layer '+(b.layers.length+1),visible:true,locked:false,opacity:1,blend:'normal',strokes:[],...(b.version===5?{parentId:b.layers[at].parentId??null}:{})};
+  if(layerState(b,b.layers[at]).locked)fail('Parent folder is locked');
   b.layers.splice(at+1,0,n);b.activeLayer=n.id;return;
  }
  if(!l)fail('Layer missing');
- if(l.locked&&['delete','opacity','blend','clear','content','strokes'].includes(action))fail('Layer is locked');
+ if(l.locked&&['delete','opacity','blend','clear','content','strokes'].includes(action)||ancestors(b,l).some(f=>f.locked)&&action!=='select'&&action!=='locked')fail('Layer is locked');
  if(action==='select')b.activeLayer=id;
  else if(action==='delete'){
   if(b.layers.length===1)fail('Cannot delete the last layer');b.layers.splice(i,1);
@@ -65,9 +68,10 @@ export function layerCommand(h,action,id,value){return command(h,b=>{
   b.layers.splice(i+1,0,duplicate);b.activeLayer=duplicate.id;
  }else if(action==='reorder'){
   if(!Number.isInteger(value)||value<0||value>=b.layers.length)fail('Invalid layer position');
+  if(value!==i&&(b.layers[value].parentId??null)!==(l.parentId??null))fail('Use Move to folder to change membership');
   if(value!==i){b.layers.splice(i,1);b.layers.splice(value,0,l);}
  }else if(action==='up'||action==='down'){
-  const j=i+(action==='up'?1:-1);if(j>=0&&j<b.layers.length)[b.layers[i],b.layers[j]]=[b.layers[j],b.layers[i]];
+  const siblings=b.layers.filter(x=>(x.parentId??null)===(l.parentId??null)),at=siblings.indexOf(l),other=siblings[at+(action==='up'?1:-1)];if(other){const j=b.layers.indexOf(other);if(Math.abs(j-i)!==1)fail('Move the adjacent folder as a group');[b.layers[i],b.layers[j]]=[b.layers[j],b.layers[i]];}
  }else if(action==='clear')l.strokes=[];
  else if(['name','visible','locked','opacity','blend'].includes(action))l[action]=value;
  else fail('Unknown layer action');
@@ -105,3 +109,5 @@ export function eraseGesture(board,mode,sweeps,radius,options={}){
  return fragments.filter(p=>p.length>0).map(points=>({...s,id:crypto.randomUUID(),points}));});
  validateBoard(b);return changed?b:board;
 }
+
+export const folderCommand=(h,action,id,value)=>command(h,b=>mutateFolder(b,action,id,value));

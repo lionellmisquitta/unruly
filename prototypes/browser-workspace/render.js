@@ -1,3 +1,4 @@
+import {renderBoard} from './folders.js';
 // Stable renderer boundary. Auto retains occupied upper layers; canvas2d is the replay fallback.
 import {createCanvas2DRenderer} from './canvas2d-renderer.js';
 import {createLayerCompositor} from './layer-compositor.js';
@@ -16,7 +17,7 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
   epoch++;reason=String(why);lastFrame=null;engine.invalidate();
  }
  function draw(method,board,view={x:0,y:0,scale:1},live=null){
-  reference=method==='renderReference';
+  board=renderBoard(board);reference=method==='renderReference';
   try{
    const result=engine[method](board,view,live);
    lastFrame=describeFrame(board,view,live,result);frames++;

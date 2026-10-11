@@ -83,3 +83,5 @@ body.focus-mode #focus-exit{display:block}
 .layer-top .layer-include{width:44px;min-width:44px;padding:4px;font-size:20px}.layer-select img{width:40px}.layer[data-included=true]{box-shadow:inset 3px 0 var(--focus)}
 
 .layer-top{grid-template-columns:44px minmax(0,1fr) repeat(4,44px)}
+
+.folder{background:#e8ece8;border-left:3px solid #55705e}.folder-name{min-height:44px;text-align:left}.layer-actions label{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.layer-actions select{max-width:100%;min-height:44px}.folder .layer-top{grid-template-columns:44px minmax(0,1fr) 44px 44px}
