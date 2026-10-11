@@ -20,7 +20,8 @@ export function encodeSparsePixels(data,width,height,encode){
   occupiedTiles.push({x,y,w,h});
  }
  const estimate=prefix.length+JSON.stringify({width,height,tiles:[]}).length+occupiedTiles.reduce((sum,t)=>sum+JSON.stringify([t.x,t.y,'']).length+encodedLength(t.w*t.h*4),0)+Math.max(0,occupiedTiles.length-1);
- if(estimate>=encodedLength(width*height*4))return null;
+ // The board JSON escapes payload quotes; compare persisted cost, not just inner text.
+ if(estimate+6+2*occupiedTiles.length>=encodedLength(width*height*4))return null;
  const tiles=occupiedTiles.map(({x,y,w,h})=>{const tile=new Uint8ClampedArray(w*h*4);for(let row=0;row<h;row++)tile.set(data.subarray(((y+row)*width+x)*4,((y+row)*width+x+w)*4),row*w*4);return [x,y,encode(tile)];});
  return prefix+JSON.stringify({width,height,tiles});
 }
@@ -30,7 +31,7 @@ export function readSparsePixels(text,expectedWidth,expectedHeight){
  let value;try{value=JSON.parse(text.slice(prefix.length));}catch{fail();}
  if(!value||Object.keys(value).join(',')!=='width,height,tiles'||!dimensions(value.width,value.height)||!Array.isArray(value.tiles)||value.tiles.length>Math.ceil(value.width/tileSize)*Math.ceil(value.height/tileSize))fail();
  const {width,height,tiles}=value;
- if((expectedWidth!==undefined&&width!==expectedWidth)||(expectedHeight!==undefined&&height!==expectedHeight)||text.length>=encodedLength(width*height*4)||prefix+JSON.stringify(value)!==text)fail();
+ if((expectedWidth!==undefined&&width!==expectedWidth)||(expectedHeight!==undefined&&height!==expectedHeight)||text.length+6+2*tiles.length>=encodedLength(width*height*4)||prefix+JSON.stringify(value)!==text)fail();
  let last=-1;const result=[];
  for(const t of tiles){
   if(!Array.isArray(t)||t.length!==3)fail();const [x,y,encoded]=t;
