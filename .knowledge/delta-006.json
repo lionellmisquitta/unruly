@@ -1,0 +1,60 @@
+﻿{
+    "id":  "DELTA-006",
+    "mode":  "capture",
+    "created_at":  "2026-10-03",
+    "source_commit":  "cb1d52089c5cdd159050dc375b92750eb84d8271",
+    "events":  [
+                   {
+                       "status":  "observed",
+                       "id":  "EVT-WINDOWS-ENV",
+                       "artifact":  "docs/review/WINDOWS_CONTINUATION.md",
+                       "statement":  "Personal GitHub checkout and MSVC/CMake/Codex executable availability observed; Qt/Android/Claude not found in bounded checks"
+                   },
+                   {
+                       "status":  "passed",
+                       "id":  "EVT-P0A-WINDOWS-MODEL",
+                       "artifact":  "prototypes/p0-pen-input/evidence/windows-2026-10-03/identity.json",
+                       "statement":  "Builder rerun: 10 Capture-only cases passed after one fixture repair; independent QA pending"
+                   },
+                   {
+                       "status":  "blocked",
+                       "id":  "EVT-P0A-WINDOWS-NATIVE",
+                       "artifact":  "prototypes/p0-pen-input/evidence/windows-2026-10-03/native-configure-complete.log",
+                       "statement":  "CMake configure exit 1: Qt6 package unavailable; no UI or device execution"
+                   },
+                   {
+                       "status":  "proposed",
+                       "id":  "EVT-BASELINE-CANDIDATE",
+                       "artifact":  "docs/review/ENGINEERING_BASELINES.md",
+                       "statement":  "Contracts and requirement coverage prepared; no independent review or baseline lock"
+                   },
+                   {
+                       "status":  "blocked",
+                       "id":  "EVT-REVIEW-SKILLS-MISSING",
+                       "artifact":  "prototypes/p0-pen-input/evidence/windows-2026-10-03/environment.log",
+                       "statement":  "Required Gatekeeper and Adversary skills not located; review not run"
+                   }
+               ],
+    "relationships":  [
+                          {
+                              "scope":  "Capture model only; Builder rerun, not device verification",
+                              "from":  "REQ-005",
+                              "to":  "EVT-P0A-WINDOWS-MODEL",
+                              "relation":  "explored_by"
+                          },
+                          {
+                              "from":  "REQ-012",
+                              "to":  "EVT-REVIEW-SKILLS-MISSING",
+                              "relation":  "blocked_by"
+                          },
+                          {
+                              "from":  "REQ-013",
+                              "to":  "EVT-BASELINE-CANDIDATE",
+                              "status":  "proposed",
+                              "relation":  "documented_by"
+                          }
+                      ],
+    "build_authorized":  false,
+    "production_implementation_status":  "not_started",
+    "note":  "Bounded capture delta; not a final KGP export or authorization ledger"
+}

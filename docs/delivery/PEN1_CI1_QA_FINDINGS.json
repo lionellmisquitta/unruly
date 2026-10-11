@@ -1,0 +1,29 @@
+{
+  "checkpoint_id": "PEN1",
+  "source_commit": "9bf176a589f9a45580c07bf19dd7475c20c91d54",
+  "ci_run": "37631776750",
+  "artifact_id": "11486149246",
+  "artifact_digest": "6dc1637a7c656e00ce30541fa98110616bf4d588f2906b55f15ab8ca4dc00259",
+  "model_pass": 57,
+  "inherited_browser_pass": 90,
+  "pen_browser_pass": 15,
+  "pen_browser_fail": 2,
+  "findings": [
+    {
+      "test_id": "PENB08",
+      "classification": "ENVIRONMENT_DEFECT_AND_TEST_DEFECT",
+      "evidence": "Real CDP requested mask32 force.5 produces three pointermove pen events with buttons0 pressure0; Chromium151 transport does not expose eraser signal. No application eraser event occurred.",
+      "test_repair": "Record raw CDP capability result, retain real-event no-mutation assertion, exercise bit32 browser integration with explicitly synthetic PointerEvents, preserve None and one-command Undo assertions. Trusted mask32 and physical eraser remain NOT_VERIFIED."
+    },
+    {
+      "test_id": "PENB13",
+      "classification": "PRODUCT_DEFECT",
+      "evidence": "Five real pointermove pen events buttons3 pressure.4; capture established; normal end emits lostpointercapture buttons0 pressure0 before final hover pointermove0. Existing unconditional lostcapture cancels mapped lasso leaving0selected.",
+      "application_repair_owner": "root builder",
+      "required_retest": "Real move-admitted lasso normal hover release selects one without ink; unexpected captureloss and blur still cancel and restore tool."
+    }
+  ],
+  "raw_evidence_local": "/tmp/pen-ci1",
+  "physical_pen": "NOT_VERIFIED",
+  "qa_status": "FAILED_PRODUCT_DEFECT"
+}

@@ -1,0 +1,15 @@
+{
+  "plan_id": "UNRULY-PLAN-2026-10-04-R1",
+  "recorded_at": "2026-10-04T01:11:31+05:30",
+  "user_statement": "ok... lets start...",
+  "confirmed_license": "MIT for original UNRULY code",
+  "user_implementation_hold": false,
+  "permitted_packet": "P0a-WIN-D1",
+  "permitted_execution": "isolated native Windows input sidecar, independent QA, bounded Windows CI, personal branch publication; no user laptop agent launch",
+  "production_build_authorized": false,
+  "release_authorized": false,
+  "main_merge_authorized": false,
+  "paid_model_subprocesses": 0,
+  "preservation": "no local checkout access, pulls, reset/clean or organizational GitLab writes",
+  "remaining_authorization": "scope reconciled by GATEKEEPER_EXECUTION_SCOPE.md; source/workflow independent QA before publication"
+}

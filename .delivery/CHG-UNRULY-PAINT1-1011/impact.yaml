@@ -1,0 +1,21 @@
+change_id: CHG-UNRULY-PAINT1-1011
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/app.js
+- prototypes/browser-workspace/index.html
+- prototypes/browser-workspace/pixel-paint.js
+- prototypes/browser-workspace/pixel-surface.js
+- prototypes/browser-workspace/smudge.js
+- prototypes/browser-workspace/sw.js
+regression_obligations:
+- id: atomic-pixel-workflow
+  reason: Preserve vector strokes and exact history; cancel all partial changes
+  test_id: pixel-paint-browser
+- id: bounded-pixel-kernels
+  reason: Reject dimensions, work and dabs; maintain source isolation and pigment
+  test_id: pixel-paint-model
+- id: cumulative-product
+  reason: Retain all prior pressure, touch, save, raster and cache regressions
+  test_id: cumulative-qa

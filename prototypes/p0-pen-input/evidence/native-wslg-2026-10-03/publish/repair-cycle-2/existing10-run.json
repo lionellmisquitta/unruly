@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/repair-cycle-2/existing10"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "PASS P0-M01 idle hover and repeated end\nPASS P0-M02 distinct strokes and release\nPASS P0-M03 pressure endpoints and exact values\nPASS P0-M04 invalid press is rejected\nPASS P0-M05 invalid move does not append\nPASS P0-M06 replacement press terminates old stroke\nPASS P0-M07 exact capacity and overflow\nPASS P0-M08 clear recovery from full\nPASS P0-M09 end preserves ink and splits resumed stroke\nPASS P0-M10 repeated capacity clear cycles\nOBSERVATION missing-release zero-pressure move accepted=1 samples=2 (UI contact guard requires native verification)\nRESULT 10 passed, 0 failed; model only\n",
+  "stderr": "",
+  "started_at_utc": "2026-10-03T15:12:45.378931+00:00",
+  "completed_at_utc": "2026-10-03T15:12:45.393620+00:00"
+}

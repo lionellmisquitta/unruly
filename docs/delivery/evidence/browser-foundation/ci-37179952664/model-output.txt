@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: U01 valid board identity/unknown pressure and finite endpoints
+ok 1 - U01 valid board identity/unknown pressure and finite endpoints
+  ---
+  duration_ms: 1.2145
+  type: 'test'
+  ...
+# Subtest: U02 malformed header/version/title/revision/stroke identity rejected
+ok 2 - U02 malformed header/version/title/revision/stroke identity rejected
+  ---
+  duration_ms: 0.436464
+  type: 'test'
+  ...
+# Subtest: U03 invalid finite coordinates/pressure/brush and missing points rejected
+ok 3 - U03 invalid finite coordinates/pressure/brush and missing points rejected
+  ---
+  duration_ms: 0.282784
+  type: 'test'
+  ...
+# Subtest: U04 stroke/point/serialized limits are enforced at boundary
+ok 4 - U04 stroke/point/serialized limits are enforced at boundary
+  ---
+  duration_ms: 67.315408
+  type: 'test'
+  ...
+# Subtest: U05 immutable add/undo/redo and branch clears redo
+ok 5 - U05 immutable add/undo/redo and branch clears redo
+  ---
+  duration_ms: 0.571596
+  type: 'test'
+  ...
+# Subtest: U06 whole-stroke eraser undo preserves stroke and revision
+ok 6 - U06 whole-stroke eraser undo preserves stroke and revision
+  ---
+  duration_ms: 0.517225
+  type: 'test'
+  ...
+# Subtest: U07 empty history no-op and bounded undo retention
+ok 7 - U07 empty history no-op and bounded undo retention
+  ---
+  duration_ms: 8.691981
+  type: 'test'
+  ...
+# Subtest: U08 zoom anchor remains stable and clamps finite transform
+ok 8 - U08 zoom anchor remains stable and clamps finite transform
+  ---
+  duration_ms: 0.645617
+  type: 'test'
+  ...
+# Subtest: U09 invalid zoom cannot poison transform
+ok 9 - U09 invalid zoom cannot poison transform
+  ---
+  duration_ms: 0.404436
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 129.712158

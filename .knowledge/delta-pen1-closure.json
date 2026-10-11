@@ -1,0 +1,48 @@
+{
+  "id": "UNRULY-PEN1-preview-closure-2026-10-07",
+  "date": "2026-10-07",
+  "mode": "capture_delta",
+  "checkpoint": "PEN1",
+  "status": "verified_preview",
+  "integration_commit": "93af0a256b57932288f57239612bd4cc5516b7fc",
+  "checkpoint_ref": "checkpoint/pen1-v0.7.0",
+  "rollback": {
+    "ref": "checkpoint/u3-v0.6.0",
+    "commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0"
+  },
+  "capabilities": [
+    "20 original renderer-family brush choices, original12 pixels retained",
+    "per-stroke validated width/opacity pressure response",
+    "browser-reported temporary pen-button mapping",
+    "lasso selected-bounds hover/contact move admission",
+    "drawing-surface context-menu suppression"
+  ],
+  "evidence": {
+    "qa": "docs/delivery/PEN1_QA_CHECKPOINT_RESULT.json",
+    "gatekeeper": "docs/delivery/PEN1_FINAL_GATEKEEPER.md",
+    "hosted": "docs/delivery/PEN1_HOSTED_CLOSURE.md",
+    "raw": "docs/delivery/evidence/pen1",
+    "qa_run": 37633247724,
+    "deployment_run": 37634720112,
+    "checks_passed": 165,
+    "source_hashes": 36,
+    "hosted_assets_matched": 16
+  },
+  "budget": {
+    "app_repairs_used": 1,
+    "app_repairs_max": 2,
+    "ci_runs_used": 2,
+    "ci_runs_max": 3,
+    "u3_budget_preserved": "2/2 app repairs and3/3 CI consumed"
+  },
+  "limits": {
+    "physical_pen": "NOT_VERIFIED",
+    "trusted_cdp_eraser_mask32": "NOT_VERIFIED",
+    "eraser_browser_contract": "PASSED_SYNTHETIC_ONLY",
+    "main_merge_authorized": false,
+    "production_authorization": false
+  },
+  "learning": "Move-admitted Chromium pen release can lose capture before terminal hover; lostcapture zero alone also occurs on unexpected release. Pending capture loss commits only confirmed terminal hover, and cancels on pointerup/contact continuation/timeout/blur.",
+  "compatibility": "Export newer brush/dynamics boards before old-preview rollback.",
+  "next_action": "Human device pressure/button review; one bounded increment thereafter."
+}

@@ -1,0 +1,21 @@
+change_id: CHG-UNRULY-SIZE-1010
+route: standard_change
+prohibited_paths:
+  - src/
+  - native/
+  - prototypes/browser-workspace/
+  - .github/workflows/browser-workspace-pages.yml
+checkpoints:
+  - id: percent-contract
+    allowed_paths:
+      - tests/browser-workspace/
+      - .delivery/CHG-UNRULY-SIZE-1010/
+      - .github/workflows/browser-workspace.yml
+    test_paths:
+      - tests/browser-workspace/
+    tests:
+      - id: cumulative-browser
+        command: [bash, .delivery/CHG-UNRULY-SIZE-1010/run-cumulative.sh]
+        timeout_seconds: 600
+test_config_changes:
+  - .github/workflows/browser-workspace.yml

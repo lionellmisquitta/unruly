@@ -1,0 +1,1741 @@
+{
+  "browser": "151.0.7922.34",
+  "checkpoint": "P01",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "P01-A1-baseline-reference-DPR1",
+      "status": "PASS",
+      "evidence": {
+        "cases": 720,
+        "dpr": 1,
+        "comparison": "new reference vs frozen e30 reference, exact RGBA",
+        "dimensions": [
+          192,
+          160
+        ]
+      }
+    },
+    {
+      "id": "P01-A1-baseline-reference-DPR2",
+      "status": "PASS",
+      "evidence": {
+        "cases": 720,
+        "dpr": 2,
+        "comparison": "new reference vs frozen e30 reference, exact RGBA",
+        "dimensions": [
+          384,
+          320
+        ]
+      }
+    },
+    {
+      "id": "P01-A1-exact-pixel-matrix",
+      "status": "PASS",
+      "evidence": {
+        "cases": 1620,
+        "comparison": "every RGBA byte; zero tolerance",
+        "brushes": 4,
+        "papers": 5,
+        "views": 3
+      }
+    },
+    {
+      "id": "P01-A2-topmost-middle-fallback",
+      "status": "PASS",
+      "evidence": {
+        "middle": {
+          "ms": 2.1000000000058208,
+          "mode": "reference",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "hiddenUpper": {
+          "ms": 0,
+          "mode": "retained-hit",
+          "completedStrokesReplayed": 0,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "zeroUpper": {
+          "ms": 0,
+          "mode": "retained-hit",
+          "completedStrokesReplayed": 0,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "P01-A2-invalidation-and-preview-changes",
+      "status": "PASS",
+      "evidence": {
+        "initial": {
+          "ms": 3.6000000000058208,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "identity": {
+          "ms": 2.3999999999941792,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "revision": {
+          "ms": 1.400000000023283,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "panX": {
+          "ms": 2.5,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "panY": {
+          "ms": 2.400000000023283,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "zoom": {
+          "ms": 1.3000000000174623,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "active": {
+          "ms": 1.3999999999941792,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        },
+        "resize": {
+          "ms": 1.8000000000174623,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 1,
+          "backingBytes": 672000,
+          "surfaces": [
+            {
+              "width": 210,
+              "height": 160
+            },
+            {
+              "width": 210,
+              "height": 160
+            },
+            {
+              "width": 210,
+              "height": 160
+            },
+            {
+              "width": 210,
+              "height": 160
+            },
+            {
+              "width": 210,
+              "height": 160
+            }
+          ]
+        },
+        "dpr": {
+          "ms": 2.8999999999941792,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        },
+        "full": {
+          "ms": 1.7999999999883585,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        },
+        "reference": {
+          "ms": 1.599999999976717,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        },
+        "sample": {
+          "ms": 2.6000000000058208,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        },
+        "explicit": {
+          "ms": 1.8000000000174623,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        },
+        "commit": {
+          "ms": 1.8999999999941792,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        },
+        "undo": {
+          "ms": 1.5,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        },
+        "redo": {
+          "ms": 1.6999999999825377,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 2,
+          "dpr": 2,
+          "backingBytes": 2688000,
+          "surfaces": [
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            },
+            {
+              "width": 420,
+              "height": 320
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "P01-A2-replay-error-recovery",
+      "status": "PASS",
+      "evidence": {
+        "error": "Brush replay limit reached",
+        "recovered": {
+          "ms": 2,
+          "mode": "retained-miss",
+          "completedStrokesReplayed": 3,
+          "dpr": 1,
+          "backingBytes": 614400,
+          "surfaces": [
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            },
+            {
+              "width": 192,
+              "height": 160
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "P01-A4-budget-desktop-DPR1",
+      "status": "PASS",
+      "evidence": [
+        {
+          "dims": [
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            }
+          ],
+          "backing": 27360000,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            },
+            {
+              "width": 1440,
+              "height": 950
+            }
+          ],
+          "backing": 27360000,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            }
+          ],
+          "backing": 31733460,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            },
+            {
+              "width": 1551,
+              "height": 1023
+            }
+          ],
+          "backing": 31733460,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        }
+      ]
+    },
+    {
+      "id": "P01-A4-budget-desktop-DPR2",
+      "status": "PASS",
+      "evidence": [
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.7510030542253296
+        },
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.7510030542253296
+        },
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.6258715680961817
+        },
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.6258715680961817
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        }
+      ]
+    },
+    {
+      "id": "P01-A4-budget-desktop-DPR3",
+      "status": "PASS",
+      "evidence": [
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.7510030542253296
+        },
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.7510030542253296
+        },
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.6258715680961817
+        },
+        {
+          "dims": [
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            },
+            {
+              "width": 2521,
+              "height": 1663
+            }
+          ],
+          "backing": 83848460,
+          "dpr": 1.6258715680961817
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        }
+      ]
+    },
+    {
+      "id": "P01-A4-budget-tablet-DPR1",
+      "status": "PASS",
+      "evidence": [
+        {
+          "dims": [
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            }
+          ],
+          "backing": 15728640,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            },
+            {
+              "width": 768,
+              "height": 1024
+            }
+          ],
+          "backing": 15728640,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            }
+          ],
+          "backing": 19285260,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            },
+            {
+              "width": 879,
+              "height": 1097
+            }
+          ],
+          "backing": 19285260,
+          "dpr": 1
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        }
+      ]
+    },
+    {
+      "id": "P01-A4-budget-tablet-DPR2",
+      "status": "PASS",
+      "evidence": [
+        {
+          "dims": [
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            }
+          ],
+          "backing": 62914560,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            }
+          ],
+          "backing": 62914560,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            }
+          ],
+          "backing": 77141040,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            }
+          ],
+          "backing": 77141040,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        }
+      ]
+    },
+    {
+      "id": "P01-A4-budget-tablet-DPR3",
+      "status": "PASS",
+      "evidence": [
+        {
+          "dims": [
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            }
+          ],
+          "backing": 62914560,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "width": 1536,
+              "height": 2048
+            }
+          ],
+          "backing": 62914560,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            }
+          ],
+          "backing": 77141040,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            },
+            {
+              "width": 1758,
+              "height": 2194
+            }
+          ],
+          "backing": 77141040,
+          "dpr": 2
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        },
+        {
+          "dims": [
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "backing": 83886080,
+          "dpr": 0.4096
+        }
+      ]
+    },
+    {
+      "id": "P01-A4-transient-setter-budget",
+      "status": "PASS",
+      "evidence": {
+        "peakBytes": 83886080,
+        "setterSteps": 60
+      }
+    },
+    {
+      "id": "P01-A3-paired-live-renderer-benchmark",
+      "status": "PASS",
+      "evidence": {
+        "fixture": "8 layers / 10000 completed points / 4 brush mix / top active L7 / 128 point live ink / 1440x950 CSS / DPR1",
+        "warmupPairs": 5,
+        "measuredPairs": 20,
+        "cached": {
+          "samples": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1.1000000000058208,
+            1,
+            1,
+            0.8999999999941792,
+            1.1000000000058208,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1.1000000000058208,
+            0.8999999999941792
+          ],
+          "p50": 1,
+          "p95": 1.1000000000058208,
+          "max": 1.1000000000058208
+        },
+        "reference": {
+          "samples": [
+            46.5,
+            46.20000000001164,
+            46.10000000000582,
+            46.40000000002328,
+            45.89999999999418,
+            62.29999999998836,
+            44.20000000001164,
+            44.89999999999418,
+            44.70000000001164,
+            45,
+            45.5,
+            44.5,
+            44.39999999999418,
+            44.20000000001164,
+            44.79999999998836,
+            44.59999999997672,
+            45.60000000000582,
+            47.5,
+            48.20000000001164,
+            60.10000000000582
+          ],
+          "p50": 45.5,
+          "p95": 60.10000000000582,
+          "max": 62.29999999998836
+        },
+        "cacheMiss": {
+          "samples": [
+            45.89999999999418,
+            45.79999999998836,
+            45,
+            45.10000000000582,
+            45
+          ],
+          "max": 45.89999999999418
+        },
+        "measurement": "renderer CPU duration only",
+        "physical_pen": "NOT_VERIFIED"
+      }
+    },
+    {
+      "id": "P01-A5-cancel-commit-history-cache-recovery",
+      "status": "PASS",
+      "evidence": {
+        "cancel": "unchanged",
+        "commitUndoRedoReload": "retained exact stroke data"
+      }
+    },
+    {
+      "id": "P01-A7-live-controller-path",
+      "status": "PASS",
+      "evidence": {
+        "start": {
+          "refresh": 1,
+          "paint": 1,
+          "bounds": 0,
+          "emptyBounds": 0
+        },
+        "move": {
+          "refresh": 0,
+          "paint": 2,
+          "bounds": 0,
+          "emptyBounds": 0
+        },
+        "end": {
+          "refresh": 2,
+          "paint": 1,
+          "bounds": 0,
+          "emptyBounds": 0
+        },
+        "cancelled": {
+          "refresh": 1,
+          "paint": 1,
+          "bounds": 0,
+          "emptyBounds": 0
+        },
+        "coalescedPressures": [
+          0.31,
+          0.72
+        ]
+      }
+    }
+  ]
+}

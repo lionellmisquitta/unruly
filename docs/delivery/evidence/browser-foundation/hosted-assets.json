@@ -1,0 +1,53 @@
+{
+  "url": "https://lionellmisquitta.github.io/unruly/",
+  "assets": [
+    {
+      "file": "sw.js",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "0693b845137aae8f5945f324217735b884b443fddbaa1547447d771bc3a3166c"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "86e2ecbe10b5e4eda170efe463ca730f7195fef2ef232420c0782d0958ba9598"
+    },
+    {
+      "file": "app.js",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "936bb9f4c335ce43b46f138fa9608f86576a7331ec3ef9c9beb3e19ba592ab51"
+    },
+    {
+      "file": "model.js",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "0faebb74b573ecd93ca5f816d52aa0f15319b95ed0afba8a6459bbface4b13db"
+    },
+    {
+      "file": "icon.svg",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636"
+    },
+    {
+      "file": "style.css",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "4de3ce41e14dfb348c478927f25dec05317f4a7b0237b7ca29b9ab0be88cfe66"
+    },
+    {
+      "file": "index.html",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "74f8fccb89eb41b7e6f3ab81ffecbd0da44b44af0776af0f9fe8f170f374d1f6"
+    },
+    {
+      "file": "README.md",
+      "http": 200,
+      "matches_tested_local": true,
+      "sha256": "e1b7abe60413b29d143e6b4887747e70b3b6b9d261dcfacda4225074482cc543"
+    }
+  ]
+}

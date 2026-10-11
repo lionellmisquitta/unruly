@@ -1,0 +1,27 @@
+change_id: CHG-UNRULY-UX1-1010
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/shapes.js
+- prototypes/browser-workspace/app.js
+- prototypes/browser-workspace/render.js
+- prototypes/browser-workspace/index.html
+- prototypes/browser-workspace/style.css
+- prototypes/browser-workspace/sw.js
+- tests/browser-workspace/tablet-ux.model.test.mjs
+- tests/browser-workspace/tablet-ux.browser.cjs
+- .github/workflows/browser-workspace.yml
+regression_obligations:
+- id: recognition-constraint-scale
+  reason: broader recognition must distinguish bends/scribbles, preserve bounded pressure
+    geometry and deterministic finger constraints
+  test_id: tablet-ux-model
+- id: actual-gesture-ownership
+  reason: held shape scaling, exact magnified sampling, touch handle apply/cancel
+    and atomic history
+  test_id: tablet-ux-browser
+- id: cumulative-compatibility
+  reason: all prior drawing, shape, pressure, smudge, transform, history and storage
+    regressions stay required
+  test_id: cumulative-model

@@ -1,0 +1,51 @@
+{
+  "id": "DELTA-009",
+  "mode": "capture",
+  "created_at": "2026-10-03T14:24:41.596526+00:00",
+  "events": [
+    {
+      "id": "EVT-P0-LINUX-MODEL-RETEST",
+      "status": "passed",
+      "artifact": "prototypes/p0-pen-input/evidence/linux-2026-10-03/test-results.json",
+      "statement": "Unchanged repaired source and fixtures: 21 strict g++ Linux model cases passed; exact source/binary identities recorded."
+    },
+    {
+      "id": "EVT-P0-LINUX-INDEPENDENT-ASSESSMENT",
+      "status": "executed",
+      "artifact": "prototypes/p0-pen-input/evidence/linux-2026-10-03/assessment-response.json",
+      "statement": "Fresh tools-disabled Claude accepted Linux model scope; overall P0 BLOCKED."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "EVT-P0-LINUX-MODEL-RETEST",
+      "relation": "assessed_by",
+      "to": "EVT-P0-LINUX-INDEPENDENT-ASSESSMENT",
+      "scope": "Linux Capture model only; no Windows/native/Android closure"
+    },
+    {
+      "from": "REQ-012",
+      "relation": "partially_exercised_by",
+      "to": "EVT-P0-LINUX-INDEPENDENT-ASSESSMENT",
+      "scope": "Independent sanitized assessment; no merge or merged regression"
+    }
+  ],
+  "source_identity": {
+    "base_commit": "cb1d52089c5cdd159050dc375b92750eb84d8271",
+    "dirty_source": true,
+    "sha256": {
+      "prototypes/p0-pen-input/main.cpp": "a0cfc97d441abccf721527471d6bde86090194d7bad9f4316e3ef30a0254d48a",
+      "prototypes/p0-pen-input/model_tests.cpp": "0b718d2195e96f508d6bed33b6c2e2129081e40e867bfebe1ee5ecc614ea4f5c",
+      "prototypes/p0-pen-input/CMakeLists.txt": "588e71e66ec07b7cebb36603ca070ec57e4a2a9060498b69d12b1e8aa2908337",
+      "prototypes/p0-pen-input/README.md": "bf4fd2acbbe6abd07bd1b0513a45330a613b509e20359b46e295d0eb3bed2e6c",
+      "prototypes/p0-pen-input/qa-claude/adversarial_tests.cpp": "2097ff2dad020c31ad58a104840baa7b09a476646619d2eeddb14ffc6d6f7734",
+      "prototypes/p0-pen-input/qa-claude/capacity_regression.cpp": "a49e51f10107a5035beb1f2a966bd8b8657aee564dc749e3184e81b7a3de71fe"
+    },
+    "matches_saved_windows_source": true
+  },
+  "qa_status": "BLOCKED",
+  "build_authorized": false,
+  "windows_evidence_superseded": false,
+  "checkpoint_closed": false,
+  "note": "Bounded capture delta, not full graph export or authorization"
+}

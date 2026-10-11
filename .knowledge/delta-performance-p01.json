@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "checkpoint": "P01",
+  "preview_version": "0.3.0",
+  "parent_source": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+  "status": "HOSTED_REVIEWED_PREVIEW",
+  "relationships": [
+    {
+      "from": "P01 retained live ink",
+      "relation": "preserves",
+      "to": "v2 board/model/storage/selection contracts"
+    },
+    {
+      "from": "cached active layer",
+      "relation": "composes live stroke before",
+      "to": "layer opacity"
+    },
+    {
+      "from": "live pen interaction",
+      "relation": "does not wait for",
+      "to": "saving/cloud/AI"
+    },
+    {
+      "from": "P01",
+      "relation": "requires",
+      "to": "exact pixels + bounded memory + paired benchmark + independent QA/Gatekeeper"
+    }
+  ],
+  "next_planned": [
+    "P02 spatial/tiled rendering",
+    "P03 delta history/disk paging",
+    "P04 worker/GPU measured kernels"
+  ],
+  "implemented_next_planned": false,
+  "main_merge": false,
+  "production_authorization": false,
+  "source": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "evidence": {
+    "qa_ci": 37396458278,
+    "qa_job": 112053501071,
+    "artifact": 11383418553,
+    "artifact_sha256": "a926a703f52a583d4ca85947ce75f1a716a47c9b1678fd1ca68c645987260302",
+    "model_passed": 24,
+    "browser_passed": 37,
+    "source_hashes_verified": 21,
+    "cached_renderer_p95_ms": 1.7,
+    "reference_renderer_p95_ms": 83.1,
+    "transient_nominal_bytes_peak": 83886080,
+    "pages_run": 37397255190,
+    "pages_job": 112056053920,
+    "hosted_files_matched": 11,
+    "hosted_saved_update_mouse_draw_undo_redo_reload": "OBSERVED"
+  },
+  "source_repairs": 1,
+  "qa_runs": 2,
+  "gatekeeper": "PERFORMANCE_FINAL_GATEKEEPER.md",
+  "physical_feel": "NOT_VERIFIED",
+  "version_branch": "checkpoint/p01-v0.3.0"
+}

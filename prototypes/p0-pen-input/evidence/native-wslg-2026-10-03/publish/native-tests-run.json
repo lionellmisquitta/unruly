@@ -1,0 +1,9 @@
+{
+  "argv": [
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/native_tests"
+  ],
+  "exit_code": 1,
+  "stdout": "platform=xcb\nPASS P0N-001\nFAIL P0N-002\n  - hover mid-stroke did not end capture\n  - left move after hover bridged ink\n  - fresh press not recorded\n  - fresh press did not get stroke id 2\nPASS P0N-003\nPASS P0N-004\nPASS P0N-005\nFAIL P0N-006\n  - tablet hover not accepted\nPASS P0N-007\nPASS P0N-008\nTOTAL 8 PASS 6 FAIL 2\n",
+  "stderr": "",
+  "recorded_at_utc": "2026-10-03T15:09:47.149661+00:00"
+}

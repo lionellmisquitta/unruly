@@ -1,0 +1,42 @@
+{
+  "browser": "151.0.7922.34",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "U01-lasso-move-final-save-history",
+      "status": "FAIL",
+      "message": "page.waitForFunction: Timeout 30000ms exceeded.\n    at count (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:32:41)\n    at lasso (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:33:288)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:37:129\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:37:1",
+      "console_errors": []
+    },
+    {
+      "id": "U02-session-clipboard-acrossboard-and-delete",
+      "status": "FAIL",
+      "message": "page.waitForFunction: Timeout 30000ms exceeded.\n    at count (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:32:41)\n    at lasso (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:33:288)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:38:91\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:38:1",
+      "console_errors": []
+    },
+    {
+      "id": "U03-cancel-frozen-touch-zero-outside",
+      "status": "FAIL",
+      "message": "page.waitForFunction: Timeout 30000ms exceeded.\n    at count (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:32:41)\n    at lasso (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:33:288)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:39:83\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:39:1",
+      "console_errors": []
+    },
+    {
+      "id": "U04-invalidation-and-failed-transition",
+      "status": "FAIL",
+      "message": "page.waitForFunction: Timeout 30000ms exceeded.\n    at count (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:32:41)\n    at lasso (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:33:288)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:40:85\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:40:1",
+      "console_errors": []
+    },
+    {
+      "id": "U05-mobile-real-selection-controls",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "U06-offline-and-active-selection-update",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(await page.evaluate(async()=>Boolean((await navigator.serviceWorker.getRegistration())?.waiting)))\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:42:984\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:26:870)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/selection.browser.cjs:42:1",
+      "console_errors": []
+    }
+  ]
+}

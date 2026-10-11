@@ -144,3 +144,105 @@ REQ-017: Support moving selected/lassoed content along a path and audience-view 
 
 ## Coding start boundary — 3 October 2026
 User requested coding to begin. Quarantined P0a raw-pen input source created in prototypes/p0-pen-input; Qt remains an evaluation candidate. Production build authorization remains false. Native build/device tests and full P0 closure are not verified. Independent capture-model QA is recorded beside the probe. See docs/review/BUILD_START.md for readiness gaps, execution constraints and the production start sequence.
+
+## Windows continuation — 3 October 2026
+Actual personal Windows checkout verified at HEAD cb1d52089c5cdd159050dc375b92750eb84d8271; effective origin fetch/push match the personal GitHub repository. MSVC/CMake are installed outside ordinary PATH; Codex CLI version execution succeeds. Qt, Android SDK/NDK/JDK and Claude CLI were not found in bounded checks. Requested Gatekeeper/Adversary skills were not found; independent review has not run.
+One quarantined fixture portability repair passed the 10 existing Capture-model cases on MSVC with /W4 /WX. Native CMake configuration exited 1 on missing Qt. No UI/device/Android test ran. Exact commands, dirty-source/base identities, executable hash and logs: prototypes/p0-pen-input/evidence/windows-2026-10-03/. See docs/review/WINDOWS_CONTINUATION.md and the proposed ENGINEERING_BASELINES.md review packet. Production authorization remains false; no checkpoint merge/push occurred.
+
+
+## Installed delivery skills and authenticated Claude ? 3 October 2026
+Both complete delivery skills are now installed project-locally for Codex (.agents/skills) and Claude (.claude/skills); no hooks registered. Active bundled Claude 2.1.288 authenticated smoke returned exactly UNRULY_QA_READY, exit 0, 5.157 seconds. Fresh independent QA launch was rejected by automatic approval review for source egress and broad shell tools before execution. No independent QA ran. A no-tools enumerated-payload proposal is saved for explicit source-transfer approval; native Qt/Android/device coverage remains blocked. Evidence: prototypes/p0-pen-input/evidence/claude-2026-10-03/. Extension updates may change executable path. Production authorization remains false.
+
+
+## Approved tools-disabled Claude QA cycle ? 3 October 2026
+User explicitly approved the enumerated source/protocol and sanitized-evidence transfer. Claude independently authored tests/findings and assessed local execution; Codex executed tests and repaired application code separately. Initial19 model cases passed. Claude capacity2 regression cases failed before one Codex repair and passed afterward. On repaired source, existing10+capacity2 passed; adversarial9 compiled but Windows App Control blocked launch (WinError4551). Independent final QA status BLOCKED. Native/device/Android remain blocked; merged regression not run. Production authorization remains false. See prototypes/p0-pen-input/qa-claude/QA_REPORT.md, QA_CHECKPOINT_RESULT.json and evidence/claude-2026-10-03/. No merge/push, hook registration or policy bypass occurred. Extension updates may change executable path.
+
+
+## Separate WSL/Linux continuation - 3 October 2026
+Ubuntu 26.04 x86_64 WSL2; g++15.2 and Python3.14 available. Linux Claude2.1.288 is available and actual tools-disabled authenticated smoke succeeded (UNRULY_QA_READY, exit0). Current dirty probe hashes match saved repaired Windows source. With no source or test changes, all21 Capture-model cases (existing10, Claude adversarial9, capacity2) compiled with strict warnings and passed on Linux. Fresh independent Claude accepted PASSED_LINUX_MODEL_ONLY and kept overall P0 BLOCKED. One prior repair cycle remains used; no new application repair. Linux evidence is supplemental and does not close Windows App Control regression, native pen or Android verification. CMake/Qt/JDK/Android dependencies were absent in bounded inspection; no native build/device test ran. Evidence: prototypes/p0-pen-input/evidence/linux-2026-10-03/; report: docs/review/LINUX_CONTINUATION.md. Windows work/evidence preserved; no employer policy change, hook, merge, push or production code. Independent Gatekeeper review remains pending and production authorization remains false.
+
+
+## Runnable native P0 milestone - WSLg, 3 October 2026
+Official Ubuntu Qt6.10.2/CMake4.2.3/Ninja1.13.2 packages verified against index hashes and extracted into the Linux user-owned tool prefix, with no system install/policy change. Existing quarantined source built and launched as an exact-PID visible1000x700 WSLg/xcb window. Claude authored8 native adapter tests; initial6 passed/2 failed on hover routing. Separate hidden/shown diagnostic confirmed default tabletTracking prevented the lost-release guard from seeing hover. Codex repair cycle2 adds setTabletTracking(true), preserving prior repairs and QA assertions. Rebuilt/relaunched source passed21 model+8 synthetic native cases. Independent Claude accepts these scoped29 passes, keeps overall QA BLOCKED, and accepts the one three-task human card with platform caveats. All Windows/native physical/Android and merged-regression blockers remain. Closed delivery checkpoints0; production authorization false. Source SHA25656e2e448855a55f205dc85a8f160e59e562fb2f6102193c6ebcd94e45baa3f90. See docs/review/NATIVE_P0_MILESTONE.md, P0_HUMAN_TEST_CARD.md, CHECKPOINT_CONTRACTS.json, ENGINEERING_DECISIONS.md and READY_BLOCKED_QUEUE.md. Separate independent Gatekeeper readiness/publication-scope review is pending; a curated personal preparation branch is requested, without merging main or preview/offline-canvas.
+
+Independent readiness review completed: GK-UNRULY-P0A-NATIVE-WSLG-2026-10-03-R1, BUILD_AUTHORIZED=false, closed checkpoints0. Gatekeeper accepts curated personal preparation-branch publication under explicit exclusions and scoped evidence; locked UX, target devices/runtime, domain/data/security/test/ops baselines and merged regression remain blocked. Saved Windows12+9blocked, Linux21 and WSLg29 refer to distinct source/platform runs and are never combined. QA fixture literal labels are logged as non-blocking GCON-001; assertions/historical outputs remain preserved. Local Git CLI has no GitHub credentials in WSL; authenticated personal GitHub connector can publish the curated branch without credential changes. Current next action is the single WSLg human card plus target-kit/P0b preparation.
+
+Curated preparation/prototype snapshot published via authenticated GitHub connector on prep/p0-native-wslg-2026-10-03: source commit 02772d4b6c672b389cc5f634f330905437d06907, tree a711d208eb77b424daf39df4139d765c6e8e91c3. Exact commit imported to a separate local branch; main/index/checkout remain in place. Published source bytes match tested SHA25656e2e448855a55f205dc85a8f160e59e562fb2f6102193c6ebcd94e45baa3f90; committed curated-manifest bytes were verified. Publication-only path aliases were applied to Git objects without overwriting Windows files. No generated executable, credential, raw log, device recording or skill archive was published. This is preservation of preparation/P0 evidence, not checkpoint closure, merge, binary release or production authorization.
+
+
+## Approved native Windows input candidate — 4 October 2026
+
+Latest user approval lifts the hold only for P0a-WIN-D1; see docs/delivery/EXECUTION_APPROVAL.json and GATEKEEPER_EXECUTION_SCOPE.md. Independent host nine cases passed; actual Windows MSVC compile, the same nine model cases, and visible-window/startup/title/close smoke passed against fb7ab408c8dabb48e31415e51e0201ba7bce1ab7 (CI run 37149560536).
+
+Candidate is on personal prep/native-windows-input-2026-10-04. Physical Surface/Lenovo input and painted status remain NOT_VERIFIED. Original blocked Windows nine-case regression and Android are distinct and remain open. No repair, employer security change, laptop agent launch, main merge or release. Production authorization false; product checkpoints closed 0/14. Final independent candidate review is recorded separately under docs/delivery.
+
+
+## Browser foundation continuation — 4 October 2026
+
+User selected browser-first delivery at a GitHub Pages URL; native enhancements deferred. WEB-F1 is a quarantined foundation preview under UNRULY-WEB-2026-10-04-R2, independently reviewed before implementation. Drawing/navigation/history/local-board storage and offline-update candidate is now under independent QA; no executed browser PASS or live deployment is claimed here. Native source/evidence preserved. Product checkpoints closed: 0/14. Production authorization false; no main merge. External paid model CLI/API calls: 0. One recovery repair maximum is reserved; historical P0a cycles remain preserved. Repository Pages setup remains blocked (has_pages=false); no administrative workaround or repo visibility change.
+
+
+### Browser foundation executable result
+
+Reviewed source/test identity: 66152b32e9544bd383587adbbacbd495e0be3a2f. CI 37180183813 passed all nine model cases and twelve actual Chromium journeys. Independent QA validated fourteen hashes, recovery/quota/concurrent-tabs/offline/update safety and desktop/tablet/360px screenshots. Earlier CI 37179952664 retained eleven browser passes and one test synchronization failure; bounded fixture-only wait preserved the assertion and app bytes. Chromium 151.0.7922.34, Node 22.23.3. Automated candidate passes; hosted URL, physical pens/feel and merged product regression remain unverified. One source repair consumed; no automatic continuation. Pages still not enabled; prepared deployment uses only the immutable tested static directory and requires legitimate owner setup. No main merge, production authorization or product checkpoint closure.
+
+
+## Pages setup and deployment attempt — 4 October 2026 evening IST
+
+Owner enabled GitHub Actions Pages and explicitly accepted public repository visibility. API confirms Pages enabled/public repo. Reviewed deployment run37218275559 on d6db892c37641dff0648e09df9f899d8e50dfd19 was rejected before execution: github-pages environment branch protections exclude preview/browser-foundation-2026-10-04. No application change, no live URL, no security-policy bypass or main merge. Owner must add only that exact branch under Settings/Environments/github-pages/Deployment branches and tags. Successful9model/12Chromium candidate unchanged; production false,0/14 checkpoints closed. Details docs/delivery/BROWSER_HOSTING_STATUS.md.
+
+
+## Hosted preview verified — 4 October 2026, 22:34–22:40 IST
+
+GitHub Pages run37218275559 attempt3 succeeded after owner corrected permitted branch to preview/browser-foundation-2026-10-04. Exact URL https://lionellmisquitta.github.io/unruly/ opened in remote Chrome. Mouse drawing, Undo/Redo, durable save and retained drawing after reload observed; “Ready for offline use” displayed. All8 deployed prototype files HTTP200 and byte-identical to reviewed candidate66152b32e9544bd383587adbbacbd495e0be3a2f. Root state/governance/QA paths return404 on site (repository itself public by owner decision). Captured logs contained browser-extension metadata errors; no app-origin error in returned entries. Hosted offline network-disable not rerun; prior CI verified offline. Surface/Lenovo/Xiaomi pressure/feel still NOT_VERIFIED. Human test card handed over; no advanced-feature continuation, main merge or product closure; productionfalse0/14.
+
+
+## Human drawing-workspace feedback — 4 October 2026 22:53 IST
+
+User confirms basic drawing worked and states foundation is below expected feature set. Requests selectable paper, three erasers (intersection/partial-path/whole-line), usable thickness/transparency/colour, layers and brushstyles. These belong to original requirements; no feature completeness inferred from21foundation checks. Opacity/layers/papers/brushlibrary absent; onlywhole-strokeeraser exists. Colour/size usability reportedfailed remainsopen; remote desktop keyboard changes size5->40, colour-wellclick showsno picker here; device-specific causeunknown. Physicalpressure/latency notverified. Next proposed combinedworkspacebatch in docs/delivery/BROWSER_WORKSPACE_FEEDBACK_PLAN.md; independent readinessreviewpending. No appsource/deploy changed fromfeedback and no productclosure or productionauthorization.
+
+
+## WB1 drawing workspace batch — 4 October 2026
+
+User authorised next batch: controls/paper/layers, four original vector brushes, three erasers. Independent Gatekeeper accepted quarantined implementation after exact precision/work/history/render limits were recorded. Isolated source written under prototypes/browser-workspace;16 independent model cases pass after repair1/2. Actual browser QA pending; initial live foundation remains unchanged. One combined human review follows actual QA and separately reviewed immutable deployment. Zero paid external model calls; product checkpoints closed0/14, production/main/G14 false. See docs/delivery/WORKSPACE_EXECUTION_STATE.md.
+
+
+## WB1 initial browser QA and final bounded repair
+
+Initial actual CI37222940471:16modelPASS/12of14ChromiumPASS. Endpoint and selected-board persistence failures repaired in cycle2/2; queued preview/mode/export issues fixed. Retest pending with15 browser journeys including partialmigrationquota. No remaining source repair budget; current live app unchanged. Source/test identities and initial receipts retained; productionfalse0/14.
+
+
+## WB1 independent candidate acceptance
+
+Exact80c5bbe86cde4c41a81e354f296ff5d203019888 CI37223520128 passed16model/15Chromiumjourneys; artifact11310983072 SHA25601f381c6457c3f58204b9578cef58b8176ebe841aa9a13a4d41fe932b8ee65ce. Independent QA reproduced16sourceidentities and accepted candidate. Independent Gatekeeper authorised exacttestedworkspace preview via existing ownerallowedPagesbranch, no main/release grant. Renderer syntheticp95/max62.7ms notpenfeel/60Hzcertification. Repairs2/2,CI2/3,paidmodelcalls0. Deployment/live verificationpending; see WORKSPACE_FINAL_GATEKEEPER.md and WORKSPACE_QA_REPORT.md. Formal product0/14, productionfalse.
+
+
+## WB1 hosted workspace verified
+
+Pages37224013072 succeeded;9hostedappassetsHTTP200 andexactmatchtested80c5bbe86cde4c41a81e354f296ff5d203019888. RemoteChrome savedupdatecopied1oldboard, retainedexistingdrawing, nativekeyboardcontrols/color/paper/layer/newink/save/reloadobserved. Hostedofflinereadyindicatorobserved,networkdisableCIonly; physicalpenfeelNOTVERIFIED. Onecombinedhumantestcard delivered. CurrentpreviewcompleteWB1threeinternalslices; fullproduct0/14closure,productionfalse. No native/history/security/defaultmainchanges; no paidexternalmodelcalls. See WORKSPACE_HOSTED_STATUS.md.
+
+
+
+## U3 closed — cumulative browser preview, 7 October 2026
+
+U3 Core Gestures + Geometry is accepted and hosted at https://lionellmisquitta.github.io/unruly/. Immutable-by-governance checkpoint branch `checkpoint/u3-v0.6.0` points to tested cumulative integration `41019aa0b7991bbe5bd56b71b9516da9bb454cd0`; accepted U2 rollback `fd15c607d5b9a605b1e8a1164250803832830591` remains preserved. This closes the drawing-UX preview checkpoint; broad product/main/production authorization remains false.
+
+Independent QA and independent Gatekeeper accepted CI3 run37605503902:48 model and90 actual Chromium checks passed, including32 U3. Exact32 source/test/workflow identities verified. CI2 native-input Undo defect retained and repaired; no unresolved blocking finding. Repair batches2/2 and QA CI runs3/3 consumed. Evidence and receipts are durable under docs/delivery/evidence/u3; QA and Gatekeeper reports accompany them. Same-model independent-session fallback used; no alternate runtime or paid external model call.
+
+Reviewed Pages deployment37606536465 succeeded on workflow commitcb1dc0a27713f59f1fbea526a3a285d7068ea764, pinned to accepted source. All15 hosted app assets byte-matched. Remote Chrome observed safe Update preserving prior ink, held-line recognition, native numeric edit700, Apply, Saved on this device, and retained prior ink + edited line after reload. Offline-ready indicator observed; actual network-disabled offline regression passed in CI. Returned extension metadata errors were extension-origin, with no app-origin error observed. Physical pen pressure/latency/feel remains NOT_VERIFIED. One cumulative U1–U3 app and handheld review card delivered.
+
+Knowledge capture delta .knowledge/delta-u3-closure.json records acceptance, evidence, defect disposition and smaller-increment delivery decision. It extends existing capture records; no complete KGP export is claimed. Next: human tablet review of U3, then one bounded next interaction at a time with a fresh handoff/budget. No automatic G02 implementation.
+
+
+## PEN1 closed — pen input preview, 7 October 2026
+
+User authorized adjustable pressure, brush choices, pen-button mapping and the drawing-surface context-menu fix, then explicitly authorized public repository publication. Exact `93af0a256b57932288f57239612bd4cc5516b7fc` is accepted and hosted at the existing UNRULY URL. Checkpoint `checkpoint/pen1-v0.7.0`; U3 rollback preserved.57model+108browser checks passed,36source identities verified; all16hosted assets match. One repair batch/two CI runs, no budget reset for U3.
+
+Twenty brushes retain original12 appearance. New strokes snapshot adjustable width/opacity response. Browser-reported barrel and eraser signals map to temporary Lasso/Eraser/Pan/None. Manual Lasso automatically admits Move inside the selection. Actual pen pressure/button capability remains NOT_VERIFIED; trusted CDP eraser transport unavailable, synthetic handler contract passed. See PEN1_QA_CHECKPOINT_RESULT.json, PEN1_FINAL_GATEKEEPER.md and PEN1_HOSTED_CLOSURE.md under docs/delivery. Main/full-production authorization remains false.
+
+
+## CURVE1 closed — personal pressure curve, 8 October 2026
+
+Exact `d522e76417a91b8d1a4636010ae10a2c7d53f9b7` accepted and hosted at existing UNRULY URL; checkpoint branch `checkpoint/curve1-v0.8.0`, PEN1 rollback preserved. Three fixed-input draggable response points, strict monotonic piecewise-linear curve, local profile, presets/Reset and bounded disposable pressure test pad. New strokes snapshot curve; old strokes keep appearance. Independent QA/Gatekeeper:66 model+118 browser=184 PASS,39 exact source identities. Application unchanged after initial build; test target/oracle and first-paint readiness fixes preserved original assertions. Application repairs0/2,CI3/3 consumed.
+
+Pages37722268828/workflow25bb1b28bd9f6442806bf257506b568e6ada4ac7 succeeded; all17 hosted assets match. Remote Chrome observed safe update preserving reference ink, native graph and numeric settings, truthful mouse pad, profile persistence and old/new ink retained after Saved +reload. Offline-ready observed, network-disabled regressionCI only. See CURVE1_QA_CHECKPOINT_RESULT.json, CURVE1_FINAL_GATEKEEPER.md and CURVE1_HOSTED_CLOSURE.md. Physical pressure/buttons/feel NOT_VERIFIED; no main merge/full production grant. Next human device review; no automatic new checkpoint.

@@ -45,13 +45,13 @@ int main() {
     });
     test("P0-M07 exact capacity and overflow", [] {
         Capture c; c.begin(0,0,.5);
-        for(std::size_t j=1;j<Capture::limit;++j) require(c.append(j,j,.5), "early capacity stop");
+        for(std::size_t j=1;j<Capture::limit;++j) require(c.append(static_cast<double>(j),static_cast<double>(j),.5), "early capacity stop");
         require(c.samples.size()==Capture::limit, "capacity mismatch");
         require(!c.append(8000,8000,.5) && c.full && !c.active, "overflow did not stop capture");
         require(!c.begin(1,1,.5) && c.samples.size()==Capture::limit, "full press escaped bound");
     });
     test("P0-M08 clear recovery from full", [] {
-        Capture c; c.begin(0,0,.5); for(std::size_t j=1;j<Capture::limit;++j) c.append(j,j,.5); c.append(1,1,.5);
+        Capture c; c.begin(0,0,.5); for(std::size_t j=1;j<Capture::limit;++j) c.append(static_cast<double>(j),static_cast<double>(j),.5); c.append(1,1,.5);
         c.clear(); c.clear(); require(c.samples.empty() && !c.active && !c.full && c.stroke==0, "clear incomplete");
         require(!c.append(1,1,.5) && c.begin(2,2,1) && c.samples.size()==1 && c.stroke==1, "clear recovery failed");
     });
@@ -60,7 +60,7 @@ int main() {
         c.begin(3,3,.5); require(c.samples[0].stroke!=c.samples[1].stroke, "resumed stroke bridged");
     });
     test("P0-M10 repeated capacity clear cycles", [] {
-        Capture c; for(int k=0;k<3;++k) { c.begin(0,0,0); for(std::size_t j=1;j<Capture::limit;++j) require(c.append(j,-double(j),1), "cycle fill failed"); require(!c.append(0,0,.5), "cycle overflow"); c.clear(); }
+        Capture c; for(int k=0;k<3;++k) { c.begin(0,0,0); for(std::size_t j=1;j<Capture::limit;++j) require(c.append(static_cast<double>(j),-static_cast<double>(j),1), "cycle fill failed"); require(!c.append(0,0,.5), "cycle overflow"); c.clear(); }
         require(c.samples.empty() && !c.full && !c.active, "cycle leaked state");
     });
     // Risk reproduction, NOT a passing UI test: the model has no contact/buttons input.

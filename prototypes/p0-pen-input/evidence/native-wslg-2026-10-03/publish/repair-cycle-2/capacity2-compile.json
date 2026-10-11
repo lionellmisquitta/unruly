@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "g++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-pedantic",
+    "<repository>/prototypes/p0-pen-input/qa-claude/capacity_regression.cpp",
+    "-o",
+    "<repository>/prototypes/p0-pen-input/build/native-wslg-2026-10-03/repair-cycle-2/capacity2"
+  ],
+  "cwd": "<repository>",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "started_at_utc": "2026-10-03T15:12:46.621079+00:00",
+  "completed_at_utc": "2026-10-03T15:12:47.374283+00:00"
+}

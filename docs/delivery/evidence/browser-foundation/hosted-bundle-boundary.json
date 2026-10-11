@@ -1,0 +1,14 @@
+[
+  {
+    "path": "PROJECT_STATE.md",
+    "http": 404
+  },
+  {
+    "path": ".project-governance/state.yaml",
+    "http": 404
+  },
+  {
+    "path": "docs/delivery/BROWSER_QA_RESULT.json",
+    "http": 404
+  }
+]

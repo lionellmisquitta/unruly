@@ -27,3 +27,14 @@ C01 platform packages and verified controller preflight; C02 local boards/recove
 
 ## Current evidence
 See the probe's `QA_REPORT.md` for exact source hashes, executable capture tests and unverified native areas. P0a, P0 and the product are distinct milestones. No APK or portable Windows binary has been produced at this boundary.
+
+## Updated execution environment — Windows continuation
+The earlier chat-workspace inventory above is historical. In the actual personal Windows clone, MSVC 19.50 and CMake 4.2.3-msvc3 are installed in Visual Studio Build Tools; Codex CLI 0.160.0 executes. The 10 Capture-only tests passed after one explicit-conversion fixture repair. Native configuration failed on missing Qt; no device or Android execution occurred. Required Gatekeeper/Adversary skills and Claude CLI were not found. See WINDOWS_CONTINUATION.md, ENGINEERING_BASELINES.md and prototype evidence/windows-2026-10-03/identity.json. Independent pre-build review and production remain blocked.
+
+
+## Installed delivery skills and authenticated Claude ? 3 October 2026
+Both complete delivery skills are now installed project-locally for Codex (.agents/skills) and Claude (.claude/skills); no hooks registered. Active bundled Claude 2.1.288 authenticated smoke returned exactly UNRULY_QA_READY, exit 0, 5.157 seconds. Fresh independent QA launch was rejected by automatic approval review for source egress and broad shell tools before execution. No independent QA ran. A no-tools enumerated-payload proposal is saved for explicit source-transfer approval; native Qt/Android/device coverage remains blocked. Evidence: prototypes/p0-pen-input/evidence/claude-2026-10-03/. Extension updates may change executable path. Production authorization remains false.
+
+
+## Approved tools-disabled Claude QA cycle ? 3 October 2026
+User explicitly approved the enumerated source/protocol and sanitized-evidence transfer. Claude independently authored tests/findings and assessed local execution; Codex executed tests and repaired application code separately. Initial19 model cases passed. Claude capacity2 regression cases failed before one Codex repair and passed afterward. On repaired source, existing10+capacity2 passed; adversarial9 compiled but Windows App Control blocked launch (WinError4551). Independent final QA status BLOCKED. Native/device/Android remain blocked; merged regression not run. Production authorization remains false. See prototypes/p0-pen-input/qa-claude/QA_REPORT.md, QA_CHECKPOINT_RESULT.json and evidence/claude-2026-10-03/. No merge/push, hook registration or policy bypass occurred. Extension updates may change executable path.

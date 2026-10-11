@@ -1,0 +1,9 @@
+# Approved handbook additions and implementation sequence
+
+6 October 2026. User explicitly requested all worthwhile additions and proceeding with build. The user-selected compact Procreate UI and SINGLE gestures remain authoritative. User implementation permission is recorded; independent checkpoint readiness remains required.
+
+U1/U2/U3 remain the immediate batch with one combined preview publication/test card. Following it: G02 remaining reference gestures/shapes; P02 stroke stabilization (bounded configurable smoothing, preserve raw versus processed samples); P03 reference image window plus editable text/font/size objects and bounded image/font import; P04 drawing guides (ruler/grid/isometric/perspective/symmetry, layer assistance/snapping); P05 hybrid tile painting with real Smudge and texture/watercolor brushes; P06 alpha lock, clipping/layer masks, gap-aware/reference-layer bucket and preview/apply/cancel Gaussian blur; P07 finite export/DPI, image/document sharing, timelapse/movement trace; P08 optional Drive sync and user-controlled BYOK summaries/diagrams after base validation.
+
+Every addition is a retained first-release requirement with concrete checkpoint design before its code; this list is not a claim it is built. Stabilization must preserve endpoint intent and bypass when disabled; reference content can be independently hidden and sampling/export inclusion is explicit; text remains editable until chosen conversion; guides are separate from decorative paper; masks are not locks; gap closing is separate from fill colour tolerance. First-release completed means tested supported requirements, not merely named toolbar buttons.
+
+No native toolchain, app install, paid cross-model subprocess, policy change, login or hidden provider call is required by U1. Browser/offline/local storage remains the main product. Existing full-product/production authorization stays false; bounded prototype checkpoint authorization is independent.

@@ -1,0 +1,21 @@
+change_id: CHG-UNRULY-SIZE-1010
+readiness: ready_for_verification
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - tests/browser-workspace/pen.browser.cjs
+  - tests/browser-workspace/browser.test.cjs
+  - tests/browser-workspace/u2.browser.cjs
+  - tests/browser-workspace/u1.compat.cjs
+  - tests/browser-workspace/size-percent.browser.cjs
+  - .github/workflows/browser-workspace.yml
+regression_obligations:
+  - id: PENB02
+    reason: Preserve original 40-unit mouse golden and pressure-disabled pen equality, with 100-percent UI setup.
+    test_id: cumulative-browser
+  - id: PERCENT-CONTRACT
+    reason: Verify stored widths, endpoints, preset memory and replay under new percent controls.
+    test_id: cumulative-browser
+  - id: LEGACY-PIXELS
+    reason: Retain frozen renderer RGBA, pressure, eraser and offline suites unchanged.
+    test_id: cumulative-browser

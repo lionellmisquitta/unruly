@@ -27,3 +27,14 @@ P0b must test device/eraser identity, touch arbitration, multi-display coordinat
 Rollback: close the executable and remove its build directory. No user documents, network integrations or credentials are modified.
 
 Reference: https://doc.qt.io/qt-6/qtabletevent.html and https://doc.qt.io/qt-6/qtwidgets-widgets-tablet-example.html
+
+## Windows continuation evidence
+On 3 October 2026 the Builder compiled and ran the existing Capture-only suite with installed MSVC /W4 /WX after one fixture conversion repair: 10 passed, 0 failed. Native CMake configuration failed because Qt >=6.8 was not found. This does not change the unverified native/device status above. See evidence/windows-2026-10-03/identity.json and docs/review/WINDOWS_CONTINUATION.md. The repaired fixture needs independent QA; historical QA_REPORT.md is preserved.
+
+
+## Capture-model coordinate and capacity contract
+The quarantined raw Capture model preserves any finite coordinates, including negative/out-of-widget and extreme finite values; it rejects nonfinite coordinates and pressure outside [0,1]. This does not establish safe native rendering for extreme values. Native clipping, event routing and actual pen behaviour remain unverified. Capture becomes full and inactive immediately when the 8,000th sample is accepted, whether through begin or append; Clear is required to resume.
+
+
+## Runnable WSLg continuation - 3 October 2026
+The native Linux Qt probe now builds and launches visibly in WSLg using the verified user-owned kit. From repository root: `bash prototypes/p0-pen-input/launch-linux.sh` (add `--build` to rebuild). See docs/review/P0_HUMAN_TEST_CARD.md for the single three-task review and docs/review/NATIVE_P0_MILESTONE.md for exact evidence and limits. A two-line tabletTracking repair in the existing constructor fixes the synthetic hover-routing failure; all21 model and8 native synthetic cases passed afterward. Prior Windows evidence is historical for its recorded hashes, not verification of this new native source. Full P0 remains blocked, production authorization false, closed delivery checkpoints0.

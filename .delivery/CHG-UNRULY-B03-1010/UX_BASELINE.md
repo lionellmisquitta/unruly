@@ -1,0 +1,3 @@
+# UX baseline — UXD-SMUDGE-01
+
+Bounded extension of the existing single canvas; toolbar Smudge and settings popover. Reuse shared catalog, 0–100 size/strength modifiers and Reset. Existing board and layer context is derived. Idle → provisional sampling → committed raster; Escape, pointercancel, capture loss or additional finger → discard. Two-finger navigation and undo gestures resume normally. Empty/locked/hidden/oversized/work-limit errors are actionable and preserve existing board. Raster conversion is disclosed at the moment of tool selection; Undo reverses it. Separate page rejected by explicit cumulative-product decision. Physical tablet feel is a named prototype assumption. Established one-app architecture locked for this checkpoint; no new navigation.

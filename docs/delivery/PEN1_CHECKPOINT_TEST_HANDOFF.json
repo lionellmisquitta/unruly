@@ -1,0 +1,63 @@
+{
+  "checkpoint_id": "PEN1",
+  "status": "closed_verified_quarantined_preview",
+  "objective": "Make stylus pressure visibly adjustable and diagnosable; correct canvas browser-menu interference; expose more original brushes and browser-reported pen button mappings in the one cumulative app.",
+  "user_authorization": "Explicit user request 7 October 2026 after U3 closure; quarantined browser preview only.",
+  "parent_source_commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
+  "parent_ledger_commit": "dc0e6ad445999d76de5de94a4d6b3fe6e5dd6a80",
+  "branch": "preview/pen-input-p1-2026-10-07",
+  "builder": "root Codex session",
+  "contracts": [
+    "Suppress browser contextmenu only on drawing canvas/selection overlay, preserving existing two/three-finger Undo/Redo and cancellation boundaries; no document side effect from menu gesture.",
+    "New pen strokes default to clearly dynamic pressure width with adjustable minimum width and response curve plus optional pressure opacity. Mouse strokes remain full-width without invented pressure. Old stroke pixels and absent dynamics metadata remain unchanged.",
+    "Snapshot validated dynamics in each new stroke so save/reload, copy/paste, transforms and Undo retain appearance. Reject invalid/unknown dynamics fields atomically; preserve current document/work/history/render limits.",
+    "Show live browser input type, latest/min/max observed in-contact pressure, variation vs constant/unavailable report and button bitmask. Constant0.5 does not certify hardware pressure support; no raw device data transmitted.",
+    "Retain the original immutable12 brushes and add8 clearly distinct original preset options using bounded existing renderer families. All20 options reachable through existing categories; no commercial brush imports or new external assets.",
+    "Provide persistent mapping selectors for browser-reported barrel button and eraser signal: temporary Lasso, Eraser, Pan or None; defaults barrel Lasso and eraser Eraser. Nonprimary pen contact may begin mapped operation while mouse right-click never draws.",
+    "Lasso selection automatically admits Move when pen hovers/contacts within selected bounds; user can immediately drag selected strokes. Outside selected bounds remains Lasso. Pen mapping is per gesture, restores prior tool on end/cancel and never rewrites a live stroke midway.",
+    "Support pen button transitions delivered as pointermove (tip contact plus barrel/eraser bit) and reject switching within active gesture. Buttons invisible to browser cannot be mapped; no global OS/Bluetooth shortcut interception claim.",
+    "Preserve U1/U2/U3, offline/update, migration, locking, selection and performance regression on exact integration source; publish only independently accepted bytes through existing reviewed Pages workflow."
+  ],
+  "allowed_application_paths": [
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/brushes.js",
+    "prototypes/browser-workspace/render.js",
+    "prototypes/browser-workspace/model.js",
+    "prototypes/browser-workspace/u2.js",
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/style.css",
+    "prototypes/browser-workspace/sw.js",
+    "prototypes/browser-workspace/pen-input.js"
+  ],
+  "test_paths": [
+    "tests/browser-workspace/pen.model.test.mjs",
+    "tests/browser-workspace/pen.browser.cjs",
+    ".github/workflows/browser-workspace.yml",
+    "tests/browser-workspace/fixtures/accepted-u3-preset-render.js.txt"
+  ],
+  "scope_out": [
+    "full Procreate parity",
+    "Smudge",
+    "tilt/twist engine",
+    "OS pen driver configuration",
+    "Bluetooth shortcuts not exposed to webpage",
+    "main/production release"
+  ],
+  "limits": {
+    "application_repair_batches_max": 2,
+    "qa_ci_runs_max": 3,
+    "previous_u3_budget_remains": "2/2 repairs and3/3QA runs consumed"
+  },
+  "physical_pen": "NOT_VERIFIED_UNTIL_HUMAN_DEVICE_TEST",
+  "rollback": "Keep acceptedU3 ref/source unchanged; export new-dynamics boards before reverting because older preview ignores newer dynamics metadata and may reject added presetIDs.",
+  "accepted_source_commit": "93af0a256b57932288f57239612bd4cc5516b7fc",
+  "checkpoint_ref": "checkpoint/pen1-v0.7.0",
+  "closure": {
+    "qa_run": 37633247724,
+    "checks_passed": 165,
+    "application_repair_batches_used": 1,
+    "qa_ci_runs_used": 2,
+    "deployment_run": 37634720112,
+    "hosted_assets_matched": 16
+  }
+}

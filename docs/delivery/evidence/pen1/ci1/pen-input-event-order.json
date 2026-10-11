@@ -1,0 +1,114 @@
+{
+  "checkpoint_id": "PEN1",
+  "source_commit": "9bf176a589f9a45580c07bf19dd7475c20c91d54",
+  "ci_run_id": "37631776750",
+  "artifact_id": "11486149246",
+  "artifact_digest_reported": "sha256:6dc1637a7c656e00ce30541fa98110616bf4d588f2906b55f15ab8ca4dc00259",
+  "extraction": "Actual Playwright trace evaluateExpression results for __penEvents.filter; no fabricated events",
+  "cases": [
+    {
+      "id": "PENB08-real-eraser-signal-and-none-no-ink",
+      "classification": "CDP_CAPABILITY_LIMIT_NO_MASK32_DELIVERED",
+      "trace_zip_sha256": "f7bb880690c36dc282af86360760cb485c9bf9b478ff11acca6dde99cee6aa63",
+      "trace_call_id": "call@627",
+      "events": [
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 0,
+          "button": -1,
+          "pressure": 0,
+          "id": 2
+        },
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 0,
+          "button": -1,
+          "pressure": 0,
+          "id": 2
+        },
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 0,
+          "button": -1,
+          "pressure": 0,
+          "id": 2
+        }
+      ]
+    },
+    {
+      "id": "PENB13-barrel-contact-arrives-as-pointermove",
+      "classification": "PRODUCT_DEFECT_NORMAL_RELEASE_CAPTURE_ORDER",
+      "trace_zip_sha256": "9d1c74af6590bf9085b7d5774bb89fd7890e77064c36ff9cde04f232c9d31036",
+      "trace_call_id": "call@1008",
+      "events": [
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 3,
+          "button": -1,
+          "pressure": 0.4000000059604645,
+          "id": 2
+        },
+        {
+          "type": "gotpointercapture",
+          "pointerType": "pen",
+          "buttons": 3,
+          "button": -1,
+          "pressure": 0.4000000059604645,
+          "id": 2
+        },
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 3,
+          "button": -1,
+          "pressure": 0.4000000059604645,
+          "id": 2
+        },
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 3,
+          "button": -1,
+          "pressure": 0.4000000059604645,
+          "id": 2
+        },
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 3,
+          "button": -1,
+          "pressure": 0.4000000059604645,
+          "id": 2
+        },
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 3,
+          "button": -1,
+          "pressure": 0.4000000059604645,
+          "id": 2
+        },
+        {
+          "type": "lostpointercapture",
+          "pointerType": "pen",
+          "buttons": 0,
+          "button": -1,
+          "pressure": 0,
+          "id": 2
+        },
+        {
+          "type": "pointermove",
+          "pointerType": "pen",
+          "buttons": 0,
+          "button": -1,
+          "pressure": 0,
+          "id": 2
+        }
+      ]
+    }
+  ]
+}

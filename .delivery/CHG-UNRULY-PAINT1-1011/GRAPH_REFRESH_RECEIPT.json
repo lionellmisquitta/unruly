@@ -1,0 +1,19 @@
+{
+  "status": "VERIFIED_REPOSITORY_SYNC",
+  "graph_revision": "unruly-kgp-20261011T133431Z",
+  "graph_commit": "112ac936fc95b3cd40f169583a71d7b3f6fb6c1f",
+  "graph_branch": "knowledge/unruly-kgp",
+  "verified_paths": 63,
+  "manifest_sha256": "8b5ec4e16fb74ceb9ac00343784218e81e715e40069e583f1d19c2eefc58503d",
+  "package_sha256": "f3f8036c048b1dc7f13be5f1e88179d735372d0f1beecd2831505cb6f2554f5e",
+  "content_sha256": "24585b7d022c6c83b8f42b84411e0b9278ddc4c9ad239fd0677621f79d2669a0",
+  "validation": "KGP, strict scope, security scan and both viewer inline scripts PASS; all 63 committed blob hashes match local edition",
+  "source_sha": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+  "source_ci_run": 38140820796,
+  "preview_pin": "6f429652ec3d15a6a987aa6e1dc16e8320f6e348",
+  "native_main": "cb1d52089c5cdd159050dc375b92750eb84d8271",
+  "application_change": false,
+  "note": "The package manifest records preparation-time sync status. This post-publication receipt resolves the pending repository synchronization; legacy sources are preserved unchanged.",
+  "knowledge_branch_head": "093d8735b427c3d4b5e1c5d892917609f96fa25c",
+  "receipt_scope": "Documentation-only application-branch pointer update"
+}

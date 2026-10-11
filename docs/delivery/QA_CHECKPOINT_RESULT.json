@@ -1,0 +1,73 @@
+{
+  "packet": "WB1",
+  "adversary": "Isolated same-model Codex QA fallback; independent tests/evidence assessment; no application repairs by QA",
+  "builder": "Codex root",
+  "candidate_status": "AUTOMATED_CANDIDATE_PASS",
+  "overall_status": "BLOCKED_FOR_FULL_PRODUCT_RELEASE",
+  "commit": "80c5bbe86cde4c41a81e354f296ff5d203019888",
+  "ci_run": 37223520128,
+  "artifact_id": 11310983072,
+  "artifact_sha256_independently_verified": "01f381c6457c3f58204b9578cef58b8176ebe841aa9a13a4d41fe932b8ee65ce",
+  "source_identity": {
+    "entries": 16,
+    "all_match": true,
+    "receipt": "evidence/workspace/ci-2/qa-source-hash-verification.json"
+  },
+  "model": {
+    "executed": 16,
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "receipt": "evidence/workspace/ci-2/model-output.txt"
+  },
+  "browser": {
+    "version": "151.0.7922.34",
+    "node": "v22.23.3",
+    "executed": 15,
+    "passed": 15,
+    "failed": 0,
+    "uncaught_console_errors": 0,
+    "synthetic_cdp_input": true,
+    "receipt": "evidence/workspace/ci-2/browser-results.json"
+  },
+  "renderer_measurement": {
+    "p50_ms": 54,
+    "p95_ms": 62.70000000001164,
+    "maximum_ms": 62.70000000001164,
+    "p95_bound_ms": 250,
+    "maximum_bound_ms": 1000,
+    "workload": "8layers/10000points1440x950DPR1",
+    "surfaces": 3,
+    "physical_feel": "NOT_VERIFIED"
+  },
+  "budget": {
+    "application_repairs_used": 2,
+    "application_repairs_maximum": 2,
+    "ci_attempts_used": 2,
+    "ci_attempts_maximum": 3,
+    "paid_model_calls": 0
+  },
+  "initial_failures_retained": {
+    "model": "evidence/workspace/initial-model-output.txt",
+    "browser": "evidence/workspace/ci-1/browser-results.json",
+    "browser_defects": [
+      "W03 release endpoint omitted",
+      "W11 reopened-board selection lost on reload"
+    ]
+  },
+  "backend": "N/A: no product server/API/Drive/AI integration in WB1; real IndexedDB migration, transactions, conflicts and recovery were tested",
+  "physical_pen": "NOT_VERIFIED",
+  "device_feel": "NOT_VERIFIED",
+  "native_windows_android_packages": "NOT_VERIFIED by this browser run",
+  "hosted_updated_candidate": "NOT_VERIFIED",
+  "merged_product_regression": "NOT_VERIFIED",
+  "tablet_device_performance": "NOT_VERIFIED; responsive screenshot only, measured renderer workload desktop synthetic",
+  "production_authorization": false,
+  "checkpoint_closed": false,
+  "promotion_authority": "Software Delivery Gatekeeper",
+  "screenshots_reviewed": [
+    "W02-brush-controls-and-reopen.png",
+    "W01-mobile-controls.png",
+    "W06-paper-layers-controls.png"
+  ]
+}

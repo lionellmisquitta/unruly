@@ -1,0 +1,79 @@
+{
+  "report_type": "NATIVE_ADAPTER_FAILURE_DIAGNOSIS",
+  "role": "Quality Engineering Adversary",
+  "production_authorized": false,
+  "hardware_claim": false,
+  "repair_cycle": "1 of 3 (diagnosis only; not advanced, no repair attempted)",
+  "source_modified": false,
+  "tests_modified": false,
+  "recorded_outcome": {
+    "compile": "exit 0, no warnings under -Wall -Wextra -Werror",
+    "run": "exit 1; platform=xcb; 6 PASS (P0N-001, 003, 004, 005, 007, 008); 2 FAIL (P0N-002, P0N-006)",
+    "scope": "Only the recorded run is evidence. Everything below is analysis of that record. Nothing new was executed in this review."
+  },
+  "failing_cases": [
+    {
+      "id": "P0N-002",
+      "recorded_failures": [
+        "hover mid-stroke did not end capture",
+        "left move after hover bridged ink",
+        "fresh press not recorded",
+        "fresh press did not get stroke id 2"
+      ],
+      "classification": "UNKNOWN, leaning PRODUCT_DEFECT. A TEST_DEFECT is not supported by the evidence.",
+      "fixture_or_source_diagnosis": "All four messages follow from one cause: the buttonless TabletMove (hover) never reached Pad::tabletEvent. If it had, capture.end() would have run and the first assertion would have passed. Replaying the sequence with the hover dropped gives the recorded outcome. Capture stays active, so the later left move at (40,40) is appended and the sample count is 3 instead of 2. The fresh press at (50,50) then gives count 4, which fails the 'size==3' check, and the stroke-id check is skipped because it is guarded by size==3. The failure is therefore a single root cause, not four independent defects.",
+      "candidate_causes": [
+        "Primary: Qt widgets deliver buttonless tablet moves only to widgets with tablet tracking enabled. Pad's constructor does not call setTabletTracking(true), and the default is believed to be false. This is a Qt behaviour I am recalling, not something confirmed from the supplied headers. If it is right, hover is dropped by QApplication/QWidget routing before the override runs. The same would happen with a real stylus in the shipped app, so the source comment 'A lost release must not turn subsequent hover into an ink bridge' would not hold in practice. That points to a product defect, because the branch is unreachable for hover.",
+        "Alternative: the hidden, never-shown test widget changes routing in a way a shown widget would not. This is less likely, because press and left-button moves reach the widget (P0N-001, 003, 007, 008 pass) and only the buttonless move fails.",
+        "Alternative: the synthetic QTabletEvent built by tab() is not recognised as hover in this Qt build. This is unlikely, because the constructor arguments are the same as for the passing left-button moves and only the buttons differ."
+      ]
+    },
+    {
+      "id": "P0N-006",
+      "recorded_failures": [
+        "tablet hover not accepted"
+      ],
+      "classification": "UNKNOWN, leaning PRODUCT_DEFECT. Same root cause as P0N-002.",
+      "fixture_or_source_diagnosis": "The test sets the event to ignored, sends the hover, and reads isAccepted(). Press, move and release returned accepted, and only hover returned ignored. That is consistent with the hover being dropped before Pad::tabletEvent ran, since the product only calls event->accept() inside that handler. The hover assertion does not fail because of the product's accept logic. It fails because the handler never runs. The mouse-exclusion assertions in P0N-006 passed.",
+      "candidate_causes": [
+        "Same as P0N-002: tabletTracking is off, so the hover does not reach the handler."
+      ]
+    }
+  ],
+  "anti_greenwashing_position": "No assertion is to be weakened, deleted or skipped. Do not call setTabletTracking(true) on the test's Pad to make these pass. Doing so would hide the exact condition under test, because the shipped Pad does not set it. The tests currently match the contract implied by the source comments, so no TEST_DEFECT is proven and no test correction is proposed.",
+  "evidence_needed": [
+    "Run-time confirmation of the root cause: a diagnostic-only test file (not a replacement for native_tests.cpp), with the Pad's real constructor, that prints hasTabletTracking() and a counter of tabletEvent calls for each hover. It can use a thin subclass in the test file or QApplication::notify interception, without editing main.cpp. Expectation if the hypothesis holds: tracking false, hover count 0.",
+    "The same diagnostic run with setTabletTracking(true) applied by the test only, labelled DIAGNOSTIC and not counted toward any PASS. Expectation if the hypothesis holds: hover reaches the handler and P0N-002 and P0N-006 hover assertions would pass in that configuration only.",
+    "Whether the same probe shows the same result with the widget shown, to separate the hidden-widget alternative.",
+    "The governing requirement text for REQ-005 on hover, to confirm that hover handling after a lost release is required and not best-effort. This is needed to finalise PRODUCT_DEFECT versus REQUIREMENT_CONTRADICTION.",
+    "Real-device or platform evidence for hover delivery stays BLOCKED. Synthetic events prove nothing about hardware."
+  ],
+  "proposed_commands": {
+    "status": "NOT_EXECUTED. These are proposals only.",
+    "note": "Same g++ argv as the recorded compile, with a new diagnostic source path and a new output path under the evidence directory. Do not overwrite native_tests or its results."
+  },
+  "builder_defect_handoff": {
+    "status": "CONDITIONAL. Hand off only after the diagnostic evidence above confirms the cause. Until then this is a hypothesis, and the repair cycle is not advanced.",
+    "suspected_defect": "Pad does not enable tablet tracking, so buttonless tablet moves (hover) are not delivered to Pad::tabletEvent. The lost-release protection (hover ends capture) is therefore unreachable in the shipped app. After a lost release, subsequent left-button moves can extend the stroke instead of requiring a new press.",
+    "reproduction": "Run the recorded native_tests binary. P0N-002 and P0N-006 fail with the messages above.",
+    "expected_builder_action": "Application repair by the Builder only, for example enabling tablet tracking on Pad in its constructor, followed by re-running the exact failing tests P0N-002 and P0N-006 and then the impacted regression. QA must not edit main.cpp.",
+    "regression_watch": "After any repair, rerun P0N-001, 004, 005, 006, 007 and 008 because enabling hover delivery changes which events reach the handler."
+  },
+  "separate_observation_x11_inspector": {
+    "text": "The unchanged app process is alive but the X11 inspector finds no P0 name yet. This is unrelated to the two test failures, since the native tests build their own Pad and do not use the app window.",
+    "classification": "UNKNOWN (possibly ENVIRONMENT_DEFECT, for example inspector timing, window title or WM property mismatch, or the window not yet mapped).",
+    "evidence_needed": "Window title and property listing from the inspector at a later time, and confirmation that the app's window title is the expected 'UNRULY P0 \u2014 raw pen probe (not the app)'. No product defect is claimed from this."
+  },
+  "unchanged_blocked_items": [
+    "Hardware pen routing, palm rejection, pressure and tilt accuracy: BLOCKED, not verified",
+    "Windows and Android behaviour: BLOCKED, not verified",
+    "Performance and latency: no claim",
+    "Rendering output of paintEvent: not tested",
+    "Evidence is limited to the xcb platform under WSLg"
+  ],
+  "limits": [
+    "This is analysis only. I cannot confirm the Qt tablet-tracking default or QApplication routing from the supplied material, so the primary cause is a hypothesis.",
+    "No PASS is claimed for any new proposed command.",
+    "Production authorization remains false."
+  ]
+}

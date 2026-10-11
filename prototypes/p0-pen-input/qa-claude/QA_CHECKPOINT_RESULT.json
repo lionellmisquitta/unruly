@@ -1,0 +1,66 @@
+{
+  "checkpoint_id": "P0a-WINDOWS-CLAUDE",
+  "builder_agent": "codex",
+  "adversary_agent": "claude-code",
+  "adversary_model": "claude-opus-5-5 (CLI-reported)",
+  "independence_mode": "cross-model-tools-disabled",
+  "branch": "main",
+  "pre_merge_commit": "cb1d52089c5cdd159050dc375b92750eb84d8271",
+  "source_dirty": true,
+  "source_hashes": [
+    {
+      "path": "prototypes/p0-pen-input/main.cpp",
+      "sha256": "a0cfc97d441abccf721527471d6bde86090194d7bad9f4316e3ef30a0254d48a"
+    },
+    {
+      "path": "prototypes/p0-pen-input/model_tests.cpp",
+      "sha256": "0b718d2195e96f508d6bed33b6c2e2129081e40e867bfebe1ee5ecc614ea4f5c"
+    },
+    {
+      "path": "prototypes/p0-pen-input/CMakeLists.txt",
+      "sha256": "588e71e66ec07b7cebb36603ca070ec57e4a2a9060498b69d12b1e8aa2908337"
+    },
+    {
+      "path": "prototypes/p0-pen-input/README.md",
+      "sha256": "bf4fd2acbbe6abd07bd1b0513a45330a613b509e20359b46e295d0eb3bed2e6c"
+    }
+  ],
+  "merged_commit": null,
+  "repair_cycles": 1,
+  "tests_designed": 21,
+  "qa_authored_tests_designed": 11,
+  "existing_tests": 10,
+  "tests_executed": 12,
+  "passed": 12,
+  "failed": 0,
+  "blocked": 9,
+  "counts_scope": "Current repaired source only; native categories are additional blocked coverage, not invented test counts.",
+  "initial_source_passed": 19,
+  "red_capacity_cases_failed": 2,
+  "red_failed_assertions": 4,
+  "test_data_manifest": "Claude-authored deterministic in-memory values in qa-claude/adversarial_tests.cpp and capacity_regression.cpp; hashes bound in evidence.",
+  "regression_scope": [
+    "existing Capture10",
+    "Claude adversarial9",
+    "Claude capacity2"
+  ],
+  "regression_status": "BLOCKED_APP_CONTROL",
+  "merged_regression_status": "NOT_VERIFIED",
+  "native_device_android_status": "BLOCKED",
+  "unresolved_defects": [
+    "QA-F01 fixed in model scope; native final-sample rendering remains unverified.",
+    "Post-repair adversarial9 execution blocked by Windows Application Control WinError4551; do not bypass.",
+    "Qt/Android toolchain and physical-device evidence unavailable."
+  ],
+  "contradictions": [],
+  "evidence_locations": [
+    "prototypes/p0-pen-input/evidence/claude-2026-10-03/current-source-identity.json",
+    "prototypes/p0-pen-input/evidence/claude-2026-10-03/repair-cycle-1-local-execution.json",
+    "prototypes/p0-pen-input/evidence/claude-2026-10-03/capacity-red-local-execution.json",
+    "prototypes/p0-pen-input/evidence/claude-2026-10-03/evidence-addendum-response.json"
+  ],
+  "qa_status": "BLOCKED",
+  "production_authorized": false,
+  "release_authorized": false,
+  "provenance": "Controller-normalized summary of actual local execution and immutable independent Claude assessments; not a Gatekeeper authorization."
+}

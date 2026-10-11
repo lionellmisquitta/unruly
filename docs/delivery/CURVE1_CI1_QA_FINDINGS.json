@@ -1,0 +1,47 @@
+{
+  "checkpoint_id": "CURVE1",
+  "source_commit": "6900349f70822b8765c37c825da9f19dd96ad68c",
+  "ci_run": "37642810671",
+  "artifact_id": "11493585754",
+  "received_artifact_digest": "91634b247152a507472a0e311236f9f470b54864f8eda7215246966dc1c0eb23",
+  "downloaded_zip_sha256": "91634b247152a507472a0e311236f9f470b54864f8eda7215246966dc1c0eb23",
+  "model_pass": 66,
+  "browser_pass": 113,
+  "browser_fail": 5,
+  "manifest_rows": 39,
+  "current_application_bytes_exact_ci1": true,
+  "current_test_manifest_mismatches_expected_after_repairs": [
+    "tests/browser-workspace/browser.test.cjs",
+    "tests/browser-workspace/curve.browser.cjs",
+    "tests/browser-workspace/selection.browser.cjs",
+    "tests/browser-workspace/u1.browser.cjs"
+  ],
+  "findings": [
+    {
+      "tests": [
+        "CURVEB08",
+        "CURVEB09"
+      ],
+      "classification": "TEST_DRIVER_DEFECT",
+      "evidence": "Failure screenshot shows calibration pad below popover clipped viewport after numeric controls were filled. Raw CDP driver used boundingBox without scrolling; actual event coordinates missed pad and no pad contact ownership began. No application pad defect established.",
+      "repair": "Scroll actual target into view before CDP coordinates; assert document.elementFromPoint at pad center is the pad. Preserve raw/mapped pressure, ownership, board isolation and256 sample assertions unchanged."
+    },
+    {
+      "tests": [
+        "W01-desktop-controls",
+        "U05-mobile-real-selection-controls",
+        "UB08-thumbnails-scratch-bound-and-no-penmove"
+      ],
+      "classification": "TEST_ORACLE_STALE_AUTHORIZED_SCOPE_EXTENSION",
+      "evidence": "Approved calibration adds one static360x140 canvas. Old whole-app count5 therefore observes6; no added board renderer surface demonstrated.",
+      "repair": "Retain exact5 board renderer canvases by excluding only named pressure-test canvas; separately assert exactlyone360x140pad. UB08 repeats pad and renderer limits through32layer thumbnails and live pen moves."
+    }
+  ],
+  "application_defects_proven": [],
+  "budget_consumed": {
+    "qa_ci_runs": 1,
+    "application_repair_batches": 0
+  },
+  "next_status": "READY_FOR_CI2_TEST_FIXTURES_SAME_APPLICATION_BYTES",
+  "physical_pen": "NOT_VERIFIED"
+}

@@ -1,0 +1,79 @@
+{
+  "browser": "151.0.7922.34",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "W01-desktop-controls",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W01-mobile-controls",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W01-tablet-controls",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W02-brush-controls-and-reopen",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W03-pen-cancel-touch-history",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n30 !== 50\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:34:202\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:25:561)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:34:1",
+      "console_errors": []
+    },
+    {
+      "id": "W04-render-alpha-brush-paper",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W05-render-layer-order-and-benchmark",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W06-paper-layers-controls",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W07-import-export-and-rejection",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W08-legacy-copy-original-unchanged",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W09-quota-conflict-recovery",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W10-all-erasers-undo-cancel",
+      "status": "PASS",
+      "console_errors": []
+    },
+    {
+      "id": "W11-board-selection-and-import-limit",
+      "status": "FAIL",
+      "message": "AssertionError [ERR_ASSERTION]: opened board remains selected after reload\n+ actual - expected\n\n+ 'Untitled board'\n- 'Original selected'\n\n    at /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:42:593\n    at async run (/home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:25:561)\n    at async /home/runner/work/unruly/unruly/tests/browser-workspace/browser.test.cjs:42:1",
+      "console_errors": []
+    },
+    {
+      "id": "W12-offline-update-safety",
+      "status": "PASS",
+      "console_errors": []
+    }
+  ]
+}

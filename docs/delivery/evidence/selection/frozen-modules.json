@@ -1,0 +1,17 @@
+[
+  {
+    "file": "prototypes/browser-workspace/model.js",
+    "sha256": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+    "unchanged": true
+  },
+  {
+    "file": "prototypes/browser-workspace/render.js",
+    "sha256": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+    "unchanged": true
+  },
+  {
+    "file": "prototypes/browser-workspace/storage.js",
+    "sha256": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+    "unchanged": true
+  }
+]

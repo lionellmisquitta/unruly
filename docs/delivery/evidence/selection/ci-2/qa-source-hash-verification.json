@@ -1,0 +1,120 @@
+{
+  "count": 19,
+  "all_match": true,
+  "entries": [
+    {
+      "path": "prototypes/browser-workspace/README.md",
+      "expected": "130ecbf99fbac72c4f584b77f4aab16f5e454722b2ee1615e9af563d9400e065",
+      "actual": "130ecbf99fbac72c4f584b77f4aab16f5e454722b2ee1615e9af563d9400e065",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/app.js",
+      "expected": "5596446d8ea2c22733065cd0509fb82b6ae8a4b463c6106e7b04af49fc6b4052",
+      "actual": "5596446d8ea2c22733065cd0509fb82b6ae8a4b463c6106e7b04af49fc6b4052",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/icon.svg",
+      "expected": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "actual": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/index.html",
+      "expected": "acb20e36bcabf0e7fdd48f6c76f251444f96124bee1b165a8c1fa508e3d9119a",
+      "actual": "acb20e36bcabf0e7fdd48f6c76f251444f96124bee1b165a8c1fa508e3d9119a",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/manifest.webmanifest",
+      "expected": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "actual": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/model.js",
+      "expected": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+      "actual": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/render.js",
+      "expected": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+      "actual": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/selection.js",
+      "expected": "2b8aff9073f13ecbad5900202d0578388222a19c3d12150e66477f98bd222203",
+      "actual": "2b8aff9073f13ecbad5900202d0578388222a19c3d12150e66477f98bd222203",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/storage.js",
+      "expected": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+      "actual": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/style.css",
+      "expected": "380ccbde6d16e884b768ec0ef1e07dc83c53e94544c5b4abc71407a533dae4c9",
+      "actual": "380ccbde6d16e884b768ec0ef1e07dc83c53e94544c5b4abc71407a533dae4c9",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/sw.js",
+      "expected": "2bae0a37aab2a5db06e507c05b5285442f93f939063495cef1517268a9cef8e7",
+      "actual": "2bae0a37aab2a5db06e507c05b5285442f93f939063495cef1517268a9cef8e7",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/browser.test.cjs",
+      "expected": "8b707d355685fd9f6fa2b38b938e84b5dfd50cf138dbf4290f1179ba310ae469",
+      "actual": "8b707d355685fd9f6fa2b38b938e84b5dfd50cf138dbf4290f1179ba310ae469",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/selection.browser.cjs",
+      "expected": "fd526ad4c5a0cebedf53dea53386f3954f73359c6d092fcda5346ece1df9adc5",
+      "actual": "fd526ad4c5a0cebedf53dea53386f3954f73359c6d092fcda5346ece1df9adc5",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/server.cjs",
+      "expected": "0f0ea13978ec217492e6c4009deec02c9d2c7c955e9e9f777238175c255e94b4",
+      "actual": "0f0ea13978ec217492e6c4009deec02c9d2c7c955e9e9f777238175c255e94b4",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/model.test.mjs",
+      "expected": "e0f0f0dfc7b5eb48280c84cb812d0a9fcfe7877b4be793cc6691941f0057bf2c",
+      "actual": "e0f0f0dfc7b5eb48280c84cb812d0a9fcfe7877b4be793cc6691941f0057bf2c",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/selection.test.mjs",
+      "expected": "1c4e9c9cb6e8447b31a3f882a465b52161b32d2340115f0d767ebdd6cc8216f1",
+      "actual": "1c4e9c9cb6e8447b31a3f882a465b52161b32d2340115f0d767ebdd6cc8216f1",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/package.json",
+      "expected": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+      "actual": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/package-lock.json",
+      "expected": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+      "actual": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+      "match": true
+    },
+    {
+      "path": ".github/workflows/browser-workspace.yml",
+      "expected": "0bd3dda3a449a59cefa4a6312b763fa8b51936aec1f1921493577e8ee89afe5e",
+      "actual": "0bd3dda3a449a59cefa4a6312b763fa8b51936aec1f1921493577e8ee89afe5e",
+      "match": true
+    }
+  ]
+}

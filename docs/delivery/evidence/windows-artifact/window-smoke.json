@@ -1,0 +1,9 @@
+{
+  "category": "native-window-startup-close",
+  "painted_status": "NOT_VERIFIED",
+  "title": "UNRULY — native Windows pen slice (P0a-WIN-D1)",
+  "status": "PASS",
+  "physical_pen": "NOT_VERIFIED",
+  "exit_code": 0,
+  "production_authorized": false
+}

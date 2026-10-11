@@ -1,0 +1,32 @@
+change_id: CHG-UNRULY-B02-1010
+route: standard_change
+prohibited_paths: [src/, native/, .github/workflows/browser-workspace-pages.yml]
+checkpoints:
+  - id: advanced-brush-controls
+    allowed_paths:
+      - prototypes/browser-workspace/brush-recipe.js
+      - prototypes/browser-workspace/brush-recipe-ui.js
+      - prototypes/browser-workspace/brushes.js
+      - prototypes/browser-workspace/render.js
+      - prototypes/browser-workspace/model.js
+      - prototypes/browser-workspace/app.js
+      - prototypes/browser-workspace/u2.js
+      - prototypes/browser-workspace/brush-compare.js
+      - prototypes/browser-workspace/index.html
+      - prototypes/browser-workspace/sw.js
+      - tests/browser-workspace/recipe.model.test.mjs
+      - tests/browser-workspace/recipe.browser.cjs
+      - .delivery/CHG-UNRULY-B02-1010/
+      - .github/workflows/browser-workspace.yml
+    test_paths: [tests/browser-workspace/]
+    tests:
+      - id: recipe-model
+        command: [node, --test, tests/browser-workspace/recipe.model.test.mjs]
+        timeout_seconds: 120
+      - id: recipe-browser
+        command: [node, tests/browser-workspace/recipe.browser.cjs]
+        timeout_seconds: 180
+      - id: cumulative-browser
+        command: [bash, .delivery/CHG-UNRULY-SIZE-1010/run-cumulative.sh]
+        timeout_seconds: 600
+test_config_changes: [.github/workflows/browser-workspace.yml]
