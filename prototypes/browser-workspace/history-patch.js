@@ -1,6 +1,8 @@
 // Inverse history records: unchanged entities/pixels are not retained in each entry.
 // Commands still clone and validate the board; these records are session memory only.
-const copy=x=>structuredClone(x),same=(a,b)=>a===b||JSON.stringify(a)===JSON.stringify(b);
+const copy=x=>structuredClone(x);
+// Compare structurally once, without serializing each ancestor of a large board.
+function same(a,b){if(a===b)return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b))return false;const keys=Object.keys(a),other=Object.keys(b);return keys.length===other.length&&keys.every((key,i)=>key===other[i]&&same(a[key],b[key]));}
 const size=x=>new TextEncoder().encode(JSON.stringify(x)).length;
 const object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&Object.getPrototypeOf(x)===Object.prototype;
 const idArray=x=>x.every(v=>object(v)&&typeof v.id==='string')&&new Set(x.map(v=>v.id)).size===x.length;
@@ -27,28 +29,37 @@ function tilePatch(before,after){
  return best(['tiles',a.width,a.height,changes],before);
 }
 function difference(before,after,root=false){
- if(same(before,after))return null;
+ if(before===after)return null;
  if(typeof before==='string'&&typeof after==='string')return tilePatch(before,after)||textPatch(before,after);
  if(Array.isArray(before)&&Array.isArray(after)){
   if(idArray(before)&&idArray(after)){
    const old=new Map(before.map(x=>[x.id,x])),next=new Map(after.map(x=>[x.id,x])),restore=[],edits=[];
    for(const x of before){if(!next.has(x.id))restore.push(copy(x));else{const p=difference(x,next.get(x.id));if(p)edits.push([x.id,p]);}}
-   return best(['ids',before.map(x=>x.id),restore,edits],before);
+   const order=before.map(x=>x.id);return !restore.length&&!edits.length&&same(order,after.map(x=>x.id))?null:['ids',order,restore,edits];
   }
   let start=0,end=0;while(start<before.length&&start<after.length&&same(before[start],after[start]))start++;
   while(end<before.length-start&&end<after.length-start&&same(before[before.length-1-end],after[after.length-1-end]))end++;
-  return best(['splice',start,after.length-start-end,copy(before.slice(start,before.length-end))],before);
+  if(start===before.length&&start===after.length)return null;return ['splice',start,after.length-start-end,copy(before.slice(start,before.length-end))];
  }
  if(object(before)&&object(after)){
   const restore=[],drop=[],edits=[];
   for(const key of Object.keys(before)){if(root&&key==='revision')continue;if(!Object.hasOwn(after,key))restore.push([key,copy(before[key])]);else{const p=difference(before[key],after[key]);if(p)edits.push([key,p]);}}
   for(const key of Object.keys(after))if(!Object.hasOwn(before,key)&&(!root||key!=='revision'))drop.push(key);
   const order=Object.keys(before),reordered=JSON.stringify(order)!==JSON.stringify(Object.keys(after));
-  return restore.length||drop.length||edits.length||reordered?best(['object',restore,drop,edits,reordered?order:null],before):null;
+  return restore.length||drop.length||edits.length||reordered?['object',restore,drop,edits,reordered?order:null]:null;
  }
  return set(before);
 }
-export function inverseHistory(before,after){const patch=difference(before,after,true),entry={historyPatch:1,patch:patch||['object',[],[],[]]};const legacy=before?.version===3||before?.version===4;return ownStrings(!legacy||size(entry)<size(before)?entry:patch?.[0]==='set'?patch[1]:copy(before));}
+// Large geometry-wide operations are cheaper as one bounded legacy snapshot.
+// Sample changed array endpoints only to choose representation, never correctness:
+// either representation restores the complete prior board. Small edits stay compact.
+function broadGeometry(before,after){
+ if(!Array.isArray(before.layers)||!Array.isArray(after.layers))return false;
+ const next=new Map(after.layers.map(l=>[l.id,l]));let total=0,changed=0;
+ for(const layer of before.layers){const strokes=new Map((next.get(layer.id)?.strokes||[]).map(s=>[s.id,s]));for(const stroke of layer.strokes||[]){const points=stroke.points;if(!Array.isArray(points))continue;total+=points.length;const other=strokes.get(stroke.id)?.points;if(Array.isArray(other)&&points.length&&(!same(points[0],other[0])||!same(points.at(-1),other.at(-1))))changed+=points.length;}}
+ return changed>4000&&changed>total/2;
+}
+export function inverseHistory(before,after){if((before?.version===3||before?.version===4)&&broadGeometry(before,after))return ownStrings(copy(before));const patch=difference(before,after,true),entry={historyPatch:1,patch:patch||['object',[],[],[]]};const legacy=before?.version===3||before?.version===4;return ownStrings(!legacy||size(entry)<size(before)?entry:patch?.[0]==='set'?patch[1]:copy(before));}
 function apply(value,p){
  if(!Array.isArray(p))throw Error('Invalid history patch');
  switch(p[0]){
