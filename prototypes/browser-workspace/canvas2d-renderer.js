@@ -44,7 +44,7 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,applyMask=null,allocationReserve=()=>0}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,applyMask=null,allocationReserve=()=>0}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
@@ -68,7 +68,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
   if(s.opacity===0)return;
   if(s.brush==='raster'){const r=s.raster;scratch.width=1;scratch.height=1;scratch.width=r.width;scratch.height=r.height;const sc=clear(scratch);sc.putImageData(new ImageData(decodeRaster(r.data),r.width,r.height),0,0);const lc=layer.getContext('2d');lc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);lc.globalAlpha=1;lc.globalCompositeOperation='source-over';lc.transform(...r.transform);lc.drawImage(scratch,0,0);lc.setTransform(1,0,0,1,0,0);return;}
   if(scratch.width!==g.w||scratch.height!==g.h){scratch.width=1;scratch.height=1;scratch.width=g.w;scratch.height=g.h;}
-  const sc=clear(scratch);sc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);drawStroke(sc,s);
+  const sc=clear(scratch);sc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);if(s.brush==='text'&&drawText)drawText(sc,s);else drawStroke(sc,s);
   const lc=layer.getContext('2d');lc.setTransform(1,0,0,1,0,0);lc.globalCompositeOperation='source-over';lc.globalAlpha=s.opacity;lc.drawImage(scratch,0,0);
  }
  function replayLayer(l,v,g,live=null){clear(layer);for(const s of l.strokes)strokeToLayer(s,v,g);if(live)strokeToLayer(live,v,g);}

@@ -1,0 +1,63 @@
+schema_version: '1.0'
+change_id: CHG-UNRULY-TEXT1-1011
+route: standard_change
+prohibited_paths:
+- src/
+- native/
+- knowledge-graph/
+- .knowledge/
+- prototypes/browser-workspace/storage.js
+test_config_changes:
+- .github/workflows/browser-workspace.yml
+checkpoints:
+- id: editable-text
+  allowed_paths:
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/text.js
+  - prototypes/browser-workspace/render.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/clipping.js
+  - prototypes/browser-workspace/sw.js
+  - prototypes/browser-workspace/model.js
+  - prototypes/browser-workspace/selection.js
+  - prototypes/browser-workspace/style.css
+  - prototypes/browser-workspace/canvas2d-renderer.js
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/text.model.test.mjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/text.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/render-contract.model.test.mjs
+  - .github/workflows/browser-workspace.yml
+  - .delivery/CHG-UNRULY-TEXT1-1011/
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - docs/delivery/DECISIONS.md
+  - README.md
+  test_paths:
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/text.model.test.mjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/text.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/render-contract.model.test.mjs
+  tests:
+  - id: text-model
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/text.model.test.mjs
+    timeout_seconds: 180
+  - id: text-browser
+    command:
+    - node
+    - tests/browser-workspace/text.browser.cjs
+    timeout_seconds: 240
+  - id: cumulative-qa
+    command:
+    - bash
+    - .delivery/CHG-UNRULY-TEXT1-1011/run-qa.sh
+    timeout_seconds: 900
