@@ -1,14 +1,15 @@
-// Stable renderer boundary. Canvas2D is the sole supported backend today.
+// Stable renderer boundary. Auto retains occupied upper layers; canvas2d is the replay fallback.
 import {createCanvas2DRenderer} from './canvas2d-renderer.js';
+import {createLayerCompositor} from './layer-compositor.js';
 import {createRasterCache} from './raster-cache.js';
 import {decodePixels} from './raster.js';
 import {describeFrame} from './render-contract.js';
 export {graphiteGrain,rendererBudget} from './canvas2d-renderer.js';
 
-export function createRenderer(canvas,{backend='auto'}={}){
+export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*1024}={}){
  if(!['auto','canvas2d'].includes(backend))throw Error('Unsupported renderer backend: '+backend);
- const rasterCache=createRasterCache();let reference=false;
- const engine=createCanvas2DRenderer(canvas,{decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data)});
+ const rasterCache=createRasterCache(),layerCompositor=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null;let reference=false;
+ const engine=createCanvas2DRenderer(canvas,{decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor});
  let epoch=0,reason='initial',lastFrame=null,frames=0;
  function invalidate(why='external',releaseRaster=true){
   if(releaseRaster)rasterCache.clear();
@@ -36,6 +37,6 @@ export function createRenderer(canvas,{backend='auto'}={}){
   snapshotLayer:(...args)=>auxiliary('snapshotLayer',args),
   invalidate,
   surfaces:engine.surfaces,
-  getDiagnostics:()=>Object.freeze({contractVersion:1,backend:'canvas2d',epoch,reason,frames,lastFrame,rasterCache:rasterCache.diagnostics()})
+  getDiagnostics:()=>Object.freeze({contractVersion:1,backend:'canvas2d',epoch,reason,frames,lastFrame,rasterCache:rasterCache.diagnostics(),layerCache:layerCompositor?.diagnostics()||null})
  };
 }

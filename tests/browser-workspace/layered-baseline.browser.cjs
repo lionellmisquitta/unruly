@@ -32,8 +32,8 @@ async function rendererCase(p,options){return p.evaluate(options=>{
  m.validateBoard(b);const c=canvas(),reference=canvas(),renderer=r.createRenderer(c),rr=r.createRenderer(reference),view={x:0,y:0,scale:1};
  const live={id:'live',brush:'ink',preset:'ink-fineliner',color:'#172134',size:5,opacity:.7,points:[{x:140,y:180,pressure:.1},{x:160,y:184,pressure:.9}]};
  const cold=renderer.render(b,view,live),warm=[];for(let i=0;i<8;i++){live.points.push({x:165+i*4,y:184+Math.sin(i)*5,pressure:i/8});warm.push(renderer.render(b,view,live));}
- const expected=options.below?'reference':'retained-hit';check(warm.every(x=>x.mode===expected),'renderer path');
- const strokes=b.layers.reduce((n,l)=>n+l.strokes.length,0);check(warm.every(x=>x.completedStrokesReplayed===(options.below?strokes:0)),'replay count');
+ const expected=options.below?'layer-retained-hit':'retained-hit';check(warm.every(x=>x.mode===expected),'renderer path');
+ const strokes=b.layers.reduce((n,l)=>n+l.strokes.length,0);check(warm.every(x=>x.completedStrokesReplayed===0),'replay count');
  rr.renderReference(b,view,live);
  // Untimed pixel oracle: exclude synchronous GPU readback from render samples.
  const a=c.getContext('2d').getImageData(0,0,c.width,c.height).data,z=reference.getContext('2d').getImageData(0,0,reference.width,reference.height).data;
@@ -48,7 +48,7 @@ async function rendererCase(p,options){return p.evaluate(options=>{
  check(JSON.stringify(m.undo(transformed.value).board.layers)===JSON.stringify(b.layers),'transform atomic undo');
  check(transformed.value.board.layers.every((l,i)=>l.strokes.every((s,j)=>s.id===b.layers[i].strokes[j].id&&s.size===b.layers[i].strokes[j].size&&s.points.every((q,k)=>q.pressure===b.layers[i].strokes[j].points[k].pressure))),'ownership width pressure');
  check(JSON.stringify(b)===before,'fixture never mutated');
- const result={layers:b.layers.length,strokes,points:b.layers.reduce((n,l)=>n+l.strokes.reduce((v,s)=>v+s.points.length,0),0),documentBytes:bytes(b),rasterPixelBytes:b.layers.flatMap(l=>l.strokes).filter(s=>s.raster).reduce((n,s)=>n+s.raster.width*s.raster.height*4,0),rendererBackingBytes:backing,coldRenderMs:cold.ms,warmRenderMs:summary(warm.map(x=>x.ms)),mode:expected,replayedCompletedStrokesPerWarmFrame:warm[0].completedStrokesReplayed,validationMs:schema.ms,addStrokeMs:edit.ms,undoMs:undone.ms,redoMs:redone.ms,historyBytes,lassoMs:selection.ms,lassoComparisons:stats.comparisons,transformMs:transformed.ms,exactReferencePixels:true};
+ const result={layers:b.layers.length,strokes,points:b.layers.reduce((n,l)=>n+l.strokes.reduce((v,s)=>v+s.points.length,0),0),documentBytes:bytes(b),rasterPixelBytes:b.layers.flatMap(l=>l.strokes).filter(s=>s.raster).reduce((n,s)=>n+s.raster.width*s.raster.height*4,0),rendererBackingBytes:backing,layerCacheBytes:warm.at(-1).layerCacheBytes||0,totalBackingBytes:warm.at(-1).totalBackingBytes||backing,coldRenderMs:cold.ms,warmRenderMs:summary(warm.map(x=>x.ms)),mode:expected,replayedCompletedStrokesPerWarmFrame:warm[0].completedStrokesReplayed,validationMs:schema.ms,addStrokeMs:edit.ms,undoMs:undone.ms,redoMs:redone.ms,historyBytes,lassoMs:selection.ms,lassoComparisons:stats.comparisons,transformMs:transformed.ms,exactReferencePixels:true};
  c.remove();reference.remove();return result;
  },options);}
 async function capacity(p){return p.evaluate(()=>{const {m,fixture,check}=perf1;const b=fixture(50),h=m.createHistory(fixture(32)),before=JSON.stringify(h);let validateRejected=false,writeRejected=false;try{m.validateBoard(b);}catch(e){validateRejected=/Layer limit/.test(e.message);}try{m.layerCommand(h,'add');}catch(e){writeRejected=/Layer limit/.test(e.message);}check(validateRejected&&writeRejected,'capacity rejects unsupported 50 and 33rd layer');check(before===JSON.stringify(h),'capacity rejection atomic');return{supportedLayerCap:m.limits.layers,targetLayers:50,targetStatus:'BLOCKED_BY_CURRENT_DOCUMENT_CAP',foldersMasksPatterns:'NOT_IMPLEMENTED'};});}

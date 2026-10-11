@@ -44,12 +44,12 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
  let cache=null;
- const invalidate=()=>{cache=null;};
+ const invalidate=()=>{cache=null;layerCompositor?.clear();};
  function clear(c){const ctx=c.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,c.width,c.height);return ctx;}
  function geometry(){
   const rect=canvas.getBoundingClientRect(),cssW=Math.max(1,rect.width),cssH=Math.max(1,rect.height),deviceDpr=window.devicePixelRatio||1;
@@ -91,6 +91,19 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels}={}){
  function renderReference(board,view={x:0,y:0,scale:1},live=null){const t=performance.now();invalidate();const g=geometry();try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}}
  function render(board,view={x:0,y:0,scale:1},live=null){
   const t=performance.now(),g=geometry(),index=board.layers.findIndex(l=>l.id===board.activeLayer),active=board.layers[index];
+  // PERF4 optional upper-layer cache; the raw default keeps the accepted replay.
+  if(layerCompositor&&live&&active?.visible&&active.opacity!==0&&board.layers.slice(index+1).some(l=>l.visible&&l.opacity!==0)){
+   try{
+    const result=layerCompositor.render({board,view,live,g,index,backingLimit:rendererBudget.backingBytes,ops:{
+     background:()=>background(lower,board,view,g),replay:l=>replayLayer(l,view,g),
+     compositeLower:l=>composite(lower,l),retainActive:()=>clear(retained).drawImage(layer,0,0),
+     restoreLower:()=>clear(canvas).drawImage(lower,0,0),restoreActive:()=>clear(layer).drawImage(retained,0,0),
+     live:s=>strokeToLayer(s,view,g),composite:l=>composite(canvas,l),layer:()=>layer,
+     restoreUpper:entry=>{const ctx=clear(layer);if(entry)ctx.drawImage(entry.canvas,entry.x,entry.y);}
+    }});
+    return {...metrics(t,g,result.mode,result.count),layerCacheApplied:result.layerCacheApplied,layerCacheBytes:result.layerCacheBytes,totalBackingBytes:result.totalBackingBytes};
+   }catch(error){invalidate();/* Re-run accepted replay on cache/allocation/readback failure. */}
+  }else layerCompositor?.clear();
   // Upper-layer blending stays on the reference path; no approximation of opacity/order.
   if(!live||!active?.visible||active.opacity===0||board.layers.slice(index+1).some(l=>l.visible&&l.opacity!==0)){
    invalidate();try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}
