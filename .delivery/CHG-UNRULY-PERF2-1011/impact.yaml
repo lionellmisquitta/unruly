@@ -1,0 +1,19 @@
+change_id: CHG-UNRULY-PERF2-1011
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/render.js
+- prototypes/browser-workspace/canvas2d-renderer.js
+- prototypes/browser-workspace/render-contract.js
+- prototypes/browser-workspace/sw.js
+regression_obligations:
+- id: byte-preserved-backend-bounded-contract
+  reason: Accepted algorithm unchanged; metadata never traverses geometry
+  test_id: render-contract-model
+- id: renderer-helpers-pixels-offline
+  reason: Stable exports, cache/reference recovery and offline module graph
+  test_id: render-boundary-browser
+- id: cumulative-product
+  reason: All accepted model/browser/benchmark interactions remain mandatory
+  test_id: cumulative-qa
