@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
+mkdir -p tests/browser-workspace/evidence
+node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/mask-server.log 2>&1 &
+qa_mask_server_pid=$!
+trap 'kill "$qa_mask_server_pid" 2>/dev/null || true' EXIT
+for attempt in $(seq 1 50); do
+  if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+  sleep 0.1
+done
+node tests/browser-workspace/masks.browser.cjs > tests/browser-workspace/evidence/masks-output.txt 2>&1 || { cat tests/browser-workspace/evidence/masks-output.txt; exit 1; }
+me: Independent unit and actual Chromium journeys
+ell: bash
+n: |
+set -euo pipefail
 qa_result_code=0
 mkdir -p tests/browser-workspace/evidence
 node --version > tests/browser-workspace/evidence/node-version.txt
@@ -52,5 +65,4 @@ node tests/browser-workspace/history-cache.browser.cjs > tests/browser-workspace
 node tests/browser-workspace/layer-compositor.browser.cjs > tests/browser-workspace/evidence/layer-compositor-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layer-compositor-output.txt; qa_result_code=1; }
 node tests/browser-workspace/pixel-paint.browser.cjs > tests/browser-workspace/evidence/pixel-paint-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/pixel-paint-output.txt; qa_result_code=1; }
 node tests/browser-workspace/folders.browser.cjs > tests/browser-workspace/evidence/folders-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/folders-output.txt; qa_result_code=1; }
-node tests/browser-workspace/masks.browser.cjs > tests/browser-workspace/evidence/masks-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/masks-output.txt; qa_result_code=1; }
 exit "$qa_result_code"
