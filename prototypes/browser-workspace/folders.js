@@ -5,7 +5,7 @@ export function ancestors(board,node){const result=[],map=new Map((board.folders
 export const layerState=(b,l)=>({visible:l.visible&&ancestors(b,l).every(f=>f.visible),locked:l.locked||ancestors(b,l).some(f=>f.locked)});
 export const folderLayers=(b,id)=>b.layers.filter(l=>ancestors(b,l).some(f=>f.id===id));
 export function validateFolders(b,used){
- if(b.version!==5){if(Object.hasOwn(b,'folders')||b.layers.some(l=>Object.hasOwn(l,'parentId')))fail('Folders require document v5');return;}
+ if(b.version<5){if(Object.hasOwn(b,'folders')||b.layers.some(l=>Object.hasOwn(l,'parentId')))fail('Folders require document v5');return;}
  if(!Array.isArray(b.folders)||b.folders.length>folderLimits.count)fail('Folder limit or invalid folders');
  for(const f of b.folders){if(!f||typeof f.id!=='string'||!f.id||f.id.length>128||used.has(f.id)||typeof f.name!=='string'||!f.name.trim()||f.name.length>64||typeof f.visible!=='boolean'||typeof f.locked!=='boolean'||!Object.hasOwn(f,'parentId')||!(f.parentId===null||typeof f.parentId==='string'))fail('Invalid folder');used.add(f.id);}
  for(const n of [...b.folders,...b.layers]){if(Object.hasOwn(n,'parentId')&&!(n.parentId===null||typeof n.parentId==='string'))fail('Invalid folder parent');ancestors(b,n);}
@@ -30,7 +30,7 @@ export function mutateFolder(b,action,id,value){
  if(action==='group'){
   const ids=value;if(!Array.isArray(ids)||!ids.length||new Set(ids).size!==ids.length)fail('Select layers to group');
   const layers=b.layers.filter(l=>ids.includes(l.id));if(layers.length!==ids.length)fail('Selected layers missing');if(layers.some(l=>parent(l)!==parent(layers[0])))fail('Group layers from the same folder');for(const l of layers)writable(b,l);
-  if((b.folders||[]).length>=folderLimits.count)fail('Folder limit reached');b.version=5;b.folders=b.folders||[];
+  if((b.folders||[]).length>=folderLimits.count)fail('Folder limit reached');b.version=Math.max(5,b.version);b.folders=b.folders||[];
   const f={id:crypto.randomUUID(),name:'Folder '+(b.folders.length+1),parentId:parent(layers[0]),visible:true,locked:false};b.folders.push(f);
   const top=b.layers.indexOf(layers.at(-1)),stay=b.layers.filter(l=>!layers.includes(l)),at=b.layers.slice(0,top+1).filter(l=>!layers.includes(l)).length;stay.splice(at,0,...layers);b.layers=stay;for(const l of layers)l.parentId=f.id;return f.id;
  }

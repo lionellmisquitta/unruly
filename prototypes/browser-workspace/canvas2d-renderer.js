@@ -44,11 +44,11 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,applyMask=null}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
- let cache=null;
+ let cache=null,maskView=null,maskGeometry=null;
  const invalidate=()=>{cache=null;layerCompositor?.clear();};
  function clear(c){const ctx=c.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,c.width,c.height);return ctx;}
  function geometry(){
@@ -73,6 +73,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
  }
  function replayLayer(l,v,g,live=null){clear(layer);for(const s of l.strokes)strokeToLayer(s,v,g);if(live)strokeToLayer(live,v,g);}
  function composite(target,l){
+  applyMask?.(l,layer,scratch,maskView,maskGeometry,decodeRaster);
   const ctx=target.getContext('2d'),operation=l.blend==='normal'||!l.blend?'source-over':l.blend;
   ctx.setTransform(1,0,0,1,0,0);
   try{
@@ -88,9 +89,9 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
   return count;
  }
  function metrics(t,g,mode,count){return {ms:performance.now()-t,mode,completedStrokesReplayed:count,dpr:g.d,backingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0),surfaces:surfaces.map(c=>({width:c.width,height:c.height}))};}
- function renderReference(board,view={x:0,y:0,scale:1},live=null){const t=performance.now();invalidate();const g=geometry();try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}}
+ function renderReference(board,view={x:0,y:0,scale:1},live=null){const t=performance.now();invalidate();const g=geometry();maskView=view;maskGeometry=g;try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}}
  function render(board,view={x:0,y:0,scale:1},live=null){
-  const t=performance.now(),g=geometry(),index=board.layers.findIndex(l=>l.id===board.activeLayer),active=board.layers[index];
+  const t=performance.now(),g=geometry(),index=board.layers.findIndex(l=>l.id===board.activeLayer),active=board.layers[index];maskView=view;maskGeometry=g;
   // PERF4 optional upper-layer cache; the raw default keeps the accepted replay.
   if(layerCompositor&&live&&active?.visible&&active.opacity!==0&&board.layers.slice(index+1).some(l=>l.visible&&l.opacity!==0)){
    try{
@@ -136,7 +137,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
   for(const s of l.strokes){if(s.opacity===0)continue;const radius=s.size/2+1;for(const p of s.points){x0=Math.min(x0,p.x-radius);y0=Math.min(y0,p.y-radius);x1=Math.max(x1,p.x+radius);y1=Math.max(y1,p.y+radius);}}
   const scale=Number.isFinite(x0)?Math.min(1,72/Math.max(1,x1-x0),40/Math.max(1,y1-y0)):1;
   const v=Number.isFinite(x0)?{x:40-(x0+x1)/2*scale,y:24-(y0+y1)/2*scale,scale}:{x:0,y:0,scale:1};
-  replayLayer(l,v,{d:1,w:80,h:48});if(scratch.width!==80||scratch.height!==48){scratch.width=1;scratch.height=1;scratch.width=80;scratch.height=48;}const ctx=clear(scratch);ctx.globalAlpha=l.opacity;ctx.drawImage(layer,0,0);ctx.globalAlpha=1;return scratch.toDataURL();
+  replayLayer(l,v,{d:1,w:80,h:48});applyMask?.(l,layer,scratch,v,{d:1,w:80,h:48},decodeRaster);if(scratch.width!==80||scratch.height!==48){scratch.width=1;scratch.height=1;scratch.width=80;scratch.height=48;}const ctx=clear(scratch);ctx.globalAlpha=l.opacity;ctx.drawImage(layer,0,0);ctx.globalAlpha=1;return scratch.toDataURL();
  }
  function preview(stroke,width=180,height=56){
   invalidate();width=Math.min(400,Math.max(1,Math.round(width)));height=Math.min(100,Math.max(1,Math.round(height)));

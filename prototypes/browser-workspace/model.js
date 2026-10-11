@@ -1,3 +1,4 @@
+import {validateMasks,mutateMask} from './masks.js';
 import {validateFolders,layerState,mutateFolder,ancestors} from './folders.js';
 import {inverseHistory,restoreHistory} from './history-patch.js';
 import {validateRaster,decodePixels,rasterPayload,sampleTransform} from './raster.js';
@@ -22,10 +23,11 @@ function validateVersion(b,version){
  if(version>=3&&s.preset){const work=replayWork(s);if(work.dabs>20000)fail('Brush replay limit reached');if(work.particles>600000)fail('Brush particle limit reached');}else if(!['ink','raster'].includes(s.brush)){const step=Math.max(.5,s.size*(s.brush==='pencil'?.22:s.brush==='airbrush'?.3:.2));let dabs=0;for(let i=1;i<s.points.length;i++){dabs+=Math.max(1,Math.ceil(Math.hypot(s.points[i].x-s.points[i-1].x,s.points[i].y-s.points[i-1].y)/step));if(dabs>20000)fail('Brush replay limit reached');}}
  for(const q of s.points)if(!q||!num(q.x,-1e7,1e7)||!num(q.y,-1e7,1e7)||!(q.pressure===null||num(q.pressure,0,1)))fail('Invalid point/pressure');}}
  validateFolders(b,ids);
+ validateMasks(b,ids);
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;
 }
-export const validateBoard=b=>validateVersion(b,b?.version===5?5:b?.version===4?4:3);
+export const validateBoard=b=>validateVersion(b,b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
 export function migrateV2(v){const b=copy(validateVersion(v,2));b.version=3;for(const l of b.layers)l.blend='normal';return validateBoard(b);}
 export const createBoard=(id=crypto.randomUUID(),title='Untitled board')=>{const lid=crypto.randomUUID();return {version:3,id,title,revision:0,activeLayer:lid,layers:[{id:lid,name:'Layer 1',visible:true,locked:false,opacity:1,blend:'normal',strokes:[]}],paper:{kind:'plain',color:'#faf8f3',spacing:24,seed:173}};};
 export const createHistory=b=>({board:copy(validateBoard(b)),past:[],future:[],evicted:false});
@@ -39,7 +41,7 @@ export function migrateV1(v,dbRevision=0){
  if(!v||v.version!==1||!idOK(v.id)||typeof v.title!=='string'||v.title.length>128||!Number.isSafeInteger(v.revision)||v.revision<0||!Array.isArray(v.strokes))fail('Invalid legacy board');
  rejectPreset(v);for(const s of v.strokes)rejectPreset(s);const b=createBoard(v.id,v.title);b.revision=v.revision;b.layers[0].strokes=v.strokes.map(s=>({...copy(s),brush:'ink',opacity:1}));b.lineage={source:'unruly-foundation',revision:v.revision,dbRevision};return validateBoard(b);
 }
-export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));for(const f of b.folders||[]){f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=crypto.randomUUID();if(l.parentId)l.parentId=folderMap.get(l.parentId);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=crypto.randomUUID();}b.revision=0;delete b.lineage;return validateBoard(b);}
+export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));for(const f of b.folders||[]){f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=crypto.randomUUID();if(l.parentId)l.parentId=folderMap.get(l.parentId);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=crypto.randomUUID();if(l.mask?.patch)l.mask.patch.id=crypto.randomUUID();}b.revision=0;delete b.lineage;return validateBoard(b);}
 export function editable(b){const l=b.layers.find(l=>l.id===b.activeLayer);const state=layerState(b,l);if(!state.visible||state.locked)fail('Active layer is hidden or locked');return l;}
 export function addStroke(h,s){if(s.opacity===0)return h;return command(h,b=>editable(b).strokes.push(copy(s)));}
 export function layerCommand(h,action,id,value){return command(h,b=>{
@@ -47,7 +49,7 @@ export function layerCommand(h,action,id,value){return command(h,b=>{
  if(action==='add'){
   if(b.layers.length>=limits.layers)fail('Layer limit reached');
   const at=b.layers.findIndex(l=>l.id===b.activeLayer);
-  const n={id:crypto.randomUUID(),name:'Layer '+(b.layers.length+1),visible:true,locked:false,opacity:1,blend:'normal',strokes:[],...(b.version===5?{parentId:b.layers[at].parentId??null}:{})};
+  const n={id:crypto.randomUUID(),name:'Layer '+(b.layers.length+1),visible:true,locked:false,opacity:1,blend:'normal',strokes:[],...(b.version>=5?{parentId:b.layers[at].parentId??null}:{})};
   if(ancestors(b,b.layers[at]).some(f=>f.locked))fail('Parent folder is locked');
   b.layers.splice(at+1,0,n);b.activeLayer=n.id;return;
  }
@@ -60,11 +62,11 @@ export function layerCommand(h,action,id,value){return command(h,b=>{
  }else if(action==='duplicate'){
   if(b.layers.length>=limits.layers)fail('Layer limit reached');
   // Validate the entire candidate before allocating any persistent identities.
-  const candidate=copy(b),duplicate=copy(l),used=new Set([b.id,...b.layers.flatMap(l=>[l.id,...l.strokes.map(s=>s.id)])]);let serial=0;
+  const candidate=copy(b),duplicate=copy(l),used=new Set([b.id,...(b.folders||[]).map(f=>f.id),...b.layers.flatMap(l=>[l.id,...l.strokes.map(s=>s.id),...(l.mask?.patch?[l.mask.patch.id]:[])])]);let serial=0;
   const placeholder=()=>{let id;do{id=('u1-duplicate-'+serial++).padEnd(36,'0');}while(used.has(id));used.add(id);return id;};
-  duplicate.id=placeholder();duplicate.locked=false;for(const s of duplicate.strokes)s.id=placeholder();
+  duplicate.id=placeholder();duplicate.locked=false;for(const s of duplicate.strokes)s.id=placeholder();if(duplicate.mask?.patch)duplicate.mask.patch.id=placeholder();
   candidate.layers.splice(i+1,0,duplicate);candidate.activeLayer=duplicate.id;candidate.revision=b.revision+1;validateBoard(candidate);
-  duplicate.id=crypto.randomUUID();for(const s of duplicate.strokes)s.id=crypto.randomUUID();
+  duplicate.id=crypto.randomUUID();for(const s of duplicate.strokes)s.id=crypto.randomUUID();if(duplicate.mask?.patch)duplicate.mask.patch.id=crypto.randomUUID();
   b.layers.splice(i+1,0,duplicate);b.activeLayer=duplicate.id;
  }else if(action==='reorder'){
   if(!Number.isInteger(value)||value<0||value>=b.layers.length)fail('Invalid layer position');
@@ -111,3 +113,5 @@ export function eraseGesture(board,mode,sweeps,radius,options={}){
 }
 
 export const folderCommand=(h,action,id,value)=>command(h,b=>mutateFolder(b,action,id,value));
+
+export function maskCommand(h,action,id,value){return command(h,b=>{const l=b.layers.find(l=>l.id===id);if(!l)throw Error('Layer missing');const state=layerState(b,l);if(state.locked||!state.visible)throw Error('Mask layer is locked or hidden');mutateMask(b,l,action,structuredClone(value));});}

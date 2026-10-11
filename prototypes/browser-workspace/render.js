@@ -1,3 +1,4 @@
+import {applyLayerMask} from './masks.js';
 import {renderBoard} from './folders.js';
 // Stable renderer boundary. Auto retains occupied upper layers; canvas2d is the replay fallback.
 import {createCanvas2DRenderer} from './canvas2d-renderer.js';
@@ -9,8 +10,8 @@ export {graphiteGrain,rendererBudget} from './canvas2d-renderer.js';
 
 export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*1024}={}){
  if(!['auto','canvas2d'].includes(backend))throw Error('Unsupported renderer backend: '+backend);
- const rasterCache=createRasterCache(),layerCompositor=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null;let reference=false;
- const engine=createCanvas2DRenderer(canvas,{decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor});
+ const rasterCache=createRasterCache(),layerCompositor=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null;let reference=false,maskPreview=null;
+ const engine=createCanvas2DRenderer(canvas,{decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,applyMask:(l,...args)=>applyLayerMask(maskPreview?.id===l.id?{...l,mask:{...l.mask,patch:maskPreview.patch}}:l,...args)});
  let epoch=0,reason='initial',lastFrame=null,frames=0;
  function invalidate(why='external',releaseRaster=true){
   if(releaseRaster)rasterCache.clear();
@@ -32,6 +33,7 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
  return {
   render:(...args)=>draw('render',...args),
   renderReference:(...args)=>draw('renderReference',...args),
+  renderMask:(board,view,preview)=>{maskPreview=preview;try{return draw('render',board,view,{opacity:0});}finally{maskPreview=null;}},
   preview:(...args)=>auxiliary('preview',args),
   thumbnail:(...args)=>auxiliary('thumbnail',args),
   magnify:(...args)=>auxiliary('magnify',args),

@@ -15,6 +15,7 @@ export function createPaintSession(snapshot,settings,first){
   for(let y=y0;y<y1;y++)for(let x=x0;x<x1;x++){
    const distance=Math.hypot(x+.5+surface.x-p.x,y+.5+surface.y-p.y),coverage=config.tip==='soft'?Math.max(0,1-distance/(radius+.5))**2*.25:Math.max(0,Math.min(1,radius+.5-distance));if(coverage===0)continue;
    const sa=opacity*coverage,i=(y*surface.width+x)*4,data=surface.data,da=data[i+3]/255,alpha=sa+da*(1-sa);
+   if(config.erase){const old=data[i+3];data[i+3]=Math.round(old*(1-sa));if(!data[i+3])data.fill(0,i,i+4);if(data[i+3]!==old)changed=true;continue;}
    if(Math.round(alpha*255)===0)continue;
    const red=data[i],green=data[i+1],blue=data[i+2],oldAlpha=data[i+3];for(let k=0;k<3;k++)data[i+k]=alpha?Math.round((color[k]*sa+data[i+k]*da*(1-sa))/alpha):0;data[i+3]=Math.round(alpha*255);if(red!==data[i]||green!==data[i+1]||blue!==data[i+2]||oldAlpha!==data[i+3])changed=true;
   }

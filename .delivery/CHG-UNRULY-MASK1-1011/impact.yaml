@@ -1,0 +1,26 @@
+change_id: CHG-UNRULY-MASK1-1011
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/canvas2d-renderer.js
+- prototypes/browser-workspace/model.js
+- prototypes/browser-workspace/pixel-paint.js
+- prototypes/browser-workspace/sw.js
+- prototypes/browser-workspace/folders.js
+- prototypes/browser-workspace/index.html
+- prototypes/browser-workspace/render.js
+- prototypes/browser-workspace/masks.js
+- prototypes/browser-workspace/style.css
+- prototypes/browser-workspace/app.js
+regression_obligations:
+- id: mask-model
+  reason: Non-destructive hide/reveal, v6 validation and history
+  test_id: mask-model
+- id: mask-browser
+  reason: Tablet targeting, persistence, locks and independent alpha/cache oracles
+  test_id: mask-browser
+- id: prior-product
+  reason: Preserve every accepted regression and renderer source outside explicit
+    mask hook
+  test_id: cumulative-qa
