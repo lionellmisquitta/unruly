@@ -1,3 +1,4 @@
+import {drawText} from './text.js';
 import {createClipCache,clipBudget} from './clipping.js';
 import {applyLayerMask} from './masks.js';
 import {renderBoard} from './folders.js';
@@ -13,7 +14,7 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
  if(!['auto','canvas2d'].includes(backend))throw Error('Unsupported renderer backend: '+backend);
  const rasterCache=createRasterCache(),plainCache=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null,clippedCache=backend==='auto'?createLayerCompositor({budgetBytes:Math.max(0,Math.min(layerCacheBytes,16*1024*1024)-clipBudget)}):null,clipCache=createClipCache();let reference=false,maskPreview=null,clipMode=false,drawing=false,frameBoard=null,frameLive=null;
  const layerCompositor=backend==='auto'?{clear:()=>{plainCache.clear();clippedCache.clear();},render:args=>(clipMode?clippedCache:plainCache).render({...args,backingLimit:args.backingLimit-(clipMode?clipBudget:0)})}:null;
- const engine=createCanvas2DRenderer(canvas,{decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>clipMode?clipBudget:0,applyMask:(l,layer,scratch,v,g,decode)=>{
+ const engine=createCanvas2DRenderer(canvas,{drawText,decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>clipMode?clipBudget:0,applyMask:(l,layer,scratch,v,g,decode)=>{
   const adapted=maskPreview?.id===l.id?{...l,mask:{...l.mask,patch:maskPreview.patch}}:l;applyLayerMask(adapted,layer,scratch,v,g,decode);
   if(drawing&&clipMode){clipCache.apply(l,layer);clipCache.capture(l,layer,v,g,l.id===frameBoard.activeLayer?(maskPreview?.patch||frameLive):null);}
  }});
