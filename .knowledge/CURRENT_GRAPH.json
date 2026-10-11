@@ -37,5 +37,7 @@
     "conversations/active": 0,
     "conversations/archived": 0
   },
-  "read_policy": "Read CURRENT_CHECKPOINT.md and DECISIONS.md first; query relevant records. Full graph refresh only with explicit confirmation."
+  "read_policy": "Read CURRENT_CHECKPOINT.md and DECISIONS.md first; query relevant records. Full graph refresh only with explicit confirmation.",
+  "graph_commit": "112ac936fc95b3cd40f169583a71d7b3f6fb6c1f",
+  "repository_sync_verified": true
 }
