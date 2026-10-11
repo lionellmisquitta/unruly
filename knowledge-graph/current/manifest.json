@@ -1,0 +1,102 @@
+{
+  "format": "KGP",
+  "format_version": 2,
+  "name": "unruly",
+  "package_id": "urn:kgp:package:unruly",
+  "created_at": "2026-10-06T12:32:05Z",
+  "updated_at": "2026-10-11T13:37:40Z",
+  "canonical_format": "jsonl",
+  "content_sha256": "24585b7d022c6c83b8f42b84411e0b9278ddc4c9ad239fd0677621f79d2669a0",
+  "validation": {
+    "status": "valid",
+    "validated_at": "2026-10-11T13:37:40Z"
+  },
+  "counts": {
+    "graph/entities.jsonl": 290,
+    "graph/relationships.jsonl": 318,
+    "knowledge/confirmed.jsonl": 28,
+    "knowledge/tribal_knowledge.jsonl": 0,
+    "knowledge/tactical.jsonl": 8,
+    "knowledge/decisions.jsonl": 57,
+    "knowledge/ideas.jsonl": 3,
+    "knowledge/contradictions.jsonl": 5,
+    "knowledge/unknowns.jsonl": 21,
+    "evidence/evidence.jsonl": 83,
+    "evidence/source_inventory.jsonl": 89,
+    "conversations/index.jsonl": 0,
+    "conversations/active": 0,
+    "conversations/archived": 0
+  },
+  "source_policy": "Repository edition: canonical project knowledge and selected public checkpoint evidence; raw chats/historical original attachments excluded; originals retained unchanged outside this edition",
+  "scope": {
+    "topic": "UNRULY offline browser-first whiteboard",
+    "expected_terms": [
+      "UNRULY",
+      "browser",
+      "whiteboard",
+      "drawing",
+      "selection",
+      "Procreate"
+    ]
+  },
+  "visualization": {
+    "status": "complete",
+    "overview_mode": "concepts",
+    "concept_count": 153,
+    "lenses": [
+      "overview",
+      "business",
+      "functional",
+      "technical",
+      "evidence"
+    ]
+  },
+  "updated_at_local": "2026-10-11T19:07:40+05:30",
+  "timezone": "Asia/Kolkata",
+  "revision_id": "unruly-kgp-20261011T133431Z",
+  "graph_branch": "knowledge/unruly-kgp",
+  "handoff_source_commit": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+  "mode": "graph-aware decision-triggered maintenance",
+  "conversation_policy": {
+    "capture": "No new full raw transcript captured; bounded project decision basis included",
+    "raw_retention": "Previous raw/original sources retained unchanged outside repository edition",
+    "routine_retrieval": "Compact records and canonical queries first; no archive rescans"
+  },
+  "created_at_local": "2026-10-06T18:02:05+05:30",
+  "last_knowledge_update_at": "2026-10-11T13:34:31Z",
+  "last_knowledge_update_at_local": "2026-10-11T19:04:31+05:30",
+  "freshness_pointer_path": ".knowledge/CURRENT_GRAPH.json",
+  "source_status": {
+    "live_pages_source": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+    "latest_candidate_source": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+    "candidate_ci": "success",
+    "private_lab": "SUPERSEDED_DELIVERY_SURFACE",
+    "repo_knowledge_branch_sync": "PREPARED_FOR_LEASED_COMMIT"
+  },
+  "historical_notes": [
+    "Baseline reconstructed from Design Offline Whiteboard conversation, GitHub branch/compare metadata, project/governance state and selected delivery evidence.",
+    "Graphify deterministic AST import deferred; container could not materialize GitHub repository.",
+    "Update cadence: after each 2-4 checkpoint review batch.",
+    "Original91 entity/131edge baseline IDs retained; U2-only metadata superseded by evidence through CURVE1 and paused LSET1.",
+    "Graphify/AST import was not executed: this is a decisions/functional graph, not a deterministic code-call graph.",
+    "Record timestamps describe graph record creation/update; historical decision occurrence precision is separately recorded, never fabricated.",
+    "Current deployed CI1 differs from last fully hosted-verified CURVE1 and unverified repair handoff.",
+    "Oct 10 graph update from connector GitHub and Actions evidence; older Oct 8 operational records are retained but superseded.",
+    "The latest 0–100% size UI is NOT released because PENB02 legacy oracle fails.",
+    "This validated local package is not yet asserted as uploaded to GitHub knowledge branch.",
+    "October 10 Brush Lab/percent repair batch supersedes earlier operational state; historical evidence retained. Private Site URL intentionally omitted from public repository evidence.",
+    "Latest delivery decision: one cumulative GitHub Pages product, never require the user to test separate slices.",
+    "C04-B02 hosted verified; next C04-B03 smudge. One cumulative existing GitHub Pages URL."
+  ],
+  "notes": [
+    "Current PAINT1 release verified; six-checkpoint batch sinceUX2.",
+    "Next folders/masks; magic wand/precision before all fill checkpoints.",
+    "No32→50 capacity or physical-tablet/GPU/RAM guarantee; no scratch-disk engine or Rust rewrite.",
+    "Explicit current user authorization; future graph refreshes require announcement and confirmation.",
+    "Old repo canonical pointer was stale; new current/ edition preserves historical root sources unchanged."
+  ],
+  "application_docs_baseline": "a90bafcc99713a79b8408cd5042ee38080dacdab",
+  "edition": "repository",
+  "canonical_repository_path": "knowledge-graph/current",
+  "previous_revision": "unruly-kgp-20261010T185658Z"
+}

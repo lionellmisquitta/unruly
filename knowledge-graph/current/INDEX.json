@@ -1,0 +1,11 @@
+{
+  "revision_id": "unruly-kgp-20261011T133431Z",
+  "current_release": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+  "next_checkpoint": "Layer folders and grouping",
+  "checkpoint_ledger": "evidence/batch/checkpoints.json",
+  "handover": "HANDOVER.md",
+  "canonical_entities": "graph/entities.jsonl",
+  "canonical_relationships": "graph/relationships.jsonl",
+  "knowledge": "knowledge/",
+  "raw_conversations_included": false
+}

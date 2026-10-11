@@ -1,0 +1,13 @@
+{
+  "checkpoint": "CHG-UNRULY-PERF1-1011",
+  "source_commit": "53f8628ba157954d0e5408516125198f4e1b7442",
+  "source_ci": 38095617764,
+  "source_ci_status": "SUCCESS",
+  "model_tests": 140,
+  "structured_browser_scenarios": 162,
+  "artifact_id": 11685618968,
+  "artifact_sha256": "f89a53ffd5ed3d50a998a4ec5edf5a617160487003f4c27131460e22c76d0c9b",
+  "pages_run": null,
+  "pages_status": "NOT_DEPLOYED_TESTS_DOCS_ONLY",
+  "prior_live_source": "a216d616f057a2ab1f3fb883e3788979291eda23"
+}

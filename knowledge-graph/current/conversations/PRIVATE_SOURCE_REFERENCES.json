@@ -1,0 +1,10 @@
+[
+  {
+    "id": "urn:unruly:conversation:oct8-continuation",
+    "session_id": "oct8-continuation",
+    "captured_at": "2026-10-08T10:28:09Z",
+    "raw_sha256": "060cedfc6054cb2fff1d9d066965aec66adc5950dc7f7de6947310961af1cfe8",
+    "included": false,
+    "reason": "Historical raw excerpt retained unchanged outside this repository edition."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "revision_id": "unruly-kgp-20261011T133431Z",
+  "canonical_path": "knowledge-graph/current",
+  "checkpoints": [
+    "PERF1",
+    "PERF2",
+    "PERF3A",
+    "PERF3B",
+    "PERF4",
+    "PAINT1"
+  ],
+  "decisions": "D-P01 through D-P12; selection before fills; batch graph confirmation; no Rust rewrite or scratch-disk acceleration claim",
+  "validation": "PASS",
+  "source_commit": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+  "manifest_sha256": "8b5ec4e16fb74ceb9ac00343784218e81e715e40069e583f1d19c2eefc58503d",
+  "package_sha256": "f3f8036c048b1dc7f13be5f1e88179d735372d0f1beecd2831505cb6f2554f5e"
+}
