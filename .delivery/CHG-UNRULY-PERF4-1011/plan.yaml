@@ -20,6 +20,7 @@ checkpoints:
   - prototypes/browser-workspace/sw.js
   - tests/browser-workspace/layer-compositor.model.test.mjs
   - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/performance.browser.cjs
   - tests/browser-workspace/render-contract.model.test.mjs
   - tests/browser-workspace/render-boundary.browser.cjs
   - tests/browser-workspace/raster-tiles.browser.cjs
@@ -50,3 +51,4 @@ test_config_changes:
 - tests/browser-workspace/history-cache.browser.cjs
 - tests/browser-workspace/layered-baseline.browser.cjs
 - .github/workflows/browser-workspace.yml
+- tests/browser-workspace/performance.browser.cjs
