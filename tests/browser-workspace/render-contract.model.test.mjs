@@ -8,7 +8,7 @@ const metrics={mode:'reference',completedStrokesReplayed:3,dpr:2,backingBytes:80
 const board=()=>({revision:3,activeLayer:'a',layers:[{id:'a',visible:true,opacity:1},{id:'b',visible:true,opacity:.5}]});
 const frame=(b=board(),live={},m=metrics)=>describeFrame(b,{x:5,y:7,scale:2},live,m);
 test('PERF2M01 Canvas2D extraction preserves the accepted source exactly',()=>{
- const source=fs.readFileSync(new URL('../../prototypes/browser-workspace/canvas2d-renderer.js',import.meta.url),'utf8').replace('export function createCanvas2DRenderer(canvas){','export function createRenderer(canvas){');
+ const source=fs.readFileSync(new URL('../../prototypes/browser-workspace/canvas2d-renderer.js',import.meta.url),'utf8').replace('export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels}={}){','export function createRenderer(canvas){').replaceAll('decodeRaster(r.data)','decodePixels(r.data)');
  assert.equal(createHash('sha256').update(source).digest('hex'),'2d18d52d86589bac65e3ab9ab6fb1d0a296165b683c3d3aca256a66cd1d9e506');
 });
 test('PERF2M02 upper layers prohibit the retained path',()=>{const f=frame();assert.equal(f.canRetainLowerLayers,false);assert.equal(f.replayReason,'visible-upper-layers');assert.equal(f.workRegion,'full-viewport');assert.deepEqual(f.region,{space:'backing-pixels',x:0,y:0,width:20,height:20});});

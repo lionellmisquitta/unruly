@@ -1,25 +1,30 @@
 // Stable renderer boundary. Canvas2D is the sole supported backend today.
 import {createCanvas2DRenderer} from './canvas2d-renderer.js';
+import {createRasterCache} from './raster-cache.js';
+import {decodePixels} from './raster.js';
 import {describeFrame} from './render-contract.js';
 export {graphiteGrain,rendererBudget} from './canvas2d-renderer.js';
 
 export function createRenderer(canvas,{backend='auto'}={}){
  if(!['auto','canvas2d'].includes(backend))throw Error('Unsupported renderer backend: '+backend);
- const engine=createCanvas2DRenderer(canvas);
+ const rasterCache=createRasterCache();let reference=false;
+ const engine=createCanvas2DRenderer(canvas,{decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data)});
  let epoch=0,reason='initial',lastFrame=null,frames=0;
- function invalidate(why='external'){
+ function invalidate(why='external',releaseRaster=true){
+  if(releaseRaster)rasterCache.clear();
   epoch++;reason=String(why);lastFrame=null;engine.invalidate();
  }
  function draw(method,board,view={x:0,y:0,scale:1},live=null){
+  reference=method==='renderReference';
   try{
    const result=engine[method](board,view,live);
    lastFrame=describeFrame(board,view,live,result);frames++;
    return result;
-  }catch(error){invalidate('render-failed');throw error;}
+  }catch(error){invalidate('render-failed');throw error;}finally{reference=false;}
  }
  function auxiliary(method,args){
   // Preview/thumbnail/picker/snapshot share backing stores with live ink.
-  invalidate(method);
+  invalidate(method,false);
   try{return engine[method](...args);}catch(error){invalidate(method+'-failed');throw error;}
  }
  return {
@@ -31,6 +36,6 @@ export function createRenderer(canvas,{backend='auto'}={}){
   snapshotLayer:(...args)=>auxiliary('snapshotLayer',args),
   invalidate,
   surfaces:engine.surfaces,
-  getDiagnostics:()=>Object.freeze({contractVersion:1,backend:'canvas2d',epoch,reason,frames,lastFrame})
+  getDiagnostics:()=>Object.freeze({contractVersion:1,backend:'canvas2d',epoch,reason,frames,lastFrame,rasterCache:rasterCache.diagnostics()})
  };
 }

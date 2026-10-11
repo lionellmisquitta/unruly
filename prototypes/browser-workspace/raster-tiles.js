@@ -5,7 +5,7 @@ const prefix='T2:',dimension=1024;
 const fail=()=>{throw Error('Invalid raster pixels');};
 const dimensions=(w,h)=>Number.isInteger(w)&&Number.isInteger(h)&&w>=1&&h>=1&&w<=dimension&&h<=dimension;
 const encodedLength=n=>4*Math.ceil(n/3);
-function decodeTile(text,n){
+export function decodeTile(text,n){
  if(typeof text!=='string'||text.length!==encodedLength(n)||!/^[A-Za-z0-9+/]*={0,2}$/.test(text))fail();
  let raw;try{raw=atob(text);}catch{fail();}if(raw.length!==n||btoa(raw)!==text)fail();
  const data=new Uint8ClampedArray(n);let occupied=false;for(let i=0;i<n;i++){data[i]=raw.charCodeAt(i);occupied=occupied||data[i]!==0;}if(!occupied)fail();return data;
@@ -25,7 +25,7 @@ export function encodeSparsePixels(data,width,height,encode){
  const tiles=occupiedTiles.map(({x,y,w,h})=>{const tile=new Uint8ClampedArray(w*h*4);for(let row=0;row<h;row++)tile.set(data.subarray(((y+row)*width+x)*4,((y+row)*width+x+w)*4),row*w*4);return [x,y,encode(tile)];});
  return prefix+JSON.stringify({width,height,tiles});
 }
-export function readSparsePixels(text,expectedWidth,expectedHeight){
+export function readSparsePixels(text,expectedWidth,expectedHeight,decode=decodeTile){
  // Bound the string before JSON.parse, then bound tile count and bytes before decode.
  if(typeof text!=='string'||!text.startsWith(prefix)||text.length>encodedLength(dimension*dimension*4))fail();
  let value;try{value=JSON.parse(text.slice(prefix.length));}catch{fail();}
@@ -38,7 +38,7 @@ export function readSparsePixels(text,expectedWidth,expectedHeight){
   if(!Number.isInteger(x)||!Number.isInteger(y)||x<0||y<0||x>=width||y>=height||x%tileSize||y%tileSize)fail();
   const index=(y/tileSize)*Math.ceil(width/tileSize)+x/tileSize;if(index<=last)fail();last=index;
   const w=Math.min(tileSize,width-x),h=Math.min(tileSize,height-y);
-  result.push({x,y,width:w,height:h,data:decodeTile(encoded,w*h*4)});
+  result.push({x,y,width:w,height:h,data:decode(encoded,w*h*4)});
  }
  return {width,height,tiles:result};
 }

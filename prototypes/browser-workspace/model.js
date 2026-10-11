@@ -1,3 +1,4 @@
+import {inverseHistory,restoreHistory} from './history-patch.js';
 import {validateRaster,decodePixels,rasterPayload,sampleTransform} from './raster.js';
 import {validateRecipe} from './brush-recipe.js';
 import {validateDynamics} from './pen-input.js';
@@ -27,9 +28,9 @@ export function migrateV2(v){const b=copy(validateVersion(v,2));b.version=3;for(
 export const createBoard=(id=crypto.randomUUID(),title='Untitled board')=>{const lid=crypto.randomUUID();return {version:3,id,title,revision:0,activeLayer:lid,layers:[{id:lid,name:'Layer 1',visible:true,locked:false,opacity:1,blend:'normal',strokes:[]}],paper:{kind:'plain',color:'#faf8f3',spacing:24,seed:173}};};
 export const createHistory=b=>({board:copy(validateBoard(b)),past:[],future:[],evicted:false});
 function bounded(h){let total=h.past.reduce((a,b)=>a+bytes(b),0)+h.future.reduce((a,b)=>a+bytes(b),0);while(h.past.length+h.future.length>limits.history||total>limits.historyBytes){const b=h.past.length?h.past.shift():h.future.shift();total-=bytes(b);h.evicted=true;}return h;}
-export function command(h,mutate){const b=copy(h.board);mutate(b);if(JSON.stringify(b)===JSON.stringify(h.board))return h;b.revision=h.board.revision+1;validateBoard(b);return bounded({board:b,past:[...h.past,h.board],future:[],evicted:h.evicted});}
-export function undo(h){if(!h.past.length)return h;const b=copy(h.past.at(-1));b.revision=h.board.revision+1;validateBoard(b);return bounded({board:b,past:h.past.slice(0,-1),future:[...h.future,h.board],evicted:h.evicted});}
-export function redo(h){if(!h.future.length)return h;const b=copy(h.future.at(-1));b.revision=h.board.revision+1;validateBoard(b);return bounded({board:b,past:[...h.past,h.board],future:h.future.slice(0,-1),evicted:h.evicted});}
+export function command(h,mutate){const b=copy(h.board);mutate(b);if(JSON.stringify(b)===JSON.stringify(h.board))return h;b.revision=h.board.revision+1;validateBoard(b);return bounded({board:b,past:[...h.past,inverseHistory(h.board,b)],future:[],evicted:h.evicted});}
+export function undo(h){if(!h.past.length)return h;const b=restoreHistory(h.board,h.past.at(-1));b.revision=h.board.revision+1;validateBoard(b);return bounded({board:b,past:h.past.slice(0,-1),future:[...h.future,inverseHistory(h.board,b)],evicted:h.evicted});}
+export function redo(h){if(!h.future.length)return h;const b=restoreHistory(h.board,h.future.at(-1));b.revision=h.board.revision+1;validateBoard(b);return bounded({board:b,past:[...h.past,inverseHistory(h.board,b)],future:h.future.slice(0,-1),evicted:h.evicted});}
 export const toDocument=(x,y,v)=>({x:(x-v.x)/v.scale,y:(y-v.y)/v.scale});
 export function zoomAt(v,x,y,scale){if(!v||!num(v.x,-1e7,1e7)||!num(v.y,-1e7,1e7)||!num(v.scale,.1,8)||!num(scale,.0000001,1e10)||!num(x,-1e7,1e7)||!num(y,-1e7,1e7))fail('Invalid zoom');scale=Math.max(.1,Math.min(8,scale));const q=toDocument(x,y,v);return {x:x-q.x*scale,y:y-q.y*scale,scale};}
 export function migrateV1(v,dbRevision=0){
