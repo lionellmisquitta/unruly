@@ -48,7 +48,7 @@ export function layerCommand(h,action,id,value){return command(h,b=>{
   if(b.layers.length>=limits.layers)fail('Layer limit reached');
   const at=b.layers.findIndex(l=>l.id===b.activeLayer);
   const n={id:crypto.randomUUID(),name:'Layer '+(b.layers.length+1),visible:true,locked:false,opacity:1,blend:'normal',strokes:[],...(b.version===5?{parentId:b.layers[at].parentId??null}:{})};
-  if(layerState(b,b.layers[at]).locked)fail('Parent folder is locked');
+  if(ancestors(b,b.layers[at]).some(f=>f.locked))fail('Parent folder is locked');
   b.layers.splice(at+1,0,n);b.activeLayer=n.id;return;
  }
  if(!l)fail('Layer missing');
