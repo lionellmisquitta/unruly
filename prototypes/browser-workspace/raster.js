@@ -17,7 +17,7 @@ export function rasterStroke(data,width,height,x,y,id=crypto.randomUUID()){const
 export function transformRaster(s,m){const [a,b,c,d,e,f]=s.raster.transform,[u,v,w,z,x,y]=m;s.raster.transform=[u*a+w*b,v*a+z*b,u*c+w*d,v*c+z*d,u*e+w*f+x,v*e+z*f+y];s.points=rasterPoints(s.raster);}
 export function sampleTransform(r,x,y){const [a,b,c,d,e,f]=r.transform,det=a*d-b*c;return {x:(d*(x-e)-c*(y-f))/det,y:(a*(y-f)-b*(x-e))/det};}
 // Premultiplied blending transports existing pigment/alpha; it never samples paper.
-export function smudgeDab(data,width,height,from,to,radius,strength,soft=true,budget={work:0}){
+export function smudgeDab(data,width,height,from,to,radius,strength,soft=true,budget={work:0},alphaLock=false){
  if(!Number.isInteger(width)||!Number.isInteger(height)||data.length!==width*height*4||!finite(radius)||radius<.5||radius>80||!finite(strength)||strength<0||strength>1||![from.x,from.y,to.x,to.y].every(finite))fail('Invalid smudge dab');
  const dx=to.x-from.x,dy=to.y-from.y;if(strength===0||Math.hypot(dx,dy)<.0001)return false;
  const x0=Math.max(0,Math.floor(to.x-radius)),y0=Math.max(0,Math.floor(to.y-radius)),x1=Math.min(width,Math.ceil(to.x+radius)),y1=Math.min(height,Math.ceil(to.y+radius));
@@ -28,6 +28,6 @@ export function smudgeDab(data,width,height,from,to,radius,strength,soft=true,bu
  for(let y=y0;y<y1;y++)for(let x=x0;x<x1;x++){const distance=radius<=.75?(x===Math.floor(to.x)&&y===Math.floor(to.y)?0:1):Math.hypot(x+.5-to.x,y+.5-to.y)/radius;if(distance>=1)continue;const t=strength*Math.min(1,(1-distance)*radius)*(typeof soft==='function'?soft(distance,x,y,to.x,to.y):soft?(1-distance)**2:1),sx=Math.floor(x+.5-dx)-sx0,sy=Math.floor(y+.5-dy)-sy0;if(sx<0||sy<0||sx>=sw||sy>=sh)continue;const i=(y*width+x)*4,px=x-dx-sx0,py=y-dy-sy0,ix=Math.floor(px),iy=Math.floor(py),fx=px-ix,fy=py-iy,rgba=[0,0,0,0];
  for(const [xx,yy,weight] of [[ix,iy,(1-fx)*(1-fy)],[ix+1,iy,fx*(1-fy)],[ix,iy+1,(1-fx)*fy],[ix+1,iy+1,fx*fy]]){if(xx<0||yy<0||xx>=sw||yy>=sh)continue;const j=(yy*sw+xx)*4,alpha=source[j+3]/255;rgba[3]+=alpha*weight;for(let k=0;k<3;k++)rgba[k]+=source[j+k]*alpha*weight;}
  const sa=rgba[3],da=data[i+3]/255,alpha=sa*t+da*(1-sa*t),old=[data[i],data[i+1],data[i+2],data[i+3]];
- for(let k=0;k<3;k++)data[i+k]=alpha?Math.round((rgba[k]*t+data[i+k]*da*(1-sa*t))/alpha):0;data[i+3]=Math.round(alpha*255);if(old.some((v,k)=>v!==data[i+k]))changed=true;
+ for(let k=0;k<3;k++)data[i+k]=alpha?Math.round((rgba[k]*t+data[i+k]*da*(1-sa*t))/alpha):0;data[i+3]=alphaLock?old[3]:Math.round(alpha*255);if(alphaLock&&!old[3])data.fill(0,i,i+4);if(old.some((v,k)=>v!==data[i+k]))changed=true;
  }return changed;
 }

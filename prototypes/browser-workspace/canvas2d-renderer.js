@@ -44,7 +44,7 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,applyMask=null}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,applyMask=null,allocationReserve=()=>0}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
@@ -53,7 +53,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
  function clear(c){const ctx=c.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,c.width,c.height);return ctx;}
  function geometry(){
   const rect=canvas.getBoundingClientRect(),cssW=Math.max(1,rect.width),cssH=Math.max(1,rect.height),deviceDpr=window.devicePixelRatio||1;
-  const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt(rendererBudget.backingBytes/(surfaces.length*4*cssW*cssH)));
+  const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt((rendererBudget.backingBytes-allocationReserve())/(surfaces.length*4*cssW*cssH)));
   const w=Math.max(1,Math.floor(cssW*d)),h=Math.max(1,Math.floor(cssH*d));
   if(surfaces.some(c=>c.width!==w||c.height!==h)){
    invalidate();
