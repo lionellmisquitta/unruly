@@ -7,13 +7,14 @@ Read this file first, then verify current main HEAD/latest cumulative CI (docs-o
 - Knowledge graph updates/regeneration prohibited without explicit user permission. Current canonical graph head093d8735b427c3d4b5e1c5d892917609f96fa25c; routine builds update this compact contract and scoped QA receipts only.
 - Preserve regression assertions, cumulative features and existing document/layer/history/cache limits. Physical tablet/50-layer/process-RAM claims require measured evidence. No unsolicited GPU/Rust/OPFS rewrite.
 
-## Current build contract — LASSO3 large-layer region repair (verified/published)
-Source `cd7cd3b7c0606b7404fcec64893e16ffa80633e0`; CI38244620213 SUCCESS263 models/251 structured Chromium scenarios/110 hashes. PR7 merge `71cc0d60e358878f1bd2af2490256d1e2db4d692`; Pages38248475869 SUCCESS40 hosted assets match reviewed source. Main repeat38248433035 in_progress at receipt; source/test/workflow blobs were identical after merge, and publication pins the exact previously verified candidate. Scoped `.delivery/CHG-UNRULY-LASSO3-1012/` holds QA and publication evidence.
-Region lasso reads a <=1024x1024 enclosed window even when active-layer artwork is larger. Pixel move/cut/delete builds the complete complement from <=16 occupied1MP tiles, preserving outside artwork; Apply/Cancel and one Undo retain existing original-vector/text guarantees. Wand refinement preserves cropped-selection provenance. Copy writes transparent original-artwork PNG without building complement; internal editable clipboard and denied-write/download fallback retained. Whole objects remains explicitly available; saved preference is honoured, so a user who switched as a workaround must choose Region again. Selection itself does not rasterize or save; editing still rasterizes active layer undoably. No document/schema/capacity/GPU/storage changes;8MiB document/16MiB history/32 layers/80MiB renderer budgets retained. Physical-device pen and native destination paste still unverified.
-Owner explicitly authorized merge/publication via personal-project process on12-Oct-2026 at17:49:41IST, without separate human reviewer; no independent review or formal protected-approval job is claimed. No skill modification and no knowledge graph update.
+## Current build contract — PATH1 editable pen/path selection (verified/published)
+Source00e1a24cde009b94d778c071d9c20bba1cb63db5; CI38252988097 SUCCESS271 models/258 Chromium scenarios/114 verified identities. PR8 merge94268797a5f453dead1ad43caec103849c232d5f; Pages38255213655 SUCCESS42 hosted assets; publicationbad87c6721142f5f00f57cd852fb5517a3e995db. Merged app/test/workflow bytes equal green source. Main followup38255130754 in_progress at receipt.
+Lasso→Editable path: tap corners, drag new point for mirrored cubic handles; move nearest anchors/individual handles; Close & select or tap first point; Edit outline/New/Cancel. Local toolbar/keyboard Undo/Redo and point nudge/removal/corner conversion. Cancel restores prior selection/layer scope. Pointer cancellation rolls back the current drag. Fingers navigate between point drags; palm/wheel/concurrent actions blocked during drag. Outline-only edits update SVG without replaying artwork. Exact board/active-layer transient state; stale paths discarded, never serialized. Closed path reuses existing active-layer region transform/copy/cut/delete/PNG and one artwork Undo, including the large-layer tiled complement.
+Limits64 anchors/512 samples/.25doc-pixel flattening/50 path history; existing1024x1024 selected window/16 complement tiles/8MiB document/16MiB history/32layers/80MiB renderer unchanged. No schema/renderer/storage change. Surface/Xiaomi physical pen, native paste, device latency/360px path ergonomics unverified. Scoped .delivery/CHG-UNRULY-PATH1-1012/ has QA, UX baseline and publication receipts.
+Reuse owner-approved personal-project main/Pages process; same-session verification, no independent human review/protected approval claimed. Skills/graph unchanged. Magnetic selection is next and is not completed by PATH1.
 
 ## Remaining core roadmap
-1. Magnetic selection + editable pen/path precision selection (split if needed).
+1. Magnetic selection (editable pen/path selection completed in PATH1).
 2. Paint bucket + gap-aware fill.
 3. Lasso fill + enclose-and-fill.
 4. Hue/saturation + levels, including group adjustments.
@@ -24,7 +25,7 @@ Estimate7 further grouped builds, potentially7–9 if selection/performance spli
 Later: whole-canvas rotation (deferred), canvas size/DPI/export, proprietary brush-import feasibility, advanced wet media, sync/recovery, timelapse/native feasibility.
 
 ## Pending decisions — resolve only when their checkpoint begins
-- Precision tool: magnetic edge cost/snap UX, editable path handles, raster versus object selection interoperability.
+- Precision tool: magnetic edge cost/snap UX and future raster/object interoperability; editable selection path handles locked in PATH1.
 - Fill: target active/visible composite; gap tolerance semantics, clip/mask interaction and traversal budget; paint-to-selection behaviour.
 - Group effects/masks: pass-through versus isolated composition, folder masks, effects order and clipping semantics.
 - Capacity: measured real-device latency/RAM/undo budgets before raising32 layers or1024 pixel-region cap; GPU/Rust/OPFS only after bottleneck evidence.
@@ -32,9 +33,7 @@ Later: whole-canvas rotation (deferred), canvas size/DPI/export, proprietary bru
 - Text: custom fonts/wrapping/portable fidelity later; current generic device fonts vary.
 
 ## Continuation status
-Completed cumulative: brushes/pressure/0–100 size/comparison/recipes; shapes/picker/pen mapping; lasso/layer transforms; performance foundation; raster painting+smudge; folders; leaf masks; clipping+alpha lock; text; images/patterns/reference imports; magic wand pixel regions; exact region lasso and PNG clipboard; large-layer bounded region repair.
-Graph unchanged.6 completed feature checkpoints plus2 feedback-fix builds (LASSO2/LASSO3) since last approved refresh. Next action: scope magnetic selection + editable pen/path precision selection, resolve its pending interaction decisions, implement bounded changes, verify and publish same URL; update only this contract/compact receipts. Never infer graph permission from build count.
+Completed cumulative: brushes/pressure/0–100 size/comparison/recipes; shapes/picker/pen mapping; lasso/layer transforms; performance foundation; raster painting+smudge; folders; leaf masks; clipping+alpha lock; text; images/patterns/reference imports; magic wand pixel regions; exact region lasso and PNG clipboard; large-layer bounded region repair; editable pen/path selection.
+Graph unchanged.7 completed feature checkpoints plus2 feedback-fix builds (LASSO2/LASSO3) since last approved refresh. Next action: scope magnetic selection, resolve its pending interaction decisions, implement bounded changes, verify and publish same URL; update only this contract/compact receipts. Never infer graph permission from build count.
 
 
-## Active build — PATH1 editable pen/path selection
-User accepted next checkpoint after proposed split: editable pen/path selection first, magnetic selection afterward. Branch CHG-UNRULY-PATH1-1012/editable-path-selection; PR8. Existing Lasso selector gains Editable path; tap anchors/drag mirrored curve handles, adjust anchors/individual handles, Close & select, Edit outline, New/Cancel. Draft-local Undo/Redo and keyboard point nudge; finger navigation unchanged. Draft/prior selection tied to exact board and active layer, never persisted. Closed path reuses existing pixel-region/large-layer complement and transform/copy/cut/delete. Limits64 anchors/512 samples/.25document-pixel flatness/50 local history; existing document/selection/render capacity unchanged. Local271 models PASS; actual cumulative browser QA pending. Skills/graph unchanged. Reuse owner-approved personal-project main/Pages workflow after verification. This is not completion of magnetic selection or the overall precision-selection group.
