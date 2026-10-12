@@ -1,0 +1,59 @@
+schema_version: '1.0'
+change_id: CHG-UNRULY-WAND1-1012
+route: standard_change
+prohibited_paths:
+- src/
+- native/
+- knowledge-graph/
+- .knowledge/
+- prototypes/browser-workspace/storage.js
+- prototypes/browser-workspace/canvas2d-renderer.js
+- prototypes/browser-workspace/model.js
+test_config_changes:
+- .github/workflows/browser-workspace.yml
+checkpoints:
+- id: magic-wand
+  allowed_paths:
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/wand.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/style.css
+  - prototypes/browser-workspace/sw.js
+  - tests/browser-workspace/wand.model.test.mjs
+  - tests/browser-workspace/wand.browser.cjs
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - .github/workflows/browser-workspace.yml
+  - docs/delivery/CONTINUATION_CONTRACT.md
+  - .delivery/CHG-UNRULY-WAND1-1012/
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - docs/delivery/DECISIONS.md
+  - README.md
+  test_paths:
+  - tests/browser-workspace/wand.model.test.mjs
+  - tests/browser-workspace/wand.browser.cjs
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  tests:
+  - id: wand-model
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/wand.model.test.mjs
+    timeout_seconds: 180
+  - id: wand-browser
+    command:
+    - node
+    - tests/browser-workspace/wand.browser.cjs
+    timeout_seconds: 240
+  - id: cumulative-qa
+    command:
+    - bash
+    - .delivery/CHG-UNRULY-WAND1-1012/run-qa.sh
+    timeout_seconds: 900
