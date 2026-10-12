@@ -1,3 +1,4 @@
+import {magneticRadius,magneticWindow,snapEdge} from './magnetic-selection.js';
 import {initPathSelection} from './path-selection-ui.js';
 import {polygonPixels,polygonWindow,remainingRegionTiles} from './lasso-region.js';
 import {writeImage,downloadImage} from './image-clipboard.js';
@@ -32,7 +33,7 @@ let paintMode='vector',maskTarget=null,maskMode='hide';
 const collapsedFolders=new Set();
 let layerScope=[],scopeBoard=null,scopeActive=null,painted=null,transformTouch=null;
 let textDraft=null,imageDraft=null,referenceHidden=false,referenceBoard=null,referenceObject=null;
-let wandRegion=null,wandImage=null,lassoMode='region';try{const mode=localStorage.getItem('unruly-lasso-mode');if(['objects','path'].includes(mode))lassoMode=mode;}catch{}
+let wandRegion=null,wandImage=null,lassoMode='region';try{const mode=localStorage.getItem('unruly-lasso-mode');if(['objects','path','magnetic'].includes(mode))lassoMode=mode;}catch{}
 let pathEditor=null;
 let selected=[],clipboard=null,opacityDraft=null,layerDrag=null,pending=null;
 const penConfig=readPenConfig();penConfig.overrides=penConfig.overrides||{};settings.dynamics=resolveBrushDynamics(penConfig.dynamics,penConfig.overrides,settings.preset);let lassoAutoMove=false,penObserved={count:0,min:1,max:0,latest:null,buttons:0};
@@ -240,7 +241,7 @@ function startPointer(e){
  if(operation==='pan'||space){active=owned({id:e.pointerId,pan:p});return;}
  try{if(operation==='lasso'||operation==='move')scopedWritable();else editable(h.board);}catch(err){if(mapped)restorePenTool({previousTool,previousAutoMove});status(err.message,true);return;}
  if(operation==='wand'){active=owned({id:e.pointerId,wand:true,wandPoint:point(e),frozenView:{...view}});return;}
- if(operation==='lasso'){if(lassoMode==='path')pathEditor?.cancel(false);active=owned({id:e.pointerId,lasso:true,scope:scope(),polygon:[point(e)],prior:[...selected],priorRegion:wandRegion,regionLasso:lassoMode!=='objects',frozenView:{...view}});refresh();return;}
+ if(operation==='lasso'){if(['path','magnetic'].includes(lassoMode))pathEditor?.cancel(false);active=owned({id:e.pointerId,lasso:true,scope:scope(),polygon:[point(e)],prior:[...selected],priorRegion:wandRegion,regionLasso:lassoMode!=='objects',frozenView:{...view}});refresh();return;}
  if(operation==='move'&&wandRegion){const first=point(e);if(!insideSelection(first)){contacts.delete(e.pointerId);status('Drag the highlighted pixels to move');return;}beginWandTransform();if(pending?.region)active={id:e.pointerId,regionMove:true,start:first,frozenView:{...view}};return;}
  if(operation==='move'){const q=point(e);if(!insideSelection(q)){status('Drag inside the selected box to move');if(mapped)restorePenTool({previousTool,previousAutoMove});return;}active=owned({id:e.pointerId,move:true,scope:scope(),baseHistory:h,ids:[...selected],start:q,frozenView:{...view},dx:0,dy:0});refresh();return;}
  if(maskTarget){if(operation==='pen'||operation==='eraser'){beginMask(e,operation==='eraser'?'reveal':maskMode);return;}if(operation==='smudge'){status('Choose Edit artwork before smudging');return;}}
@@ -314,7 +315,7 @@ function beginWandTransform(){if(blocked()||!wandRegion)return;try{const region=
 
 $('selection-close').onclick=()=>{if(blocked())return;closePopovers();canvas.focus();};
 
-$('lasso-kind').value=lassoMode;$('lasso-kind').onchange=()=>{if(blocked()||pathEditor?.dragging()){$('lasso-kind').value=lassoMode;return;}pathEditor?.cancel();lassoMode=$('lasso-kind').value;try{localStorage.setItem('unruly-lasso-mode',lassoMode);}catch{}setTool('lasso');if(lassoMode==='path'){pathEditor.start();}else{wandRegion=null;selected=[];refresh();status(lassoMode==='region'?'Lasso selects active-layer pixels':'Lasso selects whole editable objects across included layers');}};
+$('lasso-kind').value=lassoMode;$('lasso-kind').onchange=()=>{if(blocked()||pathEditor?.dragging()){$('lasso-kind').value=lassoMode;return;}pathEditor?.cancel();lassoMode=$('lasso-kind').value;try{localStorage.setItem('unruly-lasso-mode',lassoMode);}catch{}setTool('lasso');if(['path','magnetic'].includes(lassoMode)){pathEditor.start();}else{wandRegion=null;selected=[];refresh();status(lassoMode==='region'?'Lasso selects active-layer pixels':'Lasso selects whole editable objects across included layers');}};
 
 function makePixelRegion(layer,snapshot,mask,bounds,cropped=false){
  const region=bounds?{board:h.board,layerId:layer.id,snapshot,mask,bounds}:null;
@@ -334,4 +335,4 @@ function clipboardPixels(payload){if(payload.strokes.length===1){const native=na
 function copyImageToSystem(payload){const prefix=wandRegion?'Pixel region copied · page clipboard':'Copied '+payload.strokes.length+' strokes · page clipboard';status(prefix+' · writing PNG image');try{const snapshot=clipboardPixels(payload);writeImage(snapshot).then(()=>status(prefix+' · Copied as PNG image · paste into another app')).catch(()=>status(prefix+' · browser blocked image clipboard; use Download selection PNG',true));}catch(e){status(prefix+' · '+e.message+'; use Download selection PNG',true);}}
 $('download-selection').onclick=()=>{if(blocked())return;try{const payload=wandRegion?regionClipboard(h,wandRegion):copySelection(h.board,selected,scope());downloadImage(clipboardPixels(payload)).then(()=>status('Selection PNG downloaded')).catch(e=>status(e.message,true));}catch(e){status(e.message,true);}};
 
-pathEditor=initPathSelection({$,canvas,getState:()=>({board:h?.board,layerId:h?.board.activeLayer,view:{...view},enabled:lassoMode==='path'&&['lasso','move','pan'].includes(tool),space:space||tool==='pan',preview:!!pending||!!active,blocked:blocked(),writable:!!h&&!maskTarget&&!layerState(h.board,h.board.layers.find(l=>l.id===h.board.activeLayer)).locked&&layerState(h.board,h.board.layers.find(l=>l.id===h.board.activeLayer)).visible,inside:insideSelection}),onBegin:()=>{const prior={selected:[...selected],region:wandRegion,layerScope:[...layerScope],scopeBoard,scopeActive};selected=[];wandRegion=null;wandImage=null;layerScope=[h.board.activeLayer];scopeBoard=h.board.id;scopeActive=h.board.activeLayer;return prior;},onCancel:prior=>{selected=prior.selected;wandRegion=prior.region;wandImage=null;layerScope=prior.layerScope;scopeBoard=prior.scopeBoard;scopeActive=prior.scopeActive;},onSelect:polygon=>pickLassoRegion(polygon),onChange:refresh,status});
+pathEditor=initPathSelection({$,canvas,getState:()=>({board:h?.board,layerId:h?.board.activeLayer,view:{...view},magnetic:lassoMode==='magnetic',enabled:['path','magnetic'].includes(lassoMode)&&['lasso','move','pan'].includes(tool),space:space||tool==='pan',preview:!!pending||!!active,blocked:blocked(),writable:!!h&&!maskTarget&&!layerState(h.board,h.board.layers.find(l=>l.id===h.board.activeLayer)).locked&&layerState(h.board,h.board.layers.find(l=>l.id===h.board.activeLayer)).visible,inside:insideSelection}),onBegin:()=>{const prior={selected:[...selected],region:wandRegion,layerScope:[...layerScope],scopeBoard,scopeActive};selected=[];wandRegion=null;wandImage=null;layerScope=[h.board.activeLayer];scopeBoard=h.board.id;scopeActive=h.board.activeLayer;return prior;},onCancel:prior=>{selected=prior.selected;wandRegion=prior.region;wandImage=null;layerScope=prior.layerScope;scopeBoard=prior.scopeBoard;scopeActive=prior.scopeActive;},onSelect:polygon=>pickLassoRegion(polygon),onSnap:(p,scale)=>snapEdge(renderer.snapshotRegion(editable(h.board),magneticWindow(p,scale)),p,magneticRadius(scale)).point,onChange:refresh,status});

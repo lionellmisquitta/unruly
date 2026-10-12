@@ -37,3 +37,6 @@ Completed cumulative: brushes/pressure/0–100 size/comparison/recipes; shapes/p
 Graph unchanged.7 completed feature checkpoints plus2 feedback-fix builds (LASSO2/LASSO3) since last approved refresh. Next action: scope magnetic selection, resolve its pending interaction decisions, implement bounded changes, verify and publish same URL; update only this contract/compact receipts. Never infer graph permission from build count.
 
 
+
+## Active build — MAG1 magnetic selection
+User authorizes next checkpoint and explicitly prohibits graph updates. Baseline7ec9d65; prior main repeat38255130754 SUCCESS. Scoped .delivery/CHG-UNRULY-MAG1-1012/ locks local active-original-artwork edge tracing on PATH1, manual correction, transient64point draft and reuse of existing closed-region actions. QA/publication pending. No skill/graph/model/storage/renderer changes. Reuse prior owner-authorized main/Pages workflow only after exact-source cumulative verification.

@@ -1,0 +1,63 @@
+schema_version: '1.0'
+change_id: CHG-UNRULY-MAG1-1012
+route: standard_change
+prohibited_paths:
+- native/
+- src/
+- .knowledge/
+- knowledge-graph/
+- prototypes/browser-workspace/model.js
+- prototypes/browser-workspace/storage.js
+- prototypes/browser-workspace/canvas2d-renderer.js
+- prototypes/browser-workspace/wand.js
+test_config_changes:
+- .github/workflows/browser-workspace.yml
+checkpoints:
+- id: magnetic-selection
+  allowed_paths:
+  - .github/workflows/browser-workspace.yml
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/sw.js
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - prototypes/browser-workspace/path-selection.js
+  - prototypes/browser-workspace/path-selection-ui.js
+  - tests/browser-workspace/path-selection.model.test.mjs
+  - tests/browser-workspace/path-selection.browser.cjs
+  - .delivery/CHG-UNRULY-MAG1-1012/
+  - docs/delivery/CONTINUATION_CONTRACT.md
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - prototypes/browser-workspace/magnetic-selection.js
+  - tests/browser-workspace/magnetic-selection.model.test.mjs
+  - tests/browser-workspace/magnetic-selection.browser.cjs
+  test_paths:
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - tests/browser-workspace/path-selection.model.test.mjs
+  - tests/browser-workspace/path-selection.browser.cjs
+  - tests/browser-workspace/magnetic-selection.model.test.mjs
+  - tests/browser-workspace/magnetic-selection.browser.cjs
+  tests:
+  - id: magnetic-model
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/magnetic-selection.model.test.mjs
+    timeout_seconds: 180
+  - id: magnetic-browser
+    command:
+    - node
+    - tests/browser-workspace/magnetic-selection.browser.cjs
+    timeout_seconds: 240
+  - id: cumulative-qa
+    command:
+    - bash
+    - .delivery/CHG-UNRULY-MAG1-1012/run-qa.sh
+    timeout_seconds: 900
