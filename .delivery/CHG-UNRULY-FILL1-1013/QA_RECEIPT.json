@@ -8,8 +8,15 @@
   "artifact_id": 11770100228,
   "artifact_sha256": "e8d03d1a8440fd85fd4737b4887ed2760517f47d1428bf0dfaf13593427eb930",
   "review": "same-session; owner-approved personal-project publication process",
-  "published": false,
+  "published": true,
   "knowledge_graph_updated": false,
   "skill_modified": false,
-  "future_custom_image_brush_checkpoint": "TIP1 recorded; not implemented in FILL1"
+  "future_custom_image_brush_checkpoint": "TIP1 recorded; not implemented in FILL1",
+  "merge": "b323b0d1eabfb3b6461b09bb86dd3602e710f85e",
+  "publication": "9e042f3778aead3535f2926b245a0922aba70643",
+  "pages_run": 38298524126,
+  "pages_conclusion": "success",
+  "hosted_assets": 44,
+  "verified_on_local_date": "2026-10-13",
+  "timezone": "Asia/Kolkata"
 }
