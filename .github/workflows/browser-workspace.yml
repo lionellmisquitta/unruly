@@ -25,6 +25,14 @@ jobs:
           npm ci --ignore-scripts --no-audit --no-fund --prefix tests/browser-workspace
           cd tests/browser-workspace
           npx playwright install --with-deps chromium
+      - name: Large-layer region regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/large-region-server.log 2>&1 &
+          qa_region_server_pid=$!
+          trap 'kill "$qa_region_server_pid" 2>/dev/null || true' EXIT
+          node tests/browser-workspace/large-region.browser.cjs > tests/browser-workspace/evidence/large-region-output.txt 2>&1
       - name: Actual Chromium layer mask checkpoint
         shell: bash
         run: |
@@ -100,14 +108,6 @@ jobs:
           node tests/browser-workspace/pixel-paint.browser.cjs > tests/browser-workspace/evidence/pixel-paint-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/pixel-paint-output.txt; qa_result_code=1; }
           node tests/browser-workspace/folders.browser.cjs > tests/browser-workspace/evidence/folders-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/folders-output.txt; qa_result_code=1; }
           exit "$qa_result_code"
-      - name: Large-layer region regression
-        shell: bash
-        run: |
-          set -euo pipefail
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/large-region-server.log 2>&1 &
-          qa_region_server_pid=$!
-          trap 'kill "$qa_region_server_pid" 2>/dev/null || true' EXIT
-          node tests/browser-workspace/large-region.browser.cjs > tests/browser-workspace/evidence/large-region-output.txt 2>&1
       - name: Bind tested identities
         if: always()
         shell: bash
