@@ -29,9 +29,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/large-region-server.log 2>&1 &
           qa_region_server_pid=$!
           trap 'kill "$qa_region_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
           node tests/browser-workspace/large-region.browser.cjs > tests/browser-workspace/evidence/large-region-output.txt 2>&1
       - name: Actual Chromium layer mask checkpoint
         shell: bash
