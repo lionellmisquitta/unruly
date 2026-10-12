@@ -10,7 +10,10 @@ export function initPathSelection({$,canvas,getState,onBegin,onCancel,onSelect,o
  function close(){if(!editing()||drag||getState().blocked)return false;try{const polygon=flattenPath(draft.nodes);if(!onSelect(polygon))return false;draft.closed=true;status('Path region selected · drag highlighted pixels; Edit outline to refine');onChange();return true;}catch(e){status(e.message,true);return false;}}
  function history(kind){if(!editing())return false;if(drag||getState().blocked)return true;const from=kind==='undo'?draft.past:draft.future,to=kind==='undo'?draft.future:draft.past;if(from.length){to.push(structuredClone(draft.nodes));draft.nodes=from.pop();index=Math.min(index,draft.nodes.length-1);onChange();status('Path '+kind);}else status('No path '+kind+' history');return true;}
  function modify(fn){if(!editing()||drag||getState().blocked)return;try{const before=structuredClone(draft.nodes);draft.nodes=fn(draft.nodes);remember(before);index=Math.min(index,draft.nodes.length-1);onChange();}catch(e){status(e.message,true);}}
- function hit(p,v){if(!draft)return null;for(let i=draft.nodes.length-1;i>=0;i--){const n=draft.nodes[i];if(Math.hypot(p.x-n.x,p.y-n.y)*v.scale<=12)return {index:i,key:'anchor'};}for(let i=draft.nodes.length-1;i>=0;i--)for(const key of ['in','out']){const n=draft.nodes[i][key];if(n&&Math.hypot(p.x-n.x,p.y-n.y)*v.scale<=12)return {index:i,key};}return null;}
+ function hit(p,v){if(!draft)return null;let best=null,distance=12;
+  for(let i=0;i<draft.nodes.length;i++){const n=draft.nodes[i];for(const key of ['anchor','in','out']){const q=key==='anchor'?n:n[key];if(!q)continue;const d=Math.hypot(p.x-q.x,p.y-q.y)*v.scale;if(d<distance||d===distance&&key==='anchor'){best={index:i,key};distance=d;}}}return best;
+ }
+
  const pos=(e,v)=>{const r=canvas.getBoundingClientRect();return {x:(e.clientX-r.x-v.x)/v.scale,y:(e.clientY-r.y-v.y)/v.scale};};
  const consume=e=>{e.preventDefault();e.stopImmediatePropagation();};
  canvas.addEventListener('pointerdown',e=>{const s=getState();if(s.enabled&&editing()&&e.pointerType==='pen'&&((e.buttons&2)||(e.buttons&32))){consume(e);status('Close & select or Cancel the path before using a pen button');return;}if(e.pointerType==='touch'||!s.enabled||s.space||s.blocked||e.button!==0||e.pointerType==='pen'&&((e.buttons&2)||(e.buttons&32)))return;
