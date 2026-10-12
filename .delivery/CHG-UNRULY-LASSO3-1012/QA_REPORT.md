@@ -1,4 +1,4 @@
-# LASSO3 verification — candidate, not published
+# LASSO3 verification — owner-approved, merged and published
 
 Source `cd7cd3b7c0606b7404fcec64893e16ffa80633e0`; cumulative GitHub Actions run38244620213 SUCCESS. All263 model tests and251 structured Chromium scenarios PASS, no skipped model tests.110 exact source/test/config/fixture SHA256 identities verified locally against downloaded provider artifact11746025564 (ZIP SHA256 `17a9a0bd36a6b05f871afdb56ffec024436021a981ab36ee3db42bac0b68b839`). Chromium151.0.7922.34/Node22.23.3. Evidence reviewed in this session; no separate human review has occurred.
 
@@ -10,4 +10,4 @@ CI sequence: superseded first push cancelled by provenance refinement; run382443
 
 Selected window still <=1024x1024 document pixels. Active-layer rasterization remains existing edit semantics, now <=16 occupied disjoint1MP tiles in sequence.8MiB document/16MiB history/32layer/80MiB renderer limits retained; capacity/work failures leave originals intact. Copy avoids complement generation. No schema migration, storage/model changes, GPU rewrite, native work or knowledge graph update.
 
-PR7 is saved for review; current main/live source remains previous LASSO2. Independent approval/merge/publication pending under current Gatekeeper instructions. A docs-only followup records this result without changing tested application/test/workflow bytes; do not confuse its HEAD with tested source. Publish only exact green candidate after authorization; verify successful Pages and every hosted app asset before claiming live completion.
+Owner explicitly authorized merge/main/publication using the personal-project process at17:49:41IST on12-Oct-2026, without a separate human reviewer; no skill modifications. PR7 merged as71cc0d60e358878f1bd2af2490256d1e2db4d692. Publicationaebcb816cedf87ffdb86f8214a2a188e85284e35 pins exact green sourcecd7cd3b7c0606b7404fcec64893e16ffa80633e0. Pages38248475869 SUCCESS; all40 hosted files compared byte-for-byte with tested source, actual hosted SHA256 lines reviewed. Merged app/test/workflow blobs equal candidate; main repeat38248433035 in_progress at receipt. No independent human review or formal protected approval claimed. Existing cumulative URL https://lionellmisquitta.github.io/unruly/ . Graph unchanged.
