@@ -22,10 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: b09e3ff9723e645d650ec527bbcda0ca87ef488e
+          ref: 15bab9bf876fae52b2695d437c2ff41966cb3b23
           persist-credentials: false
       - name: Verify reviewed candidate identity
-        run: test "$(git rev-parse HEAD)" = "b09e3ff9723e645d650ec527bbcda0ca87ef488e"
+        run: test "$(git rev-parse HEAD)" = "15bab9bf876fae52b2695d437c2ff41966cb3b23"
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
         with:
           enablement: false
@@ -46,7 +46,7 @@ jobs:
             asset=$(basename "$source")
             matched=false
             for attempt in $(seq 1 12); do
-              if curl --fail --silent --show-error "https://lionellmisquitta.github.io/unruly/$asset?import1=b09e3ff9723e645d650ec527bbcda0ca87ef488e" -o "/tmp/unruly-hosted/$asset" && cmp --silent "$source" "/tmp/unruly-hosted/$asset"; then
+              if curl --fail --silent --show-error "https://lionellmisquitta.github.io/unruly/$asset?wand1=15bab9bf876fae52b2695d437c2ff41966cb3b23" -o "/tmp/unruly-hosted/$asset" && cmp --silent "$source" "/tmp/unruly-hosted/$asset"; then
                 matched=true
                 break
               fi
