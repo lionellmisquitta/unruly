@@ -1,0 +1,14 @@
+{
+  "source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+  "qa_run": 38322102199,
+  "qa_conclusion": "success",
+  "model_tests": 293,
+  "browser_scenarios": 281,
+  "verified_hashes": 123,
+  "artifact_id": 11779902169,
+  "artifact_sha256": "05ca1f2a449fc48afb21339ae7a5ac4ac1682e97292375b3d737feb025cde6f0",
+  "review": "same-session; owner-approved personal-project publication process",
+  "published": false,
+  "knowledge_graph_updated": false,
+  "skill_modified": false
+}

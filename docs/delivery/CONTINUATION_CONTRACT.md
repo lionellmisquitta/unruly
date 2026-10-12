@@ -43,3 +43,6 @@ Later: whole-canvas rotation (deferred), canvas size/DPI/export, proprietary bru
 
 ## Cumulative status
 Brushes/pressure/0–100size/comparison/recipes; shapes/picker/pen mapping; layer transforms; performance foundation; raster painting+smudge; folders; leaf masks; clipping+alpha lock; text; images/patterns/reference imports; magic wand regions; exact region lasso/PNGclipboard; large-layer region repair; editable paths; magnetic tracing; gap-aware paint bucket. Graph unchanged:9feature checkpoints plus2feedback fixes since last approved refresh. Next authorized work must be bounded from current published main, never restart the product or refresh graph implicitly.
+
+## Active build — FILL2 lasso/enclose fill
+User authorized next checkpoint and knowledge graph update after successful build/test on13-Oct-2026. Baseline2c95cf7; prior main repeat38298466663 SUCCESS. Geometric active-layer Fill selection and direct Enclose & fill, including blank layers, with existing alpha/mask/clip/complete complement/one Undo contracts. Mapped pen buttons never auto-paint. New scoped .delivery/CHG-UNRULY-FILL2-1013/ locks behavior; CI budget18min because previous run14m42s. Graph refresh pending successful verification; do not update before that or infer perpetual graph permission. Skills unchanged.
