@@ -1,0 +1,20 @@
+change_id: CHG-UNRULY-FILL2-1013
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/app.js
+- prototypes/browser-workspace/index.html
+- prototypes/browser-workspace/sw.js
+- prototypes/browser-workspace/polygon-fill.js
+regression_obligations:
+- id: area-geometry
+  reason: Geometry/concavity/transparent coverage/alpha/opacity/guards/reversible
+    blank fill
+  test_id: area-model
+- id: area-interactions
+  reason: Selection/path/blank/direct/cancel/prior region/mapped pen/outside/Undo/offline
+  test_id: area-browser
+- id: cumulative
+  reason: All prior drawing/selection/composition/storage/offline assertions
+  test_id: cumulative-qa
