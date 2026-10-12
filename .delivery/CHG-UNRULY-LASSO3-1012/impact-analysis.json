@@ -1,0 +1,62 @@
+{
+  "change_id": "CHG-UNRULY-LASSO3-1012",
+  "baseline_id": "a0d706b34bde1326016e95e025ebb4f7bf245a3e",
+  "scope_envelope": {
+    "target": [
+      "prototypes/browser-workspace/app.js",
+      "prototypes/browser-workspace/canvas2d-renderer.js",
+      "prototypes/browser-workspace/lasso-region.js",
+      "prototypes/browser-workspace/render.js",
+      "prototypes/browser-workspace/sw.js",
+      "prototypes/browser-workspace/wand.js"
+    ],
+    "contract": [
+      "active-layer region selection",
+      "PNG clipboard",
+      "Apply/Cancel/Undo",
+      "renderer auxiliary invalidation"
+    ],
+    "regression": [
+      "whole objects",
+      "wand",
+      "offline",
+      "cumulative suite"
+    ],
+    "excluded_legacy": [
+      "knowledge graph",
+      "native",
+      "GPU/storage changes"
+    ],
+    "unknown_boundary": [
+      "physical tablet performance"
+    ]
+  },
+  "confirmed_impacts": [
+    "whole-layer snapshot rejects user artwork",
+    "cropped split without tiled complement would delete outside artwork"
+  ],
+  "likely_impacts": [
+    "pixel edits may increase serialized raster size"
+  ],
+  "regression_obligations": [
+    "region-window",
+    "region-actions",
+    "accepted-renderer"
+  ],
+  "technical_constraints": [
+    "Selected window <=1024 per side and1MP at original document scale",
+    "Complement <=16 occupied1024 tiles; sequential readback and existing8MiB document/16MiB history/80MiB renderer limits",
+    "No schema migration or graph/native/storage changes",
+    "Atomic Apply and one Undo; selecting/Cancel preserve original editable strokes",
+    "No silent fallback to Whole objects or downsampling"
+  ],
+  "unknowns": [
+    "native destination paste and physical tablet pen feel"
+  ],
+  "ux_route": "not_required",
+  "evidence_refs": [
+    "user screenshot image(20261012-111916).png",
+    "docs/delivery/CONTINUATION_CONTRACT.md",
+    ".delivery/CHG-UNRULY-LASSO2-1012/QA_REPORT.md"
+  ]
+}
