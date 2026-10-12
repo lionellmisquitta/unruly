@@ -9,7 +9,7 @@ async function ready(p){await p.waitForFunction(()=>/Saved on this device|Copied
 async function run(id,fn,viewport={width:1024,height:768},dpr=1){
  const context=await browser.newContext({viewport,deviceScaleFactor:dpr,hasTouch:true}),p=await context.newPage(),errors=[];
  p.on('pageerror',e=>errors.push(e.message));
- try{await p.goto(base);await ready(p);await install(p);const metrics=await fn(p);assert.deepEqual(errors,[]);results.push({id,status:'PASS',viewport,dpr,metrics});}
+ try{await p.addInitScript(()=>localStorage.setItem('unruly-lasso-mode','objects'));await p.goto(base);await ready(p);await install(p);const metrics=await fn(p);assert.deepEqual(errors,[]);results.push({id,status:'PASS',viewport,dpr,metrics});}
  catch(e){results.push({id,status:'FAIL',error:e.stack,errors});console.error(id,e.message);await p.screenshot({path:path.join(out,id+'-failure.png')}).catch(()=>{});}
  finally{await context.close();}
 }

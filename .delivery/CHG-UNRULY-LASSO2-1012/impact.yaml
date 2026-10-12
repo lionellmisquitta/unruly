@@ -1,0 +1,22 @@
+change_id: CHG-UNRULY-LASSO2-1012
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/app.js
+- prototypes/browser-workspace/lasso-region.js
+- prototypes/browser-workspace/image-clipboard.js
+- prototypes/browser-workspace/index.html
+- prototypes/browser-workspace/sw.js
+regression_obligations:
+- id: region-model
+  reason: Exact concave mask/byte complement and fixed scanline work; single Undo
+  test_id: region-model
+- id: region-browser
+  reason: Region default/drag/apply/cancel/static residual and realPNG clipboard/paste/denied
+    fallback
+  test_id: region-browser
+- id: cumulative
+  reason: Preserve whole-object multi-layer/pen mapping and all renderer/storage/pressure/mask
+    regressions
+  test_id: cumulative-qa
