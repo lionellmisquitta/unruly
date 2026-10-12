@@ -12,7 +12,7 @@ export function initPathSelection({$,canvas,getState,onBegin,onCancel,onSelect,o
  function history(kind){if(!editing())return false;if(drag||getState().blocked)return true;const from=kind==='undo'?draft.past:draft.future,to=kind==='undo'?draft.future:draft.past;if(from.length){to.push(structuredClone(draft.nodes));draft.nodes=from.pop();index=Math.min(index,draft.nodes.length-1);onChange();status('Path '+kind);}else status('No path '+kind+' history');return true;}
  function modify(fn){if(!editing()||drag||getState().blocked)return;try{const before=structuredClone(draft.nodes);draft.nodes=fn(draft.nodes);remember(before);index=Math.min(index,draft.nodes.length-1);onChange();}catch(e){status(e.message,true);}}
  function hit(p,v){if(!draft)return null;let best=null,distance=12;
-  for(let i=0;i<draft.nodes.length;i++){const n=draft.nodes[i];for(const key of ['anchor','in','out']){const q=key==='anchor'?n:n[key];if(!q)continue;const d=Math.hypot(p.x-q.x,p.y-q.y)*v.scale;if(d<distance||d===distance&&key==='anchor'){best={index:i,key};distance=d;}}}return best;
+  for(let i=0;i<draft.nodes.length;i++){const n=draft.nodes[i];for(const key of ['anchor','in','out']){const q=key==='anchor'?n:n[key];if(!q)continue;const d=Math.hypot(p.x-q.x,p.y-q.y)*v.scale;if(d<distance||d===distance&&key==='anchor'&&best?.key!=='anchor'){best={index:i,key};distance=d;}}}return best;
  }
 
  const pos=(e,v)=>{const r=canvas.getBoundingClientRect();return {x:(e.clientX-r.x-v.x)/v.scale,y:(e.clientY-r.y-v.y)/v.scale};};
@@ -32,7 +32,8 @@ export function initPathSelection({$,canvas,getState,onBegin,onCancel,onSelect,o
    for(let step=1;step<=steps;step++){
     if(draft.nodes.length>=pathLimits.anchors){drag.limited=true;status('Magnetic point limit · Undo this trace or remove points before continuing',true);break;}
     const raw={x:from.x+(p.x-from.x)*step/steps,y:from.y+(p.y-from.y)*step/steps},q=onSnap(raw,drag.view.scale),last=draft.nodes.at(-1);
-    if(Math.hypot(q.x-last.x,q.y-last.y)*drag.view.scale>=2){draft.nodes=addAnchor(draft.nodes,q);index=draft.nodes.length-1;}
+    const first=draft.nodes[0],atStart=draft.nodes.length>=3&&Math.hypot(q.x-first.x,q.y-first.y)*drag.view.scale<2;
+    if(!atStart&&Math.hypot(q.x-last.x,q.y-last.y)*drag.view.scale>=2){draft.nodes=addAnchor(draft.nodes,q);index=draft.nodes.length-1;}
    }
    drag.last=p;
   }else if(drag.key==='new')draft.nodes=curveAnchor(draft.nodes,drag.index,p);else if(drag.key==='anchor')draft.nodes=moveAnchor(draft.nodes,drag.index,p);else draft.nodes=moveHandle(draft.nodes,drag.index,drag.key,p);onChange();
