@@ -8,7 +8,12 @@
   "artifact_id": 11761590900,
   "artifact_sha256": "a69b58fe030a563733d78a11df89af77e74696801842dda145132ddbeea309ca",
   "review": "same-session; owner-approved personal-project publication process",
-  "published": false,
+  "published": true,
   "knowledge_graph_updated": false,
-  "skill_modified": false
+  "skill_modified": false,
+  "merge": "6d381cec7eac14eedbf42e02770cc9ff6f9ddc58",
+  "publication": "2b514c75a95054914088f5c4d6378fcaf75438c4",
+  "pages_run": 38281355915,
+  "pages_conclusion": "success",
+  "hosted_assets": 43
 }
