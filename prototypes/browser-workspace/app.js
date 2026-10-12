@@ -1,4 +1,4 @@
-import {polygonPixels} from './lasso-region.js';
+import {polygonPixels,polygonWindow,remainingRegionTiles} from './lasso-region.js';
 import {writeImage,downloadImage} from './image-clipboard.js';
 import {splitPixels} from './wand.js';
 import {selectPixels,combineMasks,regionBounds,regionClipboard,deleteRegion,prepareRegionTransform,commitRegionTransform} from './wand.js';
@@ -313,7 +313,16 @@ function beginWandTransform(){if(blocked()||!wandRegion)return;try{const region=
 $('selection-close').onclick=()=>{if(blocked())return;closePopovers();canvas.focus();};
 
 $('lasso-kind').value=lassoMode;$('lasso-kind').onchange=()=>{if(blocked()){$('lasso-kind').value=lassoMode;return;}lassoMode=$('lasso-kind').value;try{localStorage.setItem('unruly-lasso-mode',lassoMode);}catch{}wandRegion=null;selected=[];setTool('lasso');refresh();status(lassoMode==='region'?'Lasso selects active-layer pixels':'Lasso selects whole editable objects across included layers');};
-function pickLassoRegion(polygon){try{const l=editable(h.board);if(maskTarget)throw Error('Choose Edit artwork before selecting pixels');if(!layerState(h.board,l).visible)throw Error('Active layer is hidden');const anchor=l.strokes[0]?.points[0];if(!anchor)throw Error('Active layer is empty');let snapshot=l.strokes.length===1?nativePixelSnapshot(l.strokes[0]):null;snapshot=snapshot||renderer.snapshotLayer(l,0,anchor);if(!snapshot)throw Error('Active layer is empty');const {mask,bounds}=polygonPixels(snapshot,polygon);wandRegion=bounds?{board:h.board,layerId:l.id,snapshot,mask,bounds}:null;wandImage=null;selected=[];layerScope=[l.id];scopeBoard=h.board.id;scopeActive=l.id;status(bounds?bounds.count.toLocaleString()+' pixels selected · drag highlighted pixels, then Apply':'No layer pixels inside lasso');}catch(e){status(e.message.replace('Smudge layer','Region lasso layer')+' · prior selection retained',true);}}
+function pickLassoRegion(polygon){try{
+ const l=editable(h.board);if(maskTarget)throw Error('Choose Edit artwork before selecting pixels');if(!layerState(h.board,l).visible)throw Error('Active layer is hidden');const anchor=l.strokes[0]?.points[0];if(!anchor)throw Error('Active layer is empty');
+ const window=polygonWindow(polygon);let cropped=false,snapshot=l.strokes.length===1?nativePixelSnapshot(l.strokes[0]):null;
+ if(!snapshot){try{snapshot=renderer.snapshotLayer(l,0,anchor);}catch(e){if(!e.message.startsWith('Smudge layer exceeds'))throw e;cropped=true;snapshot=renderer.snapshotRegion(l,window);}}
+ if(!snapshot)throw Error('Active layer is empty');const {mask,bounds}=polygonPixels(snapshot,polygon);
+ const region=bounds?{board:h.board,layerId:l.id,snapshot,mask,bounds}:null;
+ if(cropped&&region)region.remainingFactory=()=>remainingRegionTiles(l,region,(layer,rect)=>renderer.snapshotRegion(layer,rect));
+ wandRegion=region;wandImage=null;selected=[];layerScope=[l.id];scopeBoard=h.board.id;scopeActive=l.id;status(bounds?bounds.count.toLocaleString()+' pixels selected · drag highlighted pixels, then Apply':'No layer pixels inside lasso');
+ }catch(e){status(e.message.replace('Smudge layer','Region lasso layer')+' · prior selection retained',true);}}
+
 function clipboardPixels(payload){if(payload.strokes.length===1){const native=nativePixelSnapshot(payload.strokes[0]);if(native)return native;}const first=payload.strokes[0]?.points[0];if(!first)throw Error('Nothing selected');const snap=renderer.snapshotLayer({strokes:payload.strokes},0,first);if(!snap)throw Error('Selection has no visible pixels');return snap;}
 function copyImageToSystem(payload){const prefix=wandRegion?'Pixel region copied · page clipboard':'Copied '+payload.strokes.length+' strokes · page clipboard';status(prefix+' · writing PNG image');try{const snapshot=clipboardPixels(payload);writeImage(snapshot).then(()=>status(prefix+' · Copied as PNG image · paste into another app')).catch(()=>status(prefix+' · browser blocked image clipboard; use Download selection PNG',true));}catch(e){status(prefix+' · '+e.message+'; use Download selection PNG',true);}}
 $('download-selection').onclick=()=>{if(blocked())return;try{const payload=wandRegion?regionClipboard(h,wandRegion):copySelection(h.board,selected,scope());downloadImage(clipboardPixels(payload)).then(()=>status('Selection PNG downloaded')).catch(e=>status(e.message,true));}catch(e){status(e.message,true);}};

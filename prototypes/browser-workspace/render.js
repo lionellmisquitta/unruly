@@ -44,6 +44,7 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
   thumbnail:(...args)=>auxiliary('thumbnail',args),
   magnify:(...args)=>auxiliary('magnify',args),
   snapshotLayer:(...args)=>auxiliary('snapshotLayer',args),
+  snapshotRegion:(...args)=>auxiliary('snapshotRegion',args),
   invalidate,
   surfaces:engine.surfaces,
   getDiagnostics:()=>Object.freeze({contractVersion:1,backend:'canvas2d',epoch,reason,frames,lastFrame,rasterCache:rasterCache.diagnostics(),clipCache:clipCache.diagnostics(),layerCache:(clipMode?clippedCache:plainCache)?.diagnostics()||null})

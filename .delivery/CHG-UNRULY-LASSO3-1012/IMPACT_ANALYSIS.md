@@ -1,0 +1,12 @@
+# Large-layer Region lasso repair
+Baseline a0d706b34bde1326016e95e025ebb4f7bf245a3e. User supplied screenshot of entire-layer 1024x1024 rejection and confirmed Whole objects works but cannot select part of a stroke. User requests build of Region repair.
+
+Target: bounded original-artwork readback in renderer; Region lasso fallback; complement generation for region move/cut/delete. Contract: active layer, pen-first drag, exact mask, Apply/Cancel, original-artwork PNG, one Undo, existing document format and limits. Regression: whole-object mode, wand, raster paint/smudge, renderer allocation/cache/golden-source, masks/clips/folders/text/import, offline safe update. Excluded: other roadmap checkpoints, knowledge graph, native, GPU/storage rewrite, higher layer/document capacity. Unknown: physical device performance/native paste support.
+
+Direct dependency: app pickLassoRegion -> renderer.snapshotLayer (whole-layer bound) -> polygonPixels. Region delete/prepare originally replaces all layer strokes with split.remaining. Cropping alone would discard remote artwork: therefore new bounded snapshotRegion auxiliary and lazy tiled complement are necessary target scope. Window limited to 1024x1024 at original document resolution; occupied conservative stroke-bound tiles capped16, each <=1MP. No schema, history, masks, clipping or layer capacity changes. Original vectors/text remain intact on selection/Cancel and restored by single Undo; pixel edits rasterize the active layer, same existing contract.
+
+Alternative rejected: raising snapshot dimensions (allocation/history risk), downsampling (detail loss), cropping without a complete complement (data loss), automatic Whole objects fallback (wrong semantics). Accepted fallback: only known whole-layer-size rejection switches to crop; other failures remain explicit. Copy does not generate the complement. Work/document limit failures leave board/history intact.
+
+Renderer golden-source test retains the ORIGINAL expected hash. Exactly the additive snapshotRegion helper and export are normalized like existing adapters; all old replay bytes still fingerprinted. No legacy assertion removed. Cache version changed, existing five offline tests only update expected identity. New model/browser tests added without changing prior scenario counts.
+
+Rollback: restore previous exact source/publication pin; saved documents use existing raster schema and remain compatible. QA is same-session self-verification plus actual provider Chromium; independent human review is pending, never inferred from local records.

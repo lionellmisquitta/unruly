@@ -156,5 +156,11 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
   if(width>rasterLimits.dimension||height>rasterLimits.dimension||width*height>rasterLimits.pixels)throw Error('Smudge layer exceeds 1024 × 1024 document pixels · use a smaller layer');
   scratchSize(width,height);replayLayer(l,{x:-x0,y:-y0,scale:1},{d:1,w:width,h:height});const data=layer.getContext('2d').getImageData(0,0,width,height).data;return {data,width,height,x:x0,y:y0,id:crypto.randomUUID()};
  }
- return {magnify,render,renderReference,preview,thumbnail,snapshotLayer,invalidate,surfaces};
+ function snapshotRegion(l,rect){
+  invalidate();const {x,y,width,height}=rect||{};
+  if(![x,y,width,height].every(Number.isInteger)||width<1||height<1||width>1024||height>1024||Math.max(Math.abs(x),Math.abs(y),Math.abs(x+width),Math.abs(y+height))>1e7)throw Error('Invalid bounded region snapshot');
+  scratchSize(width,height);replayLayer(l,{x:-x,y:-y,scale:1},{d:1,w:width,h:height});
+  return {data:layer.getContext('2d').getImageData(0,0,width,height).data,width,height,x,y};
+ }
+ return {magnify,render,renderReference,preview,thumbnail,snapshotLayer,snapshotRegion,invalidate,surfaces};
 }
