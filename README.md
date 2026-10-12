@@ -6,7 +6,7 @@ UNRULY is a browser-first drawing and infinite whiteboard application. **`main` 
 
 ## Current product
 
-Pressure-aware vector brushes, global/per-brush pressure curves,0–100 size controls, brush comparison/recipes, raster round/soft painting and smudge, lasso and layer transforms, layer folders/blending, leaf masks, clipping to lower layers/folders, alpha lock, editable text with device font controls, PNG/JPEG image layers, repeated patterns and saved reference images and magic wand pixel regions are implemented. Start with [CONTINUATION_CONTRACT.md](docs/delivery/CONTINUATION_CONTRACT.md); see [CURRENT_CHECKPOINT.md](docs/delivery/CURRENT_CHECKPOINT.md) for the exact tested source, limits and publication evidence. Physical tablet feel and50-layer workflows remain unverified; the current drawing-layer cap is32.
+Pressure-aware vector brushes, global/per-brush pressure curves,0–100 size controls, brush comparison/recipes, raster round/soft painting and smudge, lasso and layer transforms, layer folders/blending, leaf masks, clipping to lower layers/folders, alpha lock, editable text with device font controls, PNG/JPEG image layers, repeated patterns and saved reference images, magic wand pixel regions, exact region lasso and PNG image clipboard are implemented. Start with [CONTINUATION_CONTRACT.md](docs/delivery/CONTINUATION_CONTRACT.md); see [CURRENT_CHECKPOINT.md](docs/delivery/CURRENT_CHECKPOINT.md) for the exact tested source, limits and publication evidence. Physical tablet feel and50-layer workflows remain unverified; the current drawing-layer cap is32.
 
 ## Continue development
 
