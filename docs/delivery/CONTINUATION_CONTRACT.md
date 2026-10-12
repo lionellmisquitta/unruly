@@ -1,5 +1,5 @@
 # UNRULY continuation contract
-Read this file first, then verify current main HEAD/CI and read only affected code/tests. Historical delivery reports are evidence on demand; no full chat or graph reload is required.
+Read this file first, then verify current main HEAD/latest cumulative CI (docs-only heads may not start QA) and read only affected code/tests. Historical delivery reports are evidence on demand; no full chat or graph reload is required.
 
 ## Binding delivery rules
 - One cumulative browser product: `main`, https://lionellmisquitta.github.io/unruly/ . Bounded CHG branches; verify exact source before merge/publication; pin immutable green source and compare hosted bytes.
@@ -7,11 +7,11 @@ Read this file first, then verify current main HEAD/CI and read only affected co
 - Knowledge graph updates/regeneration prohibited without explicit user permission. Current canonical graph head093d8735b427c3d4b5e1c5d892917609f96fa25c; routine builds update this compact contract and scoped QA receipts only.
 - Preserve regression assertions, cumulative features and existing document/layer/history/cache limits. Physical tablet/50-layer/process-RAM claims require measured evidence. No unsolicited GPU/Rust/OPFS rewrite.
 
-## Current build contract — WAND1 (in development)
+## Current build contract — WAND1 (verified and published)
 Base mainf5f2dfa622d820758954c73c7a126eb4e6fb3d9e; main CI38164946268 SUCCESS verified before changes. Last published IMPORT1 sourceb09e3ff9723e645d650ec527bbcda0ca87ef488e; CI38164051738 SUCCESS240 models/232 structured Chromium scenarios/101 hashes; Pages38164991780 SUCCESS37 hosted assets.
 Scope: active original-layer pixel magic wand; tolerance0–100; four-neighbour contiguous/all-matching; replace/add/subtract; mask overlay; copy/cut/delete and existing Transform preview/Apply/Cancel. Pen/mouse selects, touch navigates. Selection view state, no conversion on selection/Cancel; pixel edit rasterizes layer undoably. Transparent regions bounded by source. Paper/reference/layer-mask/clipped output excluded. Paint is not yet constrained by selection.
 Affected files: wand.js, app.js, index.html, style.css, sw.js; new model/browser tests and cumulative workflow. Reuse selection.js/model.js/storage.js/renderer unchanged.1024side/1MP source; document8MiB/layers32/history16MiB/renderer80MiB unchanged. Read `.delivery/CHG-UNRULY-WAND1-1012/` only for detailed scope/tests/evidence.
-Acceptance: selections leave document untouched; exact connectivity/alpha/add/subtract; stale/lock/cap refusal atomic; copy crop; one Undo restores original objects after delete/transform; Cancel/identity Apply exact; save/offline after edits; original allocation/pixel/cache regressions pass. No merge/publication yet; source/run receipts filled after verification.
+Acceptance: selections leave document untouched; exact connectivity/alpha/add/subtract; stale/lock/cap refusal atomic; copy crop; one Undo restores original objects after delete/transform; Cancel/identity Apply exact; save/offline after edits; original allocation/pixel/cache regressions pass. Verified source`15bab9bf876fae52b2695d437c2ff41966cb3b23`; CI38211778020 SUCCESS251 models/241 structured Chromium scenarios/104 hashes. PR5 merge`825b0975d8511357c289a10b03c8e47f44242078`; Pages38213175632 SUCCESS38 hosted assets matched. Main repeat CI38213066712 in_progress; check current provider before next code changes. See WAND1 QA_REPORT.md/PUBLICATION_RECEIPT.json only when evidence is needed.
 
 ## Remaining core roadmap after WAND1
 1. Magnetic selection + editable pen/path precision selection (split if needed).
@@ -33,5 +33,5 @@ Later: whole-canvas rotation (deferred), canvas size/DPI/export, proprietary bru
 - Text: custom fonts/wrapping/portable fidelity later; current generic device fonts vary.
 
 ## Continuation status
-Completed cumulative: brushes/pressure/0–100 size/comparison/recipes; shapes/picker/pen mapping; lasso/layer transforms; performance foundation; raster painting+smudge; folders; leaf masks; clipping+alpha lock; text; images/patterns/reference imports.
-Graph unchanged.5 completed feature builds since last approved refresh; WAND1 will be6 after verified publication. Next action: finish WAND1, run cumulative provider Chromium, inspect artifacts, merge main, publish same URL, update only this contract/compact receipts. Never infer graph permission from build count.
+Completed cumulative: brushes/pressure/0–100 size/comparison/recipes; shapes/picker/pen mapping; lasso/layer transforms; performance foundation; raster painting+smudge; folders; leaf masks; clipping+alpha lock; text; images/patterns/reference imports; magic wand pixel regions.
+Graph unchanged.6 completed feature builds since last approved refresh. Next action: scope magnetic selection + editable pen/path precision selection, resolve its pending interaction decisions, implement bounded changes, verify and publish same URL; update only this contract/compact receipts. Never infer graph permission from build count.
