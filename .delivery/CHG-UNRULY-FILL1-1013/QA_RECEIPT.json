@@ -1,0 +1,15 @@
+{
+  "source": "b0843ccd3bc58b465d10c3b9520719fca97687b1",
+  "qa_run": 38296395178,
+  "qa_conclusion": "success",
+  "model_tests": 287,
+  "browser_scenarios": 273,
+  "verified_hashes": 120,
+  "artifact_id": 11770100228,
+  "artifact_sha256": "e8d03d1a8440fd85fd4737b4887ed2760517f47d1428bf0dfaf13593427eb930",
+  "review": "same-session; owner-approved personal-project publication process",
+  "published": false,
+  "knowledge_graph_updated": false,
+  "skill_modified": false,
+  "future_custom_image_brush_checkpoint": "TIP1 recorded; not implemented in FILL1"
+}

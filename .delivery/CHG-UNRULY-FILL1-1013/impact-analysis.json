@@ -1,0 +1,62 @@
+{
+  "change_id": "CHG-UNRULY-FILL1-1013",
+  "baseline_id": "392cc77cbdf531da5060cf369197396c3abf20a2",
+  "scope_envelope": {
+    "target": [
+      "prototypes/browser-workspace/app.js",
+      "prototypes/browser-workspace/index.html",
+      "prototypes/browser-workspace/sw.js",
+      "prototypes/browser-workspace/bucket-fill.js"
+    ],
+    "contract": [
+      "active original-layer fill",
+      "bounded gap-aware traversal",
+      "alpha lock and metadata retention",
+      "one command Undo",
+      "pen cancellation/finger navigation"
+    ],
+    "regression": [
+      "cumulative browser/model suite",
+      "offline safe updates",
+      "large-layer complement"
+    ],
+    "excluded_legacy": [
+      "composite-source/lasso fill/effects",
+      "graph/skills/native",
+      "schema/renderer/storage rewrite",
+      "TIP1 custom image brush implementation"
+    ],
+    "unknown_boundary": [
+      "physical pen feel and device latency"
+    ]
+  },
+  "confirmed_impacts": [
+    "Bucket pointer down freezes settings and commits on release",
+    "Bounded original-layer snapshot feeds flood and closing",
+    "Existing occupied tile complement and command preserve outside and other layers"
+  ],
+  "likely_impacts": [
+    "One-window synchronous traversal and complement snapshot/encode latency; physical devices unmeasured"
+  ],
+  "regression_obligations": [
+    "fill-geometry",
+    "fill-interactions",
+    "cumulative"
+  ],
+  "technical_constraints": [
+    "1MP1024square original-resolution tap-centred search; reject reachable edge",
+    "Square barrier closing radius0\u20138, four linear separable passes; original barriers retained",
+    "Active layer only; no lasso restriction or visible composite sampler",
+    "Masks/clipping metadata retained; alpha lock keeps exact transparency",
+    "Existing occupied tile/document/history/render limits; no skill/graph/model/storage/renderer changes"
+  ],
+  "unknowns": [
+    "physical pen feel/device latency/native destination paste"
+  ],
+  "ux_route": "ux_architect",
+  "evidence_refs": [
+    "docs/delivery/CONTINUATION_CONTRACT.md",
+    ".delivery/CHG-UNRULY-FILL1-1013/UX_BASELINE.md",
+    "User accepted TIP1 custom image controls and authorized next build with graph prohibition on13-Oct-2026"
+  ]
+}

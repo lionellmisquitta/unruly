@@ -22,7 +22,7 @@ LASSO3 sourcecd7cd3b7c0606b7404fcec64893e16ffa80633e0; CI38244620213 SUCCESS263m
 2. Lasso fill + enclose-and-fill.
 3. Hue/saturation + levels, including group adjustments.
 4. Curves + Gaussian blur.
-5. Textured brushes: image tips/grain/splatter/sprinkle.
+5. Textured brushes, split into explicit checkpoints: TIP1 custom uploaded image brush tips (transparent PNG/grayscale mask, invert/preview, spacing and spacing jitter, lateral/linear position jitter, fixed/follow-stroke/random rotation, count/count jitter, size/opacity jitter, flip X/Y, existing global/per-brush pressure, named presets); TIP2 imported grain with scale/depth/rotation plus splatter/sprinkle. User approved these controls on13-Oct-2026. No Procreate proprietary brush-format or exact-engine compatibility claim.
 6. Larger-document performance/recovery: measured real30–50layer folders/masks/images stress and capacity decisions.
 Selection precision is completed by PATH1+MAG1; no automatic next build. Later: whole-canvas rotation (deferred), canvas size/DPI/export, proprietary brush-import feasibility, advanced wet media, sync/recovery, timelapse/native feasibility.
 
@@ -35,3 +35,6 @@ Selection precision is completed by PATH1+MAG1; no automatic next build. Later: 
 
 ## Cumulative status
 Brushes/pressure/0–100size/comparison/recipes; shapes/picker/pen mapping; layer transforms; performance foundation; raster painting+smudge; folders; leaf masks; clipping+alpha lock; text; images/patterns/reference imports; magic wand regions; exact region lasso/PNGclipboard; large-layer region repair; editable paths; magnetic tracing. Graph unchanged:8feature checkpoints plus2feedback fixes since last approved refresh. Next authorized work must be bounded from current published main, never restart the product or refresh graph implicitly.
+
+## Active build — FILL1 gap-aware bucket
+User authorizes next build on13-Oct-2026 and prohibits graph updates. Baseline392cc77cbdf531da5060cf369197396c3abf20a2; prior main repeat38281312569 SUCCESS. Active-original-layer bounded colour/alpha flood fill, gap-closing radius0–8document pixels, fail on search-window boundary, chosen colour/opacity and alpha-lock transparency, existing complement/one Undo. QA/publication pending; scoped .delivery/CHG-UNRULY-FILL1-1013/. No model/schema/renderer/storage/capacity/graph/skill changes. Visible-composite and lasso-limited fill excluded from this checkpoint.
