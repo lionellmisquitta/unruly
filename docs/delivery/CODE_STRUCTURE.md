@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Verified against application source at 8a4a94225d01a19716915bc5f7d2551e9b414e73, HSL1 verified/published source 098c8463e86cd9d0c404381616314e306cc69fb4; CI38433660119 and Pages38436283497 SUCCESS.
+Verified against application source at 8a4a94225d01a19716915bc5f7d2551e9b414e73, FX2 verified/published source6c3e49f942675e020cc517f508c3bfd5473d7148; CI38440969358 and Pages38443319147 SUCCESS.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -13,7 +13,7 @@ flowchart TD
  STORE["Local persistence: storage.js"]
  ENGINE["Canvas replay and retained caches"]
  COMP["Folder visibility, masks and clipping"]
- EFFECT["Colour math and isolated groups"]
+ EFFECT["Colour/curve math and isolated groups"]
  UI --> DOC
  UI --> SEL
  UI --> FILL
@@ -27,6 +27,7 @@ flowchart TD
  DOC --> COMP
  DOC --> EFFECT
  RENDER --> EFFECT
+ EFFECT --> COMP
 ```
 Arrows mean principal imports/calls across logical blocks; omitted utility imports are not evidence of isolation. This is browser-native module code, not separate services.
 
@@ -41,6 +42,7 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 | Renderer boundary | render.js, render-contract.js | Chooses replay/reference behavior, composition/cache hooks and diagnostics. No document-storage writes here. |
 | Renderer implementation/cache | canvas2d-renderer.js, layer-compositor.js, raster-cache.js | Original replay oracle, retained live rendering, backing/cache budgets and invalidation. Changed pixels require reference comparisons. |
 | Colour adjustments | adjustments.js, adjustment-ui.js, effect-compositor.js | Pure HSL/levels validation/math without model imports; separate modal controller; isolated combined-group replay. model validates v10 and wraps commands; render applies leaf colour before masks/clip and group colour after children. Group replay is full-frame, budget accounts temporary depth; no target-device performance claim. |
+| Curves / Gaussian blur | filters.js, filter-ui.js; narrow model/render/effect-compositor hooks | v11metadata; pure curve LUT and bounded premultiplied Gaussian reference/fallback; native checked Canvas2D blur, full padded replay. Curves then blur after HSL, before leaf masks/clipping. Padding includes maximum nested blur-branch support; enlarged offscreen buffers and group depth fit80MiB backing. Clipping cache now has bounded processed-folder matte capture for blur alpha. Original snapshots unchanged. |
 | Text/import | text.js, image-import.js, image-clipboard.js | Input limits, text/raster representation, reference separation and clipboard portability. |
 | Persistence/offline delivery | storage.js, sw.js | storage validates through model; revision/conflict/save guards. sw asset list/cache revision must include every new runtime module. Offline smoke required. |
 
@@ -69,3 +71,8 @@ New adjustments.js (pure math/validation/mutation), adjustment-ui.js (unsaved pr
 - .delivery/CHG-UNRULY-FILL2-1013/impact.yaml and plan.yaml: example scoped change.
 - .github/workflows/browser-workspace.yml: actual cumulative QA.
 - tests/browser-workspace/: model/browser/reference/capacity regressions.
+
+## FX2 localization — verified/published
+filters.js owns strict schema/math/mutation without a model import; filter-ui.js owns graph/channel/numeric/blur draft and injected preview/commit callbacks. model.js validatesv11/exposes one filter command. render.js computes halo branch support and wires filters/group matte capture. canvas2d-renderer.js changes only exact declared geometry/padded replay hooks, preserving frozen unfiltered source and pixels. effect-compositor.js reuses isolation/temporary surfaces for curves/blur. clipping.js captures filtered group alpha within existing8MiB cache; no silent alpha-union substitute. app.js has narrow entries/draft hooks; no broad controller rewrite. Existing source, schema/history, and render dependencies are shared hubs, not independent services. All other roadmap scope retained; KG unchanged.
+
+FX2 verification322models/299Chromium/132identity matches; publication50hosted byte matches. Native Gaussian approximation and physical-device/50-layer limits recorded in scoped QA. Existing unfiltered renderer frozen source/pixel oracles retained. This remains a logical import/responsibility map,not an executed AST/runtime graph or proof of independently enforced CI path scope.

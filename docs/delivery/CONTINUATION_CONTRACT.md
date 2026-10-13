@@ -1,6 +1,10 @@
 # UNRULY continuation contract
 
-## Current — HSL1 published 13-Oct-2026
+## Current — FX2 published 13-Oct-2026
+Source6c3e49f942675e020cc517f508c3bfd5473d7148; CI38440969358 SUCCESS322models/299Chromium/132identities; PR13 mergea88803b302a8dbf9585a7af8c168b0ae48fb81e2 exact tree; Pages38443319147 SUCCESS50hosted matches. Layers/folders Actions→Curves & blur; v11metadata,piecewise master/RGB curves,sigma0–16Gaussian,preview/Apply/Cancel/Reset/one Undo. Existing HSL retained; original art editable. Padded nested/offscreen full replay fits80MiB; clipped group uses filtered matte within8MiB. Native Gaussian approximation,not proprietary parity. No physical device/50-layer/totalRAM claim. Read CURRENT_CHECKPOINT,PRODUCT_ROADMAP,CODE_STRUCTURE and FX2 scoped receipts first. Two completed builds since authorized graph refresh; KG unchanged. Next proposed TIP1 custom uploaded image brushes/all accepted controls; full product scope retained,no automatic next build. Earlier current/build paragraphs are historical.
+
+
+## Historical — HSL1 published 13-Oct-2026
 Source098c8463e86cd9d0c404381616314e306cc69fb4; CI38433660119 SUCCESS307models/289Chromium/128identities; PR12 merged636d6f3d03aafc89bc7317eee4a3756596d2fc8e exact tree; Pages38436283497 SUCCESS48hosted matches. Layers/folders Actions → Adjust colour,unsaved preview/Apply/Cancel/Reset/one Undo. v10metadata preserves originals; adjusted groups isolate combined descendants; unadjusted groups pass through. Existing capacity limits; group full replay/temporary-depth backing, physical feel not verified. Read CURRENT_CHECKPOINT,PRODUCT_ROADMAP and CODE_STRUCTURE first. One completed build since last graph refresh; graph unchanged. Next proposed curves/blur; full roadmap remains retained. Earlier build sections below are historical,not pending work or authority to truncate scope. No automatic next build.
 
 Read this file first, then verify current main HEAD/latest cumulative CI (docs-only heads may not start QA) and read only affected code/tests. Historical delivery reports are evidence on demand; no full chat or graph reload is required.

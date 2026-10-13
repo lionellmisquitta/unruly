@@ -1,0 +1,11 @@
+{
+  "source": "6c3e49f942675e020cc517f508c3bfd5473d7148",
+  "publication": "8b4538217463c43847c0e6fdddf0c3660fcc1b92",
+  "pages_run": 38443319147,
+  "conclusion": "success",
+  "hosted_assets": 50,
+  "byte_comparison": "all50provider comparison passed",
+  "url": "https://lionellmisquitta.github.io/unruly/",
+  "merge": "a88803b302a8dbf9585a7af8c168b0ae48fb81e2",
+  "merged_tree_identical_to_green": true
+}
