@@ -9,7 +9,7 @@ Application baseline: FILL2 complete at source 8a4a94225d01a19716915bc5f7d2551e9
 ## Near-term painting sequence
 | Work | Status | Scope |
 | --- | --- | --- |
-| Hue/saturation and levels, including groups | Authorized 13-Oct-2026; not implemented | Next current build. Lock group composition/effect ordering and bounded preview/Apply/Cancel/Undo before implementation. |
+| Hue/saturation and levels, including groups | In progress — HSL1 | CHG-UNRULY-HSL1-1013: layer adjustments + isolated combined-group effects; preview/Apply/Cancel/Undo. Verification and publication pending. |
 | Curves and Gaussian blur | Pending | Tonal curves and bounded blur; group behavior carried forward. |
 | TIP1 custom uploaded image tips | Pending; controls accepted | Transparent PNG/grayscale tips, inversion/preview, spacing/spacing jitter, lateral/linear position jitter, fixed/follow-stroke/random rotation, count/count jitter, size/opacity jitter, flip X/Y, global/per-brush pressure, named presets. Import/storage/replay limits unresolved. |
 | TIP2 grain and textures | Pending | Imported grain scale/depth/rotation; splatter/sprinkle. No proprietary engine-fidelity claim. |
