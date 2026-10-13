@@ -46,9 +46,9 @@
 <node id="urn:unruly:checkpoint:u2"><data key="type">Process</data><data key="name">U2 brush library and color</data></node>
 <node id="urn:unruly:checkpoint:u3"><data key="type">Process</data><data key="name">U3 core gestures and geometry</data></node>
 <node id="urn:unruly:checkpoint:g02"><data key="type">Process</data><data key="name">G02 remaining reference gestures</data></node>
-<node id="urn:unruly:code:selection"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/selection.js</data></node>
-<node id="urn:unruly:code:storage"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/storage.js</data></node>
-<node id="urn:unruly:code:sw"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/sw.js</data></node>
+<node id="urn:unruly:code:selection"><data key="type">CodeArtifact</data><data key="name">selection.js</data></node>
+<node id="urn:unruly:code:storage"><data key="type">CodeArtifact</data><data key="name">storage.js</data></node>
+<node id="urn:unruly:code:sw"><data key="type">CodeArtifact</data><data key="name">sw.js</data></node>
 <node id="urn:unruly:code:ui"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/index.html + style.css</data></node>
 <node id="urn:unruly:code:tests-model"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/model.test.mjs</data></node>
 <node id="urn:unruly:code:tests-browser"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/browser.test.cjs</data></node>
@@ -79,7 +79,7 @@
 <node id="urn:unruly:question:timelapse-retention"><data key="type">Question</data><data key="name">Timelapse framing/retention</data></node>
 <node id="urn:unruly:branch:checkpoint-u1"><data key="type">Artifact</data><data key="name">checkpoint/u1-v0.4.0</data></node>
 <node id="urn:unruly:branch:checkpoint-u2"><data key="type">Artifact</data><data key="name">checkpoint/u2-v0.5.0</data></node>
-<node id="urn:unruly:code:brushes"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/brushes.js</data></node>
+<node id="urn:unruly:code:brushes"><data key="type">CodeArtifact</data><data key="name">brushes.js</data></node>
 <node id="urn:unruly:code:u2-ui"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/u2.js</data></node>
 <node id="urn:unruly:test:u2-model"><data key="type">TestCase</data><data key="name">tests/browser-workspace/u2.model.test.mjs</data></node>
 <node id="urn:unruly:test:u2-browser"><data key="type">TestCase</data><data key="name">tests/browser-workspace/u2.browser.cjs</data></node>
@@ -209,8 +209,8 @@
 <node id="urn:unruly:cap:clear-layer"><data key="type">Capability</data><data key="name">Clear active layer</data></node>
 <node id="urn:unruly:cap:global-pen-settings"><data key="type">Capability</data><data key="name">Global pen settings panel</data></node>
 <node id="urn:unruly:cap:pressure-hierarchy"><data key="type">Capability</data><data key="name">Global pressure with optional brush override</data></node>
-<node id="urn:unruly:code:pen-input"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/pen-input.js</data></node>
-<node id="urn:unruly:code:pressure-ui"><data key="type">CodeArtifact</data><data key="name">prototypes/browser-workspace/pressure-ui.js</data></node>
+<node id="urn:unruly:code:pen-input"><data key="type">CodeArtifact</data><data key="name">pen-input.js</data></node>
+<node id="urn:unruly:code:pressure-ui"><data key="type">CodeArtifact</data><data key="name">pressure-ui.js</data></node>
 <node id="urn:unruly:code:lset-tests"><data key="type">CodeArtifact</data><data key="name">tests/browser-workspace/lset.browser.cjs</data></node>
 <node id="urn:unruly:decision:graph-freshness"><data key="type">Decision</data><data key="name">Timestamped current graph</data></node>
 <node id="urn:unruly:decision:bounded-increments"><data key="type">Decision</data><data key="name">One bounded increment at a time</data></node>
@@ -259,14 +259,14 @@
 <node id="urn:unruly:code:smudge"><data key="type">CodeArtifact</data><data key="name">smudge.js</data></node>
 <node id="urn:unruly:code:pixel-surface"><data key="type">CodeArtifact</data><data key="name">pixel-surface.js</data></node>
 <node id="urn:unruly:code:app"><data key="type">CodeArtifact</data><data key="name">app.js</data></node>
-<node id="urn:unruly:release:browser-current"><data key="type">Release</data><data key="name">Current cumulative browser release — PAINT1</data></node>
+<node id="urn:unruly:release:browser-current"><data key="type">Release</data><data key="name">Current cumulative browser release — FILL2</data></node>
 <node id="urn:unruly:ci:qa-workflow"><data key="type">CodeArtifact</data><data key="name">Cumulative browser QA workflow</data></node>
 <node id="urn:unruly:cap:smudge"><data key="type">Capability</data><data key="name">Active-layer smudge</data></node>
 <node id="urn:unruly:module:raster"><data key="type">Module</data><data key="name">Bounded v4 raster strokes</data></node>
 <node id="urn:unruly:cap:performance"><data key="type">Capability</data><data key="name">Measured browser performance foundation</data></node>
-<node id="urn:unruly:branch:main"><data key="type">Branch</data><data key="name">Native main preserved</data></node>
-<node id="urn:unruly:decision:one-preview"><data key="type">Decision</data><data key="name">One cumulative preview; preserve native main</data></node>
-<node id="urn:unruly:checkpoint:c04-next"><data key="type">Checkpoint</data><data key="name">After PAINT1: folders, then masks</data></node>
+<node id="urn:unruly:branch:main"><data key="type">Branch</data><data key="name">Cumulative browser main</data></node>
+<node id="urn:unruly:decision:one-preview"><data key="type">Decision</data><data key="name">One cumulative browser-main product</data></node>
+<node id="urn:unruly:checkpoint:c04-next"><data key="type">Checkpoint</data><data key="name">Next proposed checkpoint — group/layer HSL and levels</data></node>
 <node id="urn:unruly:roadmap:folders"><data key="type">Capability</data><data key="name">Layer folders and grouping</data></node>
 <node id="urn:unruly:roadmap:masks"><data key="type">Capability</data><data key="name">Layer and folder masks</data></node>
 <node id="urn:unruly:roadmap:clipping"><data key="type">Capability</data><data key="name">Clipping and alpha lock</data></node>
@@ -277,8 +277,8 @@
 <node id="urn:unruly:roadmap:bucket"><data key="type">Capability</data><data key="name">Paint bucket</data></node>
 <node id="urn:unruly:roadmap:gap-fill"><data key="type">Capability</data><data key="name">Gap-aware fill</data></node>
 <node id="urn:unruly:roadmap:enclosure-fill"><data key="type">Capability</data><data key="name">Lasso/enclosure fill</data></node>
-<node id="urn:unruly:roadmap:hsl-levels"><data key="type">Capability</data><data key="name">Group/layer HSL and levels</data></node>
-<node id="urn:unruly:roadmap:curves-blur"><data key="type">Capability</data><data key="name">Curves and blur</data></node>
+<node id="urn:unruly:roadmap:hsl-levels"><data key="type">Capability</data><data key="name">Group/layer hue, saturation and levels</data></node>
+<node id="urn:unruly:roadmap:curves-blur"><data key="type">Capability</data><data key="name">Curves and Gaussian blur</data></node>
 <node id="urn:unruly:decision:D-P01"><data key="type">Decision</data><data key="name">D-P01 — Keep one cumulative application and the existing preview</data></node>
 <node id="urn:unruly:decision:D-P02"><data key="type">Decision</data><data key="name">D-P02 — Benchmark populated 30–50-layer artist workflows before expanding capacity</data></node>
 <node id="urn:unruly:decision:D-P03"><data key="type">Decision</data><data key="name">D-P03 — Separate document operations from rendering before replacing rendering internals</data></node>
@@ -291,6 +291,59 @@
 <node id="urn:unruly:decision:D-P10"><data key="type">Decision</data><data key="name">D-P10 — Core artist workflow: sketch → outline → flats → shadows clipped to folders → group levels/HSL/curves → text</data></node>
 <node id="urn:unruly:decision:D-P12"><data key="type">Decision</data><data key="name">D-P12 — Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill</data></node>
 <node id="urn:unruly:decision:D-P11"><data key="type">Decision</data><data key="name">D-P11 — Keep a short current checkpoint brief and append consequential decisions</data></node>
+<node id="urn:unruly:checkpoint:folder1"><data key="type">Checkpoint</data><data key="name">FOLDER1 — Layer folders and grouping</data></node>
+<node id="urn:unruly:cap:folders"><data key="type">Capability</data><data key="name">Layer folders and grouping</data></node>
+<node id="urn:unruly:checkpoint:mask1"><data key="type">Checkpoint</data><data key="name">MASK1 — Leaf-layer masks</data></node>
+<node id="urn:unruly:cap:leaf-masks"><data key="type">Capability</data><data key="name">Leaf-layer masks</data></node>
+<node id="urn:unruly:checkpoint:clip1"><data key="type">Checkpoint</data><data key="name">CLIP1 — Clipping and alpha lock</data></node>
+<node id="urn:unruly:cap:clipping-alpha-lock"><data key="type">Capability</data><data key="name">Clipping and alpha lock</data></node>
+<node id="urn:unruly:checkpoint:text1"><data key="type">Checkpoint</data><data key="name">TEXT1 — Editable text boxes</data></node>
+<node id="urn:unruly:cap:editable-text"><data key="type">Capability</data><data key="name">Editable text boxes</data></node>
+<node id="urn:unruly:checkpoint:import1"><data key="type">Checkpoint</data><data key="name">IMPORT1 — Images, references and repeated patterns</data></node>
+<node id="urn:unruly:cap:image-reference-pattern"><data key="type">Capability</data><data key="name">Images, references and repeated patterns</data></node>
+<node id="urn:unruly:checkpoint:wand1"><data key="type">Checkpoint</data><data key="name">WAND1 — Magic wand pixel selection</data></node>
+<node id="urn:unruly:cap:magic-wand"><data key="type">Capability</data><data key="name">Magic wand pixel selection</data></node>
+<node id="urn:unruly:checkpoint:lasso2"><data key="type">Checkpoint</data><data key="name">LASSO2 — Exact region lasso and PNG clipboard</data></node>
+<node id="urn:unruly:cap:region-lasso"><data key="type">Capability</data><data key="name">Exact region lasso and PNG clipboard</data></node>
+<node id="urn:unruly:checkpoint:lasso3"><data key="type">Checkpoint</data><data key="name">LASSO3 — Large-layer bounded region edits</data></node>
+<node id="urn:unruly:cap:large-region"><data key="type">Capability</data><data key="name">Large-layer bounded region edits</data></node>
+<node id="urn:unruly:checkpoint:path1"><data key="type">Checkpoint</data><data key="name">PATH1 — Editable selection outlines</data></node>
+<node id="urn:unruly:cap:editable-selection-path"><data key="type">Capability</data><data key="name">Editable selection outlines</data></node>
+<node id="urn:unruly:checkpoint:mag1"><data key="type">Checkpoint</data><data key="name">MAG1 — Magnetic edge tracing</data></node>
+<node id="urn:unruly:cap:magnetic-selection"><data key="type">Capability</data><data key="name">Magnetic edge tracing</data></node>
+<node id="urn:unruly:checkpoint:fill1"><data key="type">Checkpoint</data><data key="name">FILL1 — Gap-aware paint bucket</data></node>
+<node id="urn:unruly:cap:gap-aware-bucket"><data key="type">Capability</data><data key="name">Gap-aware paint bucket</data></node>
+<node id="urn:unruly:checkpoint:fill2"><data key="type">Checkpoint</data><data key="name">FILL2 — Lasso selection and enclosure fill</data></node>
+<node id="urn:unruly:cap:geometric-fill"><data key="type">Capability</data><data key="name">Lasso selection and enclosure fill</data></node>
+<node id="urn:unruly:code:README"><data key="type">CodeArtifact</data><data key="name">README.md</data></node>
+<node id="urn:unruly:code:brush-compare"><data key="type">CodeArtifact</data><data key="name">brush-compare.js</data></node>
+<node id="urn:unruly:code:brush-recipe-ui"><data key="type">CodeArtifact</data><data key="name">brush-recipe-ui.js</data></node>
+<node id="urn:unruly:code:brush-recipe"><data key="type">CodeArtifact</data><data key="name">brush-recipe.js</data></node>
+<node id="urn:unruly:code:brush-size"><data key="type">CodeArtifact</data><data key="name">brush-size.js</data></node>
+<node id="urn:unruly:code:bucket-fill"><data key="type">CodeArtifact</data><data key="name">bucket-fill.js</data></node>
+<node id="urn:unruly:code:clipping"><data key="type">CodeArtifact</data><data key="name">clipping.js</data></node>
+<node id="urn:unruly:code:folders"><data key="type">CodeArtifact</data><data key="name">folders.js</data></node>
+<node id="urn:unruly:code:gestures"><data key="type">CodeArtifact</data><data key="name">gestures.js</data></node>
+<node id="urn:unruly:code:icon"><data key="type">CodeArtifact</data><data key="name">icon.svg</data></node>
+<node id="urn:unruly:code:image-clipboard"><data key="type">CodeArtifact</data><data key="name">image-clipboard.js</data></node>
+<node id="urn:unruly:code:image-import"><data key="type">CodeArtifact</data><data key="name">image-import.js</data></node>
+<node id="urn:unruly:code:index"><data key="type">CodeArtifact</data><data key="name">index.html</data></node>
+<node id="urn:unruly:code:lasso-region"><data key="type">CodeArtifact</data><data key="name">lasso-region.js</data></node>
+<node id="urn:unruly:code:magnetic-selection"><data key="type">CodeArtifact</data><data key="name">magnetic-selection.js</data></node>
+<node id="urn:unruly:code:manifest"><data key="type">CodeArtifact</data><data key="name">manifest.webmanifest</data></node>
+<node id="urn:unruly:code:masks"><data key="type">CodeArtifact</data><data key="name">masks.js</data></node>
+<node id="urn:unruly:code:path-selection-ui"><data key="type">CodeArtifact</data><data key="name">path-selection-ui.js</data></node>
+<node id="urn:unruly:code:path-selection"><data key="type">CodeArtifact</data><data key="name">path-selection.js</data></node>
+<node id="urn:unruly:code:polygon-fill"><data key="type">CodeArtifact</data><data key="name">polygon-fill.js</data></node>
+<node id="urn:unruly:code:shapes"><data key="type">CodeArtifact</data><data key="name">shapes.js</data></node>
+<node id="urn:unruly:code:smudge-ui"><data key="type">CodeArtifact</data><data key="name">smudge-ui.js</data></node>
+<node id="urn:unruly:code:style"><data key="type">CodeArtifact</data><data key="name">style.css</data></node>
+<node id="urn:unruly:code:text"><data key="type">CodeArtifact</data><data key="name">text.js</data></node>
+<node id="urn:unruly:code:u2"><data key="type">CodeArtifact</data><data key="name">u2.js</data></node>
+<node id="urn:unruly:code:wand"><data key="type">CodeArtifact</data><data key="name">wand.js</data></node>
+<node id="urn:unruly:roadmap:tip1-custom-image"><data key="type">Capability</data><data key="name">TIP1 — Custom uploaded image brush tips</data></node>
+<node id="urn:unruly:roadmap:tip2-grain"><data key="type">Capability</data><data key="name">TIP2 — Imported grain and textured stamps</data></node>
+<node id="urn:unruly:roadmap:capacity-recovery"><data key="type">Capability</data><data key="name">Measured larger-document capacity and recovery</data></node>
 <edge id="urn:rel:0001" source="urn:unruly:project" target="urn:unruly:cap:canvas"><data key="type">OWNS</data></edge>
 <edge id="urn:rel:0002" source="urn:unruly:project" target="urn:unruly:cap:drawing"><data key="type">OWNS</data></edge>
 <edge id="urn:rel:0003" source="urn:unruly:project" target="urn:unruly:cap:brushes"><data key="type">OWNS</data></edge>
@@ -609,5 +662,143 @@
 <edge id="rel-project-decision-d-p10" source="urn:unruly:project" target="urn:unruly:decision:D-P10"><data key="type">FOLLOWS</data></edge>
 <edge id="rel-project-decision-d-p12" source="urn:unruly:project" target="urn:unruly:decision:D-P12"><data key="type">FOLLOWS</data></edge>
 <edge id="rel-project-decision-d-p11" source="urn:unruly:project" target="urn:unruly:decision:D-P11"><data key="type">FOLLOWS</data></edge>
+<edge id="urn:unruly:rel:batch-d0e5f9090f043318cf4d" source="urn:unruly:project" target="urn:unruly:cap:folders"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-d92adbdfcde87ea5ec71" source="urn:unruly:checkpoint:folder1" target="urn:unruly:cap:folders"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-3872c953eb80e7ae9d6a" source="urn:unruly:project" target="urn:unruly:cap:leaf-masks"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-d6bb15996ce3c1b7cac1" source="urn:unruly:checkpoint:mask1" target="urn:unruly:cap:leaf-masks"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-2dcd6f45e5a317de405d" source="urn:unruly:project" target="urn:unruly:cap:clipping-alpha-lock"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-9e4522e6e0f3d8ebc8e0" source="urn:unruly:checkpoint:clip1" target="urn:unruly:cap:clipping-alpha-lock"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-8999ad401befe5b053d6" source="urn:unruly:project" target="urn:unruly:cap:editable-text"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-153b382b72491ba763a2" source="urn:unruly:checkpoint:text1" target="urn:unruly:cap:editable-text"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-fd726cadb5ef3ded6102" source="urn:unruly:project" target="urn:unruly:cap:image-reference-pattern"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-d6a987558ef76069f2e1" source="urn:unruly:checkpoint:import1" target="urn:unruly:cap:image-reference-pattern"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-0106b94e4658822785b3" source="urn:unruly:project" target="urn:unruly:cap:magic-wand"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-dc4faa9b43fa54f36934" source="urn:unruly:checkpoint:wand1" target="urn:unruly:cap:magic-wand"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-35ccab314af2ec3cae0f" source="urn:unruly:project" target="urn:unruly:cap:region-lasso"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-a2e5ec9a6c9d745e5ed6" source="urn:unruly:checkpoint:lasso2" target="urn:unruly:cap:region-lasso"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-cb87407927f6f3d1de18" source="urn:unruly:project" target="urn:unruly:cap:large-region"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-3a76e34dd688610aadc3" source="urn:unruly:checkpoint:lasso3" target="urn:unruly:cap:large-region"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-c92b12ae2247a3c2ac13" source="urn:unruly:project" target="urn:unruly:cap:editable-selection-path"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-3c1ce829ebd3fb911080" source="urn:unruly:checkpoint:path1" target="urn:unruly:cap:editable-selection-path"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-090c9c3834053a4b2832" source="urn:unruly:project" target="urn:unruly:cap:magnetic-selection"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-4dcf4baa3db90161ca92" source="urn:unruly:checkpoint:mag1" target="urn:unruly:cap:magnetic-selection"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-4c03a9cdc5f3937f7515" source="urn:unruly:project" target="urn:unruly:cap:gap-aware-bucket"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-02c2796379f26a8fbf87" source="urn:unruly:checkpoint:fill1" target="urn:unruly:cap:gap-aware-bucket"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-95dbd8df0d139b82a43d" source="urn:unruly:project" target="urn:unruly:cap:geometric-fill"><data key="type">OWNS</data></edge>
+<edge id="urn:unruly:rel:batch-5db1fb2c8e508552bc4a" source="urn:unruly:checkpoint:fill2" target="urn:unruly:cap:geometric-fill"><data key="type">SUPPORTS</data></edge>
+<edge id="urn:unruly:rel:batch-9f0ff65aa73b198bce66" source="urn:unruly:code:app" target="urn:unruly:code:polygon-fill"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-b263d223653e843aad83" source="urn:unruly:code:app" target="urn:unruly:code:bucket-fill"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-4dd42d7f35a427b401ee" source="urn:unruly:code:app" target="urn:unruly:code:magnetic-selection"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-a5e72128c581b0eb984e" source="urn:unruly:code:app" target="urn:unruly:code:path-selection-ui"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f0853b57eda2334b2ba4" source="urn:unruly:code:app" target="urn:unruly:code:lasso-region"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-6cb5317bbd3c882f5cff" source="urn:unruly:code:app" target="urn:unruly:code:image-clipboard"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-7095e808fc92dd0f2b5a" source="urn:unruly:code:app" target="urn:unruly:code:wand"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-52bb67c473a99c4921c6" source="urn:unruly:code:app" target="urn:unruly:code:image-import"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-7c3b6988691a45e27564" source="urn:unruly:code:app" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-e351658cf99a8508329c" source="urn:unruly:code:app" target="urn:unruly:code:clipping"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-070051e573bb83a45ea2" source="urn:unruly:code:app" target="urn:unruly:code:masks"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-e80ccc629479f6923c25" source="urn:unruly:code:app" target="urn:unruly:code:folders"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-d0ed68e37da3bfcdc500" source="urn:unruly:code:app" target="urn:unruly:code:pixel-paint"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-e5094a108021a0e5f269" source="urn:unruly:code:app" target="urn:unruly:code:pixel-surface"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-eeb7788dcaece3eb803e" source="urn:unruly:code:app" target="urn:unruly:code:smudge"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-98484f76a869902d61d3" source="urn:unruly:code:app" target="urn:unruly:code:smudge-ui"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-ab3c1e3b7d8a7c80fe9f" source="urn:unruly:code:app" target="urn:unruly:code:brush-recipe-ui"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-cd84827a4c94ac92f3e0" source="urn:unruly:code:app" target="urn:unruly:code:brush-compare"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-45982ad54e1c33ad29a5" source="urn:unruly:code:app" target="urn:unruly:code:brush-size"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-abfdfd365a62d99461d8" source="urn:unruly:code:app" target="urn:unruly:code:pressure-ui"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-849638ebd7abe39ad105" source="urn:unruly:code:app" target="urn:unruly:code:pen-input"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-a90e7e762d953ba40b1b" source="urn:unruly:code:app" target="urn:unruly:code:text"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f27b9032d151036e373c" source="urn:unruly:code:app" target="urn:unruly:code:selection"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-38377c027deeb9f0c1d3" source="urn:unruly:code:app" target="urn:unruly:code:model"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-d8e82b8357df01f18b88" source="urn:unruly:code:app" target="urn:unruly:code:render"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-008226235d14646849d8" source="urn:unruly:code:app" target="urn:unruly:code:storage"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-24912723291da4361329" source="urn:unruly:code:app" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-0581bc712d09dfda6342" source="urn:unruly:code:app" target="urn:unruly:code:u2"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-18dfb1e7deb87b5b9ef1" source="urn:unruly:code:app" target="urn:unruly:code:gestures"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-45e8fb67520a6e1b9254" source="urn:unruly:code:app" target="urn:unruly:code:shapes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-8b4490a4c5c9e097b873" source="urn:unruly:code:brush-compare" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-a0b452d3f58660b55295" source="urn:unruly:code:brush-compare" target="urn:unruly:code:brush-size"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-8d1556f2147a62aabf4e" source="urn:unruly:code:brush-compare" target="urn:unruly:code:pen-input"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-740537d660220a45f487" source="urn:unruly:code:brush-recipe-ui" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-603d8a7efcf6509b28be" source="urn:unruly:code:brush-recipe-ui" target="urn:unruly:code:brush-recipe"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-851906f7e610cf2efb84" source="urn:unruly:code:brushes" target="urn:unruly:code:brush-recipe"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-ad4a8b9ff08f44af10ea" source="urn:unruly:code:bucket-fill" target="urn:unruly:code:wand"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-2ba04bfd64d30be05b5d" source="urn:unruly:code:bucket-fill" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-d5087df9c24116673807" source="urn:unruly:code:bucket-fill" target="urn:unruly:code:model"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-ecf7690b15e73dc39828" source="urn:unruly:code:bucket-fill" target="urn:unruly:code:folders"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-2ea108ed4b7fdd211b0d" source="urn:unruly:code:canvas2d-renderer" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-312242ba71b79020628c" source="urn:unruly:code:canvas2d-renderer" target="urn:unruly:code:pen-input"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-3599136311c3c1a59dfb" source="urn:unruly:code:canvas2d-renderer" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-13a154e39180ae4d8149" source="urn:unruly:code:clipping" target="urn:unruly:code:folders"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f67217058834974f34e0" source="urn:unruly:code:clipping" target="urn:unruly:code:layer-compositor"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-83152b9ca1d04ae39dfd" source="urn:unruly:code:image-clipboard" target="urn:unruly:code:wand"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-eee9cb70eb06db606e5c" source="urn:unruly:code:image-import" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-a3d6d28ee5532f4837cf" source="urn:unruly:code:lasso-region" target="urn:unruly:code:wand"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-cf19d538701e099b17cf" source="urn:unruly:code:lasso-region" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-c184a2da0a5da1230362" source="urn:unruly:code:masks" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-5f0626a5d76b3be33f40" source="urn:unruly:code:masks" target="urn:unruly:code:pixel-surface"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-8ff573b356b191fbff90" source="urn:unruly:code:masks" target="urn:unruly:code:pixel-paint"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-b05c15cfc8676712af1e" source="urn:unruly:code:model" target="urn:unruly:code:image-import"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f515c15de716b0557f6e" source="urn:unruly:code:model" target="urn:unruly:code:text"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-5e5cfa7675436e5c2686" source="urn:unruly:code:model" target="urn:unruly:code:clipping"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-cc901476ad90c10f0575" source="urn:unruly:code:model" target="urn:unruly:code:masks"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-fa6367a5a22ea6995a36" source="urn:unruly:code:model" target="urn:unruly:code:folders"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-063b126ef780cf256940" source="urn:unruly:code:model" target="urn:unruly:code:history-patch"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-2fc7c054181081f55246" source="urn:unruly:code:model" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-ae3e5a0ba62cd0dba462" source="urn:unruly:code:model" target="urn:unruly:code:brush-recipe"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-47fb1851396ae952f868" source="urn:unruly:code:model" target="urn:unruly:code:pen-input"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f94166e2af86beb8b90c" source="urn:unruly:code:model" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f4eae3fe6b57392df373" source="urn:unruly:code:path-selection-ui" target="urn:unruly:code:path-selection"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-0e0091379c9fd65e3854" source="urn:unruly:code:path-selection-ui" target="urn:unruly:code:magnetic-selection"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-6659ce32555eb3d0956c" source="urn:unruly:code:pixel-paint" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-70fca966b0753074940f" source="urn:unruly:code:pixel-paint" target="urn:unruly:code:pixel-surface"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-a346a2e005abe7fe6ced" source="urn:unruly:code:pixel-paint" target="urn:unruly:code:pen-input"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-d72f94d18c33cd033be0" source="urn:unruly:code:pixel-surface" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-916e3f201b67e6170fff" source="urn:unruly:code:polygon-fill" target="urn:unruly:code:lasso-region"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-63b9b583a11eb8050459" source="urn:unruly:code:polygon-fill" target="urn:unruly:code:wand"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-e347cd706d589017e899" source="urn:unruly:code:polygon-fill" target="urn:unruly:code:bucket-fill"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f4e184d66f1584052d3d" source="urn:unruly:code:pressure-ui" target="urn:unruly:code:pen-input"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-a28487d943b3c2f43e5c" source="urn:unruly:code:raster-cache" target="urn:unruly:code:raster-tiles"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-4d0c451583f960d66b68" source="urn:unruly:code:raster-cache" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-b96ce8a21d7cabd87aba" source="urn:unruly:code:raster" target="urn:unruly:code:raster-tiles"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-3ecaa16ada323c28f2ed" source="urn:unruly:code:render" target="urn:unruly:code:text"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-9fab673325ca9e33e986" source="urn:unruly:code:render" target="urn:unruly:code:clipping"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-845f6b8b13d9ee300c63" source="urn:unruly:code:render" target="urn:unruly:code:masks"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-daa657592e0b66f7f034" source="urn:unruly:code:render" target="urn:unruly:code:folders"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-16d8d6ddd040c4b42a83" source="urn:unruly:code:render" target="urn:unruly:code:canvas2d-renderer"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-007091d3c5aeef4210e9" source="urn:unruly:code:render" target="urn:unruly:code:layer-compositor"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-cf5e36f6d839c17319ce" source="urn:unruly:code:render" target="urn:unruly:code:raster-cache"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-57a9b54c1404cd192b0c" source="urn:unruly:code:render" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-fabb5060e784cdf845da" source="urn:unruly:code:render" target="urn:unruly:code:render-contract"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-12fcafcaf35fe64b99b3" source="urn:unruly:code:selection" target="urn:unruly:code:text"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-226bd76417c4ed24860e" source="urn:unruly:code:selection" target="urn:unruly:code:folders"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-1054e3cd94de5eab2458" source="urn:unruly:code:selection" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-13b75d0555a583baa137" source="urn:unruly:code:selection" target="urn:unruly:code:model"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f0defa414fabe40cfff3" source="urn:unruly:code:smudge-ui" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-9e363e657262b8d3b6a7" source="urn:unruly:code:smudge-ui" target="urn:unruly:code:brush-size"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-5fc2b9643b58dc4c0df2" source="urn:unruly:code:smudge" target="urn:unruly:code:pixel-surface"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-e3920344f590ac986074" source="urn:unruly:code:smudge" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-8022b5c02ff40ba97188" source="urn:unruly:code:smudge" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f60d75e2d5a249a11515" source="urn:unruly:code:smudge" target="urn:unruly:code:pen-input"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f9ae2d30b2693b70c64e" source="urn:unruly:code:storage" target="urn:unruly:code:model"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-16f6c6d76119e988f628" source="urn:unruly:code:u2" target="urn:unruly:code:brush-size"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f4ab89f4a576baf74d6d" source="urn:unruly:code:u2" target="urn:unruly:code:brushes"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-748f4e52af522c349330" source="urn:unruly:code:wand" target="urn:unruly:code:raster"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-f8cf60d66018e409c89c" source="urn:unruly:code:wand" target="urn:unruly:code:folders"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-742caaf7215083d76f2e" source="urn:unruly:code:wand" target="urn:unruly:code:model"><data key="type">DEPENDS_ON</data></edge>
+<edge id="urn:unruly:rel:batch-7b8630b6297634e96890" source="urn:unruly:cap:folders" target="urn:unruly:code:folders"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-ef5ba0a23f7b20fc5b84" source="urn:unruly:cap:leaf-masks" target="urn:unruly:code:masks"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-0ab0c9c02a7b91ffed50" source="urn:unruly:cap:clipping-alpha-lock" target="urn:unruly:code:clipping"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-f9492642d18317686727" source="urn:unruly:cap:editable-text" target="urn:unruly:code:text"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-2714c617bc46d554a3a0" source="urn:unruly:cap:image-reference-pattern" target="urn:unruly:code:image-import"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-d345a028c92431ded7a7" source="urn:unruly:cap:magic-wand" target="urn:unruly:code:wand"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-f97aa0f8325aa9d1bb91" source="urn:unruly:cap:region-lasso" target="urn:unruly:code:lasso-region"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-ae4ed8aed8628cf902dc" source="urn:unruly:cap:region-lasso" target="urn:unruly:code:image-clipboard"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-b97787c200d998e97153" source="urn:unruly:cap:large-region" target="urn:unruly:code:lasso-region"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-df4dd38f2c8367ba7c15" source="urn:unruly:cap:editable-selection-path" target="urn:unruly:code:path-selection"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-243e0cd805656db57b47" source="urn:unruly:cap:editable-selection-path" target="urn:unruly:code:path-selection-ui"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-fcd702d756ce25a5a8c8" source="urn:unruly:cap:magnetic-selection" target="urn:unruly:code:magnetic-selection"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-3c626a17f821796d3b7f" source="urn:unruly:cap:gap-aware-bucket" target="urn:unruly:code:bucket-fill"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="urn:unruly:rel:batch-32dba1d2edc837b4d917" source="urn:unruly:cap:geometric-fill" target="urn:unruly:code:polygon-fill"><data key="type">IMPLEMENTED_BY</data></edge>
 </graph>
 </graphml>

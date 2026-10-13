@@ -1,9 +1,18 @@
-# Freshness check
+# Current edition pointer
 
-Created: 2026-10-06T12:32:05Z (2026-10-06T18:02:05+05:30).
-Knowledge recorded/updated: 2026-10-08T10:28:09Z (2026-10-08T15:58:09+05:30).
-Revision: unruly-kgp-20261008T102809Z.
+Canonical knowledge-graph/current; historical root canonical/original records unchanged. See .knowledge/CURRENT_GRAPH.json for exact commit/package SHA256.
 
-Authoritative pointer: https://github.com/lionellmisquitta/unruly/blob/knowledge/unruly-kgp/.knowledge/CURRENT_GRAPH.json
+# UNRULY continuation — FILL2 complete
+Graph revisionunruly-kgp-20261012T234848Z; updated2026-10-12T23:48:48Z /2026-10-13T05:18:48+05:30 (Asia/Kolkata). Canonical current edition knowledge-graph/current on knowledge/unruly-kgp. Verify external .knowledge/CURRENT_GRAPH.json, package/hash and actual provider source identities. Old root graph data are historical; no old native/preview code tree is the current application.
 
-Compare revision_id, updated_at and content_sha256. Match is necessary; independently resolve the live branch head when possible. A downloaded ZIP cannot know about future updates without checking the pointer. Never treat its own timestamp or a reused filename as proof of latest.
+Current FILL2 published source 8a4a94225d01a19716915bc5f7d2551e9b414e73; CI 38322102199 SUCCESS (293 models/281 Chromium scenarios/123 source identities); Pages 38323959608 SUCCESS with 45 hosted assets matched. Browser main is cumulative; native former main retained at archive/native-main-2026-10-11. Physical pen/device latency/50-layer RAM readiness and independent approval remain unverified.
+
+Batch since previous graph: FOLDER1,MASK1,CLIP1,TEXT1,IMPORT1,WAND1,LASSO2,LASSO3,PATH1,MAG1,FILL1,FILL2 —12completed builds,10feature checkpoints plus2feedback fixes (LASSO2/LASSO3). Historical exact receipts/provider identities are in evidence/batch/post-paint1-20261013/checkpoints.json. Current source asset inventory covers45static application files. Explicit static imports are recorded deterministically; Graphify/AST/call resolution was NOT executed, and no code name is business evidence by itself.
+
+One cumulative app at https://lionellmisquitta.github.io/unruly/ . main is browser-first; former native main is archived. Read current main docs/delivery/CONTINUATION_CONTRACT.md and CURRENT_CHECKPOINT.md first; then query relevant canonical records, affected code/tests and immutable checkpoint evidence. Do not use the knowledge branch's historical code tree as current app code.
+
+Capabilities now include folders, leaf masks, clipping/alpha lock, editable generic-font text, image/reference/repeating patterns, magic wand, exact region lasso/PNG, larger-layer bounded complement, editable corner/cubic selection outlines, magnetic tracing, gap-aware bucket and geometric selection/enclose fill. Pixel selection itself/drafts preserve original art; pixel edits rasterize active layer undoably. Fill selection uses existing pixel-region coverage; Enclose & fill creates coloured geometry even on blank active layers. Mapped pen buttons select/move and never auto-paint. All source/selection/fill operations in this group read active original artwork before masks/clipping, excluding paper/references/other layers; masks/clipping render final output. No visible-composite fill source.
+
+Existing32layer/1024working region/1MP/16occupied complement tiles/8MiBdocument/16MiBhistory/80MiBrenderer budgets remain. No silent whole-object fallback/downsample/infinite cropped flood. Alpha lock preserves original transparency. Same-session verification is not independent protected human approval; owner's personal-project main/Pages process is explicitly authorized. Skills were not modified.
+
+Next proposed HSL/levels with group semantics, then curves/blur, TIP1 custom image tips, TIP2 grain/textures, measured capacity/recovery. TIP1 controls accepted: Transparent PNG/grayscale image tip import, mask inversion/preview, spacing/spacing jitter, lateral/linear position jitter, fixed/follow-stroke/random rotation, count/count jitter, size/opacity jitter, flip X/Y, existing global/per-brush pressure and named presets. Optional imported grain belongs to TIP2. Procreate-inspired controls; no proprietary-format or exact-engine compatibility claim. Future custom fonts/wrapping, whole-canvas rotation, DPI/export, proprietary brush interoperability, wet media, sync/recovery/timelapse/native feasibility remain deferred. Folder masks/group effects, asset portability and real device latency/RAM/palm/native paste remain unknown. No automatic next build. This conditional graph refresh is authorized only after successful FILL2 build/test; future graph updates require explicit user permission.

@@ -1,11 +1,13 @@
 {
-  "revision_id": "unruly-kgp-20261011T133431Z",
-  "current_release": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
-  "next_checkpoint": "Layer folders and grouping",
-  "checkpoint_ledger": "evidence/batch/checkpoints.json",
+  "revision_id": "unruly-kgp-20261012T234848Z",
+  "current_checkpoint": "FILL2",
+  "source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
   "handover": "HANDOVER.md",
-  "canonical_entities": "graph/entities.jsonl",
-  "canonical_relationships": "graph/relationships.jsonl",
-  "knowledge": "knowledge/",
-  "raw_conversations_included": false
+  "canonical_graph": [
+    "graph/entities.jsonl",
+    "graph/relationships.jsonl"
+  ],
+  "checkpoint_ledger": "evidence/batch/post-paint1-20261013/checkpoints.json",
+  "decision_basis": "evidence/batch/post-paint1-20261013/user-decision-basis.md",
+  "read_policy": "Compact current docs/canonical query before affected evidence; no raw archive scan"
 }

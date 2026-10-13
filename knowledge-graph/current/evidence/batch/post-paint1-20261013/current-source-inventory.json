@@ -1,0 +1,272 @@
+[
+  {
+    "path": "prototypes/browser-workspace/README.md",
+    "sha256": "3067a214433b4d8be2ba736f5b745b09aa624bcdbe40db30f2be4a9a4422c3b4",
+    "size_bytes": 5909,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/README.md"
+  },
+  {
+    "path": "prototypes/browser-workspace/app.js",
+    "sha256": "d7745ec968fc687a2b000fce19487f0abfeae8a061565b953770684ed02fcc4f",
+    "size_bytes": 103113,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/app.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/brush-compare.js",
+    "sha256": "cf1c25b53a20a885b7d6abe083e074d7484ceb2e1456f7c9e62a5432110f0c18",
+    "size_bytes": 2329,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/brush-compare.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/brush-recipe-ui.js",
+    "sha256": "7eb9be6a5079c47c41172709cf317982a1ac279e34976fcb058950b7e8ff5abf",
+    "size_bytes": 2611,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/brush-recipe-ui.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/brush-recipe.js",
+    "sha256": "d0f4d79af78b36f9fdc16877f0cc8b15856763dc927a045162a081d7ee9359e7",
+    "size_bytes": 1283,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/brush-recipe.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/brush-size.js",
+    "sha256": "46c231f67986fe21044696ccacb3bc98ef6d83f02f28495cb77ab26552fdb483",
+    "size_bytes": 657,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/brush-size.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/brushes.js",
+    "sha256": "160843d631c12edd7f808d2fd2ecd15628f038db7087dfa0bbe49b139bc694c0",
+    "size_bytes": 5247,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/brushes.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/bucket-fill.js",
+    "sha256": "7249814e6520b47b67eea0b3e2fa6a60e9dc789fc7b57952feabaeea4bf0c63c",
+    "size_bytes": 4516,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/bucket-fill.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/canvas2d-renderer.js",
+    "sha256": "6545f72b446184b170ba82b5ccd60a6cbca975f3d9c2f839e24e356cc89cc877",
+    "size_bytes": 18671,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/canvas2d-renderer.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/clipping.js",
+    "sha256": "6013557b59397ac37258b4d6aa960072f6edb5ae55c7cb55bcbb8a005e944382",
+    "size_bytes": 4317,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/clipping.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/folders.js",
+    "sha256": "8625fc1d4ebc45d633e212c0baf2e32375c9d5c020a95dc7f1d668814942f4dc",
+    "size_bytes": 5926,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/folders.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/gestures.js",
+    "sha256": "3353f052ab0a1b72b0b72ae6abd0738c89d3a60216fb449166a0170857002426",
+    "size_bytes": 4470,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/gestures.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/history-patch.js",
+    "sha256": "5d820354805fdb8282d5d107d02b034f1424d8a24a2b5a826eb12e5e6b8cb533",
+    "size_bytes": 8894,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/history-patch.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/icon.svg",
+    "sha256": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+    "size_bytes": 234,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/icon.svg"
+  },
+  {
+    "path": "prototypes/browser-workspace/image-clipboard.js",
+    "sha256": "5b07817c0d83ff06396f06e31bc63deab4acee3314d5e09a77ee297b1f116969",
+    "size_bytes": 1257,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/image-clipboard.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/image-import.js",
+    "sha256": "107cac03926b9c1e318d17203dd2108bb6c17f380b41005545dbbb4bf287156f",
+    "size_bytes": 4505,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/image-import.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/index.html",
+    "sha256": "48e324b19cff9e279ee74b8f8762d4cd5c081e05992997431f2e232783b5c475",
+    "size_bytes": 35636,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/index.html"
+  },
+  {
+    "path": "prototypes/browser-workspace/lasso-region.js",
+    "sha256": "8108960d61cfc19d7218fc2a905d31f579c9d03e8debba8ad1152c58719d038f",
+    "size_bytes": 3891,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/lasso-region.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/layer-compositor.js",
+    "sha256": "2489d8aa92e6e143797fed2611d19ee39af325208324a75d6f520b116186ab6f",
+    "size_bytes": 3539,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/layer-compositor.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/magnetic-selection.js",
+    "sha256": "4c64d53aa1aa18a93d037e6b0a26ed2889ae6bb6db6f218ec74ced4bbcc0f1c3",
+    "size_bytes": 1693,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/magnetic-selection.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/manifest.webmanifest",
+    "sha256": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+    "size_bytes": 248,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/manifest.webmanifest"
+  },
+  {
+    "path": "prototypes/browser-workspace/masks.js",
+    "sha256": "894bbb5540fc54a893a01569bb134106b7d0d084fb3a0f8ca103a1d5718e9d7e",
+    "size_bytes": 2771,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/masks.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/model.js",
+    "sha256": "854552fd478dc609ca2c2489e13992501b99365100b384f5732b9029c0cab3b8",
+    "size_bytes": 19432,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/model.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/path-selection-ui.js",
+    "sha256": "805ba9549495c96647fa7587d2002c942a9ff647cc960af6ce032349106a0f54",
+    "size_bytes": 10493,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/path-selection-ui.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/path-selection.js",
+    "sha256": "b1480b89e827d9dcf7be7ca9150ae502560faedd1b7c7a871f20d5ef2bbca0f4",
+    "size_bytes": 3537,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/path-selection.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/pen-input.js",
+    "sha256": "ef9162fcf7f047aa7875ec6b28815030d38f557b433c302c7e68104f12e4c2dd",
+    "size_bytes": 3502,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/pen-input.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/pixel-paint.js",
+    "sha256": "6133a58d396d5dc96022460c454a180757f7654ba6d2d83c4c3fb258450685ff",
+    "size_bytes": 3934,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/pixel-paint.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/pixel-surface.js",
+    "sha256": "aab474bcf40891f6400c55954af61e7dcff3001c450f8ed6bdd393b13465f7d7",
+    "size_bytes": 1916,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/pixel-surface.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/polygon-fill.js",
+    "sha256": "8fecf09e1f3bbc8968453e08f472a7740e51576f81aee07129183a479cd23ba0",
+    "size_bytes": 734,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/polygon-fill.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/pressure-ui.js",
+    "sha256": "b291f0b322874f2bf728095cdc9e46737169489f3cc64c4997294aec98fccf7e",
+    "size_bytes": 6468,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/pressure-ui.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/raster-cache.js",
+    "sha256": "b8da3a8399c1762279afeedc523f63375de0e7b520a3d78ceeb8ea8798755d95",
+    "size_bytes": 3120,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/raster-cache.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/raster-tiles.js",
+    "sha256": "f8a48fc08f7ac55a18d17197f7878ca367c220263d5f8d628478f2a2693e6341",
+    "size_bytes": 3690,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/raster-tiles.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/raster.js",
+    "sha256": "e0b4a5ebc923f6d1967775a4045d7754b99a579f991254ea6360ba40d9e2a4f3",
+    "size_bytes": 5507,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/raster.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/render-contract.js",
+    "sha256": "ec6aca2979f517a4cb093e4dc86fd5be719f13e1b2c4f3f2c343adc06e7a89b9",
+    "size_bytes": 1403,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/render-contract.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/render.js",
+    "sha256": "28297bd741e1a42ab9ae11a95ba3cb4364f6a7f8b6b1fa33227564018206a8cf",
+    "size_bytes": 3923,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/render.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/selection.js",
+    "sha256": "1e6d86d95c5ac33b9aeb5249a07315ddd3b2587beefd82d9742642323ff2eaa9",
+    "size_bytes": 8930,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/selection.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/shapes.js",
+    "sha256": "8803d3d73aa610ab4d5117b35f81cdc093431386e1a85c3557012930271d0994",
+    "size_bytes": 12266,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/shapes.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/smudge-ui.js",
+    "sha256": "afbb3bcc64809ecaa51340c3f4cfa68a6743430fec08ef6d6eebf8d4543c6bc5",
+    "size_bytes": 2611,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/smudge-ui.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/smudge.js",
+    "sha256": "96ee6490289396e05d9fe00199a6712fca1434692f23ce3b9bfee307f647ed5f",
+    "size_bytes": 3862,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/smudge.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/storage.js",
+    "sha256": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+    "size_bytes": 11794,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/storage.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/style.css",
+    "sha256": "5346ab1cbd5840cca83b6cf82e69feac1affc7415cc623daca3d5a12817fd6db",
+    "size_bytes": 22278,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/style.css"
+  },
+  {
+    "path": "prototypes/browser-workspace/sw.js",
+    "sha256": "d830151fb8b0e9caa795dcb0b85be01dd1fdef1d7e6d9cc9eb79248085643cbe",
+    "size_bytes": 1518,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/sw.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/text.js",
+    "sha256": "7374d7803013dbeaa963062600bae0d520e3ce1cb5578d7cfb167f82a9fb9b53",
+    "size_bytes": 3078,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/text.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/u2.js",
+    "sha256": "6e1198a610afdedfb313bc4b6305d9567c94a6d2967fa19d062309801923d39d",
+    "size_bytes": 8853,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/u2.js"
+  },
+  {
+    "path": "prototypes/browser-workspace/wand.js",
+    "sha256": "01c33e1701a1451516aa4069939095e04d5af16347a80e6b6bdd2448d8012580",
+    "size_bytes": 5193,
+    "locator": "github://lionellmisquitta/unruly/8a4a94225d01a19716915bc5f7d2551e9b414e73/prototypes/browser-workspace/wand.js"
+  }
+]

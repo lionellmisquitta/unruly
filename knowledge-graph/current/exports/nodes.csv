@@ -44,9 +44,9 @@ urn:unruly:checkpoint:u1,Process,U1 compact reference UI and layers,accepted
 urn:unruly:checkpoint:u2,Process,U2 brush library and color,accepted
 urn:unruly:checkpoint:u3,Process,U3 core gestures and geometry,verified_preview
 urn:unruly:checkpoint:g02,Process,G02 remaining reference gestures,beta_scope_hosted_verified_rotation_deferred
-urn:unruly:code:selection,CodeArtifact,prototypes/browser-workspace/selection.js,hosted_verified
-urn:unruly:code:storage,CodeArtifact,prototypes/browser-workspace/storage.js,current
-urn:unruly:code:sw,CodeArtifact,prototypes/browser-workspace/sw.js,current
+urn:unruly:code:selection,CodeArtifact,selection.js,implemented
+urn:unruly:code:storage,CodeArtifact,storage.js,implemented
+urn:unruly:code:sw,CodeArtifact,sw.js,implemented
 urn:unruly:code:ui,CodeArtifact,prototypes/browser-workspace/index.html + style.css,current
 urn:unruly:code:tests-model,CodeArtifact,tests/browser-workspace/model.test.mjs,current
 urn:unruly:code:tests-browser,CodeArtifact,tests/browser-workspace/browser.test.cjs,current
@@ -77,7 +77,7 @@ urn:unruly:question:ai-provider,Question,BYOK AI provider support,open
 urn:unruly:question:timelapse-retention,Question,Timelapse framing/retention,open
 urn:unruly:branch:checkpoint-u1,Artifact,checkpoint/u1-v0.4.0,accepted
 urn:unruly:branch:checkpoint-u2,Artifact,checkpoint/u2-v0.5.0,accepted
-urn:unruly:code:brushes,CodeArtifact,prototypes/browser-workspace/brushes.js,current
+urn:unruly:code:brushes,CodeArtifact,brushes.js,implemented
 urn:unruly:code:u2-ui,CodeArtifact,prototypes/browser-workspace/u2.js,current
 urn:unruly:test:u2-model,TestCase,tests/browser-workspace/u2.model.test.mjs,verified
 urn:unruly:test:u2-browser,TestCase,tests/browser-workspace/u2.browser.cjs,verified
@@ -207,8 +207,8 @@ urn:unruly:cap:curve,Capability,Personal pressure curve,verified_preview
 urn:unruly:cap:clear-layer,Capability,Clear active layer,hosted_verified
 urn:unruly:cap:global-pen-settings,Capability,Global pen settings panel,hosted_verified
 urn:unruly:cap:pressure-hierarchy,Capability,Global pressure with optional brush override,hosted_verified
-urn:unruly:code:pen-input,CodeArtifact,prototypes/browser-workspace/pen-input.js,current
-urn:unruly:code:pressure-ui,CodeArtifact,prototypes/browser-workspace/pressure-ui.js,current
+urn:unruly:code:pen-input,CodeArtifact,pen-input.js,implemented
+urn:unruly:code:pressure-ui,CodeArtifact,pressure-ui.js,implemented
 urn:unruly:code:lset-tests,CodeArtifact,tests/browser-workspace/lset.browser.cjs,current
 urn:unruly:decision:graph-freshness,Decision,Timestamped current graph,approved
 urn:unruly:decision:bounded-increments,Decision,One bounded increment at a time,current_delivery_policy
@@ -257,26 +257,26 @@ urn:unruly:cap:native-growing-smudge,Capability,Direct growing native-raster smu
 urn:unruly:code:smudge,CodeArtifact,smudge.js,implemented
 urn:unruly:code:pixel-surface,CodeArtifact,pixel-surface.js,implemented
 urn:unruly:code:app,CodeArtifact,app.js,implemented
-urn:unruly:release:browser-current,Release,Current cumulative browser release — PAINT1,hosted_verified
+urn:unruly:release:browser-current,Release,Current cumulative browser release — FILL2,hosted_verified
 urn:unruly:ci:qa-workflow,CodeArtifact,Cumulative browser QA workflow,hosted_verified
 urn:unruly:cap:smudge,Capability,Active-layer smudge,hosted_verified
 urn:unruly:module:raster,Module,Bounded v4 raster strokes,hosted_verified
 urn:unruly:cap:performance,Capability,Measured browser performance foundation,hosted_verified
-urn:unruly:branch:main,Branch,Native main preserved,historical_preserved
-urn:unruly:decision:one-preview,Decision,One cumulative preview; preserve native main,user_approved
-urn:unruly:checkpoint:c04-next,Checkpoint,"After PAINT1: folders, then masks",superseded_proposal
-urn:unruly:roadmap:folders,Capability,Layer folders and grouping,planned
-urn:unruly:roadmap:masks,Capability,Layer and folder masks,planned
-urn:unruly:roadmap:clipping,Capability,Clipping and alpha lock,planned
-urn:unruly:roadmap:text,Capability,Text boxes and fonts,planned
-urn:unruly:roadmap:patterns,Capability,Image/reference and clothing-pattern import,planned
-urn:unruly:roadmap:magic-wand,Capability,Magic wand selection,planned
-urn:unruly:roadmap:precision-selection,Capability,Magnetic selection and editable pen/path,planned
-urn:unruly:roadmap:bucket,Capability,Paint bucket,planned
+urn:unruly:branch:main,Branch,Cumulative browser main,current
+urn:unruly:decision:one-preview,Decision,One cumulative browser-main product,implemented
+urn:unruly:checkpoint:c04-next,Checkpoint,Next proposed checkpoint — group/layer HSL and levels,proposed
+urn:unruly:roadmap:folders,Capability,Layer folders and grouping,implemented
+urn:unruly:roadmap:masks,Capability,Layer and folder masks,partially_implemented
+urn:unruly:roadmap:clipping,Capability,Clipping and alpha lock,implemented
+urn:unruly:roadmap:text,Capability,Text boxes and fonts,partially_implemented
+urn:unruly:roadmap:patterns,Capability,Image/reference and clothing-pattern import,implemented
+urn:unruly:roadmap:magic-wand,Capability,Magic wand selection,implemented
+urn:unruly:roadmap:precision-selection,Capability,Magnetic selection and editable pen/path,implemented
+urn:unruly:roadmap:bucket,Capability,Paint bucket,implemented
 urn:unruly:roadmap:gap-fill,Capability,Gap-aware fill,planned
-urn:unruly:roadmap:enclosure-fill,Capability,Lasso/enclosure fill,planned
-urn:unruly:roadmap:hsl-levels,Capability,Group/layer HSL and levels,planned
-urn:unruly:roadmap:curves-blur,Capability,Curves and blur,planned
+urn:unruly:roadmap:enclosure-fill,Capability,Lasso/enclosure fill,implemented
+urn:unruly:roadmap:hsl-levels,Capability,"Group/layer hue, saturation and levels",planned
+urn:unruly:roadmap:curves-blur,Capability,Curves and Gaussian blur,planned
 urn:unruly:decision:D-P01,Decision,D-P01 — Keep one cumulative application and the existing preview,recorded_direction
 urn:unruly:decision:D-P02,Decision,D-P02 — Benchmark populated 30–50-layer artist workflows before expanding capacity,recorded_direction
 urn:unruly:decision:D-P03,Decision,D-P03 — Separate document operations from rendering before replacing rendering internals,recorded_direction
@@ -289,3 +289,56 @@ urn:unruly:decision:D-P09,Decision,D-P09 — Investigate proprietary brush impor
 urn:unruly:decision:D-P10,Decision,D-P10 — Core artist workflow: sketch → outline → flats → shadows clipped to folders → group levels/HSL/curves → text,recorded_direction
 urn:unruly:decision:D-P12,Decision,"D-P12 — Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill",recorded_direction
 urn:unruly:decision:D-P11,Decision,D-P11 — Keep a short current checkpoint brief and append consequential decisions,recorded_direction
+urn:unruly:checkpoint:folder1,Checkpoint,FOLDER1 — Layer folders and grouping,hosted_verified
+urn:unruly:cap:folders,Capability,Layer folders and grouping,implemented
+urn:unruly:checkpoint:mask1,Checkpoint,MASK1 — Leaf-layer masks,hosted_verified
+urn:unruly:cap:leaf-masks,Capability,Leaf-layer masks,implemented
+urn:unruly:checkpoint:clip1,Checkpoint,CLIP1 — Clipping and alpha lock,hosted_verified
+urn:unruly:cap:clipping-alpha-lock,Capability,Clipping and alpha lock,implemented
+urn:unruly:checkpoint:text1,Checkpoint,TEXT1 — Editable text boxes,hosted_verified
+urn:unruly:cap:editable-text,Capability,Editable text boxes,implemented
+urn:unruly:checkpoint:import1,Checkpoint,"IMPORT1 — Images, references and repeated patterns",hosted_verified
+urn:unruly:cap:image-reference-pattern,Capability,"Images, references and repeated patterns",implemented
+urn:unruly:checkpoint:wand1,Checkpoint,WAND1 — Magic wand pixel selection,hosted_verified
+urn:unruly:cap:magic-wand,Capability,Magic wand pixel selection,implemented
+urn:unruly:checkpoint:lasso2,Checkpoint,LASSO2 — Exact region lasso and PNG clipboard,hosted_verified
+urn:unruly:cap:region-lasso,Capability,Exact region lasso and PNG clipboard,implemented
+urn:unruly:checkpoint:lasso3,Checkpoint,LASSO3 — Large-layer bounded region edits,hosted_verified
+urn:unruly:cap:large-region,Capability,Large-layer bounded region edits,implemented
+urn:unruly:checkpoint:path1,Checkpoint,PATH1 — Editable selection outlines,hosted_verified
+urn:unruly:cap:editable-selection-path,Capability,Editable selection outlines,implemented
+urn:unruly:checkpoint:mag1,Checkpoint,MAG1 — Magnetic edge tracing,hosted_verified
+urn:unruly:cap:magnetic-selection,Capability,Magnetic edge tracing,implemented
+urn:unruly:checkpoint:fill1,Checkpoint,FILL1 — Gap-aware paint bucket,hosted_verified
+urn:unruly:cap:gap-aware-bucket,Capability,Gap-aware paint bucket,implemented
+urn:unruly:checkpoint:fill2,Checkpoint,FILL2 — Lasso selection and enclosure fill,hosted_verified
+urn:unruly:cap:geometric-fill,Capability,Lasso selection and enclosure fill,implemented
+urn:unruly:code:README,CodeArtifact,README.md,implemented
+urn:unruly:code:brush-compare,CodeArtifact,brush-compare.js,implemented
+urn:unruly:code:brush-recipe-ui,CodeArtifact,brush-recipe-ui.js,implemented
+urn:unruly:code:brush-recipe,CodeArtifact,brush-recipe.js,implemented
+urn:unruly:code:brush-size,CodeArtifact,brush-size.js,implemented
+urn:unruly:code:bucket-fill,CodeArtifact,bucket-fill.js,implemented
+urn:unruly:code:clipping,CodeArtifact,clipping.js,implemented
+urn:unruly:code:folders,CodeArtifact,folders.js,implemented
+urn:unruly:code:gestures,CodeArtifact,gestures.js,implemented
+urn:unruly:code:icon,CodeArtifact,icon.svg,implemented
+urn:unruly:code:image-clipboard,CodeArtifact,image-clipboard.js,implemented
+urn:unruly:code:image-import,CodeArtifact,image-import.js,implemented
+urn:unruly:code:index,CodeArtifact,index.html,implemented
+urn:unruly:code:lasso-region,CodeArtifact,lasso-region.js,implemented
+urn:unruly:code:magnetic-selection,CodeArtifact,magnetic-selection.js,implemented
+urn:unruly:code:manifest,CodeArtifact,manifest.webmanifest,implemented
+urn:unruly:code:masks,CodeArtifact,masks.js,implemented
+urn:unruly:code:path-selection-ui,CodeArtifact,path-selection-ui.js,implemented
+urn:unruly:code:path-selection,CodeArtifact,path-selection.js,implemented
+urn:unruly:code:polygon-fill,CodeArtifact,polygon-fill.js,implemented
+urn:unruly:code:shapes,CodeArtifact,shapes.js,implemented
+urn:unruly:code:smudge-ui,CodeArtifact,smudge-ui.js,implemented
+urn:unruly:code:style,CodeArtifact,style.css,implemented
+urn:unruly:code:text,CodeArtifact,text.js,implemented
+urn:unruly:code:u2,CodeArtifact,u2.js,implemented
+urn:unruly:code:wand,CodeArtifact,wand.js,implemented
+urn:unruly:roadmap:tip1-custom-image,Capability,TIP1 — Custom uploaded image brush tips,planned
+urn:unruly:roadmap:tip2-grain,Capability,TIP2 — Imported grain and textured stamps,planned
+urn:unruly:roadmap:capacity-recovery,Capability,Measured larger-document capacity and recovery,planned

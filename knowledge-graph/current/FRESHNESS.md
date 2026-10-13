@@ -1,3 +1,3 @@
 # Freshness
 
-Revisionunruly-kgp-20261011T133431Z; UTC2026-10-11T13:34:31Z; IST2026-10-11T19:04:31+05:30. Delta fromunruly-kgp-20261010T185658Z. Freshly checked6 QA and5 deployment identities; source reports/artifact receipts included and hashed. No new device testing, literature scan or whole-code rescan. Repo graph sync receipt must verify branch/manifest/package bytes before declaring repository synchronized.
+Revisionunruly-kgp-20261012T234848Z; graph update2026-10-12T23:48:48Z/2026-10-13T05:18:48+05:30. Source8a4a94225d01a19716915bc5f7d2551e9b414e73; exact CI/Pages evidence in current handover and batch. External .knowledge/CURRENT_GRAPH.json binds repository commit and portable archive SHA256; archive content does not self-reference its future Git commit. Historical root records/old code trees are not current implementation.

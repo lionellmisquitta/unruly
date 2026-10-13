@@ -1,0 +1,36 @@
+name: UNRULY knowledge graph viewer QA
+on:
+  push:
+    branches: ['knowledge/unruly-kgp']
+    paths: ['knowledge-graph/current/exports/**', 'knowledge-graph/qa/viewers.browser.cjs', '.github/workflows/unruly-kgp-viewer-qa.yml']
+permissions:
+  contents: read
+jobs:
+  viewers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 8a4a94225d01a19716915bc5f7d2551e9b414e73
+          path: application
+          persist-credentials: false
+      - name: Install existing pinned browser tooling
+        run: |
+          npm ci --ignore-scripts --prefix application/tests/browser-workspace
+          cd application/tests/browser-workspace
+          npx playwright install --with-deps chromium
+      - name: Load and use both self-contained graph viewers
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory knowledge-graph/current/exports > /tmp/graph-server.log 2>&1 &
+          node knowledge-graph/qa/viewers.browser.cjs
+      - name: Upload bounded viewer evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: unruly-kgp-viewer-qa
+          path: knowledge-graph/qa/evidence
+          retention-days: 7

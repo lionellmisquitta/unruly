@@ -1,0 +1,1019 @@
+{
+  "revision": "unruly-kgp-20261012T234848Z",
+  "previous_revision": "unruly-kgp-20261011T133431Z",
+  "source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+  "updated_at": "2026-10-12T23:48:48Z",
+  "updated_at_local": "2026-10-13T05:18:48+05:30",
+  "checkpoint_batch": [
+    "FOLDER1",
+    "MASK1",
+    "CLIP1",
+    "TEXT1",
+    "IMPORT1",
+    "WAND1",
+    "LASSO2",
+    "LASSO3",
+    "PATH1",
+    "MAG1",
+    "FILL1",
+    "FILL2"
+  ],
+  "build_count": 12,
+  "feature_checkpoints": 10,
+  "feedback_fix_builds": 2,
+  "changes": [
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:folder1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:folders"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d0e5f9090f043318cf4d"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d92adbdfcde87ea5ec71"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-folder1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:mask1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:leaf-masks"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-3872c953eb80e7ae9d6a"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d6bb15996ce3c1b7cac1"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-mask1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:clip1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:clipping-alpha-lock"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-2dcd6f45e5a317de405d"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-9e4522e6e0f3d8ebc8e0"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-clip1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:text1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:editable-text"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-8999ad401befe5b053d6"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-153b382b72491ba763a2"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-text1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:import1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:image-reference-pattern"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-fd726cadb5ef3ded6102"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d6a987558ef76069f2e1"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-import1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:wand1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:magic-wand"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-0106b94e4658822785b3"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-dc4faa9b43fa54f36934"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-wand1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:lasso2"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:region-lasso"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-35ccab314af2ec3cae0f"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-a2e5ec9a6c9d745e5ed6"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-lasso2"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:lasso3"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:large-region"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-cb87407927f6f3d1de18"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-3a76e34dd688610aadc3"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-lasso3"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:path1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:editable-selection-path"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-c92b12ae2247a3c2ac13"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-3c1ce829ebd3fb911080"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-path1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:mag1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:magnetic-selection"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-090c9c3834053a4b2832"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-4dcf4baa3db90161ca92"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-mag1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:fill1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:gap-aware-bucket"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-4c03a9cdc5f3937f7515"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-02c2796379f26a8fbf87"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-fill1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:checkpoint:fill2"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:cap:geometric-fill"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-95dbd8df0d139b82a43d"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-5db1fb2c8e508552bc4a"
+    },
+    {
+      "operation": "create",
+      "target": "fact-postpaint-fill2"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:README"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:app"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:brush-compare"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:brush-recipe-ui"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:brush-recipe"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:brush-size"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:brushes"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:bucket-fill"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:canvas2d-renderer"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:clipping"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:folders"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:gestures"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:history-patch"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:icon"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:image-clipboard"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:image-import"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:index"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:lasso-region"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:magnetic-selection"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:manifest"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:masks"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:model"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:path-selection-ui"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:path-selection"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:pen-input"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:pixel-paint"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:polygon-fill"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:pressure-ui"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:raster"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:render"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:selection"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:shapes"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:smudge-ui"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:smudge"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:storage"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:style"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:code:sw"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:text"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:u2"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:code:wand"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-9f0ff65aa73b198bce66"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-b263d223653e843aad83"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-4dd42d7f35a427b401ee"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-a5e72128c581b0eb984e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f0853b57eda2334b2ba4"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-6cb5317bbd3c882f5cff"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-7095e808fc92dd0f2b5a"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:rel:batch-7095e808fc92dd0f2b5a"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-52bb67c473a99c4921c6"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-7c3b6988691a45e27564"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-e351658cf99a8508329c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-070051e573bb83a45ea2"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-e80ccc629479f6923c25"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d0ed68e37da3bfcdc500"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-e5094a108021a0e5f269"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-eeb7788dcaece3eb803e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-98484f76a869902d61d3"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-ab3c1e3b7d8a7c80fe9f"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-cd84827a4c94ac92f3e0"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-45982ad54e1c33ad29a5"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-abfdfd365a62d99461d8"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-849638ebd7abe39ad105"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-a90e7e762d953ba40b1b"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f27b9032d151036e373c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-38377c027deeb9f0c1d3"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d8e82b8357df01f18b88"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-008226235d14646849d8"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-24912723291da4361329"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-0581bc712d09dfda6342"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-18dfb1e7deb87b5b9ef1"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-45e8fb67520a6e1b9254"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-8b4490a4c5c9e097b873"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-a0b452d3f58660b55295"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-8d1556f2147a62aabf4e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-740537d660220a45f487"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-603d8a7efcf6509b28be"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-851906f7e610cf2efb84"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-ad4a8b9ff08f44af10ea"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-2ba04bfd64d30be05b5d"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d5087df9c24116673807"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-ecf7690b15e73dc39828"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-2ea108ed4b7fdd211b0d"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-312242ba71b79020628c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-3599136311c3c1a59dfb"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-13a154e39180ae4d8149"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f67217058834974f34e0"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-83152b9ca1d04ae39dfd"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-eee9cb70eb06db606e5c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-a3d6d28ee5532f4837cf"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-cf19d538701e099b17cf"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-c184a2da0a5da1230362"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-5f0626a5d76b3be33f40"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-8ff573b356b191fbff90"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-b05c15cfc8676712af1e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f515c15de716b0557f6e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-5e5cfa7675436e5c2686"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-cc901476ad90c10f0575"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-fa6367a5a22ea6995a36"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-063b126ef780cf256940"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-2fc7c054181081f55246"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-ae3e5a0ba62cd0dba462"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-47fb1851396ae952f868"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f94166e2af86beb8b90c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f4eae3fe6b57392df373"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-0e0091379c9fd65e3854"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-6659ce32555eb3d0956c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-70fca966b0753074940f"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-a346a2e005abe7fe6ced"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d72f94d18c33cd033be0"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-916e3f201b67e6170fff"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-63b9b583a11eb8050459"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-e347cd706d589017e899"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f4e184d66f1584052d3d"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-a28487d943b3c2f43e5c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-4d0c451583f960d66b68"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-b96ce8a21d7cabd87aba"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-3ecaa16ada323c28f2ed"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-9fab673325ca9e33e986"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-845f6b8b13d9ee300c63"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-daa657592e0b66f7f034"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-16d8d6ddd040c4b42a83"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-007091d3c5aeef4210e9"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-cf5e36f6d839c17319ce"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-57a9b54c1404cd192b0c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-fabb5060e784cdf845da"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-12fcafcaf35fe64b99b3"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-226bd76417c4ed24860e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-1054e3cd94de5eab2458"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-13b75d0555a583baa137"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f0defa414fabe40cfff3"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-9e363e657262b8d3b6a7"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-5fc2b9643b58dc4c0df2"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-e3920344f590ac986074"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-8022b5c02ff40ba97188"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f60d75e2d5a249a11515"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f9ae2d30b2693b70c64e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-16f6c6d76119e988f628"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f4ab89f4a576baf74d6d"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-748f4e52af522c349330"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f8cf60d66018e409c89c"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-742caaf7215083d76f2e"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-7b8630b6297634e96890"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-ef5ba0a23f7b20fc5b84"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-0ab0c9c02a7b91ffed50"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f9492642d18317686727"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-2714c617bc46d554a3a0"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-d345a028c92431ded7a7"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-f97aa0f8325aa9d1bb91"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-ae4ed8aed8628cf902dc"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-b97787c200d998e97153"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-df4dd38f2c8367ba7c15"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-243e0cd805656db57b47"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-fcd702d756ce25a5a8c8"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-3c626a17f821796d3b7f"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:rel:batch-32dba1d2edc837b4d917"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:release:browser-current"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:branch:main"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:decision:one-preview"
+    },
+    {
+      "operation": "supersede",
+      "target": "tactical-current-paint1-20261011"
+    },
+    {
+      "operation": "create",
+      "target": "tactical-current-fill2-20261013"
+    },
+    {
+      "operation": "supersede",
+      "target": "decision-oct10-release-gate"
+    },
+    {
+      "operation": "supersede",
+      "target": "decision-performance-d-p01-20261011"
+    },
+    {
+      "operation": "create",
+      "target": "decision-browser-main-20261013"
+    },
+    {
+      "operation": "create",
+      "target": "fact-current-release-fill2"
+    },
+    {
+      "operation": "create",
+      "target": "fact-current-capacity-20261013"
+    },
+    {
+      "operation": "create",
+      "target": "fact-precision-parameters-20261013"
+    },
+    {
+      "operation": "create",
+      "target": "fact-fill-parameters-20261013"
+    },
+    {
+      "operation": "create",
+      "target": "decision-graph-refresh-20261013"
+    },
+    {
+      "operation": "resolve",
+      "target": "c-main"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:folders"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:masks"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:clipping"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:text"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:patterns"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:magic-wand"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:precision-selection"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:bucket"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:enclosure-fill"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:checkpoint:c04-next"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:hsl-levels"
+    },
+    {
+      "operation": "update",
+      "target": "urn:unruly:roadmap:curves-blur"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:roadmap:tip1-custom-image"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:roadmap:tip2-grain"
+    },
+    {
+      "operation": "create",
+      "target": "urn:unruly:roadmap:capacity-recovery"
+    },
+    {
+      "operation": "create",
+      "target": "decision-tip1-controls-20261013"
+    },
+    {
+      "operation": "create",
+      "target": "unknown-tip1-portability-20261013"
+    },
+    {
+      "operation": "create",
+      "target": "unknown-group-effects-20261013"
+    },
+    {
+      "operation": "create",
+      "target": "unknown-visible-composite-fill-20261013"
+    }
+  ],
+  "source_policy": "Incremental current edition; no unchanged archive/raw scan; historical root canonical files unchanged"
+}

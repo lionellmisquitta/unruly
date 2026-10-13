@@ -4,25 +4,25 @@
   "name": "unruly",
   "package_id": "urn:kgp:package:unruly",
   "created_at": "2026-10-06T12:32:05Z",
-  "updated_at": "2026-10-11T13:37:40Z",
+  "updated_at": "2026-10-12T23:48:58Z",
   "canonical_format": "jsonl",
-  "content_sha256": "24585b7d022c6c83b8f42b84411e0b9278ddc4c9ad239fd0677621f79d2669a0",
+  "content_sha256": "2cd117fb4d5c2e26d940bd5134ddbeadf7b709527c176b93b38a38a1efd41e9a",
   "validation": {
     "status": "valid",
-    "validated_at": "2026-10-11T13:37:40Z"
+    "validated_at": "2026-10-12T23:48:58Z"
   },
   "counts": {
-    "graph/entities.jsonl": 290,
-    "graph/relationships.jsonl": 318,
-    "knowledge/confirmed.jsonl": 28,
+    "graph/entities.jsonl": 343,
+    "graph/relationships.jsonl": 456,
+    "knowledge/confirmed.jsonl": 44,
     "knowledge/tribal_knowledge.jsonl": 0,
-    "knowledge/tactical.jsonl": 8,
-    "knowledge/decisions.jsonl": 57,
+    "knowledge/tactical.jsonl": 9,
+    "knowledge/decisions.jsonl": 60,
     "knowledge/ideas.jsonl": 3,
     "knowledge/contradictions.jsonl": 5,
-    "knowledge/unknowns.jsonl": 21,
-    "evidence/evidence.jsonl": 83,
-    "evidence/source_inventory.jsonl": 89,
+    "knowledge/unknowns.jsonl": 24,
+    "evidence/evidence.jsonl": 143,
+    "evidence/source_inventory.jsonl": 165,
     "conversations/index.jsonl": 0,
     "conversations/active": 0,
     "conversations/archived": 0
@@ -42,7 +42,7 @@
   "visualization": {
     "status": "complete",
     "overview_mode": "concepts",
-    "concept_count": 153,
+    "concept_count": 169,
     "lenses": [
       "overview",
       "business",
@@ -51,27 +51,29 @@
       "evidence"
     ]
   },
-  "updated_at_local": "2026-10-11T19:07:40+05:30",
+  "updated_at_local": "2026-10-13T05:18:58+05:30",
   "timezone": "Asia/Kolkata",
-  "revision_id": "unruly-kgp-20261011T133431Z",
+  "revision_id": "unruly-kgp-20261012T234848Z",
   "graph_branch": "knowledge/unruly-kgp",
-  "handoff_source_commit": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
-  "mode": "graph-aware decision-triggered maintenance",
+  "handoff_source_commit": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+  "mode": "incremental post-verification maintenance",
   "conversation_policy": {
-    "capture": "No new full raw transcript captured; bounded project decision basis included",
-    "raw_retention": "Previous raw/original sources retained unchanged outside repository edition",
-    "routine_retrieval": "Compact records and canonical queries first; no archive rescans"
+    "capture": "Bounded non-sensitive project decision excerpts only; no full reconstructed raw chat",
+    "raw_retention": "Existing raw/original sources unchanged outside public edition",
+    "routine_retrieval": "Canonical current edition and compact records first; no archive rescan"
   },
   "created_at_local": "2026-10-06T18:02:05+05:30",
-  "last_knowledge_update_at": "2026-10-11T13:34:31Z",
-  "last_knowledge_update_at_local": "2026-10-11T19:04:31+05:30",
+  "last_knowledge_update_at": "2026-10-12T23:48:48Z",
+  "last_knowledge_update_at_local": "2026-10-13T05:18:48+05:30",
   "freshness_pointer_path": ".knowledge/CURRENT_GRAPH.json",
   "source_status": {
-    "live_pages_source": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
-    "latest_candidate_source": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+    "live_pages_source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+    "latest_candidate_source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
     "candidate_ci": "success",
     "private_lab": "SUPERSEDED_DELIVERY_SURFACE",
-    "repo_knowledge_branch_sync": "PREPARED_FOR_LEASED_COMMIT"
+    "browser_main": "cumulative",
+    "native_archive": "archive/native-main-2026-10-11",
+    "repo_knowledge_branch_sync": "CONTENT_VALIDATED; actual repository binding in external CURRENT_GRAPH pointer/receipt"
   },
   "historical_notes": [
     "Baseline reconstructed from Design Offline Whiteboard conversation, GitHub branch/compare metadata, project/governance state and selected delivery evidence.",
@@ -82,21 +84,21 @@
     "Record timestamps describe graph record creation/update; historical decision occurrence precision is separately recorded, never fabricated.",
     "Current deployed CI1 differs from last fully hosted-verified CURVE1 and unverified repair handoff.",
     "Oct 10 graph update from connector GitHub and Actions evidence; older Oct 8 operational records are retained but superseded.",
-    "The latest 0–100% size UI is NOT released because PENB02 legacy oracle fails.",
+    "The latest 0\u2013100% size UI is NOT released because PENB02 legacy oracle fails.",
     "This validated local package is not yet asserted as uploaded to GitHub knowledge branch.",
     "October 10 Brush Lab/percent repair batch supersedes earlier operational state; historical evidence retained. Private Site URL intentionally omitted from public repository evidence.",
     "Latest delivery decision: one cumulative GitHub Pages product, never require the user to test separate slices.",
     "C04-B02 hosted verified; next C04-B03 smudge. One cumulative existing GitHub Pages URL."
   ],
   "notes": [
-    "Current PAINT1 release verified; six-checkpoint batch sinceUX2.",
-    "Next folders/masks; magic wand/precision before all fill checkpoints.",
-    "No32→50 capacity or physical-tablet/GPU/RAM guarantee; no scratch-disk engine or Rust rewrite.",
-    "Explicit current user authorization; future graph refreshes require announcement and confirmation.",
-    "Old repo canonical pointer was stale; new current/ edition preserves historical root sources unchanged."
+    "FILL2 verified/published;12checkpoint batch since PAINT1 (10feature/2feedback repairs).",
+    "Next proposed HSL/levels, then curves/blur, TIP1 images, TIP2 grain, measured capacity/recovery.",
+    "No physical50-layer/RAM/GPU/disk-residency/native-paste guarantee.",
+    "Single conditional user graph authorization fulfilled; future refresh requires explicit permission.",
+    "Historical root/original/raw sources preserved unchanged; current edition authoritative."
   ],
-  "application_docs_baseline": "a90bafcc99713a79b8408cd5042ee38080dacdab",
+  "application_docs_baseline": "110d49cb555f815acc2e8f19121b4ea8f68edffa",
   "edition": "repository",
   "canonical_repository_path": "knowledge-graph/current",
-  "previous_revision": "unruly-kgp-20261010T185658Z"
+  "previous_revision": "unruly-kgp-20261011T133431Z"
 }
