@@ -43,6 +43,7 @@ checkpoints:
   - .delivery/CHG-UNRULY-HSL1-1013/
   - prototypes/browser-workspace/style.css
   - tests/browser-workspace/render-contract.model.test.mjs
+  - prototypes/browser-workspace/render-contract.js
   test_paths:
   - tests/browser-workspace/
   tests:
