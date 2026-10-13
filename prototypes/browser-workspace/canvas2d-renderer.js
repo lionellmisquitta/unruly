@@ -44,7 +44,7 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,applyMask=null,allocationReserve=()=>0}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,applyMask=null,allocationReserve=()=>0,extraSurfaces=()=>0,groupComposer=null}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
@@ -53,7 +53,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
  function clear(c){const ctx=c.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,c.width,c.height);return ctx;}
  function geometry(){
   const rect=canvas.getBoundingClientRect(),cssW=Math.max(1,rect.width),cssH=Math.max(1,rect.height),deviceDpr=window.devicePixelRatio||1;
-  const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt((rendererBudget.backingBytes-allocationReserve())/(surfaces.length*4*cssW*cssH)));
+  const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt((rendererBudget.backingBytes-allocationReserve())/((surfaces.length+extraSurfaces())*4*cssW*cssH)));
   const w=Math.max(1,Math.floor(cssW*d)),h=Math.max(1,Math.floor(cssH*d));
   if(surfaces.some(c=>c.width!==w||c.height!==h)){
    invalidate();
@@ -84,14 +84,16 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
  }
  function background(target,b,v,g){const ctx=clear(target);ctx.setTransform(g.d,0,0,g.d,0,0);paper(ctx,b.paper,v,g.cssW,g.cssH);}
  function full(board,v,live,g){
+  if(extraSurfaces()&&groupComposer)return groupComposer({board,target:canvas,g,background:target=>background(target,board,v,g),drawLayer:(l,target)=>{replayLayer(l,v,g,l.id===board.activeLayer?live:null);composite(target,l);return l.strokes.filter(s=>s.opacity!==0).length;}});
   background(canvas,board,v,g);let count=0;
   for(const l of board.layers){if(!l.visible||l.opacity===0)continue;replayLayer(l,v,g,l.id===board.activeLayer?live:null);count+=l.strokes.filter(s=>s.opacity!==0).length;composite(canvas,l);}
   return count;
  }
- function metrics(t,g,mode,count){return {ms:performance.now()-t,mode,completedStrokesReplayed:count,dpr:g.d,backingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0),surfaces:surfaces.map(c=>({width:c.width,height:c.height}))};}
+ function metrics(t,g,mode,count){return {ms:performance.now()-t,mode,completedStrokesReplayed:count,dpr:g.d,effectBackingBytes:extraSurfaces()*g.w*g.h*4,totalBackingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0)+extraSurfaces()*g.w*g.h*4,backingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0),surfaces:surfaces.map(c=>({width:c.width,height:c.height}))};}
  function renderReference(board,view={x:0,y:0,scale:1},live=null){const t=performance.now();invalidate();const g=geometry();maskView=view;maskGeometry=g;try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}}
  function render(board,view={x:0,y:0,scale:1},live=null){
   const t=performance.now(),g=geometry(),index=board.layers.findIndex(l=>l.id===board.activeLayer),active=board.layers[index];maskView=view;maskGeometry=g;
+  if(extraSurfaces()){invalidate();return metrics(t,g,'isolated-group-effects',full(board,view,live,g));}
   // PERF4 optional upper-layer cache; the raw default keeps the accepted replay.
   if(layerCompositor&&live&&active?.visible&&active.opacity!==0&&board.layers.slice(index+1).some(l=>l.visible&&l.opacity!==0)){
    try{
