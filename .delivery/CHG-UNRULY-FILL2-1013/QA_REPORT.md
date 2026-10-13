@@ -9,3 +9,7 @@ Initial run 38321817133 at 2a8ab16b6bac473d6d6cb0b3a7ad8e50ff552c8a failed two n
 Source review confirms frozen gesture identity/settings, current active-layer region only, original layer snapshot, full geometric enclosure including transparent pixels, inherited edit guards, alpha-lock semantics and existing atomic tile/history path. Whole-object selection cannot silently fill. Existing 1024/1MP, 16 complement tiles, 8MiB board, 16MiB history, 32 layers and 80MiB renderer limits remain unchanged. No schema/model/renderer/storage/bucket/wand edits. Landscape/portrait screenshots inspected. Physical tablet feel remains unmeasured. CI timeout increased from 15 to 18 minutes based on prior measured 14m42s suite plus new coverage; no regression removed.
 
 Same-session verification and owner-authorized personal-project main/Pages process; no independent/protected-human approval claim. Publication must pin exact green source and compare every hosted asset. Knowledge graph refresh is authorized only after successful build/test and will record this checkpoint and accumulated bounded project decisions. No skill modifications.
+
+Publication closure: PR11 merge cca35a8504ff7aaf0ae3178f0499945ea019914c. Pages38323959608 SUCCESS;45 hosted assets byte-for-byte and SHA256 matched exact green source. Publication110d49cb555f815acc2e8f19121b4ea8f68edffa. Graph refresh follows separately; no app source changes after verification.
+
+Post-merge full cumulative QA38323928621 SUCCESS on mergecca35a8504ff7aaf0ae3178f0499945ea019914c.
