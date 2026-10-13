@@ -1,10 +1,12 @@
 {
   "base": "0da569744d07b675a456683944a0a28a3fc2d2e1",
-  "candidate": "870fe3fa8a6a51d07985667534e660d42b812976",
+  "candidate": "098c8463e86cd9d0c404381616314e306cc69fb4",
   "scope_check": "PASSED",
   "actual_paths": [
     ".delivery/CHG-UNRULY-HSL1-1013/BASE.json",
+    ".delivery/CHG-UNRULY-HSL1-1013/BUILD_ATTEMPTS.json",
     ".delivery/CHG-UNRULY-HSL1-1013/IMPACT_ANALYSIS.md",
+    ".delivery/CHG-UNRULY-HSL1-1013/SCOPE_REVIEW.json",
     ".delivery/CHG-UNRULY-HSL1-1013/SCOPE_REVISION.md",
     ".delivery/CHG-UNRULY-HSL1-1013/TECHNICAL_CONSTRAINTS.md",
     ".delivery/CHG-UNRULY-HSL1-1013/UX_BASELINE.md",
@@ -21,6 +23,7 @@
     "prototypes/browser-workspace/effect-compositor.js",
     "prototypes/browser-workspace/index.html",
     "prototypes/browser-workspace/model.js",
+    "prototypes/browser-workspace/render-contract.js",
     "prototypes/browser-workspace/render.js",
     "prototypes/browser-workspace/style.css",
     "prototypes/browser-workspace/sw.js",

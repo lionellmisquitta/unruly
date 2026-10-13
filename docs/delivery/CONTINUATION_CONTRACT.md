@@ -1,14 +1,18 @@
 # UNRULY continuation contract
+
+## Current — HSL1 published 13-Oct-2026
+Source098c8463e86cd9d0c404381616314e306cc69fb4; CI38433660119 SUCCESS307models/289Chromium/128identities; PR12 merged636d6f3d03aafc89bc7317eee4a3756596d2fc8e exact tree; Pages38436283497 SUCCESS48hosted matches. Layers/folders Actions → Adjust colour,unsaved preview/Apply/Cancel/Reset/one Undo. v10metadata preserves originals; adjusted groups isolate combined descendants; unadjusted groups pass through. Existing capacity limits; group full replay/temporary-depth backing, physical feel not verified. Read CURRENT_CHECKPOINT,PRODUCT_ROADMAP and CODE_STRUCTURE first. One completed build since last graph refresh; graph unchanged. Next proposed curves/blur; full roadmap remains retained. Earlier build sections below are historical,not pending work or authority to truncate scope. No automatic next build.
+
 Read this file first, then verify current main HEAD/latest cumulative CI (docs-only heads may not start QA) and read only affected code/tests. Historical delivery reports are evidence on demand; no full chat or graph reload is required.
 
 ## Binding delivery rules
 - One cumulative browser product: main, https://lionellmisquitta.github.io/unruly/ . Bounded CHG branches; verify exact source before merge/publication; pin immutable green source and compare every hosted application byte.
 - Native former main archived at archive/native-main-2026-10-11; browser-main promotion superseded native-main restriction. No history rewriting.
-- Knowledge graph updates/regeneration prohibited without explicit permission. Canonical graph head093d8735b427c3d4b5e1c5d892917609f96fa25c remains unchanged. Routine builds update only this compact contract and scoped delivery/QA receipts. Never infer graph permission from build count.
+- Knowledge graph updates/regeneration prohibited without explicit permission. The last authorized graph is bound by .knowledge/CURRENT_GRAPH.json; earlier graph heads below are historical. Routine builds update only this compact contract and scoped delivery/QA receipts. Never infer graph permission from build count.
 - Preserve regression assertions, cumulative features and document/layer/history/cache limits. Physical tablet/50-layer/process-RAM claims require measured evidence. No unsolicited GPU/Rust/OPFS rewrite.
 - Owner explicitly authorized verified personal-project main/Pages merge/publication on12-Oct-2026 without separate human reviewer. Reuse that authorization; claim same-session verification, not independent review or protected approval. No skill modification.
 
-## Current build — FILL1 gap-aware paint bucket
+## Historical build — FILL1 gap-aware paint bucket
 Sourceb0843ccd3bc58b465d10c3b9520719fca97687b1; CI38296395178 SUCCESS287models/273Chromium scenarios/120verified hashes. PR10 mergeb323b0d1eabfb3b6461b09bb86dd3602e710f85e; publication9e042f3778aead3535f2926b245a0922aba70643; Pages38298524126 SUCCESS44hosted files matched reviewed bytes. Main repeat38298466663 in_progress at receipt; merged app/test/cumulative-workflow blobs equal green source and publication pins it exactly.
 Paint bucket toolbar icon opens colour/alpha tolerance0–100 and gap closing radius0–8document-pixel settings. Close settings, tap an enclosed active-layer area with pen/mouse, release to fill chosen colour and opacity. Fingers navigate; pointercancel/Escape leaves artwork. Source is original active-layer artwork before masks/clipping, excluding paper/reference/other layers. Bucket entry cancels path draft and clears selections. No visible-composite or lasso restriction in FILL1.
 Flood is four-connected within1024x1024 original-resolution tap-centred window. Square morphological closing of colour barriers uses four separable sliding passes; original barriers remain. Small gaps can be sealed for traversal without adding connecting ink; larger radii may seal narrow passages. Seed blocked by closing rejects with guidance. Reaching search-window boundary rejects atomically rather than filling cropped infinity. Invalid settings/hidden/locked/mask-edit targets and capacity failures retain artwork. Default gap0 conservative.
@@ -23,7 +27,7 @@ Limits64anchors/512polygon samples/50path history; existing selected window1024x
 PATH1 source00e1a24cde009b94d778c071d9c20bba1cb63db5; CI38252988097 SUCCESS271models/258Chromium scenarios/114hashes; PR8 merge94268797a5f453dead1ad43caec103849c232d5f; Pages38255213655 SUCCESS42hosted assets. Main repeat38255130754 SUCCESS. Editable path supports corner/cubic handles, nearest-handle correction, closure/reopen/cancel and local Undo/Redo. .delivery/CHG-UNRULY-PATH1-1012/.
 LASSO3 sourcecd7cd3b7c0606b7404fcec64893e16ffa80633e0; CI38244620213 SUCCESS263models/251scenarios/110hashes; PR7; Pages38248475869 SUCCESS40hosted assets. Enclosed selected-window snapshot works on large layers; lazy occupied tile complement preserves outside pixels; one Undo restores original vectors/text. No silent downsampling/whole-object fallback. .delivery/CHG-UNRULY-LASSO3-1012/.
 
-## Remaining core roadmap
+## Historical painting subset before FILL2 — superseded by PRODUCT_ROADMAP
 1. Lasso fill + enclose-and-fill.
 2. Hue/saturation + levels, including group adjustments.
 3. Curves + Gaussian blur.
@@ -41,10 +45,10 @@ Later: whole-canvas rotation (deferred), canvas size/DPI/export, proprietary bru
 - TIP1: import format/dimensions/byte limits, alpha versus grayscale mask interpretation/inversion, preset storage/document portability and seeded deterministic jitter/replay. Controls accepted above; implement only when checkpoint authorized. TIP2: grain source/pattern behavior and measured stamp budgets. Proprietary brush fidelity requires representative files; deformation later.
 - Text: custom fonts/wrapping/portable fidelity later; generic device fonts vary.
 
-## Cumulative status
+## Historical cumulative status before FILL2
 Brushes/pressure/0–100size/comparison/recipes; shapes/picker/pen mapping; layer transforms; performance foundation; raster painting+smudge; folders; leaf masks; clipping+alpha lock; text; images/patterns/reference imports; magic wand regions; exact region lasso/PNGclipboard; large-layer region repair; editable paths; magnetic tracing; gap-aware paint bucket. Graph unchanged:9feature checkpoints plus2feedback fixes since last approved refresh. Next authorized work must be bounded from current published main, never restart the product or refresh graph implicitly.
 
-## Active build — FILL2 lasso/enclose fill
+## Historical active build — FILL2 lasso/enclose fill
 User authorized next checkpoint and knowledge graph update after successful build/test on13-Oct-2026. Baseline2c95cf7; prior main repeat38298466663 SUCCESS. Geometric active-layer Fill selection and direct Enclose & fill, including blank layers, with existing alpha/mask/clip/complete complement/one Undo contracts. Mapped pen buttons never auto-paint. New scoped .delivery/CHG-UNRULY-FILL2-1013/ locks behavior; CI budget18min because previous run14m42s. Graph refresh pending successful verification; do not update before that or infer perpetual graph permission. Skills unchanged.
 
 ## FILL2 closeout — 13-Oct-2026

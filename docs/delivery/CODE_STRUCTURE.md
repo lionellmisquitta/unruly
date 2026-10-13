@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Verified against application source at 8a4a94225d01a19716915bc5f7d2551e9b414e73, HSL1 candidate 870fe3fa8a6a51d07985667534e660d42b812976; CI/publication pending. Previous verified baseline is FILL2.
+Verified against application source at 8a4a94225d01a19716915bc5f7d2551e9b414e73, HSL1 verified/published source 098c8463e86cd9d0c404381616314e306cc69fb4; CI38433660119 and Pages38436283497 SUCCESS.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -60,8 +60,8 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 6. Publish only the verified source; report source commit, CI result, merge/deployment identity and hosted-source comparison.
 7. Update PRODUCT_ROADMAP, CURRENT_CHECKPOINT and CONTINUATION_CONTRACT with status/evidence. Update this map only if dependencies/contracts changed. Keep pending scope intact.
 
-## HSL1 implemented localization — verification pending
-New adjustments.js (pure math/validation/mutation), adjustment-ui.js (unsaved preview/Apply/Cancel), effect-compositor.js (combined adjusted-folder replay). model.js imports adjustment validation and exposes one command. render.js invokes leaf adjustments, tracks group depth and wires group replay; canvas2d-renderer.js has optional group/depth hooks, preserving default legacy source through exact hook normalization and the unchanged frozen hash. No storage/selection/fill/brush changes. Scope/diff and exact source evidence in .delivery/CHG-UNRULY-HSL1-1013. Cumulative browser acceptance is pending.
+## HSL1 implemented localization — verified and published
+New adjustments.js (pure math/validation/mutation), adjustment-ui.js (unsaved preview/Apply/Cancel), effect-compositor.js (combined adjusted-folder replay). model.js imports adjustment validation and exposes one command. render.js invokes leaf adjustments, tracks group depth and wires group replay; canvas2d-renderer.js has optional group/depth hooks, preserving default legacy source through exact hook normalization and the unchanged frozen hash. No storage/selection/fill/brush changes. Scope/diff and exact source evidence in .delivery/CHG-UNRULY-HSL1-1013. Cumulative QA passed307models/289Chromium; actual physical-device acceptance remains unverified.
 
 ## Durable references
 - PRODUCT_ROADMAP.md: full scope, not merely next painting builds.
