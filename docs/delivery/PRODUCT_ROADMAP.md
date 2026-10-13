@@ -51,3 +51,6 @@ Cumulative browser main includes brushes/global and per-brush pressure/0–100 s
 
 ## Continuation rule
 Read this roadmap alongside the current checkpoint and continuation contract. Every closeout must carry forward all still-open rows through this canonical index. A fixed count can describe only a named subset; the total product build count is not yet established. No user-requested feature is cancelled by this correction. This is a documentation repair, not feature completion, code publication, or a knowledge graph update.
+
+## Mandatory build status maintenance — user instruction 13-Oct-2026
+Update this file after EVERY build attempt and closeout, not only graph-refresh batches. Use pending / in progress / failed / blocked / verified-unpublished / published / explicitly deferred as appropriate, carrying exact source and CI/publication evidence plus remaining acceptance gaps. Keep every other open row; no silent deletion. Partial completion never closes a broader original requirement. Architecture ownership/dependencies are recorded in [CODE_STRUCTURE.md](CODE_STRUCTURE.md); AGENTS.md requires both files at startup. The previous five-checkpoint list is only a painting subset. This roadmap consolidates recovered scope, not a claim that every historical microrequirement has been independently proven exhaustive.
