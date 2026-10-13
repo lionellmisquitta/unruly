@@ -1,0 +1,1 @@
+Revision1 before additional edits: include style.css for bounded adjustment dialog layout and render-contract.model.test.mjs to strip exact new optional callbacks before the UNCHANGED frozen source hash comparison. Existing source hash and pixel assertions remain unchanged; actual new callback behavior gets independent adjustment tests. No loosening of original renderer oracle.

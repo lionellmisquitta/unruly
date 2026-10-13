@@ -1,0 +1,64 @@
+schema_version: '1.0'
+change_id: CHG-UNRULY-HSL1-1013
+route: standard_change
+base_commit: 0da569744d07b675a456683944a0a28a3fc2d2e1
+prohibited_paths:
+- .knowledge/
+- knowledge-graph/
+- native/
+- src/
+- prototypes/browser-workspace/storage.js
+- prototypes/browser-workspace/clipping.js
+- prototypes/browser-workspace/masks.js
+- prototypes/browser-workspace/selection.js
+- prototypes/browser-workspace/wand.js
+test_config_changes:
+- .github/workflows/browser-workspace.yml
+- .github/workflows/browser-workspace-pages.yml
+checkpoints:
+- id: HSL1
+  allowed_paths:
+  - prototypes/browser-workspace/adjustments.js
+  - prototypes/browser-workspace/adjustment-ui.js
+  - prototypes/browser-workspace/effect-compositor.js
+  - prototypes/browser-workspace/model.js
+  - prototypes/browser-workspace/render.js
+  - prototypes/browser-workspace/canvas2d-renderer.js
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/sw.js
+  - tests/browser-workspace/adjustments.model.test.mjs
+  - tests/browser-workspace/adjustments.browser.cjs
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - .github/workflows/browser-workspace.yml
+  - .github/workflows/browser-workspace-pages.yml
+  - docs/delivery/PRODUCT_ROADMAP.md
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - docs/delivery/CONTINUATION_CONTRACT.md
+  - docs/delivery/CODE_STRUCTURE.md
+  - .delivery/CHG-UNRULY-HSL1-1013/
+  - prototypes/browser-workspace/style.css
+  - tests/browser-workspace/render-contract.model.test.mjs
+  test_paths:
+  - tests/browser-workspace/
+  tests:
+  - id: adjustment-model
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/adjustments.model.test.mjs
+    timeout_seconds: 180
+  - id: adjustment-browser
+    command:
+    - node
+    - tests/browser-workspace/adjustments.browser.cjs
+    timeout_seconds: 240
+  - id: cumulative-qa
+    command:
+    - bash
+    - .delivery/CHG-UNRULY-HSL1-1013/run-qa.sh
+    timeout_seconds: 1200
