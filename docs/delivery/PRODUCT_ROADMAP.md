@@ -10,7 +10,7 @@ Application baseline: HSL1 complete at source 098c8463e86cd9d0c404381616314e306c
 | Work | Status | Scope |
 | --- | --- | --- |
 | Hue/saturation and levels, including groups | Published — HSL1 | CHG-UNRULY-HSL1-1013: metadata-only layer HSL/levels and isolated combined-group effects. Source 098c8463e86cd9d0c404381616314e306cc69fb4; CI38433660119 SUCCESS307models/289Chromium; PR12 merged; Pages38436283497 SUCCESS48hosted byte matches. Device feel remains unverified. |
-| Curves and Gaussian blur | Pending | Tonal curves and bounded blur; group behavior carried forward. |
+| Curves and Gaussian blur | In progress — FX2 | Master/RGB curve editing and padded Gaussian blur for layers/groups; CHG-UNRULY-FX2-1013. Verification/publication pending. |
 | TIP1 custom uploaded image tips | Pending; controls accepted | Transparent PNG/grayscale tips, inversion/preview, spacing/spacing jitter, lateral/linear position jitter, fixed/follow-stroke/random rotation, count/count jitter, size/opacity jitter, flip X/Y, global/per-brush pressure, named presets. Import/storage/replay limits unresolved. |
 | TIP2 grain and textures | Pending | Imported grain scale/depth/rotation; splatter/sprinkle. No proprietary engine-fidelity claim. |
 | Measured capacity/recovery | Pending | Realistic 30–50-layer folders/masks/images stress, real-device latency/RAM and recovery. Existing 32-layer cap is not fulfillment of this target. |
