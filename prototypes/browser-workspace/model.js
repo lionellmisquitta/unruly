@@ -1,3 +1,4 @@
+import {validateFilters,mutateFilter} from './filters.js';
 import {validateAdjustments,mutateAdjustment} from './adjustments.js';
 import {validateReference} from './image-import.js';
 import {validateText,textContains} from './text.js';
@@ -30,11 +31,12 @@ function validateVersion(b,version){
  validateMasks(b,ids);
  validateClipping(b);
  validateAdjustments(b);
+ validateFilters(b);
  if(Object.hasOwn(b,'reference')){if(version<9)fail('Reference requires v9');validateReference(b.reference);if(!idOK(b.reference.stroke.id)||ids.has(b.reference.stroke.id))fail('Invalid reference ID');}
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;
 }
-export const validateBoard=b=>validateVersion(b,b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
+export const validateBoard=b=>validateVersion(b,b?.version===11?11:b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
 export function migrateV2(v){const b=copy(validateVersion(v,2));b.version=3;for(const l of b.layers)l.blend='normal';return validateBoard(b);}
 export const createBoard=(id=crypto.randomUUID(),title='Untitled board')=>{const lid=crypto.randomUUID();return {version:3,id,title,revision:0,activeLayer:lid,layers:[{id:lid,name:'Layer 1',visible:true,locked:false,opacity:1,blend:'normal',strokes:[]}],paper:{kind:'plain',color:'#faf8f3',spacing:24,seed:173}};};
 export const createHistory=b=>({board:copy(validateBoard(b)),past:[],future:[],evicted:false});
@@ -129,3 +131,5 @@ export function clippingCommand(h,action,id,value){return command(h,b=>{const l=
 export function textCommand(h,layerId,stroke,id=null){validateText(stroke);return command(h,b=>{const l=b.layers.find(l=>l.id===layerId);if(!l)throw Error('Text layer missing');const state=layerState(b,l);if(state.locked||!state.visible)throw Error('Text layer is locked or hidden');b.version=Math.max(8,b.version);b.folders=b.folders||[];if(id){const i=l.strokes.findIndex(s=>s.id===id&&s.brush==='text');if(i<0||stroke.id!==id)throw Error('Text object is stale');l.strokes[i]=structuredClone(stroke);}else l.strokes.push(structuredClone(stroke));b.activeLayer=l.id;});}
 
 export const adjustmentCommand=(h,id,value)=>command(h,b=>mutateAdjustment(b,id,value));
+
+export const filterCommand=(h,id,value)=>command(h,b=>mutateFilter(b,id,value));

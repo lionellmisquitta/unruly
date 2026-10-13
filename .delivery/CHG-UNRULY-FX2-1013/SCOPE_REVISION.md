@@ -1,0 +1,2 @@
+Before clipping edits: Gaussian group blur spreads composite alpha, so a layer clipped to that group must use the post-filter composite matte. Declare clipping.js direct impact, add bounded processed-group capture using existing8MiB cache rather than silently continuing pre-blur leaf union. Existing unfiltered group/leaf behavior and cache budgets remain; new runtime alpha test required.
+Offline fixture maintenance: HSL1 existing browser tests keep all feature assertions; current worker suffix moves hsl1-1→fx2-1 and is declared in allowed paths.

@@ -1,3 +1,4 @@
+import {applyCanvasFilter,filterPadding} from './filters.js';
 import {applyCanvasAdjustment} from './adjustments.js';
 import {effectDepth,composeEffects} from './effect-compositor.js';
 import {drawText} from './text.js';
@@ -14,10 +15,11 @@ export {graphiteGrain,rendererBudget} from './canvas2d-renderer.js';
 
 export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*1024}={}){
  if(!['auto','canvas2d'].includes(backend))throw Error('Unsupported renderer backend: '+backend);
- const rasterCache=createRasterCache(),plainCache=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null,clippedCache=backend==='auto'?createLayerCompositor({budgetBytes:Math.max(0,Math.min(layerCacheBytes,16*1024*1024)-clipBudget)}):null,clipCache=createClipCache();let reference=false,maskPreview=null,clipMode=false,drawing=false,frameBoard=null,frameLive=null,groupDepth=0;
+ const rasterCache=createRasterCache(),plainCache=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null,clippedCache=backend==='auto'?createLayerCompositor({budgetBytes:Math.max(0,Math.min(layerCacheBytes,16*1024*1024)-clipBudget)}):null,clipCache=createClipCache();let reference=false,maskPreview=null,clipMode=false,drawing=false,frameBoard=null,frameLive=null,groupDepth=0,halo=0;
  const layerCompositor=backend==='auto'?{clear:()=>{plainCache.clear();clippedCache.clear();},render:args=>(clipMode?clippedCache:plainCache).render({...args,backingLimit:args.backingLimit-(clipMode?clipBudget:0)})}:null;
- const engine=createCanvas2DRenderer(canvas,{drawText,decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>(clipMode?clipBudget:0)+groupDepth*300*150*4,extraSurfaces:()=>groupDepth,groupComposer:composeEffects,applyMask:(l,layer,scratch,v,g,decode)=>{
+ const engine=createCanvas2DRenderer(canvas,{drawText,decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>(clipMode?clipBudget:0)+groupDepth*300*150*4,extraSurfaces:()=>groupDepth,framePadding:v=>halo*v.scale,groupComposer:args=>composeEffects({...args,afterGroup:(n,c)=>{if(drawing&&clipMode)clipCache.captureGroup(n,c,args.view,args.g);}}),applyMask:(l,layer,scratch,v,g,decode)=>{
   applyCanvasAdjustment(l,layer);
+  applyCanvasFilter(l,layer,scratch,g.d*v.scale);
   const adapted=maskPreview?.id===l.id?{...l,mask:{...l.mask,patch:maskPreview.patch}}:l;applyLayerMask(adapted,layer,scratch,v,g,decode);
   if(drawing&&clipMode){clipCache.apply(l,layer);clipCache.capture(l,layer,v,g,l.id===frameBoard.activeLayer?(maskPreview?.patch||frameLive):null);}
  }});
@@ -27,7 +29,7 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
   epoch++;reason=String(why);lastFrame=null;engine.invalidate();
  }
  function draw(method,board,view={x:0,y:0,scale:1},live=null){
-  board=renderBoard(board);groupDepth=effectDepth(board);reference=method==='renderReference';drawing=true;frameBoard=board;frameLive=live;clipMode=board.layers.some(l=>l.clipSource);clipCache.prepare(board);
+  board=renderBoard(board);groupDepth=effectDepth(board);halo=filterPadding(board);reference=method==='renderReference';drawing=true;frameBoard=board;frameLive=live;clipMode=board.layers.some(l=>l.clipSource);clipCache.prepare(board);
   try{
    const result=engine[method](board,view,live);
    lastFrame=describeFrame(board,view,live,result);frames++;
@@ -36,7 +38,7 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
  }
  function auxiliary(method,args){
   // Preview/thumbnail/picker/snapshot share backing stores with live ink.
-  invalidate(method,false);clipMode=false;groupDepth=0;
+  invalidate(method,false);clipMode=false;groupDepth=0,halo=0;
   try{return engine[method](...args);}catch(error){invalidate(method+'-failed');throw error;}
  }
  return {

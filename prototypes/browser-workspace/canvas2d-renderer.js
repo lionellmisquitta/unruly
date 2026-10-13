@@ -44,25 +44,37 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,applyMask=null,allocationReserve=()=>0,extraSurfaces=()=>0,groupComposer=null}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,applyMask=null,allocationReserve=()=>0,extraSurfaces=()=>0,groupComposer=null,framePadding=()=>0}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
  let cache=null,maskView=null,maskGeometry=null;
  const invalidate=()=>{cache=null;layerCompositor?.clear();};
  function clear(c){const ctx=c.getContext('2d');ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,c.width,c.height);return ctx;}
- function geometry(){
+ function geometry(view={scale:1}){
   const rect=canvas.getBoundingClientRect(),cssW=Math.max(1,rect.width),cssH=Math.max(1,rect.height),deviceDpr=window.devicePixelRatio||1;
-  const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt((rendererBudget.backingBytes-allocationReserve())/((surfaces.length+extraSurfaces())*4*cssW*cssH)));
-  const w=Math.max(1,Math.floor(cssW*d)),h=Math.max(1,Math.floor(cssH*d));
-  if(surfaces.some(c=>c.width!==w||c.height!==h)){
-   invalidate();
-   // Release every old backing store before reallocating: portrait/landscape
-   // assignments must not transiently multiply old height by new width.
-   for(const c of surfaces){c.width=1;c.height=1;}
-   for(const c of surfaces){c.width=w;c.height=h;}
+  const padCss=framePadding(view),offscreenCount=surfaces.length-1+extraSurfaces(),area=cssW*cssH+offscreenCount*(cssW+2*padCss)*(cssH+2*padCss);
+  if(padCss===0){
+   const d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/Math.max(cssW,cssH),Math.sqrt((rendererBudget.backingBytes-allocationReserve())/((surfaces.length+extraSurfaces())*4*cssW*cssH)));
+   const w=Math.max(1,Math.floor(cssW*d)),h=Math.max(1,Math.floor(cssH*d));
+   if(surfaces.some(c=>c.width!==w||c.height!==h)){invalidate();for(const c of surfaces){c.width=1;c.height=1;}for(const c of surfaces){c.width=w;c.height=h;}}
+   return {cssW,cssH,d,w,h,deviceDpr,padding:0,viewportW:w,viewportH:h,scale:view.scale};
   }
-  return {cssW,cssH,d,w,h,deviceDpr};
+  let d=Math.min(deviceDpr,rendererBudget.maxDpr,rendererBudget.maxDimension/(Math.max(cssW,cssH)+2*padCss),Math.sqrt(Math.max(1,rendererBudget.backingBytes-allocationReserve()-offscreenCount*16)/(4*area)));
+  let viewportW,viewportH,padding,w,h;
+  for(let attempt=0;attempt<32;attempt++){
+   viewportW=Math.max(1,Math.floor(cssW*d));viewportH=Math.max(1,Math.floor(cssH*d));padding=Math.ceil(padCss*d);w=viewportW+2*padding;h=viewportH+2*padding;
+   if(w<=rendererBudget.maxDimension&&h<=rendererBudget.maxDimension&&4*(viewportW*viewportH+offscreenCount*w*h)<=rendererBudget.backingBytes-allocationReserve())break;
+   d*=.999;
+   if(attempt===31)throw Error('Filter padding exceeds renderer budget');
+  }
+  const dims=surfaces.map((c,i)=>i?[w,h]:[viewportW,viewportH]);
+  if(surfaces.some((c,i)=>c.width!==dims[i][0]||c.height!==dims[i][1])){
+   invalidate();
+   for(const c of surfaces){c.width=1;c.height=1;}
+   surfaces.forEach((c,i)=>{c.width=dims[i][0];c.height=dims[i][1];});
+  }
+  return {cssW,cssH,d,w,h,deviceDpr,padding,viewportW,viewportH,scale:view.scale};
  }
  function strokeToLayer(s,v,g){
   if(s.opacity===0)return;
@@ -79,21 +91,21 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
   try{
    ctx.globalAlpha=l.opacity;ctx.globalCompositeOperation=operation;
    if(ctx.globalCompositeOperation!==operation)throw Error('This browser does not support the '+l.blend+' layer blend. Use a browser that supports this blend mode.');
-   ctx.drawImage(layer,0,0);
+   ctx.drawImage(layer,target===canvas?-(maskGeometry.padding||0):0,target===canvas?-(maskGeometry.padding||0):0);
   }finally{ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';}
  }
  function background(target,b,v,g){const ctx=clear(target);ctx.setTransform(g.d,0,0,g.d,0,0);paper(ctx,b.paper,v,g.cssW,g.cssH);}
  function full(board,v,live,g){
-  if(extraSurfaces()&&groupComposer)return groupComposer({board,target:canvas,g,background:target=>background(target,board,v,g),drawLayer:(l,target)=>{replayLayer(l,v,g,l.id===board.activeLayer?live:null);composite(target,l);return l.strokes.filter(s=>s.opacity!==0).length;}});
+  if(extraSurfaces()&&groupComposer)return groupComposer({board,target:canvas,g,scratch,view:maskView,background:target=>background(target,board,v,g),drawLayer:(l,target)=>{replayLayer(l,maskView,g,l.id===board.activeLayer?live:null);composite(target,l);return l.strokes.filter(s=>s.opacity!==0).length;}});
   background(canvas,board,v,g);let count=0;
-  for(const l of board.layers){if(!l.visible||l.opacity===0)continue;replayLayer(l,v,g,l.id===board.activeLayer?live:null);count+=l.strokes.filter(s=>s.opacity!==0).length;composite(canvas,l);}
+  for(const l of board.layers){if(!l.visible||l.opacity===0)continue;replayLayer(l,maskView,g,l.id===board.activeLayer?live:null);count+=l.strokes.filter(s=>s.opacity!==0).length;composite(canvas,l);}
   return count;
  }
- function metrics(t,g,mode,count){return {ms:performance.now()-t,mode,completedStrokesReplayed:count,dpr:g.d,effectBackingBytes:extraSurfaces()*g.w*g.h*4,totalBackingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0)+extraSurfaces()*g.w*g.h*4,backingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0),surfaces:surfaces.map(c=>({width:c.width,height:c.height}))};}
- function renderReference(board,view={x:0,y:0,scale:1},live=null){const t=performance.now();invalidate();const g=geometry();maskView=view;maskGeometry=g;try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}}
+ function metrics(t,g,mode,count){return {ms:performance.now()-t,mode,completedStrokesReplayed:count,dpr:g.d,filterPadding:g.padding||0,effectBackingBytes:extraSurfaces()*g.w*g.h*4,totalBackingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0)+extraSurfaces()*g.w*g.h*4,backingBytes:surfaces.reduce((n,c)=>n+c.width*c.height*4,0),surfaces:surfaces.map(c=>({width:c.width,height:c.height}))};}
+ function renderReference(board,view={x:0,y:0,scale:1},live=null){const t=performance.now();invalidate();const g=geometry(view);maskView=g.padding?{...view,x:view.x+g.padding/g.d,y:view.y+g.padding/g.d}:view;maskGeometry=g;try{return metrics(t,g,'reference',full(board,view,live,g));}catch(e){invalidate();throw e;}}
  function render(board,view={x:0,y:0,scale:1},live=null){
-  const t=performance.now(),g=geometry(),index=board.layers.findIndex(l=>l.id===board.activeLayer),active=board.layers[index];maskView=view;maskGeometry=g;
-  if(extraSurfaces()){invalidate();return metrics(t,g,'isolated-group-effects',full(board,view,live,g));}
+  const t=performance.now(),g=geometry(view),index=board.layers.findIndex(l=>l.id===board.activeLayer),active=board.layers[index];maskView=g.padding?{...view,x:view.x+g.padding/g.d,y:view.y+g.padding/g.d}:view;maskGeometry=g;
+  if(extraSurfaces()||g.padding){invalidate();return metrics(t,g,g.padding?'filtered-full-replay':'isolated-group-effects',full(board,view,live,g));}
   // PERF4 optional upper-layer cache; the raw default keeps the accepted replay.
   if(layerCompositor&&live&&active?.visible&&active.opacity!==0&&board.layers.slice(index+1).some(l=>l.visible&&l.opacity!==0)){
    try{
