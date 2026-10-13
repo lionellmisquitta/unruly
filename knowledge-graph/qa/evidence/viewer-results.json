@@ -1,0 +1,44 @@
+{
+  "browser": "151.0.7922.34",
+  "results": [
+    {
+      "id": "2d",
+      "status": "PASS",
+      "viewport": {
+        "width": 1240,
+        "height": 800
+      },
+      "search": true,
+      "inspector": true,
+      "developerDetailsCollapsed": true,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "id": "2d-phone",
+      "status": "PASS",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "search": true,
+      "inspector": true,
+      "developerDetailsCollapsed": true,
+      "pageErrors": [],
+      "externalRequests": []
+    },
+    {
+      "id": "onair",
+      "status": "PASS",
+      "viewport": {
+        "width": 1240,
+        "height": 800
+      },
+      "search": true,
+      "inspector": true,
+      "developerDetailsCollapsed": true,
+      "pageErrors": [],
+      "externalRequests": []
+    }
+  ]
+}
