@@ -277,17 +277,17 @@ urn:unruly:roadmap:gap-fill,Capability,Gap-aware fill,planned
 urn:unruly:roadmap:enclosure-fill,Capability,Lasso/enclosure fill,implemented
 urn:unruly:roadmap:hsl-levels,Capability,"Group/layer hue, saturation and levels",planned
 urn:unruly:roadmap:curves-blur,Capability,Curves and Gaussian blur,planned
-urn:unruly:decision:D-P01,Decision,D-P01 — Keep one cumulative application and the existing preview,recorded_direction
+urn:unruly:decision:D-P01,Decision,D-P01 — Keep one cumulative application and the existing preview,partially_superseded
 urn:unruly:decision:D-P02,Decision,D-P02 — Benchmark populated 30–50-layer artist workflows before expanding capacity,recorded_direction
 urn:unruly:decision:D-P03,Decision,D-P03 — Separate document operations from rendering before replacing rendering internals,recorded_direction
 urn:unruly:decision:D-P04,Decision,"D-P04 — Use sparse raster tiles, bounded residency/cache and changed-region undo",recorded_direction
 urn:unruly:decision:D-P05,Decision,D-P05 — Investigate GPU compositing with fallback,recorded_direction
 urn:unruly:decision:D-P06,Decision,"D-P06 — Preserve editable layers, folders, masks and clipping sources",recorded_direction
-urn:unruly:decision:D-P07,Decision,D-P07 — Bring image references and clothing patterns alongside image import/clipping,recorded_direction
+urn:unruly:decision:D-P07,Decision,D-P07 — Bring image references and clothing patterns alongside image import/clipping,partially_implemented
 urn:unruly:decision:D-P08,Decision,D-P08 — Introduce cached image tips/grain and bounded splatter/sprinkle before sophisticated wet-media simulation,recorded_direction
 urn:unruly:decision:D-P09,Decision,D-P09 — Investigate proprietary brush import using representative files and an explicit supported-setting subset,recorded_direction
 urn:unruly:decision:D-P10,Decision,D-P10 — Core artist workflow: sketch → outline → flats → shadows clipped to folders → group levels/HSL/curves → text,recorded_direction
-urn:unruly:decision:D-P12,Decision,"D-P12 — Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill",recorded_direction
+urn:unruly:decision:D-P12,Decision,"D-P12 — Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill",implemented
 urn:unruly:decision:D-P11,Decision,D-P11 — Keep a short current checkpoint brief and append consequential decisions,recorded_direction
 urn:unruly:checkpoint:folder1,Checkpoint,FOLDER1 — Layer folders and grouping,hosted_verified
 urn:unruly:cap:folders,Capability,Layer folders and grouping,implemented

@@ -10755,7 +10755,7 @@
       "layers": [
         "functional"
       ],
-      "description": "Keep one cumulative application and the existing preview. Preserve native main and existing saved artwork. Incremental engine changes avoid discarding accepted behaviour. Current disposition: Binding",
+      "description": "Keep one cumulative browser application and existing preview, preserving saved artwork. The earlier native-main clause is superseded: browser main is authoritative and native history is retained on archive/native-main-2026-10-11.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -10765,7 +10765,9 @@
       "business_area": null,
       "evidence_refs": [
         "ev-roadmap-20261011",
-        "ev-user-batch-basis-20261011"
+        "ev-user-batch-basis-20261011",
+        "ev-refresh-user-basis",
+        "ev-refresh-provider"
       ],
       "implementation_refs": [],
       "confidence_label": null,
@@ -10773,19 +10775,26 @@
         "id": "urn:unruly:decision:D-P01",
         "entity_type": "Decision",
         "name": "D-P01 — Keep one cumulative application and the existing preview",
-        "description": "Keep one cumulative application and the existing preview. Preserve native main and existing saved artwork. Incremental engine changes avoid discarding accepted behaviour. Current disposition: Binding",
-        "status": "recorded_direction",
+        "description": "Keep one cumulative browser application and existing preview, preserving saved artwork. The earlier native-main clause is superseded: browser main is authoritative and native history is retained on archive/native-main-2026-10-11.",
+        "status": "partially_superseded",
         "created_at": "2026-10-11T13:34:31Z",
-        "updated_at": "2026-10-11T13:34:31Z",
+        "updated_at": "2026-10-13T00:11:10.179914+00:00",
         "attributes": {
-          "plain_language_summary": "Keep one cumulative application and the existing preview. Preserve native main and existing saved artwork. Incremental engine changes avoid discarding accepted behaviour. Current disposition: Binding",
+          "plain_language_summary": "Keep one cumulative browser application and existing preview, preserving saved artwork. The earlier native-main clause is superseded: browser main is authoritative and native history is retained on archive/native-main-2026-10-11.",
           "revision_id": "unruly-kgp-20261011T133431Z",
           "visual_layer": "functional"
         },
         "evidence_refs": [
           "ev-roadmap-20261011",
-          "ev-user-batch-basis-20261011"
-        ]
+          "ev-user-batch-basis-20261011",
+          "ev-refresh-user-basis",
+          "ev-refresh-provider"
+        ],
+        "previous_disposition": {
+          "status": "recorded_direction",
+          "description": "Keep one cumulative application and the existing preview. Preserve native main and existing saved artwork. Incremental engine changes avoid discarding accepted behaviour. Current disposition: Binding",
+          "updated_at": "2026-10-11T13:34:31Z"
+        }
       }
     },
     {
@@ -10995,7 +11004,7 @@
       "layers": [
         "functional"
       ],
-      "description": "Bring image references and clothing patterns alongside image import/clipping. Support repetition, scale/rotation, opacity and blending; deformation can follow. Current disposition: Roadmap",
+      "description": "Image/reference/pattern import, repetition, scale/rotation, opacity and blending are implemented in IMPORT1 with clipping from CLIP1. Pattern deformation remains future work.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -11005,7 +11014,9 @@
       "business_area": null,
       "evidence_refs": [
         "ev-roadmap-20261011",
-        "ev-user-batch-basis-20261011"
+        "ev-user-batch-basis-20261011",
+        "ev-refresh-import1",
+        "ev-refresh-clip1"
       ],
       "implementation_refs": [],
       "confidence_label": null,
@@ -11013,19 +11024,26 @@
         "id": "urn:unruly:decision:D-P07",
         "entity_type": "Decision",
         "name": "D-P07 — Bring image references and clothing patterns alongside image import/clipping",
-        "description": "Bring image references and clothing patterns alongside image import/clipping. Support repetition, scale/rotation, opacity and blending; deformation can follow. Current disposition: Roadmap",
-        "status": "recorded_direction",
+        "description": "Image/reference/pattern import, repetition, scale/rotation, opacity and blending are implemented in IMPORT1 with clipping from CLIP1. Pattern deformation remains future work.",
+        "status": "partially_implemented",
         "created_at": "2026-10-11T13:34:31Z",
-        "updated_at": "2026-10-11T13:34:31Z",
+        "updated_at": "2026-10-13T00:11:10.179914+00:00",
         "attributes": {
-          "plain_language_summary": "Bring image references and clothing patterns alongside image import/clipping. Support repetition, scale/rotation, opacity and blending; deformation can follow. Current disposition: Roadmap",
+          "plain_language_summary": "Image/reference/pattern import, repetition, scale/rotation, opacity and blending are implemented in IMPORT1 with clipping from CLIP1. Pattern deformation remains future work.",
           "revision_id": "unruly-kgp-20261011T133431Z",
           "visual_layer": "functional"
         },
         "evidence_refs": [
           "ev-roadmap-20261011",
-          "ev-user-batch-basis-20261011"
-        ]
+          "ev-user-batch-basis-20261011",
+          "ev-refresh-import1",
+          "ev-refresh-clip1"
+        ],
+        "previous_disposition": {
+          "status": "recorded_direction",
+          "description": "Bring image references and clothing patterns alongside image import/clipping. Support repetition, scale/rotation, opacity and blending; deformation can follow. Current disposition: Roadmap",
+          "updated_at": "2026-10-11T13:34:31Z"
+        }
       }
     },
     {
@@ -11155,7 +11173,7 @@
       "layers": [
         "functional"
       ],
-      "description": "Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill. Detailed selection/curve UX remains to be designed. Current disposition: Roadmap; before fill checkpoints (user decision 2026-10-11)",
+      "description": "Selection-before-fill ordering is delivered: WAND1, exact lasso feedback fixes, PATH1 and MAG1 preceded FILL1 bucket and FILL2 selection/enclosure fill. Future adjustment curves are a separate checkpoint.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -11165,7 +11183,12 @@
       "business_area": null,
       "evidence_refs": [
         "ev-roadmap-20261011",
-        "ev-user-batch-basis-20261011"
+        "ev-user-batch-basis-20261011",
+        "ev-refresh-wand1",
+        "ev-refresh-path1",
+        "ev-refresh-mag1",
+        "ev-refresh-fill1",
+        "ev-refresh-fill2"
       ],
       "implementation_refs": [],
       "confidence_label": null,
@@ -11173,19 +11196,29 @@
         "id": "urn:unruly:decision:D-P12",
         "entity_type": "Decision",
         "name": "D-P12 — Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill",
-        "description": "Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill. Detailed selection/curve UX remains to be designed. Current disposition: Roadmap; before fill checkpoints (user decision 2026-10-11)",
-        "status": "recorded_direction",
+        "description": "Selection-before-fill ordering is delivered: WAND1, exact lasso feedback fixes, PATH1 and MAG1 preceded FILL1 bucket and FILL2 selection/enclosure fill. Future adjustment curves are a separate checkpoint.",
+        "status": "implemented",
         "created_at": "2026-10-11T13:34:31Z",
-        "updated_at": "2026-10-11T13:34:31Z",
+        "updated_at": "2026-10-13T00:11:10.179914+00:00",
         "attributes": {
-          "plain_language_summary": "Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill. Detailed selection/curve UX remains to be designed. Current disposition: Roadmap; before fill checkpoints (user decision 2026-10-11)",
+          "plain_language_summary": "Selection-before-fill ordering is delivered: WAND1, exact lasso feedback fixes, PATH1 and MAG1 preceded FILL1 bucket and FILL2 selection/enclosure fill. Future adjustment curves are a separate checkpoint.",
           "revision_id": "unruly-kgp-20261011T133431Z",
           "visual_layer": "functional"
         },
         "evidence_refs": [
           "ev-roadmap-20261011",
-          "ev-user-batch-basis-20261011"
-        ]
+          "ev-user-batch-basis-20261011",
+          "ev-refresh-wand1",
+          "ev-refresh-path1",
+          "ev-refresh-mag1",
+          "ev-refresh-fill1",
+          "ev-refresh-fill2"
+        ],
+        "previous_disposition": {
+          "status": "recorded_direction",
+          "description": "Magic wand and precision selection (magnetic selection and editable pen/path tool) move ahead of bucket, gap-aware and lasso/enclosure fill. Detailed selection/curve UX remains to be designed. Current disposition: Roadmap; before fill checkpoints (user decision 2026-10-11)",
+          "updated_at": "2026-10-11T13:34:31Z"
+        }
       }
     },
     {

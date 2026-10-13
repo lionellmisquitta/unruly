@@ -6,15 +6,15 @@ const fs=require('fs'),assert=require('assert/strict');
  for(const [name,viewport] of [['2d',{width:1240,height:800}],['2d-phone',{width:360,height:800}],['onair',{width:1240,height:800}]]){
   const page=await browser.newPage({viewport});const errors=[],external=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(!r.url().startsWith('http://127.0.0.1:4173/'))external.push(r.url())});
-  const onair=name==='onair';await page.goto('http://127.0.0.1:4173/'+(onair?'OnAir%20-%20unruly.html':'graph-explorer.html'));
+  console.log('START',name);const onair=name==='onair';await page.goto('http://127.0.0.1:4173/'+(onair?'OnAir%20-%20unruly.html':'graph-explorer.html'));
   if(onair){await page.locator('#noCam').click();await page.waitForFunction(()=>getComputedStyle(document.getElementById('cover')).display==='none')}
   else assert(await page.locator('#nodes .node').count()>0,'2D overview renders cards');
-  await page.locator('#search').fill('Lasso selection and enclosure fill');
+  console.log('LOADED',name);await page.locator('#search').fill('Lasso selection and enclosure fill');
   await page.locator(onair?'#results .result':'#results button').filter({hasText:'Lasso selection and enclosure fill'}).first().click();
   await page.locator('#content h2').filter({hasText:'Lasso selection and enclosure fill'}).waitFor({state:'visible'});
   assert.match(await page.locator('#content').innerText(),/blank artwork/);
   assert.equal(await page.locator('#content details').evaluate(e=>e.open),false,'Raw developer detail collapsed');
-  await page.screenshot({path:out+'/'+name+'-fill2-inspector.png',fullPage:true});
+  console.log('INSPECTED',name);await page.screenshot({path:out+'/'+name+'-fill2-inspector.png',fullPage:true});
   if(!onair){
    await page.locator('#closePanel').click();const z=await page.locator('#zoomLabel').innerText();await page.locator('#zoomIn').click();assert.notEqual(await page.locator('#zoomLabel').innerText(),z);
    await page.locator('[data-lens="technical"]').click();assert(await page.locator('#nodes .node').count()>0);
@@ -26,4 +26,4 @@ const fs=require('fs'),assert=require('assert/strict');
   results.push({id:name,status:'PASS',viewport,search:true,inspector:true,developerDetailsCollapsed:true,pageErrors:errors,externalRequests:external});await page.close();
  }
  fs.writeFileSync(out+'/viewer-results.json',JSON.stringify({browser:browser.version(),results},null,2));await browser.close();
-})().catch(e=>{console.error(e);process.exitCode=1});
+})().catch(e=>{console.error(e);process.exit(1)});

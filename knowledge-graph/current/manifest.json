@@ -4,12 +4,12 @@
   "name": "unruly",
   "package_id": "urn:kgp:package:unruly",
   "created_at": "2026-10-06T12:32:05Z",
-  "updated_at": "2026-10-12T23:48:58Z",
+  "updated_at": "2026-10-13T00:11:10Z",
   "canonical_format": "jsonl",
-  "content_sha256": "2cd117fb4d5c2e26d940bd5134ddbeadf7b709527c176b93b38a38a1efd41e9a",
+  "content_sha256": "6baf09647c1c2b8c0c427d96884ced13ab93937ab8bc0bf3f1fc8f3b0c5baccb",
   "validation": {
     "status": "valid",
-    "validated_at": "2026-10-12T23:48:58Z"
+    "validated_at": "2026-10-13T00:11:10Z"
   },
   "counts": {
     "graph/entities.jsonl": 343,
@@ -51,7 +51,7 @@
       "evidence"
     ]
   },
-  "updated_at_local": "2026-10-13T05:18:58+05:30",
+  "updated_at_local": "2026-10-13T05:41:10+05:30",
   "timezone": "Asia/Kolkata",
   "revision_id": "unruly-kgp-20261012T234848Z",
   "graph_branch": "knowledge/unruly-kgp",
