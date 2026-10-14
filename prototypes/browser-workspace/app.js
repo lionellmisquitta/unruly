@@ -384,4 +384,4 @@ adjustmentUI=initAdjustmentUI({$,getBoard:()=>h?.board,blocked,status,preview:bo
 
 filterUI=initFilterUI({$,getBoard:()=>h?.board,blocked,status,preview:board=>{const previous=filterPreview;renderer.invalidate();painted=null;if(board){try{renderer.render(board,view);}catch(error){renderer.render(previous||h.board,view);throw error;}filterPreview=board;}else{filterPreview=null;refresh();}},commit:(id,value,base)=>{if(h.board!==base)throw Error('Filter is stale');changed(filterCommand(h,id,value),true);}});
 
-tipUI=initTipUI({$,settings,renderer,blocked,status,onSelect:()=>{settings.dynamics=resolveBrushDynamics(penConfig.dynamics,penConfig.overrides,pressureKey());syncPenControls();curveUI?.sync();$('brush-advanced').hidden=true;sample();}});
+tipUI=initTipUI({$,settings,renderer,blocked,status,onSelect:()=>{u2.refresh();settings.dynamics=resolveBrushDynamics(penConfig.dynamics,penConfig.overrides,pressureKey());syncPenControls();curveUI?.sync();$('brush-advanced').hidden=true;sample();}});
