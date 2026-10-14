@@ -1,3 +1,4 @@
+import {layerTiles} from '../../prototypes/browser-workspace/lasso-region.js';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {imageTip,validateTip,visitTip,TIP_DEFAULTS,validateTipLibrary,emptyLibrary,tipRadius} from '../../prototypes/browser-workspace/custom-tips.js';
 import {createBoard,createHistory,addStroke,undo,redo,validateBoard,importDocument,layerCommand,command} from '../../prototypes/browser-workspace/model.js';
@@ -24,3 +25,5 @@ test('TIPM15 scatter bounds include outer stamps',()=>{const s=stroke();s.tip.op
 test('TIPM16 library section/brush constraints reject dangling/duplicate/blank identities',()=>{const lib=emptyLibrary();lib.brushes.push({id:'a',name:'Leaf',section:'imported',tip:tip()});assert.equal(validateTipLibrary(lib),lib);for(const change of [x=>x.brushes[0].section='absent',x=>x.sections.push(x.sections[0]),x=>x.brushes.push(x.brushes[0]),x=>x.brushes[0].name=' ']){const x=structuredClone(lib);change(x);assert.throws(()=>validateTipLibrary(x));}});
 test('TIPM17 16section/32brush admission and limits are atomic',()=>{const lib=emptyLibrary();for(let i=0;i<32;i++)lib.brushes.push({id:String(i),name:'B',section:'imported',tip:tip()});validateTipLibrary(lib);lib.brushes.push({...lib.brushes[0],id:'33'});assert.throws(()=>validateTipLibrary(lib));});
 test('TIPM18 reference removal cannot downgrade image-tip documents; locked/hidden guards remain',()=>{const h=addStroke(createHistory(createBoard()),stroke()),next=command(h,b=>mutateReference(b,null));assert.equal(next.board.version,12);for(const field of ['locked','visible']){const b=structuredClone(h.board);b.layers[0][field]=field==='locked';assert.throws(()=>addStroke(createHistory(b),{...stroke(),id:'new'}));}});
+
+test('TIPM19 occupied tiles include scatter across original path bounds',()=>{const s=stroke();s.points=[{x:1010,y:1010,pressure:null}];s.tip.options.lateral=2;s.tip.options.linear=2;s.tip.scale=2;const tiles=layerTiles({strokes:[s]});assert.equal(tiles.length,4);for(const p of stamps(s))assert(tiles.some(t=>p.x>=t.x&&p.x<t.x+t.width&&p.y>=t.y&&p.y<t.y+t.height));});

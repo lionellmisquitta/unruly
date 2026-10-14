@@ -1,4 +1,4 @@
-import {drawTip} from './custom-tips.js';
+import {drawTip,tipRadius} from './custom-tips.js';
 import {applyCanvasFilter,filterPadding} from './filters.js';
 import {applyCanvasAdjustment} from './adjustments.js';
 import {effectDepth,composeEffects} from './effect-compositor.js';
@@ -17,8 +17,8 @@ export {graphiteGrain,rendererBudget} from './canvas2d-renderer.js';
 export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*1024}={}){
  if(!['auto','canvas2d'].includes(backend))throw Error('Unsupported renderer backend: '+backend);
  const rasterCache=createRasterCache(),plainCache=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null,clippedCache=backend==='auto'?createLayerCompositor({budgetBytes:Math.max(0,Math.min(layerCacheBytes,16*1024*1024)-clipBudget)}):null,clipCache=createClipCache();let reference=false,maskPreview=null,clipMode=false,drawing=false,frameBoard=null,frameLive=null,groupDepth=0,halo=0,tipReserve=0;
- const layerCompositor=backend==='auto'?{clear:()=>{plainCache.clear();clippedCache.clear();},render:args=>(clipMode?clippedCache:plainCache).render({...args,backingLimit:args.backingLimit-(clipMode?clipBudget:0)})}:null;
- const engine=createCanvas2DRenderer(canvas,{drawText,drawTip,decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>tipReserve+(clipMode?clipBudget:0)+groupDepth*300*150*4,extraSurfaces:()=>groupDepth,framePadding:v=>halo*v.scale,groupComposer:args=>composeEffects({...args,afterGroup:(n,c)=>{if(drawing&&clipMode)clipCache.captureGroup(n,c,args.view,args.g);}}),applyMask:(l,layer,scratch,v,g,decode)=>{
+ const layerCompositor=backend==='auto'?{clear:()=>{plainCache.clear();clippedCache.clear();},render:args=>(clipMode?clippedCache:plainCache).render({...args,backingLimit:args.backingLimit-(clipMode?clipBudget:0)-tipReserve})}:null;
+ const engine=createCanvas2DRenderer(canvas,{drawText,drawTip,strokeRadius:tipRadius,decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>tipReserve+(clipMode?clipBudget:0)+groupDepth*300*150*4,extraSurfaces:()=>groupDepth,framePadding:v=>halo*v.scale,groupComposer:args=>composeEffects({...args,afterGroup:(n,c)=>{if(drawing&&clipMode)clipCache.captureGroup(n,c,args.view,args.g);}}),applyMask:(l,layer,scratch,v,g,decode)=>{
   applyCanvasAdjustment(l,layer);
   applyCanvasFilter(l,layer,scratch,g.d*v.scale);
   const adapted=maskPreview?.id===l.id?{...l,mask:{...l.mask,patch:maskPreview.patch}}:l;applyLayerMask(adapted,layer,scratch,v,g,decode);

@@ -261,6 +261,7 @@ function startPointer(e){
  if(operation==='smudge'){beginSmudge(e);return;}
  if(operation==='eraser'){active=owned({id:e.pointerId,erase:true,mode:$('erase-mode').value,radius:settings.size/2,base:h.board,sweeps:[],last:point(e),erased:h.board});sweep(point(e));return;}
  if(settings.opacity===0){status('Invisible ink (0%) · no stroke added');return;}
+ if(settings.tip&&(paintMode!=='vector'||h.board.layers.find(l=>l.id===h.board.activeLayer).alphaLock)){status('Image tips need Vector ink on an unlocked alpha layer · use a clipped layer for separate shading',true);return;}
  if(paintMode!=='vector'||h.board.layers.find(l=>l.id===h.board.activeLayer).alphaLock){beginPaint(e);return;}
  active={id:e.pointerId,stroke:{id:crypto.randomUUID(),...structuredClone(settings),dynamics:structuredClone(settings.dynamics),points:[point(e)]},frozenView:{...view},shapeAnchor:p,shapeTimer:null,recognized:null,shapeModifier:null};if(settings.tip)active.stroke.tip.seed=crypto.getRandomValues(new Uint32Array(1))[0];else armShapeHoldAt(p);refresh();
 }

@@ -1,3 +1,4 @@
+import {tipRadius} from './custom-tips.js';
 import {validateSnapshot,regionBounds} from './wand.js';
 import {rasterStroke} from './raster.js';
 // These limits bound selection work, not the extent of the drawing layer.
@@ -12,7 +13,7 @@ export function polygonWindow(polygon){
 export function layerTiles(layer){
  const tiles=new Map(),side=1024;
  for(const s of layer.strokes){if(s.opacity===0)continue;
-  const padding=s.brush==='raster'||s.brush==='text'?0:s.size/2+2;
+  const padding=s.brush==='raster'||s.brush==='text'?0:tipRadius(s)+2;
   let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;for(const p of s.points){minX=Math.min(minX,p.x);minY=Math.min(minY,p.y);maxX=Math.max(maxX,p.x);maxY=Math.max(maxY,p.y);}
   const x0=Math.floor(minX-padding),y0=Math.floor(minY-padding),x1=Math.ceil(maxX+padding),y1=Math.ceil(maxY+padding);
   for(let y=Math.floor(y0/side);y<=Math.floor((y1-1)/side);y++)for(let x=Math.floor(x0/side);x<=Math.floor((x1-1)/side);x++){

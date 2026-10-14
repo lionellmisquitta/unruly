@@ -44,7 +44,7 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,drawTip=null,applyMask=null,allocationReserve=()=>0,extraSurfaces=()=>0,groupComposer=null,framePadding=()=>0}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,drawTip=null,strokeRadius=null,applyMask=null,allocationReserve=()=>0,extraSurfaces=()=>0,groupComposer=null,framePadding=()=>0}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
@@ -148,7 +148,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
  function thumbnail(l){
   invalidate();scratchSize(80,48);
   let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
-  for(const s of l.strokes){if(s.opacity===0)continue;const radius=s.size/2+1;for(const p of s.points){x0=Math.min(x0,p.x-radius);y0=Math.min(y0,p.y-radius);x1=Math.max(x1,p.x+radius);y1=Math.max(y1,p.y+radius);}}
+  for(const s of l.strokes){if(s.opacity===0)continue;const radius=(strokeRadius?strokeRadius(s):s.size/2)+1;for(const p of s.points){x0=Math.min(x0,p.x-radius);y0=Math.min(y0,p.y-radius);x1=Math.max(x1,p.x+radius);y1=Math.max(y1,p.y+radius);}}
   const scale=Number.isFinite(x0)?Math.min(1,72/Math.max(1,x1-x0),40/Math.max(1,y1-y0)):1;
   const v=Number.isFinite(x0)?{x:40-(x0+x1)/2*scale,y:24-(y0+y1)/2*scale,scale}:{x:0,y:0,scale:1};
   replayLayer(l,v,{d:1,w:80,h:48});applyMask?.(l,layer,scratch,v,{d:1,w:80,h:48},decodeRaster);if(scratch.width!==80||scratch.height!==48){scratch.width=1;scratch.height=1;scratch.width=80;scratch.height=48;}const ctx=clear(scratch);ctx.globalAlpha=l.opacity;ctx.drawImage(layer,0,0);ctx.globalAlpha=1;return scratch.toDataURL();
@@ -165,7 +165,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
  function snapshotLayer(l,size,first){
   invalidate();if(!l.strokes.some(s=>s.opacity>0))return null;
   let x0=first.x,y0=first.y,x1=first.x,y1=first.y;
-  for(const s of l.strokes){if(s.opacity===0)continue;if(s.brush==='raster'){const r=s.raster,data=decodeRaster(r.data);let left=r.width,top=r.height,right=0,bottom=0;for(let y=0;y<r.height;y++)for(let x=0;x<r.width;x++)if(data[(y*r.width+x)*4+3]){left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);}if(right>left&&bottom>top){const [a,b,c,d,e,f]=r.transform;for(const [x,y] of [[left,top],[right,top],[right,bottom],[left,bottom]]){const px=a*x+c*y+e,py=b*x+d*y+f;x0=Math.min(x0,px);y0=Math.min(y0,py);x1=Math.max(x1,px);y1=Math.max(y1,py);}}continue;}const padding=s.size/2+2;for(const p of s.points){x0=Math.min(x0,p.x-padding);y0=Math.min(y0,p.y-padding);x1=Math.max(x1,p.x+padding);y1=Math.max(y1,p.y+padding);}}
+  for(const s of l.strokes){if(s.opacity===0)continue;if(s.brush==='raster'){const r=s.raster,data=decodeRaster(r.data);let left=r.width,top=r.height,right=0,bottom=0;for(let y=0;y<r.height;y++)for(let x=0;x<r.width;x++)if(data[(y*r.width+x)*4+3]){left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);}if(right>left&&bottom>top){const [a,b,c,d,e,f]=r.transform;for(const [x,y] of [[left,top],[right,top],[right,bottom],[left,bottom]]){const px=a*x+c*y+e,py=b*x+d*y+f;x0=Math.min(x0,px);y0=Math.min(y0,py);x1=Math.max(x1,px);y1=Math.max(y1,py);}}continue;}const padding=(strokeRadius?strokeRadius(s):s.size/2)+2;for(const p of s.points){x0=Math.min(x0,p.x-padding);y0=Math.min(y0,p.y-padding);x1=Math.max(x1,p.x+padding);y1=Math.max(y1,p.y+padding);}}
   x0=Math.floor(x0-size-2);y0=Math.floor(y0-size-2);x1=Math.ceil(x1+size+2);y1=Math.ceil(y1+size+2);const width=x1-x0,height=y1-y0;
   if(width>rasterLimits.dimension||height>rasterLimits.dimension||width*height>rasterLimits.pixels)throw Error('Smudge layer exceeds 1024 × 1024 document pixels · use a smaller layer');
   scratchSize(width,height);replayLayer(l,{x:-x0,y:-y0,scale:1},{d:1,w:width,h:height});const data=layer.getContext('2d').getImageData(0,0,width,height).data;return {data,width,height,x:x0,y:y0,id:crypto.randomUUID()};
