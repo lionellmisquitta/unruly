@@ -44,7 +44,7 @@ function paper(ctx,b,v,w,h){ctx.fillStyle=b.color;ctx.fillRect(0,0,w,h);if(b.kin
  else{ctx.beginPath();for(let y=y0;y<=y1;y+=space){ctx.moveTo(x0,y);ctx.lineTo(x1,y);}if(b.kind==='grid')for(let x=x0;x<=x1;x+=space){ctx.moveTo(x,y0);ctx.lineTo(x,y1);}ctx.stroke();}ctx.restore();
 }
 export const rendererBudget = Object.freeze({surfaces:5, backingBytes:80*1024*1024, maxDimension:4096, maxDpr:2});
-export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,applyMask=null,allocationReserve=()=>0,extraSurfaces=()=>0,groupComposer=null,framePadding=()=>0}={}){
+export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCompositor=null,drawText=null,drawTip=null,applyMask=null,allocationReserve=()=>0,extraSurfaces=()=>0,groupComposer=null,framePadding=()=>0}={}){
  const layer=document.createElement('canvas'),scratch=document.createElement('canvas');
  const lower=document.createElement('canvas'),retained=document.createElement('canvas');
  const surfaces=[canvas,layer,scratch,lower,retained];
@@ -80,7 +80,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
   if(s.opacity===0)return;
   if(s.brush==='raster'){const r=s.raster;scratch.width=1;scratch.height=1;scratch.width=r.width;scratch.height=r.height;const sc=clear(scratch);sc.putImageData(new ImageData(decodeRaster(r.data),r.width,r.height),0,0);const lc=layer.getContext('2d');lc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);lc.globalAlpha=1;lc.globalCompositeOperation='source-over';lc.transform(...r.transform);lc.drawImage(scratch,0,0);lc.setTransform(1,0,0,1,0,0);return;}
   if(scratch.width!==g.w||scratch.height!==g.h){scratch.width=1;scratch.height=1;scratch.width=g.w;scratch.height=g.h;}
-  const sc=clear(scratch);sc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);if(s.brush==='text'&&drawText)drawText(sc,s);else drawStroke(sc,s);
+  const sc=clear(scratch);sc.setTransform(g.d*v.scale,0,0,g.d*v.scale,g.d*v.x,g.d*v.y);if(s.tip&&drawTip)drawTip(sc,s);else if(s.brush==='text'&&drawText)drawText(sc,s);else drawStroke(sc,s);
   const lc=layer.getContext('2d');lc.setTransform(1,0,0,1,0,0);lc.globalCompositeOperation='source-over';lc.globalAlpha=s.opacity;lc.drawImage(scratch,0,0);
  }
  function replayLayer(l,v,g,live=null){clear(layer);for(const s of l.strokes)strokeToLayer(s,v,g);if(live)strokeToLayer(live,v,g);}
@@ -156,7 +156,7 @@ export function createCanvas2DRenderer(canvas,{decodeRaster=decodePixels,layerCo
  function preview(stroke,width=180,height=56){
   invalidate();width=Math.min(400,Math.max(1,Math.round(width)));height=Math.min(100,Math.max(1,Math.round(height)));
   scratchSize(width,height);
-  const sc=clear(scratch),lc=clear(layer);sc.setTransform(Math.min(1,width/180),0,0,1,0,0);drawStroke(sc,stroke);lc.fillStyle='#f4f3ef';lc.fillRect(0,0,width,height);lc.globalAlpha=stroke.opacity;lc.drawImage(scratch,0,0);return layer.toDataURL();
+  const sc=clear(scratch),lc=clear(layer);sc.setTransform(Math.min(1,width/180),0,0,1,0,0);if(stroke.tip&&drawTip)drawTip(sc,stroke);else drawStroke(sc,stroke);lc.fillStyle='#f4f3ef';lc.fillRect(0,0,width,height);lc.globalAlpha=stroke.opacity;lc.drawImage(scratch,0,0);return layer.toDataURL();
  }
  function magnify(p){
   invalidate();scratch.width=1;scratch.height=1;scratch.width=128;scratch.height=128;const c=clear(scratch),rect=canvas.getBoundingClientRect(),dx=canvas.width/Math.max(1,rect.width),dy=canvas.height/Math.max(1,rect.height),x=Math.max(0,Math.min(canvas.width-1,Math.floor(p.x*dx)))+.5,y=Math.max(0,Math.min(canvas.height-1,Math.floor(p.y*dy)))+.5;

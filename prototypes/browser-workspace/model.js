@@ -1,3 +1,4 @@
+import {validateTip,visitTip} from './custom-tips.js';
 import {validateFilters,mutateFilter} from './filters.js';
 import {validateAdjustments,mutateAdjustment} from './adjustments.js';
 import {validateReference} from './image-import.js';
@@ -26,7 +27,8 @@ function validateVersion(b,version){
  for(const l of b.layers){if(!idOK(l.id)||ids.has(l.id)||typeof l.name!=='string'||l.name.length>64||typeof l.visible!=='boolean'||typeof l.locked!=='boolean'||!num(l.opacity,0,1)||!Array.isArray(l.strokes))fail('Invalid layer');rejectPreset(l);if(version>=3&&!blends.includes(l.blend))fail('Invalid layer blend');if(version===2&&Object.hasOwn(l,'blend'))fail('Invalid legacy layer blend');ids.add(l.id);
  for(const s of l.strokes){if(!idOK(s.id)||ids.has(s.id)||!['ink','pencil','marker','airbrush','raster','text'].includes(s.brush)||!color(s.color)||!num(s.size,1,s.brush==='airbrush'?160:40)||!num(s.opacity,0,1)||!Array.isArray(s.points)||!s.points.length)fail('Invalid stroke');if(s.brush==='text'){if(version<8)fail('Text requires v8');validateText(s);}else if(Object.hasOwn(s,'text'))fail('Invalid text field');if(s.brush==='raster'){if(version<4)fail('Raster content requires v4');validateRaster(s);}else if(Object.hasOwn(s,'raster'))fail('Invalid raster field');if(version===2)rejectPreset(s);else{if(Object.keys(s).some(k=>/^preset/i.test(k)&&k!=='preset'))fail('Invalid brush preset field');if(Object.hasOwn(s,'preset')&&(!idOK(s.preset)||!getPreset(s.preset)||!presetCompatible(s.brush,s.preset)))fail('Invalid brush preset');}if(Object.hasOwn(s,'dynamics')){if(version<3)fail('Brush dynamics require v3');validateDynamics(s.dynamics);}if(Object.hasOwn(s,'recipe')){if(version<3||!s.preset)fail('Custom brush recipe requires a v3 preset');validateRecipe(s.recipe,s.brush);}ids.add(s.id);ns++;np+=s.points.length;
  if(version>=3&&s.preset){const work=replayWork(s);if(work.dabs>20000)fail('Brush replay limit reached');if(work.particles>600000)fail('Brush particle limit reached');}else if(!['ink','raster','text'].includes(s.brush)){const step=Math.max(.5,s.size*(s.brush==='pencil'?.22:s.brush==='airbrush'?.3:.2));let dabs=0;for(let i=1;i<s.points.length;i++){dabs+=Math.max(1,Math.ceil(Math.hypot(s.points[i].x-s.points[i-1].x,s.points[i].y-s.points[i-1].y)/step));if(dabs>20000)fail('Brush replay limit reached');}}
- for(const q of s.points)if(!q||!num(q.x,-1e7,1e7)||!num(q.y,-1e7,1e7)||!(q.pressure===null||num(q.pressure,0,1)))fail('Invalid point/pressure');}}
+ if(Object.hasOwn(s,'tip')){if(version<12||s.brush!=='ink'||s.preset!=='ink-brush')fail('Image tips require v12 ink brush');validateTip(s.tip);}
+ for(const q of s.points)if(!q||!num(q.x,-1e7,1e7)||!num(q.y,-1e7,1e7)||!(q.pressure===null||num(q.pressure,0,1)))fail('Invalid point/pressure');if(s.tip)visitTip(s);}}
  validateFolders(b,ids);
  validateMasks(b,ids);
  validateClipping(b);
@@ -36,7 +38,7 @@ function validateVersion(b,version){
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;
 }
-export const validateBoard=b=>validateVersion(b,b?.version===11?11:b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
+export const validateBoard=b=>validateVersion(b,b?.version===12?12:b?.version===11?11:b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
 export function migrateV2(v){const b=copy(validateVersion(v,2));b.version=3;for(const l of b.layers)l.blend='normal';return validateBoard(b);}
 export const createBoard=(id=crypto.randomUUID(),title='Untitled board')=>{const lid=crypto.randomUUID();return {version:3,id,title,revision:0,activeLayer:lid,layers:[{id:lid,name:'Layer 1',visible:true,locked:false,opacity:1,blend:'normal',strokes:[]}],paper:{kind:'plain',color:'#faf8f3',spacing:24,seed:173}};};
 export const createHistory=b=>({board:copy(validateBoard(b)),past:[],future:[],evicted:false});
@@ -52,7 +54,7 @@ export function migrateV1(v,dbRevision=0){
 }
 export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const layerMap=new Map(b.layers.map(l=>[l.id,crypto.randomUUID()]));const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));for(const f of b.folders||[]){f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=layerMap.get(old);if(l.parentId)l.parentId=folderMap.get(l.parentId);if(l.clipSource)l.clipSource=layerMap.get(l.clipSource)||folderMap.get(l.clipSource);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=crypto.randomUUID();if(l.mask?.patch)l.mask.patch.id=crypto.randomUUID();}if(b.reference)b.reference.stroke.id=crypto.randomUUID();b.revision=0;delete b.lineage;return validateBoard(b);}
 export function editable(b){const l=b.layers.find(l=>l.id===b.activeLayer);const state=layerState(b,l);if(!state.visible||state.locked)fail('Active layer is hidden or locked');return l;}
-export function addStroke(h,s){if(s.opacity===0)return h;return command(h,b=>editable(b).strokes.push(copy(s)));}
+export function addStroke(h,s){if(s.opacity===0)return h;return command(h,b=>{if(s.tip){b.version=Math.max(12,b.version);b.folders=b.folders||[];}editable(b).strokes.push(copy(s));});}
 export function layerCommand(h,action,id,value){return command(h,b=>{
  const i=b.layers.findIndex(l=>l.id===id),l=b.layers[i];
  if(action==='add'){

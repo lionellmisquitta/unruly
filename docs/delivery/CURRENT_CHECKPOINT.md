@@ -1,4 +1,8 @@
-# Current checkpoint — FX2 published
+# Active checkpoint — TIP1 in progress14-Oct-2026
+
+User authorized image brush tips and named sections. Scope .delivery/CHG-UNRULY-TIP1-1014/PLAN.md. Implementation/local validation underway; cumulative browser QA/publication pending. Previous FX2 remains live. KG unchanged.
+
+## Previous checkpoint — FX2 published
 
 13-Oct-2026 Asia/Kolkata. Source6c3e49f942675e020cc517f508c3bfd5473d7148; Actions38440969358 SUCCESS322model tests/299Chromium/132source identities all match. PR13 merged a88803b302a8dbf9585a7af8c168b0ae48fb81e2; merged tree equals tested source. Publication8b4538217463c43847c0e6fdddf0c3660fcc1b92; Pages38443319147 SUCCESS50hosted byte matches. Same-session owner-authorized personal-project process; independent approval/physical-tablet/50-layer/totalRAM acceptance not claimed.
 
