@@ -1,9 +1,13 @@
 # UNRULY continuation contract
 
-## Active TIP1 —14-Oct-2026
-User authorized custom uploaded image tips and named brush sections. Bounded implementation on CHG-UNRULY-TIP1-1014/custom-image-tips; .delivery/CHG-UNRULY-TIP1-1014/PLAN.md. Current candidate is not yet browser-verified/published. FX2 remains live. All roadmap rows retained; KG updates prohibited.
+## Current — TIP1 published14-Oct-2026
+Sourcea415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33; Actions38583117039 SUCCESS341model tests/310Chromium scenarios/136source identities. PR14 merge95911bae5c52f68757bae658bbd8685d5121b1a2 exact tested tree. Publicationc0cccf354d23914be7b115cedf57b7a2769be948; Pages38585969301 SUCCESS52hosted byte matches.Brush Library→Image tips & sections; named sections/presets, bounded PNG/JPEG masks, all accepted jitter/rotation/count/flip/pressure controls, local library JSON backup/import. Portablev12strokes embed masks/options/seeds/effective dynamics; saved artwork independent of library.19new models/11new browser scenarios; legacy renderer/pixel oracles retained. Read CURRENT_CHECKPOINT/PRODUCT_ROADMAP/CODE_STRUCTURE and scoped TIP1receipts before continuing.
 
-## Current — FX2 published 13-Oct-2026
+<=128pxmask,16sections/32brushes/1MiBlibrary,4,096stamps/4,194,304sampled-mask-pixel work per stroke. Existing8MiBboard/16MiBhistory/32layers/80MiBlive backing preserved, temporary tip included in cache allowance. Scatter bounds protect region complements and snapshots. Alpha-lock custom-tip stamping remains open: Vector ink/Alpha lock off required; clipped-layer shading is available. Masks/smudge retain their own shapes. Pressure profiles device-local; board saves effective dynamics. No automatic subject removal/Photos integration/physical-tablet/50-layer/processRAM claim. Original photo archive not received.
+
+Next proposed painting checkpoint TIP2grain/textures; full remaining scope includes Motion Trace/timelapse and every PRODUCT_ROADMAP row. No automatic next build. Three completed builds since last authorized graph refresh; KG unchanged, no graph permission. Existing owner-authorized verified main/Pages publication persists. Earlier current/active sections below are historical.
+
+## Historical — FX2 published 13-Oct-2026
 Source6c3e49f942675e020cc517f508c3bfd5473d7148; CI38440969358 SUCCESS322models/299Chromium/132identities; PR13 mergea88803b302a8dbf9585a7af8c168b0ae48fb81e2 exact tree; Pages38443319147 SUCCESS50hosted matches. Layers/folders Actions→Curves & blur; v11metadata,piecewise master/RGB curves,sigma0–16Gaussian,preview/Apply/Cancel/Reset/one Undo. Existing HSL retained; original art editable. Padded nested/offscreen full replay fits80MiB; clipped group uses filtered matte within8MiB. Native Gaussian approximation,not proprietary parity. No physical device/50-layer/totalRAM claim. Read CURRENT_CHECKPOINT,PRODUCT_ROADMAP,CODE_STRUCTURE and FX2 scoped receipts first. Two completed builds since authorized graph refresh; KG unchanged. Next proposed TIP1 custom uploaded image brushes/all accepted controls; full product scope retained,no automatic next build. Earlier current/build paragraphs are historical.
 
 

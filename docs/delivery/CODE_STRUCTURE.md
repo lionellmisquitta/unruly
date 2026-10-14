@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Verified against application source at 8a4a94225d01a19716915bc5f7d2551e9b414e73, FX2 verified/published source6c3e49f942675e020cc517f508c3bfd5473d7148; CI38440969358 and Pages38443319147 SUCCESS.
+Verified against TIP1application sourcea415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33; CI38583117039SUCCESS341models/310Chromium/136identities and Pages38585969301SUCCESS52hosted matches. Prior FX2evidence is retained below.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -47,7 +47,7 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 | Persistence/offline delivery | storage.js, sw.js | storage validates through model; revision/conflict/save guards. sw asset list/cache revision must include every new runtime module. Offline smoke required. |
 
 ## Honest current limitations
-- app.js is 370 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
+- app.js is 387 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
 - model.js centralizes validators/commands and imports feature modules. This map does not prove absence of cycles or low coupling.
 - Per-change impact.yaml and plan.yaml have allowed/prohibited paths and regression links, e.g. FILL2. The inspected cumulative workflow runs regression/source hashes; it does NOT consume/enforce those path lists.
 - CI successes demonstrate tested scenarios, not perfect scope, clean architecture, target-device performance or independent human approval.
@@ -76,3 +76,23 @@ New adjustments.js (pure math/validation/mutation), adjustment-ui.js (unsaved pr
 filters.js owns strict schema/math/mutation without a model import; filter-ui.js owns graph/channel/numeric/blur draft and injected preview/commit callbacks. model.js validatesv11/exposes one filter command. render.js computes halo branch support and wires filters/group matte capture. canvas2d-renderer.js changes only exact declared geometry/padded replay hooks, preserving frozen unfiltered source and pixels. effect-compositor.js reuses isolation/temporary surfaces for curves/blur. clipping.js captures filtered group alpha within existing8MiB cache; no silent alpha-union substitute. app.js has narrow entries/draft hooks; no broad controller rewrite. Existing source, schema/history, and render dependencies are shared hubs, not independent services. All other roadmap scope retained; KG unchanged.
 
 FX2 verification322models/299Chromium/132identity matches; publication50hosted byte matches. Native Gaussian approximation and physical-device/50-layer limits recorded in scoped QA. Existing unfiltered renderer frozen source/pixel oracles retained. This remains a logical import/responsibility map,not an executed AST/runtime graph or proof of independently enforced CI path scope.
+
+## TIP1 implementation — verified and published
+custom-tips.js owns strict mask/options/library validation, bounded image conversion, seeded distance traversal, pressure mapping and isolated draw helper. custom-tips-ui.js owns disposable import/edit previews, atomic local-library writes and named section/preset management. app.js wires only selection/pressure identity, gesture seed, shape-hold exclusion and target guards. u2.js separates image-tip selection from built-in memories. model.js admits portable v12 strokes and rejects replay overflow before committing. selection.js preserves tip scale/rotation and includes scatter in bounds/clipboard. lasso-region.js uses the same radius for complete complement tile enumeration; renderer thumbnails/smudge snapshots receive an optional radius hook. image-import.js preserves newer document versions. render.js injects optional tip replay/radius and reserves the temporary mask canvas inside the existing80MiB live backing/cache allowance. Legacy raw renderer default source/pixel oracles remain unchanged. No storage/graph/skill rewrite.
+
+```mermaid
+flowchart TD
+  UI["Tip editor and named sections"]
+  TIP["Tip schema, masks and seeded stamps"]
+  DOC["v12 strokes and command history"]
+  REN["Canvas replay and cache budgets"]
+  REG["Selection bounds and region complement"]
+  UI --> TIP
+  UI --> DOC
+  DOC --> TIP
+  REN --> TIP
+  REG --> TIP
+```
+This scoped logical dependency map is not an AST/runtime graph. Existing circular feature/model dependencies remain; this build does not establish global acyclicity. Imported tip masks/options/seed live in each drawn stroke, separately from the device library. Newer boards require v12-capable readers; pressure overrides remain device-local, while saved strokes embed effective dynamics. Automatic photo-subject removal/Photos folder ingestion, proprietary brush formats, custom-tip alpha-lock stamping, folder masks and target-device latency remain unverified or pending. TIP2 grain/textures remains a separate open checkpoint.
+
+TIP1release evidence: Sourcea415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33; Actions38583117039 SUCCESS341model tests/310Chromium scenarios/136source identities. PR14 merge95911bae5c52f68757bae658bbd8685d5121b1a2 exact tested tree. Publicationc0cccf354d23914be7b115cedf57b7a2769be948; Pages38585969301 SUCCESS52hosted byte matches.Manual scope match and18byte-unchanged shared modules recorded in scoped SCOPE_REVIEW.json; no CI path-enforcement or global architectural independence claim. All remaining product scope retained; KG unchanged.
