@@ -1,5 +1,8 @@
 # UNRULY continuation contract
 
+## Active TIP1 —14-Oct-2026
+User authorized custom uploaded image tips and named brush sections. Bounded implementation on CHG-UNRULY-TIP1-1014/custom-image-tips; .delivery/CHG-UNRULY-TIP1-1014/PLAN.md. Current candidate is not yet browser-verified/published. FX2 remains live. All roadmap rows retained; KG updates prohibited.
+
 ## Current — FX2 published 13-Oct-2026
 Source6c3e49f942675e020cc517f508c3bfd5473d7148; CI38440969358 SUCCESS322models/299Chromium/132identities; PR13 mergea88803b302a8dbf9585a7af8c168b0ae48fb81e2 exact tree; Pages38443319147 SUCCESS50hosted matches. Layers/folders Actions→Curves & blur; v11metadata,piecewise master/RGB curves,sigma0–16Gaussian,preview/Apply/Cancel/Reset/one Undo. Existing HSL retained; original art editable. Padded nested/offscreen full replay fits80MiB; clipped group uses filtered matte within8MiB. Native Gaussian approximation,not proprietary parity. No physical device/50-layer/totalRAM claim. Read CURRENT_CHECKPOINT,PRODUCT_ROADMAP,CODE_STRUCTURE and FX2 scoped receipts first. Two completed builds since authorized graph refresh; KG unchanged. Next proposed TIP1 custom uploaded image brushes/all accepted controls; full product scope retained,no automatic next build. Earlier current/build paragraphs are historical.
 
