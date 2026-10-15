@@ -92,5 +92,10 @@
   },
   "legacyAssertionChanges": "7 exact SW cache identity literals only; all other bytes unchanged",
   "knowledgeGraphChanges": false,
-  "skillsChanged": false
+  "skillsChanged": false,
+  "finalSource": "0bab964ad5722c5dc3fd6dbe67c5705125635447",
+  "finalSourceTree": "8211680c308c9100eca3591bfd414b19abe698f9",
+  "publicationWorkflow": "Allowed test_config_changes path; adds actions:read to validate exact QA artifact before pinned deployment. No runtime source change after green candidate.",
+  "finalVerification": "Publication runner verified155manifest hashes and61hosted assets. Repo closeout changes confined to docs/delivery and scoped delivery records.",
+  "localEnvironment": "Disconnected after initial local checks; GitHub source/CI/runner used for final publication."
 }

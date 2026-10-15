@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Current verified source 81a452809df78203b067e9e6a7e02569f1b4c409; CI38768769402SUCCESS372models/332Chromium/150source identities; Pages38771750451SUCCESS58hosted matches. MOTION1 engineering baseline delivered; full C09Mcompatibility/device review and30–50interactive capacity remain open.
+Current verified source 0bab964ad5722c5dc3fd6dbe67c5705125635447; CI38781105113SUCCESS386models/348JSONbrowser scenarios plus2legacy checks/155source hashes. Pages38786233048SUCCESS61hosted matches. TIME1 recording/replay published; full C10video/export,Motion compatibility/device and30–50interactive capacity remain OPEN.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -47,7 +47,7 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 | Persistence/offline delivery | storage.js, sw.js | storage validates through model; revision/conflict/save guards. sw asset list/cache revision must include every new runtime module. Offline smoke required. |
 
 ## Honest current limitations
-- app.js is 387 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
+- app.js is 407 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
 - model.js centralizes validators/commands and imports feature modules. This map does not prove absence of cycles or low coupling.
 - Per-change impact.yaml and plan.yaml have allowed/prohibited paths and regression links, e.g. FILL2. The inspected cumulative workflow runs regression/source hashes; it does NOT consume/enforce those path lists.
 - CI successes demonstrate tested scenarios, not perfect scope, clean architecture, target-device performance or independent human approval.
@@ -159,3 +159,26 @@ flowchart TD
 This is a logical responsibility/import map,not an executed AST graph or proof of global acyclicity. Existing app/model hubs remain. Same-layer mixed region/object target identities are a known compatibility boundary of the existing whole-layer raster split,retained OPEN rather than bypassed. Future-change surfaces and re-open triggers are in scoped CHANGE_IMPACT_COMPENDIUM.md. No graph regeneration or skill changes.
 
 Source 81a452809df78203b067e9e6a7e02569f1b4c409; cumulative CI 38768769402 SUCCESS: 372 model tests, 332 Chromium scenarios and 150 source hashes verified from the downloaded artifact. PR17 merge f7ae0187bb151bc4283458ac4ecb614743538917 has the exact tested tree. Publication commit 8a558d4ac42201f1a2d93fa69fb337c5511c73c0; Pages 38771750451 SUCCESS, with 58 hosted application files matching tested bytes.
+
+## TIME1 localization — verified and published
+
+timelapse.js owns strict bounded delta/timing/reconstruction and confirmed root-ID backup attachment; native validation is injected, with no model/DOM/storage imports. Retained text fragments own their backing. timelapse-store.js owns separate append-only IndexedDB events/meta/global payload budget, atomic revision guards and tombstones; it never opens artwork storage. timelapse-ui.js owns recording/queue/gap/reload lifecycle,validated backup/import/confirmation/discard and read-only replay.
+
+app.js adds committed-change observation,board-transition flush and disposable preview callbacks. h.board remains the only artwork/autosave/native-export/Undo authority. Original model/history/artwork storage/renderers are unchanged. HTML/CSS preserve existing inspector tokens; SW adds three modules and identity.54existing app files byte-identical;7older offline test edits are exact cache identity strings. Manual scope checks are not CI-enforced path protection.
+
+```mermaid
+flowchart TD
+ HOST["App committed edits and preview"]
+ UI["Recording and replay controller"]
+ CORE["Delta validation and timing"]
+ LOG["Separate local log"]
+ ART["Unchanged artwork and renderer"]
+ HOST --> UI
+ UI --> CORE
+ UI --> LOG
+ LOG --> CORE
+ UI --> HOST
+ HOST --> ART
+```
+
+This is a logical calls/import map,not an executed AST/knowledge graph or global acyclicity proof. Existing app/model hubs remain shared. Recording payload budgets are separate from8MiBboard/16MiBhistory/80MiBrender backing;32layers remain. Recorded state can persist before artwork autosave because transactions are separate. Preview never promotes recorded geometry to live artwork. Paused/reload gaps are marked current states. Video/continuous ink animation/navigation/framing and physical/long-session acceptance remain open. Re-open triggers and future change surfaces: scoped CHANGE_IMPACT_COMPENDIUM.md.
