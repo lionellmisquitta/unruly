@@ -121,3 +121,5 @@ MOTION1attempt1: saved v14cues and disposable object/region/folder/camera playba
 MOTION1attempt2: preflight38766631599FAILED region playback timing;9/10new browser scenarios passed. Negative RAFprogress correction and mobile/focus refinements under verification. No publication or C09Mclosure; original full scope retained; KG unchanged.
 
 MOTION1visual review: preflight38767247208passed10browser scenarios, but screenshot review found hidden SVGpath overlay. Attribute correction and real-pointer/visible-overlay regression added; final checks pending, no publication.
+
+MOTION1attempt3: real-pointer/mobile/region checks pass; preflight38767903689failed an inappropriate zero-height horizontal-SVG visibility assertion. Screenshot confirms visible neon stroke; geometry-aware visibility check replaces it. Runtime unchanged, final QA pending; not published.
