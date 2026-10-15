@@ -115,3 +115,5 @@ Five published application batches since last authorized graph refresh; knowledg
 
 ## MOTION1 active —15-Oct-2026
 User authorized next checkpoint REQ-017/C09M. Base 2c8c615a5ebd2bbf2cadf82b5b31d13b6637c1f4. Bounded saved object/region/folder motion and camera cues,manual/timed non-destructive playback and one-Undo explicit commit. Plan/impact/UX contracts committed before implementation; not yet verified or published. Every remaining roadmap row and32layer/device-performance gaps retained. KG unchanged.
+
+MOTION1attempt1: saved v14cues and disposable object/region/folder/camera playback implemented.372model tests pass; production UI validation0errors. Actual browser/visual/cumulative verification pending. Not published; no broader roadmap closure; KG unchanged.
