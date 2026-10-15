@@ -123,3 +123,5 @@ MOTION1attempt2: preflight38766631599FAILED region playback timing;9/10new brows
 MOTION1visual review: preflight38767247208passed10browser scenarios, but screenshot review found hidden SVGpath overlay. Attribute correction and real-pointer/visible-overlay regression added; final checks pending, no publication.
 
 MOTION1attempt3: real-pointer/mobile/region checks pass; preflight38767903689failed an inappropriate zero-height horizontal-SVG visibility assertion. Screenshot confirms visible neon stroke; geometry-aware visibility check replaces it. Runtime unchanged, final QA pending; not published.
+
+MOTION1preflight38768437038passed all10browser scenarios, including visible neon path and actual mouse drag. Final completion-status accuracy check added; cumulative QA pending. Same-layer mixed pixel-region/original-object cue sequencing remains an explicit compatibility gap; not silently closed or removed.
