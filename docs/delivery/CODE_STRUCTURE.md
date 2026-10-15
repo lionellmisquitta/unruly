@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Verified against TIP1application sourcea415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33; CI38583117039SUCCESS341models/310Chromium/136identities and Pages38585969301SUCCESS52hosted matches. Prior FX2evidence is retained below.
+Verified against TIP2/CAP1source3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba; CI38671904693SUCCESS358models/320Chromium/142identities; Pages38673569838SUCCESS54hosted matches. CAP1measurement/recovery only; CAP2/device capacity acceptance remains open.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -96,3 +96,24 @@ flowchart TD
 This scoped logical dependency map is not an AST/runtime graph. Existing circular feature/model dependencies remain; this build does not establish global acyclicity. Imported tip masks/options/seed live in each drawn stroke, separately from the device library. Newer boards require v12-capable readers; pressure overrides remain device-local, while saved strokes embed effective dynamics. Automatic photo-subject removal/Photos folder ingestion, proprietary brush formats, custom-tip alpha-lock stamping, folder masks and target-device latency remain unverified or pending. TIP2 grain/textures remains a separate open checkpoint.
 
 TIP1release evidence: Sourcea415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33; Actions38583117039 SUCCESS341model tests/310Chromium scenarios/136source identities. PR14 merge95911bae5c52f68757bae658bbd8685d5121b1a2 exact tested tree. Publicationc0cccf354d23914be7b115cedf57b7a2769be948; Pages38585969301 SUCCESS52hosted byte matches.Manual scope match and18byte-unchanged shared modules recorded in scoped SCOPE_REVIEW.json; no CI path-enforcement or global architectural independence claim. All remaining product scope retained; KG unchanged.
+
+## TIP2 + CAP1 batch — published; capacity target still open15-Oct-2026
+grain.js owns strict64pxtexture admission, alpha-aware image conversion, deterministic tip-local tiled sampling and procedural Splatter/Sprinkle masks. grain-ui.js owns grain upload/invert/scale/depth/rotation/clear within the existing disposable tip editor; cancel invalidates pending decode. custom-tips.js admits optionalv2grain and passes precomputed alpha into the existing draw hook. model/selection admitv13and preserve oldv1tips/clipboard/history semantics. No raw renderer/storage changes. sw.js adds only new grain modules and cache identity. Capacity tests exercise existing buffers/IDBwithout raising32layer limit.
+
+```mermaid
+flowchart TD
+ UI["Existing tip editor"]
+ G["Grain controller and pure sampling"]
+ T["Portable tip replay"]
+ D["v13 validation and history"]
+ R["Existing renderer hook"]
+ UI --> G
+ G --> T
+ D --> T
+ R --> T
+```
+A logical module map, not a regenerated knowledge graph or executed ASTgraph. Existing shared hubs/cycles remain.20shared modules are byte-unchanged per scoped SCOPE_REVIEW.json. Source3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba; CI38671904693SUCCESS358models/320Chromium/142source identities. PR15mergeff4b756709da36cff77edab0ed56aeb67e39ff52 exact tested tree. Publicationeeca0961697662996aa2c752db4d9d350dd23f4a; Pages38673569838SUCCESS54hosted byte matches.
+
+CAP1found50layer mixed full replay ~0.5sDPR1/~1.2sDPR2onCI; paired removal of group HSL/blur reduces warm work to~65–180ms. Group effect isolation currently causes full replay, so CAP2should investigate retained processed-group surfaces plus exact invalidation/backing allowances. No unmeasured renderer rewrite or layer-cap increase included.30–50interactive performance and physical device/long-session acceptance remain OPEN. Detailed fixture/results and recovery cases in .delivery/CHG-UNRULY-TIP2CAP-1015/CAPACITY_REPORT.*.
+
+CAP1decision:32layer model/image-import boundary unchanged; no capacity.jsor old assertion migration implemented. The conditional initial scope was superseded by measured Revision2before any cap change. Full capacity/performance work is explicitly carried intoCAP2. KG unchanged.

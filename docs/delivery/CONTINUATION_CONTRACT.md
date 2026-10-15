@@ -1,6 +1,18 @@
 # UNRULY continuation contract
 
-## Current — TIP1 published14-Oct-2026
+## Current — TIP2 + CAP1 batch15-Oct-2026
+Source3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba; CI38671904693SUCCESS358models/320Chromium/142source identities. PR15mergeff4b756709da36cff77edab0ed56aeb67e39ff52 exact tested tree. Publicationeeca0961697662996aa2c752db4d9d350dd23f4a; Pages38673569838SUCCESS54hosted byte matches. Same-session owner-authorized personal-project process; no independent approval/physical-device/50layer readiness/processRAM claim.
+
+Brush Library→Image tips & sections: New Splatter/New Sprinkle opens a ready-to-save preset; edit any image tip→Grain texture→Import grain image. PNG/JPEG through existing12MiB/2048pxdecoder;64pxgrainmask, scale4–128tip pixels/depth0–1/rotation±180/invert/remove. Grain tiles within each stamp and transforms with it; it is not a world-locked canvas texture. v13strokes embed grain/mask/options/seed/effective dynamics; library/clipboard/native JSON/Undo/Redo/reload/offline verified. Depth0preserves old pixels exactly. Existing vector-only/alpha-lock/mask/smudge compatibility limits remain.
+
+CAP1engineering gate:30/32/50mixed render reference/backing probes, actual32layer native/history/IDBsave/reload/UIrows, previous-valid fallback/subsequent save, conflicts and injected quota/invalid-save atomicity passed.50renderer probe was never admitted as a document. Warm full replay~0.5sDPR1/~1.2sDPR2with group effects vs~65–180mswithout onCI. Keep32layer cap. CAP2processed-group retention/invalidation/performance and real Surface/Xiaomi/Lenovo long-session/palm/pen/latency/processRAM acceptance remain OPEN. No capacity-target closure, cap increase or storage/raw-renderer rewrite claimed. Detailed immutable fixture/results in scoped CAPACITY_REPORT.*.
+
+Existing8MiBboard/16MiBhistory/80MiBbacking/folder16/depth8limits retained;20shared runtime modules byte-unchanged; frozen legacy source/pixel oracles retained. Four published application batches since last authorized graph refresh; KG unchanged. Full PRODUCT_ROADMAP/CODE_STRUCTURE updated. Next proposed CAP2; no automatic build. All MotionTrace/timelapse/other original product scope remains. Scoped .delivery/CHG-UNRULY-TIP2CAP-1015/ contains plan/impact/revisions/failed attempt/source-bound QA/hosted receipts.
+
+Earlier current/active sections below are historical.
+
+
+## Historical — TIP1 published14-Oct-2026
 Sourcea415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33; Actions38583117039 SUCCESS341model tests/310Chromium scenarios/136source identities. PR14 merge95911bae5c52f68757bae658bbd8685d5121b1a2 exact tested tree. Publicationc0cccf354d23914be7b115cedf57b7a2769be948; Pages38585969301 SUCCESS52hosted byte matches.Brush Library→Image tips & sections; named sections/presets, bounded PNG/JPEG masks, all accepted jitter/rotation/count/flip/pressure controls, local library JSON backup/import. Portablev12strokes embed masks/options/seeds/effective dynamics; saved artwork independent of library.19new models/11new browser scenarios; legacy renderer/pixel oracles retained. Read CURRENT_CHECKPOINT/PRODUCT_ROADMAP/CODE_STRUCTURE and scoped TIP1receipts before continuing.
 
 <=128pxmask,16sections/32brushes/1MiBlibrary,4,096stamps/4,194,304sampled-mask-pixel work per stroke. Existing8MiBboard/16MiBhistory/32layers/80MiBlive backing preserved, temporary tip included in cache allowance. Scatter bounds protect region complements and snapshots. Alpha-lock custom-tip stamping remains open: Vector ink/Alpha lock off required; clipped-layer shading is available. Masks/smudge retain their own shapes. Pressure profiles device-local; board saves effective dynamics. No automatic subject removal/Photos integration/physical-tablet/50-layer/processRAM claim. Original photo archive not received.
