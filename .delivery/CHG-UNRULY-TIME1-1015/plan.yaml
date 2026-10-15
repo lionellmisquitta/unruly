@@ -1,5 +1,6 @@
 change_id: CHG-UNRULY-TIME1-1015
-route: standard
+schema_version: "1.0"
+route: standard_change
 prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/history-patch.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/render.js, prototypes/browser-workspace/canvas2d-renderer.js]
 checkpoints:
   - id: TIME1

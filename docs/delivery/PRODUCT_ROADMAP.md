@@ -150,3 +150,5 @@ TIME1 review revision2: recording backup portability must handle native import a
 TIME1attempt8e5e4fad: preflight38778480189FAILED13/14; corruption assertion ran before replay read persisted data. Corrected to request replay and retain corruption/original-preservation assertions. Backup attachment revision2also pending verification. Not published; other requirements/KG unchanged.
 
 TIME1candidatef29261bfa4d8c8ed4e3ea171c9c13625f588fc46: preflight38778846585SUCCESS14browser journeys. Superseded before publication by compact replay layout and explicit2000state/32MiB boundary tests; verification pending. Scope retained, KG unchanged.
+
+TIME1attempt74e43a6c: preflight38779281817FAILED14/15;320pxStop measurement raced async replay loading. Screenshot shows visible Stop. Retain viewport assertion and wait for replay-ready before measurement; add actual layer-selection-only exclusion test. Runtime remains unpublished; all scope/KG unchanged.
