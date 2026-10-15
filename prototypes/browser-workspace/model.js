@@ -35,7 +35,7 @@ function validateVersion(b,version){
  validateClipping(b);
  validateAdjustments(b);
  validateFilters(b);
- validateMotion(b,ids);
+ validateMotion(b,new Set([...ids,...(b.reference?[b.reference.stroke.id]:[])]));
  if(Object.hasOwn(b,'reference')){if(version<9)fail('Reference requires v9');validateReference(b.reference);if(!idOK(b.reference.stroke.id)||ids.has(b.reference.stroke.id))fail('Invalid reference ID');}
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;

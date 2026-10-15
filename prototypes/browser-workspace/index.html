@@ -20,7 +20,7 @@
  <p id="motion-target" class="note"></p>
  <div class="motion-row"><button id="motion-new-move" type="button">New movement</button><button id="motion-new-camera" type="button">New camera</button></div>
  <label for="motion-cues">Saved sequence <output id="motion-saved-count"></output></label><select id="motion-cues" size="3" aria-label="Saved motion cues"></select>
- <div class="motion-row"><button id="motion-up" type="button">Move up</button><button id="motion-down" type="button">Move down</button><button id="motion-delete" type="button">Delete cue</button></div>
+ <div class="motion-row" id="motion-order-row"><button id="motion-up" type="button">Move up</button><button id="motion-down" type="button">Move down</button><button id="motion-delete" type="button">Delete cue</button></div>
  <label for="motion-name">Cue name</label><input id="motion-name" maxlength="64">
  <label for="motion-seconds">Duration · seconds</label><input id="motion-seconds" type="number" min=".25" max="30" step=".25" value="2">
  <div id="motion-move-fields"><button id="motion-use-selection" type="button">Use captured selection</button><button id="motion-draw" type="button">Draw path on canvas</button><p id="motion-point-count" class="note"></p><div class="motion-row"><label>End X · document pixels<input id="motion-x" type="number" min="-10000000" max="10000000" step="any"></label><label>End Y · document pixels<input id="motion-y" type="number" min="-10000000" max="10000000" step="any"></label></div><p class="note">Draw with pen or mouse from the artwork. The path is relative to pen-down; artwork starts in its original position. Numeric endpoints also work with touch and keyboard.</p></div>
