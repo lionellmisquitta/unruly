@@ -119,3 +119,5 @@ User authorized next checkpoint REQ-017/C09M. Base 2c8c615a5ebd2bbf2cadf82b5b31d
 MOTION1attempt1: saved v14cues and disposable object/region/folder/camera playback implemented.372model tests pass; production UI validation0errors. Actual browser/visual/cumulative verification pending. Not published; no broader roadmap closure; KG unchanged.
 
 MOTION1attempt2: preflight38766631599FAILED region playback timing;9/10new browser scenarios passed. Negative RAFprogress correction and mobile/focus refinements under verification. No publication or C09Mclosure; original full scope retained; KG unchanged.
+
+MOTION1visual review: preflight38767247208passed10browser scenarios, but screenshot review found hidden SVGpath overlay. Attribute correction and real-pointer/visible-overlay regression added; final checks pending, no publication.
