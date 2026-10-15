@@ -68,9 +68,10 @@ jobs:
                   if name.endswith(".json"):
                           current_report=name
                           collect(json.loads(z.read(name)))
+              legacy_checks=[]
               for report,marker,case_id in [("fullscreen-browser-output.txt","FULLSCREENB01 PASS","FULLSCREENB01"),("airbrush-size-browser-output.txt","AIRBRUSH BROWSER PASS","AIRBRUSH-BROWSER")]:
                   assert re.search(r"^"+re.escape(marker)+r"\s*$",read(report),re.M),("Missing console-only PASS",report)
-                  cases.append({"id":case_id,"status":"PASS"})
+                  legacy_checks.append({"id":case_id,"status":"PASS"})
               print("TIME1_QA_SCHEMA="+json.dumps({"sourceHashes":len(hashes),"browserScenarios":len(cases)}))
               assert len(cases)==348,("Unexpected browser count",len(cases))
               assert all(c["status"].upper()=="PASS" for c in cases),"Browser failure"
@@ -81,7 +82,7 @@ jobs:
                       if re.search(r"(?:#|ℹ) tests 386\b",text) and re.search(r"(?:#|ℹ) fail 0\b",text):reports.append(name)
               assert reports,"386 passing model tests absent"
               print("TIME1_CASES="+json.dumps(cases,separators=(",",":")))
-              print("TIME1_QA_RECEIPT="+json.dumps({"source":candidate,"artifactId":11997625057,"artifactDigest":digest,"modelTests":386,"modelFailures":0,"browserScenarios":len(cases),"sourceHashCount":len(hashes),"sourceHashes":hashes,"modelReports":reports},separators=(",",":")))
+              print("TIME1_QA_RECEIPT="+json.dumps({"source":candidate,"artifactId":11997625057,"artifactDigest":digest,"modelTests":386,"modelFailures":0,"browserScenarios":len(cases),"sourceHashCount":len(hashes),"sourceHashes":hashes,"modelReports":reports,"legacyConsoleChecks":legacy_checks},separators=(",",":")))
           PY
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
         with:
