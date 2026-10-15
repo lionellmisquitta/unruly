@@ -1,0 +1,15 @@
+{
+  "change_id": "CHG-UNRULY-MOTION1-1015",
+  "requirement": "REQ-017/C09M",
+  "archetype": "spatial canvas with inspector",
+  "decisions": [
+    "UXD-M1",
+    "UXD-M2",
+    "UXD-M3",
+    "UXD-M4",
+    "UXD-M5"
+  ],
+  "evidence": "SUFFICIENT for reversible prototype/build; physical audience/device acceptance CONDITIONAL",
+  "authorization": "User next-build instruction; existing owner publication authorization",
+  "humanIndependentApproval": false
+}

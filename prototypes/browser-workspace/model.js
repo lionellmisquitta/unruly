@@ -1,3 +1,4 @@
+import {validateMotion,mutateMotion,remapMotion} from './motion.js';
 import {validateTip,visitTip} from './custom-tips.js';
 import {validateFilters,mutateFilter} from './filters.js';
 import {validateAdjustments,mutateAdjustment} from './adjustments.js';
@@ -34,11 +35,12 @@ function validateVersion(b,version){
  validateClipping(b);
  validateAdjustments(b);
  validateFilters(b);
+ validateMotion(b,new Set([...ids,...(b.reference?[b.reference.stroke.id]:[])]));
  if(Object.hasOwn(b,'reference')){if(version<9)fail('Reference requires v9');validateReference(b.reference);if(!idOK(b.reference.stroke.id)||ids.has(b.reference.stroke.id))fail('Invalid reference ID');}
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;
 }
-export const validateBoard=b=>validateVersion(b,b?.version===13?13:b?.version===12?12:b?.version===11?11:b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
+export const validateBoard=b=>validateVersion(b,b?.version===14?14:b?.version===13?13:b?.version===12?12:b?.version===11?11:b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
 export function migrateV2(v){const b=copy(validateVersion(v,2));b.version=3;for(const l of b.layers)l.blend='normal';return validateBoard(b);}
 export const createBoard=(id=crypto.randomUUID(),title='Untitled board')=>{const lid=crypto.randomUUID();return {version:3,id,title,revision:0,activeLayer:lid,layers:[{id:lid,name:'Layer 1',visible:true,locked:false,opacity:1,blend:'normal',strokes:[]}],paper:{kind:'plain',color:'#faf8f3',spacing:24,seed:173}};};
 export const createHistory=b=>({board:copy(validateBoard(b)),past:[],future:[],evicted:false});
@@ -52,7 +54,7 @@ export function migrateV1(v,dbRevision=0){
  if(!v||v.version!==1||!idOK(v.id)||typeof v.title!=='string'||v.title.length>128||!Number.isSafeInteger(v.revision)||v.revision<0||!Array.isArray(v.strokes))fail('Invalid legacy board');
  rejectPreset(v);for(const s of v.strokes)rejectPreset(s);const b=createBoard(v.id,v.title);b.revision=v.revision;b.layers[0].strokes=v.strokes.map(s=>({...copy(s),brush:'ink',opacity:1}));b.lineage={source:'unruly-foundation',revision:v.revision,dbRevision};return validateBoard(b);
 }
-export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const layerMap=new Map(b.layers.map(l=>[l.id,crypto.randomUUID()]));const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));for(const f of b.folders||[]){f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=layerMap.get(old);if(l.parentId)l.parentId=folderMap.get(l.parentId);if(l.clipSource)l.clipSource=layerMap.get(l.clipSource)||folderMap.get(l.clipSource);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=crypto.randomUUID();if(l.mask?.patch)l.mask.patch.id=crypto.randomUUID();}if(b.reference)b.reference.stroke.id=crypto.randomUUID();b.revision=0;delete b.lineage;return validateBoard(b);}
+export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const layerMap=new Map(b.layers.map(l=>[l.id,crypto.randomUUID()]));const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));const strokeMap=new Map(b.layers.flatMap(l=>l.strokes.map(s=>[s.id,crypto.randomUUID()])));for(const f of b.folders||[]){f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=layerMap.get(old);if(l.parentId)l.parentId=folderMap.get(l.parentId);if(l.clipSource)l.clipSource=layerMap.get(l.clipSource)||folderMap.get(l.clipSource);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=strokeMap.get(s.id);if(l.mask?.patch)l.mask.patch.id=crypto.randomUUID();}remapMotion(b,new Map([...layerMap,...folderMap,...strokeMap]));if(b.reference)b.reference.stroke.id=crypto.randomUUID();b.revision=0;delete b.lineage;return validateBoard(b);}
 export function editable(b){const l=b.layers.find(l=>l.id===b.activeLayer);const state=layerState(b,l);if(!state.visible||state.locked)fail('Active layer is hidden or locked');return l;}
 export function addStroke(h,s){if(s.opacity===0)return h;return command(h,b=>{if(s.tip){b.version=Math.max(s.tip.version===2?13:12,b.version);b.folders=b.folders||[];}editable(b).strokes.push(copy(s));});}
 export function layerCommand(h,action,id,value){return command(h,b=>{
@@ -135,3 +137,5 @@ export function textCommand(h,layerId,stroke,id=null){validateText(stroke);retur
 export const adjustmentCommand=(h,id,value)=>command(h,b=>mutateAdjustment(b,id,value));
 
 export const filterCommand=(h,id,value)=>command(h,b=>mutateFilter(b,id,value));
+
+export const motionCommand=(h,action,value)=>command(h,b=>mutateMotion(b,action,value));

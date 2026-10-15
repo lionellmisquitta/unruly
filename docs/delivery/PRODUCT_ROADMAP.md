@@ -112,3 +112,16 @@ Measured mixed50layer renderer-only warm medians~231msDPR1/~527msDPR2 in targete
 Next proposed feature: Motion Trace REQ-017/C09M, then persistent timelapse recording/replay and video export, artwork export and release-candidate testing as discussed. No next build automatically authorized. No early-access scope cut approved: Drive sync, BYOK AI and every other full PRODUCT_ROADMAP row remain retained. TIP1 alpha-lock custom-tip gap also remains.
 
 Five published application batches since last authorized graph refresh; knowledge graph unchanged. Same-session owner-authorized verification/publication, not independent approval or physical-device sign-off. Scoped impact/plan/revisions/attempts/performance/scope/QA/publication receipts are in .delivery/CHG-UNRULY-CAP2-1015/. Local browser was blocked by missing Chromium/download failure; GitHub Chromium executed. Bundled contract validator dependency was unavailable; explicit stdlib schema/link check passed, not a claim of external validator execution.
+
+## MOTION1 active —15-Oct-2026
+User authorized next checkpoint REQ-017/C09M. Base 2c8c615a5ebd2bbf2cadf82b5b31d13b6637c1f4. Bounded saved object/region/folder motion and camera cues,manual/timed non-destructive playback and one-Undo explicit commit. Plan/impact/UX contracts committed before implementation; not yet verified or published. Every remaining roadmap row and32layer/device-performance gaps retained. KG unchanged.
+
+MOTION1attempt1: saved v14cues and disposable object/region/folder/camera playback implemented.372model tests pass; production UI validation0errors. Actual browser/visual/cumulative verification pending. Not published; no broader roadmap closure; KG unchanged.
+
+MOTION1attempt2: preflight38766631599FAILED region playback timing;9/10new browser scenarios passed. Negative RAFprogress correction and mobile/focus refinements under verification. No publication or C09Mclosure; original full scope retained; KG unchanged.
+
+MOTION1visual review: preflight38767247208passed10browser scenarios, but screenshot review found hidden SVGpath overlay. Attribute correction and real-pointer/visible-overlay regression added; final checks pending, no publication.
+
+MOTION1attempt3: real-pointer/mobile/region checks pass; preflight38767903689failed an inappropriate zero-height horizontal-SVG visibility assertion. Screenshot confirms visible neon stroke; geometry-aware visibility check replaces it. Runtime unchanged, final QA pending; not published.
+
+MOTION1preflight38768437038passed all10browser scenarios, including visible neon path and actual mouse drag. Final completion-status accuracy check added; cumulative QA pending. Same-layer mixed pixel-region/original-object cue sequencing remains an explicit compatibility gap; not silently closed or removed.
