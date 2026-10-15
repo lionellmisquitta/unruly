@@ -8,3 +8,5 @@ CAS metadata/append/budget commit atomically. Tombstones retain increasing revis
 Native board JSON excludes recording. Separate JSON backup contains complete local recording; after validation, explicit confirmation can rebind recorded root board IDs into the current board's empty recording slot without altering live artwork. All stroke/layer identities within recorded snapshots retained. Import never replaces an existing recording. Discard is separately confirmed. Browser eviction/site clearing remains possible; backups recommended.
 
 Preview is disposable and read-only to h.board; Stop/Close/error restores original view. Pause on blur/hidden/resize, explicit resume. Renderer errors surface through existing render status and cannot alter artwork; bounded state validation does not establish every imported board can render within backing limits. Existing rendering/performance limits remain.
+
+Retained insert fragments explicitly own UTF-16 backing in8192-unit copies; tiny deltas do not intentionally retain full previous board substrings. This code ownership rule is not a measured total-process-RAM claim.
