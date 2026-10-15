@@ -39,8 +39,9 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
   if(reference||geometryKey!==groupGeometry||!groupDepth)groupCache?.clear();groupGeometry=geometryKey;
   try{
    const result=engine[method](board,view,live);
-   lastFrame=describeFrame(board,view,live,result);frames++;
-   const groupBytes=groupCache?.diagnostics().residentBytes||0,extra=clipCache.diagnostics().residentBytes+tipReserve+groupBytes;return {...result,backingBytes:result.backingBytes+extra,...(result.totalBackingBytes!==undefined?{totalBackingBytes:result.totalBackingBytes+extra}:{}),clipCacheBytes:extra-tipReserve-groupBytes,tipTemporaryBytes:tipReserve,groupCacheBytes:groupBytes};
+   const groupBytes=groupCache?.diagnostics().residentBytes||0,extra=clipCache.diagnostics().residentBytes+tipReserve+groupBytes;
+   const metrics={...result,backingBytes:result.backingBytes+extra,...(result.totalBackingBytes!==undefined?{totalBackingBytes:result.totalBackingBytes+extra}:{}),clipCacheBytes:extra-tipReserve-groupBytes,tipTemporaryBytes:tipReserve,groupCacheBytes:groupBytes};
+   lastFrame=describeFrame(board,view,live,metrics);frames++;return metrics;
   }catch(error){invalidate('render-failed');throw error;}finally{reference=false;drawing=false;}
  }
  function auxiliary(method,args){

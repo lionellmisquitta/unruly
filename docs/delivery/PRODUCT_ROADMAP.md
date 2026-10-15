@@ -94,3 +94,5 @@ Next proposed painting/performance work is CAP2bounded processed-group optimizat
 User authorized next checkpoint. Base 5d5a3afcc04ff94420659b9dce0a8035594542b8. Processed-group retention/invalidation and bounded performance verification in progress; no passing or publication claim yet.32layer cap and all other pending rows preserved; KG unchanged.
 
 CAP2attempt1:361local model tests pass; local browser blocked by missing executable/invalid Chromium download. Remote cumulative and targeted browser checks pending; not published.
+
+CAP2preflights38728720281and38728923400passed. Final byte-accounting diagnostics consistency correction and cumulative verification pending; existing live version unchanged.
