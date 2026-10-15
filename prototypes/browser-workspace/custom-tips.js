@@ -1,11 +1,12 @@
+import {validateGrain,grainMask} from './grain.js';
 import {pressureWidth,pressureOpacity} from './pen-input.js';
 export const tipLimits=Object.freeze({dimension:128,stamps:4096,sampledPixels:4194304,sections:16,brushes:32,libraryBytes:1048576});
 export const TIP_DEFAULTS=Object.freeze({spacing:.25,spacingJitter:0,lateral:0,linear:0,rotation:'fixed',angle:0,count:1,countJitter:0,sizeJitter:0,opacityJitter:0,flipX:false,flipY:false});
 const fail=m=>{throw Error(m);},num=(x,a,b)=>Number.isFinite(x)&&x>=a&&x<=b,exact=(x,keys)=>x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).sort().join(',')===[...keys].sort().join(',');
 export function validateTip(t){
- if(!exact(t,['version','width','height','mask','options','seed','scale','angle'])||t.version!==1||![t.width,t.height].every(x=>Number.isInteger(x)&&x>=1&&x<=128)||typeof t.mask!=='string'||t.mask.length!==4*Math.ceil(t.width*t.height/3)||!Number.isInteger(t.seed)||!num(t.seed,0,4294967295)||!num(t.scale,.0001,10000)||!num(t.angle,-1e7,1e7))fail('Invalid image tip');
+ if(!exact(t,['version','width','height','mask','options','seed','scale','angle',...(t?.version===2?['grain']:[])])||![1,2].includes(t.version)||![t.width,t.height].every(x=>Number.isInteger(x)&&x>=1&&x<=128)||typeof t.mask!=='string'||t.mask.length!==4*Math.ceil(t.width*t.height/3)||!Number.isInteger(t.seed)||!num(t.seed,0,4294967295)||!num(t.scale,.0001,10000)||!num(t.angle,-1e7,1e7))fail('Invalid image tip');
  let raw;try{raw=atob(t.mask);}catch{fail('Invalid tip mask');}if(raw.length!==t.width*t.height||btoa(raw)!==t.mask||!Array.from(raw).some(c=>c.charCodeAt(0)))fail('Tip mask must contain visible pixels');
- const o=t.options;if(!exact(o,Object.keys(TIP_DEFAULTS))||!num(o.spacing,.05,3)||!['spacingJitter','countJitter','sizeJitter','opacityJitter'].every(k=>num(o[k],0,1))||!['lateral','linear'].every(k=>num(o[k],0,2))||!['fixed','follow','random'].includes(o.rotation)||!num(o.angle,-180,180)||!Number.isInteger(o.count)||!num(o.count,1,8)||!['flipX','flipY'].every(k=>typeof o[k]==='boolean'))fail('Invalid image tip controls');return t;
+ if(t.version===2)validateGrain(t.grain);const o=t.options;if(!exact(o,Object.keys(TIP_DEFAULTS))||!num(o.spacing,.05,3)||!['spacingJitter','countJitter','sizeJitter','opacityJitter'].every(k=>num(o[k],0,1))||!['lateral','linear'].every(k=>num(o[k],0,2))||!['fixed','follow','random'].includes(o.rotation)||!num(o.angle,-180,180)||!Number.isInteger(o.count)||!num(o.count,1,8)||!['flipX','flipY'].every(k=>typeof o[k]==='boolean'))fail('Invalid image tip controls');return t;
 }
 export function imageTip(decoded,mode='alpha',invert=false){
  if(!['alpha','grayscale'].includes(mode)||typeof invert!=='boolean'||!decoded||!Number.isInteger(decoded.width)||!Number.isInteger(decoded.height)||decoded.width<1||decoded.height<1||decoded.width>1024||decoded.height>1024||decoded.data?.length!==decoded.width*decoded.height*4)fail('Invalid tip image');
@@ -31,7 +32,7 @@ export function visitTip(s,visit=()=>{}){
 }
 export function drawTip(ctx,s){
  // Admission completes before allocating/drawing; no partial replay on work overflow.
- visitTip(s);const t=s.tip,c=document.createElement('canvas');c.width=t.width;c.height=t.height;const cc=c.getContext('2d'),data=cc.createImageData(t.width,t.height),raw=atob(t.mask),rgb=s.color.slice(1).match(/../g).map(x=>parseInt(x,16));
+ visitTip(s);const t=s.tip,c=document.createElement('canvas');c.width=t.width;c.height=t.height;const cc=c.getContext('2d'),data=cc.createImageData(t.width,t.height),raw=grainMask(t),rgb=s.color.slice(1).match(/../g).map(x=>parseInt(x,16));
  for(let i=0;i<raw.length;i++){data.data.set(rgb,i*4);data.data[i*4+3]=raw.charCodeAt(i);}cc.putImageData(data,0,0);
  try{visitTip(s,p=>{ctx.save();try{ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.flipX?-1:1,p.flipY?-1:1);ctx.globalAlpha=p.opacity;const f=p.width/Math.max(t.width,t.height);ctx.drawImage(c,-t.width*f/2,-t.height*f/2,t.width*f,t.height*f);}finally{ctx.restore();}});}finally{c.width=c.height=1;}
 }
