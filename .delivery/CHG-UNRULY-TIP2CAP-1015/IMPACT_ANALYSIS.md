@@ -12,3 +12,6 @@ Recovery: test unchanged IDB storage with mixed50layer save/reload, prior-valid 
 Contracts: oldv1tips/neutralgrain/sourcepixel oracle remain exact; model/history/import/clipboard/effects/offline budgets and masks unchanged. renderer receives only a computed alpha mask via existing hook; no raw renderer edits. No capacity bump before successful probe. No MotionTrace/timelapse/sync/AI/other roadmap removal. Manual allowed diff review, not protected CI path enforcement. Same-session owner-authorized personal-project merge/publication, not independent approval.
 
 Rollback: retain native JSON/library backups; old readers rejectv13or>32layers. Deploy only exact green candidate; compare every hosted file. Restore prior tested publication pin if needed, without rewriting stored boards. Bounded UI reuses current editor workflow; no UX redesign.
+
+## Revision1 — before capacity-limit implementation
+If the50layer probe succeeds, a shared capacity.jsconstant will replace duplicate32limits in model.js/image-import.js without introducing a model↔image circular import. Add this runtime path, and add model.test.mjs/image-import.model.test.mjs for intentional boundary migration from32/33to50/51. Retain all original overflow/atomicity checks and add explicit32compatibility and50positive tests. No limit change yet; measured probe remains prerequisite.
