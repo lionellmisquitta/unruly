@@ -1,0 +1,10 @@
+{
+  "status": "PASSED",
+  "method": "stdlib recursive checker; rejects unsupported keywords; checks all keywords present in these three schemas plus regression/test-ID links",
+  "files": [
+    "impact.yaml",
+    "plan.yaml",
+    "impact-analysis.json"
+  ],
+  "bundledValidator": "BLOCKED: jsonschema dependency missing in both available Python environments; not claimed executed successfully"
+}

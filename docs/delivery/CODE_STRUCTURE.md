@@ -41,7 +41,7 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 | Composition | folders.js, masks.js, clipping.js | Pass-through folder visibility/locks, leaf masks, clip sources and alpha lock. Adjusted folders now isolate for combined HSL/levels. Unadjusted folders remain pass-through; folder masks/group opacity/blend are still pending. |
 | Renderer boundary | render.js, render-contract.js | Chooses replay/reference behavior, composition/cache hooks and diagnostics. No document-storage writes here. |
 | Renderer implementation/cache | canvas2d-renderer.js, layer-compositor.js, raster-cache.js | Original replay oracle, retained live rendering, backing/cache budgets and invalidation. Changed pixels require reference comparisons. |
-| Colour adjustments | adjustments.js, adjustment-ui.js, effect-compositor.js | Pure HSL/levels validation/math without model imports; separate modal controller; isolated combined-group replay. model validates v10 and wraps commands; render applies leaf colour before masks/clip and group colour after children. Group replay is full-frame, budget accounts temporary depth; no target-device performance claim. |
+| Colour adjustments | adjustments.js, adjustment-ui.js, effect-compositor.js | Pure HSL/levels validation/math without model imports; separate modal controller; isolated combined-group replay. model validates v10 and wraps commands; render applies leaf colour before masks/clip and group colour after children. Group isolation uses padded full-frame surfaces; CAP2 adds optional bounded processed-folder retention at the facade/compositor boundary. Budget includes retained bytes and temporary depth; no target-device performance claim. |
 | Curves / Gaussian blur | filters.js, filter-ui.js; narrow model/render/effect-compositor hooks | v11metadata; pure curve LUT and bounded premultiplied Gaussian reference/fallback; native checked Canvas2D blur, full padded replay. Curves then blur after HSL, before leaf masks/clipping. Padding includes maximum nested blur-branch support; enlarged offscreen buffers and group depth fit80MiB backing. Clipping cache now has bounded processed-folder matte capture for blur alpha. Original snapshots unchanged. |
 | Text/import | text.js, image-import.js, image-clipboard.js | Input limits, text/raster representation, reference separation and clipboard portability. |
 | Persistence/offline delivery | storage.js, sw.js | storage validates through model; revision/conflict/save guards. sw asset list/cache revision must include every new runtime module. Offline smoke required. |
@@ -117,3 +117,23 @@ A logical module map, not a regenerated knowledge graph or executed ASTgraph. Ex
 CAP1found50layer mixed full replay ~0.5sDPR1/~1.2sDPR2onCI; paired removal of group HSL/blur reduces warm work to~65–180ms. Group effect isolation currently causes full replay, so CAP2should investigate retained processed-group surfaces plus exact invalidation/backing allowances. No unmeasured renderer rewrite or layer-cap increase included.30–50interactive performance and physical device/long-session acceptance remain OPEN. Detailed fixture/results and recovery cases in .delivery/CHG-UNRULY-TIP2CAP-1015/CAPACITY_REPORT.*.
 
 CAP1decision:32layer model/image-import boundary unchanged; no capacity.jsor old assertion migration implemented. The conditional initial scope was superseded by measured Revision2before any cap change. Full capacity/performance work is explicitly carried intoCAP2. KG unchanged.
+
+## CAP2 localization — verified and published, 15-Oct-2026
+Base5d5a3afcc04ff94420659b9dce0a8035594542b8; final candidate90630dd21ab35c5b4000ce93bcbeddd98017a8f5. render.js owns lifecycle and80MiBheadroom calculation; group-cache.js owns<=16MiBfull padded surfaces, key lookup, replacement/release and allocation-failure bypass. effect-compositor.js optionally reuses processed folders before existing afterGroup matte capture. Whole-board content serialization conservatively invalidates all groups after committed edits; live content affects containing groups and external clipping-input groups. External consumers of descendant leaf/nested-group mattes prohibit skips that would omit required captures. Geometry/helpers/reference/failure release retained stores. Reference mode never reuses processed surfaces.
+
+```mermaid
+flowchart TD
+ R["Renderer facade and budgets"]
+ C["Processed group cache"]
+ E["Group traversal and effects"]
+ M["Existing clipping matte capture"]
+ B["Unchanged Canvas2D replay"]
+ R --> C
+ R --> B
+ B --> E
+ E --> C
+ E --> M
+```
+Logical responsibility map only; no graph regeneration or global coupling claim. Original canvas2d-renderer/model/storage/clipping/filters/folders and other application modules remain byte-identical. SW adds group-cache.js and cache identity. Six legacy offline test files migrate only exact SWversion literals; no assertions removed. Scoped SCOPE_REVIEW/CONTRACT_CHECK/PERFORMANCE_REPORT/QA_RECEIPT/PUBLICATION_RECEIPT hold source evidence. Mixed fixtures improve but active effect processing and unretained/unadjusted leaf replay remain expensive.32layer cap and real-device/30–50interactive targets remain open.
+
+Source 90630dd21ab35c5b4000ce93bcbeddd98017a8f5; cumulative CI 38729736179 SUCCESS: 361 model tests, 322 Chromium scenarios, 145 source identities verified from the downloaded artifact. PR16 merge 2fff3989c3964bbd6bcdcef11f943b088cb066db has the exact tested tree. Publication commit 6196d39e47b90bae9be279b18c789588cd053141; Pages 38731877005 SUCCESS with 55 hosted application files matching tested bytes.

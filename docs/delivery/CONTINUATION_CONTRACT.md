@@ -1,6 +1,23 @@
 # UNRULY continuation contract
 
-## Current — TIP2 + CAP1 batch15-Oct-2026
+## Current — CAP2 published, 15-Oct-2026
+
+Source 90630dd21ab35c5b4000ce93bcbeddd98017a8f5; cumulative CI 38729736179 SUCCESS: 361 model tests, 322 Chromium scenarios, 145 source identities verified from the downloaded artifact. PR16 merge 2fff3989c3964bbd6bcdcef11f943b088cb066db has the exact tested tree. Publication commit 6196d39e47b90bae9be279b18c789588cd053141; Pages 38731877005 SUCCESS with 55 hosted application files matching tested bytes.
+
+CAP2 engineering scope is complete: optional processed-folder retention, exact content/live/view/hierarchy/clipping invalidation, bounded backing and replay fallback. It changes no saved format or document limit.51 existing application files remain byte-identical to base; model/storage/original renderer/clipping/filters/folders unchanged. Existing six offline tests changed only the exact worker identity literals.
+
+35 cached/reference mutation cases per DPR1/2, growing-live strokes, mask drafts, helper/reference/resize recovery and zero-budget fallback passed;361 model tests include ownership/headroom/allocation-failure cases. All cumulative legacy assertions retained. Current32layer cap,8MiBboard,16MiBhistory and80MiBbacking remain. Retention is capped16MiB and further limited to actual spare backing.
+
+Measured mixed50layer renderer-only warm medians~231msDPR1/~527msDPR2 in targeted preflight, versus prior~0.5s/~1.2s across runs. This is improvement, not interactive50layer readiness. Active group effects and unretained/unadjusted layers still replay. Full30–50interactive target plus Surface/Xiaomi/Lenovo pen/palm/latency/long-session/processRAM acceptance remain OPEN.50layers are not admitted/saved documents.
+
+Next proposed feature: Motion Trace REQ-017/C09M, then persistent timelapse recording/replay and video export, artwork export and release-candidate testing as discussed. No next build automatically authorized. No early-access scope cut approved: Drive sync, BYOK AI and every other full PRODUCT_ROADMAP row remain retained. TIP1 alpha-lock custom-tip gap also remains.
+
+Five published application batches since last authorized graph refresh; knowledge graph unchanged. Same-session owner-authorized verification/publication, not independent approval or physical-device sign-off. Scoped impact/plan/revisions/attempts/performance/scope/QA/publication receipts are in .delivery/CHG-UNRULY-CAP2-1015/. Local browser was blocked by missing Chromium/download failure; GitHub Chromium executed. Bundled contract validator dependency was unavailable; explicit stdlib schema/link check passed, not a claim of external validator execution.
+
+Earlier current/active sections below are historical.
+
+
+## Historical — TIP2 + CAP1 batch15-Oct-2026
 Source3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba; CI38671904693SUCCESS358models/320Chromium/142source identities. PR15mergeff4b756709da36cff77edab0ed56aeb67e39ff52 exact tested tree. Publicationeeca0961697662996aa2c752db4d9d350dd23f4a; Pages38673569838SUCCESS54hosted byte matches. Same-session owner-authorized personal-project process; no independent approval/physical-device/50layer readiness/processRAM claim.
 
 Brush Library→Image tips & sections: New Splatter/New Sprinkle opens a ready-to-save preset; edit any image tip→Grain texture→Import grain image. PNG/JPEG through existing12MiB/2048pxdecoder;64pxgrainmask, scale4–128tip pixels/depth0–1/rotation±180/invert/remove. Grain tiles within each stamp and transforms with it; it is not a world-locked canvas texture. v13strokes embed grain/mask/options/seed/effective dynamics; library/clipboard/native JSON/Undo/Redo/reload/offline verified. Depth0preserves old pixels exactly. Existing vector-only/alpha-lock/mask/smudge compatibility limits remain.
