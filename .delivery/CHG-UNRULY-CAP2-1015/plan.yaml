@@ -79,7 +79,8 @@
           "id": "cumulative-qa",
           "command": [
             "bash",
-            "/tmp/unruly-cap2-cumulative.sh"
+            "-lc",
+            "node --test tests/browser-workspace/*.mjs"
           ],
           "timeout_seconds": 1560
         }
