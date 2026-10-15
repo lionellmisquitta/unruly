@@ -77,3 +77,6 @@ No Photos connector, automatic subject segmentation or folder conversion claimed
 
 ## Authorized painting batch —15-Oct-2026
 TIP2thenCAP1in one delivery; separate checkpoint gates/status. Basee880b0a; scope .delivery/CHG-UNRULY-TIP2CAP-1015/. No capacity bump without successful measured probe. Physical device acceptance retained pending. All other roadmap rows preserved; KG unchanged.
+
+## Painting batch measured finding —15-Oct-2026
+TIP2implemented, verification in progress. CAP1probe38671573229shows50layer mixed replay preserves exact reference pixels/backing bounds, but warm450–476msDPR1and1058–1080msDPR2does not establish interactive readiness. Keep32layer cap. CAP1measurement/recovery engineering gate proceeds; CAP2render-performance optimization and physical-tablet/30–50acceptance remain explicitly OPEN. User-authorized split for substantial capacity findings; no requirement removed. One new UI selector failed by counting folder rows, not lost/saved artwork. No publication yet. KG unchanged.

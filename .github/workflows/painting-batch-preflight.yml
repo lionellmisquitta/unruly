@@ -25,7 +25,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p tests/browser-workspace/evidence
-          node --test tests/browser-workspace/grain.model.test.mjs > tests/browser-workspace/evidence/grain-model.txt 2>&1
+          node --test tests/browser-workspace/capacity.model.test.mjs tests/browser-workspace/grain.model.test.mjs > tests/browser-workspace/evidence/grain-model.txt 2>&1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/preflight-server.log 2>&1 &
           qa_batch_pid=$!
           trap 'kill "$qa_batch_pid" 2>/dev/null || true' EXIT
