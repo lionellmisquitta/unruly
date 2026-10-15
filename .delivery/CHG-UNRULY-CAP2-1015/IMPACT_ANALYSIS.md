@@ -1,0 +1,6 @@
+# CAP2 impact revision1
+Base 5d5a3afcc04ff94420659b9dce0a8035594542b8; user authorized next CAP2 checkpoint15-Oct-2026. Same-session verification and existing owner publication authorization apply.
+
+Direct callers: render.js injects composeEffects into unchanged canvas2d-renderer.js. composeEffects builds sorted hierarchy and applies group HSL/curves/blur before afterGroup matte capture. clipping.js requires leaf captures for external clipping consumers: groups containing externally referenced leaf sources must bypass reuse. Group outputs can supply their own processed matte on cache hits. Global serialized board content conservatively invalidates all group entries on any committed content change. Live signatures affect containing groups and any groups with external clipping inputs. Hierarchy, geometry and effect metadata belong to keys; mutable live point arrays must never key by identity alone.
+
+Budget: retain full padded group surfaces only within spare80MiB after engine surfaces, temporary effect depth, clip reserve and tip. Drop retention before geometry/backing resize or helpers. No default renderer or saved format changes. Existing frozen raw source/pixels remain authoritative. No UX route needed.

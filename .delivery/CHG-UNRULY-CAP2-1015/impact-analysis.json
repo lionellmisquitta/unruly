@@ -1,0 +1,49 @@
+{
+  "change_id": "CHG-UNRULY-CAP2-1015",
+  "baseline_id": "5d5a3afcc04ff94420659b9dce0a8035594542b8",
+  "scope_envelope": {
+    "target": [
+      "Bounded processed group retention at existing renderer facade"
+    ],
+    "contract": [
+      "Uncached group oracle, exact pixels, clip matte semantics,80MiBbacking"
+    ],
+    "regression": [
+      "Legacy frozen renderer source/pixels and cumulative suite, storage recovery"
+    ],
+    "excluded_legacy": [
+      "Layer-cap increase, renderer rewrite, GPU/Rust, other product scope, graph"
+    ],
+    "unknown_boundary": [
+      "Physical devices/long-session/processRAM"
+    ]
+  },
+  "confirmed_impacts": [
+    "render.js wires cache lifecycle and budgets",
+    "effect-compositor.js optionally reuses processed groups",
+    "group-cache.js owns bounded surfaces",
+    "sw.js adds module and identity"
+  ],
+  "likely_impacts": [],
+  "regression_obligations": [
+    "cache:group-browser",
+    "budget:group-model",
+    "recovery:capacity-browser",
+    "legacy:cumulative-qa"
+  ],
+  "technical_constraints": [
+    "TECHNICAL_CONSTRAINTS.md"
+  ],
+  "unknowns": [
+    "Target-device acceptance remains open"
+  ],
+  "ux_route": "not_required",
+  "evidence_refs": [
+    "AGENTS.md",
+    "docs/delivery/PRODUCT_ROADMAP.md",
+    "prototypes/browser-workspace/render.js",
+    "prototypes/browser-workspace/effect-compositor.js",
+    "prototypes/browser-workspace/clipping.js",
+    "tests/browser-workspace/capacity.browser.cjs"
+  ]
+}
