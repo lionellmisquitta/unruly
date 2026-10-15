@@ -141,3 +141,18 @@ The original renderer/storage/selection/wand/lasso/history implementation remain
 Next proposed feature: timelapse recording/replay, then clean video export,artboards/artwork export and release-candidate testing. No next build automatically authorized. Motion mixed-target compatibility,physical device/long-session/palm/pen/audience review and30–50interactive performance remain retained OPEN. All other PRODUCT_ROADMAP rows—including Drive sync and BYOK AI first-release intent—remain. No early-access scope cut approved. Six published application batches since last authorized graph refresh; KG unchanged. No skill modifications.
 
 Scoped impact/plan/UX/visual contracts,failed attempts,preflight,scope,known limits,change-impact map,QA and publication receipts are in .delivery/CHG-UNRULY-MOTION1-1015/.
+
+## TIME1 active build —15-Oct-2026
+REQ-009/C10 persistent local board-change recording/replay authorized. Base9165878; implementation not yet verified/published. Bounded append-only deltas, explicit start/pause/resume, reload-paused recovery, disposable replay/idle skipping and recording backup are in scope. Continuous handwriting interpolation, clean video export/framing remain separate pending work. All other roadmap rows remain unchanged; KG unchanged.
+
+TIME1 review revision2: recording backup portability must handle native import assigning a new board ID. Explicit attach-to-empty-slot confirmation added to scope; no artwork replacement or silent recording overwrite. Candidate8e5e4fad under CI, unpublished. All other rows/KG unchanged.
+
+TIME1attempt8e5e4fad: preflight38778480189FAILED13/14; corruption assertion ran before replay read persisted data. Corrected to request replay and retain corruption/original-preservation assertions. Backup attachment revision2also pending verification. Not published; other requirements/KG unchanged.
+
+TIME1candidatef29261bfa4d8c8ed4e3ea171c9c13625f588fc46: preflight38778846585SUCCESS14browser journeys. Superseded before publication by compact replay layout and explicit2000state/32MiB boundary tests; verification pending. Scope retained, KG unchanged.
+
+TIME1attempt74e43a6c: preflight38779281817FAILED14/15;320pxStop measurement raced async replay loading. Screenshot shows visible Stop. Retain viewport assertion and wait for replay-ready before measurement; add actual layer-selection-only exclusion test. Runtime remains unpublished; all scope/KG unchanged.
+
+TIME1memory revision3: explicitly own retained delta substrings to avoid pinning superseded full board strings; final source verification required. Existing limits and all other roadmap rows remain, KG unchanged.
+
+TIME1revision4: a refused inspector entry must pause capture before error handling can abort queued writes, so Resume always rebuilds from the saved prefix. Add real mask-mode refusal→artwork edits→Resume→validated log journey. Candidate55adefd7 targeted15passed; final revised source pending. All other product scope and KG unchanged.

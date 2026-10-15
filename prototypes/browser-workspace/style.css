@@ -123,3 +123,16 @@ body.focus-mode #focus-exit{display:block}
 @media(max-width:600px){.motion-panel{top:auto;bottom:34px;left:8px;right:8px;width:auto;max-height:56dvh}.motion-panel .motion-row{gap:6px}.motion-bar{width:calc(100vw - 16px)}.motion-bar button{flex:1;min-width:90px}}
 
 .motion-panel .panel-heading{position:sticky;top:-16px;background:var(--panel);z-index:1;padding:8px 0;justify-content:space-between;align-items:center}.motion-panel #motion-save{border-color:var(--accent);font-weight:600}
+
+/* TIME1 shares the existing inspector tokens; no document/render styles changed. */
+#timelapse-status{position:fixed;right:12px;bottom:12px;z-index:7;width:auto;max-width:calc(100vw - 24px);font-size:12px;border-color:var(--accent)}
+#timelapse-status[data-error=true]{border-color:var(--warning);color:var(--warning)}
+#timelapse-panel{position:fixed;right:12px;top:68px;width:340px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 84px);overflow-y:auto;overscroll-behavior:contain;z-index:9;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 8px 24px #0005}
+#timelapse-panel[hidden],#timelapse-status[hidden]{display:none}
+#timelapse-panel h2{font-size:18px}#timelapse-panel h3{font-size:15px;margin:20px 0 8px}#timelapse-panel .note{font-size:12px}#timelapse-state,#timelapse-position{display:block;font-size:12px;color:var(--muted);line-height:1.6}
+#timelapse-panel fieldset{border:0;padding:0;margin:0 0 10px;min-width:0}#timelapse-panel legend{font-size:12px;color:var(--muted)}#timelapse-panel input[type=checkbox]{width:22px;min-height:22px;margin:0 8px 0 0;flex-shrink:0}#timelapse-panel label{justify-content:flex-start;min-height:44px;margin:4px 0;font-size:13px}#timelapse-panel input[type=range]{min-height:44px}#timelapse-panel button{min-height:44px}#timelapse-panel summary{min-height:44px;cursor:pointer;padding:12px 0;font-size:13px}#timelapse-panel details{margin-top:12px;border-top:1px solid var(--line)}
+.time-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:10px}#timelapse-start{border-color:var(--accent)}#timelapse-error{color:var(--warning);font-size:13px;line-height:1.5}#timelapse-discard-confirm{border-top:1px solid var(--line);margin-top:12px;font-size:13px;line-height:1.5}
+.timelapse-replaying #selection-overlay,.timelapse-replaying #hint,.timelapse-replaying #picker-magnifier,.timelapse-replaying #quick-transform,.timelapse-replaying #mask-controls,.timelapse-replaying #path-quick-controls{visibility:hidden}.timelapse-replaying #canvas{pointer-events:none}
+@media(max-width:600px){#timelapse-panel{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-width:none;max-height:65dvh;padding:12px}.time-actions button{font-size:13px;padding:7px 6px}}
+
+.timelapse-replaying #timelapse-record-hint,.timelapse-replaying #timelapse-record-controls,.timelapse-replaying #timelapse-playback-options,.timelapse-replaying #timelapse-replay,.timelapse-replaying #timelapse-panel details{display:none}
