@@ -16,3 +16,9 @@ export function frameText(log,index,validate){if(!Number.isInteger(index)||index
 export async function validateRecording(log,validate,yieldTask=()=>Promise.resolve()){const total=recordingHeader(log);let text='';for(let i=0;i<log.events.length;i++){text=applyEvent(text,log.events[i]);const b=JSON.parse(text);validate(b);if(b.id!==log.boardId)fail();if(i%16===15)await yieldTask();}return{bytes:total,text};}
 export function timeline(events,skipIdle=true){let time=0;return events.map((e,i)=>{if(i){const raw=Math.max(16,e.at-events[i-1].at);time+=skipIdle?Math.min(raw,1000):raw;}return time;});}
 export function frameAtTime(times,time){let low=0,high=times.length-1;while(low<high){const mid=Math.ceil((low+high)/2);if(times[mid]<=time)low=mid;else high=mid-1;}return low;}
+// Rebind recorded root board identities only, after full validation and explicit UI consent.
+export async function attachRecording(log,boardId,validate,yieldTask=()=>Promise.resolve()){
+ if(!validTimeId(boardId))fail();await validateRecording(log,validate,yieldTask);let text='',previous='';const events=[];
+ for(let i=0;i<log.events.length;i++){const e=log.events[i];text=applyEvent(text,e);const b=JSON.parse(text);b.id=boardId;validate(b);const next=JSON.stringify(b);events.push({...e,view:{...e.view},delta:textDelta(previous,next)});previous=next;if(i%16===15)await yieldTask();}
+ const result={version:1,boardId,events};recordingHeader(result);return result;
+}

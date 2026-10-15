@@ -144,3 +144,7 @@ Scoped impact/plan/UX/visual contracts,failed attempts,preflight,scope,known lim
 
 ## TIME1 active build —15-Oct-2026
 REQ-009/C10 persistent local board-change recording/replay authorized. Base9165878; implementation not yet verified/published. Bounded append-only deltas, explicit start/pause/resume, reload-paused recovery, disposable replay/idle skipping and recording backup are in scope. Continuous handwriting interpolation, clean video export/framing remain separate pending work. All other roadmap rows remain unchanged; KG unchanged.
+
+TIME1 review revision2: recording backup portability must handle native import assigning a new board ID. Explicit attach-to-empty-slot confirmation added to scope; no artwork replacement or silent recording overwrite. Candidate8e5e4fad under CI, unpublished. All other rows/KG unchanged.
+
+TIME1attempt8e5e4fad: preflight38778480189FAILED13/14; corruption assertion ran before replay read persisted data. Corrected to request replay and retain corruption/original-preservation assertions. Backup attachment revision2also pending verification. Not published; other requirements/KG unchanged.

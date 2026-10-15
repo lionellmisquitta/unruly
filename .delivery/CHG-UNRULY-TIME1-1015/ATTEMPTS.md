@@ -1,3 +1,5 @@
 # TIME1 attempts
 
 Initial implementation:12new pure tests passed. Exact SWidentity migrations required7existing offline test files; plan revised explicitly to those observed files before verification. No existing assertion removed. No browser result claimed yet. Graph unchanged.
+
+Candidate8e5e4fad3472b3b028521df0f3ec2b1320672e28: targeted preflight38778480189/job116572196005 FAILED13/14browser journeys. Corrupt-log test asserted error on opening an active recorder (which intentionally retains in-memory events) before requesting replay's persisted-log read. Correct test to request replay, then assert persisted corruption rejection, unchanged pixels/artwork. Other13journeys passed. Artifact11994548184 SHA2566f2fc17c5517c131bfed3b942e4dd5eea22b21fbdd0ae4526ef03ded5e8a14e8. Never published. Revision2adds explicit portable-backup attachment; initial new model assertion incorrectly compared old/new serialized IDs after remapping its board object; corrected expectation includes the intentionally changed root ID.13newmodeltests now pass. No legacy assertion weakened.
