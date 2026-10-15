@@ -39,7 +39,9 @@
         "tests/browser-workspace/history-cache.browser.cjs",
         "tests/browser-workspace/render-boundary.browser.cjs",
         "tests/browser-workspace/layer-compositor.browser.cjs",
-        "tests/browser-workspace/raster-tiles.browser.cjs"
+        "tests/browser-workspace/raster-tiles.browser.cjs",
+        "tests/browser-workspace/adjustments.browser.cjs",
+        "tests/browser-workspace/pixel-paint.browser.cjs"
       ],
       "test_paths": [
         "tests/browser-workspace/group-cache.model.test.mjs",
@@ -47,7 +49,9 @@
         "tests/browser-workspace/history-cache.browser.cjs",
         "tests/browser-workspace/render-boundary.browser.cjs",
         "tests/browser-workspace/layer-compositor.browser.cjs",
-        "tests/browser-workspace/raster-tiles.browser.cjs"
+        "tests/browser-workspace/raster-tiles.browser.cjs",
+        "tests/browser-workspace/adjustments.browser.cjs",
+        "tests/browser-workspace/pixel-paint.browser.cjs"
       ],
       "tests": [
         {

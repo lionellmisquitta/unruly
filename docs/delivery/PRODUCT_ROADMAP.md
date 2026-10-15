@@ -96,3 +96,5 @@ User authorized next checkpoint. Base 5d5a3afcc04ff94420659b9dce0a8035594542b8. 
 CAP2attempt1:361local model tests pass; local browser blocked by missing executable/invalid Chromium download. Remote cumulative and targeted browser checks pending; not published.
 
 CAP2preflights38728720281and38728923400passed. Final byte-accounting diagnostics consistency correction and cumulative verification pending; existing live version unchanged.
+
+CAP2attempt2: cumulative38729191826FAILED on stale offline SWsuffixHSLB06. Scope revision permits only version-literal migrations in two additional offline tests; no publication, cap change or requirement closure. All product rows retained.
