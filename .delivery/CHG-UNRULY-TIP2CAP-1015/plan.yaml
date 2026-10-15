@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "change_id": "CHG-UNRULY-TIP2CAP-1015",
+  "route": "standard_change",
+  "prohibited_paths": [
+    ".knowledge/",
+    "knowledge/",
+    "knowledge-graph/",
+    "native/",
+    "src/",
+    "prototypes/browser-workspace/storage.js",
+    "prototypes/browser-workspace/canvas2d-renderer.js",
+    "prototypes/browser-workspace/filters.js",
+    "prototypes/browser-workspace/clipping.js",
+    "prototypes/browser-workspace/brushes.js"
+  ],
+  "test_config_changes": [
+    ".github/workflows/browser-workspace.yml",
+    ".github/workflows/painting-batch-preflight.yml"
+  ],
+  "checkpoints": [
+    {
+      "id": "TIP2",
+      "allowed_paths": [
+        "prototypes/browser-workspace/grain.js",
+        "prototypes/browser-workspace/grain-ui.js",
+        "prototypes/browser-workspace/custom-tips.js",
+        "prototypes/browser-workspace/custom-tips-ui.js",
+        "prototypes/browser-workspace/model.js",
+        "prototypes/browser-workspace/selection.js",
+        "prototypes/browser-workspace/render.js",
+        "prototypes/browser-workspace/index.html",
+        "prototypes/browser-workspace/style.css",
+        "prototypes/browser-workspace/sw.js",
+        "prototypes/browser-workspace/image-import.js",
+        "tests/browser-workspace/grain.model.test.mjs",
+        "tests/browser-workspace/grain.browser.cjs",
+        "tests/browser-workspace/capacity.browser.cjs",
+        "tests/browser-workspace/capacity.model.test.mjs",
+        "tests/browser-workspace/u1.model.test.mjs",
+        "tests/browser-workspace/layered-baseline.browser.cjs",
+        "tests/browser-workspace/folders.model.test.mjs",
+        "tests/browser-workspace/adjustments.browser.cjs",
+        "tests/browser-workspace/pixel-paint.browser.cjs",
+        "tests/browser-workspace/history-cache.browser.cjs",
+        "tests/browser-workspace/layer-compositor.browser.cjs",
+        "tests/browser-workspace/raster-tiles.browser.cjs",
+        "tests/browser-workspace/render-boundary.browser.cjs",
+        ".github/workflows/browser-workspace.yml",
+        ".github/workflows/painting-batch-preflight.yml",
+        ".delivery/CHG-UNRULY-TIP2CAP-1015/",
+        "docs/delivery/"
+      ],
+      "test_paths": [
+        "tests/browser-workspace/grain.model.test.mjs",
+        "tests/browser-workspace/grain.browser.cjs",
+        "tests/browser-workspace/capacity.browser.cjs",
+        "tests/browser-workspace/capacity.model.test.mjs",
+        "tests/browser-workspace/u1.model.test.mjs",
+        "tests/browser-workspace/layered-baseline.browser.cjs",
+        "tests/browser-workspace/folders.model.test.mjs",
+        "tests/browser-workspace/adjustments.browser.cjs",
+        "tests/browser-workspace/pixel-paint.browser.cjs",
+        "tests/browser-workspace/history-cache.browser.cjs",
+        "tests/browser-workspace/layer-compositor.browser.cjs",
+        "tests/browser-workspace/raster-tiles.browser.cjs",
+        "tests/browser-workspace/render-boundary.browser.cjs"
+      ],
+      "tests": [
+        {
+          "id": "grain-model",
+          "command": [
+            "node",
+            "--test",
+            "tests/browser-workspace/grain.model.test.mjs"
+          ],
+          "timeout_seconds": 120
+        },
+        {
+          "id": "grain-browser",
+          "command": [
+            "node",
+            "tests/browser-workspace/grain.browser.cjs"
+          ],
+          "timeout_seconds": 180
+        },
+        {
+          "id": "cumulative-qa",
+          "command": [
+            "node",
+            "--test",
+            "tests/browser-workspace/*.mjs"
+          ],
+          "timeout_seconds": 180
+        }
+      ]
+    },
+    {
+      "id": "CAP1",
+      "allowed_paths": [
+        "prototypes/browser-workspace/grain.js",
+        "prototypes/browser-workspace/grain-ui.js",
+        "prototypes/browser-workspace/custom-tips.js",
+        "prototypes/browser-workspace/custom-tips-ui.js",
+        "prototypes/browser-workspace/model.js",
+        "prototypes/browser-workspace/selection.js",
+        "prototypes/browser-workspace/render.js",
+        "prototypes/browser-workspace/index.html",
+        "prototypes/browser-workspace/style.css",
+        "prototypes/browser-workspace/sw.js",
+        "prototypes/browser-workspace/image-import.js",
+        "tests/browser-workspace/grain.model.test.mjs",
+        "tests/browser-workspace/grain.browser.cjs",
+        "tests/browser-workspace/capacity.browser.cjs",
+        "tests/browser-workspace/capacity.model.test.mjs",
+        "tests/browser-workspace/u1.model.test.mjs",
+        "tests/browser-workspace/layered-baseline.browser.cjs",
+        "tests/browser-workspace/folders.model.test.mjs",
+        "tests/browser-workspace/adjustments.browser.cjs",
+        "tests/browser-workspace/pixel-paint.browser.cjs",
+        "tests/browser-workspace/history-cache.browser.cjs",
+        "tests/browser-workspace/layer-compositor.browser.cjs",
+        "tests/browser-workspace/raster-tiles.browser.cjs",
+        "tests/browser-workspace/render-boundary.browser.cjs",
+        ".github/workflows/browser-workspace.yml",
+        ".github/workflows/painting-batch-preflight.yml",
+        ".delivery/CHG-UNRULY-TIP2CAP-1015/",
+        "docs/delivery/"
+      ],
+      "test_paths": [
+        "tests/browser-workspace/grain.model.test.mjs",
+        "tests/browser-workspace/grain.browser.cjs",
+        "tests/browser-workspace/capacity.browser.cjs",
+        "tests/browser-workspace/capacity.model.test.mjs",
+        "tests/browser-workspace/u1.model.test.mjs",
+        "tests/browser-workspace/layered-baseline.browser.cjs",
+        "tests/browser-workspace/folders.model.test.mjs",
+        "tests/browser-workspace/adjustments.browser.cjs",
+        "tests/browser-workspace/pixel-paint.browser.cjs",
+        "tests/browser-workspace/history-cache.browser.cjs",
+        "tests/browser-workspace/layer-compositor.browser.cjs",
+        "tests/browser-workspace/raster-tiles.browser.cjs",
+        "tests/browser-workspace/render-boundary.browser.cjs"
+      ],
+      "tests": [
+        {
+          "id": "capacity-model",
+          "command": [
+            "node",
+            "--test",
+            "tests/browser-workspace/capacity.model.test.mjs"
+          ],
+          "timeout_seconds": 120
+        },
+        {
+          "id": "capacity-browser",
+          "command": [
+            "node",
+            "tests/browser-workspace/capacity.browser.cjs"
+          ],
+          "timeout_seconds": 240
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Existing library16sections/32brushes/1MiB; tips128px; grain64px.4096stamps/4,194,304mask-pixel replay bound; no per-stamp grain allocation. One tip canvas released per replay. Depth0 exact old alpha. Independent memory cap unchanged. Physical tablet acceptance remains pending. Scope expansion must be recorded before extra edits. KG and skills prohibited.
