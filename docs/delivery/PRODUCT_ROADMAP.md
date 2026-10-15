@@ -141,3 +141,6 @@ The original renderer/storage/selection/wand/lasso/history implementation remain
 Next proposed feature: timelapse recording/replay, then clean video export,artboards/artwork export and release-candidate testing. No next build automatically authorized. Motion mixed-target compatibility,physical device/long-session/palm/pen/audience review and30–50interactive performance remain retained OPEN. All other PRODUCT_ROADMAP rows—including Drive sync and BYOK AI first-release intent—remain. No early-access scope cut approved. Six published application batches since last authorized graph refresh; KG unchanged. No skill modifications.
 
 Scoped impact/plan/UX/visual contracts,failed attempts,preflight,scope,known limits,change-impact map,QA and publication receipts are in .delivery/CHG-UNRULY-MOTION1-1015/.
+
+## TIME1 active build —15-Oct-2026
+REQ-009/C10 persistent local board-change recording/replay authorized. Base9165878; implementation not yet verified/published. Bounded append-only deltas, explicit start/pause/resume, reload-paused recovery, disposable replay/idle skipping and recording backup are in scope. Continuous handwriting interpolation, clean video export/framing remain separate pending work. All other roadmap rows remain unchanged; KG unchanged.

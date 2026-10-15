@@ -1,0 +1,11 @@
+# TIME1 impact — revision 1
+Base: 916587824c4c8f0595a6c5c1d33eaa9424419b3b. Requirement REQ-009/C10.
+User authorized the proposed persistent timelapse recording/replay checkpoint. Personal-project verified main/Pages authorization persists; no independent/protected approval claim.
+
+Target: three new timelapse modules (pure text-delta/timing, separate IndexedDB log, UI lifecycle); narrow app commit observation/preview hooks; index/style/SW assets. Existing board model/schema, Undo patches, board storage, brushes/selection and renderers are contracts and prohibited implementation paths. Capture committed board changes including Undo/Redo, not live pointer samples. Ignore revision/active-layer-only changes. Persist baseline and bounded forward text deltas; replay reconstructs validated native boards. No board schema change. Browser-only local recording; native JSON deliberately remains artwork only. Separate recording JSON backup/import prevents device-only history loss. No credential/network transmission.
+
+Budgets: 2,000 events/32MiB UTF-8 recording per board,128MiB global recording payload; no silent eviction; up to 4 queued snapshots/32MiB plus one current text, visible stop on backpressure/quota/conflict. One log per board, reload paused; Resume records current artwork as a marked gap. New boards/imports isolate by ID. No silent replacement; explicit two-step discard. Board autosave is independent; log capture does not assert artwork persisted. Browser eviction/clearing site data still loses local data; downloadable recording backup provided.
+
+Replay: temporary board, original view restored on Stop/Close/error; changes shown atomically per committed operation, not handwriting animation. IndexedDB stores append-only event records plus CAS metadata; corrupt/partial logs reject replay/import and preserve originals. Timed playback caps long idle gaps when enabled; manual step and scrub. Pause on blur/hidden/resize; resume explicitly. Video codecs/framing/export, Motion Trace compatibility, renderer performance, Drive/AI and all retained roadmap rows excluded, not cancelled.
+
+Regression: artwork/native JSON/Undo; recording across reload/offline/board switch; pause gaps/idle timing; quota/concurrency/corruption; original view/pixels restore; existing Motion Trace; cumulative suite. Test IDs in plan. No graph/skill writes.

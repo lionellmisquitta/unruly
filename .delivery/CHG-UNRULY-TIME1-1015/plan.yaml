@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-TIME1-1015
+route: standard
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/history-patch.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/render.js, prototypes/browser-workspace/canvas2d-renderer.js]
+checkpoints:
+  - id: TIME1
+    allowed_paths: [prototypes/browser-workspace/timelapse.js, prototypes/browser-workspace/timelapse-store.js, prototypes/browser-workspace/timelapse-ui.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, docs/delivery/, .delivery/CHG-UNRULY-TIME1-1015/]
+    test_paths: [tests/browser-workspace/timelapse.model.test.mjs, tests/browser-workspace/timelapse.browser.cjs, tests/browser-workspace/motion.browser.cjs, tests/browser-workspace/group-cache.browser.cjs, tests/browser-workspace/grain.browser.cjs, tests/browser-workspace/custom-tips.browser.cjs, tests/browser-workspace/filters.browser.cjs, tests/browser-workspace/adjustments.browser.cjs, tests/browser-workspace/polygon-fill.browser.cjs]
+    tests:
+      - {id: TIME-MODEL, command: [node, --test, tests/browser-workspace/timelapse.model.test.mjs], timeout_seconds: 120}
+      - {id: TIME-BROWSER, command: [node, tests/browser-workspace/timelapse.browser.cjs], timeout_seconds: 180}
+      - {id: TIME-CUMULATIVE, command: [bash, -c, "node --test tests/browser-workspace/*.mjs"], timeout_seconds: 600}
+test_config_changes: [.github/workflows/browser-workspace.yml, .github/workflows/timelapse-preflight.yml, .github/workflows/browser-workspace-pages.yml]

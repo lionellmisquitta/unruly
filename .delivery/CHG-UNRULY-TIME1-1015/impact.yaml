@@ -1,0 +1,13 @@
+change_id: CHG-UNRULY-TIME1-1015
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/timelapse.js
+  - prototypes/browser-workspace/timelapse-store.js
+  - prototypes/browser-workspace/timelapse-ui.js
+regression_obligations:
+  - {id: TIME-R1, reason: Exact reconstruction and idle timing, test_id: TIME-MODEL}
+  - {id: TIME-R2, reason: Persistence isolation and preview safety, test_id: TIME-BROWSER}
+  - {id: TIME-R3, reason: Cumulative regression, test_id: TIME-CUMULATIVE}
