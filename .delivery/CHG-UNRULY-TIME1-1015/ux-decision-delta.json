@@ -1,0 +1,21 @@
+{
+  "change_id": "CHG-UNRULY-TIME1-1015",
+  "status": "proposed-for-owner-review",
+  "independentHumanApproval": false,
+  "scopeAuthorization": "User next checkpoint instruction and existing personal-project main/Pages authorization",
+  "decisions": [
+    {
+      "id": "UXD-TIME1",
+      "intent": "Existing cumulative canvas plus inspector; opt-in recording, reload paused, explicit gap on Resume"
+    },
+    {
+      "id": "UXD-TIME2",
+      "intent": "Read-only replay with scrub/step/idle skip and exact Stop restore"
+    },
+    {
+      "id": "UXD-TIME3",
+      "intent": "Separate recording backup, confirmed attach to empty recording, confirmed discard"
+    }
+  ],
+  "knowledgeGraphOrLedgerWrite": false
+}

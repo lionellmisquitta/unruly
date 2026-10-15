@@ -148,3 +148,5 @@ REQ-009/C10 persistent local board-change recording/replay authorized. Base91658
 TIME1 review revision2: recording backup portability must handle native import assigning a new board ID. Explicit attach-to-empty-slot confirmation added to scope; no artwork replacement or silent recording overwrite. Candidate8e5e4fad under CI, unpublished. All other rows/KG unchanged.
 
 TIME1attempt8e5e4fad: preflight38778480189FAILED13/14; corruption assertion ran before replay read persisted data. Corrected to request replay and retain corruption/original-preservation assertions. Backup attachment revision2also pending verification. Not published; other requirements/KG unchanged.
+
+TIME1candidatef29261bfa4d8c8ed4e3ea171c9c13625f588fc46: preflight38778846585SUCCESS14browser journeys. Superseded before publication by compact replay layout and explicit2000state/32MiB boundary tests; verification pending. Scope retained, KG unchanged.

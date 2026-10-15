@@ -134,3 +134,5 @@ body.focus-mode #focus-exit{display:block}
 .time-actions{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:10px}#timelapse-start{border-color:var(--accent)}#timelapse-error{color:var(--warning);font-size:13px;line-height:1.5}#timelapse-discard-confirm{border-top:1px solid var(--line);margin-top:12px;font-size:13px;line-height:1.5}
 .timelapse-replaying #selection-overlay,.timelapse-replaying #hint,.timelapse-replaying #picker-magnifier,.timelapse-replaying #quick-transform,.timelapse-replaying #mask-controls,.timelapse-replaying #path-quick-controls{visibility:hidden}.timelapse-replaying #canvas{pointer-events:none}
 @media(max-width:600px){#timelapse-panel{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-width:none;max-height:65dvh;padding:12px}.time-actions button{font-size:13px;padding:7px 6px}}
+
+.timelapse-replaying #timelapse-record-hint,.timelapse-replaying #timelapse-record-controls,.timelapse-replaying #timelapse-playback-options,.timelapse-replaying #timelapse-replay,.timelapse-replaying #timelapse-panel details{display:none}
