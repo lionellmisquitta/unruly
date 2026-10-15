@@ -1,0 +1,95 @@
+{
+  "verification": "Same-session visual self-review; no independent rating",
+  "staticValidator": "production directory, exit0,0errors",
+  "warnings": {
+    "emoji-icons": "Additional two glyphs are multiplication symbols in zoom labels, not icon substitutes; existing icon glyph predates change.",
+    "form-labels": "33baseline heuristic warnings;5additional fields use valid wrapping labels (two endpoints,threecamera fields).",
+    "tiny-type": "19baseline occurrences unchanged; new controls use existing14pxsystem type and>=44px targets."
+  },
+  "inspected": [
+    "motion-overlay-probe/MOTIONB01-manual-stop-commit-undo-failure.png (failure is test bbox only; visible neon path)",
+    "motion-overlay-probe/motion-mobile-path.png",
+    "motion-preflight-green/motion-mobile-editor.png"
+  ],
+  "scope": "Existing repository canvas/inspector conventions retained; no global redesign",
+  "score": 84,
+  "dimensions": {
+    "taskClarity": [
+      5,
+      7
+    ],
+    "hierarchy": [
+      6,
+      8
+    ],
+    "composition": [
+      6,
+      7
+    ],
+    "typography": [
+      6,
+      7
+    ],
+    "spacingDensity": [
+      6,
+      7
+    ],
+    "colourContrast": [
+      5,
+      6
+    ],
+    "componentConsistency": [
+      6,
+      6
+    ],
+    "interaction": [
+      5,
+      6
+    ],
+    "responsive": [
+      6,
+      8
+    ],
+    "accessibility": [
+      6,
+      8
+    ],
+    "dataVisualisation": [
+      5,
+      6
+    ],
+    "contentRealism": [
+      7,
+      7
+    ],
+    "states": [
+      5,
+      6
+    ],
+    "distinctiveness": [
+      4,
+      5
+    ],
+    "restraint": [
+      3,
+      3
+    ],
+    "technical": [
+      3,
+      3
+    ]
+  },
+  "weaknesses": [
+    "Mobile panel requires scrolling for secondary controls; path drawing hides panel.",
+    "No physical stylus/touch/OS accessibility acceptance.",
+    "Large region/scene latency remains unmeasured on target devices."
+  ],
+  "corrections": [
+    "Removed empty saved-list dead space",
+    "Sticky Close heading and disabled unavailable cue actions",
+    "Correct SVG visibility plus real-pointer path recording regression"
+  ],
+  "finalPreflightRun": 38768769606,
+  "finalCandidate": "81a452809df78203b067e9e6a7e02569f1b4c409",
+  "galleryConstraint": "Reference gallery currently has no validated canonical exemplars; reused current repository design and actual screenshots instead of claiming comparison to a validated gallery exemplar."
+}

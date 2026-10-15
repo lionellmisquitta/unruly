@@ -1,0 +1,111 @@
+{
+  "source": "907197e8433af20e9f8a23b409f20a842bb97312",
+  "run": 38767247208,
+  "artifact": 11989992463,
+  "artifactSHA256": "b95bd737730934649cc0c81cb0bd0e77aa0aebb4521b9874ecda53a9cb525493",
+  "status": "PASSED functional tests; superseded by visual overlay correction",
+  "results": {
+    "browser": "151.0.7922.34",
+    "physicalDevice": "NOT_VERIFIED",
+    "results": [
+      {
+        "id": "MOTIONB01-manual-stop-commit-undo",
+        "status": "PASS",
+        "evidence": {
+          "metadataOnlySave": true,
+          "manualDefault": true,
+          "stopExact": true,
+          "previewNotPersisted": true,
+          "oneUndo": true
+        }
+      },
+      {
+        "id": "MOTIONB02-timed-camera-pause-resume-and-restore",
+        "status": "PASS",
+        "evidence": {
+          "timedCamera": true,
+          "blurPause": true,
+          "explicitResume": true,
+          "exactRestore": true,
+          "persistentCues": true
+        }
+      },
+      {
+        "id": "MOTIONB03-partial-region-originals-complement-and-commit",
+        "status": "PASS",
+        "evidence": {
+          "regionMetadataOnly": true,
+          "previewUnsaved": true,
+          "farComplementExact": true,
+          "undoRestoresVectors": true
+        }
+      },
+      {
+        "id": "MOTIONB04-group-masks-clipping-text-raster-1",
+        "status": "PASS",
+        "evidence": {
+          "maskMoved": true,
+          "clipSource": "art",
+          "textEditable": true,
+          "referencePixels": true
+        }
+      },
+      {
+        "id": "MOTIONB04-group-masks-clipping-text-raster-2",
+        "status": "PASS",
+        "evidence": {
+          "maskMoved": true,
+          "clipSource": "art",
+          "textEditable": true,
+          "referencePixels": true
+        }
+      },
+      {
+        "id": "MOTIONB05-missing-target-recovery",
+        "status": "PASS",
+        "evidence": {
+          "blockedAtomically": true,
+          "cueDeletionRecovers": true
+        }
+      },
+      {
+        "id": "MOTIONB05-locked-target-recovery",
+        "status": "PASS",
+        "evidence": {
+          "blockedAtomically": true,
+          "cueDeletionRecovers": true
+        }
+      },
+      {
+        "id": "MOTIONB06-native-invalid-motion-rejected",
+        "status": "PASS",
+        "evidence": {
+          "invalidNativeAtomic": true
+        }
+      },
+      {
+        "id": "MOTIONB07-mobile-path-cancel-and-keyboard",
+        "status": "PASS",
+        "evidence": {
+          "narrowLayout": true,
+          "pointerCancel": true,
+          "numericPath": true,
+          "escapeRestores": true
+        }
+      },
+      {
+        "id": "MOTIONB08-offline-native-cues-and-module-graph",
+        "status": "PASS",
+        "evidence": {
+          "cachedModules": [
+            true,
+            true,
+            true
+          ],
+          "offlineReplay": true
+        }
+      }
+    ]
+  },
+  "visualIssue": "Hidden SVG overlay caught by screenshot review and fixed in next candidate."
+}

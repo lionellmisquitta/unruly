@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Verified against TIP2/CAP1source3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba; CI38671904693SUCCESS358models/320Chromium/142identities; Pages38673569838SUCCESS54hosted matches. CAP1measurement/recovery only; CAP2/device capacity acceptance remains open.
+Current verified source 81a452809df78203b067e9e6a7e02569f1b4c409; CI38768769402SUCCESS372models/332Chromium/150source identities; Pages38771750451SUCCESS58hosted matches. MOTION1 engineering baseline delivered; full C09Mcompatibility/device review and30–50interactive capacity remain open.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -137,3 +137,25 @@ flowchart TD
 Logical responsibility map only; no graph regeneration or global coupling claim. Original canvas2d-renderer/model/storage/clipping/filters/folders and other application modules remain byte-identical. SW adds group-cache.js and cache identity. Six legacy offline test files migrate only exact SWversion literals; no assertions removed. Scoped SCOPE_REVIEW/CONTRACT_CHECK/PERFORMANCE_REPORT/QA_RECEIPT/PUBLICATION_RECEIPT hold source evidence. Mixed fixtures improve but active effect processing and unretained/unadjusted leaf replay remain expensive.32layer cap and real-device/30–50interactive targets remain open.
 
 Source 90630dd21ab35c5b4000ce93bcbeddd98017a8f5; cumulative CI 38729736179 SUCCESS: 361 model tests, 322 Chromium scenarios, 145 source identities verified from the downloaded artifact. PR16 merge 2fff3989c3964bbd6bcdcef11f943b088cb066db has the exact tested tree. Publication commit 6196d39e47b90bae9be279b18c789588cd053141; Pages 38731877005 SUCCESS with 55 hosted application files matching tested bytes.
+
+## MOTION1 localization — verified and published
+
+motion.js owns strict optional v14cue schema,identity remapping,target resolution,path-distance/camera interpolation and disposable translation without model/DOM/storage imports. model.js calls schema/remapping and exposes one motion command; original document budgets remain. motion-region.js alone reuses existing history/region split/complete complement primitives to prepare transient selected pixels. motion-ui.js owns inspector/draft/capture/manual-timed/Pause/Stop/Commit lifecycle. app.js adds narrow target,preview,save and commit callbacks; h.board remains the only autosave/export authority. Original renderer/storage/selection/wand/lasso/history modules are unchanged. SW adds three modules and new worker identity.
+
+```mermaid
+flowchart TD
+ UI["Motion inspector and playback"]
+ CORE["Cue schema, targets and motion math"]
+ DOC["Document validation, native import and Undo"]
+ REGION["Disposable region split and complement"]
+ HOST["Existing app preview/save/commit hooks"]
+ UI --> CORE
+ DOC --> CORE
+ UI --> HOST
+ HOST --> REGION
+ REGION --> DOC
+ HOST --> DOC
+```
+This is a logical responsibility/import map,not an executed AST graph or proof of global acyclicity. Existing app/model hubs remain. Same-layer mixed region/object target identities are a known compatibility boundary of the existing whole-layer raster split,retained OPEN rather than bypassed. Future-change surfaces and re-open triggers are in scoped CHANGE_IMPACT_COMPENDIUM.md. No graph regeneration or skill changes.
+
+Source 81a452809df78203b067e9e6a7e02569f1b4c409; cumulative CI 38768769402 SUCCESS: 372 model tests, 332 Chromium scenarios and 150 source hashes verified from the downloaded artifact. PR17 merge f7ae0187bb151bc4283458ac4ecb614743538917 has the exact tested tree. Publication commit 8a558d4ac42201f1a2d93fa69fb337c5511c73c0; Pages 38771750451 SUCCESS, with 58 hosted application files matching tested bytes.

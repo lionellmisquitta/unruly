@@ -28,7 +28,8 @@
     "motion.js owns schema/resolution/interpolation/geometry without model imports",
     "motion-region.js reuses existing region split and complete complement contracts transiently",
     "motion-ui.js owns lifecycle/input/playback; app narrow preview/command hooks",
-    "HTML/CSS reuse existing visual tokens; SW adds three modules/identity"
+    "HTML/CSS reuse existing visual tokens; SW adds three modules/identity",
+    "Existing whole-layer region conversion can invalidate later mixed region/original-object cue identities; compatibility remains OPEN without unsafe fallback"
   ],
   "likely_impacts": [],
   "regression_obligations": [
@@ -38,7 +39,8 @@
   ],
   "technical_constraints": [
     "TECHNICAL_CONSTRAINTS.md",
-    "UX_BASELINE.md"
+    "UX_BASELINE.md",
+    "KNOWN_LIMITS.md"
   ],
   "unknowns": [
     "Real-device/30\u201350interactive performance remains OPEN"

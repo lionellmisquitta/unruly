@@ -1,0 +1,10 @@
+{
+  "status": "PASSED",
+  "method": "Stdlib recursive validator for all keywords actually present in the three supplied schemas; unsupported keywords rejected. Test-ID links checked.",
+  "files": [
+    "impact.yaml",
+    "plan.yaml",
+    "impact-analysis.json"
+  ],
+  "bundledValidator": "BLOCKED: observed missing jsonschema dependency; not claimed passed."
+}
