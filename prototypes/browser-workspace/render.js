@@ -1,3 +1,4 @@
+import {createGroupCache} from './group-cache.js';
 import {drawTip,tipRadius} from './custom-tips.js';
 import {applyCanvasFilter,filterPadding} from './filters.js';
 import {applyCanvasAdjustment} from './adjustments.js';
@@ -14,11 +15,14 @@ import {decodePixels} from './raster.js';
 import {describeFrame} from './render-contract.js';
 export {graphiteGrain,rendererBudget} from './canvas2d-renderer.js';
 
-export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*1024}={}){
+export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*1024,groupCacheBytes=16*1024*1024}={}){
  if(!['auto','canvas2d'].includes(backend))throw Error('Unsupported renderer backend: '+backend);
+ const groupCache=backend==='auto'?createGroupCache({budgetBytes:groupCacheBytes}):null;let groupGeometry='';
  const rasterCache=createRasterCache(),plainCache=backend==='auto'?createLayerCompositor({budgetBytes:layerCacheBytes}):null,clippedCache=backend==='auto'?createLayerCompositor({budgetBytes:Math.max(0,Math.min(layerCacheBytes,16*1024*1024)-clipBudget)}):null,clipCache=createClipCache();let reference=false,maskPreview=null,clipMode=false,drawing=false,frameBoard=null,frameLive=null,groupDepth=0,halo=0,tipReserve=0;
  const layerCompositor=backend==='auto'?{clear:()=>{plainCache.clear();clippedCache.clear();},render:args=>(clipMode?clippedCache:plainCache).render({...args,backingLimit:args.backingLimit-(clipMode?clipBudget:0)-tipReserve})}:null;
- const engine=createCanvas2DRenderer(canvas,{drawText,drawTip,strokeRadius:tipRadius,decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>tipReserve+(clipMode?clipBudget:0)+groupDepth*300*150*4,extraSurfaces:()=>groupDepth,framePadding:v=>halo*v.scale,groupComposer:args=>composeEffects({...args,afterGroup:(n,c)=>{if(drawing&&clipMode)clipCache.captureGroup(n,c,args.view,args.g);}}),applyMask:(l,layer,scratch,v,g,decode)=>{
+ const engine=createCanvas2DRenderer(canvas,{drawText,drawTip,strokeRadius:tipRadius,decodeRaster:data=>reference?decodePixels(data):rasterCache.decode(data),layerCompositor,allocationReserve:()=>tipReserve+(clipMode?clipBudget:0)+groupDepth*300*150*4,extraSurfaces:()=>groupDepth,framePadding:v=>halo*v.scale,groupComposer:args=>{const base=4*(args.g.viewportW*args.g.viewportH+(4+groupDepth)*args.g.w*args.g.h)+(clipMode?clipBudget:0)+tipReserve;
+   groupCache?.prepare(JSON.stringify([args.view,args.g,args.board]),80*1024*1024-base);
+   return composeEffects({...args,cache:reference?null:groupCache,live:maskPreview?{live:frameLive,maskPreview}:frameLive,afterGroup:(n,c)=>{if(drawing&&clipMode)clipCache.captureGroup(n,c,args.view,args.g);}});},applyMask:(l,layer,scratch,v,g,decode)=>{
   applyCanvasAdjustment(l,layer);
   applyCanvasFilter(l,layer,scratch,g.d*v.scale);
   const adapted=maskPreview?.id===l.id?{...l,mask:{...l.mask,patch:maskPreview.patch}}:l;applyLayerMask(adapted,layer,scratch,v,g,decode);
@@ -26,15 +30,18 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
  }});
  let epoch=0,reason='initial',lastFrame=null,frames=0;
  function invalidate(why='external',releaseRaster=true){
-  if(releaseRaster)rasterCache.clear();clipCache.clear();
+  if(releaseRaster)rasterCache.clear();clipCache.clear();groupCache?.clear();groupGeometry='';
   epoch++;reason=String(why);lastFrame=null;engine.invalidate();
  }
  function draw(method,board,view={x:0,y:0,scale:1},live=null){
   board=renderBoard(board);tipReserve=[...board.layers.flatMap(l=>l.strokes),...(live?[live]:[])].reduce((n,s)=>Math.max(n,s.tip?s.tip.width*s.tip.height*4:0),0);groupDepth=effectDepth(board);halo=filterPadding(board);reference=method==='renderReference';drawing=true;frameBoard=board;frameLive=live;clipMode=board.layers.some(l=>l.clipSource);clipCache.prepare(board);
+  const geometryKey=JSON.stringify([canvas.getBoundingClientRect().width,canvas.getBoundingClientRect().height,window.devicePixelRatio,view,groupDepth,halo,tipReserve,clipMode]);
+  if(reference||geometryKey!==groupGeometry||!groupDepth)groupCache?.clear();groupGeometry=geometryKey;
   try{
    const result=engine[method](board,view,live);
-   lastFrame=describeFrame(board,view,live,result);frames++;
-   const extra=clipCache.diagnostics().residentBytes+tipReserve;return {...result,backingBytes:result.backingBytes+extra,...(result.totalBackingBytes!==undefined?{totalBackingBytes:result.totalBackingBytes+extra}:{}),clipCacheBytes:extra-tipReserve,tipTemporaryBytes:tipReserve};
+   const groupBytes=groupCache?.diagnostics().residentBytes||0,extra=clipCache.diagnostics().residentBytes+tipReserve+groupBytes;
+   const metrics={...result,backingBytes:result.backingBytes+extra,...(result.totalBackingBytes!==undefined?{totalBackingBytes:result.totalBackingBytes+extra}:{}),clipCacheBytes:extra-tipReserve-groupBytes,tipTemporaryBytes:tipReserve,groupCacheBytes:groupBytes};
+   lastFrame=describeFrame(board,view,live,metrics);frames++;return metrics;
   }catch(error){invalidate('render-failed');throw error;}finally{reference=false;drawing=false;}
  }
  function auxiliary(method,args){
@@ -53,6 +60,6 @@ export function createRenderer(canvas,{backend='auto',layerCacheBytes=16*1024*10
   snapshotRegion:(...args)=>auxiliary('snapshotRegion',args),
   invalidate,
   surfaces:engine.surfaces,
-  getDiagnostics:()=>Object.freeze({contractVersion:1,backend:'canvas2d',epoch,reason,frames,lastFrame,rasterCache:rasterCache.diagnostics(),clipCache:clipCache.diagnostics(),layerCache:(clipMode?clippedCache:plainCache)?.diagnostics()||null})
+  getDiagnostics:()=>Object.freeze({contractVersion:1,backend:'canvas2d',epoch,reason,frames,lastFrame,rasterCache:rasterCache.diagnostics(),clipCache:clipCache.diagnostics(),groupCache:groupCache?.diagnostics()||null,layerCache:(clipMode?clippedCache:plainCache)?.diagnostics()||null})
  };
 }

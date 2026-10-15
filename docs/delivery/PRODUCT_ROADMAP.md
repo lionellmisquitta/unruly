@@ -89,3 +89,12 @@ CAP1engineering gate passed defined mixed30/32/50renderer probes and32layer actu
 Recovered previous-valid revision and subsequent save, stale-tab conflict rejection, injected quota/transaction-abort preservation, invalid capacity-save rejection and native/history/UIreload verified. This does not simulate OS power loss or establish processRAM. Existing8MiBboard/16MiBhistory/80MiBbacking/folder16/depth8bounds and raw renderer/pixel oracles retained.20shared runtime modules byte-unchanged.
 
 Next proposed painting/performance work is CAP2bounded processed-group optimization with exact invalidation and capacity budgets; physical acceptance follows measured improvements. TIP1custom-tip alpha-lock, Motion Trace, timelapse/video, guides/vector/whiteboarding/PDF/export/sync/AI/wet-media/packaging and ALL other pending rows remain. Four published application batches since last authorized graph refresh; KG unchanged. Earlier in-progress attempts are historical. Scope/attempts/probe/capacity/QA/publication evidence in .delivery/CHG-UNRULY-TIP2CAP-1015/.
+
+## CAP2 active — 15-Oct-2026
+User authorized next checkpoint. Base 5d5a3afcc04ff94420659b9dce0a8035594542b8. Processed-group retention/invalidation and bounded performance verification in progress; no passing or publication claim yet.32layer cap and all other pending rows preserved; KG unchanged.
+
+CAP2attempt1:361local model tests pass; local browser blocked by missing executable/invalid Chromium download. Remote cumulative and targeted browser checks pending; not published.
+
+CAP2preflights38728720281and38728923400passed. Final byte-accounting diagnostics consistency correction and cumulative verification pending; existing live version unchanged.
+
+CAP2attempt2: cumulative38729191826FAILED on stale offline SWsuffixHSLB06. Scope revision permits only version-literal migrations in two additional offline tests; no publication, cap change or requirement closure. All product rows retained.
