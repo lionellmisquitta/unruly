@@ -154,3 +154,5 @@ TIME1candidatef29261bfa4d8c8ed4e3ea171c9c13625f588fc46: preflight38778846585SUCC
 TIME1attempt74e43a6c: preflight38779281817FAILED14/15;320pxStop measurement raced async replay loading. Screenshot shows visible Stop. Retain viewport assertion and wait for replay-ready before measurement; add actual layer-selection-only exclusion test. Runtime remains unpublished; all scope/KG unchanged.
 
 TIME1memory revision3: explicitly own retained delta substrings to avoid pinning superseded full board strings; final source verification required. Existing limits and all other roadmap rows remain, KG unchanged.
+
+TIME1revision4: a refused inspector entry must pause capture before error handling can abort queued writes, so Resume always rebuilds from the saved prefix. Add real mask-mode refusal→artwork edits→Resume→validated log journey. Candidate55adefd7 targeted15passed; final revised source pending. All other product scope and KG unchanged.
