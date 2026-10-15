@@ -58,14 +58,19 @@ jobs:
               cases=[]
               def collect(value):
                   if isinstance(value,dict):
-                      if isinstance(value.get("id"),str) and isinstance(value.get("status"),str):
-                          cases.append({"id":value["id"],"status":value["status"]})
+                      if isinstance(value.get("status"),str):
+                          cases.append({"id":value.get("id") or value.get("name") or current_report+"#"+str(len(cases)+1),"status":value["status"]})
                       else:
                           for v in value.values():collect(v)
                   elif isinstance(value,list):
                       for v in value:collect(v)
               for name in names:
-                  if name.endswith(".json"):collect(json.loads(z.read(name)))
+                  if name.endswith(".json"):
+                          current_report=name
+                          collect(json.loads(z.read(name)))
+              for report,marker,case_id in [("fullscreen-browser-output.txt","FULLSCREENB01 PASS","FULLSCREENB01"),("airbrush-size-browser-output.txt","AIRBRUSH BROWSER PASS","AIRBRUSH-BROWSER")]:
+                  assert re.search(r"^"+re.escape(marker)+r"\s*$",read(report),re.M),("Missing console-only PASS",report)
+                  cases.append({"id":case_id,"status":"PASS"})
               print("TIME1_QA_SCHEMA="+json.dumps({"sourceHashes":len(hashes),"browserScenarios":len(cases)}))
               assert len(cases)==348,("Unexpected browser count",len(cases))
               assert all(c["status"].upper()=="PASS" for c in cases),"Browser failure"
