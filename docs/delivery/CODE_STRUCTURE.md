@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Current COMP1 verified and merged; publication pending: `25ba28d74e0268ea2ce20ef76e14f28d8381546e`, CI38943248890SUCCESS476models/403structuredChromium+2legacy;174source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
+Current COMP1 published and hosted verified: `25ba28d74e0268ea2ce20ef76e14f28d8381546e`, CI38943248890SUCCESS476models/403structuredChromium+2legacy;174source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
