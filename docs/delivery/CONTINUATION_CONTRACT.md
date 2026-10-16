@@ -1,3 +1,9 @@
+# UNRULY continuation contract — PAL1 active
+
+PAL1 named palettes, RGB blend and explicit saved-reference colour picker active on based1353f1559b9e7ff82ca88c396d34da87a2399df.18new+16existing targeted model checks PASS; static UI0errors. Focused browser/cumulative QA and publication pending; live remains TIP3. Device-local palette library/ten-level session Undo stays separate from artwork history. Exact source/run/next action in scoped .delivery/CHG-UNRULY-PAL1-1016/CONTINUATION.json. All roadmap scope retained; no knowledge graph/skill update.
+
+## Historical TIP3 closeout
+
 # UNRULY continuation contract
 
 TIP3 custom image-tip alpha lock published and hosted verified. Source `77aaaf02c179e78eaef1526eabb66bd72946147c`; cumulative CI `38906112838` SUCCESS: 438 model tests, 377 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12049496093` SHA256 `7039676870fd7f1d0cb162d5e0cdba26234649d5d719a23e924d53abe695fae5` and all 167 source hashes verified. PR21 merge `3570fef4fef32cbc535f86be1f5a8a8c67d54ca8` has exactly the tested tree `3040551d0e38731c64dcc13561b5a3a769877e43`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.

@@ -147,3 +147,11 @@ body.focus-mode #focus-exit{display:block}
 .drawing-handle-line{stroke:var(--focus);stroke-width:1}
 .drawing-anchor,.drawing-handle{pointer-events:all;cursor:grab;fill:var(--panel);stroke:var(--focus);stroke-width:2}.drawing-anchor.current{fill:var(--accent)}
 @media(max-width:600px){.drawing-tools{left:12px;top:108px;max-height:calc(100dvh - 160px)}}
+
+/* PAL1: existing Colour inspector, progressive palette/mix controls. */
+#colour-popover .palette-actions{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}#colour-popover .palette-actions button{flex:1 1 130px;white-space:normal}
+#colour-popover .palette-input-row{display:flex;gap:8px;margin-bottom:10px}#colour-popover .palette-input-row input{min-width:0;flex:1}#colour-popover .palette-input-row button{flex:0 0 auto}
+#palette-manage,#palette-mixer{border-top:1px solid var(--line);margin-top:12px;padding-top:4px}#colour-popover details summary{min-height:44px;padding:12px 0;cursor:pointer}
+.palette-mix-endpoints{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.palette-mix-endpoints input[type=color]{width:100%;height:44px;padding:4px}.palette-mix-endpoints button{width:100%;margin:6px 0}
+.palette-mix-preview{display:flex;align-items:center;gap:12px;padding:8px 0}.palette-mix-preview span{width:64px;height:44px;border:1px solid var(--line);border-radius:6px}.palette-mix-preview output{font-variant-numeric:tabular-nums}
+#palette-notice[data-error=true]{color:var(--warning)}#palette-reference-pick,#reference-pick{width:100%;margin-top:8px}#reference-canvas.reference-picking{cursor:crosshair;touch-action:none;outline:2px solid var(--accent);outline-offset:2px}#reference-pick-status{overflow-wrap:anywhere}
