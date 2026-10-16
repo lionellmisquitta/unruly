@@ -1,0 +1,7 @@
+# TIP4 attempts
+
+Local preflight:15/16 guide models first passed; grained fixture used wrong property names rather than existing mask/rotation schema. Fixed fixture, preserving grain/seed assertions. CI mutation wrapper initially inherited NODE_TEST_CONTEXT, so nested children did not run as standalone suites. Fixed child environment and added mandatory actual baseline-count assertion. No application assertion weakened;21/21 new checks then497/497 cumulative local models PASS. Static validation0errors with unchanged3emoji/47label/19tiny-type warnings.
+
+Candidate1: source2f3688819ca1ed25279a4df3aed2efda09afaafd, treec3d089e07ae0f1f9562f49ee4b798333fb2af60b, CI38949036435, PR24. Focused browser/cumulative/deployment pending. Live remains COMP1. Prior3 CI builds separately revalidated from downloaded archives and exact source hashes; three semantic mutants rejected. No graph/skill update.
+
+Attempt1 CI38949036435/job117135443661 FAILURE:6/8focus journeys PASS. Pixel2tolerance failed with12alpha delta when comparing rerasterized mirrored geometry against a mirror of already-rasterized source; next oracle independently reflects the Canvas world before rasterization, same2tolerance, and records post-raster delta diagnostically. Alpha-lock input fixture used v3 while alphaLock requiresv7; rejected import kept the prior hidden board. Next fixture promotes7 and asserts new selected ID and expected flags before proceeding. Cumulative suite skipped, live remains COMP1. No application change or relaxed threshold.

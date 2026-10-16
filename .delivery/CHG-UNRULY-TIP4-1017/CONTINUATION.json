@@ -1,0 +1,10 @@
+{
+  "checkpoint": "TIP4",
+  "source": "2f3688819ca1ed25279a4df3aed2efda09afaafd",
+  "tree": "c3d089e07ae0f1f9562f49ee4b798333fb2af60b",
+  "run": 38949036435,
+  "pr": 24,
+  "status": "CI pending; live remains COMP1",
+  "local_models": 497,
+  "next": "Inspect focused browser and phone evidence; cumulative archive/source validation before merge/Pages pin; verify70 hosted files. KG unchanged."
+}
