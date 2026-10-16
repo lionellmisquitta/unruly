@@ -1,0 +1,4 @@
+# PAT1 local math diagnosis / explicit replan
+1. First targeted run exposed incorrect inverse-matrix cofactor (b*g-a instead of b*g-a*h); corrected implementation.
+2. Second run exposed independent test's trapezoid inverse-X algebra error; corrected oracle derivation from forward equations, not implementation output. Affine boundary still failed.
+3. Third run localized affine failure to exact pixel centre on edge u=0 represented as tiny negative floating value. Replan before further repair: include a normalized1e-12 edge-roundoff allowance in geometric inclusion, clamp sampling to source edge, and replace affine oracle inclusion with exact integer/rational inequalities. Perspective oracle tolerance1byte unchanged; identity exact; reject meaningful outside pixels. This is mathematical numeric stability, not relaxed image-comparison tolerance. Browser integration follows only after these checks pass.
