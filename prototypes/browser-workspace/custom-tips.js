@@ -34,7 +34,12 @@ export function drawTip(ctx,s){
  // Admission completes before allocating/drawing; no partial replay on work overflow.
  visitTip(s);const t=s.tip,c=document.createElement('canvas');c.width=t.width;c.height=t.height;const cc=c.getContext('2d'),data=cc.createImageData(t.width,t.height),raw=grainMask(t),rgb=s.color.slice(1).match(/../g).map(x=>parseInt(x,16));
  for(let i=0;i<raw.length;i++){data.data.set(rgb,i*4);data.data[i*4+3]=raw.charCodeAt(i);}cc.putImageData(data,0,0);
- try{visitTip(s,p=>{ctx.save();try{ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.flipX?-1:1,p.flipY?-1:1);ctx.globalAlpha=p.opacity;const f=p.width/Math.max(t.width,t.height);ctx.drawImage(c,-t.width*f/2,-t.height*f/2,t.width*f,t.height*f);}finally{ctx.restore();}});}finally{c.width=c.height=1;}
+ try{visitTip(s,p=>{ctx.save();try{if(s.tipReflection){
+   // Compose once: chained Canvas translate under reflection rounds at a different stage.
+   // Only native17 strokes use this path; existing tip replay remains unchanged.
+   const m=ctx.getTransform(),cos=Math.cos(p.angle),sin=Math.sin(p.angle),fx=p.flipX?-1:1,fy=p.flipY?-1:1,a=cos*fx,b=sin*fx,c=-sin*fy,d=cos*fy;
+   ctx.setTransform(m.a*a+m.c*b,m.b*a+m.d*b,m.a*c+m.c*d,m.b*c+m.d*d,m.a*p.x+m.c*p.y+m.e,m.b*p.x+m.d*p.y+m.f);
+  }else{ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.flipX?-1:1,p.flipY?-1:1);}ctx.globalAlpha=p.opacity;const f=p.width/Math.max(t.width,t.height);ctx.drawImage(c,-t.width*f/2,-t.height*f/2,t.width*f,t.height*f);}finally{ctx.restore();}});}finally{c.width=c.height=1;}
 }
 export const tipRadius=s=>s.tip?s.size*s.tip.scale*(Math.SQRT1_2+Math.hypot(s.tip.options.lateral,s.tip.options.linear)):s.size/2;
 export const emptyLibrary=()=>({version:1,sections:[{id:'imported',name:'Imported'}],brushes:[]});

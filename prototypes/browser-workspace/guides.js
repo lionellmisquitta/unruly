@@ -23,6 +23,7 @@ export function guidedCopies(stroke,g,newId=()=>crypto.randomUUID()){
  const out=[],seen=new Set();
  let work=0,stamps=0;
  for(const [sx,sy]of masks){const points=stroke.points.map(p=>({...p,x:g.x+(p.x-g.x)*sx,y:g.y+(p.y-g.y)*sy})),key=JSON.stringify(points);if(!stroke.tip&&seen.has(key))continue;seen.add(key);const copy={...structuredClone(stroke),id:out.length?newId():stroke.id,points};
+  if(copy.tip)copy.tipReflection??={parity:1,heading:0};
   if(copy.tip&&(sx!==1||sy!==1)){const parity=sx*sy,heading=(stroke.tipReflection?.heading??0)*Math.PI/180;copy.tipReflection={parity:(stroke.tipReflection?.parity??1)*parity,heading:Math.atan2(sy*Math.sin(heading),sx*Math.cos(heading))*180/Math.PI};copy.tip.options.angle*=parity;copy.tip.angle=copy.tip.angle*parity+(copy.tip.options.rotation==='follow'?0:sx===-1?180:0);if(parity<0)copy.tip.options.flipY=!copy.tip.options.flipY;}
   if(copy.tip){const n=visitTip(copy);stamps+=n;work+=n*copy.tip.width*copy.tip.height;if(stamps>tipLimits.stamps||work>tipLimits.sampledPixels)throw Error('Image-tip symmetry work limit · gesture cancelled');}out.push(copy);
  }
