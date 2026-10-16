@@ -1,6 +1,1 @@
-{
-  "base": "11ea5770254ea9095c2c2a68dd6a2d76e623fa7a",
-  "checkpoint": "COMP1",
-  "state": "Scoped before implementation; no graph update",
-  "knowledge_graph": "UNCHANGED"
-}
+{"checkpoint":"COMP1","status":"candidate CI pending; live remains PAL1","source":"c3127e23bdcb21487fb1b3982da532c97f74eb9c","tree":"8a6c7182f2f7b437d75eb1b8255c89ec7d52c167","pr":23,"local_model_tests":476,"next":"Inspect focused browser results/screenshots; preserve and diagnose failures before cumulative/merge/publication. Knowledge graph unchanged."}
