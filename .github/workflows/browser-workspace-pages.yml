@@ -23,22 +23,22 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: eeb629875f7e04a038e1a854ea56d47227ede851
+          ref: 25ba28d74e0268ea2ce20ef76e14f28d8381546e
           persist-credentials: false
       - name: Verify reviewed candidate identity
-        run: test "$(git rev-parse HEAD)" = "eeb629875f7e04a038e1a854ea56d47227ede851"
+        run: test "$(git rev-parse HEAD)" = "25ba28d74e0268ea2ce20ef76e14f28d8381546e"
       - name: Verify downloaded cumulative QA evidence against pinned source
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          curl --fail --silent --show-error --location --retry 3 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/lionellmisquitta/unruly/actions/artifacts/12055870023/zip" -o /tmp/unruly-cumulative.zip
+          curl --fail --silent --show-error --location --retry 3 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/lionellmisquitta/unruly/actions/artifacts/12065571751/zip" -o /tmp/unruly-cumulative.zip
           python - <<'PY'
           import hashlib,json,pathlib,re,zipfile
-          candidate="eeb629875f7e04a038e1a854ea56d47227ede851"
+          candidate="25ba28d74e0268ea2ce20ef76e14f28d8381546e"
           archive=pathlib.Path("/tmp/unruly-cumulative.zip")
-          digest="2ee415a9ce1e6455783b8fb34b85df4db68dd54c66d67ef3ff1c2ec7517692fc"
+          digest="3c7270d1d1400ccb4636139db27eb74ab8fa2b73586c8a1169bd92582d4c2588"
           assert hashlib.sha256(archive.read_bytes()).hexdigest()==digest,"Artifact digest mismatch"
           with zipfile.ZipFile(archive) as z:
               names=z.namelist()
@@ -55,6 +55,7 @@ jobs:
                   assert not file.is_absolute() and ".." not in file.parts
                   assert hashlib.sha256(file.read_bytes()).hexdigest()==sha,("Source mismatch",path)
                   hashes[path]=sha
+              assert len(hashes)==174,("Unexpected source hash count",len(hashes))
               cases=[]
               def collect(value):
                   if isinstance(value,dict):
@@ -72,17 +73,17 @@ jobs:
               for report,marker,case_id in [("fullscreen-browser-output.txt","FULLSCREENB01 PASS","FULLSCREENB01"),("airbrush-size-browser-output.txt","AIRBRUSH BROWSER PASS","AIRBRUSH-BROWSER")]:
                   assert re.search(r"^"+re.escape(marker)+r"\s*$",read(report),re.M),("Missing console-only PASS",report)
                   legacy_checks.append({"id":case_id,"status":"PASS"})
-              print("PAL1_QA_SCHEMA="+json.dumps({"sourceHashes":len(hashes),"browserScenarios":len(cases)}))
-              assert len(cases)==389,("Unexpected browser count",len(cases))
+              print("COMP1_QA_SCHEMA="+json.dumps({"sourceHashes":len(hashes),"browserScenarios":len(cases)}))
+              assert len(cases)==403,("Unexpected browser count",len(cases))
               assert all(c["status"].upper()=="PASS" for c in cases),"Browser failure"
               reports=[]
               for name in names:
                   if name.endswith(".txt"):
                       text=z.read(name).decode(errors="replace")
-                      if re.search(r"(?:#|ℹ) tests 456\b",text) and re.search(r"(?:#|ℹ) fail 0\b",text):reports.append(name)
-              assert reports,"456 passing model tests absent"
-              print("PAL1_CASES="+json.dumps(cases,separators=(",",":")))
-              print("PAL1_QA_RECEIPT="+json.dumps({"source":candidate,"artifactId":12055870023,"artifactDigest":digest,"modelTests":456,"modelFailures":0,"browserScenarios":len(cases),"sourceHashCount":len(hashes),"sourceHashes":hashes,"modelReports":reports,"legacyConsoleChecks":legacy_checks},separators=(",",":")))
+                      if re.search(r"(?:#|ℹ) tests 476\b",text) and re.search(r"(?:#|ℹ) fail 0\b",text):reports.append(name)
+              assert reports,"476 passing model tests absent"
+              print("COMP1_CASES="+json.dumps(cases,separators=(",",":")))
+              print("COMP1_QA_RECEIPT="+json.dumps({"source":candidate,"artifactId":12065571751,"artifactDigest":digest,"modelTests":476,"modelFailures":0,"browserScenarios":len(cases),"sourceHashCount":len(hashes),"sourceHashes":hashes,"modelReports":reports,"legacyConsoleChecks":legacy_checks},separators=(",",":")))
           PY
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
         with:
@@ -104,7 +105,7 @@ jobs:
             asset=$(basename "$source")
             matched=false
             for attempt in $(seq 1 12); do
-              if curl --fail --silent --show-error "https://lionellmisquitta.github.io/unruly/$asset?time1=eeb629875f7e04a038e1a854ea56d47227ede851" -o "/tmp/unruly-hosted/$asset" && cmp --silent "$source" "/tmp/unruly-hosted/$asset"; then
+              if curl --fail --silent --show-error "https://lionellmisquitta.github.io/unruly/$asset?time1=25ba28d74e0268ea2ce20ef76e14f28d8381546e" -o "/tmp/unruly-hosted/$asset" && cmp --silent "$source" "/tmp/unruly-hosted/$asset"; then
                 matched=true
                 break
               fi

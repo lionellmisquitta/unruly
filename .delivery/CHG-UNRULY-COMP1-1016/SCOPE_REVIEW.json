@@ -1,6 +1,6 @@
 {
   "base": "11ea5770254ea9095c2c2a68dd6a2d76e623fa7a",
-  "candidate": "c3127e23bdcb21487fb1b3982da532c97f74eb9c",
+  "candidate": "25ba28d74e0268ea2ce20ef76e14f28d8381546e",
   "changed_files": [
     ".delivery/CHG-UNRULY-COMP1-1016/CONTINUATION.json",
     ".delivery/CHG-UNRULY-COMP1-1016/IMPACT_ANALYSIS.md",
@@ -39,5 +39,13 @@
   "roadmap_rows_preserved": 27,
   "legacy_test_change": "exact cache suffix only",
   "prohibited_paths_changed": false,
-  "manual_scope_review_not_CI_enforcement": true
+  "manual_scope_review_not_CI_enforcement": true,
+  "candidate_tree": "0d654aae1f1b405068cbb81c87666e82cd561691",
+  "candidate_files": 35,
+  "roadmap_requirement_rows_preserved": 27,
+  "intentional_status_updates": [
+    "C05 / effects decisions: COMP1 bounded composition complete; pattern deformation/wet media OPEN"
+  ],
+  "release_source_pins": "Pages publication must use exact tested source and artifact",
+  "remaining_scope_removed": false
 }

@@ -1,1 +1,18 @@
-{"checkpoint":"COMP1","status":"candidate CI pending; live remains PAL1","source":"c3127e23bdcb21487fb1b3982da532c97f74eb9c","tree":"8a6c7182f2f7b437d75eb1b8255c89ec7d52c167","pr":23,"local_model_tests":476,"next":"Inspect focused browser results/screenshots; preserve and diagnose failures before cumulative/merge/publication. Knowledge graph unchanged."}
+{
+  "checkpoint": "COMP1",
+  "status": "verified and merged; publication pending",
+  "source": "25ba28d74e0268ea2ce20ef76e14f28d8381546e",
+  "tree": "0d654aae1f1b405068cbb81c87666e82cd561691",
+  "run": 38943248890,
+  "job": 117116218142,
+  "pr": 23,
+  "merge": "1c93ee4b736171fa5fd11d5feee2b14d56455d22",
+  "qa_artifact": 12065571751,
+  "qa_digest": "3c7270d1d1400ccb4636139db27eb74ab8fa2b73586c8a1169bd92582d4c2588",
+  "model_tests": 476,
+  "structured_browser": 403,
+  "legacy_console": 2,
+  "source_hashes": 174,
+  "knowledge_graph_changed": false,
+  "next": "Wait reviewed Pages publication; verify70 hosted bytes and close roadmap."
+}

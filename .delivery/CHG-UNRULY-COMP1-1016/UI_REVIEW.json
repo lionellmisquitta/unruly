@@ -1,0 +1,52 @@
+{
+  "checkpoint": "COMP1",
+  "source": "25ba28d74e0268ea2ce20ef76e14f28d8381546e",
+  "reference": "existing accepted dark Layers inspector; canonical gallery examples remain pending/unvalidated",
+  "static": {
+    "errors": 0,
+    "warnings": {
+      "emoji-icons": 3,
+      "form-labels": 47,
+      "tiny-type": 19
+    },
+    "disposition": "unchanged existing heuristic counts; new numeric/select controls have nested labels and explicit names; no full accessibility audit claimed"
+  },
+  "visual_evidence": {
+    "artifact": 12063374793,
+    "digest": "29fcc659779105e3e63e9044c3d26ebf9175dce90505b7f79b0890c891d655d7",
+    "screenshots": [
+      "COMP1-desktop.png",
+      "COMP1-phone.png",
+      "COMP1-phone-mask-controls.png"
+    ],
+    "viewports": [
+      "1100x850",
+      "390x844"
+    ],
+    "limits": "Folder list scrolls separately from inspector, as existing; whole action menu is not simultaneously visible. Reviewed stills show opacity and lower reset/help/mask controls. Blend selection is exercised by interaction tests rather than fully visible in stills. No real-device feel claim."
+  },
+  "rubric_16_dimensions": {
+    "hierarchy": 5,
+    "spacing": 5,
+    "typography": 5,
+    "colour": 6,
+    "contrast": 5,
+    "alignment": 5,
+    "density": 4,
+    "consistency": 6,
+    "navigation": 5,
+    "feedback": 5,
+    "states": 5,
+    "responsive": 5,
+    "touch_targets": 5,
+    "accessibility": 4,
+    "motion": 5,
+    "clarity": 5
+  },
+  "score": 80,
+  "minimum": 72,
+  "target": 85,
+  "bounded_same_session_review": true,
+  "canonical_example_validation": "PENDING",
+  "independent_human_device_acceptance": false
+}

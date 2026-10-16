@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Current verified source 0bab964ad5722c5dc3fd6dbe67c5705125635447; CI38781105113SUCCESS386models/348JSONbrowser scenarios plus2legacy checks/155source hashes. Pages38786233048SUCCESS61hosted matches. TIME1 recording/replay published; full C10video/export,Motion compatibility/device and30–50interactive capacity remain OPEN.
+Current COMP1 verified and merged; publication pending: `25ba28d74e0268ea2ce20ef76e14f28d8381546e`, CI38943248890SUCCESS476models/403structuredChromium+2legacy;174source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -38,7 +38,7 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 | Selection / geometry | selection.js, wand.js, lasso-region.js, path-selection.js, magnetic-selection.js, shapes.js | Distinguish editable artwork versus selection-outline geometry. Pixel edits preserve original artwork through one undoable conversion; no silent whole-object fallback. |
 | Fill | bucket-fill.js, polygon-fill.js | Gap traversal and geometric fill reuse bounded raster/selection operations; do not change selection or renderer semantics to obtain green tests. |
 | Brush / raster work | brushes.js, brush-recipe.js, raster.js, raster-tiles.js, pixel-paint.js, pixel-surface.js, smudge.js | Pressure/tip replay and bounded pixels; presets and native pixels are distinct. Preserve deterministic replay and codec/capacity contracts. |
-| Composition | folders.js, masks.js, clipping.js | Pass-through folder visibility/locks, leaf masks, clip sources and alpha lock. Adjusted folders now isolate for combined HSL/levels. Unadjusted folders remain pass-through; folder masks/group opacity/blend are still pending. |
+| Composition | folders.js, group-composition.js, masks.js, clipping.js | Optionalv16 folder opacity/blend pair and document-space masks; legacy pass-through retained. Effects/enabled masks/explicit controls isolate. Combined effects → mask → opacity once → blend; named-folder matte includes own mask/opacity. Group mutations guard ancestry/locked descendants; ungroup refuses appearance loss. |
 | Renderer boundary | render.js, render-contract.js | Chooses replay/reference behavior, composition/cache hooks and diagnostics. No document-storage writes here. |
 | Renderer implementation/cache | canvas2d-renderer.js, layer-compositor.js, raster-cache.js | Original replay oracle, retained live rendering, backing/cache budgets and invalidation. Changed pixels require reference comparisons. |
 | Colour adjustments | adjustments.js, adjustment-ui.js, effect-compositor.js | Pure HSL/levels validation/math without model imports; separate modal controller; isolated combined-group replay. model validates v10 and wraps commands; render applies leaf colour before masks/clip and group colour after children. Group isolation uses padded full-frame surfaces; CAP2 adds optional bounded processed-folder retention at the facade/compositor boundary. Budget includes retained bytes and temporary depth; no target-device performance claim. |
@@ -47,7 +47,7 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 | Persistence/offline delivery | storage.js, sw.js | storage validates through model; revision/conflict/save guards. sw asset list/cache revision must include every new runtime module. Offline smoke required. |
 
 ## Honest current limitations
-- app.js is 407 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
+- app.js is 428 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
 - model.js centralizes validators/commands and imports feature modules. This map does not prove absence of cycles or low coupling.
 - Per-change impact.yaml and plan.yaml have allowed/prohibited paths and regression links, e.g. FILL2. The inspected cumulative workflow runs regression/source hashes; it does NOT consume/enforce those path lists.
 - CI successes demonstrate tested scenarios, not perfect scope, clean architecture, target-device performance or independent human approval.
@@ -199,3 +199,19 @@ image-tip-paint.js imports existing custom-tips (deterministic visit/draw includ
 ## PAL1 colour-library boundary
 
 palettes.js owns pure bounded library validation/migration/immutable commands/append import, linear-light RGB interpolation and reference-coordinate/source-RGB rules. palettes-ui.js owns separate device-local library/backup/ten-snapshot session Undo, Colour inspector controls and disposable reference picker. U2 remains current brush/HSV/recents authority and accepts a colour-change notification for palette rendering. app.js injects board/reference getters and reveal callback, integrates draft blocking/keyboard/sync. No artwork/native/model/history/storage/renderer engine change. This is a logical responsibility map, not an AST or knowledge graph update.
+
+## COMP1 current localization
+
+group-composition.js imports only folder helpers; it owns strict optional v16 pair validation, mutation and read-only guards. model imports it and extends existing mask command/import ID remapping. filters imports isolation policy; effect-compositor invokes the injected post-filter group-mask hook before cache retention, then applies opacity/blend when composing into parent. render injects that hook using existing scratch/decode, and clipping captures own processed group alpha including opacity. app reuses folder menus/Hide-Reveal with child input anchor; switching active layer ends group-mask mode. No broad coordinator refactor or new history/storage/canvas engine. Shared hubs remain shared; no global acyclicity/path-enforced-CI claim.
+
+```mermaid
+flowchart TD
+ UI["Folder actions and mask input"] --> DOC["Model commands / import / Undo"]
+ DOC --> RULE["Group rules and sparse masks"]
+ REN["Render facade"] --> COMP["Child and folder compositor"]
+ COMP --> RULE
+ COMP --> CACHE["Post-mask, pre-opacity cache"]
+ COMP --> MATTE["Own masked alpha × opacity for named-folder clip"]
+```
+
+All earlier checkpoint notes below their dated headings are historical as-built evidence. Existing capacities unchanged. Same-session bounded model/browser/pixel/visual verification does not establish physical-device feel or independently approved architectural isolation. Scoped receipts in .delivery/CHG-UNRULY-COMP1-1016/.
