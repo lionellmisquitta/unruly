@@ -1,0 +1,105 @@
+{
+  "status": "PASS_WITH_RECORDED_LIMITS",
+  "scope": "Same-session bounded palette/reference screenshot review, browser-tested mixer interactions; not a complete product accessibility/physical-device audit",
+  "source": "eeb629875f7e04a038e1a854ea56d47227ede851",
+  "focusedArtifact": 12053648325,
+  "focusedArtifactDigest": "sha256:26ecb1057d546753009c3bc2a409cab22e787a474aee2e14b0139408bd22cd81",
+  "screenshots": [
+    "PAL1-desktop-colour.png",
+    "PAL1-phone-colour.png",
+    "PAL1-phone-reference.png"
+  ],
+  "layouts": [
+    1440,
+    1100,
+    768,
+    390
+  ],
+  "findings": [
+    "Existing dark inspector and system-font/token consistency retained; readable named palette controls fit",
+    "Palette/mixer/management use existing vertical scrolling; entire mixer is not visible in these stills, but actual Use/Save/current-colour interactions pass PALB05",
+    "Reference pick mode exposes pressed state, focused image, instructions and source-pixel feedback",
+    "Weakest areas: vertical scroll depth, dense narrow-reference instructions, and legacy empty-canvas hint clipping when reference is open; progressive disclosure/44px wrapped controls/status wrapping mitigate within scope, unchanged canvas hint remains legacy"
+  ],
+  "rubric": {
+    "taskClarity": [
+      6,
+      7
+    ],
+    "hierarchy": [
+      6,
+      8
+    ],
+    "composition": [
+      5,
+      7
+    ],
+    "typography": [
+      6,
+      7
+    ],
+    "density": [
+      5,
+      7
+    ],
+    "contrast": [
+      5,
+      6
+    ],
+    "consistency": [
+      6,
+      6
+    ],
+    "interaction": [
+      5,
+      6
+    ],
+    "responsive": [
+      6,
+      8
+    ],
+    "accessibility": [
+      6,
+      8
+    ],
+    "colourVisualization": [
+      5,
+      6
+    ],
+    "content": [
+      6,
+      7
+    ],
+    "states": [
+      5,
+      6
+    ],
+    "distinctiveness": [
+      4,
+      5
+    ],
+    "restraint": [
+      3,
+      3
+    ],
+    "technical": [
+      3,
+      3
+    ]
+  },
+  "rubricTotal": 82,
+  "rubricMaximum": 100,
+  "gallery": "Canonical skill gallery examples explicitly pending/unvalidated; existing accepted UNRULY theme is reference, no canonical gallery benchmark claimed",
+  "staticValidation": {
+    "errors": 0,
+    "emojiWarnings": 3,
+    "labelWarnings": 47,
+    "tinyTypeWarnings": 19,
+    "dispositions": [
+      "Emoji-like matches are retained legacy content, no new emoji icons",
+      "47 legacy label heuristics unchanged; all new fields have explicit labels/accessible names",
+      "19 legacy sub12px heuristics unchanged; new controls inherit readable existing token/system-font sizing"
+    ]
+  },
+  "knowledge_graph": "UNCHANGED"
+}

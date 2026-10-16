@@ -1,11 +1,17 @@
 {
   "base": "d1353f1559b9e7ff82ca88c396d34da87a2399df",
   "checkpoint": "PAL1",
-  "state": "34 targeted model tests PASS; UI static0errors; focused browser/cumulative pending",
+  "state": "verified; publication pending",
   "expectedModels": 456,
   "expectedStructuredBrowser": 389,
   "expectedLegacy": 2,
   "expectedAssets": 69,
   "expectedSourceHashes": 171,
-  "knowledge_graph": "UNCHANGED"
+  "knowledge_graph": "UNCHANGED",
+  "source": "eeb629875f7e04a038e1a854ea56d47227ede851",
+  "run": 38919040571,
+  "pr": 22,
+  "next_action": "Verify pinned Pages publication and hosted bytes, then docs-only closeout",
+  "merge": "3b8a889a18980606600895af4264022c427f64e3",
+  "tree": "6d1a1b8301a8ad2f8278e3f8bb93eb7f5ce91781"
 }

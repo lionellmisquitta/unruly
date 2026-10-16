@@ -1,0 +1,61 @@
+{
+  "change_id": "CHG-UNRULY-PAL1-1016",
+  "baseline_id": "d1353f1559b9e7ff82ca88c396d34da87a2399df",
+  "scope_envelope": {
+    "target": [
+      "palettes.js pure library/mix/pixel core",
+      "palettes-ui.js separate device library and explicit reference picker",
+      "U2 colour notification, app blocked/key/reference sync, bounded HTML/CSS/SW controls"
+    ],
+    "contract": [
+      "Current HSV/brush colour/recents and legacy palette migration",
+      "Saved reference original raster; pointer/key/blocked-state routing",
+      "Native artwork/history/recording/Motion/offline contracts"
+    ],
+    "regression": [
+      "PAL1-MODEL pure rules and existing U2/image imports",
+      "PAL1-BROWSER reference/cancel/palette/history/offline/responsive plus full unchanged cumulative suite"
+    ],
+    "excluded_legacy": [
+      "Composition/group masks/effects, wet pigment, proprietary formats",
+      "Renderer/model/storage/history changes",
+      "Video/artwork export/cloud/AI and knowledge graph updates"
+    ],
+    "unknown_boundary": [
+      "Physical pen/palm/touch/long-session acceptance",
+      "Cross-tab simultaneous palette-library edits are not synchronized"
+    ]
+  },
+  "confirmed_impacts": [
+    "Legacy U2 owns current colour and one16-colour palette",
+    "New manager migrates legacy palette into separate bounded key",
+    "Explicit reference picker changes brush colour via U2, never source board",
+    "Art input/reference drafts must exclude concurrent mutations"
+  ],
+  "likely_impacts": [
+    "New progressive inspector content increases vertical scroll; early screenshots and390px control checks required"
+  ],
+  "regression_obligations": [
+    "PAL1-MODEL bounded strict library/migration/mix/source sampling",
+    "PAL1-BROWSER full colour/reference/input/history/offline compatibility"
+  ],
+  "technical_constraints": [
+    "16palettes/64colours/64KiB JSON/10session Undo snapshots",
+    "Native saved reference stays bounded512px; sourceRGB ignores partial alpha, skips zero alpha",
+    "Linear-light digital sRGB interpolation, no wet-pigment claim",
+    "No artwork/native/schema/history/renderer/storage engine change; graph prohibited"
+  ],
+  "unknowns": [
+    "Physical acceptance remains OPEN",
+    "Device-local library is separate from native board backups; explicit palette backup provided"
+  ],
+  "ux_route": "ux_architect_and_ui_director",
+  "evidence_refs": [
+    "docs/delivery/PRODUCT_ROADMAP.md current priority",
+    "prototypes/browser-workspace/u2.js colour controls",
+    "prototypes/browser-workspace/app.js syncReference/blocked/key",
+    "prototypes/browser-workspace/image-import.js validateReference/referencePixels",
+    ".delivery/CHG-UNRULY-PAL1-1016/UX_BASELINE.md",
+    ".delivery/CHG-UNRULY-PAL1-1016/UI_DIRECTION.md"
+  ]
+}

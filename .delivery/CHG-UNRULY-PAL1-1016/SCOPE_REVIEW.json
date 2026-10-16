@@ -1,0 +1,28 @@
+{
+  "base": "d1353f1559b9e7ff82ca88c396d34da87a2399df",
+  "source": "eeb629875f7e04a038e1a854ea56d47227ede851",
+  "appFilesUnchanged": 62,
+  "appFilesChanged": [
+    "prototypes/browser-workspace/style.css",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/sw.js",
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/u2.js"
+  ],
+  "appFilesAdded": [
+    "prototypes/browser-workspace/palettes-ui.js",
+    "prototypes/browser-workspace/palettes.js"
+  ],
+  "legacyBrowserCacheOnly": 11,
+  "legacyAssertions": "All existing browser files equal base with exact tip3-1\u2192pal1-1 suffix substitution only",
+  "protectedEnginesUnchanged": [
+    "model.js",
+    "render.js",
+    "canvas2d-renderer.js",
+    "storage.js",
+    "history-patch.js"
+  ],
+  "knowledgeGraphChanges": 0,
+  "review": "Manual scoped diff review; not centrally enforced protection",
+  "closeoutScope": "Pinned publication workflow; roadmap/code-map/AGENTS/continuation and scoped evidence/impact JSON. Guide priority status correction only repairs a stale publication label; no requirement removed."
+}

@@ -4,7 +4,7 @@ Updated: 16 October 2026 (Asia/Kolkata).
 ## Scope preservation
 This is the current full-product roadmap index. The painting sequence below is a near-term subset, not all remaining product work. Omission, summarization, a browser platform change, or a new chat never cancels a requirement. Record any removal or deferral with the user's explicit decision and source. Keep original requirement/checkpoint IDs when splitting work. Completed subfeatures do not close their entire original checkpoint.
 
-Application baseline: TIP3 published and hosted verified at 77aaaf02c179e78eaef1526eabb66bd72946147c, following GUIDE1+NODE1. Custom image brushes now support alpha lock within recorded raster bounds. All remaining painting/composition, workflow, export/cloud/AI and device/release acceptance stay OPEN. See CURRENT_CHECKPOINT.md for evidence.
+Application baseline: PAL1 verified; publication pending at eeb629875f7e04a038e1a854ea56d47227ede851, following TIP3. Named palettes, digital RGB blend and explicit saved-reference picking delivered within recorded bounds. All remaining composition/wet-media/workflow/export/cloud/AI and device/release acceptance remain OPEN. See CURRENT_CHECKPOINT.md for evidence.
 
 ## Current build priority — owner decision, 16 October 2026
 
@@ -12,7 +12,7 @@ Complete the remaining drawing and painting work before export-focused builds. T
 
 1. **Stroke stabilization/smoothing — STAB1 published and hosted verified.** Physical-device feel remains open; drawing-guide baseline is in the group below.
 2. **Drawing guides and editable geometry — GUIDE1 + NODE1 published and hosted verified.** Ruler, symmetry, snapping, artwork control-point editing and dedicated curve pen baseline delivered within recorded bounds. Image-tip symmetry, broader compatibility and intersection-eraser completeness/device acceptance remain open.
-3. **Painting and composition completion** — custom-tip alpha-lock compatibility delivered by TIP3; remaining scope: proprietary brush-import feasibility, expanded palettes/mixing/reference sampling, folder-wide masks, group opacity/blends/effects ordering, pattern deformation and advanced wet-media/watercolour.
+3. **Painting and composition completion** — custom-tip alpha-lock compatibility delivered by TIP3; remaining scope: proprietary brush-import feasibility, expanded palettes/digital RGB blend/reference sampling baseline delivered by PAL1; remaining composition: folder-wide masks, group opacity/blends/effects ordering, pattern deformation and advanced wet-media/watercolour.
 4. **Drawing workflow completion** — whole-canvas rotation/remaining gestures, sticky notes/attached connectors/richer text, Motion Trace mixed region/original-object compatibility, and focused pen/palm/performance acceptance. Earlier drawing-tool deferrals are brought ahead of export by this owner instruction; feasibility/unverified status is not converted to completion.
 5. **Clean timelapse video export** — codecs, framing, cancellation and storage budgets; recording/replay is already published.
 6. **Artboards and artwork export** — finite named artboards, dimensions/DPI and PNG/JPG/PDF export with framing/background controls.
@@ -268,6 +268,24 @@ Publication `622a7ebc40559679c6ffa3dcdb49b54cd005925a`; Pages `38909033435` SUCC
 
 Historical TIP1 rows describe the original build; TIP3 above supersedes only their custom-tip alpha-lock compatibility gap. All other retained gaps remain.
 
-## PAL1 palettes/mixing/reference — active16 October2026
+## Historical PAL1 implementation attempt —16 October2026
 
 Owner authorized next checkpoint. Scoped named device-local palettes/backup/import, digital RGB blend and explicit saved-reference pixel picking. No artwork/native/history rewrite. Implementation/verification/publication pending; live remains TIP3. All composition/wet-media/proprietary-import/workflow/Motion/video/export/PDF/interchange/Drive/BYOK/device/release gaps retained. Knowledge graph unchanged. Records: .delivery/CHG-UNRULY-PAL1-1016/.
+
+## PAL1 verified closeout —16 October2026
+
+PAL1 named palettes, digital colour blend and saved-reference picker verified; publication pending. Source `eeb629875f7e04a038e1a854ea56d47227ede851`; cumulative CI `38919040571` SUCCESS: 456 model tests, 389 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12055870023` SHA256 `2ee415a9ce1e6455783b8fb34b85df4db68dd54c66d67ef3ff1c2ec7517692fc` and all 171 source hashes verified. PR22 merge `3b8a889a18980606600895af4264022c427f64e3` has exactly the tested tree `6d1a1b8301a8ad2f8278e3f8bb93eb7f5ce91781`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
+
+Colour → Palette now offers named device-local libraries: create/rename/select, Save current/remove swatch/delete, last-palette protection and ten-level session-only Undo palette edit. Valid legacy U2 palette migrates without changing its palette data. Back up palettes exports owned JSON; Import appends with fresh IDs/unique names and preserves existing palettes. Invalid/oversized/capacity overflow rejects unchanged. Storage failure keeps a usable session library, visibly warns and allows backup. Up to16palettes/64swatches each/64KiB encoded library; device-local data is separate from artwork JSON and cross-tab live synchronization is not provided.
+
+Colour → Blend colours previews a linear-light digital RGB blend from two endpoints and a percentage. Current as A/B reuses current paint colour. Use mix updates brush colour/recents through U2; Save mix adds a swatch without changing the brush. Preview does not edit artwork or brush colour. Physical wet-pigment mixing remains OPEN.
+
+Pick from reference reveals the existing Reference sidebar and explicitly arms its image. Pen/mouse down/drag previews source RGB/coordinates; release inside applies. Keyboard arrows/Shift arrows move source pixels, Enter/Space picks, Escape cancels. Fully transparent source pixels refuse; partial alpha uses original RGB. Pointercancel/second contact/blur/stale board preserves current colour; active drafts block concurrent input. Sampling uses the saved reference (existing512px bound), not the full-resolution input, paper or layer effects. Reference/artwork/Undo remain unchanged; the ordinary canvas picker still excludes reference images.
+
+18new pure checks and12focused Chromium journeys PASS, including legacy migration, palette isolation/Undo/native-artwork nonmutation, append backup/import, invalid retry, RGB mix oracle/Use/Save, actual pen+mouse picks, transparent/cancel/keyboard/blocked states, quota failure/backup, offline modules and phone controls.16existing U2/image-import models also passed locally. Early artifact/screenshot review occurs before slow cumulative tests. Existing browser assertions preserved;11legacy files change only exact cache identity. Static UI validation0errors with unchanged3emoji/47label/19tiny-type heuristics explicitly dispositioned. Desktop/390px palette/reference screenshots and1440/768/390 layout bounds reviewed; bounded same-session rubric82/100, not whole-product/device acceptance. Entire mixer is not visible in stills, while actual preview/Use/Save actions pass PALB05.
+
+New palettes.js owns pure rules; palettes-ui.js owns separate library/DOM/reference draft lifecycle. U2 remains current colour/HSV/recents authority; app owns board/reference/blocked/key injection. No artwork/native schema, model, renderer, storage or history engine change/capacity increase. CODE_STRUCTURE logical map updated, not an AST/knowledge graph.
+
+Next proposed group: folder-wide masks/group opacity/blend/effects ordering and other retained composition work, scoped before implementation. Proprietary brush formats, pattern deformation/advanced wet media, image-tip symmetry/guides and pixel-mode custom tips, remaining workflow/rotation/gestures/text/connectors, Motion Trace mixed-target compatibility, clean video export, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI and release validation remain in PRODUCT_ROADMAP. Physical Surface/Xiaomi/Lenovo pen/palm/latency, long-session/large-layer feel, intersection-eraser device acceptance and32layer/30–50interactive goals remain OPEN. This closes a bounded palette/mix/reference baseline, not all C05/C06 or painting/composition. No scope cut/fixed total build count approved.
+
+Knowledge graph and skills unchanged. Graph remains at TIME1; after this publication the app is four batches/five checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1). Scoped evidence: `.delivery/CHG-UNRULY-PAL1-1016/`.

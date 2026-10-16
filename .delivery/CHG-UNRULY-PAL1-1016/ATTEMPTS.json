@@ -1,0 +1,12 @@
+{
+  "attempts": [
+    {
+      "source": "eeb629875f7e04a038e1a854ea56d47227ede851",
+      "run": 38919040571,
+      "status": "PASS",
+      "models": 456,
+      "structuredBrowser": 389,
+      "legacyChecks": 2
+    }
+  ]
+}
