@@ -1,6 +1,6 @@
 {
   "checkpoint": "COMP1",
-  "status": "verified and merged; publication pending",
+  "status": "published and hosted verified",
   "source": "25ba28d74e0268ea2ce20ef76e14f28d8381546e",
   "tree": "0d654aae1f1b405068cbb81c87666e82cd561691",
   "run": 38943248890,
@@ -14,5 +14,7 @@
   "legacy_console": 2,
   "source_hashes": 174,
   "knowledge_graph_changed": false,
-  "next": "Wait reviewed Pages publication; verify70 hosted bytes and close roadmap."
+  "next": "Scope retained remaining painting checkpoint; do not rebuild COMP1 or refresh knowledge graph.",
+  "publication": "b63c4acc2c9b72b826ffc1f094b504069724f20f",
+  "pages": 38946336556
 }

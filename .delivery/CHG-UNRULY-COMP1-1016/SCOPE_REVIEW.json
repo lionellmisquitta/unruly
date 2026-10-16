@@ -47,5 +47,8 @@
     "C05 / effects decisions: COMP1 bounded composition complete; pattern deformation/wet media OPEN"
   ],
   "release_source_pins": "Pages publication must use exact tested source and artifact",
-  "remaining_scope_removed": false
+  "remaining_scope_removed": false,
+  "published_requirement_columns_preserved": 27,
+  "final_docs_only_no_redeployment": true,
+  "hosted_matches": 70
 }

@@ -1,6 +1,6 @@
 # UNRULY continuation contract
 
-COMP1 folder masks and group composition verified and merged; publication pending. Source `25ba28d74e0268ea2ce20ef76e14f28d8381546e`; cumulative CI `38943248890` SUCCESS:476 model tests,403 structured Chromium scenarios plus2 legacy console checks. Downloaded artifact `12065571751` SHA256 `3c7270d1d1400ccb4636139db27eb74ab8fa2b73586c8a1169bd92582d4c2588` and all174 source hashes verified. PR23 merge `1c93ee4b736171fa5fd11d5feee2b14d56455d22` has exactly tested tree `0d654aae1f1b405068cbb81c87666e82cd561691`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
+COMP1 folder masks and group composition published and hosted verified. Source `25ba28d74e0268ea2ce20ef76e14f28d8381546e`; cumulative CI `38943248890` SUCCESS:476 model tests,403 structured Chromium scenarios plus2 legacy console checks. Downloaded artifact `12065571751` SHA256 `3c7270d1d1400ccb4636139db27eb74ab8fa2b73586c8a1169bd92582d4c2588` and all174 source hashes verified. PR23 merge `1c93ee4b736171fa5fd11d5feee2b14d56455d22` has exactly tested tree `0d654aae1f1b405068cbb81c87666e82cd561691`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
 
 Layers → folder Actions now offers Group opacity (0–100), eight blend modes and Add/Edit/Enable/Disable/Invert/Reset/Remove mask using the existing Hide/Reveal toolbar. Folder opacity applies once to combined output, preserving overlap density. Child output → folder colour → curves/blur → folder mask → opacity → blend; nested folders repeat. Named-folder clipping includes that folder's processed mask and own opacity. Explicit group controls isolate even at100%/Normal; old folders retain pass-through until activated. Reset group composition removes the pair; enabled masks/effects still isolate. Ungroup refuses appearance loss until masks/effects/explicit composition are deliberately removed/reset.
 
@@ -13,6 +13,8 @@ New group-composition.js owns pure optional field validation/mutation/read-only 
 Remaining painting/composition: proprietary brush-format feasibility, pattern deformation/advanced wet media, image-tip guides/symmetry and pixel-mode tips. Remaining workflow/rotation/gestures/text/connectors, Motion Trace mixed-target compatibility, clean video export, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI and release validation remain in PRODUCT_ROADMAP. Physical Surface/Xiaomi/Lenovo pen/palm/latency, long-session/large-layer feel, intersection-eraser device acceptance and32layer/30–50interactive goals remain OPEN. This closes the bounded COMP1 baseline, not all C05/C06 or the full product. No scope cut/fixed build count approved.
 
 Knowledge graph and skills unchanged. Graph remains at TIME1; COMP1 makes the app five batches/six checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1, COMP1). Scoped evidence: `.delivery/CHG-UNRULY-COMP1-1016/`.
+
+Publication `b63c4acc2c9b72b826ffc1f094b504069724f20f`; Pages `38946336556` SUCCESS; all70 hosted application files match reviewed source bytes.
 
 ## Historical PAL1 closeout
 

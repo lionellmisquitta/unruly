@@ -200,6 +200,7 @@ image-tip-paint.js imports existing custom-tips (deterministic visit/draw includ
 
 palettes.js owns pure bounded library validation/migration/immutable commands/append import, linear-light RGB interpolation and reference-coordinate/source-RGB rules. palettes-ui.js owns separate device-local library/backup/ten-snapshot session Undo, Colour inspector controls and disposable reference picker. U2 remains current brush/HSV/recents authority and accepts a colour-change notification for palette rendering. app.js injects board/reference getters and reveal callback, integrates draft blocking/keyboard/sync. No artwork/native/model/history/storage/renderer engine change. This is a logical responsibility map, not an AST or knowledge graph update.
 
+
 ## COMP1 current localization
 
 group-composition.js imports only folder helpers; it owns strict optional v16 pair validation, mutation and read-only guards. model imports it and extends existing mask command/import ID remapping. filters imports isolation policy; effect-compositor invokes the injected post-filter group-mask hook before cache retention, then applies opacity/blend when composing into parent. render injects that hook using existing scratch/decode, and clipping captures own processed group alpha including opacity. app reuses folder menus/Hide-Reveal with child input anchor; switching active layer ends group-mask mode. No broad coordinator refactor or new history/storage/canvas engine. Shared hubs remain shared; no global acyclicity/path-enforced-CI claim.
