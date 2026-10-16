@@ -11,7 +11,7 @@ Application baseline: TIP3 published and hosted verified at 77aaaf02c179e78eaef1
 Complete the remaining drawing and painting work before export-focused builds. This order supersedes earlier near-term sequences and “video export next” proposals; historical build receipts remain unchanged. Work groups are not fixed build counts. No requirement is removed.
 
 1. **Stroke stabilization/smoothing — STAB1 published and hosted verified.** Physical-device feel remains open; drawing-guide baseline is in the group below.
-2. **Drawing guides and editable geometry — GUIDE1 + NODE1 verified; publication pending.** Ruler, symmetry, snapping, artwork control-point editing and dedicated curve pen baseline delivered within recorded bounds. Image-tip symmetry, broader compatibility and intersection-eraser completeness/device acceptance remain open.
+2. **Drawing guides and editable geometry — GUIDE1 + NODE1 published and hosted verified.** Ruler, symmetry, snapping, artwork control-point editing and dedicated curve pen baseline delivered within recorded bounds. Image-tip symmetry, broader compatibility and intersection-eraser completeness/device acceptance remain open.
 3. **Painting and composition completion** — custom-tip alpha-lock compatibility delivered by TIP3; remaining scope: proprietary brush-import feasibility, expanded palettes/mixing/reference sampling, folder-wide masks, group opacity/blends/effects ordering, pattern deformation and advanced wet-media/watercolour.
 4. **Drawing workflow completion** — whole-canvas rotation/remaining gestures, sticky notes/attached connectors/richer text, Motion Trace mixed region/original-object compatibility, and focused pen/palm/performance acceptance. Earlier drawing-tool deferrals are brought ahead of export by this owner instruction; feasibility/unverified status is not converted to completion.
 5. **Clean timelapse video export** — codecs, framing, cancellation and storage budgets; recording/replay is already published.
@@ -267,3 +267,7 @@ Knowledge graph and skills unchanged. Graph remains at TIME1; after this publica
 Publication `622a7ebc40559679c6ffa3dcdb49b54cd005925a`; Pages `38909033435` SUCCESS; all 67 hosted application files match reviewed bytes.
 
 Historical TIP1 rows describe the original build; TIP3 above supersedes only their custom-tip alpha-lock compatibility gap. All other retained gaps remain.
+
+## PAL1 palettes/mixing/reference — active16 October2026
+
+Owner authorized next checkpoint. Scoped named device-local palettes/backup/import, digital RGB blend and explicit saved-reference pixel picking. No artwork/native/history rewrite. Implementation/verification/publication pending; live remains TIP3. All composition/wet-media/proprietary-import/workflow/Motion/video/export/PDF/interchange/Drive/BYOK/device/release gaps retained. Knowledge graph unchanged. Records: .delivery/CHG-UNRULY-PAL1-1016/.
