@@ -291,3 +291,11 @@ Next proposed group: folder-wide masks/group opacity/blend/effects ordering and 
 Knowledge graph and skills unchanged. Graph remains at TIME1; after this publication the app is four batches/five checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1). Scoped evidence: `.delivery/CHG-UNRULY-PAL1-1016/`.
 
 Publication `b480e4f2f19a169aad1e36c30291d1646ce2e6bb`; Pages `38922098299` SUCCESS; all 69 hosted application files match reviewed source bytes.
+
+## COMP1 folder masks/group composition — active16 October2026
+
+Owner authorized announced next checkpoint. Nativev16 optional folder masks/opacity/blends; preserve old pass-through until activated, explicit child/effect/mask/opacity/blend order and named-folder clipping. Implementation/QA/publication pending; live remains PAL1. Existing capacities and all pending roadmap rows retained. No knowledge graph update. Records: .delivery/CHG-UNRULY-COMP1-1016/.
+
+COMP1 attempt1 source `c3127e23bdcb21487fb1b3982da532c97f74eb9c`, CI `38942665524`: focused gate13/14 PASS, all pixel oracles exact including nestedDPR2, controls/painting/Undo/locks PASS. Offline test waited for control on first install without reload; fix test lifecycle to await installation/reload before asserting control and offline reopen. No app assertion weakened; cumulative suite did not run. Live remains PAL1; retry pending.
+
+COMP1 candidate2 `360eea534206bca29b051b3fd104b115e6a1dd54`, CI `38943007433`: superseded by bounded UI help-width/capitalization and lower-mask-control screenshot addition during early focused review; no application pixel failure observed. Next candidate must re-run unchanged focused/cumulative assertions.

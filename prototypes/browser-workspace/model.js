@@ -1,3 +1,4 @@
+import {validateGroupComposition,mutateGroupComposition,writableGroup} from './group-composition.js';
 import {validateArtworkStroke} from './artwork-geometry.js';
 import {validateMotion,mutateMotion,remapMotion} from './motion.js';
 import {validateTip,visitTip} from './custom-tips.js';
@@ -32,6 +33,7 @@ function validateVersion(b,version){
  if(Object.hasOwn(s,'tip')){if(version<12||s.brush!=='ink'||s.preset!=='ink-brush')fail('Image tips require v12 ink brush');validateTip(s.tip);if(s.tip.version===2&&version<13)fail('Grain requires v13');}
  for(const q of s.points)if(!q||!num(q.x,-1e7,1e7)||!num(q.y,-1e7,1e7)||!(q.pressure===null||num(q.pressure,0,1)))fail('Invalid point/pressure');if(s.tip)visitTip(s);}}
  validateFolders(b,ids);
+ validateGroupComposition(b);
  validateMasks(b,ids);
  validateClipping(b);
  validateAdjustments(b);
@@ -41,7 +43,7 @@ function validateVersion(b,version){
  if(!b.layers.some(l=>l.id===b.activeLayer)||ns>limits.strokes||np>limits.points||bytes(b)>limits.bytes)fail('Document limit or invalid active layer');
  if(b.lineage&&(!['unruly-foundation'].includes(b.lineage.source)||!Number.isSafeInteger(b.lineage.revision)||b.lineage.revision<0||!Number.isSafeInteger(b.lineage.dbRevision)||b.lineage.dbRevision<0))fail('Invalid lineage');return b;
 }
-export const validateBoard=b=>validateVersion(b,b?.version===15?15:b?.version===14?14:b?.version===13?13:b?.version===12?12:b?.version===11?11:b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
+export const validateBoard=b=>validateVersion(b,b?.version===16?16:b?.version===15?15:b?.version===14?14:b?.version===13?13:b?.version===12?12:b?.version===11?11:b?.version===10?10:b?.version===9?9:b?.version===8?8:b?.version===7?7:b?.version===6?6:b?.version===5?5:b?.version===4?4:3);
 export function migrateV2(v){const b=copy(validateVersion(v,2));b.version=3;for(const l of b.layers)l.blend='normal';return validateBoard(b);}
 export const createBoard=(id=crypto.randomUUID(),title='Untitled board')=>{const lid=crypto.randomUUID();return {version:3,id,title,revision:0,activeLayer:lid,layers:[{id:lid,name:'Layer 1',visible:true,locked:false,opacity:1,blend:'normal',strokes:[]}],paper:{kind:'plain',color:'#faf8f3',spacing:24,seed:173}};};
 export const createHistory=b=>({board:copy(validateBoard(b)),past:[],future:[],evicted:false});
@@ -55,7 +57,7 @@ export function migrateV1(v,dbRevision=0){
  if(!v||v.version!==1||!idOK(v.id)||typeof v.title!=='string'||v.title.length>128||!Number.isSafeInteger(v.revision)||v.revision<0||!Array.isArray(v.strokes))fail('Invalid legacy board');
  rejectPreset(v);for(const s of v.strokes)rejectPreset(s);const b=createBoard(v.id,v.title);b.revision=v.revision;b.layers[0].strokes=v.strokes.map(s=>({...copy(s),brush:'ink',opacity:1}));b.lineage={source:'unruly-foundation',revision:v.revision,dbRevision};return validateBoard(b);
 }
-export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const layerMap=new Map(b.layers.map(l=>[l.id,crypto.randomUUID()]));const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));const strokeMap=new Map(b.layers.flatMap(l=>l.strokes.map(s=>[s.id,crypto.randomUUID()])));for(const f of b.folders||[]){f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=layerMap.get(old);if(l.parentId)l.parentId=folderMap.get(l.parentId);if(l.clipSource)l.clipSource=layerMap.get(l.clipSource)||folderMap.get(l.clipSource);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=strokeMap.get(s.id);if(l.mask?.patch)l.mask.patch.id=crypto.randomUUID();}remapMotion(b,new Map([...layerMap,...folderMap,...strokeMap]));if(b.reference)b.reference.stroke.id=crypto.randomUUID();b.revision=0;delete b.lineage;return validateBoard(b);}
+export function importDocument(text){if(typeof text!=='string'||new TextEncoder().encode(text).length>limits.bytes)fail('Import exceeds 8 MiB');let b=JSON.parse(text);b=b?.version===1?migrateV1(b):b?.version===2?migrateV2(b):copy(validateBoard(b));b.id=crypto.randomUUID();const layerMap=new Map(b.layers.map(l=>[l.id,crypto.randomUUID()]));const folderMap=new Map((b.folders||[]).map(f=>[f.id,crypto.randomUUID()]));const strokeMap=new Map(b.layers.flatMap(l=>l.strokes.map(s=>[s.id,crypto.randomUUID()])));for(const f of b.folders||[]){if(f.mask?.patch)f.mask.patch.id=crypto.randomUUID();f.id=folderMap.get(f.id);if(f.parentId!==null)f.parentId=folderMap.get(f.parentId);}for(const l of b.layers){const old=l.id;l.id=layerMap.get(old);if(l.parentId)l.parentId=folderMap.get(l.parentId);if(l.clipSource)l.clipSource=layerMap.get(l.clipSource)||folderMap.get(l.clipSource);if(old===b.activeLayer)b.activeLayer=l.id;for(const s of l.strokes)s.id=strokeMap.get(s.id);if(l.mask?.patch)l.mask.patch.id=crypto.randomUUID();}remapMotion(b,new Map([...layerMap,...folderMap,...strokeMap]));if(b.reference)b.reference.stroke.id=crypto.randomUUID();b.revision=0;delete b.lineage;return validateBoard(b);}
 export function editable(b){const l=b.layers.find(l=>l.id===b.activeLayer);const state=layerState(b,l);if(!state.visible||state.locked)fail('Active layer is hidden or locked');return l;}
 export function addStroke(h,s){if(s.opacity===0)return h;return command(h,b=>{if(s.artworkPath){b.version=Math.max(15,b.version);b.folders=b.folders||[];}if(s.tip){b.version=Math.max(s.tip.version===2?13:12,b.version);b.folders=b.folders||[];}editable(b).strokes.push(copy(s));});}
 export function layerCommand(h,action,id,value){return command(h,b=>{
@@ -76,7 +78,7 @@ export function layerCommand(h,action,id,value){return command(h,b=>{
  }else if(action==='duplicate'){
   if(b.layers.length>=limits.layers)fail('Layer limit reached');
   // Validate the entire candidate before allocating any persistent identities.
-  const candidate=copy(b),duplicate=copy(l),used=new Set([b.id,...(b.folders||[]).map(f=>f.id),...b.layers.flatMap(l=>[l.id,...l.strokes.map(s=>s.id),...(l.mask?.patch?[l.mask.patch.id]:[])])]);let serial=0;
+  const candidate=copy(b),duplicate=copy(l),used=new Set([b.id,...(b.folders||[]).flatMap(f=>[f.id,...(f.mask?.patch?[f.mask.patch.id]:[])]),...b.layers.flatMap(l=>[l.id,...l.strokes.map(s=>s.id),...(l.mask?.patch?[l.mask.patch.id]:[])])]);let serial=0;
   const placeholder=()=>{let id;do{id=('u1-duplicate-'+serial++).padEnd(36,'0');}while(used.has(id));used.add(id);return id;};
   duplicate.id=placeholder();duplicate.locked=false;for(const s of duplicate.strokes)s.id=placeholder();if(duplicate.mask?.patch)duplicate.mask.patch.id=placeholder();
   candidate.layers.splice(i+1,0,duplicate);candidate.activeLayer=duplicate.id;candidate.revision=b.revision+1;validateBoard(candidate);
@@ -129,7 +131,8 @@ export function eraseGesture(board,mode,sweeps,radius,options={}){
 
 export const folderCommand=(h,action,id,value)=>command(h,b=>mutateFolder(b,action,id,value));
 
-export function maskCommand(h,action,id,value){return command(h,b=>{const l=b.layers.find(l=>l.id===id);if(!l)throw Error('Layer missing');const state=layerState(b,l);if(state.locked||!state.visible)throw Error('Mask layer is locked or hidden');mutateMask(b,l,action,structuredClone(value));});}
+export const groupCompositionCommand=(h,action,id,value)=>command(h,b=>mutateGroupComposition(b,action,id,value));
+export function maskCommand(h,action,id,value){return command(h,b=>{const l=b.layers.find(l=>l.id===id)||writableGroup(b,id);const state=layerState(b,l);if(state.locked||!state.visible)throw Error('Mask layer is locked or hidden');mutateMask(b,l,action,structuredClone(value));});}
 
 export function clippingCommand(h,action,id,value){return command(h,b=>{const l=b.layers.find(l=>l.id===id);if(!l)throw Error("Layer missing");const state=layerState(b,l);if(state.locked||!state.visible)throw Error("Layer is locked or hidden");mutateClipping(b,l,action,value);});}
 

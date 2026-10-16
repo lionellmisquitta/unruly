@@ -41,7 +41,7 @@ export function mutateFolder(b,action,id,value){
  writable(b,f);
  if(action==='name'){f.name=value;return;}
  if(action==='visible'){f.visible=value;return;}
- if(action==='ungroup'){if(folderLayers(b,f.id).some(l=>layerState(b,l).locked)||b.folders.some(x=>ancestors(b,x).some(a=>a.id===f.id)&&x.locked))fail('Unlock folder contents first');for(const n of [...b.layers,...b.folders])if(parent(n)===id)n.parentId=parent(f);b.folders=b.folders.filter(x=>x!==f);return;}
+ if(action==='ungroup'){if(['mask','opacity','blend','adjustment','filter'].some(k=>Object.hasOwn(f,k)))fail('Reset folder composition and remove masks/effects before ungrouping');if(folderLayers(b,f.id).some(l=>layerState(b,l).locked)||b.folders.some(x=>ancestors(b,x).some(a=>a.id===f.id)&&x.locked))fail('Unlock folder contents first');for(const n of [...b.layers,...b.folders])if(parent(n)===id)n.parentId=parent(f);b.folders=b.folders.filter(x=>x!==f);return;}
  if(action==='up'||action==='down'){
   const entries=folderRows(b).filter(x=>parent(x.node)===parent(f)).map(x=>x.node).reverse(),i=entries.indexOf(f),j=i+(action==='up'?1:-1);if(j<0||j>=entries.length)return;const other=entries[j];writable(b,other);const a=folderLayers(b,id),z=b.layers.includes(other)?[other]:folderLayers(b,other.id);if(!a.length||!z.length)return;const start=Math.min(b.layers.indexOf(a[0]),b.layers.indexOf(z[0]));b.layers=b.layers.filter(l=>!a.includes(l)&&!z.includes(l));b.layers.splice(start,0,...(action==='up'?[...z,...a]:[...a,...z]));return;
  }

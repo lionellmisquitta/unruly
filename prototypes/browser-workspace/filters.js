@@ -1,3 +1,4 @@
+import {hasGroupComposition} from './group-composition.js';
 import {hasAdjustment} from './adjustments.js';
 import {ancestors,folderLayers} from './folders.js';
 export const curveChannels=Object.freeze(['master','red','green','blue']);
@@ -8,7 +9,7 @@ export function validateFilter(f){
  return f;
 }
 export const hasFilter=n=>!!n?.filter&&(n.filter.blur!==0||curveChannels.some(k=>n.filter.curves[k].some(([x,y])=>x!==y)));
-export const isolatesGroup=n=>hasAdjustment(n)||hasFilter(n);
+export const isolatesGroup=n=>hasAdjustment(n)||hasFilter(n)||hasGroupComposition(n);
 export function validateFilters(b){for(const n of [...b.layers,...(b.folders||[])])if(Object.hasOwn(n,'filter')){if(b.version<11)throw Error('Curves/blur require v11');validateFilter(n.filter);}}
 export function mutateFilter(b,id,value){
  const n=b.layers.find(l=>l.id===id)||(b.folders||[]).find(f=>f.id===id);if(!n)throw Error('Filter target missing');const parents=ancestors(b,n);if(!n.visible||n.locked||parents.some(f=>!f.visible||f.locked))throw Error('Filter target is hidden or locked');
