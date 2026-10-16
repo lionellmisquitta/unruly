@@ -191,3 +191,7 @@ This is a logical calls/import map,not an executed AST/knowledge graph or global
 
 ## GUIDE1 + NODE1 input and geometry boundary
 guides.js owns bounded guide projection/snapping and symmetric editable copies. artwork-geometry.js owns strict optional v15 nodes/handles/source witness, sampled replay, current-source detection, metadata transforms and bounded hit testing. drawing-tools-ui.js owns disposable draft/local history and UI-only SVG, injected board/view/commit callbacks. app.js owns input arbitration, source-reference rejection and atomic commit; model.js validates v15; selection.js transforms authoring/witness and upgrades paste. Rendering/history/storage engines unchanged. Erase invalidates source correspondence; subsequent editing visibly uses current points. This is a logical map, not an executed AST/knowledge graph.
+
+## TIP3 alpha-locked image-tip boundary
+
+image-tip-paint.js imports existing custom-tips (deterministic visit/draw including grain), pen dynamics validation and raster encoding. It owns frozen source/settings, conservative work admission, disposable Canvas coverage, exact-alpha RGB composition and cached raster draft. app.js routes existing Vector ink + Alpha lock admission into this adapter through the existing pixel-preview/commit/cancel path. model/history/storage/render engines remain unchanged. Layer metadata stays in its original pipeline; alpha-locked raw artwork becomes pixels only on commit and Undo restores originals. This is a logical module map, not a generated knowledge/AST graph.

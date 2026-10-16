@@ -1,0 +1,16 @@
+{
+  "localDevelopment": [
+    {
+      "status": "fixture error corrected",
+      "reason": "New session fixtures initially omitted mandatory existing dynamics object; production validation correctly rejected them. Added valid DEFAULT_DYNAMICS fixture; 14 new and 13 existing checks PASS."
+    }
+  ],
+  "candidateAttempts": [
+    {
+      "source": "96d006fbc516fe3cba0593b5784213afdbaa34cc",
+      "run": 38902698222,
+      "status": "FAILED_PACKAGING",
+      "reason": "Undefined base-tree variable from an earlier turn caused sparse tree; tool installation could not start. No application execution/publication. Reassemble against verified base tree3c686d26052c0bde789eb1a0f4ef31f354585f63 and validate full PR diff before QA."
+    }
+  ]
+}
