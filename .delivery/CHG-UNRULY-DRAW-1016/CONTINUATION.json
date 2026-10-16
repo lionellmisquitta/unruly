@@ -1,0 +1,15 @@
+{
+  "base": "9833b76d5e1bf548274aa7e223aad68f88ad6faa",
+  "branch": "CHG-UNRULY-DRAW-1016/guides-geometry",
+  "checkpoints": [
+    "GUIDE1",
+    "NODE1"
+  ],
+  "local_models": 24,
+  "state": "new focused browser gates precede cumulative suite; source/run to be bound on push",
+  "expected_models": 424,
+  "expected_structured_browser": 367,
+  "expected_legacy_checks": 2,
+  "expected_hosted_assets": 66,
+  "knowledge_graph": "UNCHANGED"
+}

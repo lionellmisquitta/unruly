@@ -187,3 +187,7 @@ This is a logical calls/import map,not an executed AST/knowledge graph or global
 ## STAB1 input boundary —16 October2026
 
 `stabilization.js` owns pure constant-state distance filtering of x/y only; `stabilization-ui.js` owns device-local range preference and blocked-state/storage-error feedback. app.js snapshots amount/zoom at vector/pixel/mask admission and passes ordered/coalesced points through the filter, with exact release endpoint. Existing renderer/model/history/storage consume ordinary geometry/pixels; no replay metadata or schema changes. Held-shape recognition, smudge, lasso, navigation and artwork erasing retain existing paths. UI range is separate from portable brush/stroke settings. This remains a bounded logical map, not an AST/call graph.
+
+
+## GUIDE1 + NODE1 input and geometry boundary
+guides.js owns bounded guide projection/snapping and symmetric editable copies. artwork-geometry.js owns strict optional v15 nodes/handles/source witness, sampled replay, current-source detection, metadata transforms and bounded hit testing. drawing-tools-ui.js owns disposable draft/local history and UI-only SVG, injected board/view/commit callbacks. app.js owns input arbitration, source-reference rejection and atomic commit; model.js validates v15; selection.js transforms authoring/witness and upgrades paste. Rendering/history/storage engines unchanged. Erase invalidates source correspondence; subsequent editing visibly uses current points. This is a logical map, not an executed AST/knowledge graph.
