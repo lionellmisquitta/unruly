@@ -201,3 +201,8 @@ Scoped records: .delivery/CHG-UNRULY-TIME1-1015/ includes impact/plan,UX/visual 
 ## Knowledge graph refresh — 16 October 2026
 
 Owner-authorized incremental refresh captures HSL1, FX2, TIP1, TIP2+CAP1, CAP2, MOTION1 and TIME1: seven published batches/eight checkpoints since FILL2. Current graph records drawing/painting before video/artwork export, cost controls and all retained gaps/scope. No roadmap requirement removed or new application build/deployment performed. Counter reset to zero; .knowledge/CURRENT_GRAPH.json binds graph commit and package hashes.
+
+
+## STAB1 —16 October2026, implementation pending verification
+
+REQ-005/C02: adjustable0–100 device-local smoothing for ink/image tips,pixel paint and mask painting. Off preserves raw input. Constant-state geometric filter preserves pressure and exact successful-release endpoint; no board-schema/replay change. Targeted model checks10/10 PASS; browser/cumulative verification and publication pending. Real-device feel/latency remain OPEN. No other scope removed. Knowledge graph unchanged by owner instruction. Next proposed work group: drawing guides (ruler/symmetry/snapping), with vector nodes/curve pen/intersections still retained separately.

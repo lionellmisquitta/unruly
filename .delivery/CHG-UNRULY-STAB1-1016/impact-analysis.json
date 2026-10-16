@@ -1,0 +1,58 @@
+{
+  "change_id": "CHG-UNRULY-STAB1-1016",
+  "baseline_id": "6aa05f0b3767fcc45466240c5d6778d9e9d5dc93",
+  "scope_envelope": {
+    "target": [
+      "stabilization.js",
+      "stabilization-ui.js",
+      "app.js",
+      "index.html",
+      "sw.js"
+    ],
+    "contract": [
+      "coalesced ordering/pressure/endpoints",
+      "pointer ownership and cancellation",
+      "history/model/renderer/native document",
+      "offline modules"
+    ],
+    "regression": [
+      "STAB-MODEL",
+      "STAB-BROWSER",
+      "STAB-CUMULATIVE"
+    ],
+    "excluded_legacy": [
+      "Motion mixed-target gap",
+      "guides/vector editing",
+      "video/export/cloud/AI"
+    ],
+    "unknown_boundary": [
+      "physical device feel and latency"
+    ]
+  },
+  "confirmed_impacts": [
+    "Input filtering before vector points and pixel/mask session advance",
+    "Device-local range preference; no schema change",
+    "SW identity changes eight legacy exact-identity expectations"
+  ],
+  "likely_impacts": [],
+  "regression_obligations": [
+    "STAB-R1 -> STAB-MODEL",
+    "STAB-R2 -> STAB-BROWSER",
+    "STAB-R3 -> STAB-CUMULATIVE"
+  ],
+  "technical_constraints": [
+    "Constant-state geometry-only filter",
+    "Off pass-through; exact release and current pressure",
+    "No knowledge-graph or skill changes"
+  ],
+  "unknowns": [
+    "Physical tablet feel remains NOT_VERIFIED"
+  ],
+  "ux_route": "ux_architect_and_ui_director",
+  "evidence_refs": [
+    "docs/delivery/PRODUCT_ROADMAP.md:REQ-005",
+    "prototypes/browser-workspace/app.js:startPointer/pixelMove/finish",
+    "UX_BASELINE.md",
+    "UI_DIRECTION.md"
+  ]
+}

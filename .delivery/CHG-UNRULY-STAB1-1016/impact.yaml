@@ -1,0 +1,9 @@
+change_id: CHG-UNRULY-STAB1-1016
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [prototypes/browser-workspace/stabilization.js, prototypes/browser-workspace/stabilization-ui.js, prototypes/browser-workspace/app.js]
+regression_obligations:
+  - {id: STAB-R1, reason: Jitter reduction and exact Off/pressure/endpoints/zoom/bounds, test_id: STAB-MODEL}
+  - {id: STAB-R2, reason: Gesture ownership, pixels, pressure, cancel, Undo and settings/offline, test_id: STAB-BROWSER}
+  - {id: STAB-R3, reason: Shared input coordinator cumulative compatibility, test_id: STAB-CUMULATIVE}

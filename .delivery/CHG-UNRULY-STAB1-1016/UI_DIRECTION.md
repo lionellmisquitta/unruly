@@ -1,0 +1,1 @@
+Existing production HTML/JS and brush-panel visual system retained. Place labelled native range+text output immediately below Drawing mode; reuse .pen-options/.note and current focus/spacing. No new colors, fonts, cards or animations. UXD-STAB1 is authoritative. Verify desktop and narrow panel screenshot, keyboard operation and blocked-setting behavior.

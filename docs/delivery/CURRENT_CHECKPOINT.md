@@ -1,4 +1,9 @@
-# Current checkpoint — TIME1 published, 16 October 2026
+# Current checkpoint — STAB1 implementation, verification pending
+
+STAB1 (REQ-005/C02) is the active authorized build on `CHG-UNRULY-STAB1-1016/stabilization`, base `6aa05f0b3767fcc45466240c5d6778d9e9d5dc93`. Device-local0–100 smoothing for ink/image tips,pixel paint and masks; Off default. Local14model tests PASS; focused Chromium/cumulative CI and publication pending. Retain TIME1 as latest published source until verified publication. Knowledge graph and skills unchanged; .knowledge remains at TIME1 by explicit instruction. Resume from scoped .delivery/CHG-UNRULY-STAB1-1016 records.
+
+## Historical TIME1 closeout
+
 
 Source 0bab964ad5722c5dc3fd6dbe67c5705125635447; cumulative CI38781105113 SUCCESS:386model tests,348Chromium JSON scenarios plus2legacy console checks. Publication runner verified the downloaded artifact ZIP digest, commit identity and155source hashes against this pinned checkout. PR18 merge 486b114c50b98de0effe3806e69306ea43619991 has exactly the tested tree8211680c308c9100eca3591bfd414b19abe698f9. Publication 5eead4c6265c6b9d181dd2255246df8ddfb400f6; Pages 38786233048 SUCCESS; 61 hosted application files match tested bytes.
 
