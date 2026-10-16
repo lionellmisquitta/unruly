@@ -1,0 +1,19 @@
+{
+  "commit": "78a04d6b221b4a0fce9637aa70e201ba430f8ea5",
+  "run_id": 37363203471,
+  "job_id": 111942401150,
+  "artifact_id": 11367643599,
+  "artifact_sha256": "f3a822fc2993ee96f58beed3fef8b69b650ca2e6012b5b2c4c4ea26db1b46fc1",
+  "conclusion": "failure",
+  "unit_pass": 24,
+  "unit_total": 24,
+  "inherited_browser_pass": 15,
+  "inherited_browser_total": 15,
+  "selection_browser_pass": 5,
+  "selection_browser_total": 6,
+  "failure": "U02 pasted-y expectedwheelanchor fixture",
+  "independent_diagnosis": "TEST_DEFECT; actual Chromium rounds half-pixel wheelanchor; application geometry matches actualinput",
+  "not_yet_verified": "U02 subsequentDelete/reload assertions",
+  "physical_pen": "NOT_VERIFIED",
+  "production_authorization": false
+}

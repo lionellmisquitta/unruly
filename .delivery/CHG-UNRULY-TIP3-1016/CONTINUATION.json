@@ -1,11 +1,6 @@
 {
   "base": "92d2d8817e5ab4ebc209355939501abc84b88696",
   "checkpoint": "TIP3",
-  "branch": "CHG-UNRULY-TIP3-1016/alpha-lock",
-  "state": "27 targeted model tests PASS; browser and cumulative pending",
-  "expectedModels": 438,
-  "expectedStructuredBrowser": 377,
-  "expectedLegacy": 2,
-  "expectedAssets": 67,
+  "state": "Scoped; implementation pending",
   "knowledge_graph": "UNCHANGED"
 }

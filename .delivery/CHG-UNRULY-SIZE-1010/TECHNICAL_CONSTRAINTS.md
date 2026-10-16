@@ -1,0 +1,6 @@
+- 0–100 percentages are presentation only. Saved widths stay in document units.
+- Use the latest candidate’s two-decimal mapping; do not silently replace its rounding.
+- No weakening original golden renderer, pressure or full-width assertions.
+- App source, renderer and offline SW remain byte-identical to the candidate baseline.
+- No native main merge. No Pages deployment before exact-source cumulative green CI and review.
+- Whole-canvas rotation remains deferred.

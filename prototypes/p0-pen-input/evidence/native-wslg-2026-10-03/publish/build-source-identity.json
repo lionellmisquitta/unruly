@@ -1,0 +1,12 @@
+{
+  "base_commit": "cb1d52089c5cdd159050dc375b92750eb84d8271",
+  "dirty": true,
+  "captured_at_utc": "2026-10-03T15:05:59.942867+00:00",
+  "source_sha256": {
+    "main.cpp": "a0cfc97d441abccf721527471d6bde86090194d7bad9f4316e3ef30a0254d48a",
+    "CMakeLists.txt": "588e71e66ec07b7cebb36603ca070ec57e4a2a9060498b69d12b1e8aa2908337",
+    "model_tests.cpp": "0b718d2195e96f508d6bed33b6c2e2129081e40e867bfebe1ee5ecc614ea4f5c",
+    "qa-claude/adversarial_tests.cpp": "2097ff2dad020c31ad58a104840baa7b09a476646619d2eeddb14ffc6d6f7734",
+    "qa-claude/capacity_regression.cpp": "a49e51f10107a5035beb1f2a966bd8b8657aee564dc749e3184e81b7a3de71fe"
+  }
+}

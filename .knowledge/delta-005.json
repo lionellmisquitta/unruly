@@ -1,0 +1,19 @@
+{
+  "id": "DELTA-005",
+  "mode": "capture",
+  "created_at": "2026-10-03",
+  "events": [
+    {"id": "EVT-P0A-SOURCE", "status": "created", "artifact": "prototypes/p0-pen-input/main.cpp", "statement": "Quarantined raw-pen probe source; Qt remains a candidate"},
+    {"id": "EVT-P0A-MODEL-QA", "status": "passed", "artifact": "prototypes/p0-pen-input/QA_REPORT.md", "statement": "Independent model QA: 10 cases passed; excludes Qt/UI/device code"},
+    {"id": "EVT-P0A-NATIVE", "status": "not_verified", "statement": "Native compilation, UI and hardware evidence unavailable"}
+  ],
+  "relationships": [
+    {"from": "REQ-005", "relation": "explored_by", "to": "EVT-P0A-SOURCE", "status": "proposed"},
+    {"from": "EVT-P0A-SOURCE", "relation": "partially_tested_by", "to": "EVT-P0A-MODEL-QA", "scope": "Capture model only; exact source hashes in QA report"}
+  ],
+  "production_implementation_status": "not_started",
+  "prototype_status": "created",
+  "checkpoint_status": "blocked_native_verification",
+  "build_authorized": false,
+  "note": "Capture delta is not a full KGP export. No production requirement is marked verified."
+}

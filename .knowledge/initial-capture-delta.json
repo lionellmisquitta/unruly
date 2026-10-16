@@ -1,0 +1,138 @@
+{
+  "id": "DELTA-001",
+  "mode": "capture",
+  "status": "initial-capture-not-full-kgp",
+  "created_at": "2026-10-03T12:14:46+05:30",
+  "source_refs": [
+    "current-conversation",
+    "attached-surface-screenshot",
+    "https://www.mi.com/global/product/xiaomi-pad-7-pro/specs/"
+  ],
+  "entities": [
+    {
+      "id": "urn:whiteboard:project",
+      "entity_type": "System",
+      "name": "Offline Drawing Whiteboard",
+      "description": "Personal open-source Windows and Android drawing and whiteboarding app.",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "REQ-013",
+      "entity_type": "Requirement",
+      "name": "Incremental project knowledge graph",
+      "description": "Capture design and coding knowledge at each change rather than reconstructing at the end.",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:device:surface",
+      "entity_type": "System",
+      "name": "Surface Pro 9",
+      "description": "Screenshot: Core i7-1265U, 32 GB RAM, Intel Iris Xe; user confirms 64-bit OS.",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:device:xiaomi",
+      "entity_type": "System",
+      "name": "Xiaomi Pad 7 Pro",
+      "description": "User identifies target tablet; manufacturer specs are reference capabilities, exact configuration unverified.",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:process:delivery",
+      "entity_type": "Process",
+      "name": "Automated checkpoint delivery",
+      "description": "Builder, independent adversary, Gatekeeper review and merged regression; not yet executed.",
+      "status": "proposed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:capability:drawing",
+      "entity_type": "Capability",
+      "name": "Vector and raster drawing",
+      "description": "Equal first-release priority for painting and whiteboarding.",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:capability:sync",
+      "entity_type": "Capability",
+      "name": "Google Drive sync",
+      "description": "Offline local boards plus Google-authorized personal cross-device synchronization.",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:unknown:ai",
+      "entity_type": "Unknown",
+      "name": "AI release scope",
+      "description": "BYOK summaries and diagrams requested as an optional idea; first-release inclusion unresolved.",
+      "status": "open",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "urn:whiteboard:edge:req:0",
+      "from": "urn:whiteboard:project",
+      "to": "REQ-013",
+      "relationship_type": "REQUIRES",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:edge:req:1",
+      "from": "urn:whiteboard:project",
+      "to": "urn:whiteboard:capability:drawing",
+      "relationship_type": "REQUIRES",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:edge:req:2",
+      "from": "urn:whiteboard:project",
+      "to": "urn:whiteboard:capability:sync",
+      "relationship_type": "REQUIRES",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:edge:device:0",
+      "from": "urn:whiteboard:project",
+      "to": "urn:whiteboard:device:surface",
+      "relationship_type": "TARGETS",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    },
+    {
+      "id": "urn:whiteboard:edge:device:1",
+      "from": "urn:whiteboard:project",
+      "to": "urn:whiteboard:device:xiaomi",
+      "relationship_type": "TARGETS",
+      "status": "confirmed",
+      "created_at": "2026-10-03T12:14:46+05:30",
+      "updated_at": "2026-10-03T12:14:46+05:30"
+    }
+  ],
+  "unverified": [
+    "No code exists",
+    "No physical-device performance tests",
+    "No controller execution",
+    "No full graph visual exports yet"
+  ]
+}

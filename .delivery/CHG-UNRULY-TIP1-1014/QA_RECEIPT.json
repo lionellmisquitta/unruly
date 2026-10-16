@@ -1,0 +1,23 @@
+{
+  "source": "a415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33",
+  "ci_run": 38583117039,
+  "ci_job": 115918116246,
+  "result": "SUCCESS",
+  "model_tests": 341,
+  "chromium_scenarios": 310,
+  "source_identity_matches": 136,
+  "new_model_tests": 19,
+  "new_browser_scenarios": 11,
+  "artifact_id": 11905535807,
+  "artifact_sha256": "0ffd0c43373c6db0cf4e9c8123d523681642bd18818f6b4eceb4fd331d36344b",
+  "merge": "95911bae5c52f68757bae658bbd8685d5121b1a2",
+  "merged_tree_equals_tested": true,
+  "visual_review": [
+    "tip1-narrow-editor.png",
+    "TIPB02-named-section-save-move-rename.png"
+  ],
+  "same_session_verification": true,
+  "independent_human_approval": false,
+  "physical_tablet": "NOT_VERIFIED",
+  "knowledge_graph": "UNCHANGED"
+}

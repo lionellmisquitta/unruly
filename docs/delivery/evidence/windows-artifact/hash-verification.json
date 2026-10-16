@@ -1,0 +1,64 @@
+{
+  "commit": "fb7ab408c8dabb48e31415e51e0201ba7bce1ab7",
+  "run_id": 37149560536,
+  "artifact_id": 11283555927,
+  "zip_sha256": "23ecccf5af893c808989776d0b4f4887ca635a45b53c875c0f4bad3e3dd8ee6e",
+  "checks": [
+    {
+      "path": "capture_model.hpp",
+      "actual_windows_sha256": "4add1126e954e1ed0c50038c4ca4777843801ba756d1dd8e0dbc85aa467d2f84",
+      "repository_lf_sha256": "e9fab3be87a4bb6591f038613febffba32f957046d943a67cc5b6e0cbf2bc877",
+      "checkout_conversion": "Git Windows checkout LF to CRLF only",
+      "verified": true
+    },
+    {
+      "path": "windows_main.cpp",
+      "actual_windows_sha256": "8b90a5ed00e5e3ef4ee850a82b480f43e0807449ca10c7b3cf2183e6f7b52731",
+      "repository_lf_sha256": "0afff682c0f547962c6b15b1dafe39d6273e6d5433dd3be39a3e5c0ce7debf2d",
+      "checkout_conversion": "Git Windows checkout LF to CRLF only",
+      "verified": true
+    },
+    {
+      "path": "model_tests.cpp",
+      "actual_windows_sha256": "d18c1400696c7173d9031fc6a8f773ce5118ac427ae5144df7d493e4f66091d6",
+      "repository_lf_sha256": "98c1d1b3fcb9bbfe7b39d12e398b3df285230b1d5d438136a83184faecc86e53",
+      "checkout_conversion": "Git Windows checkout LF to CRLF only",
+      "verified": true
+    },
+    {
+      "path": "build-windows.cmd",
+      "actual_windows_sha256": "2812a50d85ead1927e8e28a0a4b8eba776d83c2b857926029de34e543f70eeda",
+      "repository_lf_sha256": "b689c26a2c85e1817f657037935d57fda077a4e93079435e2293e47f6eac2661",
+      "checkout_conversion": "Git Windows checkout LF to CRLF only",
+      "verified": true
+    },
+    {
+      "path": "smoke-windows.ps1",
+      "actual_windows_sha256": "13e39281d481511ef8bca150960e2abf79536a582015f9fd482352379b04ab07",
+      "repository_lf_sha256": "fd8add7e0b45991e8d25ef6fc538ac4a77afadd6852a1ee35bc85bc359853c00",
+      "checkout_conversion": "Git Windows checkout LF to CRLF only",
+      "verified": true
+    },
+    {
+      "path": "build/unruly-windows-input.exe",
+      "actual_windows_sha256": "875f5aacf8661e92db4c186799a181a081e5061e82f070e5eb9f964aa6467a75",
+      "repository_lf_sha256": null,
+      "checkout_conversion": "none",
+      "verified": true
+    },
+    {
+      "path": "build/model_tests.exe",
+      "actual_windows_sha256": "d9879e4803bbf3c0558e8ed9b5bbb7d759aa5a516f32d9f3a287fa4e54f6352a",
+      "repository_lf_sha256": null,
+      "checkout_conversion": "none",
+      "verified": true
+    }
+  ],
+  "initial_raw_lf_comparison": "different; all five source hashes exactly match LF to CRLF checkout conversion",
+  "native_compile": "PASS",
+  "native_model_cases": 9,
+  "window_startup_close": "PASS",
+  "painted_status": "NOT_VERIFIED",
+  "physical_pen": "NOT_VERIFIED",
+  "production_authorized": false
+}

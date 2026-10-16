@@ -1,0 +1,14 @@
+{
+  "commit": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+  "run_id": 37364993048,
+  "job_id": 111947905428,
+  "artifact_id": 11368146880,
+  "artifact_sha256": "da7b1d996623ef1a1043bc91b83c2682017398118839eb434adc1ad1072eacf1",
+  "conclusion": "success",
+  "unit": "24/24 PASS",
+  "inherited_browser": "15/15 PASS",
+  "selection_browser": "6/6 PASS",
+  "physical_pen": "NOT_VERIFIED",
+  "source_and_test_hashes": "19/19 verified",
+  "production_authorization": false
+}

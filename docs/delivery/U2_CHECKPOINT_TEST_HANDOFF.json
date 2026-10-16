@@ -1,0 +1,34 @@
+{
+  "checkpoint_id": "U2",
+  "objective": "Verify original brush library/preset serialization and colour-disc UI without regressing U1/P01 behavior.",
+  "builder_identity": "GPT-5.6 Sol current session",
+  "adversary_identity": "same-model isolated QA pass; no independent external coding agent available in this runtime",
+  "branch": "preview/drawing-ux-u2-2026-10-06",
+  "source_commit": "1eef4c0e09120ace85cdf80024ee545e18db33ef",
+  "requirements": [
+    "12 immutable category-compatible presets",
+    "legacy absent-preset behavior preserved",
+    "two-column brush library",
+    "per-preset device-local size/opacity memory",
+    "hue ring + saturation/value disc",
+    "hex/H/S/V synchronization",
+    "generated shades",
+    "recent 8 colours",
+    "saved palette",
+    "offline assets",
+    "no U3 scope"
+  ],
+  "regression": [
+    "model",
+    "selection",
+    "U1 model/browser",
+    "foundation browser",
+    "selection browser",
+    "performance browser"
+  ],
+  "repair_budget": {
+    "source_repairs_max": 2,
+    "ci_runs_max": 3
+  },
+  "physical_pen": "NOT_VERIFIED"
+}

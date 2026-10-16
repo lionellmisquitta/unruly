@@ -1,0 +1,14 @@
+# Local credentials and generated outputs
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+node_modules/
+__pycache__/
+.pytest_cache/
+build/
+dist/
+artifacts/
+*.apk
+*.exe

@@ -1,0 +1,10 @@
+{
+  "id": "DUX1-procreate-reference",
+  "status": "USER_SELECTED_REFERENCE_TECHNICAL_REVIEW_PENDING",
+  "source": "docs/delivery/PROCREATE_REFERENCE_UX_UPDATE.md",
+  "supersedes": "DRAWING_UX_LAYOUT_PROPOSAL.png visual target",
+  "reference_pages": 38,
+  "open_decision": "Procreate single chord tap default vs prior double chord tap default",
+  "implementation_started": false,
+  "production_authorization": false
+}

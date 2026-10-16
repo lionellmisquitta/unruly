@@ -1,9 +1,0 @@
-{
-  "localDevelopment": [
-    {
-      "status": "fixture error corrected",
-      "reason": "New session fixtures initially omitted mandatory existing dynamics object; production validation correctly rejected them. Added valid DEFAULT_DYNAMICS fixture; 14 new and 13 existing checks PASS."
-    }
-  ],
-  "candidateAttempts": []
-}

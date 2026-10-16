@@ -1,0 +1,80 @@
+{
+  "id": "DELTA-008",
+  "mode": "capture",
+  "created_at": "2026-10-03",
+  "events": [
+    {
+      "id": "EVT-CLAUDE-P0-INDEPENDENT-QA",
+      "status": "executed",
+      "artifact": "prototypes/p0-pen-input/evidence/claude-2026-10-03/evidence-addendum-response.json",
+      "statement": "Actual tools-disabled cross-model QA: Claude authored tests and independently assessed recorded local evidence."
+    },
+    {
+      "id": "EVT-P0-CAPACITY-DEFECT",
+      "status": "failed",
+      "artifact": "prototypes/p0-pen-input/evidence/claude-2026-10-03/capacity-red-local-execution.json",
+      "statement": "Two capacity cases failed with four assertions, exit1 on original source."
+    },
+    {
+      "id": "EVT-P0-CAPACITY-REPAIR",
+      "status": "passed",
+      "artifact": "prototypes/p0-pen-input/evidence/claude-2026-10-03/repair-cycle-1-local-execution.json",
+      "statement": "One Codex repair; existing10 and QA capacity2 passed on repaired hash; full P0 not verified."
+    },
+    {
+      "id": "EVT-P0-ADVERSARIAL-REGRESSION-BLOCK",
+      "status": "blocked",
+      "artifact": "prototypes/p0-pen-input/qa-claude/QA_CHECKPOINT_RESULT.json",
+      "statement": "Repaired nine-case adversarial suite compiled but Windows App Control prevented execution; native/device/Android absent."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "EVT-P0-CAPACITY-DEFECT",
+      "relation": "repaired_by",
+      "to": "EVT-P0-CAPACITY-REPAIR",
+      "scope": "Capture model only, exact before/after hashes recorded; native UI unknown"
+    },
+    {
+      "from": "REQ-005",
+      "relation": "partially_tested_by",
+      "to": "EVT-CLAUDE-P0-INDEPENDENT-QA",
+      "scope": "Quarantined raw sample model; no feature or physical pen verification"
+    },
+    {
+      "from": "REQ-012",
+      "relation": "partially_exercised_by",
+      "to": "EVT-CLAUDE-P0-INDEPENDENT-QA",
+      "scope": "Tools-disabled source/evidence exchange and one repair; no merge/merged regression/push"
+    }
+  ],
+  "source_identity": {
+    "source_commit": "cb1d52089c5cdd159050dc375b92750eb84d8271",
+    "source_dirty": true,
+    "source_hashes": [
+      {
+        "path": "prototypes/p0-pen-input/main.cpp",
+        "sha256": "a0cfc97d441abccf721527471d6bde86090194d7bad9f4316e3ef30a0254d48a"
+      },
+      {
+        "path": "prototypes/p0-pen-input/model_tests.cpp",
+        "sha256": "0b718d2195e96f508d6bed33b6c2e2129081e40e867bfebe1ee5ecc614ea4f5c"
+      },
+      {
+        "path": "prototypes/p0-pen-input/CMakeLists.txt",
+        "sha256": "588e71e66ec07b7cebb36603ca070ec57e4a2a9060498b69d12b1e8aa2908337"
+      },
+      {
+        "path": "prototypes/p0-pen-input/README.md",
+        "sha256": "bf4fd2acbbe6abd07bd1b0513a45330a613b509e20359b46e295d0eb3bed2e6c"
+      }
+    ],
+    "repair_cycle": 1,
+    "source_hashes_verified_at_retest": true
+  },
+  "repair_cycles": 1,
+  "qa_status": "BLOCKED",
+  "build_authorized": false,
+  "production_implementation_status": "not_started",
+  "note": "Actual bounded capture delta; no full KGP export, checkpoint closure or authorization."
+}

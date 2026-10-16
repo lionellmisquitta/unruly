@@ -1,0 +1,22 @@
+{
+  "checkpoint_id": "CURVE1",
+  "source_commit": "0011da2f4e7b0ac7e910a39e892ee07ddac6e51e",
+  "ci_run": "37644325380",
+  "artifact_id": "11493821816",
+  "artifact_digest": "1d72324581a9898b97d2fd2e802375efac95703440b1c2c5e53719ba1f0b3e54",
+  "downloaded_zip_sha256": "1d72324581a9898b97d2fd2e802375efac95703440b1c2c5e53719ba1f0b3e54",
+  "model_pass": 66,
+  "browser_pass": 117,
+  "browser_fail": 1,
+  "curve_cases_pass": 10,
+  "finding": {
+    "test_id": "PENB01",
+    "classification": "TEST_READINESS_RACE",
+    "evidence": "Saved status is set before refresh schedules its requestAnimationFrame paint. Trace reads default HTMLcanvas300x150 immediately after status readiness; subsequent failure screenshot displays correct fully rendered ink at1440x864. No application replay defect demonstrated.",
+    "fixture_repair": "After reload/status wait, conditionally await prior backing dimensions and opaque rendered background on RAF polling, then retain original exact canvas hash/dimensions deepEqual assertion. No fixed sleep and no expected hash polling."
+  },
+  "app_repairs": 0,
+  "ci_runs_consumed": 2,
+  "next": "READY_FOR_CI3_FINAL_BUDGET",
+  "physical_pen": "NOT_VERIFIED"
+}

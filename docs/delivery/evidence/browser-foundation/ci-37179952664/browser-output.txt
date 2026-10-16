@@ -1,0 +1,5 @@
+F05-reopen-new-export The expression evaluated to a falsy value:
+
+  assert(await page.getByRole('dialog').isVisible())
+
+[{"id":"F01-desktop","status":"PASS"},{"id":"F01-mobile","status":"PASS"},{"id":"F01-tablet","status":"PASS"},{"id":"F02-pen-lifecycle","status":"PASS"},{"id":"F03-touch-mouse-navigation","status":"PASS"},{"id":"F04-history-tools","status":"PASS"},{"id":"F05-reopen-new-export","status":"FAIL"},{"id":"F06-corrupt-recovery","status":"PASS"},{"id":"F07-write-failure-recovery","status":"PASS"},{"id":"F08-concurrent-tabs","status":"PASS"},{"id":"F09-offline-reload","status":"PASS"},{"id":"F10-worker-update-safety","status":"PASS"}]

@@ -1,0 +1,62 @@
+{
+  "change_id": "CHG-UNRULY-FILL2-1013",
+  "baseline_id": "2c95cf7091a10f638e19086a38fc3bf27b22b34f",
+  "scope_envelope": {
+    "target": [
+      "prototypes/browser-workspace/app.js",
+      "prototypes/browser-workspace/index.html",
+      "prototypes/browser-workspace/sw.js",
+      "prototypes/browser-workspace/polygon-fill.js"
+    ],
+    "contract": [
+      "geometric enclosure and selected-region fill",
+      "mapped pen selection safety",
+      "one reversible active-layer pixel edit",
+      "prior region cancellation",
+      "post-QA graph refresh"
+    ],
+    "regression": [
+      "cumulative browser/model suite",
+      "offline safe updates",
+      "large-layer complement"
+    ],
+    "excluded_legacy": [
+      "visible composite/effects/brush implementation",
+      "model/schema/renderer/storage rewrite",
+      "skill changes",
+      "graph writes before successful build/test"
+    ],
+    "unknown_boundary": [
+      "physical pen feel and device latency"
+    ]
+  },
+  "confirmed_impacts": [
+    "New Lasso mode bypasses auto-move and commits closed polygon on release",
+    "Mapped pen actions retain select/move semantics",
+    "Existing masks and FILL1 pixel/complement command reused"
+  ],
+  "likely_impacts": [
+    "Additional1MP polygon traversal and complement snapshot latency, physical devices unmeasured"
+  ],
+  "regression_obligations": [
+    "area-geometry",
+    "area-interactions",
+    "cumulative"
+  ],
+  "technical_constraints": [
+    "Existing3\u2013512point/1024window/16tiles quotas",
+    "One command and unchanged other layers, original Undo",
+    "No bucket/renderer/model/storage/wand edits",
+    "Five cache labels updated; cumulative CI18min due prior14m42s",
+    "Graph only after verification; stable IDs/provenance, scoped incremental refresh"
+  ],
+  "unknowns": [
+    "physical pen feel/device latency/native destination paste"
+  ],
+  "ux_route": "ux_architect",
+  "evidence_refs": [
+    "docs/delivery/CONTINUATION_CONTRACT.md",
+    ".delivery/CHG-UNRULY-FILL2-1013/UX_BASELINE.md",
+    "User authorizes next build and graph update after successful build/test on13-Oct-2026"
+  ]
+}

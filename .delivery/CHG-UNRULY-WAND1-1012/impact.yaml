@@ -1,0 +1,21 @@
+change_id: CHG-UNRULY-WAND1-1012
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/app.js
+- prototypes/browser-workspace/wand.js
+- prototypes/browser-workspace/index.html
+- prototypes/browser-workspace/style.css
+- prototypes/browser-workspace/sw.js
+regression_obligations:
+- id: wand-model
+  reason: Bounded connectivity/tolerance/alpha/masks, pixel extraction and atomic
+    history/locks
+  test_id: wand-model
+- id: wand-browser
+  reason: Tablet pen/touch region UX, clipboard/delete/transform/cancel/undo/offline/cache
+  test_id: wand-browser
+- id: cumulative
+  reason: All existing allocation/pixel/input/storage/work/cache regressions preserved
+  test_id: cumulative-qa

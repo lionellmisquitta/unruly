@@ -1,0 +1,10 @@
+{
+  "status": "PASSED",
+  "method": "Stdlib recursive check of all keywords actually present in PILOT_IMPACT/PILOT_PLAN/IMPACT_ANALYSIS supplied schemas; unsupported keywords reject. Test-ID uniqueness/links checked.",
+  "files": [
+    "impact.yaml",
+    "plan.yaml",
+    "impact-analysis.json"
+  ],
+  "bundledValidator": "BLOCKED: jsonschema missing from default and primary Python; bundled script not claimed passed."
+}

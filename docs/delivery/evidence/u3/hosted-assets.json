@@ -1,0 +1,70 @@
+{
+  "deployment_run": 37606536465,
+  "deployment_commit": "cb1dc0a27713f59f1fbea526a3a285d7068ea764",
+  "application_commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
+  "job_id": 112743277800,
+  "status": "PASSED",
+  "method": "GitHub Actions curl and cmp against SHA-pinned checkout",
+  "hashes": [
+    {
+      "sha256": "3067a214433b4d8be2ba736f5b745b09aa624bcdbe40db30f2be4a9a4422c3b4",
+      "file": "README.md"
+    },
+    {
+      "sha256": "c2f1b7cd56c0159830a5d5cdd3d5e3303b2c62d44e964b71ab991e050f6ca1d1",
+      "file": "app.js"
+    },
+    {
+      "sha256": "98e66660b7e0f7aa50c80d37588eb95c3a019d9cfb22688d6cfd09af10dca1d0",
+      "file": "brushes.js"
+    },
+    {
+      "sha256": "062e358c2cbb821637c4c15701d6b08fa5704dfc08963caf91231f8de7937a77",
+      "file": "gestures.js"
+    },
+    {
+      "sha256": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "file": "icon.svg"
+    },
+    {
+      "sha256": "77dc20b894cc887359749c6fa91c39523761933b2b33654d71164264adc2f0c7",
+      "file": "index.html"
+    },
+    {
+      "sha256": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "file": "manifest.webmanifest"
+    },
+    {
+      "sha256": "a9587a81012092e3f8fd8d3a05ea29e678a48befccad91f5e1bd40f27cf85ef1",
+      "file": "model.js"
+    },
+    {
+      "sha256": "8842b49da299f9124d3fee126dc62541524e22aef0772552b1371a422344c1fd",
+      "file": "render.js"
+    },
+    {
+      "sha256": "2a39ee2678addf9f9d62480518cf22b68fc734cc45b54f1c1ee2b5613c766843",
+      "file": "selection.js"
+    },
+    {
+      "sha256": "7bd2c3e63038fa08ba13431cf40df0ec0116bcdf3b55307d8f05bd0bc3969253",
+      "file": "shapes.js"
+    },
+    {
+      "sha256": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+      "file": "storage.js"
+    },
+    {
+      "sha256": "5a5a1cb8adeb7be9361b1f689ec4063b2567a4d34e0b820468dfc9e43a4806da",
+      "file": "style.css"
+    },
+    {
+      "sha256": "57b7e7f26b0c78da7c5742d20c2410b98913190389a4a6743ecc4c2d183b2497",
+      "file": "sw.js"
+    },
+    {
+      "sha256": "fc3313514d8d25950680ed0f73a20820ae1fbec0d146b21093fa7beffcd2ca5f",
+      "file": "u2.js"
+    }
+  ]
+}

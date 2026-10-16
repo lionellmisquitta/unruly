@@ -1,0 +1,29 @@
+[
+  {
+    "source": "4656ff6159d3b7dddb77868799e3069fad92b5c3",
+    "status": "superseded",
+    "reason": "Proactive correction of browser WebIDL float-pressure expectations; no app change"
+  },
+  {
+    "source": "1fd1542e110922aa57a3097d6c24d3b0ceef8c6f",
+    "run": 38850337803,
+    "artifact": 12025775927,
+    "artifact_sha256": "41fdc023827028b77dc77b1f7d84e77c21c5927d9019517bfb52ecb7aaaebaaf",
+    "status": "FAILED",
+    "reason": "Four legacy offline assertions retained20261015 in the new stab1 cache identity; actual app cache correctly uses20261016. New stabilization gate passed. Only the four expected date literals are corrected."
+  },
+  {
+    "source": "a56326a64d5f697d40c33ef51d9d738965e4b316",
+    "run": 38851896377,
+    "status": "PASSED_AND_PUBLISHED",
+    "models": 400,
+    "structured_browser": 357,
+    "legacy_checks": 2,
+    "artifact": 12025528906,
+    "artifact_sha256": "b152ff3fa6f198319649f6c0489ec206112aebe526f24b0c3538e98343efe97d",
+    "publication": "d1b75ea4d62e19f4068d708930db7ffe7701c28b",
+    "pages_run": 38853657882,
+    "hosted_files": 63,
+    "application_repair": false
+  }
+]

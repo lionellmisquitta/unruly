@@ -1,0 +1,11 @@
+# CURVE1 hosted closure — 8 October 2026
+
+Accepted personal pressure curve is live at https://lionellmisquitta.github.io/unruly/. Exact source `d522e76417a91b8d1a4636010ae10a2c7d53f9b7`, checkpoint branch `checkpoint/curve1-v0.8.0`. Independent QA/Gatekeeper accepted66 model +118 browser journeys,184 passes,39 exact source identities. Earlier failed runs and trace-grounded fixture corrections remain recorded. Application repairs0/2; CI3/3 consumed. No unresolved automated product defect; physical pen capability/feel remains NOT_VERIFIED.
+
+Reviewed Pages run37722268828 on workflow commit25bb1b28bd9f6442806bf257506b568e6ada4ac7 succeeded, pinned to the accepted source. All17 hosted assets byte-matched through deployment curl/cmp and root independently matched all emitted hashes against accepted local assets. Raw deployment log and asset receipt are under evidence/curve1.
+
+Remote Chrome observed Saved on this device before safe Update. Reload to update preserved the old reference line. Brush→Personal pressure curve rendered three points, numeric controls, Reset and disposable pad. Native graph drag changed50% response44→54; native keyboard25% response19→25 committed. Automated fill did not commit blur through the browser bridge; native individual key input and actual graph drag did. This is interaction-tool behavior, not an application defect; native input and CI contract both passed. Mouse pad drew and truthfully reported pressure unavailable; no board ink added. A new line was applied and Saved observed before reload. After reload both old and new lines were visibly retained; profile25/54/71 persisted, disposable pad reset. Ready for offline use displayed; actual network-disabled offline was tested in CI, not repeated in hosted browser. No physical pen input was available.
+
+Live proof screenshot `unruly-pressure-curve-1791429861801.jpg` saved with Library identity libfile_444de576adb88191bcb227f7eef5da1f. No board/user data was copied into public project evidence. Screenshot is separate from public repository code/evidence.
+
+PEN1 source93af0a256b57932288f57239612bd4cc5516b7fc and checkpoint/pen1-v0.7.0 preserved. Export custom-curve boards before older-preview rollback; PEN1 rejects curve metadata. Main/full production remains unauthorized. Next: human Surface/Lenovo/Xiaomi light/firm pressure test, then one bounded increment.

@@ -1,0 +1,454 @@
+{
+  "browser": "151.0.7922.34",
+  "synthetic_input": true,
+  "physical_pen": "NOT_VERIFIED",
+  "results": [
+    {
+      "id": "UB01-desktop",
+      "status": "PASS",
+      "evidence": {
+        "viewport": {
+          "width": 1440,
+          "height": 950
+        },
+        "canvas": {
+          "x": 0,
+          "y": 56,
+          "width": 1440,
+          "height": 864
+        }
+      }
+    },
+    {
+      "id": "UB01-tablet",
+      "status": "PASS",
+      "evidence": {
+        "viewport": {
+          "width": 1024,
+          "height": 768
+        },
+        "canvas": {
+          "x": 0,
+          "y": 56,
+          "width": 1024,
+          "height": 682
+        }
+      }
+    },
+    {
+      "id": "UB01-phone",
+      "status": "PASS",
+      "evidence": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "canvas": {
+          "x": 0,
+          "y": 56,
+          "width": 390,
+          "height": 758
+        }
+      }
+    },
+    {
+      "id": "UB02-captured-pen-rejects-controls-dismiss-consumed",
+      "status": "PASS"
+    },
+    {
+      "id": "UB08-thumbnails-scratch-bound-and-no-penmove",
+      "status": "PASS",
+      "evidence": {
+        "board": "qa-thumbs",
+        "dimensions": [
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          },
+          {
+            "w": 80,
+            "h": 48
+          }
+        ],
+        "before": {
+          "canvases": 5,
+          "encodes": 39
+        },
+        "start": {
+          "canvases": 5,
+          "encodes": 39
+        }
+      }
+    },
+    {
+      "id": "UB10-keyboard-grip-opacity-single-history",
+      "status": "PASS"
+    },
+    {
+      "id": "UB11-malformed-import-retains-artwork",
+      "status": "PASS"
+    },
+    {
+      "id": "UB12-punctuated-layer-ID-keyboard-safe-and-text-scale",
+      "status": "PASS",
+      "evidence": {
+        "id": "qa-quote\"][data-x=\"legacy",
+        "boxes": [
+          {
+            "h": 57,
+            "scroll": 56
+          },
+          {
+            "h": 109.78125,
+            "scroll": 109
+          }
+        ]
+      }
+    },
+    {
+      "id": "UB15-locked-layer-retains-usable-copy-with-write-guards",
+      "status": "PASS"
+    },
+    {
+      "id": "UB03-independent-eight-mode-pixels-and-retained",
+      "status": "PASS",
+      "evidence": [
+        {
+          "mode": "normal",
+          "pixel": [
+            128,
+            128,
+            127,
+            255
+          ],
+          "want": [
+            128,
+            128,
+            128
+          ]
+        },
+        {
+          "mode": "multiply",
+          "pixel": [
+            56,
+            96,
+            120,
+            255
+          ],
+          "want": [
+            56,
+            96,
+            120
+          ]
+        },
+        {
+          "mode": "screen",
+          "pixel": [
+            136,
+            160,
+            200,
+            255
+          ],
+          "want": [
+            136,
+            160,
+            200
+          ]
+        },
+        {
+          "mode": "overlay",
+          "pixel": [
+            80,
+            128,
+            176,
+            255
+          ],
+          "want": [
+            80,
+            128,
+            176
+          ]
+        },
+        {
+          "mode": "darken",
+          "pixel": [
+            64,
+            128,
+            128,
+            255
+          ],
+          "want": [
+            64,
+            128,
+            128
+          ]
+        },
+        {
+          "mode": "lighten",
+          "pixel": [
+            128,
+            128,
+            192,
+            255
+          ],
+          "want": [
+            128,
+            128,
+            192
+          ]
+        },
+        {
+          "mode": "difference",
+          "pixel": [
+            96,
+            64,
+            160,
+            255
+          ],
+          "want": [
+            96,
+            64,
+            160
+          ]
+        },
+        {
+          "mode": "exclusion",
+          "pixel": [
+            112,
+            128,
+            176,
+            255
+          ],
+          "want": [
+            112,
+            128,
+            176
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UB04-v2-foundation-read-only-retry",
+      "status": "PASS",
+      "evidence": {
+        "names": [
+          "unruly-foundation",
+          "unruly-workspace",
+          "unruly-workspace-v3"
+        ],
+        "mappings": [
+          {
+            "key": "[\"unruly-foundation\",\"qa-foundation\"]",
+            "source": "unruly-foundation",
+            "sourceBoardID": "qa-foundation",
+            "sourceRevision": 2,
+            "sourceDbRevision": 4,
+            "targetID": "qa-foundation",
+            "completed": true,
+            "completedIdentity": {
+              "id": "qa-foundation",
+              "revision": 2,
+              "dbRevision": 1
+            },
+            "recovered": false,
+            "fallback": false
+          },
+          {
+            "key": "[\"unruly-workspace\",\"qa-old\"]",
+            "source": "unruly-workspace",
+            "sourceBoardID": "qa-old",
+            "sourceRevision": 7,
+            "sourceDbRevision": 3,
+            "targetID": "qa-old",
+            "completed": true,
+            "completedIdentity": {
+              "id": "qa-old",
+              "revision": 7,
+              "dbRevision": 1
+            },
+            "recovered": false,
+            "fallback": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "UB05-source-ID-collision-durable-mapping",
+      "status": "PASS",
+      "evidence": [
+        {
+          "key": "[\"unruly-foundation\",\"qa-foundation\"]",
+          "source": "unruly-foundation",
+          "sourceBoardID": "qa-foundation",
+          "sourceRevision": 2,
+          "sourceDbRevision": 4,
+          "targetID": "qa-foundation",
+          "completed": true,
+          "completedIdentity": {
+            "id": "qa-foundation",
+            "revision": 2,
+            "dbRevision": 1
+          },
+          "recovered": false,
+          "fallback": false
+        },
+        {
+          "key": "[\"unruly-workspace\",\"qa-old\"]",
+          "source": "unruly-workspace",
+          "sourceBoardID": "qa-old",
+          "sourceRevision": 7,
+          "sourceDbRevision": 3,
+          "targetID": "994a471c-6fe1-4d72-82c2-5277cf69e447",
+          "completed": true,
+          "completedIdentity": {
+            "id": "994a471c-6fe1-4d72-82c2-5277cf69e447",
+            "revision": 7,
+            "dbRevision": 1
+          },
+          "recovered": false,
+          "fallback": false
+        }
+      ]
+    },
+    {
+      "id": "UB06-damaged-current-previous-fallback-warning",
+      "status": "PASS"
+    },
+    {
+      "id": "UB13-stable-source-dedup-prefer-valid-v2",
+      "status": "PASS"
+    },
+    {
+      "id": "UB14-damaged-v2-foundation-fallback-explicit",
+      "status": "PASS"
+    },
+    {
+      "id": "UB07-quota-atomic-mapping-resume",
+      "status": "PASS",
+      "evidence": {
+        "initial": 0,
+        "after": 2
+      }
+    }
+  ]
+}

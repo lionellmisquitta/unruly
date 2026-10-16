@@ -1,0 +1,67 @@
+schema_version: '1.0'
+change_id: CHG-UNRULY-FX2-1013
+route: standard_change
+base_commit: efcf93f46387125be1fcefa16074a2ab2582cfca
+prohibited_paths:
+- .knowledge/
+- knowledge-graph/
+- prototypes/browser-workspace/storage.js
+- prototypes/browser-workspace/adjustments.js
+- prototypes/browser-workspace/adjustment-ui.js
+- prototypes/browser-workspace/selection.js
+- prototypes/browser-workspace/wand.js
+- prototypes/browser-workspace/masks.js
+- prototypes/browser-workspace/brushes.js
+test_config_changes:
+- .github/workflows/browser-workspace.yml
+- .github/workflows/browser-workspace-pages.yml
+checkpoints:
+- id: FX2
+  allowed_paths:
+  - prototypes/browser-workspace/filters.js
+  - prototypes/browser-workspace/filter-ui.js
+  - prototypes/browser-workspace/model.js
+  - prototypes/browser-workspace/render.js
+  - prototypes/browser-workspace/effect-compositor.js
+  - prototypes/browser-workspace/canvas2d-renderer.js
+  - prototypes/browser-workspace/render-contract.js
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/style.css
+  - prototypes/browser-workspace/sw.js
+  - tests/browser-workspace/filters.model.test.mjs
+  - tests/browser-workspace/filters.browser.cjs
+  - tests/browser-workspace/render-contract.model.test.mjs
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - .github/workflows/browser-workspace.yml
+  - .github/workflows/browser-workspace-pages.yml
+  - .delivery/CHG-UNRULY-FX2-1013/
+  - docs/delivery/PRODUCT_ROADMAP.md
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - docs/delivery/CONTINUATION_CONTRACT.md
+  - docs/delivery/CODE_STRUCTURE.md
+  - prototypes/browser-workspace/clipping.js
+  - tests/browser-workspace/adjustments.browser.cjs
+  test_paths:
+  - tests/browser-workspace/
+  tests:
+  - id: filter-model
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/filters.model.test.mjs
+    timeout_seconds: 180
+  - id: filter-browser
+    command:
+    - node
+    - tests/browser-workspace/filters.browser.cjs
+    timeout_seconds: 300
+  - id: cumulative
+    command:
+    - bash
+    - .delivery/CHG-UNRULY-FX2-1013/run-qa.sh
+    timeout_seconds: 1320

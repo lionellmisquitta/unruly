@@ -1,0 +1,9 @@
+# Independent final source review — P01
+
+Candidate source commit supplied by parent: `a3cda6ca13ce711b77a2eed24233aa3ae6958406`. QA plan commit: `be7a7c71cee9840c0c70e3775cab3b88ec3e1dfa`. Actual CI run supplied:37396036080, pending evidence review. Status: **NOT_VERIFIED** until CI outputs are inspected and source hashes match.
+
+Fetched the actual e30 app baseline from connected GitHub at `lionellmisquitta/unruly`, ref `e30e861745c48c5029c7f9f0d23a974ae8190c54`, path `prototypes/browser-workspace/app.js`. The only substantive app changes are extraction of the existing RAF guard into `schedulePaint`, short-circuiting empty selection bounds, and using paint scheduling at live ink pointermove instead of full refresh. Gesture start/end/cancel, pressure reporting/coalesced collection, all non-ink handling, persistence and update handlers are unchanged. Scope conforms to A7 by source review; execution still required.
+
+Compared retained renderer against independently hashed frozen original. `hash`, width mapping, resampling, `drawStroke` and paper code are byte-identical. Five fixed surfaces and shared dimensions are explicit. Geometry caps backing DPR<=2, dimensions<=4096 and nominal RGBA sum<=80MiB. Cache keys include board identity separately plus revision/active layer/view/CSS and backing dimensions/backing DPR/device DPR. Reference/no-preview/middle-layer paths invalidate; brush sample invalidates and uses existing scratch; render exceptions invalidate. Rendering source review does not substitute for the exact baseline/current/cache byte comparisons or actual paired CPU benchmark.
+
+Model and storage files also match the older foundation batch byte-for-byte. Final e30 binding and complete inherited regression remain required through CI. QA file identities are recorded in `QA_SOURCE_TEST_MANIFEST.json`; no application files edited by QA.

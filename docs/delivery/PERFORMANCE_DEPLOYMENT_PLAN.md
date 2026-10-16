@@ -1,0 +1,7 @@
+# P01 immutable publication plan
+
+Only after independent QA/Gatekeeper acceptance of repaired source5bfe786d8018200b89049d1a8073a0eb78ab6077: commit reviewed QA/versions/development state and Pages workflow pinned to that exact source, with HEAD assertion. Push this metadata to preview/performance-foundation-2026-10-06 and fast-forward preview/browser-foundation-2026-10-04 from expected86a4c29fe67d5a984207f9bdb940c92ffffc5fde. Existing Pages trigger is only the Pages workflow change on that known preview branch. Main untouched. Upload artifact includes only prototypes/browser-workspace, permissions remaincontentsread/pageswrite/idtokenwrite, enablementfalse. No paidexternalcalls or newlypublished historical rootstates.
+
+Then verify Pages success and every published app asset against sourceSHA256, plus real live reload/update/draw/save/undo/redo/reload. Retain a named checkpoint/p01-v0.3.0 version branch at exact testedsource if approved; this is a version branch, not an annotated tag. Supported connector tools provide branch creation but no annotated-tag write capability; exact commitSHA remains the immutable version. Main merge/full release/physical device feel remain false/unverified.
+
+Rollback pinnedapp sourcee30e861745c48c5029c7f9f0d23a974ae8190c54. Existing v2storage format unchanged, no reverse migration. Preserve saved-user update handshake; host verification cannot certify Surface/Xiaomi latency or Androidnative pressure.

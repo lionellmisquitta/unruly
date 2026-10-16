@@ -1,0 +1,8 @@
+# Painting batch attempts
+Preflight sourcecd5f468e782b3763ecc858235f24479605bf0067 /38671573229FAILED one new UI selector:37rows vs32layers because5folder rows share class.layer. Grain12models/5browser scenarios passed. CAP30/32/50reference/memory probe atDPR1/2passed;32layer previous-valid recovery/subsequent save, conflicts, injected quota abort and invalid-save atomicity passed.353localmodels passed. No publication.
+
+Detailed50layer replay450–476msDPR1/1058–1080msDPR2means interactive target NOT met. Explicit scope decision retains32cap and opensCAP2performance optimization instead of pretending capacity is ready. No old assertions weakened. Fix only new selector to data-layer-id; add paired no-group-effects probe; rerun preflight and full cumulative. KG unchanged.
+
+Final candidate3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba / preflight38671904711SUCCESS; cumulative38671904693SUCCESS358models/320Chromium/142identities. Artifact11945136888SHA2560450b37bd0ab9adbf34eeea53b38bebfb294369c190a029ca7b2aa534906a9deverified.17new models/10new browser cases.
+Source3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba; CI38671904693SUCCESS358models/320Chromium/142source identities. PR15mergeff4b756709da36cff77edab0ed56aeb67e39ff52 exact tested tree. Publicationeeca0961697662996aa2c752db4d9d350dd23f4a; Pages38673569838SUCCESS54hosted byte matches.
+TIP2published. CAP1engineering measurement/recovery gate verified within supported32layers;50rendererprobe was never admitted/saved. Full30–50interactive target and device/long-session/processRAM evidence remain OPEN, CAP2render optimization explicitly split. One published application batch, four since last authorized graph refresh; KG unchanged.

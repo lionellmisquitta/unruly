@@ -1,0 +1,23 @@
+change_id: CHG-UNRULY-PERF4-1011
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+- prototypes/browser-workspace/layer-compositor.js
+- prototypes/browser-workspace/canvas2d-renderer.js
+- prototypes/browser-workspace/render.js
+- prototypes/browser-workspace/render-contract.js
+- prototypes/browser-workspace/sw.js
+regression_obligations:
+- id: exact-ordered-blending
+  reason: Retained upper images must preserve existing opacity, alpha, paper and blend order with live ink
+  test_id: layer-compositor-browser
+- id: bounded-retained-rectangles
+  reason: Occupied caches must fit combined canvas budget, release on invalidation and recover via replay
+  test_id: layer-compositor-model
+- id: transient-native-backing
+  reason: Additional canvases and viewport resizes must stay within 80MiB at every dimensional setter
+  test_id: layer-compositor-browser
+- id: cumulative-product
+  reason: Existing pen/touch/history/raster/storage/helpers and populated benchmarks remain required
+  test_id: cumulative-qa

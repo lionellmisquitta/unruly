@@ -1,0 +1,18 @@
+{
+  "source": "00e1a24cde009b94d778c071d9c20bba1cb63db5",
+  "qa_run": 38252988097,
+  "qa_conclusion": "success",
+  "model_tests": 271,
+  "browser_scenarios": 258,
+  "verified_hashes": 114,
+  "artifact_id": 11748854935,
+  "artifact_sha256": "e306c8b7cdad58442ed2e818a588fa001341e1abba1aa97d37c647e40d6e9dbc",
+  "review": "same-session; owner-approved personal-project publication process",
+  "published": true,
+  "knowledge_graph_updated": false,
+  "skill_modified": false,
+  "merge": "94268797a5f453dead1ad43caec103849c232d5f",
+  "publication": "bad87c6721142f5f00f57cd852fb5517a3e995db",
+  "pages_run": 38255213655,
+  "hosted_assets": 42
+}

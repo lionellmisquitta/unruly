@@ -1,0 +1,91 @@
+{
+  "id": "DUX1-procreate-handbook-complete",
+  "recorded_date": "2026-10-06",
+  "status": "REFERENCE_REVIEW_COMPLETE_CHECKPOINT_READINESS_PENDING",
+  "supersedes_decisions": [
+    "DOUBLE gesture default",
+    "gesture default awaiting user",
+    "historical labelled-button mockup"
+  ],
+  "decisions": [
+    {
+      "id": "gesture-default-single",
+      "authority": "Explicit user choice",
+      "value": "two-finger SINGLE tap Undo; three-finger SINGLE tap Redo"
+    },
+    {
+      "id": "reference-layout",
+      "authority": "Explicit user PDF choice",
+      "value": "Compact Procreate reference layout; accessibility alternatives retained"
+    }
+  ],
+  "coverage_manifest": "docs/delivery/HANDBOOK_REVIEW_MANIFEST.json",
+  "requirements_baseline": "docs/delivery/PROCREATE_HANDBOOK_UX_BASELINE.md",
+  "nodes": [
+    {
+      "id": "U1",
+      "type": "checkpoint",
+      "status": "handoff_readiness_pending",
+      "focus": "reference controls, compact layers, opacity/blends, v3 compatibility"
+    },
+    {
+      "id": "U2",
+      "type": "checkpoint",
+      "status": "planned",
+      "focus": "original brush recipes and synchronized colour controls"
+    },
+    {
+      "id": "U3",
+      "type": "checkpoint",
+      "status": "planned",
+      "focus": "SINGLE gestures, editable held line/circle and vector transform"
+    },
+    {
+      "id": "G02",
+      "type": "checkpoint",
+      "status": "contracts_budget_pending",
+      "focus": "remaining reference gestures and expanded shape editing"
+    },
+    {
+      "id": "hybrid-painting",
+      "type": "engine_dependency",
+      "status": "planned",
+      "focus": "smudge, gap-aware fill, masks and filters"
+    },
+    {
+      "id": "first-release-sharing",
+      "type": "requirement_group",
+      "status": "planned",
+      "focus": "text/reference, exports/timelapse, Drive/BYOK"
+    }
+  ],
+  "edges": [
+    {
+      "from": "U2",
+      "relation": "depends_on",
+      "to": "U1"
+    },
+    {
+      "from": "U3",
+      "relation": "depends_on",
+      "to": "U2"
+    },
+    {
+      "from": "G02",
+      "relation": "depends_on",
+      "to": "U3"
+    },
+    {
+      "from": "hybrid-painting",
+      "relation": "preserves_first_release_requirement",
+      "to": "first-release-sharing"
+    }
+  ],
+  "implementation_started": false,
+  "app_source_preserved": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "production_authorization": false,
+  "paid_external_model_calls": 0,
+  "independent_gatekeeper_review": "docs/delivery/HANDBOOK_GATEKEEPER_REVIEW.md",
+  "build_authorized": false,
+  "next_action": "Prepare source-bound U1 handoff and checkpoint readiness"
+}

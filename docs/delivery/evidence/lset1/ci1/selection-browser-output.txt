@@ -1,0 +1,1 @@
+[{"id":"U01-lasso-move-final-save-history","status":"PASS"},{"id":"U02-session-clipboard-acrossboard-and-delete","status":"PASS"},{"id":"U03-cancel-frozen-touch-zero-outside","status":"PASS"},{"id":"U04-invalidation-and-failed-transition","status":"PASS"},{"id":"U05-mobile-real-selection-controls","status":"PASS"},{"id":"U06-offline-and-active-selection-update","status":"PASS"}]

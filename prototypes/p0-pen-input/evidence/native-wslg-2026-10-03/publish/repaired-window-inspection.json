@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-10-03T15:13:53.736260+00:00",
+  "pid": 1444321,
+  "window_id": 10485767,
+  "title": "UNRULY P0 \u2014 raw pen probe (not the app)",
+  "map_state": "IsViewable",
+  "size": [
+    1000,
+    700
+  ],
+  "screenshot": "repaired-probe-window.png",
+  "screenshot_sha256": "47cd0dc387f52f4e9a9e5bc483935c7824e6768db6b9764f73621fec38dfb168",
+  "scope": "Exact-PID P0 window only; no desktop capture; WSLg/XWayland startup only, not physical input"
+}

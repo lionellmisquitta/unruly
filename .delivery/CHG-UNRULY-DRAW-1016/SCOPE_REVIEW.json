@@ -1,0 +1,212 @@
+{
+  "base": "9833b76d5e1bf548274aa7e223aad68f88ad6faa",
+  "source": "87648265ba312dc3827990968e116c992cd43b7e",
+  "files": [
+    {
+      "path": ".delivery/CHG-UNRULY-DRAW-1016/CONTINUATION.json",
+      "status": "added",
+      "additions": 15,
+      "deletions": 0
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-DRAW-1016/IMPACT_ANALYSIS.md",
+      "status": "added",
+      "additions": 7,
+      "deletions": 0
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-DRAW-1016/KNOWN_LIMITS.md",
+      "status": "added",
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-DRAW-1016/UI_DIRECTION.md",
+      "status": "added",
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-DRAW-1016/UX_BASELINE.md",
+      "status": "added",
+      "additions": 2,
+      "deletions": 0
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-DRAW-1016/impact.yaml",
+      "status": "added",
+      "additions": 31,
+      "deletions": 0
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-DRAW-1016/plan.yaml",
+      "status": "added",
+      "additions": 107,
+      "deletions": 0
+    },
+    {
+      "path": ".github/workflows/browser-workspace.yml",
+      "status": "modified",
+      "additions": 14,
+      "deletions": 1
+    },
+    {
+      "path": "docs/delivery/CODE_STRUCTURE.md",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 0
+    },
+    {
+      "path": "docs/delivery/CONTINUATION_CONTRACT.md",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 0
+    },
+    {
+      "path": "docs/delivery/CURRENT_CHECKPOINT.md",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 0
+    },
+    {
+      "path": "docs/delivery/PRODUCT_ROADMAP.md",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 0
+    },
+    {
+      "path": "prototypes/browser-workspace/app.js",
+      "status": "modified",
+      "additions": 17,
+      "deletions": 12
+    },
+    {
+      "path": "prototypes/browser-workspace/artwork-geometry.js",
+      "status": "added",
+      "additions": 47,
+      "deletions": 0
+    },
+    {
+      "path": "prototypes/browser-workspace/drawing-tools-ui.js",
+      "status": "added",
+      "additions": 85,
+      "deletions": 0
+    },
+    {
+      "path": "prototypes/browser-workspace/guides.js",
+      "status": "added",
+      "additions": 25,
+      "deletions": 0
+    },
+    {
+      "path": "prototypes/browser-workspace/index.html",
+      "status": "modified",
+      "additions": 11,
+      "deletions": 2
+    },
+    {
+      "path": "prototypes/browser-workspace/model.js",
+      "status": "modified",
+      "additions": 4,
+      "deletions": 3
+    },
+    {
+      "path": "prototypes/browser-workspace/selection.js",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 4
+    },
+    {
+      "path": "prototypes/browser-workspace/style.css",
+      "status": "modified",
+      "additions": 11,
+      "deletions": 0
+    },
+    {
+      "path": "prototypes/browser-workspace/sw.js",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 2
+    },
+    {
+      "path": "tests/browser-workspace/adjustments.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/drawing-tools.browser.cjs",
+      "status": "added",
+      "additions": 23,
+      "deletions": 0
+    },
+    {
+      "path": "tests/browser-workspace/drawing-tools.model.test.mjs",
+      "status": "added",
+      "additions": 32,
+      "deletions": 0
+    },
+    {
+      "path": "tests/browser-workspace/history-cache.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/layer-compositor.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/motion.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/pixel-paint.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/raster-tiles.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/render-boundary.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/stabilization.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "tests/browser-workspace/timelapse.browser.cjs",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1
+    }
+  ],
+  "knowledgeGraphFilesChanged": 0,
+  "scopeReview": "New modules and bounded app/model/selection/HTML/CSS/SW integration; CI gate plus nine legacy cache-identity expectations; roadmap/logical structure/scoped governance. Publication workflow and evidence-only main follow-up authorized by AGENTS; no renderer/storage/history rewrite.",
+  "assertions": "Downloaded artifact confirms 164 exact source hashes. Existing roadmap requirement table rows retained. No independent or automated scope-enforcement claim.",
+  "closeoutPaths": [
+    ".github/workflows/browser-workspace-pages.yml",
+    "AGENTS.md",
+    "docs/delivery/PRODUCT_ROADMAP.md",
+    "docs/delivery/CURRENT_CHECKPOINT.md",
+    "docs/delivery/CONTINUATION_CONTRACT.md",
+    ".delivery/CHG-UNRULY-DRAW-1016/*"
+  ],
+  "closeoutReason": "Pinned exact verified publication, evidence/status persistence, and replacing stale next-stabilization advice in AGENTS with actual next painting/composition group. No application change after verified source.",
+  "roadmapTableRowsPreserved": 27,
+  "hostedAssetsVerified": 66
+}

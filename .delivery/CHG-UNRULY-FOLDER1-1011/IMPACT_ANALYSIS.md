@@ -1,0 +1,13 @@
+# FOLDER1 impact and feasibility
+
+Base documentation head d1a8b4e1b45174eed6112cfa8fd0f97dc8fe370a; verified app0ab2ab79f3c5e187e5e7f951a97c7c86814e6379, CI38140820796 passed189 models/193 browser scenarios.87 local app/test/config Git blobs exactly matched current branch. Native main cb1d52089c5cdd159050dc375b92750eb84d8271 and graph revisionunruly-kgp-20261011T133431Z are excluded and unchanged.
+
+Targets: model/selection/history v5 compatibility; pure folder hierarchy; renderer-facade effective visibility (accepted Canvas2D source remains byte-identical); existing Layers panel; service-worker release and cache-test expectations; additive cumulative QA. Contract: IndexedDB current/previous recovery and revision checks keep their existing database; folderboards have a distinct v5 marker, imports remap parent identities. Raster paint/paste preserve5 rather than downgrade4. Renderer adapter caches by immutable board and preserves stable references; no new pixel surfaces and no flattening. Existing32 layer/8MiB board/16MiB history/8MiB decode/80MiB backing limits retained, plus16 folders/eight ancestors. Same-session self-verification; no separate human merge approval or platform protection claimed.
+
+Risks: membership changes can alter paint order, explicitly described; inherited visibility/lock must protect every write path; group parenting/ID collision/depth/contiguity reject atomically. Broad geometry uses existing snapshot history fallback. Legacy own-layer lock reorder semantics preserved because existing M04 expects it; ancestor lock blocks folder content rearrangement. Nested empties must accept layers inside nearest occupied ancestor boundary.
+
+Excluded: masks/clipping/group opacity/isolated blending/text/fill/import engines/GPU/Rust/OPFS/50-layer expansion/whole-canvas rotation. Unverified: physical tablet performance and long session RAM. Rollback app to0ab2ab; v5 saves must be retained/exported, not rewritten by old readers. Existing saved v1-v4 artwork untouched unless deliberately grouped. Publish same Pages preview only after exact-source cumulative CI and artifact/hosted verification.
+
+Graph update cadence: count this as build1 since the approved refresh; wait4–5 builds, then ask and receive explicit permission. Compact notes only during builds.
+
+Revision after artifact review: first cumulative candidate passed202 models/201 browser scenarios, but screenshot showed open hierarchy stale after Undo. Restore panel refresh in historyAction and add actual DOM assertions for Undo/Redo; preserve every prior check. CI wall-clock allocation increases12 to15 minutes because observed full run38146750941 took11m39 including tooling and artifacts. No test assertion, work/memory bound or performance threshold is relaxed.

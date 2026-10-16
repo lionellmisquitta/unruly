@@ -1,0 +1,159 @@
+{
+  "checkpoint": "CHG-UNRULY-PAINT1-1011",
+  "source_commit": "0ab2ab79f3c5e187e5e7f951a97c7c86814e6379",
+  "source_branch": "CHG-UNRULY-PAINT1-1011/raster-paint-and-smudge",
+  "source_ci": 38140820796,
+  "source_ci_status": "SUCCESS",
+  "model_tests": 189,
+  "structured_browser_scenarios": 193,
+  "prior_model_tests_retained": 176,
+  "prior_browser_scenarios_retained": 182,
+  "new_model_tests": 13,
+  "new_browser_scenarios": 11,
+  "artifact_id": 11703162808,
+  "artifact_sha256": "a8e3853baa3c6ee2df2f7971d583df8b33f86a166b36eaea5d4afb175369e373",
+  "verified_source_test_config_hashes": 86,
+  "pages_pin_commit": "6f429652ec3d15a6a987aa6e1dc16e8320f6e348",
+  "pages_run": 38141558508,
+  "pages_status": "SUCCESS",
+  "url": "https://lionellmisquitta.github.io/unruly/",
+  "hosted_assets_verified": 32,
+  "native_main": "cb1d52089c5cdd159050dc375b92750eb84d8271",
+  "knowledge_graph": "UNCHANGED_EXPLICIT_CONFIRMATION_REQUIRED",
+  "physical_tablet": "NOT_VERIFIED",
+  "working_rgba_limit_bytes": 4194304,
+  "raster_dimension_limit": 1024,
+  "layer_limit": 32,
+  "live_raster_reference_checks": 8,
+  "live_raster_zero_warm_completed_replay": true,
+  "hosted_sha256": [
+    {
+      "sha256": "3067a214433b4d8be2ba736f5b745b09aa624bcdbe40db30f2be4a9a4422c3b4",
+      "name": "README.md"
+    },
+    {
+      "sha256": "097439269964280680a8059b6f9d1523c6e98db2642ef1449c37c1769fc5c50e",
+      "name": "app.js"
+    },
+    {
+      "sha256": "cf1c25b53a20a885b7d6abe083e074d7484ceb2e1456f7c9e62a5432110f0c18",
+      "name": "brush-compare.js"
+    },
+    {
+      "sha256": "7eb9be6a5079c47c41172709cf317982a1ac279e34976fcb058950b7e8ff5abf",
+      "name": "brush-recipe-ui.js"
+    },
+    {
+      "sha256": "d0f4d79af78b36f9fdc16877f0cc8b15856763dc927a045162a081d7ee9359e7",
+      "name": "brush-recipe.js"
+    },
+    {
+      "sha256": "46c231f67986fe21044696ccacb3bc98ef6d83f02f28495cb77ab26552fdb483",
+      "name": "brush-size.js"
+    },
+    {
+      "sha256": "160843d631c12edd7f808d2fd2ecd15628f038db7087dfa0bbe49b139bc694c0",
+      "name": "brushes.js"
+    },
+    {
+      "sha256": "1df2bfc6df16c77fb50d7095b32400ad875789c621a2e466d793cb46c1cdf281",
+      "name": "canvas2d-renderer.js"
+    },
+    {
+      "sha256": "3353f052ab0a1b72b0b72ae6abd0738c89d3a60216fb449166a0170857002426",
+      "name": "gestures.js"
+    },
+    {
+      "sha256": "696f16f4855b510a6dba3359d5cfcfcd09005c0d7ca2173ec85eea0c7314b6d6",
+      "name": "history-patch.js"
+    },
+    {
+      "sha256": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "name": "icon.svg"
+    },
+    {
+      "sha256": "aff2bc7824d0b22320eea444a3d657f384952f7721c7bea04e605cda8d69650e",
+      "name": "index.html"
+    },
+    {
+      "sha256": "2489d8aa92e6e143797fed2611d19ee39af325208324a75d6f520b116186ab6f",
+      "name": "layer-compositor.js"
+    },
+    {
+      "sha256": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "name": "manifest.webmanifest"
+    },
+    {
+      "sha256": "fdecfd97e49f649c19f5606f5ad308faece461def1f6e71a0078a2eb9ba06af7",
+      "name": "model.js"
+    },
+    {
+      "sha256": "ef9162fcf7f047aa7875ec6b28815030d38f557b433c302c7e68104f12e4c2dd",
+      "name": "pen-input.js"
+    },
+    {
+      "sha256": "d32408c0d040603c80c01e023e26176f5aa54a3964e055b2b672dba0e9c5ac0b",
+      "name": "pixel-paint.js"
+    },
+    {
+      "sha256": "aab474bcf40891f6400c55954af61e7dcff3001c450f8ed6bdd393b13465f7d7",
+      "name": "pixel-surface.js"
+    },
+    {
+      "sha256": "b291f0b322874f2bf728095cdc9e46737169489f3cc64c4997294aec98fccf7e",
+      "name": "pressure-ui.js"
+    },
+    {
+      "sha256": "b8da3a8399c1762279afeedc523f63375de0e7b520a3d78ceeb8ea8798755d95",
+      "name": "raster-cache.js"
+    },
+    {
+      "sha256": "f8a48fc08f7ac55a18d17197f7878ca367c220263d5f8d628478f2a2693e6341",
+      "name": "raster-tiles.js"
+    },
+    {
+      "sha256": "4303345e111e1c9dcea546fa2f9da693923d0d666ffde4aad12bf559c8eca670",
+      "name": "raster.js"
+    },
+    {
+      "sha256": "ec6aca2979f517a4cb093e4dc86fd5be719f13e1b2c4f3f2c343adc06e7a89b9",
+      "name": "render-contract.js"
+    },
+    {
+      "sha256": "c77ad8472ecb4d3eb692a21d58e8d773fd97ff012a0f1400f1addc52ef842227",
+      "name": "render.js"
+    },
+    {
+      "sha256": "541498344ebef1ffe220bd33815fe9060c08b19a5e3372ff7ea78bba03ca8a52",
+      "name": "selection.js"
+    },
+    {
+      "sha256": "8803d3d73aa610ab4d5117b35f81cdc093431386e1a85c3557012930271d0994",
+      "name": "shapes.js"
+    },
+    {
+      "sha256": "afbb3bcc64809ecaa51340c3f4cfa68a6743430fec08ef6d6eebf8d4543c6bc5",
+      "name": "smudge-ui.js"
+    },
+    {
+      "sha256": "324f60b8ab405c4794a38c7d5dfc0beae6120ac6c897d7b2bd5b9cf9cb2d044e",
+      "name": "smudge.js"
+    },
+    {
+      "sha256": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+      "name": "storage.js"
+    },
+    {
+      "sha256": "e9ec2fb7e26358ebb8127ec423a32bbb6c224c24b3dc59be3937bae858e6c55d",
+      "name": "style.css"
+    },
+    {
+      "sha256": "66c8ead6b0af64addf3e6e0462518f3bd333d6eff51d896b08ffc1b69ccff1ca",
+      "name": "sw.js"
+    },
+    {
+      "sha256": "6e1198a610afdedfb313bc4b6305d9567c94a6d2967fa19d062309801923d39d",
+      "name": "u2.js"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "DELTA-007",
+  "mode": "capture",
+  "created_at": "2026-10-03",
+  "events": [
+    {
+      "id": "EVT-DELIVERY-SKILLS-INSTALLED",
+      "status": "executed",
+      "artifact": "prototypes/p0-pen-input/evidence/claude-2026-10-03/skill-installation.json",
+      "statement": "Both complete skills installed and verified in two local roots; no hooks registered."
+    },
+    {
+      "id": "EVT-CLAUDE-AUTH-SMOKE",
+      "status": "passed",
+      "artifact": "prototypes/p0-pen-input/evidence/claude-2026-10-03/smoke-test.json",
+      "statement": "Actual Claude 2.1.288 model invocation: exit 0, exact UNRULY_QA_READY, 5.157 seconds, existing authentication and disabled tools."
+    },
+    {
+      "id": "EVT-CLAUDE-QA-LAUNCH",
+      "status": "blocked",
+      "artifact": "prototypes/p0-pen-input/evidence/claude-2026-10-03/qa-launch-blocked.json",
+      "statement": "Automatic approval review rejected source egress and broad shell scope before process launch; no independent QA ran."
+    },
+    {
+      "id": "EVT-CLAUDE-QA-PREPARED",
+      "status": "proposed",
+      "artifact": "prototypes/p0-pen-input/evidence/claude-2026-10-03/qa-launch-plan.json",
+      "statement": "No-tools enumerated-source QA proposal prepared for explicit egress approval."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "REQ-012",
+      "relation": "preflight_partially_verified_by",
+      "to": "EVT-CLAUDE-AUTH-SMOKE",
+      "scope": "Authentication smoke only, not independent QA or loop closure"
+    },
+    {
+      "from": "EVT-CLAUDE-QA-PREPARED",
+      "relation": "blocked_by",
+      "to": "EVT-CLAUDE-QA-LAUNCH"
+    }
+  ],
+  "supersedes": [
+    {
+      "event": "EVT-REVIEW-SKILLS-MISSING",
+      "new_event": "EVT-DELIVERY-SKILLS-INSTALLED",
+      "scope": "Skill availability only; earlier no-review result remains historical."
+    }
+  ],
+  "build_authorized": false,
+  "production_implementation_status": "not_started",
+  "independent_qa_status": "not_verified",
+  "note": "Not a KGP export or authorization ledger; no verification edge for product behavior."
+}

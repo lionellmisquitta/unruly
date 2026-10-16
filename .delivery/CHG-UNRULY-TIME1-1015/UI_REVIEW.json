@@ -1,0 +1,81 @@
+{
+  "change_id": "CHG-UNRULY-TIME1-1015",
+  "review": "SAME_SESSION_SELF_REVIEW",
+  "staticValidation": {
+    "status": "PASSED",
+    "errors": 0,
+    "warnings": [
+      {
+        "rule": "emoji-icons",
+        "count": 3,
+        "disposition": "Existing multiplication glyphs/numeric speed labels, not emoji icons."
+      },
+      {
+        "rule": "form-labels",
+        "count": 39,
+        "disposition": "Existing implicit labels/hidden inputs; added visible controls have explicit labels."
+      },
+      {
+        "rule": "tiny-type",
+        "count": 19,
+        "disposition": "Existing chrome unchanged; new help/status12px,controls13/14px."
+      }
+    ]
+  },
+  "visualEvidence": {
+    "inspected": [
+      "First preflight320/1440 inspector screenshots",
+      "74e43a6c320px compact playback screenshot, Stop visible"
+    ],
+    "finalLayout": "HTML/CSS unchanged after inspected74e43a6c; later changes are tests/docs/text ownership/controller error pausing.",
+    "automated": "16journey preflight and cumulative suite include Stop-in-viewport320/768/1440, exact group composition at DPR1/2.",
+    "canonicalExemplars": "Gallery entries pending/unvalidated; no canonical comparison claimed.",
+    "physicalDevice": "NOT_VERIFIED"
+  },
+  "rubric": {
+    "scores": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      5,
+      6,
+      5,
+      7,
+      6,
+      4,
+      6,
+      5,
+      4,
+      3,
+      2
+    ],
+    "dimensions": [
+      "Task clarity",
+      "Hierarchy",
+      "Composition",
+      "Typography",
+      "Spacing",
+      "Contrast",
+      "Consistency",
+      "Interaction",
+      "Responsive",
+      "Accessibility",
+      "Timeline clarity",
+      "Content realism",
+      "State coverage",
+      "Distinctiveness",
+      "Restraint",
+      "Technical quality"
+    ],
+    "total": 83,
+    "independentReview": false
+  },
+  "corrections": [
+    "Shortened intro and moved backup detail into disclosure",
+    "Compact replay prioritizes scrub/transport",
+    "Replay-ready condition precedes viewport measurement"
+  ],
+  "executionLimitation": "Local environment disconnected after initial validation. Final browser execution/artifact verification uses GitHub; same-layout screenshots inspected earlier. No physical-device or independent approval claim."
+}

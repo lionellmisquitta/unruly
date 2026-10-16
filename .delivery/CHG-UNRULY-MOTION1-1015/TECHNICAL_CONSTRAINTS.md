@@ -1,0 +1,6 @@
+# Technical constraints
+24 cues,128pathpoints each,250–30000ms,coordinates±1e7,camera scale0.1–8,total cue metadata<=2MiB within existing8MiBboard. Region masks binary<=1024x1024, canonical base64; saved source IDs permit stale-target detection. Paths are relative document-coordinate displacements from their first point; no screen-coordinate drift. Cue endpoints compose in list order; camera uses document-centre+zoom and current viewport, independently of saved geometry.
+
+No renderer/model-cap/storage rewrite. Validate session endpoints before playback and commit; prevent intermediate coordinate overflow using pure checked translation. Show invalid/missing target recovery rather than silently skipping a cue. Cancel/stop/close leave h.board unchanged, restore view and transient region conversion; autosave continues saving original. Commit geometry once, keep cues, restore authoring view. Cue edits each one history action. No graph/skill edits.
+
+Revision2: existing region conversion can invalidate later original-object/source IDs on the same layer. Treat mixed-target compile failure as atomic and recoverable; do not claim complete C09Mcompatibility. Preserve pending requirement in roadmap and follow scoped KNOWN_LIMITS.

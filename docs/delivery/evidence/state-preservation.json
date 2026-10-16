@@ -1,0 +1,6 @@
+{
+  "historical_yaml_prefix_sha256": "162039f53cb9df1a2f3ace8e94a6033bf92a60b94ec5a307898411eb76c70cb1",
+  "historical_markdown_prefix_sha256": "99ab1d7e475babe2ce5560b021c62fbb3159fb6b9d0a3e44553c4fad82d8fd52",
+  "prefixes_preserved": true,
+  "operation": "append-only; preserves mixed original CRLF/LF bytes"
+}

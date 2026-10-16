@@ -1,0 +1,254 @@
+{
+  "source": "3064110a4a0d88c374921721ec062fa52340873d",
+  "finalApplicationIdentical": true,
+  "runtimeAndPreflightHashMatches": 56,
+  "run": 38729191536,
+  "artifact": 11969807270,
+  "artifactSHA256": "62b300105d180642a291840eb74caf60e32a88c6ea4b253e64a245539a24bf34",
+  "group": {
+    "browser": "151.0.7922.34",
+    "results": [
+      {
+        "id": "CAP2B-invalidation-dpr1",
+        "status": "PASS",
+        "evidence": {
+          "cases": 35,
+          "diagnostics": {
+            "budgetBytes": 16777216,
+            "residentBytes": 379776,
+            "entries": 1,
+            "hits": 27,
+            "misses": 47,
+            "bypasses": 0,
+            "failures": 0
+          },
+          "layerCap": 32,
+          "changingLive": [
+            {
+              "autoMs": 3.3999999999941792,
+              "referenceMs": 3.1999999999970896,
+              "autoStrokes": 6,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 1.8000000000029104,
+              "referenceMs": 2.6000000000058208,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 1.6999999999970896,
+              "referenceMs": 2.599999999991269,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 1.7999999999883585,
+              "referenceMs": 2.900000000008731,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 2,
+              "referenceMs": 2.8999999999941792,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            }
+          ]
+        }
+      },
+      {
+        "id": "CAP2B-invalidation-dpr2",
+        "status": "PASS",
+        "evidence": {
+          "cases": 35,
+          "diagnostics": {
+            "budgetBytes": 16777216,
+            "residentBytes": 1519104,
+            "entries": 1,
+            "hits": 27,
+            "misses": 47,
+            "bypasses": 0,
+            "failures": 0
+          },
+          "layerCap": 32,
+          "changingLive": [
+            {
+              "autoMs": 17.69999999999709,
+              "referenceMs": 15.89999999999418,
+              "autoStrokes": 6,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 17.5,
+              "referenceMs": 14.700000000011642,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 10.900000000008731,
+              "referenceMs": 14.89999999999418,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 11.299999999988358,
+              "referenceMs": 17.10000000000582,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            },
+            {
+              "autoMs": 11.30000000000291,
+              "referenceMs": 15.599999999991269,
+              "autoStrokes": 4,
+              "referenceStrokes": 6
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "capacity": {
+    "browser": "151.0.7922.34",
+    "results": [
+      {
+        "id": "CAPB01-mixed-30-32-50-probe-1",
+        "status": "PASS",
+        "evidence": {
+          "fixtures": [
+            {
+              "count": 30,
+              "documentBytes": 292611,
+              "renderMs": [
+                260.20000000001164,
+                138.6999999999971,
+                136.60000000000582,
+                190.3000000000029
+              ],
+              "admitted": true
+            },
+            {
+              "count": 32,
+              "documentBytes": 315635,
+              "renderMs": [
+                257.5,
+                145.8000000000029,
+                150.39999999999418,
+                169.39999999999418
+              ],
+              "admitted": true
+            },
+            {
+              "count": 50,
+              "documentBytes": 486786,
+              "renderMs": [
+                419.5,
+                284.6999999999971,
+                230.6999999999971,
+                229.70000000001164
+              ],
+              "admitted": false
+            }
+          ],
+          "ratio50to32": 1.6003006872852659,
+          "withoutGroupEffectsRenderMs": [
+            447.1999999999971,
+            53.19999999999709,
+            47.80000000000291,
+            47.80000000000291
+          ],
+          "supportedCap": 32,
+          "probeOnly": true,
+          "physicalDevice": "NOT_VERIFIED",
+          "processRAM": "NOT_MEASURED"
+        }
+      },
+      {
+        "id": "CAPB01-mixed-30-32-50-probe-2",
+        "status": "PASS",
+        "evidence": {
+          "fixtures": [
+            {
+              "count": 30,
+              "documentBytes": 292611,
+              "renderMs": [
+                586.6999999999971,
+                312.8000000000029,
+                322.8000000000029,
+                317
+              ],
+              "admitted": true
+            },
+            {
+              "count": 32,
+              "documentBytes": 315635,
+              "renderMs": [
+                612.9000000000087,
+                399.09999999999127,
+                328.40000000000873,
+                333.59999999999127
+              ],
+              "admitted": true
+            },
+            {
+              "count": 50,
+              "documentBytes": 486786,
+              "renderMs": [
+                947.2999999999884,
+                526.8000000000029,
+                519.6000000000058,
+                535.1999999999971
+              ],
+              "admitted": false
+            }
+          ],
+          "ratio50to32": 1.4905286966355846,
+          "withoutGroupEffectsRenderMs": [
+            1125.6000000000058,
+            126.5,
+            115.5,
+            113.80000000000291
+          ],
+          "supportedCap": 32,
+          "probeOnly": true,
+          "physicalDevice": "NOT_VERIFIED",
+          "processRAM": "NOT_MEASURED"
+        }
+      },
+      {
+        "id": "CAPB02-save-history-native-reload-and-UI",
+        "status": "PASS",
+        "evidence": {
+          "count": 32,
+          "saveReload": true,
+          "undoRedo": true,
+          "nativeImport": true
+        }
+      },
+      {
+        "id": "CAPB03-corrupt-current-recovery-and-subsequent-save",
+        "status": "PASS",
+        "evidence": {
+          "count": 32,
+          "recovery": true,
+          "subsequentSave": true
+        }
+      },
+      {
+        "id": "CAPB04-conflict-quota-abort-invalid-save-preserve",
+        "status": "PASS",
+        "evidence": {
+          "count": 32,
+          "conflict": true,
+          "quotaAtomic": true,
+          "invalidAtomic": true
+        }
+      }
+    ]
+  },
+  "constraints": [
+    "32layer cap unchanged;50renderer-only",
+    "No physical device/FPS/processRAM acceptance",
+    "Timing varies by runner; no strict performance threshold asserted"
+  ]
+}

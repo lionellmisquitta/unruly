@@ -1,0 +1,19 @@
+{
+  "checkpoint": "FX2",
+  "attempts": [
+    {
+      "source": "6c3e49f942675e020cc517f508c3bfd5473d7148",
+      "ci_run": 38440969358,
+      "outcome": "PASSED",
+      "feature_browser_step": "PASSED",
+      "model_tests": 322,
+      "chromium_scenarios": 299
+    }
+  ],
+  "local_models": {
+    "executed": 322,
+    "passed": 322
+  },
+  "local_browser": "NOT_EXECUTED: provider pinned Chromium used; local browser installation was unavailable in prior checkpoint",
+  "graph_changed": false
+}

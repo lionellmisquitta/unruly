@@ -1,0 +1,62 @@
+{
+  "change_id": "CHG-UNRULY-TIP2CAP-1015",
+  "baseline_id": "e880b0aa0f53b8cf02a6a2fec4434ac98aa8e369",
+  "scope_envelope": {
+    "target": [
+      "Imported grain and procedural texture presets through existing tip editor",
+      "v13model and clipboard admission",
+      "Capacity/recovery gates and full release records"
+    ],
+    "contract": [
+      "Oldv1tips/v12boards",
+      "Seeded replay/pressure/history/library/clipboard/offline",
+      "Existing32layer/8MiBboard/16MiBhistory/80MiBbacking limits"
+    ],
+    "regression": [
+      "Frozen renderer source/pixel oracles",
+      "All cumulative tests",
+      "Storage conflict/recovery/quota atomicity"
+    ],
+    "excluded_legacy": [
+      "CAP2processed-group retention redesign",
+      "Knowledge graph/skills",
+      "GPU/Rust/OPFS and other product features"
+    ],
+    "unknown_boundary": [
+      "Physical device/palm/pen/long-session/processRAM",
+      "30\u201350interactive capacity after CAP2optimization"
+    ]
+  },
+  "confirmed_impacts": [
+    "grain.js/grain-ui.js add bounded portable stamp-local grain",
+    "custom-tips.js merges grain alpha through existing optional renderer hook",
+    "model.js/selection.js admit v13 grain without changing old tips",
+    "sw.js adds two modules/cache identity",
+    "Measured full replay with group effects is costly; cap remains32"
+  ],
+  "likely_impacts": [],
+  "regression_obligations": [
+    "grain-replay:grain-model",
+    "grain-flow:grain-browser",
+    "capacity-boundary:capacity-model",
+    "layered-recovery:capacity-browser",
+    "legacy:cumulative-qa"
+  ],
+  "technical_constraints": [
+    "TECHNICAL_CONSTRAINTS.md",
+    "IMPACT_ANALYSIS.md revisions1/2",
+    "CAPACITY_REPORT.md"
+  ],
+  "unknowns": [
+    "Device and interactive-capacity acceptance remain explicitly OPEN"
+  ],
+  "ux_route": "not_required",
+  "evidence_refs": [
+    "AGENTS.md",
+    "docs/delivery/PRODUCT_ROADMAP.md",
+    "PROBE_RECEIPT.json",
+    "CAPACITY_REPORT.json",
+    "tests/browser-workspace/grain.browser.cjs",
+    "tests/browser-workspace/capacity.browser.cjs"
+  ]
+}

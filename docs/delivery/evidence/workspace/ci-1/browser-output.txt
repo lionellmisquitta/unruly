@@ -1,0 +1,11 @@
+W03-pen-cancel-touch-history Expected values to be strictly equal:
+
+30 !== 50
+
+W11-board-selection-and-import-limit opened board remains selected after reload
++ actual - expected
+
++ 'Untitled board'
+- 'Original selected'
+
+[{"id":"W01-desktop-controls","status":"PASS"},{"id":"W01-mobile-controls","status":"PASS"},{"id":"W01-tablet-controls","status":"PASS"},{"id":"W02-brush-controls-and-reopen","status":"PASS"},{"id":"W03-pen-cancel-touch-history","status":"FAIL"},{"id":"W04-render-alpha-brush-paper","status":"PASS"},{"id":"W05-render-layer-order-and-benchmark","status":"PASS"},{"id":"W06-paper-layers-controls","status":"PASS"},{"id":"W07-import-export-and-rejection","status":"PASS"},{"id":"W08-legacy-copy-original-unchanged","status":"PASS"},{"id":"W09-quota-conflict-recovery","status":"PASS"},{"id":"W10-all-erasers-undo-cancel","status":"PASS"},{"id":"W11-board-selection-and-import-limit","status":"FAIL"},{"id":"W12-offline-update-safety","status":"PASS"}]

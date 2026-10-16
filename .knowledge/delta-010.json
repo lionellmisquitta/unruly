@@ -1,0 +1,58 @@
+{
+  "id": "DELTA-010",
+  "mode": "capture",
+  "created_at": "2026-10-03T15:19:13.021560+00:00",
+  "events": [
+    {
+      "id": "EVT-P0-WSLG-NATIVE-STARTUP",
+      "status": "passed",
+      "artifact": "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/publish/repaired-window-inspection.json",
+      "statement": "Exact-PID native Linux Qt window is viewable; WSLg only, no pen claim."
+    },
+    {
+      "id": "EVT-P0-NATIVE-HOVER-DEFECT",
+      "status": "failed",
+      "artifact": "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/publish/native-tests-run.json",
+      "statement": "Independent native8 red run: six pass, two fail; tracking diagnostic identifies hover suppression."
+    },
+    {
+      "id": "EVT-P0-NATIVE-REPAIR-2",
+      "status": "passed",
+      "artifact": "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/publish/repair-cycle-2/results.json",
+      "statement": "One two-line Codex repair, unchanged assertions; current21 model+8 native synthetic passes."
+    },
+    {
+      "id": "EVT-P0-NATIVE-GATEKEEPER",
+      "status": "executed",
+      "artifact": "prototypes/p0-pen-input/evidence/native-wslg-2026-10-03/publish/gatekeeper-response.json",
+      "statement": "Independent Gatekeeper blocks production/full P0 closure; approves curated preparation publication conditions."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "EVT-P0-NATIVE-HOVER-DEFECT",
+      "relation": "repaired_by",
+      "to": "EVT-P0-NATIVE-REPAIR-2",
+      "scope": "Synthetic Qt event routing only; device drivers unverified"
+    },
+    {
+      "from": "REQ-005",
+      "relation": "partially_tested_by",
+      "to": "EVT-P0-NATIVE-REPAIR-2",
+      "scope": "Raw input safety only; stabilization and hardware feel unimplemented/unverified"
+    },
+    {
+      "from": "REQ-012",
+      "relation": "partially_exercised_by",
+      "to": "EVT-P0-NATIVE-GATEKEEPER",
+      "scope": "Independent design/diagnosis/retest/readiness; no integration merge/merged regression"
+    }
+  ],
+  "source_sha256": "56e2e448855a55f205dc85a8f160e59e562fb2f6102193c6ebcd94e45baa3f90",
+  "binary_sha256": "4c635605b7a6e86e58694bb79a8a686a7fe6339c84596edab24cbe2e4814ea3d",
+  "repair_cycles": 2,
+  "qa_status": "BLOCKED",
+  "build_authorized": false,
+  "closed_checkpoint_count": 0,
+  "note": "Bounded graph capture; not a validated full graph export or delivery closure"
+}

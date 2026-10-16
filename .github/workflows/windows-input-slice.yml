@@ -1,0 +1,47 @@
+name: Quarantined Windows input slice
+on:
+  push:
+    branches: ['prep/native-windows-input-2026-10-04']
+    paths:
+      - 'prototypes/windows-input-slice/**'
+      - '.github/workflows/windows-input-slice.yml'
+permissions:
+  contents: read
+concurrency:
+  group: unruly-native-input-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  diagnostic:
+    runs-on: windows-2022
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Compile and run independent model tests
+        shell: cmd
+        run: prototypes\windows-input-slice\build-windows.cmd --ci
+      - name: Native window startup and close smoke
+        shell: pwsh
+        run: ./prototypes/windows-input-slice/smoke-windows.ps1
+      - name: Bind artifact and source identities
+        shell: pwsh
+        run: |
+          $root = 'prototypes/windows-input-slice'
+          $files = @('capture_model.hpp','windows_main.cpp','model_tests.cpp','build-windows.cmd','smoke-windows.ps1','build/unruly-windows-input.exe','build/model_tests.exe')
+          $identities = $files | ForEach-Object { $h = Get-FileHash "$root/$_" -Algorithm SHA256; @{ path=$_; sha256=$h.Hash } }
+          @{ commit='${{ github.sha }}'; runner='windows-2022'; production_authorized=$false; physical_pen='NOT_VERIFIED'; files=$identities } | ConvertTo-Json -Depth 5 | Set-Content "$root/build/identity.json"
+          Copy-Item "$root/README.md", LICENSE -Destination "$root/build"
+          Get-ChildItem 'C:/Program Files (x86)/Windows Kits/10/Include' -Directory | Select-Object Name | ConvertTo-Json | Set-Content "$root/build/available-sdk.json"
+      - name: Upload diagnostic candidate only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: unruly-native-windows-input
+          path: |
+            prototypes/windows-input-slice/build/unruly-windows-input.exe
+            prototypes/windows-input-slice/build/model_tests.exe
+            prototypes/windows-input-slice/build/*.json
+            prototypes/windows-input-slice/build/README.md
+            prototypes/windows-input-slice/build/LICENSE
+          if-no-files-found: error
+          retention-days: 7

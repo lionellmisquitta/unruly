@@ -1,0 +1,56 @@
+name: Quarantined browser foundation QA
+on:
+  push:
+    branches: ['preview/browser-foundation-2026-10-04']
+    paths:
+      - 'prototypes/browser-foundation/**'
+      - 'tests/browser-foundation/**'
+      - '.github/workflows/browser-foundation.yml'
+permissions:
+  contents: read
+concurrency:
+  group: unruly-browser-foundation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  foundation-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install isolated pinned browser QA tooling
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund --prefix tests/browser-foundation
+          cd tests/browser-foundation
+          npx playwright install --with-deps chromium
+      - name: Independent unit and actual Chromium journeys
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-foundation/evidence
+          node --version > tests/browser-foundation/evidence/node-version.txt
+          node --test tests/browser-foundation/model.test.mjs > tests/browser-foundation/evidence/model-output.txt 2>&1
+          node tests/browser-foundation/server.cjs > tests/browser-foundation/evidence/server.log 2>&1 &
+          qa_server_pid=$!
+          trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-foundation/browser.test.cjs > tests/browser-foundation/evidence/browser-output.txt 2>&1
+      - name: Bind tested identities
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p tests/browser-foundation/evidence
+          git rev-parse HEAD > tests/browser-foundation/evidence/commit.txt
+          sha256sum prototypes/browser-foundation/* tests/browser-foundation/*.cjs tests/browser-foundation/*.mjs tests/browser-foundation/package.json tests/browser-foundation/package-lock.json .github/workflows/browser-foundation.yml > tests/browser-foundation/evidence/source-sha256.txt
+      - name: Upload bounded QA evidence only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: unruly-browser-foundation-qa
+          path: tests/browser-foundation/evidence/
+          if-no-files-found: error
+          retention-days: 7

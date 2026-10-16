@@ -1,0 +1,105 @@
+{
+  "checkpoint_id": "DUX1-U1",
+  "objective": "Compact reference controls and safe layer operations with eight real blends and v3 persistence",
+  "builder_agent": "Codex",
+  "branch": "preview/drawing-ux-u1-2026-10-06",
+  "base_commit_sha": "16d63942d8268b5a89eaf2e42e69e20821ee486b",
+  "tested_app_source_sha": "5bfe786d8018200b89049d1a8073a0eb78ab6077",
+  "source_file_sha256": {
+    "prototypes/browser-workspace/README.md": "4ca50ad88b5805c69bc13e7addb3317b56280d8c25a04627f853dbd861316bcc",
+    "prototypes/browser-workspace/app.js": "b9fdd952b212061e8c1be519f0f8633cdc7775e4a8caa2d4a0b8a0ed1ca0e357",
+    "prototypes/browser-workspace/icon.svg": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+    "prototypes/browser-workspace/index.html": "acb20e36bcabf0e7fdd48f6c76f251444f96124bee1b165a8c1fa508e3d9119a",
+    "prototypes/browser-workspace/manifest.webmanifest": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+    "prototypes/browser-workspace/model.js": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+    "prototypes/browser-workspace/render.js": "eab54781655ad966e9baf9e516c1767a0d4aead884717f61e95529065390b843",
+    "prototypes/browser-workspace/selection.js": "2b8aff9073f13ecbad5900202d0578388222a19c3d12150e66477f98bd222203",
+    "prototypes/browser-workspace/storage.js": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+    "prototypes/browser-workspace/style.css": "380ccbde6d16e884b768ec0ef1e07dc83c53e94544c5b4abc71407a533dae4c9",
+    "prototypes/browser-workspace/sw.js": "eb0e459ae68246f25d588bbf6d6a62985476d2123650b82008415e044f81ac35",
+    "tests/browser-workspace/browser.test.cjs": "76a039600b8454518ad0894f302ed368f48e23d16a4149ce711255fa8ac6ffd0",
+    "tests/browser-workspace/performance.browser.cjs": "b253bb7b351f284398fbfecc365ddf5bf0e59272296885e187225c509a2632fd",
+    "tests/browser-workspace/selection.browser.cjs": "58dfc147c97cd83d8242d0cda30a4bc85aeec111c27fb8eab418e218a585d537",
+    "tests/browser-workspace/server.cjs": "0f0ea13978ec217492e6c4009deec02c9d2c7c955e9e9f777238175c255e94b4",
+    "tests/browser-workspace/model.test.mjs": "e0f0f0dfc7b5eb48280c84cb812d0a9fcfe7877b4be793cc6691941f0057bf2c",
+    "tests/browser-workspace/selection.test.mjs": "1c4e9c9cb6e8447b31a3f882a465b52161b32d2340115f0d767ebdd6cc8216f1",
+    "tests/browser-workspace/package.json": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+    "tests/browser-workspace/package-lock.json": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+    "tests/browser-workspace/fixtures/reference-render.js.txt": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+    ".github/workflows/browser-workspace.yml": "d0b42a35d9c434414ccff6f50f29d540023c6c9e8f0474ebde944ced1449d805"
+  },
+  "human_authorization": "2026-10-06 user: add worthwhile handbook additions and proceed with build",
+  "ux_references": [
+    "PROCREATE_HANDBOOK_UX_BASELINE.md",
+    "PROCREATE_REFERENCE_UX_UPDATE.md"
+  ],
+  "requirements": [
+    "U1-01 dark icon top controls and independently collapsible modifiers/layers; no coordinate shifts",
+    "U1-02 top-first compact stable-ID layer rows; insert above active, hold/grip drag and keyboard reorder; selected properties",
+    "U1-03 opacity and normal/multiply/screen/overlay/darken/lighten/difference/exclusion; apply once against lower composite",
+    "U1-04 protective lock, duplicate new IDs unlocked, atomic capacity checks; delete last/locked rejected",
+    "U1-05 explicit v3 read/import validation and read-only idempotent legacy copy",
+    "U1-06 bounded scratch thumbnails and retained P01 performance",
+    "U1-07 no fake Smudge/transform or other undelivered controls"
+  ],
+  "acceptance_criteria": [
+    "Existing stroke geometry/pressure/legacy pixels preserved; no preset support until U2 actual renderer exists, reject preset fields in U1 rather than legacy-render",
+    "Layers bottom-to-top on disk, top-to-bottom displayed, active ID preserved by reorder; add/duplicate immediately above selected; one completed reorder/opacity/duplicate/delete one Undo, no-op none",
+    "Canvas input owns pointer gestures; rail/layer mutations/popover toggles rejected during captured drawing; outside popover dismissal consumed with no mark; overlays no stage resize",
+    "Layer row >=56px and action targets>=44px; keyboard/menu alternatives; compact selected properties rather than sliders per row",
+    "Layer opacity/blend/delete/content mutation blocked when locked; reorder/visibility/rename/copy allowed; clone unlocked with preserved opacity/blend/pressure",
+    "Full and retained blend rendering exactly agree; normal legacy rendering equals frozen fixture; reset source-over in every scratch/background/preview path",
+    "Five backing surfaces and 80MiB every allocation setter; no new thumbnail canvases; <=32 images at80x48 => <=512KiB thumbnail pixels; generate on commits/board switch, never penmove",
+    "New IDB unruly-workspace-v3 with boards/meta/migrations; source old DBs read-only, no intermediate v2; source current then previous validation, damagedv2/foundation fallback warning; target+map atomic, completed mappings never overwrite edits; stable ID dedup, collision mapping, selected mapping, partialfailure explicit",
+    "CAS save and backup recovery/conflict/quota/100board guards preserved; failed migrations preserve all sources; do not silently present empty successful migration",
+    "Imports v1/v2/v3 validate before replacement, fresh imported IDs, reject unknown blends/presets; save/reload retains version3",
+    "Existing offline Saved-update safety; cacheversion U1 adjusted, no storagepurges or recoveryprefix cachepurges"
+  ],
+  "allowed_scope": [
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/style.css",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/model.js",
+    "prototypes/browser-workspace/render.js",
+    "prototypes/browser-workspace/storage.js",
+    "prototypes/browser-workspace/sw.js",
+    "prototypes/browser-workspace/README.md",
+    "docs/delivery/",
+    " .knowledge/",
+    "QA-owned tests/browser-workspace/ and existing QA workflow new U1 trigger/commands only"
+  ],
+  "prohibited_scope": [
+    "selection.js algorithms except proven compatibility blocker",
+    "framework/runtime/backend/native dependencies",
+    "Smudge/masks/blur/gap fill/text/images/guides/gesture/shape/transform implementation",
+    "historical root-state public publication",
+    "frozen reference renderer edits",
+    "main/production/deployment without final Gatekeeper"
+  ],
+  "required_test_categories": [
+    "pure model/history/schema/import/limits",
+    "actual Chromium responsive desktop/tablet/phone journeys and keyboard",
+    "IDB migration/retry/collision/partial/damaged/selection/CAS/quota",
+    "independent blend pixels and frozen legacy equality",
+    "all existing P01 budget/cache/frame/controller/regression",
+    "offline/save/update and malicious text/import isolation"
+  ],
+  "regression_scope": [
+    "all existing24model and37browser groups; adapt only obsolete schema/UIlocators with documented changed behavior and new original compatibility tests"
+  ],
+  "known_risks": [
+    "No physical pen feel proof",
+    "Canvas2D sRGB blend semantics supported subset",
+    "No local Chromium found yet; CI existing pinned QA harness available"
+  ],
+  "rollback": "Do not publish intermediate U1; prior immutable live P01 remains. Preserve oldv2 and v3 stores. Final U3 publication requires separately reviewed recovery-v3 rollback candidate. U1 JSON export backup works with compatiblev3 app.",
+  "budget": {
+    "source_repairs_max": 2,
+    "ci_runs_max": 3,
+    "consumed_repairs": 0,
+    "consumed_ci": 0,
+    "prior_budgets_preserved": true
+  },
+  "environment": "Connector-backed file snapshot, plain JS browser/IDB app; no backend, same-model independent QA allowed, no paid external calls",
+  "build_authorized": false
+}

@@ -1,0 +1,7 @@
+# C06-S1 U02 fixture diagnosis
+
+Initial actual CI37363203471 commit78a04d6b221b4a0fce9637aa70e201ba430f8ea5:24modelPASS,15inheritedbrowserPASS,5/6selectionbrowserPASS. U02 failed paste Y visible-centre expectation under zoom/pan. Classified TEST_DEFECT. No application repair is indicated.
+
+Independent decoded trace: trusted mouse wheel requested screen(700,490.5), canvas bounds x220/y69,width960/height843. Chromium wheel anchor integer screenY490/localY421. Actual saved pasted points (416.59359907928723,411.2803593324833) and (516.5935990792873,411.2803593324833). With scale=exp(.4), pan=(20,15), inverse-view visible centre is anchor+(canvasCentre−anchor−pan)/scale. X expected416.59359907928723; using integerYanchor421 gives411.2803593324833 exactly. Test incorrectly used fractionalYanchor421.5, expecting411.4451993094654; difference0.1648399769821 is precisely half-pixel zoom-anchor effect. Screenshot shows centred selection/overlay. Source uses actual event coordinates and complies.
+
+QA-only correction: explicitly request integer screen wheel anchor and derive inverse-view expectedcentre from that known anchor. Preserve0.01 coordinate assertions, style/pressure/freshIDs, overlaywidth, Delete/Undo/reloadclipboard assertions. No skip/tolerance increase or application change. Subsequent U02 Delete/Undo/reload assertions are NOT_VERIFIED on first run because assertion stopped the journey; rerun required. Original trace/result/screenshot retained in evidence/selection/ci-1.

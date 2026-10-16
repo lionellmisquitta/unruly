@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "bash",
+    "prototypes/p0-pen-input/launch-linux.sh"
+  ],
+  "pid": 1431698,
+  "alive_after_seconds": 3,
+  "running": true,
+  "exit_code": null,
+  "recorded_at_utc": "2026-10-03T15:08:02.916641+00:00",
+  "binary_sha256": "91c61d5cf41677168a38e754ddeec8b1eb20193cb597ed06db1654f625839455",
+  "QT_QPA_PLATFORM": "xcb",
+  "platform": "Linux WSLg/XWayland; not Windows pen",
+  "left_running_for_human_review": true
+}

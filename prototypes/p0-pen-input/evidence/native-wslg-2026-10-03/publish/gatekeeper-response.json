@@ -1,0 +1,87 @@
+{
+  "gatekeeper_review_id": "GK-UNRULY-P0A-NATIVE-WSLG-2026-10-03-R1",
+  "formal_authorization_outcome": "BUILD_AUTHORIZED = false",
+  "build_authorized": false,
+  "readiness_status": "BLOCKED_FOR_PRODUCTION. Production readiness is not achieved. G00 is active at score 0 and G01-G15 are not_started at score 0. Pre-build baselines (requirements, interaction, domain, data, architecture, security, testing) are all null. Runtime is not selected and UX is not locked. Preparation-branch publication is a separate decision and may proceed under conditions (see preparation_publication_ready).",
+  "closed_checkpoint_count": 0,
+  "evidence_review": {
+    "supported_by_supplied_artifacts": [
+      "Configure and repaired build both recorded exit 0 (configure.json, repaired-native-build.json).",
+      "The exact-PID WSLg window was recorded as IsViewable at 1000x700 (repaired-window-inspection.json). This is startup evidence only, not input evidence.",
+      "Repair cycle 2 results record 29 synthetic/model passes: existing10, adversarial9, capacity2 and native8. They record compile and run exit 0 and an unchanged source hash.",
+      "The source contains setTabletTracking(true), consistent with the recorded repair. The Capture model enforces the 8000 limit with immediate full state.",
+      "Repository routing is recorded as the personal GitHub origin only, with no rewrite or pushurl. This is a claim in the packet and has not been re-verified by me."
+    ],
+    "claims_not_execution_evidence": [
+      "Builder, QA and diagnosis narratives are claims until backed by the cited receipts. The qa-final-response.json is Claude's assessment, not a gate closure. It also contains imprecise wording on repair-cycle numbering, which the ledger resolves as two cycles used.",
+      "The Qt documentation citation for tabletTracking was not independently verified by QA.",
+      "The binary-to-source provenance for the native8 test binary beyond the unchanged-source flag is weak (F-HASH-MISMATCH).",
+      "The identical screenshot hashes show nothing about input. The packet's own note says identical blank pads are expected."
+    ],
+    "not_verified": [
+      "Windows current-source build and regression: blocked by App Control WinError 4551.",
+      "Physical pen pressure, tilt, palm rejection, hover delivery and device feel on Surface, Lenovo and Xiaomi. No human card result exists.",
+      "Android kit, APK and Xiaomi evidence.",
+      "Merged regression, because no integration merge exists.",
+      "Latency, frame-time and rendering fidelity. The paintEvent output was never tested.",
+      "Docker/native reproducibility. EDR-012 itself says the Docker-first rule is unreconciled.",
+      "Dependency vulnerability audit and license review. The packet records neither a lockfile nor an audit; Qt redistribution terms are unreviewed."
+    ]
+  },
+  "contradictions": [
+    "Stale labels: the adversarial9 observation 'full lags' and the 'proposed' label conflict with the current immediate-full behaviour. They are diagnostic text and must be reconciled before reuse. Non-blocking for preparation.",
+    "state.yaml carries internally inconsistent historical counts. The Linux block has 21 cases passed, the native block has 29, and the Claude cycle has 12 repaired passes plus 9 blocked. They are scoped to different runs and are not a true conflict, but a reader could misread them. Add a scope note in a future update.",
+    "Cycle count wording in the QA response is imprecise. The ledger (two used, maximum three) governs. The initial failed run did not consume a cycle.",
+    "ENGINEERING_BASELINES.md text says the Gatekeeper and QA skills are missing. Its addendum supersedes this, but the stale body text remains and should be marked historical.",
+    "state.yaml still has next_action pointing at the Linux review and reads stale next to the native milestone. PROJECT_STATE.md 'Coding start boundary' and the 'pending' publication_status also need refreshing after this review.",
+    "The source is dirty at base cb1d520 (F-SRC-DIRTY). Committing it will give it a new identity, so the evidence hashes will bind to file contents, not to the commit. Record the commit SHA against the source SHA256 afterwards.",
+    "REQ-005 text was not supplied for this review in the form needed to confirm that hover-ends-capture is a stated requirement. The product-defect classification therefore relies on inference from source comments and tests (F-REQ005).",
+    "No open contradictions are recorded in state.yaml (contradictions_open is 0), yet the items above exist. They are non-blocking for preparation but should be logged."
+  ],
+  "unmet_gates": [
+    "G00 to G15: none passed. G00 is active at score 0 against a threshold of 95, and every gate has blocking gaps.",
+    "Runtime/feasibility: P0a is partial (WSLg synthetic only). P0b and P0c have not run. No runtime can be selected.",
+    "G06: the UX baseline is not locked. UX_REVIEW.md is a proposal.",
+    "G05: performance budgets are proposed only (EDR-008) and unmeasured.",
+    "G08: the board-v1 format, EDR-003 and EDR-006 are draft and unvalidated.",
+    "G09: no versioned sanitized API samples or simulation adapter exist for Drive or AI, and provider and scope choices are still open.",
+    "G10: the engineering-principles review is candidate only. The Docker/native reproducibility decision is open.",
+    "G11: the threat model, lockfiles, dependency audit and license decisions are absent.",
+    "G12/G13/G14: the test strategy is not locked, and no CI pipeline, build guard or traceability matrix exists.",
+    "Material user choices unresolved: project license, PSD or native exchange route, timelapse framing/undo/retention, AI providers, Drive scopes and OAuth, controller budgets.",
+    "Windows App Control clearance, native Windows regression, Surface/Lenovo physical pen evidence, Android device evidence and merged regression are not waived and remain blocked.",
+    "Locked UX is not waived. The checkpoint contracts and EDR-001 to EDR-014 are draft decisions, not confirmations."
+  ],
+  "preparation_publication_ready": true,
+  "publication_conditions": [
+    "Commit and push only to https://github.com/lionellmisquitta/unruly.git on prep/p0-native-wslg-2026-10-03. Re-verify effective fetch and push URLs immediately before pushing. No main merge, no merge of preview/offline-canvas, no integration merge, no binary release or release upload.",
+    "Publish only the curated scope listed. Exclude Microsoft/, UNRULY_Delivery_Skills.zip, .agents and .claude skill copies, build outputs, executables, debs, raw logs, raw historical evidence, Claude request packets, credentials and private boards or recordings. Run a pre-commit scan for secrets, absolute user paths and emails; the curated receipts already use path aliases.",
+    "Keep the prototypes quarantined. Add or retain a README or branch note stating that this is preparation and prototype work, not production, with BUILD_AUTHORIZED=false and 0 closed checkpoints.",
+    "Preserve the blocked and not-verified statuses as written: Windows App Control, native pen, Android, merged regression and human review. Do not edit the evidence to look greener.",
+    "Update state.yaml so that gatekeeper_review_id references this review, next_action reflects the current state, and publication_status moves from pending to the review outcome. Keep build_authorized false and record the review as preparation-scope only.",
+    "Label the draft contracts and EDRs as proposed. Do not describe them as accepted baselines.",
+    "Record the resulting commit SHA beside the source SHA256 56e2e448...a3f90, and keep the repair-cycle ledger at two of three.",
+    "Treat the push as preservation of quarantined work only. The note must not say P0 is closed.",
+    "The Qt kit is not shipped with the branch. Add a note that Qt redistribution and license review remains open (EDR-013) and that no license file is inserted on the user's behalf.",
+    "The curated evidence manifest is intended to cover the curated receipts only. Verify that its hashes match the committed bytes after any line-ending normalization."
+  ],
+  "ready_queue": [
+    "Publish the curated preparation branch under the conditions above.",
+    "Human WSLg card, labelled WSLg and supplemental only.",
+    "Independent review of the draft contracts and EDRs, to continue as proposals.",
+    "Prepare P0b synthetic identity traces and the C02, C11 and C12 fixture designs, with no production framework.",
+    "Reconcile stale labels and state.yaml text.",
+    "Draft a numeric budget proposal and a Docker/native reproducibility decision for human review."
+  ],
+  "blocked_queue": [
+    "Windows current-source build and regression: needs legitimate App Control clearance, with no relocation or workaround.",
+    "Surface/Lenovo physical pen, palm, DPI and interruption evidence: needs human and native device runs.",
+    "Android kit, APK and Xiaomi pen and lifecycle: needs approved SDK/NDK/JDK and Qt Android kit.",
+    "P0b and P0c closure and runtime selection.",
+    "Merged regression: no merge exists.",
+    "G00 to G14 completion, locked UX and baselines, and G15 delivery mode.",
+    "C01 to C13 and all production scaffolding, which stay blocked until a later Gatekeeper authorization.",
+    "Decisions on license, exchange route, timelapse, AI providers, Drive scopes and controller budgets, which need the user's confirmation at their dependency boundaries.",
+    "Main promotion, any binary release and the VAPT scope, which are separate actions and are not authorized."
+  ]
+}

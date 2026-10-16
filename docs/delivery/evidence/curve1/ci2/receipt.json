@@ -1,0 +1,11 @@
+{
+  "run_id": 37644325380,
+  "commit": "0011da2f4e7b0ac7e910a39e892ee07ddac6e51e",
+  "artifact_id": 11493821816,
+  "artifact_sha256": "1d72324581a9898b97d2fd2e802375efac95703440b1c2c5e53719ba1f0b3e54",
+  "model_passed": 66,
+  "browser_passed": 117,
+  "browser_failed": 1,
+  "application_repairs_used": 0,
+  "qa_ci_runs_used": 2
+}

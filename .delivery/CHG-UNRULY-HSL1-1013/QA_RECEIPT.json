@@ -1,0 +1,24 @@
+{
+  "checkpoint": "HSL1",
+  "source": "098c8463e86cd9d0c404381616314e306cc69fb4",
+  "ci_run": 38433660119,
+  "ci_conclusion": "success",
+  "model_tests": 307,
+  "chromium_scenarios": 289,
+  "new_adjustment_models": 14,
+  "new_adjustment_browser_scenarios": 8,
+  "browser": "151.0.7922.34",
+  "source_identities": 128,
+  "source_identity_comparison": "all match local reviewed files",
+  "artifact_id": 11832837047,
+  "artifact_sha256": "8e03cf002be20346537e1ff7d20244e6eee7197d06a12bd2bce02abf5763bbe7",
+  "screenshots_visually_inspected": [
+    "hsl1-narrow-dialog.png",
+    "HSLB03-group-dialog-and-retained-originals.png"
+  ],
+  "merged_tree_identical_to_candidate": true,
+  "merge": "636d6f3d03aafc89bc7317eee4a3756596d2fc8e",
+  "review": "same-session under owner-authorized personal-project process",
+  "physical_tablet": "NOT_VERIFIED",
+  "graph_changed": false
+}

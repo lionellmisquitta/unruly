@@ -1,0 +1,102 @@
+{
+  "all_match": true,
+  "count": 16,
+  "rows": [
+    {
+      "path": "prototypes/browser-workspace/README.md",
+      "expected": "9b243dd6a271fd8d9e7fdc1127b406342f92f74fbfdd4bf532496a2235778d7f",
+      "actual": "9b243dd6a271fd8d9e7fdc1127b406342f92f74fbfdd4bf532496a2235778d7f",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/app.js",
+      "expected": "f2b3ad765dcef7e4e43d4f26c9b5c47c49b8f95b58d2b987abff4af8d52e68ea",
+      "actual": "f2b3ad765dcef7e4e43d4f26c9b5c47c49b8f95b58d2b987abff4af8d52e68ea",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/icon.svg",
+      "expected": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "actual": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/index.html",
+      "expected": "510622730e562664f827df4e7eb05d548e47700f6fe4357bbdeec9cd8e03b54d",
+      "actual": "510622730e562664f827df4e7eb05d548e47700f6fe4357bbdeec9cd8e03b54d",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/manifest.webmanifest",
+      "expected": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "actual": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/model.js",
+      "expected": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+      "actual": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/render.js",
+      "expected": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+      "actual": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/storage.js",
+      "expected": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+      "actual": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/style.css",
+      "expected": "1c3d7aeb03a3a8de109a03ddaaea96f954acfb1bab5b8fa2bdcdbf6b1a2982cf",
+      "actual": "1c3d7aeb03a3a8de109a03ddaaea96f954acfb1bab5b8fa2bdcdbf6b1a2982cf",
+      "match": true
+    },
+    {
+      "path": "prototypes/browser-workspace/sw.js",
+      "expected": "8357b6e108af7474a4d8ebba4fd5481627179a052179b6e55d48a8d3d600e86c",
+      "actual": "8357b6e108af7474a4d8ebba4fd5481627179a052179b6e55d48a8d3d600e86c",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/browser.test.cjs",
+      "expected": "8b707d355685fd9f6fa2b38b938e84b5dfd50cf138dbf4290f1179ba310ae469",
+      "actual": "8b707d355685fd9f6fa2b38b938e84b5dfd50cf138dbf4290f1179ba310ae469",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/server.cjs",
+      "expected": "0f0ea13978ec217492e6c4009deec02c9d2c7c955e9e9f777238175c255e94b4",
+      "actual": "0f0ea13978ec217492e6c4009deec02c9d2c7c955e9e9f777238175c255e94b4",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/model.test.mjs",
+      "expected": "e0f0f0dfc7b5eb48280c84cb812d0a9fcfe7877b4be793cc6691941f0057bf2c",
+      "actual": "e0f0f0dfc7b5eb48280c84cb812d0a9fcfe7877b4be793cc6691941f0057bf2c",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/package.json",
+      "expected": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+      "actual": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+      "match": true
+    },
+    {
+      "path": "tests/browser-workspace/package-lock.json",
+      "expected": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+      "actual": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+      "match": true
+    },
+    {
+      "path": ".github/workflows/browser-workspace.yml",
+      "expected": "95dc1af625b063011d7114707486deaf6539bcf640e3a68e4097d62b64b50a2d",
+      "actual": "95dc1af625b063011d7114707486deaf6539bcf640e3a68e4097d62b64b50a2d",
+      "match": true
+    }
+  ]
+}

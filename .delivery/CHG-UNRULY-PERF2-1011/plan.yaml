@@ -1,0 +1,36 @@
+schema_version: '1.0'
+change_id: CHG-UNRULY-PERF2-1011
+route: standard_change
+prohibited_paths:
+- src/
+- native/
+- prototypes/browser-workspace/model.js
+- prototypes/browser-workspace/app.js
+- .github/workflows/browser-workspace-pages.yml
+checkpoints:
+- id: renderer-boundary
+  allowed_paths:
+  - prototypes/browser-workspace/render.js
+  - prototypes/browser-workspace/canvas2d-renderer.js
+  - prototypes/browser-workspace/render-contract.js
+  - prototypes/browser-workspace/sw.js
+  - tests/browser-workspace/render-contract.model.test.mjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - .github/workflows/browser-workspace.yml
+  - docs/delivery/DECISIONS.md
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - .delivery/CHG-UNRULY-PERF2-1011/
+  test_paths:
+  - tests/browser-workspace/
+  tests:
+  - id: render-contract-model
+    command: [node, --test, tests/browser-workspace/render-contract.model.test.mjs]
+    timeout_seconds: 120
+  - id: render-boundary-browser
+    command: [node, tests/browser-workspace/render-boundary.browser.cjs]
+    timeout_seconds: 180
+  - id: cumulative-qa
+    command: [bash, .delivery/CHG-UNRULY-PERF2-1011/run-qa.sh]
+    timeout_seconds: 600
+test_config_changes:
+- .github/workflows/browser-workspace.yml

@@ -1,0 +1,50 @@
+{
+  "id": "UNRULY-U3-preview-closure-2026-10-07",
+  "date": "2026-10-07",
+  "mode": "capture_delta",
+  "checkpoint": "U3",
+  "status": "verified_preview",
+  "integration_commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
+  "checkpoint_ref": "checkpoint/u3-v0.6.0",
+  "rollback": {
+    "ref": "checkpoint/u2-v0.5.0",
+    "commit": "fd15c607d5b9a605b1e8a1164250803832830591"
+  },
+  "capabilities": [
+    "bounded touch Undo/Redo",
+    "visible composite hold/drag/release sampling",
+    "provisional held line/circle editing",
+    "lasso affine transform Apply/Cancel"
+  ],
+  "authority": "docs/delivery/PROCREATE_HANDBOOK_UX_BASELINE.md",
+  "evidence": {
+    "qa": "docs/delivery/U3_QA_CHECKPOINT_RESULT.json",
+    "gatekeeper": "docs/delivery/U3_FINAL_GATEKEEPER.md",
+    "raw": "docs/delivery/evidence/u3",
+    "qa_run": 37605503902,
+    "deployment_run": 37606536465,
+    "checks_passed": 138,
+    "u3_browser_passed": 32,
+    "source_hashes": 32,
+    "hosted_asset_matches": 15
+  },
+  "resolved_defect": "U3-D01 native numeric Undo during handle ownership; original assertion preserved and retested",
+  "budget": {
+    "source_batches": 2,
+    "source_max": 2,
+    "qa_ci_runs": 3,
+    "qa_ci_max": 3
+  },
+  "limitations": [
+    "physical stylus feel not verified",
+    "browser byte-ceiling stress fixture not executed; inherited model budgets passed",
+    "preview only; main/production unauthorized"
+  ],
+  "decision": {
+    "id": "UNRULY-DELIVERY-SMALL-INCREMENTS",
+    "status": "user_confirmed_direction",
+    "basis": "User requested calibration and smaller increments during U3 continuation",
+    "rule": "One bounded interaction/slice, immediate independent actual-browser verification, then review before expanding scope."
+  },
+  "graph_package_status": "Existing capture records extended; no complete KGP claimed"
+}

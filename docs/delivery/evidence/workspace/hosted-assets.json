@@ -1,0 +1,61 @@
+{
+  "tested_commit": "80c5bbe86cde4c41a81e354f296ff5d203019888",
+  "deployment_run": 37224013072,
+  "assets": [
+    {
+      "file": "sw.js",
+      "status": 200,
+      "sha256": "8357b6e108af7474a4d8ebba4fd5481627179a052179b6e55d48a8d3d600e86c",
+      "matches": true
+    },
+    {
+      "file": "manifest.webmanifest",
+      "status": 200,
+      "sha256": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "matches": true
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "sha256": "f2b3ad765dcef7e4e43d4f26c9b5c47c49b8f95b58d2b987abff4af8d52e68ea",
+      "matches": true
+    },
+    {
+      "file": "model.js",
+      "status": 200,
+      "sha256": "2ebe976486b0057744ce0babac4b074bdd9b34e7cb5f8f7fbf6d4c41c62a4cf0",
+      "matches": true
+    },
+    {
+      "file": "icon.svg",
+      "status": 200,
+      "sha256": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "matches": true
+    },
+    {
+      "file": "render.js",
+      "status": 200,
+      "sha256": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+      "matches": true
+    },
+    {
+      "file": "storage.js",
+      "status": 200,
+      "sha256": "0c946d2d909ca057d7f71be356a2979c185e831012ba4eae956eb88d05bc49bf",
+      "matches": true
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "sha256": "1c3d7aeb03a3a8de109a03ddaaea96f954acfb1bab5b8fa2bdcdbf6b1a2982cf",
+      "matches": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "510622730e562664f827df4e7eb05d548e47700f6fe4357bbdeec9cd8e03b54d",
+      "matches": true
+    }
+  ],
+  "all_match": true
+}

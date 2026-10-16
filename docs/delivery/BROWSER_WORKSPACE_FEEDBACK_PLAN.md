@@ -1,0 +1,26 @@
+# Drawing-workspace batch — human feedback, 4 October 2026, 22:53 IST
+
+Status: proposed next execution batch; requirements and acceptance update only. No feature code or deployment changed by this record. WEB-F1 automatic passes cover the foundation, not the agreed painting feature set. User reports drawing worked but preview was substantially below expectation.
+
+## Recorded feedback and current truth
+
+1. User needs selectable background paper: dotted, plain and paper. Implement selectable plain/dotted/grid/ruled/textured paper with colour and spacing where applicable; preserve under navigation/save/reopen. Initial texture must be original/procedural; importing external paper assets remains separately validated.
+2. User needs three eraser modes: delete up to intersection, erase only points/region traversed by pen, and erase entire line. Current only whole-stroke deletion exists. Geometry erasing must split retained paths without connecting across removed samples; pressure/colour/size retained; intersection mode uses nearest bounding intersections on the touched path, with endpoint fallback where no intersection exists. One eraser gesture is one undo operation. Vector and raster erasing semantics must be explicit rather than silently deleting hidden layers.
+3. User could not change thickness/transparency/colour. Opacity is absent. Size and native HTML colour inputs exist but are inadequate usable evidence. Remote desktop keyboard End changed size5->40; native colour-well click showed no picker in AX or screenshot. This does not reproduce the user's unspecified device environment or prove physical pen/touch usability. Treat reported interaction issue as open. Replace with reachable in-app controls: numerical size plus slider, brush opacity0–100%, colour picker/wheel/hue/saturation and visible stroke sample. Controls affect next stroke; changing UI never recolours existing work.
+4. Layers/brushes already belong to agreed release, absent from foundation. Layers need add/name/select/order/show-hide/lock/delete with recovery/opacity; brush library needs real distinguishable original inking pen/pencil/marker/airbrush, then smudge and watercolor after renderer behaviour is proven. Changing only line width/opacity is not watercolor/smudge acceptance. Earlier agreed clipping masks/blends/textures remain required later work; none silently dropped.
+
+## Proposed three coordinated slices, one human review
+
+A — Usable drawing workspace: pen-first/touch-accessible in-app brush controls with size/opacity/colour/sample, paper picker, basic layer panel. Cover C04/C05 requirements. Define versioned layered document migration before code: existing WEB-F1 boards wrap all strokes into default layer; never erase/replace v1 originals on failed migration. Paper metadata, active layer and opacity persist. Existing JSON exports remain recoverable; add import before promoting a migration-dependent preview. Locked/hidden layer and inactive layer protection mandatory.
+
+B — Original brush library and renderer verification: inking pen/pencil/marker/airbrush with distinct algorithms and documented pressure behaviour. Resolve vector/raster/tile/history storage and compositing contracts before raster/smudge work; layer ordering/opacity and brush transparency apply correctly without darker segment overlaps. Performance evidence must record screen/device/DPR/board size, input-to-frame and memory under representative workloads; no buttery-feel claim from synthetic tests. Watercolor, smudge, textures, masks and blend modes keep explicit later acceptance requirements if they are not ready in this batch.
+
+C — Geometry erasers: visible three-mode menu; continuous swept eraser contact, partial-path split/intersection-bounded erasing/whole line, active-layer isolation and one-history-command-per-gesture. Cases: overlapping paths, self-intersection, no intersection, tangency, endpoint, zoom scale, sparse samples, cancel, undo/redo, pressure retention, save/reopen. Raster erase maps to pixels in active raster layer; intersection-specific vector behaviour must remain explicit.
+
+## Review and evidence boundary
+
+Before new app code: Gatekeeper reviews this proposed scope, UX, schema migration/rollback, renderer decisions, performance envelope and QA handoff. Existing WEB-F1 source-repair cap is preserved; this is a proposed new feature batch, not a relabeled repair. No reset of historical cycles, no production/main authorization from feedback.
+
+QA must execute control-change -> visibly different stroke -> save -> reopen tests on desktop and touch/tablet browser contexts. Unit geometry/model tests, IndexedDB migration/fault/concurrency tests, blend/alpha reference images and actual browser journeys are mandatory. Published URL must bind reviewed source and survive offline update. Save previous candidate as rollback; previous application must not open unknown schema and overwrite it. No backend server/Drive/AI integration introduced in this batch.
+
+Human receives one combined drawing workspace after these slices are independently tested/reviewed, not a demand to supervise each checkpoint. Test hands-on controls, brush appearance/layers and eraser gestures in one batch. Full release checkpoint count remains0/14; scope approval and physical pen/feel are outstanding. No ETA fabricated.

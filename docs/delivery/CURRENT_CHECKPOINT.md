@@ -1,9 +1,3 @@
-# Current checkpoint — TIP3 active
-
-TIP3 custom-tip alpha-lock compatibility is active on base92d2d8817e5ab4ebc209355939501abc84b88696. New14model checks and13existing pixel-paint regressions PASS. Browser/cumulative verification and publication pending; live baseline remains GUIDE1+NODE1. Scoped continuation: .delivery/CHG-UNRULY-TIP3-1016/CONTINUATION.json. Source is frozen per gesture; all alpha bytes retained; painting commits raster with original-artwork Undo. No graph or skill update. All remaining scope retained.
-
-## Historical GUIDE1 + NODE1 closeout
-
 # Current checkpoint — GUIDE1 + NODE1
 
 GUIDE1 + NODE1 published and hosted verified. Source `87648265ba312dc3827990968e116c992cd43b7e`; cumulative CI `38897534474` SUCCESS: 424 model tests, 367 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12045302914` SHA256 `0944a4614dc004015eb9b4d61cf999b9bd571f0f19bb662ad85c3daa96c7a445` and all 164 source hashes verified. PR20 merge `71fa5f5c2e552737942b9adba0fd34e4e70fcf91` has exactly the tested tree `5f03103516c111b9ff00e4b5a5f3eefbe55acf55`. Same-session owner-authorized verification; no independent human or physical-device acceptance claim.

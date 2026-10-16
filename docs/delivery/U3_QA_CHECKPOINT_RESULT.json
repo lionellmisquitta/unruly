@@ -1,0 +1,235 @@
+{
+  "checkpoint_id": "U3",
+  "status": "PASSED",
+  "verification_scope": "Final cumulative U1\u2013U3 preview integration and inherited regression; no main or production merge",
+  "builder_identity": "Root Builder session (same available model family)",
+  "adversary_identity": "Fresh isolated independent QA session, same-model fallback",
+  "adversary_selection": {
+    "preferred_cross_model": "unavailable",
+    "claude_code_cli_available": false,
+    "codex_cli_available": false,
+    "fallback": "Fresh independent same-model session; QA owned tests only and did not repair application source"
+  },
+  "candidate_branch": "preview/drawing-ux-u3-2026-10-07",
+  "original_candidate_commit": "0d76cd7ea57277d486a096593029c1937439cd38",
+  "failed_integration_commit": "e835e57f8ca10d43e29727e6220f558a187586c0",
+  "pre_merge_commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
+  "integration_commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
+  "merged_main_commit": null,
+  "repair_cycle_count": 2,
+  "budget": {
+    "application_source_batches_used": 2,
+    "application_source_batches_max": 2,
+    "ci_runs_used": 3,
+    "ci_runs_max": 3
+  },
+  "execution": {
+    "ci_run_id": "37605503902",
+    "url": "https://github.com/lionellmisquitta/unruly/actions/runs/37605503902",
+    "node_version": "v22.23.3",
+    "chromium_version": "151.0.7922.34",
+    "model": {
+      "passed": 48,
+      "failed": 0,
+      "blocked": 0,
+      "groups": {
+        "foundation": 16,
+        "selection": 8,
+        "U1": 11,
+        "U2": 6,
+        "U3": 7
+      },
+      "report": "docs/delivery/evidence/u3/model-output.txt"
+    },
+    "browser_suites": [
+      {
+        "suite": "workspace",
+        "passed": 15,
+        "failed": 0,
+        "blocked": 0,
+        "report": "browser-results.json"
+      },
+      {
+        "suite": "selection",
+        "passed": 6,
+        "failed": 0,
+        "blocked": 0,
+        "report": "selection-browser-results.json"
+      },
+      {
+        "suite": "U1",
+        "passed": 16,
+        "failed": 0,
+        "blocked": 0,
+        "report": "u1-browser-results.json"
+      },
+      {
+        "suite": "U2",
+        "passed": 5,
+        "failed": 0,
+        "blocked": 0,
+        "report": "u2-browser-results.json"
+      },
+      {
+        "suite": "performance",
+        "passed": 16,
+        "failed": 0,
+        "blocked": 0,
+        "report": "performance-browser-results.json"
+      },
+      {
+        "suite": "U3",
+        "passed": 32,
+        "failed": 0,
+        "blocked": 0,
+        "report": "u3-browser-results.json"
+      }
+    ],
+    "totals": {
+      "passed": 138,
+      "failed": 0,
+      "blocked": 0,
+      "model": 48,
+      "browser": 90
+    }
+  },
+  "tests_designed": [
+    "tests/browser-workspace/u3.browser.cjs",
+    "U3M07 in tests/browser-workspace/u3.model.test.mjs"
+  ],
+  "tests_executed": [
+    "model and selection unit suites",
+    "U1/U2/U3 unit suites",
+    "workspace/selection/U1/U2/U3/performance browser suites"
+  ],
+  "test_data_manifest_reference": "docs/delivery/U3_QA_TEST_DESIGN.md (isolated contexts, fixture() public model/storage setup and actual pen history)",
+  "regression": {
+    "status": "PASSED",
+    "scope": "workspace core smoke, selection, U1/U2 controls/migration/locking, offline/update, legacy/render/style/history/storage and performance budgets",
+    "cached_renderer_p95_ms": 1.6999999999825377,
+    "reference_renderer_p95_ms": 83.60000000000582,
+    "cache_rebuild_max_ms": 67.70000000001164,
+    "tracked_canvases": 5,
+    "peak_nominal_rgba_bytes": 83886080,
+    "budget_nominal_rgba_bytes": 83886080
+  },
+  "defects": [
+    {
+      "id": "U3-D01",
+      "classification": "PRODUCT_DEFECT",
+      "status": "RESOLVED_AND_RETESTED",
+      "failed_test": "U3B11b-transform-handle-cancel-and-history-owner",
+      "failed_run": "37604552212",
+      "retest_run": "37605503902",
+      "retest_status": "PASS",
+      "record": "docs/delivery/U3_CI2_DEFECT.json",
+      "valid_failing_assertions_preserved": true
+    }
+  ],
+  "static_findings_disposition": "Initial contract defects repaired in Builder batch1 and covered by final passing browser tests. Touch toolbar ownership strengthened in batch2, verified by U3B13b navigation/picker cases.",
+  "unresolved_defects": [],
+  "contradictions": [],
+  "evidence": {
+    "downloaded_directory": "/tmp/u3-ci3",
+    "artifact_id": "11474472876",
+    "artifact_digest_reported_by_root": "sha256:75ae7b044a50a2830b129725e2d79a6e26ce311b794e3dd599793e7c536c5443",
+    "source_manifest": "docs/delivery/evidence/u3/source-sha256.txt",
+    "source_manifest_sha256": "b31b102f087b5114652abbdbcf0e5bf30cbdc6cfad8566d276ebb94c9d063dd1",
+    "ci2_failure_trace": "U3B11b-transform-handle-cancel-and-history-owner-trace.zip (CI2 artifact)",
+    "final_result_reports": [
+      "docs/delivery/evidence/u3/browser-results.json",
+      "docs/delivery/evidence/u3/selection-browser-results.json",
+      "docs/delivery/evidence/u3/u1-browser-results.json",
+      "docs/delivery/evidence/u3/u2-browser-results.json",
+      "docs/delivery/evidence/u3/performance-browser-results.json",
+      "docs/delivery/evidence/u3/u3-browser-results.json"
+    ],
+    "durable_directory": "docs/delivery/evidence/u3"
+  },
+  "identity_audit": {
+    "manifest_rows": 32,
+    "local_byte_exact_files": [
+      "prototypes/browser-workspace/README.md",
+      "prototypes/browser-workspace/app.js",
+      "prototypes/browser-workspace/brushes.js",
+      "prototypes/browser-workspace/gestures.js",
+      "prototypes/browser-workspace/icon.svg",
+      "prototypes/browser-workspace/index.html",
+      "prototypes/browser-workspace/manifest.webmanifest",
+      "prototypes/browser-workspace/model.js",
+      "prototypes/browser-workspace/render.js",
+      "prototypes/browser-workspace/selection.js",
+      "prototypes/browser-workspace/shapes.js",
+      "prototypes/browser-workspace/storage.js",
+      "prototypes/browser-workspace/style.css",
+      "prototypes/browser-workspace/sw.js",
+      "prototypes/browser-workspace/u2.js",
+      "tests/browser-workspace/browser.test.cjs",
+      "tests/browser-workspace/performance.browser.cjs",
+      "tests/browser-workspace/selection.browser.cjs",
+      "tests/browser-workspace/server.cjs",
+      "tests/browser-workspace/u1.browser.cjs",
+      "tests/browser-workspace/u1.compat.cjs",
+      "tests/browser-workspace/u2.browser.cjs",
+      "tests/browser-workspace/u3.browser.cjs",
+      "tests/browser-workspace/model.test.mjs",
+      "tests/browser-workspace/selection.test.mjs",
+      "tests/browser-workspace/u1.model.test.mjs",
+      "tests/browser-workspace/u2.model.test.mjs",
+      "tests/browser-workspace/u3.model.test.mjs",
+      "tests/browser-workspace/package.json",
+      "tests/browser-workspace/package-lock.json",
+      "tests/browser-workspace/fixtures/reference-render.js.txt",
+      ".github/workflows/browser-workspace.yml"
+    ],
+    "inherited_snapshot_files_matching_after_removing_one_appended_LF": [],
+    "unexplained_mismatches": [],
+    "note": "Root restored inherited scratch materialization bytes by removing its one appended LF. Independent final audit confirms all32 local file SHA256 values match actual CI manifest; source unchanged relative to exact CI checkout.",
+    "root_git_blob_audit": "docs/delivery/evidence/u3/local-identity-audit.json"
+  },
+  "source_sha256": {
+    "prototypes/browser-workspace/README.md": "3067a214433b4d8be2ba736f5b745b09aa624bcdbe40db30f2be4a9a4422c3b4",
+    "prototypes/browser-workspace/app.js": "c2f1b7cd56c0159830a5d5cdd3d5e3303b2c62d44e964b71ab991e050f6ca1d1",
+    "prototypes/browser-workspace/brushes.js": "98e66660b7e0f7aa50c80d37588eb95c3a019d9cfb22688d6cfd09af10dca1d0",
+    "prototypes/browser-workspace/gestures.js": "062e358c2cbb821637c4c15701d6b08fa5704dfc08963caf91231f8de7937a77",
+    "prototypes/browser-workspace/icon.svg": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+    "prototypes/browser-workspace/index.html": "77dc20b894cc887359749c6fa91c39523761933b2b33654d71164264adc2f0c7",
+    "prototypes/browser-workspace/manifest.webmanifest": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+    "prototypes/browser-workspace/model.js": "a9587a81012092e3f8fd8d3a05ea29e678a48befccad91f5e1bd40f27cf85ef1",
+    "prototypes/browser-workspace/render.js": "8842b49da299f9124d3fee126dc62541524e22aef0772552b1371a422344c1fd",
+    "prototypes/browser-workspace/selection.js": "2a39ee2678addf9f9d62480518cf22b68fc734cc45b54f1c1ee2b5613c766843",
+    "prototypes/browser-workspace/shapes.js": "7bd2c3e63038fa08ba13431cf40df0ec0116bcdf3b55307d8f05bd0bc3969253",
+    "prototypes/browser-workspace/storage.js": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+    "prototypes/browser-workspace/style.css": "5a5a1cb8adeb7be9361b1f689ec4063b2567a4d34e0b820468dfc9e43a4806da",
+    "prototypes/browser-workspace/sw.js": "57b7e7f26b0c78da7c5742d20c2410b98913190389a4a6743ecc4c2d183b2497",
+    "prototypes/browser-workspace/u2.js": "fc3313514d8d25950680ed0f73a20820ae1fbec0d146b21093fa7beffcd2ca5f",
+    "tests/browser-workspace/browser.test.cjs": "e387afbc380f0807f75e6658df3b0dbf43800945ff2de5e9587379e51211f3c7",
+    "tests/browser-workspace/performance.browser.cjs": "045a1fca6bf8d0d2a3e9eed5059c465e19ffd8150a300089eb982fdda2ef54f2",
+    "tests/browser-workspace/selection.browser.cjs": "60a7768532fb76435367160eb5a66ec1344369605bd8e90781869d61d3b3099d",
+    "tests/browser-workspace/server.cjs": "e37e690684a65a022e515dc07f88ee513df519bd37d415489bbbeff42a7abca0",
+    "tests/browser-workspace/u1.browser.cjs": "032a926f1cc96f2d474bff7d5282165268e0f4e767159234be1e93fdfaf2d213",
+    "tests/browser-workspace/u1.compat.cjs": "8cefe17c9ee56bafb1375253f9577445b080eaecc8ef8b40af5efc3203f1afd2",
+    "tests/browser-workspace/u2.browser.cjs": "63415dc27d13848473a052a51f61527b71c51612c736221272eee9026160bdcd",
+    "tests/browser-workspace/u3.browser.cjs": "72ab8178d33bffc12dbeb08d45e6c5bc4210883e8e24eb0292034954b96a39fa",
+    "tests/browser-workspace/model.test.mjs": "ac9207d894f65a82c499d3a1e71fb895193cc29d8bbb658407abe865cc14ca68",
+    "tests/browser-workspace/selection.test.mjs": "2f8faf4530128aee99ceb6a399ae2528cb8898ab676a9e9316a08dd42f219ec7",
+    "tests/browser-workspace/u1.model.test.mjs": "d2eafd5d10ae84e25337c1952d7bed248dca934eff19ebd4382f7965d31c2385",
+    "tests/browser-workspace/u2.model.test.mjs": "19f12808b744e1762efbeda852d02831c6e2265b62246836bb608d85bc85ae51",
+    "tests/browser-workspace/u3.model.test.mjs": "0330a2115c39fd87916cb5247b679ff19fa67c64056b8ebba0445eb3e97bc335",
+    "tests/browser-workspace/package.json": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+    "tests/browser-workspace/package-lock.json": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+    "tests/browser-workspace/fixtures/reference-render.js.txt": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+    ".github/workflows/browser-workspace.yml": "b3fcb620bc7ad0fd927bb9234bd1b31d0b585d660e301b451fddc64c7620d731"
+  },
+  "limitations": {
+    "physical_pen": "NOT_VERIFIED",
+    "tablet_hardware_feel": "NOT_VERIFIED",
+    "native_full_shape_parity": "NOT_CLAIMED",
+    "main_merge": "NOT_AUTHORIZED",
+    "production": "NOT_AUTHORIZED",
+    "browser_byte_ceiling_stress_fixture": "NOT_EXECUTED; inherited model budget regression executed"
+  },
+  "gatekeeper_handoff": "Evidence supports bounded U3 preview checkpoint acceptance on recorded integration identity; Gatekeeper owns closure and sequencing.",
+  "repair_cycle_semantics": "Two source repair batches: first addressed independent static contract findings; second addressed runtime-proven U3-D01 plus touch ownership. One runtime-failure-to-retest cycle occurred.",
+  "runtime_proven_defect_retest_cycles": 1
+}

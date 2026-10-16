@@ -1,0 +1,102 @@
+{
+  "checkpoint_id": "C06-S1",
+  "builder": "Codex root",
+  "adversary": "Isolated same-model Codex windows_slice_qa fallback; independent tests and evidence review",
+  "branch": "preview/vector-selection-2026-10-06",
+  "premerge_commit": "e30e861745c48c5029c7f9f0d23a974ae8190c54",
+  "merged_commit": null,
+  "candidate_status": "AUTOMATED_CANDIDATE_PASS",
+  "final_qa_status": "NOT_VERIFIED for full product/merged closure; scoped candidate automated evidence accepted",
+  "ci_run": 37364993048,
+  "artifact_id": 11368146880,
+  "artifact_sha256_independently_verified": "da7b1d996623ef1a1043bc91b83c2682017398118839eb434adc1ad1072eacf1",
+  "identity": {
+    "entries": 19,
+    "all_match": true,
+    "receipt": "evidence/selection/ci-2/qa-source-hash-verification.json"
+  },
+  "tests": {
+    "model_designed_executed_passed": 24,
+    "inherited_model": 16,
+    "new_selection_model": 8,
+    "model_failed_skipped": 0,
+    "inherited_browser_designed_executed_passed": 15,
+    "new_selection_browser_designed_executed_passed": 6,
+    "browser_failed": 0,
+    "uncaught_browser_errors": 0,
+    "node": "22.23.3",
+    "chromium": "151.0.7922.34",
+    "synthetic_cdp_pen_touch": true
+  },
+  "test_data_manifest": "SELECTION_TEST_PLAN.md (unique fixed geometry; fresh context/DB; explicitly simulated quota at actual IDB boundary)",
+  "regression_scope": "Unchanged 16 WB1 model cases and15 browser journeys; all passed in actual candidate CI",
+  "repair_budget": {
+    "application_batches_used": 1,
+    "application_maximum": 2,
+    "ci_attempts_used": 2,
+    "ci_maximum": 3,
+    "paid_model_calls": 0,
+    "prior_WB1_budget": "2/2 exhausted remains separate"
+  },
+  "initial_failure": {
+    "classification": "TEST_DEFECT",
+    "test": "U02 fractional wheel-anchor assumption",
+    "receipt": "SELECTION_QA_FIXTURE_DIAGNOSIS.md",
+    "original_retained": "evidence/selection/ci-1",
+    "correction": "Explicit integer input anchor; inverse-view expected centre derived from it; 0.01 assertions and all later checks preserved; no source repair"
+  },
+  "selection_measurement": {
+    "workload": "120selectedstrokes/2400points bounds+immutablemovepreview20calls desktopDPR1",
+    "p50": 2.900000000023283,
+    "p95": 7.399999999994179,
+    "max": 7.399999999994179,
+    "physical_feel": "NOT_VERIFIED"
+  },
+  "renderer_regression_measurement": {
+    "top": [
+      0,
+      0,
+      255,
+      255
+    ],
+    "hidden": [
+      255,
+      0,
+      0,
+      255
+    ],
+    "p50": 44.80000000000291,
+    "p95": 55.69999999999709,
+    "max": 55.69999999999709,
+    "dimensions": [
+      {
+        "width": 1440,
+        "height": 950
+      },
+      {
+        "width": 1440,
+        "height": 950
+      },
+      {
+        "width": 1440,
+        "height": 950
+      }
+    ],
+    "surfaces": 3,
+    "workload": "8layers/10000points1440x950DPR1",
+    "physical_feel": "NOT_VERIFIED"
+  },
+  "backend": "N/A: no product server/API/Drive integration; real IndexedDB save/conflict/quota/recovery regression executed",
+  "unresolved_proven_product_defects": [],
+  "physical_pen_and_feel": "NOT_VERIFIED",
+  "native_windows_android": "NOT_VERIFIED by browser candidate",
+  "hosted_updated_candidate": "NOT_VERIFIED",
+  "merged_product_regression": "NOT_VERIFIED",
+  "checkpoint_closed": false,
+  "production_authorization": false,
+  "closure_and_preview_authority": "Software Delivery Gatekeeper",
+  "screenshots_reviewed": [
+    "U02-session-clipboard-acrossboard-and-delete.png"
+  ],
+  "evidence_location": "evidence/selection/ci-2"
+}

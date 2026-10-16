@@ -1,0 +1,131 @@
+{
+  "checkpoint_id": "PEN1",
+  "builder": "root Codex session",
+  "adversary": "fresh isolated Codex pen_qa session",
+  "selection_reason": "Preferred cross-model runtime unavailable; independent session from requirements before builder narrative.",
+  "branch": "preview/pen-input-p1-2026-10-07",
+  "parent_source_commit": "41019aa0b7991bbe5bd56b71b9516da9bb454cd0",
+  "pre_merge_commit": "93af0a256b57932288f57239612bd4cc5516b7fc",
+  "tested_source_commit": "93af0a256b57932288f57239612bd4cc5516b7fc",
+  "merged_commit": null,
+  "merged_verification": "No separate merge performed; exact integrated preview source tested. Gatekeeper owns publishing and hosted identity verification.",
+  "repair_cycle_count": 1,
+  "budget_consumed": {
+    "application_repair_batches": 1,
+    "application_repair_batches_max": 2,
+    "qa_ci_runs": 2,
+    "qa_ci_runs_max": 3
+  },
+  "execution": {
+    "ci_run": "37633247724",
+    "artifact_id": "11487592535",
+    "artifact_digest_as_received": "cb434239bd2cbc6d1a86ca0af5d79e56bc923aa9ce2b198b833f910473b68074",
+    "browser": "Chromium151.0.7922.34",
+    "model": {
+      "pass": 57,
+      "fail": 0,
+      "skipped": 0
+    },
+    "browser_total": {
+      "pass": 108,
+      "fail": 0
+    },
+    "browser_suites": {
+      "browser-results.json": {
+        "pass": 15,
+        "fail": 0
+      },
+      "selection-browser-results.json": {
+        "pass": 6,
+        "fail": 0
+      },
+      "performance-browser-results.json": {
+        "pass": 16,
+        "fail": 0
+      },
+      "u1-browser-results.json": {
+        "pass": 16,
+        "fail": 0
+      },
+      "u2-browser-results.json": {
+        "pass": 5,
+        "fail": 0
+      },
+      "u3-browser-results.json": {
+        "pass": 32,
+        "fail": 0
+      },
+      "pen-browser-results.json": {
+        "pass": 18,
+        "fail": 0
+      }
+    },
+    "source_manifest": {
+      "rows": 36,
+      "independently_verified_exact_local_rows": 36,
+      "mismatches": []
+    },
+    "persisted_receipts": "Independently byte-compared all persisted CI2 receipt files with /tmp/pen-ci2; exact.",
+    "tests_designed": [
+      "PENM01\u201309",
+      "PENB01\u201315 including11a,13b,14blur/14lostcapture"
+    ],
+    "tests_executed": "All listed checkpoint cases and inherited full model/browser/performance suites."
+  },
+  "test_data_manifest": {
+    "reference": "PEN1_QA_TEST_DESIGN.md",
+    "boards": "Deterministic one-layer fixture with original Fineliner pressure .8; disposable browser contexts; no production data.",
+    "pressures": [
+      null,
+      0,
+      0.1,
+      0.4,
+      0.5,
+      0.6,
+      0.8,
+      0.9,
+      1
+    ],
+    "presets": "Immutable original12 +8 additional presets",
+    "cleanup": "Browser contexts closed per case"
+  },
+  "regression": {
+    "scope": "Full inherited U1/U2/U3, model, selection, migration, locking, offline/update and performance regression",
+    "status": "PASSED",
+    "browser_cases_pass": 90,
+    "original12_frozen_pixel_comparisons": 48,
+    "pixel_comparison": "exact RGBA pressure null/0/.5/1, absent dynamics",
+    "observed_variable_pressure_widths": {
+      "low_force_.1_pixels": 6,
+      "high_force_.9_pixels": 36,
+      "mouse_full_width_pixels": 40
+    }
+  },
+  "resolved_defects": [
+    {
+      "id": "PEN1-CI1-PENB13",
+      "classification": "PRODUCT_DEFECT",
+      "result": "Normal move-admitted contact release now commits while unexpected captureloss/blur cancels; CI2 PENB13,13b,14 pass."
+    },
+    {
+      "id": "PEN1-CI1-PENB08",
+      "classification": "ENVIRONMENT_DEFECT_AND_TEST_DEFECT",
+      "result": "CDP mask32 not exposed; raw limit preserved and synthetic PointerEvent contract validated without hardware claim."
+    }
+  ],
+  "unresolved_product_defects": [],
+  "contradictions": [],
+  "verification_limits": {
+    "trusted_cdp_eraser_mask32": "NOT_VERIFIED_CDP_DOES_NOT_EXPOSE_MASK32",
+    "eraser_signal_browser_integration": "PASSED_SYNTHETIC_POINTEREVENT_CONTRACT_ONLY",
+    "physical_pen_pressure_and_buttons": "NOT_VERIFIED_UNTIL_HUMAN_DEVICE_TEST",
+    "hosted_published_preview": "NOT_VERIFIED_BY_THIS_QA_RECEIPT"
+  },
+  "evidence_locations": [
+    "docs/delivery/evidence/pen1/ci2",
+    "docs/delivery/PEN1_CI1_QA_FINDINGS.json",
+    "docs/delivery/PEN1_QA_TEST_DESIGN.md"
+  ],
+  "qa_status": "PASSED",
+  "status_scope": "Automated browser contract and exact integrated preview source. Excludes physical hardware and hosted deployment closure."
+}

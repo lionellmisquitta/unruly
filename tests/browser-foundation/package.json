@@ -1,0 +1,1 @@
+{"private":true,"description":"Independent WEB-F1 QA tools only; excluded from static app","devDependencies":{"playwright":"1.62.1"}}
