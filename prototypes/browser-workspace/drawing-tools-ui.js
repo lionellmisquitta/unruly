@@ -13,7 +13,7 @@ export function initDrawingTools({$,canvas,getState,onStart,onCommit,onPreview,o
  function remember(before){if(JSON.stringify(before)===JSON.stringify(snapshot()))return;draft.past.push(before);if(draft.past.length>50)draft.past.shift();draft.future=[];}
  function cancel(message=true){draft=null;picking=false;drag=null;onPreview(null);sync();onChange();if(message)status('Artwork edit cancelled · original preserved');}
  function preview(){if(!draft){onPreview(null);sync();return;}if(!same()){cancel();return;}
-  try{const s=editedArtwork(draft.stroke,draft.nodes,draft),b=clone(draft.board),l=b.layers.find(l=>l.id===draft.layerId);if(draft.existing)l.strokes=l.strokes.map(x=>x.id===s.id?s:x);else l.strokes.push(s);onPreview(b);draft.error='';}
+  try{const s=editedArtwork(draft.stroke,draft.nodes,draft),b=clone(draft.board),l=b.layers.find(l=>l.id===draft.layerId);if(s.artworkPath){b.version=Math.max(15,b.version);b.folders=b.folders||[];}if(draft.existing)l.strokes=l.strokes.map(x=>x.id===s.id?s:x);else l.strokes.push(s);onPreview(b);draft.error='';}
   catch(e){onPreview(null);draft.error=e.message;}sync();onChange();
  }
  function create(stroke,existing=false){const s=getState(),data=existing?artworkNodes(stroke):{nodes:[],closed:false,authored:true};draft={...data,stroke:clone(stroke),existing,board:s.board,layerId:s.layerId,past:[],future:[],error:''};picking=false;index=0;if(data.stale)status('Curve source changed after erase · editing current artwork points');preview();}
