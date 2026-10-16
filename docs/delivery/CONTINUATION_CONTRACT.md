@@ -1,6 +1,6 @@
 # UNRULY continuation contract
 
-PAL1 named palettes, digital colour blend and saved-reference picker verified; publication pending. Source `eeb629875f7e04a038e1a854ea56d47227ede851`; cumulative CI `38919040571` SUCCESS: 456 model tests, 389 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12055870023` SHA256 `2ee415a9ce1e6455783b8fb34b85df4db68dd54c66d67ef3ff1c2ec7517692fc` and all 171 source hashes verified. PR22 merge `3b8a889a18980606600895af4264022c427f64e3` has exactly the tested tree `6d1a1b8301a8ad2f8278e3f8bb93eb7f5ce91781`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
+PAL1 named palettes, digital colour blend and saved-reference picker published and hosted verified. Source `eeb629875f7e04a038e1a854ea56d47227ede851`; cumulative CI `38919040571` SUCCESS: 456 model tests, 389 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12055870023` SHA256 `2ee415a9ce1e6455783b8fb34b85df4db68dd54c66d67ef3ff1c2ec7517692fc` and all 171 source hashes verified. PR22 merge `3b8a889a18980606600895af4264022c427f64e3` has exactly the tested tree `6d1a1b8301a8ad2f8278e3f8bb93eb7f5ce91781`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
 
 Colour → Palette now offers named device-local libraries: create/rename/select, Save current/remove swatch/delete, last-palette protection and ten-level session-only Undo palette edit. Valid legacy U2 palette migrates without changing its palette data. Back up palettes exports owned JSON; Import appends with fresh IDs/unique names and preserves existing palettes. Invalid/oversized/capacity overflow rejects unchanged. Storage failure keeps a usable session library, visibly warns and allows backup. Up to16palettes/64swatches each/64KiB encoded library; device-local data is separate from artwork JSON and cross-tab live synchronization is not provided.
 
@@ -15,6 +15,8 @@ New palettes.js owns pure rules; palettes-ui.js owns separate library/DOM/refere
 Next proposed group: folder-wide masks/group opacity/blend/effects ordering and other retained composition work, scoped before implementation. Proprietary brush formats, pattern deformation/advanced wet media, image-tip symmetry/guides and pixel-mode custom tips, remaining workflow/rotation/gestures/text/connectors, Motion Trace mixed-target compatibility, clean video export, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI and release validation remain in PRODUCT_ROADMAP. Physical Surface/Xiaomi/Lenovo pen/palm/latency, long-session/large-layer feel, intersection-eraser device acceptance and32layer/30–50interactive goals remain OPEN. This closes a bounded palette/mix/reference baseline, not all C05/C06 or painting/composition. No scope cut/fixed total build count approved.
 
 Knowledge graph and skills unchanged. Graph remains at TIME1; after this publication the app is four batches/five checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1). Scoped evidence: `.delivery/CHG-UNRULY-PAL1-1016/`.
+
+Publication `b480e4f2f19a169aad1e36c30291d1646ce2e6bb`; Pages `38922098299` SUCCESS; all 69 hosted application files match reviewed source bytes.
 
 ## Historical TIP3 closeout
 

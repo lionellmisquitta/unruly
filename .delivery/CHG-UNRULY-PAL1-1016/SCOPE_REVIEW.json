@@ -24,5 +24,142 @@
   ],
   "knowledgeGraphChanges": 0,
   "review": "Manual scoped diff review; not centrally enforced protection",
-  "closeoutScope": "Pinned publication workflow; roadmap/code-map/AGENTS/continuation and scoped evidence/impact JSON. Guide priority status correction only repairs a stale publication label; no requirement removed."
+  "closeoutScope": "Pinned publication workflow; roadmap/code-map/AGENTS/continuation and scoped evidence/impact JSON. Guide priority status correction only repairs a stale publication label; no requirement removed.",
+  "files": [
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/CONTINUATION.json",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/IMPACT_ANALYSIS.md",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/QA_NOTES.md",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/UI_DIRECTION.md",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/UX_BASELINE.md",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/impact.yaml",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/plan.yaml",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-PAL1-1016/ux-baseline.json",
+      "status": "added"
+    },
+    {
+      "path": ".github/workflows/browser-workspace.yml",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/CODE_STRUCTURE.md",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/CONTINUATION_CONTRACT.md",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/CURRENT_CHECKPOINT.md",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/PRODUCT_ROADMAP.md",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/app.js",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/index.html",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/palettes-ui.js",
+      "status": "added"
+    },
+    {
+      "path": "prototypes/browser-workspace/palettes.js",
+      "status": "added"
+    },
+    {
+      "path": "prototypes/browser-workspace/style.css",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/sw.js",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/u2.js",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/adjustments.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/drawing-tools.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/history-cache.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/image-tip-paint.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/layer-compositor.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/motion.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/palettes.browser.cjs",
+      "status": "added"
+    },
+    {
+      "path": "tests/browser-workspace/palettes.model.test.mjs",
+      "status": "added"
+    },
+    {
+      "path": "tests/browser-workspace/pixel-paint.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/raster-tiles.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/render-boundary.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/stabilization.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/timelapse.browser.cjs",
+      "status": "modified"
+    }
+  ],
+  "roadmapTableRowsPreserved": 27,
+  "hostedAssetsVerified": 69,
+  "attemptsRetained": "First full candidate passed all focused and cumulative gates; no code/test repair required"
 }

@@ -1,7 +1,7 @@
 {
   "base": "d1353f1559b9e7ff82ca88c396d34da87a2399df",
   "checkpoint": "PAL1",
-  "state": "verified; publication pending",
+  "state": "published and hosted verified",
   "expectedModels": 456,
   "expectedStructuredBrowser": 389,
   "expectedLegacy": 2,
@@ -11,7 +11,7 @@
   "source": "eeb629875f7e04a038e1a854ea56d47227ede851",
   "run": 38919040571,
   "pr": 22,
-  "next_action": "Verify pinned Pages publication and hosted bytes, then docs-only closeout",
+  "next_action": "Scope composition checkpoint from current roadmap; no graph update",
   "merge": "3b8a889a18980606600895af4264022c427f64e3",
   "tree": "6d1a1b8301a8ad2f8278e3f8bb93eb7f5ce91781"
 }
