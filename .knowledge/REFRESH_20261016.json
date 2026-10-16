@@ -1,0 +1,95 @@
+{
+  "updated_at": "2026-10-16T03:33:29.242164+00:00",
+  "graph_commit": "fa9655a8cd8bdab8396dc3cecfecb307fb83389a",
+  "graph_branch_head": "c6fab83fdbacff02f2c0b73f8ae7999a51876292",
+  "manifest_sha256": "b0e9ba871847c07dd9c59c1a954e638fee117032db5cee789d273dd0548389cf",
+  "package_sha256": "15e5a02c064d73fe93cd60ec8f95a9f63abc93e61636d6f13ef8d7a3d63b9425",
+  "content_sha256": "99df936cf7f9088ee872fba741669436f089778f465df837eb098aaaeeced145",
+  "published_batches": 7,
+  "checkpoints": [
+    "HSL1",
+    "FX2",
+    "TIP1",
+    "TIP2",
+    "CAP1",
+    "CAP2",
+    "MOTION1",
+    "TIME1"
+  ],
+  "builds_since_graph": 0,
+  "validation": {
+    "canonical_schema": "PASS",
+    "strict_scope": "PASS",
+    "security_scan": "PASS",
+    "viewer_scripts": "PASS",
+    "archive_integrity": "PASS",
+    "all_prior_entity_relationship_ids_retained": true,
+    "selected_evidence_hashes": 29,
+    "latest_app_file_hash_matches": 61,
+    "fresh_live_HTTP_byte_check": false,
+    "application_tests_or_deployment_performed": false
+  },
+  "viewer_qa": {
+    "run": 38845946811,
+    "conclusion": "success",
+    "source": "c6fab83fdbacff02f2c0b73f8ae7999a51876292",
+    "graph_content_source": "fa9655a8cd8bdab8396dc3cecfecb307fb83389a",
+    "scope": "three graph-viewer browser scenarios only; no application suite",
+    "previous_attempt": {
+      "run": 38845782574,
+      "conclusion": "failure",
+      "reason": "Added second mobile search while inspector covered search results; test sequence repaired by closing inspector first; graph data/viewer templates unchanged"
+    },
+    "artifact_id": 12023760005,
+    "artifact_sha256": "f80f11dc2f1034ec2da3e5f25db35c3f33a53ece41aa0fb7ba9b907c12b761c9",
+    "scenarios": 3,
+    "browser": "151.0.7922.34",
+    "screenshots_visually_inspected": true,
+    "artifact_download_hash_verified": true
+  },
+  "viewer_results": {
+    "browser": "151.0.7922.34",
+    "results": [
+      {
+        "id": "2d",
+        "status": "PASS",
+        "viewport": {
+          "width": 1240,
+          "height": 800
+        },
+        "search": true,
+        "inspector": true,
+        "developerDetailsCollapsed": true,
+        "pageErrors": [],
+        "externalRequests": []
+      },
+      {
+        "id": "2d-phone",
+        "status": "PASS",
+        "viewport": {
+          "width": 360,
+          "height": 800
+        },
+        "search": true,
+        "inspector": true,
+        "developerDetailsCollapsed": true,
+        "pageErrors": [],
+        "externalRequests": []
+      },
+      {
+        "id": "onair",
+        "status": "PASS",
+        "viewport": {
+          "width": 1240,
+          "height": 800
+        },
+        "search": true,
+        "inspector": true,
+        "developerDetailsCollapsed": true,
+        "pageErrors": [],
+        "externalRequests": []
+      }
+    ]
+  },
+  "remaining_scope": "All PRODUCT_ROADMAP requirements retained; drawing-first priority, cost controls and known gaps captured."
+}

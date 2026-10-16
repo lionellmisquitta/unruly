@@ -196,3 +196,8 @@ Native artwork JSON excludes recording. Back up recording downloads separate JSO
 Next proposed checkpoint: clean timelapse video export with explicit framing/codec/cancellation/storage budgets. No automatic next build. All PRODUCT_ROADMAP rows remain, including Drive sync and BYOK AI first-release intent. Motion Trace same-layer mixed region/original-object compatibility,32layer/30–50interactive capacity and physical Surface/Xiaomi/Lenovo/palm/pen/audience/long-session acceptance remain OPEN. No early-access scope cut approved. Seven published application batches since last authorized graph refresh; knowledge graph and skills unchanged.
 
 Scoped records: .delivery/CHG-UNRULY-TIME1-1015/ includes impact/plan,UX/visual boundaries,known limits,all failed/superseded attempts,manual scope/schema checks,change-impact map and QA/publication receipts. Earlier active-attempt entries are historical.
+
+
+## Knowledge graph refresh — 16 October 2026
+
+Owner-authorized incremental refresh captures HSL1, FX2, TIP1, TIP2+CAP1, CAP2, MOTION1 and TIME1: seven published batches/eight checkpoints since FILL2. Current graph records drawing/painting before video/artwork export, cost controls and all retained gaps/scope. No roadmap requirement removed or new application build/deployment performed. Counter reset to zero; .knowledge/CURRENT_GRAPH.json binds graph commit and package hashes.
