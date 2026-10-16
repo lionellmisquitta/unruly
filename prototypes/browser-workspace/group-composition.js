@@ -1,0 +1,7 @@
+import {ancestors,folderLayers} from './folders.js';
+// Optional v16 fields explicitly isolate a folder; legacy folders pass through.
+export const groupBlends=Object.freeze(['normal','multiply','screen','overlay','darken','lighten','difference','exclusion']);
+export const hasGroupComposition=n=>Object.hasOwn(n,'opacity')||Object.hasOwn(n,'blend')||!!n.mask?.enabled;
+export function validateGroupComposition(b){for(const f of b.folders||[]){const o=Object.hasOwn(f,'opacity'),m=Object.hasOwn(f,'blend');if(o||m){if(b.version<16||!o||!m||typeof f.opacity!=='number'||!Number.isFinite(f.opacity)||f.opacity<0||f.opacity>1||!groupBlends.includes(f.blend))throw Error('Invalid v16 folder composition');}}}
+export function writableGroup(b,id){const f=(b.folders||[]).find(f=>f.id===id);if(!f)throw Error('Folder missing');if(!f.visible||f.locked||ancestors(b,f).some(n=>!n.visible||n.locked))throw Error('Folder is hidden or locked');if(folderLayers(b,id).some(l=>l.locked||ancestors(b,l).some(n=>n.locked))||(b.folders||[]).some(n=>n.locked&&ancestors(b,n).some(p=>p.id===id)))throw Error('Unlock folder contents first');return f;}
+export function mutateGroupComposition(b,action,id,value){const f=writableGroup(b,id);if(action==='reset'){delete f.opacity;delete f.blend;return;}if(!['opacity','blend'].includes(action))throw Error('Unknown folder composition action');b.version=Math.max(16,b.version);f.opacity??=1;f.blend??='normal';f[action]=value;validateGroupComposition(b);}

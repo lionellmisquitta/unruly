@@ -25,6 +25,31 @@ jobs:
           npm ci --ignore-scripts --no-audit --no-fund --prefix tests/browser-workspace
           cd tests/browser-workspace
           npx playwright install --with-deps chromium
+      - name: Folder composition focused gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node --test tests/browser-workspace/composition.model.test.mjs > tests/browser-workspace/evidence/composition-model-output.txt 2>&1 || { cat tests/browser-workspace/evidence/composition-model-output.txt; exit 1; }
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/composition-server.log 2>&1 &
+          qa_comp1_server_pid=$!
+          trap 'kill "$qa_comp1_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/composition.browser.cjs > tests/browser-workspace/evidence/composition-output.txt 2>&1 || { cat tests/browser-workspace/evidence/composition-output.txt; exit 1; }
+      - name: Upload focused composition UI evidence early
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: unruly-comp1-focused-ui
+          path: |
+            tests/browser-workspace/evidence/COMP1-*.png
+            tests/browser-workspace/evidence/COMPB*-failure.png
+            tests/browser-workspace/evidence/composition-results.json
+          retention-days: 7
+          if-no-files-found: ignore
       - name: Palettes mixing and reference picker focused gate
         shell: bash
         run: |
@@ -243,7 +268,7 @@ jobs:
           qa_result_code=0
           mkdir -p tests/browser-workspace/evidence
           node --version > tests/browser-workspace/evidence/node-version.txt
-          node --test tests/browser-workspace/palettes.model.test.mjs tests/browser-workspace/image-tip-paint.model.test.mjs tests/browser-workspace/drawing-tools.model.test.mjs tests/browser-workspace/stabilization.model.test.mjs tests/browser-workspace/timelapse.model.test.mjs tests/browser-workspace/motion.model.test.mjs tests/browser-workspace/group-cache.model.test.mjs tests/browser-workspace/capacity.model.test.mjs tests/browser-workspace/grain.model.test.mjs tests/browser-workspace/custom-tips.model.test.mjs tests/browser-workspace/filters.model.test.mjs tests/browser-workspace/adjustments.model.test.mjs tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs tests/browser-workspace/press2.model.test.mjs tests/browser-workspace/g02.model.test.mjs tests/browser-workspace/g02.fit.model.test.mjs tests/browser-workspace/c04.model.test.mjs tests/browser-workspace/airbrush-size.model.test.mjs tests/browser-workspace/brush-size-percent.model.test.mjs tests/browser-workspace/recipe.model.test.mjs tests/browser-workspace/smudge.model.test.mjs tests/browser-workspace/tablet-ux.model.test.mjs tests/browser-workspace/layer-transform.test.mjs tests/browser-workspace/render-contract.model.test.mjs tests/browser-workspace/raster-tiles.model.test.mjs tests/browser-workspace/history-cache.model.test.mjs tests/browser-workspace/layer-compositor.model.test.mjs tests/browser-workspace/pixel-paint.model.test.mjs tests/browser-workspace/folders.model.test.mjs tests/browser-workspace/masks.model.test.mjs tests/browser-workspace/clipping.model.test.mjs tests/browser-workspace/text.model.test.mjs tests/browser-workspace/image-import.model.test.mjs tests/browser-workspace/wand.model.test.mjs tests/browser-workspace/lasso-region.model.test.mjs tests/browser-workspace/large-region.model.test.mjs tests/browser-workspace/path-selection.model.test.mjs tests/browser-workspace/magnetic-selection.model.test.mjs tests/browser-workspace/bucket-fill.model.test.mjs tests/browser-workspace/polygon-fill.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
+          node --test tests/browser-workspace/composition.model.test.mjs tests/browser-workspace/palettes.model.test.mjs tests/browser-workspace/image-tip-paint.model.test.mjs tests/browser-workspace/drawing-tools.model.test.mjs tests/browser-workspace/stabilization.model.test.mjs tests/browser-workspace/timelapse.model.test.mjs tests/browser-workspace/motion.model.test.mjs tests/browser-workspace/group-cache.model.test.mjs tests/browser-workspace/capacity.model.test.mjs tests/browser-workspace/grain.model.test.mjs tests/browser-workspace/custom-tips.model.test.mjs tests/browser-workspace/filters.model.test.mjs tests/browser-workspace/adjustments.model.test.mjs tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs tests/browser-workspace/press2.model.test.mjs tests/browser-workspace/g02.model.test.mjs tests/browser-workspace/g02.fit.model.test.mjs tests/browser-workspace/c04.model.test.mjs tests/browser-workspace/airbrush-size.model.test.mjs tests/browser-workspace/brush-size-percent.model.test.mjs tests/browser-workspace/recipe.model.test.mjs tests/browser-workspace/smudge.model.test.mjs tests/browser-workspace/tablet-ux.model.test.mjs tests/browser-workspace/layer-transform.test.mjs tests/browser-workspace/render-contract.model.test.mjs tests/browser-workspace/raster-tiles.model.test.mjs tests/browser-workspace/history-cache.model.test.mjs tests/browser-workspace/layer-compositor.model.test.mjs tests/browser-workspace/pixel-paint.model.test.mjs tests/browser-workspace/folders.model.test.mjs tests/browser-workspace/masks.model.test.mjs tests/browser-workspace/clipping.model.test.mjs tests/browser-workspace/text.model.test.mjs tests/browser-workspace/image-import.model.test.mjs tests/browser-workspace/wand.model.test.mjs tests/browser-workspace/lasso-region.model.test.mjs tests/browser-workspace/large-region.model.test.mjs tests/browser-workspace/path-selection.model.test.mjs tests/browser-workspace/magnetic-selection.model.test.mjs tests/browser-workspace/bucket-fill.model.test.mjs tests/browser-workspace/polygon-fill.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/server.log 2>&1 &
           qa_server_pid=$!
           trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
