@@ -247,3 +247,5 @@ Owner authorized next painting build. Close custom-tip alpha-lock compatibility 
 TIP3 attempt source96d006fbc516fe3cba0593b5784213afdbaa34cc / CI38902698222 failed before app execution because remote tree packaging omitted the base. No merge/publication. Correct against verified current base tree and verify full PR diff before rerunning; all scope retained.
 
 TIP3 source8c23ca9cb83239c3a334efc7438be8627fc3aa5c / CI38902949603: 9/10 focused browser journeys PASS; remaining assertion expected pre-import vector ID after native import had remapped it. Complete Undo equality already passed. Correct expected ID to captured imported original and retain ink-type check; app unchanged. Verification pending; no publication/graph update.
+
+TIP3 source2999d49f69e183ad47239df98427b3318aff7402 / CI38903322674 PASS:438models/377structured browser+2legacy/167source hashes verified from artifact12047737514. Screenshot review found stale legacy help saying Alpha lock off; correct that sentence, retain all successful application behavior/tests, then verify exact corrected source before publication. No app-logic change or scope removal; graph unchanged.
