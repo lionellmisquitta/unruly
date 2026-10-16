@@ -224,7 +224,7 @@ guides.js owns captured constraints, bounded symmetry copies and aggregate tip r
 
 ci-contract.test.mjs verifies actual node invocations for current model/browser inventory, checks a synthetic omitted/comment-only file and rejects three disposable semantic mutants after real baselines. This is executable test-selection/failure-detection coverage, not protected diff-scope enforcement or independent review. Existing logical blocks/import map remains applicable; new feature hooks do not establish global acyclicity. PRIOR_CI_AUDIT and QA/PUBLICATION receipts preserve exact evidence. Source-only preview and all retained product/device/performance gaps are explicit.
 
-## PAT1 localization — implementation verified locally; cumulative publication pending
+## PAT1 localization — published and hosted verified
 pattern-warp.js owns strict clockwise convex-quad validation, inverse perspective mapping, bounded premultiplied bilinear raster resampling and single-raster target guards. It imports only raster.js/folders.js; no DOM/model/storage. pattern-warp-ui.js owns disposable exact-board drafts, local transparent/canvas-composition preview, corner pointer capture/cancel and labelled numeric inputs, Reset/Apply/Cancel. app.js injects existing renderer preview and one model.command; blocked/key/paint hooks prevent concurrent artwork gestures. No renderer/schema/history/storage modifications. Existing raster payload/transform/ID/points and document version retained; identity preserves original codec; Apply bakes pixels and exact Undo restores originals. sw includes both new modules. This is a logical import/responsibility map, not an AST/runtime graph or independent scope enforcement.
 
 ```mermaid
