@@ -1,0 +1,93 @@
+{
+  "audited_base": "7795034644eb3a6030b01ae6d6c5939a5cc92b2f",
+  "runs": [
+    38906112838,
+    38919040571,
+    38943248890
+  ],
+  "artifacts": [
+    {
+      "id": 12049496093,
+      "sha": "77aaaf02c179e78eaef1526eabb66bd72946147c",
+      "digest": "7039676870fd7f1d0cb162d5e0cdba26234649d5d719a23e924d53abe695fae5",
+      "models": 438,
+      "browser": 377,
+      "name": "TIP3",
+      "source_hashes_verified": 167,
+      "legacy_console_checks": 2,
+      "archive_verified": true,
+      "all_scenarios_pass": true
+    },
+    {
+      "id": 12055870023,
+      "sha": "eeb629875f7e04a038e1a854ea56d47227ede851",
+      "digest": "2ee415a9ce1e6455783b8fb34b85df4db68dd54c66d67ef3ff1c2ec7517692fc",
+      "models": 456,
+      "browser": 389,
+      "name": "PAL1",
+      "source_hashes_verified": 171,
+      "legacy_console_checks": 2,
+      "archive_verified": true,
+      "all_scenarios_pass": true
+    },
+    {
+      "id": 12065571751,
+      "sha": "25ba28d74e0268ea2ce20ef76e14f28d8381546e",
+      "digest": "3c7270d1d1400ccb4636139db27eb74ab8fa2b73586c8a1169bd92582d4c2588",
+      "models": 476,
+      "browser": 403,
+      "name": "COMP1",
+      "source_hashes_verified": 174,
+      "legacy_console_checks": 2,
+      "archive_verified": true,
+      "all_scenarios_pass": true
+    }
+  ],
+  "test_files_invoked": 97,
+  "explicit_skips": 0,
+  "continue_on_error": false,
+  "mutations": [
+    {
+      "checkpoint": "TIP3",
+      "baseline": "PASS",
+      "mutant_rejected": true,
+      "failed_tests": [
+        "TIP3M01 alpha bytes and transparent RGB remain exact (3.859108ms)",
+        "TIP3M02 partial coverage and stroke opacity blend RGB once (0.548567ms)",
+        "TIP3M06 session freezes source and brush controls (1.867868ms)",
+        "failing tests:",
+        "TIP3M01 alpha bytes and transparent RGB remain exact (3.859108ms)"
+      ]
+    },
+    {
+      "checkpoint": "PAL1",
+      "baseline": "PASS",
+      "mutant_rejected": true,
+      "failed_tests": [
+        "PALM14 linear-light RGB endpoints and known midpoints (1.227907ms)",
+        "PALM15 blend symmetry and validation (0.214155ms)",
+        "failing tests:",
+        "PALM14 linear-light RGB endpoints and known midpoints (1.227907ms)",
+        "PALM15 blend symmetry and validation (0.214155ms)"
+      ]
+    },
+    {
+      "checkpoint": "COMP1",
+      "baseline": "PASS",
+      "mutant_rejected": true,
+      "failed_tests": [
+        "COMPM04 invalid opacity and blend atomically reject (1.141559ms)",
+        "COMPM20 empty folder supports metadata without inventing child artwork (1.39322ms)",
+        "failing tests:",
+        "COMPM04 invalid opacity and blend atomically reject (1.141559ms)",
+        "COMPM20 empty folder supports metadata without inventing child artwork (1.39322ms)"
+      ]
+    }
+  ],
+  "findings": [
+    "No declared path-scope enforcement in current workflow",
+    "No independent human/physical-device acceptance established",
+    "Current complete file inventory lacks a guard against future omissions; add executable check"
+  ],
+  "assertion_changes": "TIP3 TIPB10 intentionally replaces obsolete rejection with painting/Undo/incompatible-mode assertions. PAL1/COMP1 prior assertions unchanged except cache identity."
+}

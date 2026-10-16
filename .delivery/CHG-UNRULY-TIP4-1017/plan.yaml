@@ -1,0 +1,73 @@
+{
+  "change_id": "CHG-UNRULY-TIP4-1017",
+  "base": "7795034644eb3a6030b01ae6d6c5939a5cc92b2f",
+  "route": "standard_change",
+  "prohibited_paths": [
+    ".knowledge/",
+    "knowledge-graph/",
+    "prototypes/browser-workspace/canvas2d-renderer.js",
+    "prototypes/browser-workspace/render.js",
+    "prototypes/browser-workspace/storage.js",
+    "prototypes/browser-workspace/history-patch.js"
+  ],
+  "checkpoints": [
+    {
+      "id": "TIP4",
+      "allowed_paths": [
+        "prototypes/browser-workspace/guides.js",
+        "prototypes/browser-workspace/custom-tips.js",
+        "prototypes/browser-workspace/model.js",
+        "prototypes/browser-workspace/selection.js",
+        "prototypes/browser-workspace/app.js",
+        "prototypes/browser-workspace/index.html",
+        "prototypes/browser-workspace/sw.js",
+        "docs/delivery/",
+        ".delivery/CHG-UNRULY-TIP4-1017/",
+        "AGENTS.md"
+      ],
+      "test_paths": [
+        "tests/browser-workspace/tip-guides.model.test.mjs",
+        "tests/browser-workspace/tip-guides.browser.cjs",
+        "tests/browser-workspace/ci-contract.test.mjs",
+        "tests/browser-workspace/drawing-tools.model.test.mjs",
+        "tests/browser-workspace/timelapse.browser.cjs",
+        "tests/browser-workspace/layer-compositor.browser.cjs",
+        "tests/browser-workspace/raster-tiles.browser.cjs",
+        "tests/browser-workspace/image-tip-paint.browser.cjs",
+        "tests/browser-workspace/stabilization.browser.cjs",
+        "tests/browser-workspace/adjustments.browser.cjs",
+        "tests/browser-workspace/render-boundary.browser.cjs",
+        "tests/browser-workspace/pixel-paint.browser.cjs",
+        "tests/browser-workspace/motion.browser.cjs",
+        "tests/browser-workspace/drawing-tools.browser.cjs",
+        "tests/browser-workspace/composition.browser.cjs",
+        "tests/browser-workspace/palettes.browser.cjs",
+        "tests/browser-workspace/history-cache.browser.cjs"
+      ],
+      "tests": [
+        {
+          "id": "TIP4-MODEL",
+          "command": [
+            "node",
+            "--test",
+            "tests/browser-workspace/tip-guides.model.test.mjs",
+            "tests/browser-workspace/ci-contract.test.mjs"
+          ],
+          "timeout_seconds": 120
+        },
+        {
+          "id": "TIP4-BROWSER",
+          "command": [
+            "node",
+            "tests/browser-workspace/tip-guides.browser.cjs"
+          ],
+          "timeout_seconds": 240
+        }
+      ]
+    }
+  ],
+  "test_config_changes": [
+    ".github/workflows/browser-workspace.yml",
+    ".github/workflows/browser-workspace-pages.yml"
+  ]
+}

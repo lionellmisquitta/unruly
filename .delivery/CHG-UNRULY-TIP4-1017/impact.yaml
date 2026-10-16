@@ -1,0 +1,37 @@
+{
+  "change_id": "CHG-UNRULY-TIP4-1017",
+  "readiness": "READY",
+  "open_contradictions": [],
+  "hub_suppressed": false,
+  "targets": [
+    "prototypes/browser-workspace/guides.js",
+    "prototypes/browser-workspace/custom-tips.js",
+    "prototypes/browser-workspace/model.js",
+    "prototypes/browser-workspace/selection.js",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/sw.js"
+  ],
+  "regression_obligations": [
+    {
+      "id": "TIP4-REFLECT",
+      "reason": "Deterministic mirrored stamp position/orientation/grain including single-point and seeded scatter",
+      "test_id": "TIP4-MODEL"
+    },
+    {
+      "id": "TIP4-ROUNDTRIP",
+      "reason": "Native17 parity persists through Undo/import/copy/paste/rotation",
+      "test_id": "TIP4-MODEL"
+    },
+    {
+      "id": "TIP4-INPUT",
+      "reason": "Real guide/symmetry painting, cancellation, locks, one Undo and offline",
+      "test_id": "TIP4-BROWSER"
+    },
+    {
+      "id": "CI-AUDIT",
+      "reason": "All test files actually invoked; deliberate prior-feature defects rejected",
+      "test_id": "TIP4-MODEL"
+    }
+  ]
+}

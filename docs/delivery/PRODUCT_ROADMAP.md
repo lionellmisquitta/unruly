@@ -318,3 +318,7 @@ Remaining painting/composition: proprietary brush-format feasibility, pattern de
 Knowledge graph and skills unchanged. Graph remains at TIME1; COMP1 makes the app five batches/six checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1, COMP1). Scoped evidence: `.delivery/CHG-UNRULY-COMP1-1016/`.
 
 Publication `b63c4acc2c9b72b826ffc1f094b504069724f20f`; Pages `38946336556` SUCCESS; all70 hosted application files match reviewed source bytes.
+
+## TIP4 — active17 October2026
+
+Owner authorized next build, then requested validation of the last3 CI builds. Artifacts/source hashes and all stages rechecked; three disposable deliberate defects rejected. See .delivery/CHG-UNRULY-TIP4-1017/PRIOR_CI_AUDIT.json. Next bounded painting slice: image-tip ruler/snapping and mirrored symmetry in Vector ink; native17 reflection parity, one Undo, cancellation and deterministic grain/scatter. CI inventory/mutation guard added within scope. Implementation/QA/publication pending; live remains COMP1. All other requirements retained; no knowledge graph update.
