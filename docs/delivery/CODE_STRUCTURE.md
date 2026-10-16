@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Current COMP1 published and hosted verified: `25ba28d74e0268ea2ce20ef76e14f28d8381546e`, CI38943248890SUCCESS476models/403structuredChromium+2legacy;174source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
+Current TIP4 verified and merged; publication pending: `597b6fa72114c38141c64486d393f5de3ee737cd`, CI38952135785SUCCESS499models/412structuredChromium+2legacy;177source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -47,7 +47,7 @@ Arrows mean principal imports/calls across logical blocks; omitted utility impor
 | Persistence/offline delivery | storage.js, sw.js | storage validates through model; revision/conflict/save guards. sw asset list/cache revision must include every new runtime module. Offline smoke required. |
 
 ## Honest current limitations
-- app.js is 428 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
+- app.js is 429 physical lines with dense event/UI/operation wiring: a shared coordinator, not a cleanly separated controller per feature.
 - model.js centralizes validators/commands and imports feature modules. This map does not prove absence of cycles or low coupling.
 - Per-change impact.yaml and plan.yaml have allowed/prohibited paths and regression links, e.g. FILL2. The inspected cumulative workflow runs regression/source hashes; it does NOT consume/enforce those path lists.
 - CI successes demonstrate tested scenarios, not perfect scope, clean architecture, target-device performance or independent human approval.
@@ -216,3 +216,9 @@ flowchart TD
 ```
 
 All earlier checkpoint notes below their dated headings are historical as-built evidence. Existing capacities unchanged. Same-session bounded model/browser/pixel/visual verification does not establish physical-device feel or independently approved architectural isolation. Scoped receipts in .delivery/CHG-UNRULY-COMP1-1016/.
+
+## TIP4 current localization
+
+guides.js owns captured constraints, bounded symmetry copies and aggregate tip replay admission. custom-tips.js owns seeded parity-aware dabs/fallback heading and single-matrix drawing only for native17 reflection metadata; no-metadata legacy translate/rotate/scale path retained. model.js owns strict optional metadata/native17 admission and command promotion; selection.js preserves clipboard/import promotion and rotates fallback heading during similarity transforms. app.js removes the old image-tip symmetry rejection, commits copies once and guards alpha-lock/guide incompatibility. Existing downstream layer/folder mask/effect/clip composition remains in the renderer facade; no facade/engine/history/storage rewrite.
+
+ci-contract.test.mjs verifies actual node invocations for current model/browser inventory, checks a synthetic omitted/comment-only file and rejects three disposable semantic mutants after real baselines. This is executable test-selection/failure-detection coverage, not protected diff-scope enforcement or independent review. Existing logical blocks/import map remains applicable; new feature hooks do not establish global acyclicity. PRIOR_CI_AUDIT and QA/PUBLICATION receipts preserve exact evidence. Source-only preview and all retained product/device/performance gaps are explicit.

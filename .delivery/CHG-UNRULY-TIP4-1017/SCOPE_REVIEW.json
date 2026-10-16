@@ -38,5 +38,16 @@
   "drawing_model_edit": "rename obsolete malformed-tip test label; same assertion",
   "knowledge_graph_changed": false,
   "same_session_manual_review": true,
-  "CI_path_enforcement": false
+  "CI_path_enforcement": false,
+  "source": "597b6fa72114c38141c64486d393f5de3ee737cd",
+  "tree": "8b835c48e9b68bb38fd6b35a270ab577c7c266c0",
+  "candidate_files": 36,
+  "requirement_rows_preserved": 27,
+  "intentional_roadmap_status_reconciliation": [
+    "GUIDE1/TIP4 guides",
+    "NODE1 artwork nodes",
+    "PAL1 colour baseline",
+    "TIME1 graph gap only; graph unchanged"
+  ],
+  "CI_enforced_inventory_not_path_scope": true
 }

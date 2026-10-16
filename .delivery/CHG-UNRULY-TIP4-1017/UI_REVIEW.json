@@ -1,0 +1,50 @@
+{
+  "checkpoint": "TIP4",
+  "source": "597b6fa72114c38141c64486d393f5de3ee737cd",
+  "reference": "existing accepted Drawing tools and dark app tokens; no new workflow/styles",
+  "static": {
+    "errors": 0,
+    "warnings": {
+      "emoji-icons": 3,
+      "form-labels": 47,
+      "tiny-type": 19
+    },
+    "disposition": "unchanged heuristics; existing guide controls/labels retained; help now states native17,source-only live preview and Alpha lock limitation"
+  },
+  "screenshots": {
+    "artifact": 12067794216,
+    "digest": "a79547fba9667e54a751919ad0d72df3243adc41a36c0c43a6d494ebffae96cb",
+    "files": [
+      "TIP4-phone-guides.png"
+    ],
+    "viewports": [
+      "390x844"
+    ],
+    "limits": "Existing scrollable panel; no desktop visual redesign, physical device or full accessibility audit. Desktop real pointer/edit/reopen tests pass.",
+    "identical_to_reviewed_phone_image": true
+  },
+  "rubric_16_dimensions": {
+    "hierarchy": 5,
+    "spacing": 5,
+    "typography": 5,
+    "colour": 6,
+    "contrast": 5,
+    "alignment": 5,
+    "density": 4,
+    "consistency": 6,
+    "navigation": 5,
+    "feedback": 5,
+    "states": 5,
+    "responsive": 5,
+    "touch_targets": 5,
+    "accessibility": 4,
+    "motion": 5,
+    "clarity": 5
+  },
+  "score": 80,
+  "minimum": 72,
+  "target": 85,
+  "canonical_gallery_validation": "PENDING/unvalidated; not used as benchmark",
+  "same_session": true,
+  "independent_human_device_acceptance": false
+}

@@ -1,10 +1,19 @@
 {
   "checkpoint": "TIP4",
-  "source": "ef3d8f396e4c0326b6088267abf42de9e5819ff0",
-  "tree": "dbc3a5e49c55656f52495096190174e352a8e925",
-  "run": 38949663032,
+  "status": "verified and merged; publication pending",
+  "source": "597b6fa72114c38141c64486d393f5de3ee737cd",
+  "tree": "8b835c48e9b68bb38fd6b35a270ab577c7c266c0",
+  "run": 38952135785,
+  "job": 117146008679,
   "pr": 24,
-  "status": "attempt2 CI pending; live COMP1;497 local model PASS",
-  "local_models": 497,
-  "next": "Inspect focused browser and phone evidence; cumulative archive/source validation before merge/Pages pin; verify70 hosted files. KG unchanged."
+  "merge": "6a9a2a7400fd3abe2a24c0aa266b3e2855da9876",
+  "qa_artifact": 12070636088,
+  "qa_digest": "af149c09fce5c2e6d3711f4c3d0c5b64fad51ab3639e70a33c87e61952577a13",
+  "models": 499,
+  "structured_browser": 412,
+  "legacy_console": 2,
+  "source_hashes": 177,
+  "prior_CI_audit": "three archives/digests/source hashes verified; three semantic mutants rejected; inventory guarded",
+  "knowledge_graph_changed": false,
+  "next": "Wait Pages, verify70hosted hashes, close roadmap without redeployment."
 }
