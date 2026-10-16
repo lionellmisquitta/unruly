@@ -1,0 +1,340 @@
+{
+  "candidate": "1fd1542e110922aa57a3097d6c24d3b0ceef8c6f",
+  "base": "6aa05f0b3767fcc45466240c5d6778d9e9d5dc93",
+  "application_files_changed": [
+    "prototypes/browser-workspace/stabilization-ui.js",
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/stabilization.js",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/sw.js"
+  ],
+  "existing_application_files_unchanged": 58,
+  "files": [
+    {
+      "file": "prototypes/browser-workspace/gestures.js",
+      "sha256": "3353f052ab0a1b72b0b72ae6abd0738c89d3a60216fb449166a0170857002426",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/pixel-paint.js",
+      "sha256": "6133a58d396d5dc96022460c454a180757f7654ba6d2d83c4c3fb258450685ff",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/pixel-surface.js",
+      "sha256": "aab474bcf40891f6400c55954af61e7dcff3001c450f8ed6bdd393b13465f7d7",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/effect-compositor.js",
+      "sha256": "271f0157f333f9ced012a4193dd840607ec56f79fc73e832f7328bf666503b16",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/render-contract.js",
+      "sha256": "cc4dea68289ac7f9b5b254773b179db1b8265343565fec1723bf28677be1dee7",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/u2.js",
+      "sha256": "03bc487ecd672940c27eb8d8014c9751bf4d9ed8daae8626eb00d5b1bde0bb83",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/custom-tips-ui.js",
+      "sha256": "f34396000de23c002d3b569d5084f3a55c31738d86649bbc9c9bee456cb36462",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/brush-recipe-ui.js",
+      "sha256": "7eb9be6a5079c47c41172709cf317982a1ac279e34976fcb058950b7e8ff5abf",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/grain.js",
+      "sha256": "8ce67e9b56615c7f035da79a1381571d134d39d17676082438d3ca666708a616",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/filter-ui.js",
+      "sha256": "8ef36334cf77bce8299e4cc10140a244ec2683513ae9ba4f97f64669ed41ada9",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/timelapse-ui.js",
+      "sha256": "e68ed1167dfaca4d976c25c0d2b56c7d191a6a26d5a1d269df95d04fcb222eac",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/brush-size.js",
+      "sha256": "46c231f67986fe21044696ccacb3bc98ef6d83f02f28495cb77ab26552fdb483",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/custom-tips.js",
+      "sha256": "347931af7aec2f52ebb1fb7522403664213ad11f362b4d5f20ff718f00a1e268",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/adjustments.js",
+      "sha256": "e0ea3bbb8f8f54bd6df5484bb01a135cca533e467255df3cb2690afd911721bd",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/motion.js",
+      "sha256": "82e138ccfba805c460e18ac11d3914ca6f6dcb3fd75806d41885f6280a85a838",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/stabilization-ui.js",
+      "sha256": "124f3ce037ee2482d13caed7e3022057dff426a9136625083aad66a7e2d4a7b3",
+      "unchanged": false
+    },
+    {
+      "file": "prototypes/browser-workspace/smudge.js",
+      "sha256": "96ee6490289396e05d9fe00199a6712fca1434692f23ce3b9bfee307f647ed5f",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/group-cache.js",
+      "sha256": "bb7ca48164112fcd1fc1ec8de75d0eaa11f2e7e4f94ad68502dca870cf76c583",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/motion-region.js",
+      "sha256": "063cf411dbb4c63c33d3ede5c2cc7e1c7e1d6cbba6adb164e169b42dadc81a9a",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/brush-compare.js",
+      "sha256": "cf1c25b53a20a885b7d6abe083e074d7484ceb2e1456f7c9e62a5432110f0c18",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/raster.js",
+      "sha256": "e0b4a5ebc923f6d1967775a4045d7754b99a579f991254ea6360ba40d9e2a4f3",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/shapes.js",
+      "sha256": "8803d3d73aa610ab4d5117b35f81cdc093431386e1a85c3557012930271d0994",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/wand.js",
+      "sha256": "01c33e1701a1451516aa4069939095e04d5af16347a80e6b6bdd2448d8012580",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/grain-ui.js",
+      "sha256": "bce61c8fbb151d0742c2c2695c522b65c6a6c56ef1bac1a5c4988af0749ae959",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/icon.svg",
+      "sha256": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/filters.js",
+      "sha256": "c9136f91b66a819b52c5943e5008aa35477d44e9c4c63c1b6aabaf5cbb486ed4",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/brush-recipe.js",
+      "sha256": "d0f4d79af78b36f9fdc16877f0cc8b15856763dc927a045162a081d7ee9359e7",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/text.js",
+      "sha256": "7374d7803013dbeaa963062600bae0d520e3ce1cb5578d7cfb167f82a9fb9b53",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/raster-tiles.js",
+      "sha256": "f8a48fc08f7ac55a18d17197f7878ca367c220263d5f8d628478f2a2693e6341",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/brushes.js",
+      "sha256": "160843d631c12edd7f808d2fd2ecd15628f038db7087dfa0bbe49b139bc694c0",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/image-clipboard.js",
+      "sha256": "5b07817c0d83ff06396f06e31bc63deab4acee3314d5e09a77ee297b1f116969",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/motion-ui.js",
+      "sha256": "ec69ed920729407c1a8b822d6191ffba22d0886c4c4ccc219365b5eb254463be",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/raster-cache.js",
+      "sha256": "b8da3a8399c1762279afeedc523f63375de0e7b520a3d78ceeb8ea8798755d95",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/history-patch.js",
+      "sha256": "5d820354805fdb8282d5d107d02b034f1424d8a24a2b5a826eb12e5e6b8cb533",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/storage.js",
+      "sha256": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/index.html",
+      "sha256": "666e78e45f81206652025ed07ea029281c64fcd940f56f14ce1752faaf738d7c",
+      "unchanged": false
+    },
+    {
+      "file": "prototypes/browser-workspace/model.js",
+      "sha256": "6afa85f3b3025a074969aa55c5ae43750f2937f14b56a566e3dba120798a8609",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/timelapse.js",
+      "sha256": "cdfe1e338308e2e5aa787ab625ec663735c046a338312f4e68dc93e58d9d90e3",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/smudge-ui.js",
+      "sha256": "afbb3bcc64809ecaa51340c3f4cfa68a6743430fec08ef6d6eebf8d4543c6bc5",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/polygon-fill.js",
+      "sha256": "8fecf09e1f3bbc8968453e08f472a7740e51576f81aee07129183a479cd23ba0",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/masks.js",
+      "sha256": "894bbb5540fc54a893a01569bb134106b7d0d084fb3a0f8ca103a1d5718e9d7e",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/selection.js",
+      "sha256": "7524f4652c9b10a43d0513d0cd239dd9b4890627c288504983d4f8083273584c",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/render.js",
+      "sha256": "42de562b4713bbb027c14c3c2af9985c042d9d07d3440455c133d2479190b183",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/lasso-region.js",
+      "sha256": "3dbec9ff04201ddb591a2bd0b397097c034b14a4c3c5ed57b4c0db594191924e",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/path-selection.js",
+      "sha256": "b1480b89e827d9dcf7be7ca9150ae502560faedd1b7c7a871f20d5ef2bbca0f4",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/folders.js",
+      "sha256": "8625fc1d4ebc45d633e212c0baf2e32375c9d5c020a95dc7f1d668814942f4dc",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/manifest.webmanifest",
+      "sha256": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/pressure-ui.js",
+      "sha256": "b291f0b322874f2bf728095cdc9e46737169489f3cc64c4997294aec98fccf7e",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/README.md",
+      "sha256": "3067a214433b4d8be2ba736f5b745b09aa624bcdbe40db30f2be4a9a4422c3b4",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/timelapse-store.js",
+      "sha256": "83dd00b47519a7fb23563916ffb416080135d383a5268276bf6451701192a948",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/magnetic-selection.js",
+      "sha256": "4c64d53aa1aa18a93d037e6b0a26ed2889ae6bb6db6f218ec74ced4bbcc0f1c3",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/stabilization.js",
+      "sha256": "8a810fb45638f130b2963b4f233df1c83e532aac80dfc35deb1f0c5240e4e4fb",
+      "unchanged": false
+    },
+    {
+      "file": "prototypes/browser-workspace/app.js",
+      "sha256": "5102872f062d6bc7486c0f4853b475618b22c6b37a95cd78cb9ddb1a67df4b35",
+      "unchanged": false
+    },
+    {
+      "file": "prototypes/browser-workspace/adjustment-ui.js",
+      "sha256": "cc62a248126250a24c203d4bc18487b40edac3c12d4e5da1d7cc8b25155c45af",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/pen-input.js",
+      "sha256": "ef9162fcf7f047aa7875ec6b28815030d38f557b433c302c7e68104f12e4c2dd",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/clipping.js",
+      "sha256": "d7b98c81be26dabda99ef0197284a4af51819ca203441723018f06f947ce3f42",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/canvas2d-renderer.js",
+      "sha256": "bc6eb07bdef06d3d66b950baa36c756f292a697828bd033293fdd156f46aad9d",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/image-import.js",
+      "sha256": "231caebfc20f6e4a700063536c94640c12a42bf63c5481c833dfa2b7231e6286",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/style.css",
+      "sha256": "23e28e7b430edeeb2706b4cd58b6cb66ee84d85460dc63b8b65b2c710794202c",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/sw.js",
+      "sha256": "cba6ae35bf68122f7f9627c2bb9f3c2bcd8d78de3a1f4f8386829a9df167a02c",
+      "unchanged": false
+    },
+    {
+      "file": "prototypes/browser-workspace/bucket-fill.js",
+      "sha256": "7249814e6520b47b67eea0b3e2fa6a60e9dc789fc7b57952feabaeea4bf0c63c",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/path-selection-ui.js",
+      "sha256": "805ba9549495c96647fa7587d2002c942a9ff647cc960af6ce032349106a0f54",
+      "unchanged": true
+    },
+    {
+      "file": "prototypes/browser-workspace/layer-compositor.js",
+      "sha256": "2489d8aa92e6e143797fed2611d19ee39af325208324a75d6f520b116186ab6f",
+      "unchanged": true
+    }
+  ],
+  "knowledge_graph_modified": false,
+  "notes": [
+    "No model/renderer/storage/history change",
+    "Eight legacy tests differ only in offline cache suffix",
+    "14new model checks and9focused Chromium cases pass; cumulative400models/357structured browser+2legacy pass",
+    "Static UI validation0errors; inherited warnings disposition retained"
+  ],
+  "pending": [
+    "publication/hosted verification",
+    "Physical-device subjective feel remains NOT_VERIFIED"
+  ]
+}
