@@ -1,6 +1,6 @@
 # UNRULY continuation contract
 
-TIP3 custom image-tip alpha lock verified; publication pending. Source `77aaaf02c179e78eaef1526eabb66bd72946147c`; cumulative CI `38906112838` SUCCESS: 438 model tests, 377 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12049496093` SHA256 `7039676870fd7f1d0cb162d5e0cdba26234649d5d719a23e924d53abe695fae5` and all 167 source hashes verified. PR21 merge `3570fef4fef32cbc535f86be1f5a8a8c67d54ca8` has exactly the tested tree `3040551d0e38731c64dcc13561b5a3a769877e43`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
+TIP3 custom image-tip alpha lock published and hosted verified. Source `77aaaf02c179e78eaef1526eabb66bd72946147c`; cumulative CI `38906112838` SUCCESS: 438 model tests, 377 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12049496093` SHA256 `7039676870fd7f1d0cb162d5e0cdba26234649d5d719a23e924d53abe695fae5` and all 167 source hashes verified. PR21 merge `3570fef4fef32cbc535f86be1f5a8a8c67d54ca8` has exactly the tested tree `3040551d0e38731c64dcc13561b5a3a769877e43`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
 
 Select an image brush in Brush Library, keep Vector ink selected, and enable Alpha lock on the layer. Painting uses the imported shape, grain, spacing/scatter/jitter/rotation/flips and effective pressure, then preserves every original source alpha byte. Source/settings are frozen per gesture; dirty preview uses deterministic saved points. Successful release commits one raster edit; Undo restores original vectors/pixels, Redo and native reopen retain the paint. Escape/pointercancel, work/stamp overflow, empty/missed source and incompatible pixel modes preserve artwork. Layer masks/effects/group/clipping metadata stays in the existing composition pipeline. No native-schema, renderer, model, history or storage rewrite.
 
@@ -11,6 +11,8 @@ Bounds: uses existing <=1024×1024 native-pixel/layer snapshot rules, without la
 Next proposed painting/composition work: expanded palettes/mixing/reference sampling, folder-wide masks/group blend/effects ordering, proprietary brush-format feasibility, patterns and advanced wet media. Remaining workflow/gestures/text/connectors, Motion Trace mixed-target compatibility, clean timelapse video, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI and release validation all remain in PRODUCT_ROADMAP. This closes the TIP1 custom-tip alpha-lock gap, not all painting/composition or C05/C06. No scope cut or fixed remaining build count approved.
 
 Knowledge graph and skills unchanged. Graph remains at TIME1; after this publication the app is three batches/four checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3). Scoped evidence: `.delivery/CHG-UNRULY-TIP3-1016/`.
+
+Publication `622a7ebc40559679c6ffa3dcdb49b54cd005925a`; Pages `38909033435` SUCCESS; all 67 hosted application files match reviewed bytes.
 
 ## Historical GUIDE1 + NODE1 closeout
 

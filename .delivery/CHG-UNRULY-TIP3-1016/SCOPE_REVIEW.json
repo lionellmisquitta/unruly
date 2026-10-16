@@ -21,5 +21,126 @@
   ],
   "knowledgeGraphChanges": 0,
   "review": "Manual scoped diff review, not centrally enforced protection",
-  "closeoutScope": "Pinned publication workflow and docs/receipts; AGENTS next-step accuracy. Additional impact-analysis.json captures same scoped Pass1 fields with required/type/enum validation; no application scope expansion."
+  "closeoutScope": "Pinned publication workflow and docs/receipts; AGENTS next-step accuracy. Additional impact-analysis.json captures same scoped Pass1 fields with required/type/enum validation; no application scope expansion.",
+  "files": [
+    {
+      "path": ".delivery/CHG-UNRULY-TIP3-1016/ATTEMPTS.json",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-TIP3-1016/CONTINUATION.json",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-TIP3-1016/IMPACT_ANALYSIS.md",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-TIP3-1016/KNOWN_LIMITS.md",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-TIP3-1016/TECHNICAL_CONSTRAINTS.md",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-TIP3-1016/impact.yaml",
+      "status": "added"
+    },
+    {
+      "path": ".delivery/CHG-UNRULY-TIP3-1016/plan.yaml",
+      "status": "added"
+    },
+    {
+      "path": ".github/workflows/browser-workspace.yml",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/CODE_STRUCTURE.md",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/CONTINUATION_CONTRACT.md",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/CURRENT_CHECKPOINT.md",
+      "status": "modified"
+    },
+    {
+      "path": "docs/delivery/PRODUCT_ROADMAP.md",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/app.js",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/image-tip-paint.js",
+      "status": "added"
+    },
+    {
+      "path": "prototypes/browser-workspace/index.html",
+      "status": "modified"
+    },
+    {
+      "path": "prototypes/browser-workspace/sw.js",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/adjustments.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/custom-tips.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/drawing-tools.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/history-cache.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/image-tip-paint.browser.cjs",
+      "status": "added"
+    },
+    {
+      "path": "tests/browser-workspace/image-tip-paint.model.test.mjs",
+      "status": "added"
+    },
+    {
+      "path": "tests/browser-workspace/layer-compositor.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/motion.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/pixel-paint.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/raster-tiles.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/render-boundary.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/stabilization.browser.cjs",
+      "status": "modified"
+    },
+    {
+      "path": "tests/browser-workspace/timelapse.browser.cjs",
+      "status": "modified"
+    }
+  ],
+  "roadmapTableRowsPreserved": 27,
+  "hostedAssetsVerified": 67,
+  "attemptsRetained": "Packaging error, import-ID fixture correction, green source superseded for stale help, and final green exact source"
 }
