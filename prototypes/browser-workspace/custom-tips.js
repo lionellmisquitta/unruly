@@ -16,16 +16,16 @@ export function imageTip(decoded,mode='alpha',invert=false){
 }
 // Distances carry across input segments. Randomness depends only on saved seed/order.
 export function visitTip(s,visit=()=>{}){
- const t=validateTip(s.tip),o=t.options;let seed=t.seed>>>0,n=0;
+ const t=validateTip(s.tip),o=t.options,reflection=s.tipReflection;if(reflection&&(!exact(reflection,['parity','heading'])||![1,-1].includes(reflection.parity)||!num(reflection.heading,-1e7,1e7)))fail('Invalid tip reflection');const parity=reflection?.parity??1;let seed=t.seed>>>0,n=0;
  const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;},signed=()=>random()*2-1;
  const step=()=>Math.max(.5,s.size*t.scale*o.spacing*(1+signed()*o.spacingJitter*.9));
  let next=step();
  const stamp=(p,heading)=>{const count=Math.max(1,o.count-Math.floor(random()*(o.count+1)*o.countJitter));for(let j=0;j<count;j++){
   if(++n>tipLimits.stamps||n*t.width*t.height>tipLimits.sampledPixels)fail('Image tip replay limit reached; shorten the stroke or increase spacing');
-  const width=s.size*t.scale*pressureWidth({minWidth:.08,exponent:1.2},p.pressure,s.dynamics)*(1-random()*o.sizeJitter),linear=signed()*o.linear*s.size*t.scale,lateral=signed()*o.lateral*s.size*t.scale;
-  visit({x:p.x+Math.cos(heading)*linear-Math.sin(heading)*lateral,y:p.y+Math.sin(heading)*linear+Math.cos(heading)*lateral,width,angle:(o.angle+t.angle)*Math.PI/180+(o.rotation==='follow'?heading:o.rotation==='random'?random()*2*Math.PI:0),opacity:pressureOpacity(p.pressure,s.dynamics)*(1-random()*o.opacityJitter),flipX:o.flipX,flipY:o.flipY});
+  const width=s.size*t.scale*pressureWidth({minWidth:.08,exponent:1.2},p.pressure,s.dynamics)*(1-random()*o.sizeJitter),linear=signed()*o.linear*s.size*t.scale,lateral=signed()*o.lateral*s.size*t.scale*parity;
+  visit({x:p.x+Math.cos(heading)*linear-Math.sin(heading)*lateral,y:p.y+Math.sin(heading)*linear+Math.cos(heading)*lateral,width,angle:(o.angle+t.angle)*Math.PI/180+(o.rotation==='follow'?heading:o.rotation==='random'?random()*2*Math.PI*parity:0),opacity:pressureOpacity(p.pressure,s.dynamics)*(1-random()*o.opacityJitter),flipX:o.flipX,flipY:o.flipY});
  }};
- const first=s.points[0],second=s.points.find(p=>p.x!==first.x||p.y!==first.y);stamp(first,second?Math.atan2(second.y-first.y,second.x-first.x):0);
+ const first=s.points[0],second=s.points.find(p=>p.x!==first.x||p.y!==first.y);stamp(first,second?Math.atan2(second.y-first.y,second.x-first.x):(reflection?.heading??0)*Math.PI/180);
  for(let i=1;i<s.points.length;i++){const a=s.points[i-1],b=s.points[i],length=Math.hypot(b.x-a.x,b.y-a.y),heading=Math.atan2(b.y-a.y,b.x-a.x);let used=0;
   while(length-used>=next){used+=next;const f=used/length;stamp({x:a.x+(b.x-a.x)*f,y:a.y+(b.y-a.y)*f,pressure:a.pressure===null||b.pressure===null?null:a.pressure+(b.pressure-a.pressure)*f},heading);next=step();}next-=length-used;
  }return n;
