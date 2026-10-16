@@ -1,5 +1,5 @@
 {
-  "candidate": "1fd1542e110922aa57a3097d6c24d3b0ceef8c6f",
+  "candidate": "a56326a64d5f697d40c33ef51d9d738965e4b316",
   "base": "6aa05f0b3767fcc45466240c5d6778d9e9d5dc93",
   "application_files_changed": [
     "prototypes/browser-workspace/stabilization-ui.js",
@@ -334,7 +334,8 @@
     "Static UI validation0errors; inherited warnings disposition retained"
   ],
   "pending": [
-    "publication/hosted verification",
     "Physical-device subjective feel remains NOT_VERIFIED"
-  ]
+  ],
+  "previous_application_identical_source": "1fd1542e110922aa57a3097d6c24d3b0ceef8c6f",
+  "publication": "d1b75ea4d62e19f4068d708930db7ffe7701c28b"
 }

@@ -10,7 +10,7 @@ Application baseline: TIME1 published at 0bab964ad5722c5dc3fd6dbe67c570512563544
 
 Complete the remaining drawing and painting work before export-focused builds. This order supersedes earlier near-term sequences and “video export next” proposals; historical build receipts remain unchanged. Work groups are not fixed build counts. No requirement is removed.
 
-1. **Stroke stabilization/smoothing — STAB1 verified; publication pending.** Physical-device feel remains open; next proposed work is the drawing-guide group below.
+1. **Stroke stabilization/smoothing — STAB1 published and hosted verified.** Physical-device feel remains open; next proposed work is the drawing-guide group below.
 2. **Drawing guides and editable geometry** — ruler, symmetry, snapping, artwork control-point editing and dedicated curve pen; intersection-eraser completeness/device issues.
 3. **Painting and composition completion** — custom-tip alpha-lock compatibility, proprietary brush-import feasibility, expanded palettes/mixing/reference sampling, folder-wide masks, group opacity/blends/effects ordering, pattern deformation and advanced wet-media/watercolour.
 4. **Drawing workflow completion** — whole-canvas rotation/remaining gestures, sticky notes/attached connectors/richer text, Motion Trace mixed region/original-object compatibility, and focused pen/palm/performance acceptance. Earlier drawing-tool deferrals are brought ahead of export by this owner instruction; feasibility/unverified status is not converted to completion.
@@ -41,7 +41,7 @@ This table is not a fixed execution order or a promise that each row needs only 
 | REQ-016 / C07 / C10 | Artwork exchange with Procreate/Clip Studio Paint; experimental proprietary brush import. | Feasibility pending. PSD route proposed, not approved as full-fidelity solution. TIP1 custom images do not fulfill proprietary brush import. |
 | REQ-010 / GDEC-017 / C11 | Google Drive sync, offline queue/retry, disconnect/auth expiry and conflict preservation. | Required pending integration. Preserve both conflicting revisions; no silent overwrite. Browser-first does not cancel sync. |
 | REQ-011 / GDEC-010 / C12–C13 | BYOK AI for selected ideas, review/edit/insert of summaries/diagrams; DOCX/PDF/JPG outputs. | Retained first-release scope after base validation. Provider choices and transmission/credential boundaries unresolved. |
-| REQ-005 / C02 / accepted 6-Oct additions | Adjustable stroke stabilization/smoothing. | STAB1 verified; publication pending:0–100 device-local continuous input smoothing for ink/image tips,pixel paint and masks;Off default,pressure/endpoints preserved. Real-device feel/latency acceptance remains OPEN; no whole C02 closure. |
+| REQ-005 / C02 / accepted 6-Oct additions | Adjustable stroke stabilization/smoothing. | STAB1 published and hosted verified:0–100 device-local continuous input smoothing for ink/image tips,pixel paint and masks;Off default,pressure/endpoints preserved. Real-device feel/latency acceptance remains OPEN; no whole C02 closure. |
 | REQ-001 / C05–C06 / accepted 6-Oct additions | Drawing guides: ruler, symmetry, snapping guides and grid behavior. | Grid paper exists; it is not a ruler, symmetry engine or editable snapping guide. Dedicated guide tools remain pending. |
 | REQ-008 / REQ-014 / C05 | Concepts-inspired colour workflow and palette completeness. | Hue wheel/SV, shade families, recent colours and one saved palette exist in U2. Broader palette management/mixing and reference-image sampling parity remain unverified; do not rebuild shipped basics or silently close the full colour workflow. |
 | REQ-001–002 / C06 | Ruler; artwork vector control-point editing and dedicated curve pen; complete intersection geometry. | Existing editable PATH1 selection outlines are not proof of editable artwork nodes/curve pen. Ruler and outstanding vector editing need explicit coverage audit. Existing intersection eraser has historical tests; physical-device issues remain to be checked. |
@@ -205,7 +205,7 @@ Owner-authorized incremental refresh captures HSL1, FX2, TIP1, TIP2+CAP1, CAP2, 
 
 ## STAB1 —16 October2026
 
-STAB1 (REQ-005/C02) verified; publication pending. Source `a56326a64d5f697d40c33ef51d9d738965e4b316`; cumulative CI `38851896377` SUCCESS:400model tests,357structured Chromium scenarios plus2legacy console checks;159source hashes verified from downloaded artifact `12025528906` (SHA256 `b152ff3fa6f198319649f6c0489ec206112aebe526f24b0c3538e98343efe97d`). Same-session owner-authorized personal-project verification/publication; no independent/protected human approval or real-device acceptance claim.
+STAB1 (REQ-005/C02) published and hosted verified. Source `a56326a64d5f697d40c33ef51d9d738965e4b316`; cumulative CI `38851896377` SUCCESS:400model tests,357structured Chromium scenarios plus2legacy console checks;159source hashes verified from downloaded artifact `12025528906` (SHA256 `b152ff3fa6f198319649f6c0489ec206112aebe526f24b0c3538e98343efe97d`). Same-session owner-authorized personal-project verification/publication; no independent/protected human approval or real-device acceptance claim.
 
 Brush → Stroke smoothing:0–100,Off by default, remembered on this device. Applies to future ink/image-tip strokes,pixel painting and mask painting. Higher amounts follow pointer more slowly; pressure remains current, first/release endpoints exact. Setting is captured per gesture and restored if changed during a blocked edit. Storage errors keep session value and warn. No growing filter buffer,timer,prediction,retroactive smoothing or native schema/replay change. Smudge,selection,navigation,held shapes and artwork erasing retain their existing paths. Cancel discards; commits retain one Undo.
 
@@ -215,4 +215,9 @@ Next proposed checkpoint: ruler/drawing guides, scoped before implementation; sy
 
 Knowledge graph and skills unchanged by explicit instruction. Graph remains at TIME1; STAB1 is one application batch ahead. Do not edit .knowledge or knowledge-graph for this closeout. Use current main roadmap/current checkpoint/continuation before historical graph advice. Cost controls retained:bounded reads,targeted checks,cumulative once per stable candidate,concise logs and no default agents/video inspection.
 
-Publication is not yet claimed. Next: verify Pages job and all63hosted-file hashes against reviewed source, then write publication receipt.
+Publication `d1b75ea4d62e19f4068d708930db7ffe7701c28b`; Pages `38853657882` SUCCESS; all63 hosted application files matched reviewed source bytes. PR19 merge `23241372130a0eb10a073ef47ec307e4460450d2` has exactly the reviewed tree `d6b888c05536f287c32c44a62dbbb4f41b019da4`.
+
+
+### STAB1 retained attempt history
+
+Initial candidate4656ff6159d3b7dddb77868799e3069fad92b5c3 was superseded by browser float-pressure oracle correction. Candidate1fd1542e110922aa57a3097d6c24d3b0ceef8c6f/CI38850337803 failed four legacy cache-date expectations while400models and new stabilization journeys passed. Four date literals were corrected, application bytes unchanged; sourcea56326a64d5f697d40c33ef51d9d738965e4b316/CI38851896377 passed all gates and was published. Full attempt/artifact receipts remain in .delivery/CHG-UNRULY-STAB1-1016/ATTEMPTS.json.

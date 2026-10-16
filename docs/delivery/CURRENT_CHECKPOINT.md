@@ -1,6 +1,6 @@
 # Current checkpoint — STAB1,16 October2026
 
-STAB1 (REQ-005/C02) verified; publication pending. Source `a56326a64d5f697d40c33ef51d9d738965e4b316`; cumulative CI `38851896377` SUCCESS:400model tests,357structured Chromium scenarios plus2legacy console checks;159source hashes verified from downloaded artifact `12025528906` (SHA256 `b152ff3fa6f198319649f6c0489ec206112aebe526f24b0c3538e98343efe97d`). Same-session owner-authorized personal-project verification/publication; no independent/protected human approval or real-device acceptance claim.
+STAB1 (REQ-005/C02) published and hosted verified. Source `a56326a64d5f697d40c33ef51d9d738965e4b316`; cumulative CI `38851896377` SUCCESS:400model tests,357structured Chromium scenarios plus2legacy console checks;159source hashes verified from downloaded artifact `12025528906` (SHA256 `b152ff3fa6f198319649f6c0489ec206112aebe526f24b0c3538e98343efe97d`). Same-session owner-authorized personal-project verification/publication; no independent/protected human approval or real-device acceptance claim.
 
 Brush → Stroke smoothing:0–100,Off by default, remembered on this device. Applies to future ink/image-tip strokes,pixel painting and mask painting. Higher amounts follow pointer more slowly; pressure remains current, first/release endpoints exact. Setting is captured per gesture and restored if changed during a blocked edit. Storage errors keep session value and warn. No growing filter buffer,timer,prediction,retroactive smoothing or native schema/replay change. Smudge,selection,navigation,held shapes and artwork erasing retain their existing paths. Cancel discards; commits retain one Undo.
 
@@ -10,7 +10,7 @@ Next proposed checkpoint: ruler/drawing guides, scoped before implementation; sy
 
 Knowledge graph and skills unchanged by explicit instruction. Graph remains at TIME1; STAB1 is one application batch ahead. Do not edit .knowledge or knowledge-graph for this closeout. Use current main roadmap/current checkpoint/continuation before historical graph advice. Cost controls retained:bounded reads,targeted checks,cumulative once per stable candidate,concise logs and no default agents/video inspection.
 
-Publication is not yet claimed. Next: verify Pages job and all63hosted-file hashes against reviewed source, then write publication receipt.
+Publication `d1b75ea4d62e19f4068d708930db7ffe7701c28b`; Pages `38853657882` SUCCESS; all63 hosted application files matched reviewed source bytes. PR19 merge `23241372130a0eb10a073ef47ec307e4460450d2` has exactly the reviewed tree `d6b888c05536f287c32c44a62dbbb4f41b019da4`.
 
 Scoped evidence: `.delivery/CHG-UNRULY-STAB1-1016/`.
 
