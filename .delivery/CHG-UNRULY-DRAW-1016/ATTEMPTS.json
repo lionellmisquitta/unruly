@@ -1,0 +1,18 @@
+{
+  "attempts": [
+    {
+      "source": "839b498244205ce34786daed06c79dc9c167bcca",
+      "status": "superseded",
+      "reason": "Aligned disposable native-v15 draft preview with commit validation before final candidate; no observed app failure claimed"
+    },
+    {
+      "source": "87648265ba312dc3827990968e116c992cd43b7e",
+      "run": 38897534474,
+      "status": "PASS",
+      "models": 424,
+      "structuredBrowser": 367,
+      "legacyChecks": 2
+    }
+  ],
+  "knowledge_graph": "UNCHANGED"
+}

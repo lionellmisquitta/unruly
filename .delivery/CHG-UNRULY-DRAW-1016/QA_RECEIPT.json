@@ -1,0 +1,1656 @@
+{
+  "status": "PASSED",
+  "source": "87648265ba312dc3827990968e116c992cd43b7e",
+  "run": 38897534474,
+  "artifactId": 12045302914,
+  "artifactDigest": "0944a4614dc004015eb9b4d61cf999b9bd571f0f19bb662ad85c3daa96c7a445",
+  "modelTests": 424,
+  "modelFailures": 0,
+  "browserScenarios": 367,
+  "sourceHashCount": 164,
+  "sourceHashes": {
+    "prototypes/browser-workspace/README.md": "3067a214433b4d8be2ba736f5b745b09aa624bcdbe40db30f2be4a9a4422c3b4",
+    "prototypes/browser-workspace/adjustment-ui.js": "cc62a248126250a24c203d4bc18487b40edac3c12d4e5da1d7cc8b25155c45af",
+    "prototypes/browser-workspace/adjustments.js": "e0ea3bbb8f8f54bd6df5484bb01a135cca533e467255df3cb2690afd911721bd",
+    "prototypes/browser-workspace/app.js": "a6a91d57e0847ea91151f39973cffa34e90f129cba804b90e26b3b9779099b4e",
+    "prototypes/browser-workspace/artwork-geometry.js": "9156514ee5215150d9796fd97716bd5377da28cd48a1aed1d978c8fe20d30fc8",
+    "prototypes/browser-workspace/brush-compare.js": "cf1c25b53a20a885b7d6abe083e074d7484ceb2e1456f7c9e62a5432110f0c18",
+    "prototypes/browser-workspace/brush-recipe-ui.js": "7eb9be6a5079c47c41172709cf317982a1ac279e34976fcb058950b7e8ff5abf",
+    "prototypes/browser-workspace/brush-recipe.js": "d0f4d79af78b36f9fdc16877f0cc8b15856763dc927a045162a081d7ee9359e7",
+    "prototypes/browser-workspace/brush-size.js": "46c231f67986fe21044696ccacb3bc98ef6d83f02f28495cb77ab26552fdb483",
+    "prototypes/browser-workspace/brushes.js": "160843d631c12edd7f808d2fd2ecd15628f038db7087dfa0bbe49b139bc694c0",
+    "prototypes/browser-workspace/bucket-fill.js": "7249814e6520b47b67eea0b3e2fa6a60e9dc789fc7b57952feabaeea4bf0c63c",
+    "prototypes/browser-workspace/canvas2d-renderer.js": "bc6eb07bdef06d3d66b950baa36c756f292a697828bd033293fdd156f46aad9d",
+    "prototypes/browser-workspace/clipping.js": "d7b98c81be26dabda99ef0197284a4af51819ca203441723018f06f947ce3f42",
+    "prototypes/browser-workspace/custom-tips-ui.js": "f34396000de23c002d3b569d5084f3a55c31738d86649bbc9c9bee456cb36462",
+    "prototypes/browser-workspace/custom-tips.js": "347931af7aec2f52ebb1fb7522403664213ad11f362b4d5f20ff718f00a1e268",
+    "prototypes/browser-workspace/drawing-tools-ui.js": "2b44002ad17be2825334ae981cea95c43e00df44b938dabd8f4966f563cbd95f",
+    "prototypes/browser-workspace/effect-compositor.js": "271f0157f333f9ced012a4193dd840607ec56f79fc73e832f7328bf666503b16",
+    "prototypes/browser-workspace/filter-ui.js": "8ef36334cf77bce8299e4cc10140a244ec2683513ae9ba4f97f64669ed41ada9",
+    "prototypes/browser-workspace/filters.js": "c9136f91b66a819b52c5943e5008aa35477d44e9c4c63c1b6aabaf5cbb486ed4",
+    "prototypes/browser-workspace/folders.js": "8625fc1d4ebc45d633e212c0baf2e32375c9d5c020a95dc7f1d668814942f4dc",
+    "prototypes/browser-workspace/gestures.js": "3353f052ab0a1b72b0b72ae6abd0738c89d3a60216fb449166a0170857002426",
+    "prototypes/browser-workspace/grain-ui.js": "bce61c8fbb151d0742c2c2695c522b65c6a6c56ef1bac1a5c4988af0749ae959",
+    "prototypes/browser-workspace/grain.js": "8ce67e9b56615c7f035da79a1381571d134d39d17676082438d3ca666708a616",
+    "prototypes/browser-workspace/group-cache.js": "bb7ca48164112fcd1fc1ec8de75d0eaa11f2e7e4f94ad68502dca870cf76c583",
+    "prototypes/browser-workspace/guides.js": "d83d49f97549c7e75367f891bfc5685ff38e9d1a2e7d5b3e58594599f78ce841",
+    "prototypes/browser-workspace/history-patch.js": "5d820354805fdb8282d5d107d02b034f1424d8a24a2b5a826eb12e5e6b8cb533",
+    "prototypes/browser-workspace/icon.svg": "bad6283a3938a5a9cad3628c4449262823849ea75cc3eb94adc7fdb3dbf00636",
+    "prototypes/browser-workspace/image-clipboard.js": "5b07817c0d83ff06396f06e31bc63deab4acee3314d5e09a77ee297b1f116969",
+    "prototypes/browser-workspace/image-import.js": "231caebfc20f6e4a700063536c94640c12a42bf63c5481c833dfa2b7231e6286",
+    "prototypes/browser-workspace/index.html": "61a7d267bab82de12a616d368f56a39399f66b218fa13d1fa249ef9bdd73524c",
+    "prototypes/browser-workspace/lasso-region.js": "3dbec9ff04201ddb591a2bd0b397097c034b14a4c3c5ed57b4c0db594191924e",
+    "prototypes/browser-workspace/layer-compositor.js": "2489d8aa92e6e143797fed2611d19ee39af325208324a75d6f520b116186ab6f",
+    "prototypes/browser-workspace/magnetic-selection.js": "4c64d53aa1aa18a93d037e6b0a26ed2889ae6bb6db6f218ec74ced4bbcc0f1c3",
+    "prototypes/browser-workspace/manifest.webmanifest": "37d4bd6fc8f2a9b3eff94df7f217693d808e2a159836f6a210adfa49becb32ea",
+    "prototypes/browser-workspace/masks.js": "894bbb5540fc54a893a01569bb134106b7d0d084fb3a0f8ca103a1d5718e9d7e",
+    "prototypes/browser-workspace/model.js": "6cfa6c362854a3948ed880c43187353e9ef87ed45fbb8f0d65605ec39d47123b",
+    "prototypes/browser-workspace/motion-region.js": "063cf411dbb4c63c33d3ede5c2cc7e1c7e1d6cbba6adb164e169b42dadc81a9a",
+    "prototypes/browser-workspace/motion-ui.js": "ec69ed920729407c1a8b822d6191ffba22d0886c4c4ccc219365b5eb254463be",
+    "prototypes/browser-workspace/motion.js": "82e138ccfba805c460e18ac11d3914ca6f6dcb3fd75806d41885f6280a85a838",
+    "prototypes/browser-workspace/path-selection-ui.js": "805ba9549495c96647fa7587d2002c942a9ff647cc960af6ce032349106a0f54",
+    "prototypes/browser-workspace/path-selection.js": "b1480b89e827d9dcf7be7ca9150ae502560faedd1b7c7a871f20d5ef2bbca0f4",
+    "prototypes/browser-workspace/pen-input.js": "ef9162fcf7f047aa7875ec6b28815030d38f557b433c302c7e68104f12e4c2dd",
+    "prototypes/browser-workspace/pixel-paint.js": "6133a58d396d5dc96022460c454a180757f7654ba6d2d83c4c3fb258450685ff",
+    "prototypes/browser-workspace/pixel-surface.js": "aab474bcf40891f6400c55954af61e7dcff3001c450f8ed6bdd393b13465f7d7",
+    "prototypes/browser-workspace/polygon-fill.js": "8fecf09e1f3bbc8968453e08f472a7740e51576f81aee07129183a479cd23ba0",
+    "prototypes/browser-workspace/pressure-ui.js": "b291f0b322874f2bf728095cdc9e46737169489f3cc64c4997294aec98fccf7e",
+    "prototypes/browser-workspace/raster-cache.js": "b8da3a8399c1762279afeedc523f63375de0e7b520a3d78ceeb8ea8798755d95",
+    "prototypes/browser-workspace/raster-tiles.js": "f8a48fc08f7ac55a18d17197f7878ca367c220263d5f8d628478f2a2693e6341",
+    "prototypes/browser-workspace/raster.js": "e0b4a5ebc923f6d1967775a4045d7754b99a579f991254ea6360ba40d9e2a4f3",
+    "prototypes/browser-workspace/render-contract.js": "cc4dea68289ac7f9b5b254773b179db1b8265343565fec1723bf28677be1dee7",
+    "prototypes/browser-workspace/render.js": "42de562b4713bbb027c14c3c2af9985c042d9d07d3440455c133d2479190b183",
+    "prototypes/browser-workspace/selection.js": "83f3bd0782a228653cd4738c558dbfc3f3ae9ffdc09f2aed88ee14c991e81d7b",
+    "prototypes/browser-workspace/shapes.js": "8803d3d73aa610ab4d5117b35f81cdc093431386e1a85c3557012930271d0994",
+    "prototypes/browser-workspace/smudge-ui.js": "afbb3bcc64809ecaa51340c3f4cfa68a6743430fec08ef6d6eebf8d4543c6bc5",
+    "prototypes/browser-workspace/smudge.js": "96ee6490289396e05d9fe00199a6712fca1434692f23ce3b9bfee307f647ed5f",
+    "prototypes/browser-workspace/stabilization-ui.js": "124f3ce037ee2482d13caed7e3022057dff426a9136625083aad66a7e2d4a7b3",
+    "prototypes/browser-workspace/stabilization.js": "8a810fb45638f130b2963b4f233df1c83e532aac80dfc35deb1f0c5240e4e4fb",
+    "prototypes/browser-workspace/storage.js": "87ca0271ede09256301a14350b79808dd0de53f939ccffc3d489826d62245791",
+    "prototypes/browser-workspace/style.css": "80f90ec0d6013b334b3d70397c0bd6a3863ae7ab76428855d48ae354f344bdf2",
+    "prototypes/browser-workspace/sw.js": "fb32ad8e35606e861cad1226c8046b6547d5e1c3e763854703dd492bf5b6414a",
+    "prototypes/browser-workspace/text.js": "7374d7803013dbeaa963062600bae0d520e3ce1cb5578d7cfb167f82a9fb9b53",
+    "prototypes/browser-workspace/timelapse-store.js": "83dd00b47519a7fb23563916ffb416080135d383a5268276bf6451701192a948",
+    "prototypes/browser-workspace/timelapse-ui.js": "e68ed1167dfaca4d976c25c0d2b56c7d191a6a26d5a1d269df95d04fcb222eac",
+    "prototypes/browser-workspace/timelapse.js": "cdfe1e338308e2e5aa787ab625ec663735c046a338312f4e68dc93e58d9d90e3",
+    "prototypes/browser-workspace/u2.js": "03bc487ecd672940c27eb8d8014c9751bf4d9ed8daae8626eb00d5b1bde0bb83",
+    "prototypes/browser-workspace/wand.js": "01c33e1701a1451516aa4069939095e04d5af16347a80e6b6bdd2448d8012580",
+    "tests/browser-workspace/adjustments.browser.cjs": "7b7f5aaec3582de29a6ee4c7e2a5a3831fc98187e749974f97d430f724d4d44e",
+    "tests/browser-workspace/airbrush-size.browser.cjs": "a29e81156ca7a108d7791a26c61465e6fea5227f88ce3f92024427579107d237",
+    "tests/browser-workspace/browser.test.cjs": "669606f0b3441279881affb243cfba6a076e87161563f5ebc25ac8b47b5941eb",
+    "tests/browser-workspace/bucket-fill.browser.cjs": "c560d10d53b308314fc9079a5051fa2ce7bad6d567d368246606a46e2273fb22",
+    "tests/browser-workspace/capacity.browser.cjs": "082ea0d751d60584cbf99d65f27ebfa559a6063af82fba030ecbc11bc0080db0",
+    "tests/browser-workspace/clipping.browser.cjs": "e6adb650ff0b5f50092e92a6f65a8faa2c425173991bdac09f579d693d8daecd",
+    "tests/browser-workspace/compare.browser.cjs": "afbe3f960b2fb1e67cb10a556060215460be5ce52c91d57d1d2344bc6bc99058",
+    "tests/browser-workspace/curve.browser.cjs": "1948fd33b971eb394c5af4384c3719e1f1845ed701225279d2c0742c6b8f808e",
+    "tests/browser-workspace/custom-tips.browser.cjs": "874f0d07329c63cd470f60f10a3b3fabbcc68824dc8eec8517e32a7c9cf443f1",
+    "tests/browser-workspace/drawing-tools.browser.cjs": "c95a6ec179da58d9a60335a04bca3768bfb40d18a0c06fb252e35f5924816c0e",
+    "tests/browser-workspace/filters.browser.cjs": "58abbc96284143140ebe229b8c9684380c4538ecda01bc3d7fa6b3b18467518b",
+    "tests/browser-workspace/folders.browser.cjs": "042fa539f449c41f7f40ae58bcec0de173e8410bf4e48a918c310404d777036b",
+    "tests/browser-workspace/fullscreen.browser.cjs": "bfb7c80c4fff955f641b48b10a3c16503f3373b9f726857bad7d66c4e22fcfa8",
+    "tests/browser-workspace/g02.browser.cjs": "ce0e3372727bef1eb085428fe396be72dcb5f77abc370df6f2ba0cbafeae6bcc",
+    "tests/browser-workspace/grain.browser.cjs": "71f6f5a80fce6138fc2eea856cfabce8cce8b7667936eca8463019bbb2749239",
+    "tests/browser-workspace/group-cache.browser.cjs": "dd4c7a94e4c5677157ef10e2846dd9383e793085c8c9a994408ee4054ac538db",
+    "tests/browser-workspace/history-cache.browser.cjs": "d8281031b6e7a0ea253f4e5293448d2bbf2a1d249b9f3f7a8ba8719849ea603e",
+    "tests/browser-workspace/image-import.browser.cjs": "93051e94e5c7e2fa3b59fbf3e2249a2f8189b48e569b335ba50725b7ce298819",
+    "tests/browser-workspace/large-region.browser.cjs": "45e4f31c309d07ea762f8361ad91ec60f1aa8f47219e211ad8f71f7e26034ff0",
+    "tests/browser-workspace/lasso-region.browser.cjs": "5d5dd3eb366f0773699e8f86b7ee8314659f5cac1ca82e5324ede955b155e5f1",
+    "tests/browser-workspace/layer-compositor.browser.cjs": "ca395cacb4bff1c9df141fe319db71a9f37b978cc253bb9f500b8a412b143ee7",
+    "tests/browser-workspace/layer-transform.browser.cjs": "8f394545b6379ebfbe6684764359fc393b53c22906392d27cbb520b5b77aec6f",
+    "tests/browser-workspace/layered-baseline.browser.cjs": "ef6b9637cfd90c3e6b91a2c7e5cf9c02b167ba92d5544b0387d6cafb7dd85a46",
+    "tests/browser-workspace/lset.browser.cjs": "408eeb64504b5e70d0ad49633278b57de67aa5ee52d0f886128fb7e61c631bbf",
+    "tests/browser-workspace/magnetic-selection.browser.cjs": "100b179d5ca94a0826ff5fd6c701462f4ba7a37e6ef0af47d444e84be3c331cd",
+    "tests/browser-workspace/masks.browser.cjs": "3707cd5356cfcab20ddab388d9b2636b3392a70e19a3d22f01c439e6dde702aa",
+    "tests/browser-workspace/motion.browser.cjs": "9e7d5cd46069cbda527b6ee9110129d8d49a75b9c568fd678ad9bc6c288e001d",
+    "tests/browser-workspace/path-selection.browser.cjs": "1a5b63057ab4125af5103a079a5c7ebb4d12d8f01764bd3a205e9af65ffa469e",
+    "tests/browser-workspace/pen.browser.cjs": "f87c7f72affea91bb8de4a2d7478edf11121805cfe09f0c7099f8cacc37d1054",
+    "tests/browser-workspace/performance.browser.cjs": "28f9b05ac452c4e1664baa234e36daa4720eb042eb4f748f66303f9909f3f85f",
+    "tests/browser-workspace/pixel-paint.browser.cjs": "4d13c9616f0612cc1caf97816f42ef7f61c6ec95e15b816e4f7cbe696b6b6916",
+    "tests/browser-workspace/polygon-fill.browser.cjs": "285e698e8304e876c92e13e6a5b8d96ba99d8e66ddf4d986cd52a7e7ba2c3570",
+    "tests/browser-workspace/raster-tiles.browser.cjs": "901feb5bdb1cc429c4d60c49da9a0c759f087c523f3222e7a306459f1e25b9b0",
+    "tests/browser-workspace/recipe.browser.cjs": "efea29ca9b6f90e568c58fb646cd07d61f2273aa6270bb6921cb53246b4b75c9",
+    "tests/browser-workspace/render-boundary.browser.cjs": "fefdf80d3b2861536c277bf2a7b92445a7258706a5d0f1380c51ec4f6ecd4eae",
+    "tests/browser-workspace/selection.browser.cjs": "d3948d72520a765726106b994613847d7e4347ec7542bf004ff24cfcc28a715a",
+    "tests/browser-workspace/server.cjs": "e37e690684a65a022e515dc07f88ee513df519bd37d415489bbbeff42a7abca0",
+    "tests/browser-workspace/size-percent.browser.cjs": "1e8dedbacfb9ee818c287c8a9cbec14e6d126499cb4fb0a1831defb8bb308d0e",
+    "tests/browser-workspace/smudge.browser.cjs": "47e1b80155475a7cf8567aedf38036380afab8cacb097abf3121831c141430f6",
+    "tests/browser-workspace/stabilization.browser.cjs": "0abed455bc476de7349a60b4c2b5e36820c430bce8aae0e4d3d6ecf226fef849",
+    "tests/browser-workspace/tablet-ux.browser.cjs": "2acf66736bf0fa859aa756835e6bd4f587ef24ded84242030201cf897d024e36",
+    "tests/browser-workspace/text.browser.cjs": "1fb584396c24e9d6dd0dcf604e0ef5e06589e5cb3e8991553b3910455063fb44",
+    "tests/browser-workspace/timelapse.browser.cjs": "047e6390aac31646af7750747ade68132d057df1121d16e73618265cd483b6b6",
+    "tests/browser-workspace/u1.browser.cjs": "d64b300d8fb6a85b8f41151619fafe78909fbc8320767fb10ad2e5f4d68970c9",
+    "tests/browser-workspace/u1.compat.cjs": "0bae3ceddc4f45a6337b15c148444d05df1473256660057abf54bebdc9aedb70",
+    "tests/browser-workspace/u2.browser.cjs": "c52d518b3455512942d0a9625b3b98298d8f6cab9ece30e17a40389e9c5ee637",
+    "tests/browser-workspace/u3.browser.cjs": "25cd4e36eac46e5c1398ba78534e0433899b4feb2a412721a7fabad4530abd84",
+    "tests/browser-workspace/wand.browser.cjs": "5cdec2dacb4df2f1020dd54a60b4f8b74267d44e21d7b71f521461b151d3b272",
+    "tests/browser-workspace/adjustments.model.test.mjs": "81cd829b36d6aa711d125e548694ab13980a78f03d4a94fe5f544c6937be4c10",
+    "tests/browser-workspace/airbrush-size.model.test.mjs": "32d3e0e385429cc6b8acbc235cf12a6c79beef42fe42e990af3f01c859d1f4a4",
+    "tests/browser-workspace/brush-size-percent.model.test.mjs": "3732e25948bdf9ef1898db0241463ba4db1423139d94035efa454791186c3196",
+    "tests/browser-workspace/bucket-fill.model.test.mjs": "1d4f832253d0b598ebe6198c498c05c803e29f7bb70c9558e1543168b6e95331",
+    "tests/browser-workspace/c04.model.test.mjs": "ad81a06006676911e7d22f52746ce2b54acc54c88c49d9d12fa9f03b75b019ff",
+    "tests/browser-workspace/capacity.model.test.mjs": "b87523feaeafa73a76598db820bb67327d008c512677db53516d7e72c9fbb92a",
+    "tests/browser-workspace/clipping.model.test.mjs": "40c9356857b7552ca3bd38a2f9408e973f38839acd6b9d24e4609fc1a06e91ca",
+    "tests/browser-workspace/curve.model.test.mjs": "3b39f917aee5571e89cad3def26def75e2d3f9ea7dd31b6a54cd51115e3cc7b8",
+    "tests/browser-workspace/custom-tips.model.test.mjs": "17f3fbe1d36d9bf1c7adda969eba02b4c30b403d0e9eccfcd851b6d1f7d41345",
+    "tests/browser-workspace/drawing-tools.model.test.mjs": "c92839a93fe879d78ef0bc8738ea5eb40f164da1092e6af5a4eca69e5603c4ac",
+    "tests/browser-workspace/filters.model.test.mjs": "315d27cec06648fa04abbd903e3a285b98d2b0b202d177e98c652252c28b33d4",
+    "tests/browser-workspace/folders.model.test.mjs": "aa3f6b30fbdd56d4622fbbed5a21166cbc7e8f4f49bfe524a3be7340e0b806bb",
+    "tests/browser-workspace/g02.fit.model.test.mjs": "ce106d1d5b76a4fcc86bd8915d3ee56f0642556b46ac1a56de8208051bb3e7ed",
+    "tests/browser-workspace/g02.model.test.mjs": "a54553afd99df7fa11180d8077eec80ecb0fe48647b5b656313edd20b247b762",
+    "tests/browser-workspace/grain.model.test.mjs": "a25b4c4d1272a39138825343e6cf0e76a8f9e7a7a4ae7a3f4d5f816035ba9226",
+    "tests/browser-workspace/group-cache.model.test.mjs": "5d70c983d2f7875e971059919463a61eed5dce556cc16ea674c7530c81c82430",
+    "tests/browser-workspace/history-cache.model.test.mjs": "5ee4551caaf1294bb7e52187051cb62f3304801ec0137d53c115a76df66e7629",
+    "tests/browser-workspace/image-import.model.test.mjs": "044475f412c09f2d8a567b25c4b2e367a7ded8303b61442ba789ee1b83fb36bd",
+    "tests/browser-workspace/large-region.model.test.mjs": "24b85ea2f36d0fc311248681f88882880658ab9b79bc390fc535f0edaf381ce7",
+    "tests/browser-workspace/lasso-region.model.test.mjs": "603d23acd7802825ffd3c0164ee6a3a9780f24475cf0ce166518c1f496073d68",
+    "tests/browser-workspace/layer-compositor.model.test.mjs": "22851b31aabd7bffcd26e12423040a5ceb45e048ef57deeab3405c6ed4b59cb7",
+    "tests/browser-workspace/layer-transform.test.mjs": "6be7ed9641d13688bc86938f639973a641c7d59147061ad403e32a489c39789d",
+    "tests/browser-workspace/lset.model.test.mjs": "5413d9cdd9ad2928fdb87928a4825b68ca23e61f4ec3630dfd3639a398dfa7a6",
+    "tests/browser-workspace/magnetic-selection.model.test.mjs": "7196b82c084a27c8ba14e2369ee5687609a4ce13cb10c26f475026e16e88d435",
+    "tests/browser-workspace/masks.model.test.mjs": "aee302625e3116da93c50b1d285b6305e4205b73c1c4ea394249970e6b9f7a08",
+    "tests/browser-workspace/model.test.mjs": "6f33b6ee498ba5444409d117aa0c32478d4e4f5d5460e1ac6d92737bca4dc98d",
+    "tests/browser-workspace/motion.model.test.mjs": "35accc3c59a658664cba47f02b56240016ea345e6b4e7e227de4ffd66aedfbb5",
+    "tests/browser-workspace/path-selection.model.test.mjs": "0373805e79c58014750c666e646f6a1b0759d494917d6e7cb8b7054b0dec9b7e",
+    "tests/browser-workspace/pen.model.test.mjs": "1060cbccefa25e8be0ae66b0bf2c01c5538d8474746ac2bce236c48200ed5d53",
+    "tests/browser-workspace/pixel-paint.model.test.mjs": "cb5f75b7d0cdc92c35c907f4e16405bdde9e015b6279da9f1451fadb5c617444",
+    "tests/browser-workspace/polygon-fill.model.test.mjs": "0ddeb14331b14bba8e851ea541653f829db978ccf76793bcf83a990fd7d15435",
+    "tests/browser-workspace/press2.model.test.mjs": "925f49893f0f585a2bca78afcbb0670ece8b862ae6f03aa9d59b7c5249ca11dd",
+    "tests/browser-workspace/raster-tiles.model.test.mjs": "38743635cac773969a6a2670a6fedb51f7737f10475065ad091603339cdbdc70",
+    "tests/browser-workspace/recipe.model.test.mjs": "47462288e8e959a8504b949a1968484584b8bdc82a3131e4420c566c130c2d4c",
+    "tests/browser-workspace/render-contract.model.test.mjs": "f51ff54866dc3566ce51c3fd8fc08fae5c125d5bdc8130f4e8426eca2e84626f",
+    "tests/browser-workspace/selection.test.mjs": "2f8faf4530128aee99ceb6a399ae2528cb8898ab676a9e9316a08dd42f219ec7",
+    "tests/browser-workspace/smudge.model.test.mjs": "d9c197ff22d0a47f66834725216c25285124f9c6e81d8c3368059c5c0b752de3",
+    "tests/browser-workspace/stabilization.model.test.mjs": "1f171ce9bcc445384cbf6e3b31f528010e6b9be8bbdeef4ad422d0eeac5f54c5",
+    "tests/browser-workspace/tablet-ux.model.test.mjs": "82f0848687fbe69d1745738e15633ab1d28445bd44d37e8ea5f3d51f44864155",
+    "tests/browser-workspace/text.model.test.mjs": "b69d237f8cf15ffc881c7677b9556a54122a782e3652a17399b232cac0b0f6bf",
+    "tests/browser-workspace/timelapse.model.test.mjs": "5d3d6b5c59e3f52d03df43779aec0b8a92a2c8ca785f66a4f940cd22ff881db5",
+    "tests/browser-workspace/u1.model.test.mjs": "d2eafd5d10ae84e25337c1952d7bed248dca934eff19ebd4382f7965d31c2385",
+    "tests/browser-workspace/u2.model.test.mjs": "19f12808b744e1762efbeda852d02831c6e2265b62246836bb608d85bc85ae51",
+    "tests/browser-workspace/u3.model.test.mjs": "0330a2115c39fd87916cb5247b679ff19fa67c64056b8ebba0445eb3e97bc335",
+    "tests/browser-workspace/wand.model.test.mjs": "badb0fa9bb7da8f6c9b332b9f08bce937ed48b2e43c5e989d3388305db73ccb5",
+    "tests/browser-workspace/package.json": "2c5e7859d3a87b2628f5df4f449a9593fe09b7b896afa3892097605ade6740b2",
+    "tests/browser-workspace/package-lock.json": "2ea9ef8acfc461edebb1c776db26bba43fc9546ba2f95acfc7c814a41f8546b6",
+    "tests/browser-workspace/fixtures/accepted-u3-preset-render.js.txt": "15de148e39a9a6a16f2df67d747c249055d2be1afe26c8ee876f7dccd7c1d1ff",
+    "tests/browser-workspace/fixtures/reference-render.js.txt": "04eb9febae92089cd2aaf15174efebc96e4c7d7d6822a0638568ca22e8f1fa8d",
+    ".github/workflows/browser-workspace.yml": "227d7cd4534ceecb283c1a5c55dcc9ade67c0f54c67b4bab6ba33aec9ffae227"
+  },
+  "modelReports": [
+    "model-output.txt"
+  ],
+  "legacyConsoleChecks": [
+    "FULLSCREENB01 PASS",
+    "AIRBRUSH BROWSER PASS"
+  ],
+  "cases": [
+    {
+      "id": "HSLB01-preview-cancel-apply-undo-save",
+      "status": "PASS"
+    },
+    {
+      "id": "HSLB02-invalid-reset-noop-blur",
+      "status": "PASS"
+    },
+    {
+      "id": "HSLB03-group-dialog-and-retained-originals",
+      "status": "PASS"
+    },
+    {
+      "id": "HSLB04-independent-group-order-alpha-1",
+      "status": "PASS"
+    },
+    {
+      "id": "HSLB04-independent-group-order-alpha-2",
+      "status": "PASS"
+    },
+    {
+      "id": "HSLB05-live-clip-nested-budget-1",
+      "status": "PASS"
+    },
+    {
+      "id": "HSLB05-live-clip-nested-budget-2",
+      "status": "PASS"
+    },
+    {
+      "id": "HSLB06-narrow-dialog-offline-v10",
+      "status": "PASS"
+    },
+    {
+      "id": "W01-desktop-controls",
+      "status": "PASS"
+    },
+    {
+      "id": "W01-mobile-controls",
+      "status": "PASS"
+    },
+    {
+      "id": "W01-tablet-controls",
+      "status": "PASS"
+    },
+    {
+      "id": "W02-brush-controls-and-reopen",
+      "status": "PASS"
+    },
+    {
+      "id": "W03-pen-cancel-touch-history",
+      "status": "PASS"
+    },
+    {
+      "id": "W04-render-alpha-brush-paper",
+      "status": "PASS"
+    },
+    {
+      "id": "W05-render-layer-order-and-benchmark",
+      "status": "PASS"
+    },
+    {
+      "id": "W06-paper-layers-controls",
+      "status": "PASS"
+    },
+    {
+      "id": "W07-import-export-and-rejection",
+      "status": "PASS"
+    },
+    {
+      "id": "W08-legacy-copy-original-unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "W09-quota-conflict-recovery",
+      "status": "PASS"
+    },
+    {
+      "id": "W10-all-erasers-undo-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "W11-board-selection-and-import-limit",
+      "status": "PASS"
+    },
+    {
+      "id": "W13-migration-partial-quota-restart",
+      "status": "PASS"
+    },
+    {
+      "id": "W12-offline-update-safety",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB01-closed-fill-undo-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB01-closed-fill-undo-768",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB02-small-gap-repair-no-leak",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB03-open-invalid-and-zero-opacity-safe",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB04-alpha-lock-and-mask-metadata",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB05-pen-cancel-and-finger-no-fill",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB06-large-layer-outside-exact",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB07-offline-module-and-fill-persisted",
+      "status": "PASS"
+    },
+    {
+      "id": "FILLB08-phone-settings-fit",
+      "status": "PASS"
+    },
+    {
+      "id": "CAPB01-mixed-30-32-50-probe-1",
+      "status": "PASS"
+    },
+    {
+      "id": "CAPB01-mixed-30-32-50-probe-2",
+      "status": "PASS"
+    },
+    {
+      "id": "CAPB02-save-history-native-reload-and-UI",
+      "status": "PASS"
+    },
+    {
+      "id": "CAPB03-corrupt-current-recovery-and-subsequent-save",
+      "status": "PASS"
+    },
+    {
+      "id": "CAPB04-conflict-quota-abort-invalid-save-preserve",
+      "status": "PASS"
+    },
+    {
+      "id": "CLIPB01-layer-source-undo-reload-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "CLIPB01-layer-source-undo-reload-768",
+      "status": "PASS"
+    },
+    {
+      "id": "CLIPB02-folder-source-visibility",
+      "status": "PASS"
+    },
+    {
+      "id": "CLIPB03-alpha-lock-vector-conversion-cancel-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "CLIPB04-empty-lock-offline-cache",
+      "status": "PASS"
+    },
+    {
+      "id": "CLIPB05-independent-alpha-and-warm-cache-1",
+      "status": "PASS"
+    },
+    {
+      "id": "CLIPB05-independent-alpha-and-warm-cache-2",
+      "status": "PASS"
+    },
+    {
+      "id": "compare-results.json#44",
+      "status": "PASS"
+    },
+    {
+      "id": "compare-results.json#45",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB01-accessible-fixed-input-graph-numeric-monotonic",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB02-mouse-drag-draft-release-one-local-profile",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB03-real-pen-and-touch-graph-drag",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB04-escape-blur-real-captureloss-cancel-draft",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB05-editor-gesture-owns-controls-and-board",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB06-presets-reset-persistence-no-board-history",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB07-future-stroke-snapshot-replay-history",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB08-pad-raw-mapped-constant-mouse-isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB09-pad-bounded-samples-clear-profile-recompute",
+      "status": "PASS"
+    },
+    {
+      "id": "CURVEB10-mobile-keyboard-offline-profile",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB01-import-preview-cancel-invalid-controls",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB02-named-section-save-move-rename",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB03-paint-undo-reload-library-independence",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB04-controls-pressure-per-brush-and-builtins",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB05-library-backup-import-and-atomic-quota",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB06-render-reference-raw-mask-effects-budgets",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB07-narrow-offline-imported-brush",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB08-cancel-live-tip-stroke-and-JSON-portability",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB09-scatter-complement-snapshot-and-live-cache",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB10-alpha-lock-and-pixel-mode-do-not-substitute",
+      "status": "PASS"
+    },
+    {
+      "id": "TIPB11-empty-inverted-mask-cannot-save-stale-preview",
+      "status": "PASS"
+    },
+    {
+      "id": "GUIDEB01-ruler-and-grid-preserve-pressure",
+      "status": "PASS"
+    },
+    {
+      "id": "GUIDEB02-symmetry-four-copies-one-Undo-and-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "GUIDEB03-preference-reload-and-Off-default",
+      "status": "PASS"
+    },
+    {
+      "id": "NODEB01-curve-preview-cancel-does-not-save",
+      "status": "PASS"
+    },
+    {
+      "id": "NODEB02-curve-handles-native-reload-and-one-Undo",
+      "status": "PASS"
+    },
+    {
+      "id": "NODEB03-edit-real-artwork-points-not-selection-outline",
+      "status": "PASS"
+    },
+    {
+      "id": "NODEB04-draft-local-history-and-Escape",
+      "status": "PASS"
+    },
+    {
+      "id": "NODEB05-lock-and-invalid-coordinate-reject",
+      "status": "PASS"
+    },
+    {
+      "id": "DRAWB01-offline-modules-and-artwork",
+      "status": "PASS"
+    },
+    {
+      "id": "DRAWB02-phone-panel-and-accessible-controls",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB01-curve-preview-pointercancel-apply-undo-reload",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB02-blur-reset-invalid-noop",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB03-group-filter-save-reset",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB04-Gaussian-reference-halo-pan-1",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB04-Gaussian-reference-halo-pan-2",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB05-nested-blur-clipped-group-alpha-1",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB05-nested-blur-clipped-group-alpha-2",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB06-nested-large-padding-backing-and-live",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB07-pointercancel-and-channel-isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "FXB08-narrow-offline-filter",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB01-folder-transform-undo-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB01-folder-transform-undo-768",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB02-inherited-visibility-lock-and-paint",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB03-nest-collapse-rename-ungroup",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB04-two-finger-folder-transform-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB05-30-layer-pass-through-oracle-1",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB05-30-layer-pass-through-oracle-2",
+      "status": "PASS"
+    },
+    {
+      "id": "FOLDB06-offline-save-export-compatible-hierarchy",
+      "status": "PASS"
+    },
+    {
+      "id": "GRAINB01-new-presets-preview-controls-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "GRAINB02-save-portable-replay-undo-offline",
+      "status": "PASS"
+    },
+    {
+      "id": "GRAINB03-invalid-controls-reject-save-and-clear-grain",
+      "status": "PASS"
+    },
+    {
+      "id": "GRAINB04-neutral-pixels-reference-and-transformed-tip",
+      "status": "PASS"
+    },
+    {
+      "id": "GRAINB05-narrow-edit-existing-and-library-backup",
+      "status": "PASS"
+    },
+    {
+      "id": "CAP2B-invalidation-dpr1",
+      "status": "PASS"
+    },
+    {
+      "id": "CAP2B-invalidation-dpr2",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3BB01-cache-reference-dpr1",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3BB01-cache-reference-dpr2",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3BB02-LRU-residency",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3BB03-history-retention-UI-save",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3BB04-offline-memory-modules",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB01-image-history-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB01-image-history-768",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB02-pattern-and-transform",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB03-reference-persistence-offline",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB04-rejections-and-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB05-jpeg-resize-and-blend",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB06-retained-image-1",
+      "status": "PASS"
+    },
+    {
+      "id": "IMPB06-retained-image-2",
+      "status": "PASS"
+    },
+    {
+      "id": "LARGE01-move-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "LARGE01-move-768",
+      "status": "PASS"
+    },
+    {
+      "id": "LARGE02-copy-delete-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "LARGE04-wand-after-cropped-region",
+      "status": "PASS"
+    },
+    {
+      "id": "LARGE03-region-snapshot-renderer-recovery",
+      "status": "PASS"
+    },
+    {
+      "id": "LASB01-region-drag-cancel-apply-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "LASB01-region-drag-cancel-apply-768",
+      "status": "PASS"
+    },
+    {
+      "id": "LASB02-real-system-png-and-paste-receiver",
+      "status": "PASS"
+    },
+    {
+      "id": "LASB03-denied-clipboard-download-and-page-paste",
+      "status": "PASS"
+    },
+    {
+      "id": "LASB04-outside-mask-hit-and-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF4B01-pixels-dpr1",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF4B01-pixels-dpr2",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF4B02-invalidation-helpers-failure-fallback",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF4B03-bounded-partial-cache-and-transient-resize",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF4B04-offline-compositor",
+      "status": "PASS"
+    },
+    {
+      "id": "UX2B01-ctrl-and-tablet-layer-scope",
+      "status": "PASS"
+    },
+    {
+      "id": "UX2B02-1024-two-finger-shared-pivot-apply-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "UX2B02-768-two-finger-shared-pivot-apply-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "UX2B03-pointer-cancel-and-partial-release-rollback",
+      "status": "PASS"
+    },
+    {
+      "id": "UX2B04-locked-scope-is-atomic",
+      "status": "PASS"
+    },
+    {
+      "id": "UX2B05-single-finger-and-three-finger-abort",
+      "status": "PASS"
+    },
+    {
+      "id": "UX2B06-dense-lasso-overlay-zero-artwork-replay",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-small-top",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-small-below",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-dense-top",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-dense-below",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-mixed-portrait",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-mixed-below",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-capacity",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF1-ui-save-lasso",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB01-clear-selection-one-command-style-history-reload",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB02-locked-safe-and-hidden-deliberate-clear",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB03-empty-idempotent-last-layer-kept",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB04-global-and-brush-mapping-share-config-no-history",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB05-global-profile-across-brush-board-reload-offline",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB06-mobile-keyboard-touch-dismissal-consumed",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB07-live-pen-and-pending-shape-block-settings-clear",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB08-curve-draft-blocks-global-settings-and-clear",
+      "status": "PASS"
+    },
+    {
+      "id": "LSETB09-real-http-cache-safe-update-new-assets-offline",
+      "status": "PASS"
+    },
+    {
+      "id": "MAGB01-trace-correct-local-history-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "MAGB01-trace-correct-local-history-768",
+      "status": "PASS"
+    },
+    {
+      "id": "MAGB02-partial-delete-and-original-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "MAGB03-large-layer-and-pen-pointercancel",
+      "status": "PASS"
+    },
+    {
+      "id": "MAGB04-blank-fallback-point-limit-and-palm",
+      "status": "PASS"
+    },
+    {
+      "id": "MAGB05-offline-mode-and-no-draft-persistence",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB01-hide-reveal-undo-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB01-hide-reveal-undo-768",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB02-cancel-zero-opacity-and-touch-navigation",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB03-disable-invert-reset-remove",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB04-offline-persistence-and-module",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB05-layer-lock-and-artwork-paint",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB06-compositing-oracle-and-30-layer-cache-1",
+      "status": "PASS"
+    },
+    {
+      "id": "MASKB06-compositing-oracle-and-30-layer-cache-2",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB01-manual-stop-commit-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB02-timed-camera-pause-resume-and-restore",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB03-partial-region-originals-complement-and-commit",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB04-group-masks-clipping-text-raster-1",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB04-group-masks-clipping-text-raster-2",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB05-missing-target-recovery",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB05-locked-target-recovery",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB06-native-invalid-motion-rejected",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB07-mobile-path-cancel-and-keyboard",
+      "status": "PASS"
+    },
+    {
+      "id": "MOTIONB08-offline-native-cues-and-module-graph",
+      "status": "PASS"
+    },
+    {
+      "id": "PATHB01-closed-partial-move-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "PATHB01-closed-partial-move-768",
+      "status": "PASS"
+    },
+    {
+      "id": "PATHB02-curves-anchor-handle-edit-and-local-history",
+      "status": "PASS"
+    },
+    {
+      "id": "PATHB03-pen-cancel-invalid-and-tool-switch",
+      "status": "PASS"
+    },
+    {
+      "id": "PATHB04-large-layer-copy-delete-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "PATHB06-short-handle-hit-target",
+      "status": "PASS"
+    },
+    {
+      "id": "PATHB05-offline-modules-and-draft-not-persisted",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB01-real-variable-pressure-width-release0-replay",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB02-mouse-full-width-pressure-off",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB03-optional-pressure-opacity-legacy-render",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB04-settings-mappings-persist-no-history",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB05-20-reachable-distinct-presets-new-id-save",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB06-real-barrel-lasso-auto-move-restores",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB07-lasso-hover-auto-move-outside-lasso",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB08-eraser-mask-integration-and-cdp-capability",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB09-active-transition-frozen-cancel-restores",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB10-contextmenu-scoped-and-mouse-right-no-ink",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB11-telemetry-honest-constant-vs-variable-no-release0",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB11a-zero-incontact-pressure-observed",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB12-offline-pen-assets-settings-extra-brushes",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB13-barrel-contact-arrives-as-pointermove",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB13b-move-admitted-unexpected-captureloss-cancels",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB14-mapped-eraser-blur-restores-cancels",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB14-mapped-eraser-lostcapture-restores-cancels",
+      "status": "PASS"
+    },
+    {
+      "id": "PENB15-original12-absent-dynamics-exact-u3-pixels",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A1-baseline-reference-DPR1",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A1-baseline-reference-DPR2",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A1-exact-pixel-matrix",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A2-topmost-middle-fallback",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A2-invalidation-and-preview-changes",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A2-replay-error-recovery",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A4-budget-desktop-DPR1",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A4-budget-desktop-DPR2",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A4-budget-desktop-DPR3",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A4-budget-tablet-DPR1",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A4-budget-tablet-DPR2",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A4-budget-tablet-DPR3",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A4-transient-setter-budget",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A3-paired-live-renderer-benchmark",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A5-cancel-commit-history-cache-recovery",
+      "status": "PASS"
+    },
+    {
+      "id": "P01-A7-live-controller-path",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB01-cumulative-paint-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB01-cumulative-paint-768",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB02-native-smudge-growth-no-snapshot",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB03-affine-paint-preserves-original",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB04-cancel-escape-pointercancel-blur",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB05-locked-hidden-zero-opacity-touch",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB06-pen-release-pressure-round-soft-minimum",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB07-limit-rejects-whole-gesture",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB08-live-raster-cache-oracle-dpr1",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB08-live-raster-cache-oracle-dpr2",
+      "status": "PASS"
+    },
+    {
+      "id": "PAINTB09-offline-update-and-new-modules",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB01-enclose-blank-undo-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB01-enclose-blank-undo-768",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB02-region-and-path-fill-selection",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB03-pen-cancel-invalid-and-prior-selection",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB04-large-layer-outside-and-object-guard",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB05-zero-opacity-alpha-lock-and-finger",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB06-mapped-lasso-never-fills",
+      "status": "PASS"
+    },
+    {
+      "id": "AREAB07-offline-and-preference",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3AB01-reference-pixels-dpr1",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3AB01-reference-pixels-dpr2",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3AB02-save-conflict-recovery-quota",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3AB03-UI-import-transform-erase-undo-reload",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF3AB04-offline-codec",
+      "status": "PASS"
+    },
+    {
+      "id": "recipe-browser-results.json#243",
+      "status": "PASS"
+    },
+    {
+      "id": "recipe-browser-results.json#244",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF2B01-pixels-dpr1",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF2B01-pixels-dpr2",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF2B02-helpers-invalidate-and-recover",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF2B03-revision-view-reference-and-diagnostics",
+      "status": "PASS"
+    },
+    {
+      "id": "PERF2B04-offline-module-graph",
+      "status": "PASS"
+    },
+    {
+      "id": "U01-lasso-move-final-save-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U02-session-clipboard-acrossboard-and-delete",
+      "status": "PASS"
+    },
+    {
+      "id": "U03-cancel-frozen-touch-zero-outside",
+      "status": "PASS"
+    },
+    {
+      "id": "U04-invalidation-and-failed-transition",
+      "status": "PASS"
+    },
+    {
+      "id": "U05-mobile-real-selection-controls",
+      "status": "PASS"
+    },
+    {
+      "id": "U06-offline-and-active-selection-update",
+      "status": "PASS"
+    },
+    {
+      "id": "size-percent-browser-results.json#256",
+      "status": "PASS"
+    },
+    {
+      "id": "size-percent-browser-results.json#257",
+      "status": "PASS"
+    },
+    {
+      "id": "smudge-browser-results.json#258",
+      "status": "PASS"
+    },
+    {
+      "id": "smudge-browser-results.json#259",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB01-default-Off-and-exact-raw-coalesced-pressure",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB02-smoothing-reduces-jitter-keeps-endpoints-and-one-Undo",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB03-cancel-and-gesture-snapshot",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB04-setting-reload-and-keyboard",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB05-pixel-paint-smoothed-one-Undo",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB06-small-panel-scroll-and-accessible-control",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB07-offline-new-modules-and-setting",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB08-coalesced-input-filter-keeps-each-pressure",
+      "status": "PASS"
+    },
+    {
+      "id": "STABB09-mask-filter-retains-artwork-and-one-Undo",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB01-1024-wobbly-line-hold-and-scale",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB02-1024-ellipse-finger-circle-immediate-and-scale",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB03-1024-curve-arc-and-rectangle",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB04-1024-magnifier-exact-colour-and-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB05-1024-touch-transform-scale-rotate-apply-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB06-1024-smudge-hold-is-picker-not-raster-commit",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB01-768-wobbly-line-hold-and-scale",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB02-768-ellipse-finger-circle-immediate-and-scale",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB03-768-curve-arc-and-rectangle",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB04-768-magnifier-exact-colour-and-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB05-768-touch-transform-scale-rotate-apply-undo",
+      "status": "PASS"
+    },
+    {
+      "id": "UXB06-768-smudge-hold-is-picker-not-raster-commit",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB01-editor-apply-cancel-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB01-editor-apply-cancel-768",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB02-edit-and-transform",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB03-literal-input-and-validation",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB04-offline-reload-import",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB05-mask-alpha-lock-version",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB06-retained-and-reference-1",
+      "status": "PASS"
+    },
+    {
+      "id": "TEXTB06-retained-and-reference-2",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB01-capture-undo-redo-reload-resume-gap",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB02-disposable-replay-scrub-pause-stop-exact",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB03-composition-exact-1",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB03-composition-exact-2",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB04-store-conflict-tombstone-and-global-quota",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB05-write-failure-visible-artwork-continues",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB06-corrupt-late-frame-rejects-before-replay",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB07-backup-discard-import-and-wrong-board",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB08-offline-reload-modules-and-replay",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB09-board-switch-recording-isolation",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB10-responsive-keyboard-320",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB10-responsive-keyboard-768",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB10-responsive-keyboard-1440",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB11-cancelled-stroke-and-selection-not-recorded",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB12-recording-count-limit-preserves-all-states",
+      "status": "PASS"
+    },
+    {
+      "id": "TIMEB13-entry-error-pauses-capture-and-resume-keeps-valid-history",
+      "status": "PASS"
+    },
+    {
+      "id": "UB01-desktop",
+      "status": "PASS"
+    },
+    {
+      "id": "UB01-tablet",
+      "status": "PASS"
+    },
+    {
+      "id": "UB01-phone",
+      "status": "PASS"
+    },
+    {
+      "id": "UB02-captured-pen-rejects-controls-dismiss-consumed",
+      "status": "PASS"
+    },
+    {
+      "id": "UB08-thumbnails-scratch-bound-and-no-penmove",
+      "status": "PASS"
+    },
+    {
+      "id": "UB10-keyboard-grip-opacity-single-history",
+      "status": "PASS"
+    },
+    {
+      "id": "UB11-malformed-import-retains-artwork",
+      "status": "PASS"
+    },
+    {
+      "id": "UB12-punctuated-layer-ID-keyboard-safe-and-text-scale",
+      "status": "PASS"
+    },
+    {
+      "id": "UB15-locked-layer-retains-usable-copy-with-write-guards",
+      "status": "PASS"
+    },
+    {
+      "id": "UB03-independent-eight-mode-pixels-and-retained",
+      "status": "PASS"
+    },
+    {
+      "id": "UB04-v2-foundation-read-only-retry",
+      "status": "PASS"
+    },
+    {
+      "id": "UB05-source-ID-collision-durable-mapping",
+      "status": "PASS"
+    },
+    {
+      "id": "UB06-damaged-current-previous-fallback-warning",
+      "status": "PASS"
+    },
+    {
+      "id": "UB13-stable-source-dedup-prefer-valid-v2",
+      "status": "PASS"
+    },
+    {
+      "id": "UB14-damaged-v2-foundation-fallback-explicit",
+      "status": "PASS"
+    },
+    {
+      "id": "UB07-quota-atomic-mapping-resume",
+      "status": "PASS"
+    },
+    {
+      "id": "U2B01-brush-library-memory-reset-and-no-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U2B02-selected-preset-serializes-on-new-stroke",
+      "status": "PASS"
+    },
+    {
+      "id": "U2B03-colour-disc-precise-values-recents-and-palette-no-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U2B04-outside-dismissal-consumes-canvas-tap",
+      "status": "PASS"
+    },
+    {
+      "id": "U2B05-mobile-panels-fit-and-offline-assets",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B01-captured-single-tap-history-no-duplicate",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B02-history-rejects-move",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B02-history-rejects-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B02-history-rejects-hold",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B02-history-rejects-fourth",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B03-colour-hold-composite-release-and-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B03a-colour-picker-drag-samples-final-release",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B04-colour-hold-rearms-after-movement",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B05-line-provisional-local-history-apply-one-entry",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B05a-held-line-second-finger-snap-and-continued-drag",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B06-circle-cancel-then-apply",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B07-shape-enter-commits",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B08-shape-outside-dismissal-consumed",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B08a-shape-next-stroke-separate-transactions",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B09-transform-affine-cancel-apply-style-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10-transform-local-history-no-op-and-redo-invalidation",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10a-transform-no-op-edit-has-no-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10b-local-history-retains-more-than-32-edits",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10c-invalid-transform-does-not-change-preview",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B10d-combined-history-capacity-rejects-without-eviction",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11-transform-navigation-and-board-transition-guard",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11a-transform-touch-navigation-guard",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11b-transform-handle-cancel-and-history-owner",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11c-handle-lostcapture-cancels",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B11c-handle-blur-cancels",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B12-pending-transform-rejects-pen-and-selection-interference",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13-live-pen-rejects-palm-and-history",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13a-live-touch-navigation-suppresses-history-and-pen",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13a-live-touch-picker-suppresses-history-and-pen",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13b-live-touch-navigation-suppresses-toolbar-transition",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B13b-live-touch-picker-suppresses-toolbar-transition",
+      "status": "PASS"
+    },
+    {
+      "id": "U3B14-offline-u3-assets-and-draft-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB01-contiguous-add-subtract-1024",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB01-contiguous-add-subtract-768",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB02-delete-copy-paste",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB03-transform-preview-apply-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB04-vector-guard-and-rasterization",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB05-pen-touch-and-cancel",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB06-offline-and-stale-clear",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB07-bounded-and-retained-1",
+      "status": "PASS"
+    },
+    {
+      "id": "WANDB07-bounded-and-retained-2",
+      "status": "PASS"
+    }
+  ],
+  "verification": "Same-session exact-source provider CI/download/hash verification, not independent human/device sign-off",
+  "knowledge_graph": "UNCHANGED"
+}
