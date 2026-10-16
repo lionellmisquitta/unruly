@@ -291,3 +291,7 @@ Next proposed group: folder-wide masks/group opacity/blend/effects ordering and 
 Knowledge graph and skills unchanged. Graph remains at TIME1; after this publication the app is four batches/five checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1). Scoped evidence: `.delivery/CHG-UNRULY-PAL1-1016/`.
 
 Publication `b480e4f2f19a169aad1e36c30291d1646ce2e6bb`; Pages `38922098299` SUCCESS; all 69 hosted application files match reviewed source bytes.
+
+## COMP1 folder masks/group composition — active16 October2026
+
+Owner authorized announced next checkpoint. Nativev16 optional folder masks/opacity/blends; preserve old pass-through until activated, explicit child/effect/mask/opacity/blend order and named-folder clipping. Implementation/QA/publication pending; live remains PAL1. Existing capacities and all pending roadmap rows retained. No knowledge graph update. Records: .delivery/CHG-UNRULY-COMP1-1016/.

@@ -1,0 +1,31 @@
+{
+  "change_id": "CHG-UNRULY-COMP1-1016",
+  "readiness": "ready",
+  "open_contradictions": [],
+  "hub_suppressed": false,
+  "targets": [
+    "prototypes/browser-workspace/group-composition.js",
+    "prototypes/browser-workspace/model.js",
+    "prototypes/browser-workspace/folders.js",
+    "prototypes/browser-workspace/masks.js",
+    "prototypes/browser-workspace/filters.js",
+    "prototypes/browser-workspace/effect-compositor.js",
+    "prototypes/browser-workspace/render.js",
+    "prototypes/browser-workspace/clipping.js",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/sw.js"
+  ],
+  "regression_obligations": [
+    {
+      "id": "COMP-R1",
+      "reason": "Strict native group state/locks/import/history",
+      "test_id": "COMP-MODEL"
+    },
+    {
+      "id": "COMP-R2",
+      "reason": "Exact group pixels/cache/preview/clipping/input/offline plus cumulative",
+      "test_id": "COMP-BROWSER"
+    }
+  ]
+}
