@@ -195,3 +195,7 @@ guides.js owns bounded guide projection/snapping and symmetric editable copies. 
 ## TIP3 alpha-locked image-tip boundary
 
 image-tip-paint.js imports existing custom-tips (deterministic visit/draw including grain), pen dynamics validation and raster encoding. It owns frozen source/settings, conservative work admission, disposable Canvas coverage, exact-alpha RGB composition and cached raster draft. app.js routes existing Vector ink + Alpha lock admission into this adapter through the existing pixel-preview/commit/cancel path. model/history/storage/render engines remain unchanged. Layer metadata stays in its original pipeline; alpha-locked raw artwork becomes pixels only on commit and Undo restores originals. This is a logical module map, not a generated knowledge/AST graph.
+
+## PAL1 colour-library boundary
+
+palettes.js owns pure bounded library validation/migration/immutable commands/append import, linear-light RGB interpolation and reference-coordinate/source-RGB rules. palettes-ui.js owns separate device-local library/backup/ten-snapshot session Undo, Colour inspector controls and disposable reference picker. U2 remains current brush/HSV/recents authority and accepts a colour-change notification for palette rendering. app.js injects board/reference getters and reveal callback, integrates draft blocking/keyboard/sync. No artwork/native/model/history/storage/renderer engine change. This is a logical responsibility map, not an AST or knowledge graph update.

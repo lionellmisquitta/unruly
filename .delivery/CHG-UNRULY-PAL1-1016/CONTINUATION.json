@@ -1,0 +1,11 @@
+{
+  "base": "d1353f1559b9e7ff82ca88c396d34da87a2399df",
+  "checkpoint": "PAL1",
+  "state": "34 targeted model tests PASS; UI static0errors; focused browser/cumulative pending",
+  "expectedModels": 456,
+  "expectedStructuredBrowser": 389,
+  "expectedLegacy": 2,
+  "expectedAssets": 69,
+  "expectedSourceHashes": 171,
+  "knowledge_graph": "UNCHANGED"
+}

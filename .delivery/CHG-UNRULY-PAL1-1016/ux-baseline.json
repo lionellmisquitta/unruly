@@ -1,0 +1,20 @@
+{
+  "change_id": "CHG-UNRULY-PAL1-1016",
+  "state": "LOCKED_FOR_AUTHORIZED_BUILD",
+  "evidence_sufficiency": "SUFFICIENT",
+  "views": [
+    "existing Colour inspector",
+    "existing Reference sidebar"
+  ],
+  "decisions": [
+    "UXD-PAL1-1",
+    "UXD-PAL1-2",
+    "UXD-PAL1-3"
+  ],
+  "non_goals": [
+    "artwork edits",
+    "wet pigment",
+    "global navigation redesign",
+    "knowledge graph"
+  ]
+}

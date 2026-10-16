@@ -1,0 +1,27 @@
+{
+  "change_id": "CHG-UNRULY-PAL1-1016",
+  "readiness": "ready",
+  "open_contradictions": [],
+  "hub_suppressed": false,
+  "targets": [
+    "prototypes/browser-workspace/palettes.js",
+    "prototypes/browser-workspace/palettes-ui.js",
+    "prototypes/browser-workspace/u2.js",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/style.css",
+    "prototypes/browser-workspace/sw.js"
+  ],
+  "regression_obligations": [
+    {
+      "id": "PAL-R1",
+      "reason": "Bounded library/migration/mix/source-pixel rules",
+      "test_id": "PAL1-MODEL"
+    },
+    {
+      "id": "PAL-R2",
+      "reason": "Existing colour and blocked input, reference/history/painting/offline compatibility, cumulative CI",
+      "test_id": "PAL1-BROWSER"
+    }
+  ]
+}

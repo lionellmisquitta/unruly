@@ -1,0 +1,49 @@
+import {validatePalettes,migratePalettes,paletteCommand,parsePalettes,appendPalettes,mixColours,referencePoint,referenceColour,paletteLimits} from './palettes.js';
+import {decodePixels} from './raster.js';
+const KEY='unruly-palettes-v1';
+export function initPalettes({$,getColour,setColour,blocked,getReference,onReferenceStart}){
+ let library,history=[],draft=null,armed=false,cached=null,reference=null,boardId=null,pixel={x:0,y:0},storageWarning='';
+ const note=(message,error=false)=>{$('palette-notice').textContent=message;$('palette-notice').dataset.error=String(error);};
+ try{const text=localStorage.getItem(KEY);library=text?parsePalettes(text):migratePalettes(JSON.parse(localStorage.getItem('unruly-u2-ui-v1')||'{}'));if(!text)save();}catch{library=migratePalettes(null);storageWarning='Saved palettes could not be read. Session only; back up before leaving.';}
+ function save(){try{localStorage.setItem(KEY,JSON.stringify(library));storageWarning='';}catch{storageWarning='Palettes are session only: storage failed. Back up before leaving.';}}
+ function render(){
+  const active=library.palettes.find(p=>p.id===library.active);$('palette-select').replaceChildren(...library.palettes.map(p=>new Option(p.name+' · '+p.colours.length,p.id)));$('palette-select').value=library.active;$('palette-rename-name').value=active.name;
+  $('saved-palette').replaceChildren();for(const c of active.colours){const b=document.createElement('button');b.type='button';b.style.background=c;b.setAttribute('aria-label','Saved colour '+c);b.setAttribute('aria-pressed',String(c===getColour().toLowerCase()));b.onclick=()=>{if(!blocked())setColour(c);};$('saved-palette').append(b);}
+  $('palette-empty').hidden=active.colours.length>0;$('palette-delete').disabled=library.palettes.length===1;$('palette-remove-colour').disabled=!active.colours.includes(getColour().toLowerCase());$('palette-undo').disabled=!history.length;
+  if(storageWarning)note(storageWarning,true);
+ }
+ function apply(candidate,message){candidate=validatePalettes(candidate);if(JSON.stringify(candidate)!==JSON.stringify(library)){history.push(library);history=history.slice(-paletteLimits.undo);library=candidate;save();}render();note(storageWarning||message,!!storageWarning);}
+ function action(fn){if(blocked()){render();note('Finish the current edit first.',true);return;}try{fn();}catch(e){note(e.message,true);render();}}
+ $('palette-select').onchange=()=>action(()=>apply(paletteCommand(library,'select',{id:$('palette-select').value}),'Palette selected.'));
+ $('palette-create').onclick=()=>action(()=>{apply(paletteCommand(library,'create',{id:crypto.randomUUID(),name:$('palette-new-name').value}),'Palette created.');$('palette-new-name').value='';});
+ $('palette-rename').onclick=()=>action(()=>apply(paletteCommand(library,'rename',{name:$('palette-rename-name').value}),'Palette renamed.'));
+ $('palette-delete').onclick=()=>action(()=>apply(paletteCommand(library,'delete'),'Palette deleted. Undo palette edit restores it.'));
+ $('save-colour').onclick=()=>action(()=>apply(paletteCommand(library,'add',{colour:getColour()}),'Current colour saved.'));
+ $('palette-remove-colour').onclick=()=>action(()=>apply(paletteCommand(library,'remove',{colour:getColour()}),'Swatch removed. Undo palette edit restores it.'));
+ $('palette-undo').onclick=()=>action(()=>{if(!history.length)return;library=history.pop();save();render();note(storageWarning||'Palette edit undone.',!!storageWarning);});
+ $('palette-export').onclick=()=>action(()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(library,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='unruly-palettes.json';a.click();URL.revokeObjectURL(url);note(storageWarning||'Palette backup downloaded.',!!storageWarning);});
+ $('palette-import').onclick=()=>action(()=>$('palette-file').click());
+ $('palette-file').onchange=async()=>{const f=$('palette-file').files[0];$('palette-file').value='';if(!f||blocked())return;try{if(f.size>65536)throw Error('Palette backup exceeds 64 KiB');const incoming=parsePalettes(await f.text());action(()=>apply(appendPalettes(library,incoming,()=>crypto.randomUUID()),'Imported palettes added. Existing palettes kept.'));}catch(e){note(e.message,true);}};
+ function blend(){const c=mixColours($('mix-a').value,$('mix-b').value,Number($('mix-ratio').value));$('mix-result').style.background=c;$('mix-hex').textContent=c;$('mix-percent').value=$('mix-ratio').value+'% colour B';return c;}
+ $('mix-a').value=getColour();$('mix-b').value='#ffffff';for(const id of ['mix-a','mix-b','mix-ratio'])$(id).oninput=()=>{if(!blocked())blend();};
+ for(const side of ['a','b'])$('mix-current-'+side).onclick=()=>action(()=>{$('mix-'+side).value=getColour();blend();});
+ $('mix-use').onclick=()=>action(()=>{setColour(blend());note('Mix selected for painting.');});
+ $('mix-save').onclick=()=>action(()=>apply(paletteCommand(library,'add',{colour:blend()}),'Mix saved to this palette.'));
+ function refStatus(message){$('reference-pick-status').textContent=message;}
+ function refMode(){for(const id of ['reference-pick','palette-reference-pick'])$(id).setAttribute('aria-pressed',String(armed));$('reference-canvas').classList.toggle('reference-picking',armed);$('reference-canvas').tabIndex=armed?0:-1;$('reference-canvas').setAttribute('role',armed?'button':'img');}
+ function cancelReference(message,off=false){draft=null;if(off)armed=false;refMode();if(message)refStatus(message);}
+ function source(){const state=getReference(),r=state?.reference;if(!r)throw Error('Add a reference image first.');if(cached?.reference!==r){const s=r.stroke.raster;cached={reference:r,data:decodePixels(s.data),width:s.width,height:s.height};}return {...cached,board:state.board};}
+ function preview(q,s){pixel=q;const c=referenceColour(s.data,s.width,s.height,q.x,q.y);refStatus((c||'Transparent pixel')+' · pixel '+(q.x+1)+', '+(q.y+1));return c;}
+ function pick(q,s){if(getReference()?.board!==s.board){cancelReference('Reference changed; pick again.',true);return;}const c=preview(q,s);if(!c)return;armed=false;refMode();setColour(c);refStatus('Picked '+c+'. Reference and artwork unchanged.');}
+ function toggleReference(){if(blocked())return;if(armed){cancelReference('Reference picker off.',true);return;}try{onReferenceStart();const s=source();pixel={x:Math.floor(s.width/2),y:Math.floor(s.height/2)};armed=true;refMode();refStatus('Tap or drag, then release. Arrow keys move; Enter picks; Escape cancels.');$('reference-canvas').focus({preventScroll:true});}catch(e){refStatus(e.message);}}
+ for(const id of ['reference-pick','palette-reference-pick'])$(id).onclick=toggleReference;
+ const img=$('reference-canvas');
+ img.addEventListener('pointerdown',e=>{if(draft&&draft.id!==e.pointerId){cancelReference('Pick cancelled by another contact.',true);return;}if(!armed||blocked()||e.button!==0||e.isPrimary===false)return;e.preventDefault();try{const s=source(),q=referencePoint(img.getBoundingClientRect(),e.clientX,e.clientY,s.width,s.height);if(!q)return;draft={id:e.pointerId,source:s};img.setPointerCapture?.(e.pointerId);preview(q,s);}catch(err){cancelReference(err.message,true);}});
+ img.addEventListener('pointermove',e=>{if(!draft||draft.id!==e.pointerId)return;if(getReference()?.board!==draft.source.board){cancelReference('Reference changed; pick again.',true);return;}const s=draft.source,q=referencePoint(img.getBoundingClientRect(),e.clientX,e.clientY,s.width,s.height);if(q)preview(q,s);else refStatus('Release inside the reference to pick.');});
+ img.addEventListener('pointerup',e=>{if(!draft||draft.id!==e.pointerId)return;e.preventDefault();const s=draft.source;draft=null;if(blocked())return;const q=referencePoint(img.getBoundingClientRect(),e.clientX,e.clientY,s.width,s.height);if(q)pick(q,s);else cancelReference('Pick cancelled outside the reference.');});
+ img.addEventListener('pointercancel',()=>cancelReference('Pick cancelled.'));img.addEventListener('lostpointercapture',()=>{if(draft)cancelReference('Pick cancelled.');});
+ window.addEventListener('blur',()=>{if(draft)cancelReference('Pick cancelled on leaving this window.',true);});
+ function syncReference(){const state=getReference(),r=state?.reference;if(reference!==r||boardId!==state?.board?.id){cancelReference('',true);cached=null;reference=r;boardId=state?.board?.id;refStatus(r?'Pick a colour from original reference pixels.':'');}for(const id of ['reference-pick','palette-reference-pick'])$(id).disabled=!r;}
+ function key(e){if(e.key==='Escape'&&(draft||armed&&e.target===img)){e.preventDefault();cancelReference('Pick cancelled.',true);return true;}if(draft){e.preventDefault();return true;}if(!armed||e.target!==img||blocked())return false;if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter',' '].includes(e.key)){e.preventDefault();const s=source();if(e.key==='Enter'||e.key===' ')pick(pixel,s);else{const n=e.shiftKey?10:1;pixel={x:Math.max(0,Math.min(s.width-1,pixel.x+(e.key==='ArrowLeft'?-n:e.key==='ArrowRight'?n:0))),y:Math.max(0,Math.min(s.height-1,pixel.y+(e.key==='ArrowUp'?-n:e.key==='ArrowDown'?n:0)))};preview(pixel,s);}return true;}return false;}
+ render();blend();syncReference();return {sync:render,syncReference,key,editing:()=>!!draft};
+}
