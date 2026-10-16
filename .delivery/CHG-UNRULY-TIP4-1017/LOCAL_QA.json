@@ -1,0 +1,16 @@
+{
+  "model_tests": 499,
+  "model_failures": 0,
+  "browser_scenarios": {
+    "tip-guides-results.json": 9,
+    "custom-tips-results.json": 11,
+    "image-tip-paint-results.json": 10
+  },
+  "independent_reflection_cases": 24,
+  "max_alpha_difference": 0,
+  "max_premultiplied_difference": 0,
+  "unchanged_tolerance": 2,
+  "legacy_operation_sequence_unchanged": true,
+  "not_independent_human_or_device_acceptance": true,
+  "live_source_commit_pixels_exact": true
+}

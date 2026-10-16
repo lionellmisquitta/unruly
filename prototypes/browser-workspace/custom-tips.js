@@ -16,16 +16,16 @@ export function imageTip(decoded,mode='alpha',invert=false){
 }
 // Distances carry across input segments. Randomness depends only on saved seed/order.
 export function visitTip(s,visit=()=>{}){
- const t=validateTip(s.tip),o=t.options;let seed=t.seed>>>0,n=0;
+ const t=validateTip(s.tip),o=t.options,reflection=s.tipReflection;if(reflection&&(!exact(reflection,['parity','heading'])||![1,-1].includes(reflection.parity)||!num(reflection.heading,-1e7,1e7)))fail('Invalid tip reflection');const parity=reflection?.parity??1;let seed=t.seed>>>0,n=0;
  const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;},signed=()=>random()*2-1;
  const step=()=>Math.max(.5,s.size*t.scale*o.spacing*(1+signed()*o.spacingJitter*.9));
  let next=step();
  const stamp=(p,heading)=>{const count=Math.max(1,o.count-Math.floor(random()*(o.count+1)*o.countJitter));for(let j=0;j<count;j++){
   if(++n>tipLimits.stamps||n*t.width*t.height>tipLimits.sampledPixels)fail('Image tip replay limit reached; shorten the stroke or increase spacing');
-  const width=s.size*t.scale*pressureWidth({minWidth:.08,exponent:1.2},p.pressure,s.dynamics)*(1-random()*o.sizeJitter),linear=signed()*o.linear*s.size*t.scale,lateral=signed()*o.lateral*s.size*t.scale;
-  visit({x:p.x+Math.cos(heading)*linear-Math.sin(heading)*lateral,y:p.y+Math.sin(heading)*linear+Math.cos(heading)*lateral,width,angle:(o.angle+t.angle)*Math.PI/180+(o.rotation==='follow'?heading:o.rotation==='random'?random()*2*Math.PI:0),opacity:pressureOpacity(p.pressure,s.dynamics)*(1-random()*o.opacityJitter),flipX:o.flipX,flipY:o.flipY});
+  const width=s.size*t.scale*pressureWidth({minWidth:.08,exponent:1.2},p.pressure,s.dynamics)*(1-random()*o.sizeJitter),linear=signed()*o.linear*s.size*t.scale,lateral=signed()*o.lateral*s.size*t.scale*parity;
+  visit({x:p.x+Math.cos(heading)*linear-Math.sin(heading)*lateral,y:p.y+Math.sin(heading)*linear+Math.cos(heading)*lateral,width,angle:(o.angle+t.angle)*Math.PI/180+(o.rotation==='follow'?heading:o.rotation==='random'?random()*2*Math.PI*parity:0),opacity:pressureOpacity(p.pressure,s.dynamics)*(1-random()*o.opacityJitter),flipX:o.flipX,flipY:o.flipY});
  }};
- const first=s.points[0],second=s.points.find(p=>p.x!==first.x||p.y!==first.y);stamp(first,second?Math.atan2(second.y-first.y,second.x-first.x):0);
+ const first=s.points[0],second=s.points.find(p=>p.x!==first.x||p.y!==first.y);stamp(first,second?Math.atan2(second.y-first.y,second.x-first.x):(reflection?.heading??0)*Math.PI/180);
  for(let i=1;i<s.points.length;i++){const a=s.points[i-1],b=s.points[i],length=Math.hypot(b.x-a.x,b.y-a.y),heading=Math.atan2(b.y-a.y,b.x-a.x);let used=0;
   while(length-used>=next){used+=next;const f=used/length;stamp({x:a.x+(b.x-a.x)*f,y:a.y+(b.y-a.y)*f,pressure:a.pressure===null||b.pressure===null?null:a.pressure+(b.pressure-a.pressure)*f},heading);next=step();}next-=length-used;
  }return n;
@@ -34,7 +34,12 @@ export function drawTip(ctx,s){
  // Admission completes before allocating/drawing; no partial replay on work overflow.
  visitTip(s);const t=s.tip,c=document.createElement('canvas');c.width=t.width;c.height=t.height;const cc=c.getContext('2d'),data=cc.createImageData(t.width,t.height),raw=grainMask(t),rgb=s.color.slice(1).match(/../g).map(x=>parseInt(x,16));
  for(let i=0;i<raw.length;i++){data.data.set(rgb,i*4);data.data[i*4+3]=raw.charCodeAt(i);}cc.putImageData(data,0,0);
- try{visitTip(s,p=>{ctx.save();try{ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.flipX?-1:1,p.flipY?-1:1);ctx.globalAlpha=p.opacity;const f=p.width/Math.max(t.width,t.height);ctx.drawImage(c,-t.width*f/2,-t.height*f/2,t.width*f,t.height*f);}finally{ctx.restore();}});}finally{c.width=c.height=1;}
+ try{visitTip(s,p=>{ctx.save();try{if(s.tipReflection){
+   // Compose once: chained Canvas translate under reflection rounds at a different stage.
+   // Only native17 strokes use this path; existing tip replay remains unchanged.
+   const m=ctx.getTransform(),cos=Math.cos(p.angle),sin=Math.sin(p.angle),fx=p.flipX?-1:1,fy=p.flipY?-1:1,a=cos*fx,b=sin*fx,c=-sin*fy,d=cos*fy;
+   ctx.setTransform(m.a*a+m.c*b,m.b*a+m.d*b,m.a*c+m.c*d,m.b*c+m.d*d,m.a*p.x+m.c*p.y+m.e,m.b*p.x+m.d*p.y+m.f);
+  }else{ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.flipX?-1:1,p.flipY?-1:1);}ctx.globalAlpha=p.opacity;const f=p.width/Math.max(t.width,t.height);ctx.drawImage(c,-t.width*f/2,-t.height*f/2,t.width*f,t.height*f);}finally{ctx.restore();}});}finally{c.width=c.height=1;}
 }
 export const tipRadius=s=>s.tip?s.size*s.tip.scale*(Math.SQRT1_2+Math.hypot(s.tip.options.lateral,s.tip.options.linear)):s.size/2;
 export const emptyLibrary=()=>({version:1,sections:[{id:'imported',name:'Imported'}],brushes:[]});

@@ -1,0 +1,3 @@
+# Reused UX / visual baseline
+
+Existing Actions → Drawing tools ruler/grid/15degree/endpoints and vertical/horizontal/both symmetry controls. Existing Brush Library image tip selection and guide settings captured per gesture. Pen release commits up to4 reflected tip strokes as one Undo; Escape/pointercancel commits none; native/offline/reopen and clipboard preserve reflection. Live display retains source-only preview, as native symmetry currently does. Seed, grain and effective pressure remain stable. No new modal/navigation/style. Update help with Vector ink, alpha-lock limitation, source-preview/release copies and native17 backup. Existing dark design/44px controls; static validation and bounded phone screenshot, not whole-product accessibility/device approval.

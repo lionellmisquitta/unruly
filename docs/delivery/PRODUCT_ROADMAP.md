@@ -318,3 +318,13 @@ Remaining painting/composition: proprietary brush-format feasibility, pattern de
 Knowledge graph and skills unchanged. Graph remains at TIME1; COMP1 makes the app five batches/six checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1, COMP1). Scoped evidence: `.delivery/CHG-UNRULY-COMP1-1016/`.
 
 Publication `b63c4acc2c9b72b826ffc1f094b504069724f20f`; Pages `38946336556` SUCCESS; all70 hosted application files match reviewed source bytes.
+
+## TIP4 — active17 October2026
+
+Owner authorized next build, then requested validation of the last3 CI builds. Artifacts/source hashes and all stages rechecked; three disposable deliberate defects rejected. See .delivery/CHG-UNRULY-TIP4-1017/PRIOR_CI_AUDIT.json. Next bounded painting slice: image-tip ruler/snapping and mirrored symmetry in Vector ink; native17 reflection parity, one Undo, cancellation and deterministic grain/scatter. CI inventory/mutation guard added within scope. Implementation/QA/publication pending; live remains COMP1. All other requirements retained; no knowledge graph update.
+
+TIP4 attempt1 source2f3688819ca1ed25279a4df3aed2efda09afaafd / CI38949036435 FAILED focused gate6/8: actual pen/Undo/reopen,cancel,guides,composition/clipboard,phone and offline PASS. Pixel oracle compared reflection after rasterization (Canvas sampling edge differences up to12alpha); correct geometric oracle reflects the drawing context before rasterization and retains2alpha/premultiplied tolerance, with post-raster difference reported. Alpha-lock fixture incorrectly used native3 rather than required7 and import was rejected, leaving the prior hidden board. Repair fixture version and require successful new-board selection/flags before every journey. No app code/tolerance change; cumulative did not run; retry pending.
+
+TIP4 attempt2 ef3d8f396e4c0326b6088267abf42de9e5819ff0 / CI38949663032 FAILED strict pixel check7/8 journeysPASS. Local pinned-browser diagnosis isolates chained Canvas translation rounding; scoped replay refinement committed before repair, retaining legacy replay and tolerance2. Publication remains COMP1; all product scope retained.
+
+TIP4 replanned candidate8d5559211f15242eef282e84cb73233a5450f2b6 / CI38950882821 focused8/8PASS,24world-reflection pixel cases exact, cumulative superseded during final review by live-source metadata consistency hook and exact preview/commit assertion. No observed regression failure. Final candidate must run9focused journeys plus full cumulative suite; live remains COMP1.
