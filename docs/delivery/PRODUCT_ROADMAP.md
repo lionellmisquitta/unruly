@@ -239,3 +239,13 @@ Next proposed group: painting and composition compatibility/completion, scoped b
 Knowledge graph and skills unchanged by explicit instruction. Graph remains at TIME1; after this publication the application is two batches/three checkpoints ahead (STAB1, then GUIDE1+NODE1). Scoped evidence: `.delivery/CHG-UNRULY-DRAW-1016/`.
 
 Publication `ea8d936f031faf5eeab24ca5f7e8425fdca3edfd`; Pages `38899888268` SUCCESS; all 66 hosted application files match reviewed source bytes.
+
+## TIP3 — custom-tip alpha lock, active 16 October 2026
+
+Owner authorized next painting build. Close custom-tip alpha-lock compatibility using existing Vector ink/Alpha lock controls, bounded raster result, deterministic grain/jitter/pressure and one Undo/cancellation. Verification/publication pending. All remaining painting/composition, Motion mixed-target, video/export, PDF/interchange/Drive/BYOK and physical/device/release acceptance remain unchanged. No knowledge graph update. Scoped records: .delivery/CHG-UNRULY-TIP3-1016/.
+
+TIP3 attempt source96d006fbc516fe3cba0593b5784213afdbaa34cc / CI38902698222 failed before app execution because remote tree packaging omitted the base. No merge/publication. Correct against verified current base tree and verify full PR diff before rerunning; all scope retained.
+
+TIP3 source8c23ca9cb83239c3a334efc7438be8627fc3aa5c / CI38902949603: 9/10 focused browser journeys PASS; remaining assertion expected pre-import vector ID after native import had remapped it. Complete Undo equality already passed. Correct expected ID to captured imported original and retain ink-type check; app unchanged. Verification pending; no publication/graph update.
+
+TIP3 source2999d49f69e183ad47239df98427b3318aff7402 / CI38903322674 PASS:438models/377structured browser+2legacy/167source hashes verified from artifact12047737514. Screenshot review found stale legacy help saying Alpha lock off; correct that sentence, retain all successful application behavior/tests, then verify exact corrected source before publication. No app-logic change or scope removal; graph unchanged.

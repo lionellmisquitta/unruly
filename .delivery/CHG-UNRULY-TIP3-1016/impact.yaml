@@ -1,0 +1,24 @@
+{
+  "change_id": "CHG-UNRULY-TIP3-1016",
+  "readiness": "ready",
+  "open_contradictions": [],
+  "hub_suppressed": false,
+  "targets": [
+    "prototypes/browser-workspace/image-tip-paint.js",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/sw.js"
+  ],
+  "regression_obligations": [
+    {
+      "id": "TIP3-R1",
+      "reason": "Frozen source alpha, deterministic tip admission/budget/no-op",
+      "test_id": "TIP3-MODEL"
+    },
+    {
+      "id": "TIP3-R2",
+      "reason": "Pointer/native/history/cancel/locked/offline and full existing cumulative suite",
+      "test_id": "TIP3-BROWSER"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "localDevelopment": [
+    {
+      "status": "fixture error corrected",
+      "reason": "New session fixtures initially omitted mandatory existing dynamics object; production validation correctly rejected them. Added valid DEFAULT_DYNAMICS fixture; 14 new and 13 existing checks PASS."
+    }
+  ],
+  "candidateAttempts": [
+    {
+      "source": "96d006fbc516fe3cba0593b5784213afdbaa34cc",
+      "run": 38902698222,
+      "status": "FAILED_PACKAGING",
+      "reason": "Undefined base-tree variable from an earlier turn caused sparse tree; tool installation could not start. No application execution/publication. Reassemble against verified base tree3c686d26052c0bde789eb1a0f4ef31f354585f63 and validate full PR diff before QA."
+    },
+    {
+      "source": "8c23ca9cb83239c3a334efc7438be8627fc3aa5c",
+      "run": 38902949603,
+      "status": "FAILED_TEST_EXPECTATION",
+      "artifact": 12045989567,
+      "artifactDigest": "fa17b946ad2f42ea8f199e7ac0cc90d6ee41550e68e67132aadbfb856ea8aa47",
+      "reason": "9/10 new browser journeys PASS. B07 complete Undo layers equality passed, then incorrectly asserted pre-import literal vector ID; native import remaps IDs. Assert restoration to actual imported original ID plus ink type. App bytes unchanged; all behavioral assertions retained."
+    },
+    {
+      "source": "2999d49f69e183ad47239df98427b3318aff7402",
+      "run": 38903322674,
+      "status": "PASS_SUPERSEDED_HELP_COPY",
+      "models": 438,
+      "structuredBrowser": 377,
+      "legacyChecks": 2,
+      "sourceHashes": 167,
+      "artifact": 12047737514,
+      "artifactDigest": "514f9faaddcf494d2b6d3d263d1c6434be1b417e34aad6080333f66f7a1d0c94",
+      "reason": "All gates passed. Screenshot review found contradictory legacy brush help still asking Alpha lock off. Correct only that sentence; no paint/control/JS/test changes. New exact-source cumulative verification before publication."
+    }
+  ]
+}
