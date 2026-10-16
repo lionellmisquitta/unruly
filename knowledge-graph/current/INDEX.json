@@ -1,13 +1,14 @@
 {
-  "revision_id": "unruly-kgp-20261012T234848Z",
-  "current_checkpoint": "FILL2",
-  "source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+  "revision_id": "unruly-kgp-20261016T005526Z",
+  "current_checkpoint": "TIME1",
+  "source": "0bab964ad5722c5dc3fd6dbe67c5705125635447",
   "handover": "HANDOVER.md",
   "canonical_graph": [
     "graph/entities.jsonl",
     "graph/relationships.jsonl"
   ],
-  "checkpoint_ledger": "evidence/batch/post-paint1-20261013/checkpoints.json",
-  "decision_basis": "evidence/batch/post-paint1-20261013/user-decision-basis.md",
-  "read_policy": "Compact current docs/canonical query before affected evidence; no raw archive scan"
+  "checkpoint_ledger": "evidence/batch/post-fill2-20261016/checkpoints.json",
+  "decision_basis": "evidence/batch/post-fill2-20261016/user-decision-basis.md",
+  "read_policy": "Compact current docs/canonical query before affected evidence; no raw archive scan",
+  "next_checkpoint": "stroke stabilization/smoothing"
 }

@@ -1,0 +1,12 @@
+{
+  "source": "098c8463e86cd9d0c404381616314e306cc69fb4",
+  "publication_commit": "7ba69d8559c68ee99800fce5db976cb5b9d6a8f8",
+  "pages_run": 38436283497,
+  "pages_job": 115430984182,
+  "conclusion": "success",
+  "hosted_assets": 48,
+  "verification": "all hosted bytes compared to exact reviewed source by provider publication job",
+  "url": "https://lionellmisquitta.github.io/unruly/",
+  "merge": "636d6f3d03aafc89bc7317eee4a3756596d2fc8e",
+  "merged_tree_identical": true
+}

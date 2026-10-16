@@ -1,16 +1,25 @@
-# Read first
+# UNRULY knowledge graph — TIME1 current
 
-# UNRULY continuation — PAINT1 complete
+Updated 2026-10-16T00:55:26Z; revision unruly-kgp-20261016T005526Z.
 
-Graph revisionunruly-kgp-20261011T133431Z; recorded2026-10-11T13:34:31Z /2026-10-11T19:04:31+05:30 (Asia/Kolkata). Repository edition, canonical path knowledge-graph/current on knowledge/unruly-kgp; use .knowledge/CURRENT_GRAPH.json and package/hash verification. Legacy root knowledge-graph records are historical; original/raw evidence is unchanged there and excluded from this package.
+Seven published batches/eight checkpoints captured: HSL1, FX2, TIP1, TIP2+CAP1, CAP2, MOTION1, TIME1. Current app source `0bab964ad5722c5dc3fd6dbe67c5705125635447`; current main documentation baseline `a4f569ab9a0823bdb6b3a5eb18adcb30350a443b`. Read current main documentation first; application files on the knowledge branch are historical.
 
-One cumulative app: https://lionellmisquitta.github.io/unruly/. Verified appsource0ab2ab79f3c5e187e5e7f951a97c7c86814e6379; CI38140820796 SUCCESS:189 models/193 structured browser scenarios,86 source/test/config hashes. Pages38141558508 SUCCESS;32 hosted bytes verified. Previewpin6f429652ec3d15a6a987aa6e1dc16e8320f6e348. Native maincb1d52089c5cdd159050dc375b92750eb84d8271 unchanged; platform protection not verified. Application/docs basea90bafcc99713a79b8408cd5042ee38080dacdab; later documentation-only graph sync is not a newly tested app build.
+Next proposed: adjustable stroke stabilization/smoothing. Then precision drawing (ruler/symmetry/snapping, artwork vector nodes/curve pen/intersections); remaining painting/brush/colour/group effects and compatibility; canvas rotation/gestures, sticky notes/connectors/richer text, Motion mixed-target gap and device/performance acceptance; clean timelapse video export; artboards/dimensions/DPI/PNG/JPG/PDF; release-candidate validation. These are work groups, not fixed build counts. PDF references, artwork interchange, Drive sync and BYOK AI remain first-release scope; no early-access scope cut approved.
 
-Since prior UX2 graph refresh, six checkpoints: PERF1 populated baseline (tests/docs, no deployment), PERF2 renderer boundary, PERF3A sparse persistence, PERF3B decoded cache/compact undo, PERF4 retained compositing, combined PAINT1 round/soft raster painting and growing native smudge. Exact source/CI/artifact/Pages identities in evidence/batch and checkpoints.json.
+## Published baselines and limits
 
-Next folders/grouping, then masks, clipping/alpha lock, text/fonts, image/reference/clothing patterns, magic wand, magnetic selection and editable pen/path, bucket, gap-aware fill, lasso/enclosure fill, HSL/levels, curves/blur. These are roadmap groups, not a fixed remaining build count. Detailed selection/curve UX not locked. Later textured image tips/grain/splatter/sprinkle, brush-import feasibility, wet-media simulation, whole-canvas rotation (deferred), DPI/exchange, timelapse/neon path, sync/recovery and native optional.
+- **HSL1**: Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.
+- **FX2**: Layer/folder curves and blur baseline; no broad closure of all group effects.
+- **TIP1**: Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.
+- **TIP2/CAP1**: Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.
+- **CAP2**: Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open.
+- **MOTION1**: Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.
+- **TIME1**: Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.
 
-Performance first. Small occupied regions persist sparsely; current working paint buffer is a64-pixel-aligned growing rectangle, not unlimited/tiled disk-resident painting. Maintain32-layer,1024/1MP/4MiB working,8MiB board,100/16MiB history,8MiB decoded-cache and80MiB backing limits. Working/readback/heap/GPU data are separate budgets; total RAM and50-layer/device readiness unverified. Whole live patch still encodes per displayed preview; cold cache priming/full-viewport blending/command CPU remain costs. No dedicatedGPU/OPFS/Rust rewrite. Browser GPU availability does not prove this workload is GPU-accelerated. Native smudge grows without readback; mixed/vector/affine smudge still converts an active bounded snapshot and Undo restores prior artwork. Pixel paint preserves prior vectors/affine raster; round/soft tips do not reproduce all texture recipes.
+## Evidence and maintenance
 
+Selected exact source receipts and current roadmap/code-structure docs: `evidence/batch/post-fill2-20261016/`. Stable prior IDs/history preserved; replaced values retained in `history/pre-refresh-20261016.json` and append-only changelog. Historical records are not current operational instructions. No whole-checkpoint acceptance inferred from partial feature baselines.
 
-Read HANDOVER.md for the bounded continuation. Canonical JSONL is in graph/ and knowledge/. Evidence locators/hashes and executed checkpoint summaries are in evidence/batch/. Interactive viewers: exports/graph-explorer.html and exports/OnAir - unruly.html. Confirmed runtime facts, decisions, hypotheses and unknowns are separate.
+Same-session repository evidence is not independent human/device sign-off. No live hosted-byte recheck or app tests/deployment was performed for this graph-only refresh. Literal ES imports are bounded source linkage, not Graphify/AST or a call graph.
+
+Viewers: `exports/graph-explorer.html`, `exports/OnAir - unruly.html`; package: `../releases/UNRULY-Current.kgp.zip`. External `.knowledge/CURRENT_GRAPH.json` binds actual graph commit and hashes after upload.

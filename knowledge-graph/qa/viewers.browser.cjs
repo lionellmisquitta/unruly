@@ -14,7 +14,11 @@ const fs=require('fs'),assert=require('assert/strict');
   await page.locator('#content h2').filter({hasText:'Lasso selection and enclosure fill'}).waitFor({state:'visible'});
   assert.match(await page.locator('#content').innerText(),/blank artwork/);
   assert.equal(await page.locator('#content details').evaluate(e=>e.open),false,'Raw developer detail collapsed');
-  console.log('INSPECTED',name);await page.screenshot({path:out+'/'+name+'-fill2-inspector.png',fullPage:true});
+  await page.locator('#search').fill('TIME1 published baseline');
+  await page.locator(onair?'#results .result':'#results button').filter({hasText:'TIME1 published baseline'}).first().click();
+  await page.locator('#content h2').filter({hasText:'TIME1 published baseline'}).waitFor({state:'visible'});
+  assert.match(await page.locator('#content').innerText(),/2000 states/);
+  console.log('INSPECTED',name);await page.screenshot({path:out+'/'+name+'-time1-inspector.png',fullPage:true});
   if(!onair){
    await page.locator('#closePanel').click();const z=await page.locator('#zoomLabel').innerText();await page.locator('#zoomIn').click();assert.notEqual(await page.locator('#zoomLabel').innerText(),z);
    await page.locator('[data-lens="technical"]').click();assert(await page.locator('#nodes .node').count()>0);

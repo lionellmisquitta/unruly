@@ -1,0 +1,256 @@
+{
+  "graph/entities.jsonl": [
+    {
+      "id": "urn:unruly:cap:timelapse",
+      "entity_type": "Capability",
+      "name": "Timelapse",
+      "created_at": "2026-10-06T12:45:00Z",
+      "updated_at": "2026-10-08T10:28:09Z",
+      "status": "planned",
+      "description": "Local deterministic process replay and video export; retention/framing details remain unresolved.",
+      "attributes": {
+        "visual_layer": "business",
+        "plain_language_summary": "Local deterministic process replay and video export; retention/framing details remain unresolved.",
+        "revision_id": "unruly-kgp-20261008T102809Z",
+        "implementation_status": "NOT_VERIFIED_AS_IMPLEMENTED",
+        "intent_status": "requested",
+        "readiness": "future bounded handoff needed"
+      },
+      "evidence_refs": [
+        "ev-oct8-21176d94b62a"
+      ]
+    },
+    {
+      "id": "urn:unruly:cap:motiontrace",
+      "entity_type": "Capability",
+      "name": "Motion Trace",
+      "created_at": "2026-10-06T12:45:00Z",
+      "updated_at": "2026-10-08T10:28:09Z",
+      "status": "planned",
+      "description": "Move selected content along paths and audience-view pan/zoom with manual-first playback and optional commit-to-board.",
+      "attributes": {
+        "visual_layer": "business",
+        "plain_language_summary": "Move selected content along paths and audience-view pan/zoom with manual-first playback and optional commit-to-board.",
+        "revision_id": "unruly-kgp-20261008T102809Z",
+        "implementation_status": "NOT_VERIFIED_AS_IMPLEMENTED",
+        "intent_status": "requested",
+        "readiness": "future bounded handoff needed"
+      },
+      "evidence_refs": [
+        "ev-oct8-21176d94b62a"
+      ]
+    },
+    {
+      "id": "urn:unruly:release:browser-current",
+      "entity_type": "Release",
+      "name": "Current cumulative browser release — FILL2",
+      "description": "Current FILL2 published source 8a4a94225d01a19716915bc5f7d2551e9b414e73; CI 38322102199 SUCCESS (293 models/281 Chromium scenarios/123 source identities); Pages 38323959608 SUCCESS with 45 hosted assets matched. Browser main is cumulative; native former main retained at archive/native-main-2026-10-11. Physical pen/device latency/50-layer RAM readiness and independent approval remain unverified.",
+      "status": "hosted_verified",
+      "created_at": "2026-10-09T22:33:59Z",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "attributes": {
+        "visual_layer": "evidence",
+        "plain_language_summary": "Current FILL2 published source 8a4a94225d01a19716915bc5f7d2551e9b414e73; CI 38322102199 SUCCESS (293 models/281 Chromium scenarios/123 source identities); Pages 38323959608 SUCCESS with 45 hosted assets matched. Browser main is cumulative; native former main retained at archive/native-main-2026-10-11. Physical pen/device latency/50-layer RAM readiness and independent approval remain unverified.",
+        "revision_id": "unruly-kgp-20261012T234848Z",
+        "source_commit": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+        "qa_run": 38322102199,
+        "pages_run": 38323959608,
+        "hosted_assets": 45
+      },
+      "evidence_refs": [
+        "ev-cumulative-product-20261010",
+        "ev-brush-lab-size-repair-20261010",
+        "ev-c04-b02-20261010",
+        "ev-oct10-repository-ci",
+        "ev-c04-b03-20261010",
+        "ev-tablet-ux1-20261010",
+        "ev-tablet-ux2-20261010",
+        "ev-checkpoint-paint1-20261011",
+        "ev-perf-paint-provider-20261011",
+        "ev-refresh-provider",
+        "ev-refresh-fill2"
+      ]
+    },
+    {
+      "id": "urn:unruly:checkpoint:c04-next",
+      "entity_type": "Checkpoint",
+      "name": "Next proposed checkpoint — group/layer HSL and levels",
+      "description": "Proposed next bounded build after FILL2. Group compositing, mask/clip/effect ordering, persistence and preview/Undo require scope/UX lock before implementation.",
+      "status": "proposed",
+      "created_at": "2026-10-09T22:33:59Z",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "attributes": {
+        "visual_layer": "functional",
+        "plain_language_summary": "Proposed next bounded build after FILL2. Group compositing, mask/clip/effect ordering, persistence and preview/Undo require scope/UX lock before implementation.",
+        "revision_id": "unruly-kgp-20261012T234848Z"
+      },
+      "evidence_refs": [
+        "ev-c04-b02-20261010",
+        "ev-oct10-repository-ci",
+        "ev-roadmap-20261011",
+        "ev-refresh-user-basis"
+      ]
+    },
+    {
+      "id": "urn:unruly:roadmap:hsl-levels",
+      "entity_type": "Capability",
+      "name": "Group/layer hue, saturation and levels",
+      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "status": "planned",
+      "created_at": "2026-10-11T13:34:31Z",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "attributes": {
+        "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+        "revision_id": "unruly-kgp-20261012T234848Z",
+        "visual_layer": "functional",
+        "business_area": "Artist workflow roadmap",
+        "order_after_paint1": 11
+      },
+      "evidence_refs": [
+        "ev-roadmap-20261011",
+        "ev-user-batch-basis-20261011",
+        "ev-refresh-user-basis"
+      ]
+    },
+    {
+      "id": "urn:unruly:roadmap:curves-blur",
+      "entity_type": "Capability",
+      "name": "Curves and Gaussian blur",
+      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "status": "planned",
+      "created_at": "2026-10-11T13:34:31Z",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "attributes": {
+        "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+        "revision_id": "unruly-kgp-20261012T234848Z",
+        "visual_layer": "functional",
+        "business_area": "Artist workflow roadmap",
+        "order_after_paint1": 12
+      },
+      "evidence_refs": [
+        "ev-roadmap-20261011",
+        "ev-user-batch-basis-20261011",
+        "ev-refresh-user-basis"
+      ]
+    },
+    {
+      "id": "urn:unruly:roadmap:tip1-custom-image",
+      "entity_type": "Capability",
+      "name": "TIP1 — Custom uploaded image brush tips",
+      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "status": "planned",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "created_at": "2026-10-12T23:48:48Z",
+      "attributes": {
+        "visual_layer": "functional",
+        "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+        "revision_id": "unruly-kgp-20261012T234848Z"
+      },
+      "evidence_refs": [
+        "ev-refresh-user-basis"
+      ]
+    },
+    {
+      "id": "urn:unruly:roadmap:tip2-grain",
+      "entity_type": "Capability",
+      "name": "TIP2 — Imported grain and textured stamps",
+      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "status": "planned",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "created_at": "2026-10-12T23:48:48Z",
+      "attributes": {
+        "visual_layer": "functional",
+        "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+        "revision_id": "unruly-kgp-20261012T234848Z"
+      },
+      "evidence_refs": [
+        "ev-refresh-user-basis"
+      ]
+    },
+    {
+      "id": "urn:unruly:roadmap:capacity-recovery",
+      "entity_type": "Capability",
+      "name": "Measured larger-document capacity and recovery",
+      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "status": "planned",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "created_at": "2026-10-12T23:48:48Z",
+      "attributes": {
+        "visual_layer": "functional",
+        "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+        "revision_id": "unruly-kgp-20261012T234848Z"
+      },
+      "evidence_refs": [
+        "ev-refresh-user-basis"
+      ]
+    }
+  ],
+  "graph/relationships.jsonl": [],
+  "knowledge/confirmed.jsonl": [],
+  "knowledge/decisions.jsonl": [],
+  "knowledge/tactical.jsonl": [
+    {
+      "id": "tactical-current-fill2-20261013",
+      "kind": "tactical",
+      "statement": "Current FILL2 published source 8a4a94225d01a19716915bc5f7d2551e9b414e73; CI 38322102199 SUCCESS (293 models/281 Chromium scenarios/123 source identities); Pages 38323959608 SUCCESS with 45 hosted assets matched. Browser main is cumulative; native former main retained at archive/native-main-2026-10-11. Physical pen/device latency/50-layer RAM readiness and independent approval remain unverified.",
+      "created_at": "2026-10-12T23:48:48Z",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "subject_refs": [
+        "urn:unruly:release:browser-current"
+      ],
+      "evidence_refs": [
+        "ev-refresh-provider"
+      ],
+      "epistemic_status": "observed",
+      "status": "active",
+      "effective_from": "2026-10-12T23:48:48Z"
+    }
+  ],
+  "knowledge/unknowns.jsonl": [
+    {
+      "id": "k-timelapse-retention",
+      "kind": "unknown",
+      "statement": "Storage growth, framing and retention policy remain unresolved.",
+      "created_at": "2026-10-06T12:45:00Z",
+      "updated_at": "2026-10-06T12:45:00Z",
+      "status": "open",
+      "subject_refs": [
+        "urn:unruly:question:timelapse-retention"
+      ]
+    },
+    {
+      "id": "unknown-tip1-portability-20261013",
+      "kind": "unknown",
+      "statement": "TIP1 import formats/dimensions/bytes, alpha/grayscale interpretation, seeded deterministic jitter, preset/document asset portability and measured stamp budgets remain to be scoped; image tips are not implemented yet.",
+      "created_at": "2026-10-12T23:48:48Z",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "subject_refs": [
+        "urn:unruly:roadmap:tip1-custom-image"
+      ],
+      "evidence_refs": [
+        "ev-refresh-user-basis"
+      ],
+      "epistemic_status": "proposed",
+      "status": "open"
+    },
+    {
+      "id": "unknown-group-effects-20261013",
+      "kind": "unknown",
+      "statement": "Leaf masks/folders/clipping are implemented; folder masks, group HSL/levels/curves, isolated/pass-through composition and effect/mask/clip ordering remain unimplemented/unlocked.",
+      "created_at": "2026-10-12T23:48:48Z",
+      "updated_at": "2026-10-12T23:48:48Z",
+      "subject_refs": [
+        "urn:unruly:roadmap:hsl-levels",
+        "urn:unruly:roadmap:masks"
+      ],
+      "evidence_refs": [
+        "ev-refresh-mask1",
+        "ev-refresh-user-basis"
+      ],
+      "epistemic_status": "observed",
+      "status": "open"
+    }
+  ],
+  "evidence/evidence.jsonl": [],
+  "evidence/source_inventory.jsonl": []
+}

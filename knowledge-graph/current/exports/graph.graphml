@@ -16,7 +16,7 @@
 <node id="urn:unruly:cap:color"><data key="type">Capability</data><data key="name">Color system</data></node>
 <node id="urn:unruly:cap:effects"><data key="type">Capability</data><data key="name">Effects and fill</data></node>
 <node id="urn:unruly:cap:whiteboard"><data key="type">Capability</data><data key="name">Whiteboarding objects</data></node>
-<node id="urn:unruly:cap:timelapse"><data key="type">Capability</data><data key="name">Timelapse</data></node>
+<node id="urn:unruly:cap:timelapse"><data key="type">Capability</data><data key="name">Timelapse recording and replay</data></node>
 <node id="urn:unruly:cap:motiontrace"><data key="type">Capability</data><data key="name">Motion Trace</data></node>
 <node id="urn:unruly:cap:exchange"><data key="type">Capability</data><data key="name">Import/export and exchange</data></node>
 <node id="urn:unruly:cap:ai"><data key="type">Capability</data><data key="name">BYOK AI assistance</data></node>
@@ -259,14 +259,14 @@
 <node id="urn:unruly:code:smudge"><data key="type">CodeArtifact</data><data key="name">smudge.js</data></node>
 <node id="urn:unruly:code:pixel-surface"><data key="type">CodeArtifact</data><data key="name">pixel-surface.js</data></node>
 <node id="urn:unruly:code:app"><data key="type">CodeArtifact</data><data key="name">app.js</data></node>
-<node id="urn:unruly:release:browser-current"><data key="type">Release</data><data key="name">Current cumulative browser release — FILL2</data></node>
+<node id="urn:unruly:release:browser-current"><data key="type">Release</data><data key="name">Current cumulative browser release — TIME1</data></node>
 <node id="urn:unruly:ci:qa-workflow"><data key="type">CodeArtifact</data><data key="name">Cumulative browser QA workflow</data></node>
 <node id="urn:unruly:cap:smudge"><data key="type">Capability</data><data key="name">Active-layer smudge</data></node>
 <node id="urn:unruly:module:raster"><data key="type">Module</data><data key="name">Bounded v4 raster strokes</data></node>
 <node id="urn:unruly:cap:performance"><data key="type">Capability</data><data key="name">Measured browser performance foundation</data></node>
 <node id="urn:unruly:branch:main"><data key="type">Branch</data><data key="name">Cumulative browser main</data></node>
 <node id="urn:unruly:decision:one-preview"><data key="type">Decision</data><data key="name">One cumulative browser-main product</data></node>
-<node id="urn:unruly:checkpoint:c04-next"><data key="type">Checkpoint</data><data key="name">Next proposed checkpoint — group/layer HSL and levels</data></node>
+<node id="urn:unruly:checkpoint:c04-next"><data key="type">Checkpoint</data><data key="name">Next proposed checkpoint — stroke stabilization/smoothing</data></node>
 <node id="urn:unruly:roadmap:folders"><data key="type">Capability</data><data key="name">Layer folders and grouping</data></node>
 <node id="urn:unruly:roadmap:masks"><data key="type">Capability</data><data key="name">Layer and folder masks</data></node>
 <node id="urn:unruly:roadmap:clipping"><data key="type">Capability</data><data key="name">Clipping and alpha lock</data></node>
@@ -277,8 +277,8 @@
 <node id="urn:unruly:roadmap:bucket"><data key="type">Capability</data><data key="name">Paint bucket</data></node>
 <node id="urn:unruly:roadmap:gap-fill"><data key="type">Capability</data><data key="name">Gap-aware fill</data></node>
 <node id="urn:unruly:roadmap:enclosure-fill"><data key="type">Capability</data><data key="name">Lasso/enclosure fill</data></node>
-<node id="urn:unruly:roadmap:hsl-levels"><data key="type">Capability</data><data key="name">Group/layer hue, saturation and levels</data></node>
-<node id="urn:unruly:roadmap:curves-blur"><data key="type">Capability</data><data key="name">Curves and Gaussian blur</data></node>
+<node id="urn:unruly:roadmap:hsl-levels"><data key="type">Capability</data><data key="name">HSL and levels</data></node>
+<node id="urn:unruly:roadmap:curves-blur"><data key="type">Capability</data><data key="name">Curves and blur</data></node>
 <node id="urn:unruly:decision:D-P01"><data key="type">Decision</data><data key="name">D-P01 — Keep one cumulative application and the existing preview</data></node>
 <node id="urn:unruly:decision:D-P02"><data key="type">Decision</data><data key="name">D-P02 — Benchmark populated 30–50-layer artist workflows before expanding capacity</data></node>
 <node id="urn:unruly:decision:D-P03"><data key="type">Decision</data><data key="name">D-P03 — Separate document operations from rendering before replacing rendering internals</data></node>
@@ -341,9 +341,40 @@
 <node id="urn:unruly:code:text"><data key="type">CodeArtifact</data><data key="name">text.js</data></node>
 <node id="urn:unruly:code:u2"><data key="type">CodeArtifact</data><data key="name">u2.js</data></node>
 <node id="urn:unruly:code:wand"><data key="type">CodeArtifact</data><data key="name">wand.js</data></node>
-<node id="urn:unruly:roadmap:tip1-custom-image"><data key="type">Capability</data><data key="name">TIP1 — Custom uploaded image brush tips</data></node>
-<node id="urn:unruly:roadmap:tip2-grain"><data key="type">Capability</data><data key="name">TIP2 — Imported grain and textured stamps</data></node>
-<node id="urn:unruly:roadmap:capacity-recovery"><data key="type">Capability</data><data key="name">Measured larger-document capacity and recovery</data></node>
+<node id="urn:unruly:roadmap:tip1-custom-image"><data key="type">Capability</data><data key="name">Custom image brush tips</data></node>
+<node id="urn:unruly:roadmap:tip2-grain"><data key="type">Capability</data><data key="name">Brush grain</data></node>
+<node id="urn:unruly:roadmap:capacity-recovery"><data key="type">Capability</data><data key="name">Measured capacity and recovery</data></node>
+<node id="urn:unruly:checkpoint:hsl1"><data key="type">Capability</data><data key="name">HSL1 published baseline</data></node>
+<node id="urn:unruly:checkpoint:fx2"><data key="type">Capability</data><data key="name">FX2 published baseline</data></node>
+<node id="urn:unruly:checkpoint:tip1"><data key="type">Capability</data><data key="name">TIP1 published baseline</data></node>
+<node id="urn:unruly:checkpoint:tip2"><data key="type">Capability</data><data key="name">TIP2 published baseline</data></node>
+<node id="urn:unruly:checkpoint:cap1"><data key="type">Capability</data><data key="name">CAP1 published baseline</data></node>
+<node id="urn:unruly:checkpoint:cap2"><data key="type">Capability</data><data key="name">CAP2 published baseline</data></node>
+<node id="urn:unruly:checkpoint:motion1"><data key="type">Capability</data><data key="name">MOTION1 published baseline</data></node>
+<node id="urn:unruly:checkpoint:time1"><data key="type">Capability</data><data key="name">TIME1 published baseline</data></node>
+<node id="urn:unruly:source:browser-timelapse-ui.js"><data key="type">SourceFile</data><data key="name">timelapse-ui.js</data></node>
+<node id="urn:unruly:source:browser-timelapse.js"><data key="type">SourceFile</data><data key="name">timelapse.js</data></node>
+<node id="urn:unruly:source:browser-timelapse-store.js"><data key="type">SourceFile</data><data key="name">timelapse-store.js</data></node>
+<node id="urn:unruly:source:browser-filters.js"><data key="type">SourceFile</data><data key="name">filters.js</data></node>
+<node id="urn:unruly:source:browser-adjustments.js"><data key="type">SourceFile</data><data key="name">adjustments.js</data></node>
+<node id="urn:unruly:source:browser-folders.js"><data key="type">SourceFile</data><data key="name">folders.js</data></node>
+<node id="urn:unruly:source:browser-motion-region.js"><data key="type">SourceFile</data><data key="name">motion-region.js</data></node>
+<node id="urn:unruly:source:browser-motion.js"><data key="type">SourceFile</data><data key="name">motion.js</data></node>
+<node id="urn:unruly:source:browser-model.js"><data key="type">SourceFile</data><data key="name">model.js</data></node>
+<node id="urn:unruly:source:browser-wand.js"><data key="type">SourceFile</data><data key="name">wand.js</data></node>
+<node id="urn:unruly:source:browser-lasso-region.js"><data key="type">SourceFile</data><data key="name">lasso-region.js</data></node>
+<node id="urn:unruly:source:browser-adjustment-ui.js"><data key="type">SourceFile</data><data key="name">adjustment-ui.js</data></node>
+<node id="urn:unruly:source:browser-motion-ui.js"><data key="type">SourceFile</data><data key="name">motion-ui.js</data></node>
+<node id="urn:unruly:source:browser-grain-ui.js"><data key="type">SourceFile</data><data key="name">grain-ui.js</data></node>
+<node id="urn:unruly:source:browser-grain.js"><data key="type">SourceFile</data><data key="name">grain.js</data></node>
+<node id="urn:unruly:source:browser-image-import.js"><data key="type">SourceFile</data><data key="name">image-import.js</data></node>
+<node id="urn:unruly:source:browser-custom-tips-ui.js"><data key="type">SourceFile</data><data key="name">custom-tips-ui.js</data></node>
+<node id="urn:unruly:source:browser-custom-tips.js"><data key="type">SourceFile</data><data key="name">custom-tips.js</data></node>
+<node id="urn:unruly:source:browser-pen-input.js"><data key="type">SourceFile</data><data key="name">pen-input.js</data></node>
+<node id="urn:unruly:source:browser-raster.js"><data key="type">SourceFile</data><data key="name">raster.js</data></node>
+<node id="urn:unruly:source:browser-text.js"><data key="type">SourceFile</data><data key="name">text.js</data></node>
+<node id="urn:unruly:source:browser-effect-compositor.js"><data key="type">SourceFile</data><data key="name">effect-compositor.js</data></node>
+<node id="urn:unruly:source:browser-filter-ui.js"><data key="type">SourceFile</data><data key="name">filter-ui.js</data></node>
 <edge id="urn:rel:0001" source="urn:unruly:project" target="urn:unruly:cap:canvas"><data key="type">OWNS</data></edge>
 <edge id="urn:rel:0002" source="urn:unruly:project" target="urn:unruly:cap:drawing"><data key="type">OWNS</data></edge>
 <edge id="urn:rel:0003" source="urn:unruly:project" target="urn:unruly:cap:brushes"><data key="type">OWNS</data></edge>
@@ -800,5 +831,38 @@
 <edge id="urn:unruly:rel:batch-fcd702d756ce25a5a8c8" source="urn:unruly:cap:magnetic-selection" target="urn:unruly:code:magnetic-selection"><data key="type">IMPLEMENTED_BY</data></edge>
 <edge id="urn:unruly:rel:batch-3c626a17f821796d3b7f" source="urn:unruly:cap:gap-aware-bucket" target="urn:unruly:code:bucket-fill"><data key="type">IMPLEMENTED_BY</data></edge>
 <edge id="urn:unruly:rel:batch-32dba1d2edc837b4d917" source="urn:unruly:cap:geometric-fill" target="urn:unruly:code:polygon-fill"><data key="type">IMPLEMENTED_BY</data></edge>
+<edge id="rel-hsl1-release-20261016" source="urn:unruly:checkpoint:hsl1" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-fx2-release-20261016" source="urn:unruly:checkpoint:fx2" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-tip1-release-20261016" source="urn:unruly:checkpoint:tip1" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-tip2-release-20261016" source="urn:unruly:checkpoint:tip2" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-cap1-release-20261016" source="urn:unruly:checkpoint:cap1" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-cap2-release-20261016" source="urn:unruly:checkpoint:cap2" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-motion1-release-20261016" source="urn:unruly:checkpoint:motion1" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-time1-release-20261016" source="urn:unruly:checkpoint:time1" target="urn:unruly:release:browser-current"><data key="type">PART_OF</data></edge>
+<edge id="rel-import-timelapse-ui-timelapse-20261016" source="urn:unruly:source:browser-timelapse-ui.js" target="urn:unruly:source:browser-timelapse.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-timelapse-ui-timelapse-store-20261016" source="urn:unruly:source:browser-timelapse-ui.js" target="urn:unruly:source:browser-timelapse-store.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-filters-adjustments-20261016" source="urn:unruly:source:browser-filters.js" target="urn:unruly:source:browser-adjustments.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-filters-folders-20261016" source="urn:unruly:source:browser-filters.js" target="urn:unruly:source:browser-folders.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-region-motion-20261016" source="urn:unruly:source:browser-motion-region.js" target="urn:unruly:source:browser-motion.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-region-model-20261016" source="urn:unruly:source:browser-motion-region.js" target="urn:unruly:source:browser-model.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-region-wand-20261016" source="urn:unruly:source:browser-motion-region.js" target="urn:unruly:source:browser-wand.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-region-lasso-region-20261016" source="urn:unruly:source:browser-motion-region.js" target="urn:unruly:source:browser-lasso-region.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-adjustment-ui-adjustments-20261016" source="urn:unruly:source:browser-adjustment-ui.js" target="urn:unruly:source:browser-adjustments.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-ui-motion-20261016" source="urn:unruly:source:browser-motion-ui.js" target="urn:unruly:source:browser-motion.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-grain-ui-grain-20261016" source="urn:unruly:source:browser-grain-ui.js" target="urn:unruly:source:browser-grain.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-grain-ui-image-import-20261016" source="urn:unruly:source:browser-grain-ui.js" target="urn:unruly:source:browser-image-import.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-custom-tips-ui-grain-ui-20261016" source="urn:unruly:source:browser-custom-tips-ui.js" target="urn:unruly:source:browser-grain-ui.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-custom-tips-ui-grain-20261016" source="urn:unruly:source:browser-custom-tips-ui.js" target="urn:unruly:source:browser-grain.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-custom-tips-ui-custom-tips-20261016" source="urn:unruly:source:browser-custom-tips-ui.js" target="urn:unruly:source:browser-custom-tips.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-custom-tips-ui-image-import-20261016" source="urn:unruly:source:browser-custom-tips-ui.js" target="urn:unruly:source:browser-image-import.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-custom-tips-grain-20261016" source="urn:unruly:source:browser-custom-tips.js" target="urn:unruly:source:browser-grain.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-custom-tips-pen-input-20261016" source="urn:unruly:source:browser-custom-tips.js" target="urn:unruly:source:browser-pen-input.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-folders-20261016" source="urn:unruly:source:browser-motion.js" target="urn:unruly:source:browser-folders.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-raster-20261016" source="urn:unruly:source:browser-motion.js" target="urn:unruly:source:browser-raster.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-motion-text-20261016" source="urn:unruly:source:browser-motion.js" target="urn:unruly:source:browser-text.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-timelapse-store-timelapse-20261016" source="urn:unruly:source:browser-timelapse-store.js" target="urn:unruly:source:browser-timelapse.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-effect-compositor-filters-20261016" source="urn:unruly:source:browser-effect-compositor.js" target="urn:unruly:source:browser-filters.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-effect-compositor-adjustments-20261016" source="urn:unruly:source:browser-effect-compositor.js" target="urn:unruly:source:browser-adjustments.js"><data key="type">DEPENDS_ON</data></edge>
+<edge id="rel-import-filter-ui-filters-20261016" source="urn:unruly:source:browser-filter-ui.js" target="urn:unruly:source:browser-filters.js"><data key="type">DEPENDS_ON</data></edge>
 </graph>
 </graphml>

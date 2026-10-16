@@ -1,0 +1,65 @@
+[
+  {
+    "checkpoint": "HSL1",
+    "summary": "Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.",
+    "source": "098c8463e86cd9d0c404381616314e306cc69fb4",
+    "publication_receipt": "evidence/batch/post-fill2-20261016/CHG-UNRULY-HSL1-1013/PUBLICATION_RECEIPT.json",
+    "publication_run": 38436283497,
+    "publication": "7ba69d8559c68ee99800fce5db976cb5b9d6a8f8",
+    "merge": "636d6f3d03aafc89bc7317eee4a3756596d2fc8e"
+  },
+  {
+    "checkpoint": "FX2",
+    "summary": "Layer/folder curves and blur baseline; no broad closure of all group effects.",
+    "source": "6c3e49f942675e020cc517f508c3bfd5473d7148",
+    "publication_receipt": "evidence/batch/post-fill2-20261016/CHG-UNRULY-FX2-1013/PUBLICATION_RECEIPT.json",
+    "publication_run": 38443319147,
+    "publication": "8b4538217463c43847c0e6fdddf0c3660fcc1b92",
+    "merge": "a88803b302a8dbf9585a7af8c168b0ae48fb81e2"
+  },
+  {
+    "checkpoint": "TIP1",
+    "summary": "Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.",
+    "source": "a415dd3530bd0ff8cdb7479cd60e22e2d8f0dd33",
+    "publication_receipt": "evidence/batch/post-fill2-20261016/CHG-UNRULY-TIP1-1014/PUBLICATION_RECEIPT.json",
+    "publication_run": 38585969301,
+    "publication": "c0cccf354d23914be7b115cedf57b7a2769be948",
+    "merge": "95911bae5c52f68757bae658bbd8685d5121b1a2"
+  },
+  {
+    "checkpoint": "TIP2/CAP1",
+    "summary": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+    "source": "3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba",
+    "publication_receipt": "evidence/batch/post-fill2-20261016/CHG-UNRULY-TIP2CAP-1015/PUBLICATION_RECEIPT.json",
+    "publication_run": 38673569838,
+    "publication": "eeca0961697662996aa2c752db4d9d350dd23f4a",
+    "merge": "ff4b756709da36cff77edab0ed56aeb67e39ff52"
+  },
+  {
+    "checkpoint": "CAP2",
+    "summary": "Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open.",
+    "source": "90630dd21ab35c5b4000ce93bcbeddd98017a8f5",
+    "publication_receipt": "evidence/batch/post-fill2-20261016/CHG-UNRULY-CAP2-1015/PUBLICATION_RECEIPT.json",
+    "publication_run": 38731877005,
+    "publication": "6196d39e47b90bae9be279b18c789588cd053141",
+    "merge": "2fff3989c3964bbd6bcdcef11f943b088cb066db"
+  },
+  {
+    "checkpoint": "MOTION1",
+    "summary": "Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.",
+    "source": "81a452809df78203b067e9e6a7e02569f1b4c409",
+    "publication_receipt": "evidence/batch/post-fill2-20261016/CHG-UNRULY-MOTION1-1015/PUBLICATION_RECEIPT.json",
+    "publication_run": 38771750451,
+    "publication": "8a558d4ac42201f1a2d93fa69fb337c5511c73c0",
+    "merge": "f7ae0187bb151bc4283458ac4ecb614743538917"
+  },
+  {
+    "checkpoint": "TIME1",
+    "summary": "Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.",
+    "source": "0bab964ad5722c5dc3fd6dbe67c5705125635447",
+    "publication_receipt": "evidence/batch/post-fill2-20261016/CHG-UNRULY-TIME1-1015/PUBLICATION_RECEIPT.json",
+    "publication_run": 38786233048,
+    "publication": "5eead4c6265c6b9d181dd2255246df8ddfb400f6",
+    "merge": "486b114c50b98de0effe3806e69306ea43619991"
+  }
+]

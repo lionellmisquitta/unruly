@@ -4,25 +4,26 @@
   "name": "unruly",
   "package_id": "urn:kgp:package:unruly",
   "created_at": "2026-10-06T12:32:05Z",
-  "updated_at": "2026-10-13T00:11:10Z",
+  "updated_at": "2026-10-16T00:56:09Z",
   "canonical_format": "jsonl",
-  "content_sha256": "e28b199b42a61475ffd8b531ba62c801f4c5a60125cb366165664de0c05322a6",
+  "content_sha256": "99df936cf7f9088ee872fba741669436f089778f465df837eb098aaaeeced145",
   "validation": {
     "status": "valid",
-    "validated_at": "2026-10-13T00:11:10Z"
+    "validated_at": "2026-10-16T00:56:09Z",
+    "scope": "canonical schema, strict scope, security scan, embedded viewer payload/parity; runtime QA separately bound"
   },
   "counts": {
-    "graph/entities.jsonl": 343,
-    "graph/relationships.jsonl": 456,
-    "knowledge/confirmed.jsonl": 44,
+    "graph/entities.jsonl": 374,
+    "graph/relationships.jsonl": 489,
+    "knowledge/confirmed.jsonl": 52,
     "knowledge/tribal_knowledge.jsonl": 0,
-    "knowledge/tactical.jsonl": 9,
-    "knowledge/decisions.jsonl": 60,
+    "knowledge/tactical.jsonl": 10,
+    "knowledge/decisions.jsonl": 63,
     "knowledge/ideas.jsonl": 3,
     "knowledge/contradictions.jsonl": 5,
-    "knowledge/unknowns.jsonl": 24,
-    "evidence/evidence.jsonl": 143,
-    "evidence/source_inventory.jsonl": 165,
+    "knowledge/unknowns.jsonl": 26,
+    "evidence/evidence.jsonl": 144,
+    "evidence/source_inventory.jsonl": 194,
     "conversations/index.jsonl": 0,
     "conversations/active": 0,
     "conversations/archived": 0
@@ -42,7 +43,7 @@
   "visualization": {
     "status": "complete",
     "overview_mode": "concepts",
-    "concept_count": 169,
+    "concept_count": 200,
     "lenses": [
       "overview",
       "business",
@@ -52,11 +53,11 @@
     ],
     "two_dimensional_view": "Preserved existing SVG explorer template; refreshed canonical payload. Bundled generic generator canvas fallback superseded in this edition."
   },
-  "updated_at_local": "2026-10-13T05:41:10+05:30",
+  "updated_at_local": "2026-10-16T06:26:09+05:30",
   "timezone": "Asia/Kolkata",
-  "revision_id": "unruly-kgp-20261012T234848Z",
+  "revision_id": "unruly-kgp-20261016T005526Z",
   "graph_branch": "knowledge/unruly-kgp",
-  "handoff_source_commit": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+  "handoff_source_commit": "0bab964ad5722c5dc3fd6dbe67c5705125635447",
   "mode": "incremental post-verification maintenance",
   "conversation_policy": {
     "capture": "Bounded non-sensitive project decision excerpts only; no full reconstructed raw chat",
@@ -64,12 +65,12 @@
     "routine_retrieval": "Canonical current edition and compact records first; no archive rescan"
   },
   "created_at_local": "2026-10-06T18:02:05+05:30",
-  "last_knowledge_update_at": "2026-10-12T23:48:48Z",
-  "last_knowledge_update_at_local": "2026-10-13T05:18:48+05:30",
+  "last_knowledge_update_at": "2026-10-16T00:55:26Z",
+  "last_knowledge_update_at_local": "2026-10-16T06:26:09+05:30",
   "freshness_pointer_path": ".knowledge/CURRENT_GRAPH.json",
   "source_status": {
-    "live_pages_source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
-    "latest_candidate_source": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
+    "live_pages_source": "0bab964ad5722c5dc3fd6dbe67c5705125635447",
+    "latest_candidate_source": "0bab964ad5722c5dc3fd6dbe67c5705125635447",
     "candidate_ci": "success",
     "private_lab": "SUPERSEDED_DELIVERY_SURFACE",
     "browser_main": "cumulative",
@@ -92,14 +93,28 @@
     "C04-B02 hosted verified; next C04-B03 smudge. One cumulative existing GitHub Pages URL."
   ],
   "notes": [
-    "FILL2 verified/published;12checkpoint batch since PAINT1 (10feature/2feedback repairs).",
-    "Next proposed HSL/levels, then curves/blur, TIP1 images, TIP2 grain, measured capacity/recovery.",
-    "No physical50-layer/RAM/GPU/disk-residency/native-paste guarantee.",
-    "Single conditional user graph authorization fulfilled; future refresh requires explicit permission.",
-    "Historical root/original/raw sources preserved unchanged; current edition authoritative."
+    "TIME1 current; seven application batches/eight checkpoints since FILL2 captured.",
+    "Next proposed stabilization/smoothing; drawing/painting before video/artwork export.",
+    "Motion mixed-target, custom-tip alpha-lock,32-layer cap, physical-device/long-session, cloud/AI and other roadmap gaps retained.",
+    "No app tests/deployment for graph-only refresh. Graphify/AST not executed; selected literal imports recorded.",
+    "Original/raw/historical source records preserved."
   ],
-  "application_docs_baseline": "110d49cb555f815acc2e8f19121b4ea8f68edffa",
+  "application_docs_baseline": "a4f569ab9a0823bdb6b3a5eb18adcb30350a443b",
   "edition": "repository",
   "canonical_repository_path": "knowledge-graph/current",
-  "previous_revision": "unruly-kgp-20261011T133431Z"
+  "previous_revision": "unruly-kgp-20261012T234848Z",
+  "refresh": {
+    "published_batches": 7,
+    "checkpoints": [
+      "HSL1",
+      "FX2",
+      "TIP1",
+      "TIP2",
+      "CAP1",
+      "CAP2",
+      "MOTION1",
+      "TIME1"
+    ],
+    "scope": "incremental selected evidence; no application changes"
+  }
 }

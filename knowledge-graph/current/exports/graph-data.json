@@ -1,10 +1,10 @@
 {
   "meta": {
     "name": "unruly",
-    "nodes": 343,
-    "edges": 456,
+    "nodes": 374,
+    "edges": 489,
     "overview_mode": "concepts",
-    "concept_count": 169,
+    "concept_count": 200,
     "technical_count": 59,
     "credit": "lionellmisquitta.com"
   },
@@ -516,12 +516,12 @@
     },
     {
       "id": "urn:unruly:cap:timelapse",
-      "name": "Timelapse",
+      "name": "Timelapse recording and replay",
       "type": "Capability",
       "layers": [
         "business"
       ],
-      "description": "Local deterministic process replay and video export; retention/framing details remain unresolved.",
+      "description": "Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -530,28 +530,30 @@
       "state_effect": null,
       "business_area": null,
       "evidence_refs": [
-        "ev-oct8-21176d94b62a"
+        "ev-oct8-21176d94b62a",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:cap:timelapse",
         "entity_type": "Capability",
-        "name": "Timelapse",
+        "name": "Timelapse recording and replay",
         "created_at": "2026-10-06T12:45:00Z",
-        "updated_at": "2026-10-08T10:28:09Z",
-        "status": "planned",
-        "description": "Local deterministic process replay and video export; retention/framing details remain unresolved.",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "partially_implemented",
+        "description": "Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.",
         "attributes": {
           "visual_layer": "business",
-          "plain_language_summary": "Local deterministic process replay and video export; retention/framing details remain unresolved.",
-          "revision_id": "unruly-kgp-20261008T102809Z",
+          "plain_language_summary": "Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.",
+          "revision_id": "unruly-kgp-20261016T005526Z",
           "implementation_status": "NOT_VERIFIED_AS_IMPLEMENTED",
           "intent_status": "requested",
           "readiness": "future bounded handoff needed"
         },
         "evidence_refs": [
-          "ev-oct8-21176d94b62a"
+          "ev-oct8-21176d94b62a",
+          "ev-post-fill2-20261016"
         ]
       }
     },
@@ -562,7 +564,7 @@
       "layers": [
         "business"
       ],
-      "description": "Move selected content along paths and audience-view pan/zoom with manual-first playback and optional commit-to-board.",
+      "description": "Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -571,7 +573,8 @@
       "state_effect": null,
       "business_area": null,
       "evidence_refs": [
-        "ev-oct8-21176d94b62a"
+        "ev-oct8-21176d94b62a",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
@@ -580,19 +583,20 @@
         "entity_type": "Capability",
         "name": "Motion Trace",
         "created_at": "2026-10-06T12:45:00Z",
-        "updated_at": "2026-10-08T10:28:09Z",
-        "status": "planned",
-        "description": "Move selected content along paths and audience-view pan/zoom with manual-first playback and optional commit-to-board.",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "partially_implemented",
+        "description": "Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.",
         "attributes": {
           "visual_layer": "business",
-          "plain_language_summary": "Move selected content along paths and audience-view pan/zoom with manual-first playback and optional commit-to-board.",
-          "revision_id": "unruly-kgp-20261008T102809Z",
+          "plain_language_summary": "Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.",
+          "revision_id": "unruly-kgp-20261016T005526Z",
           "implementation_status": "NOT_VERIFIED_AS_IMPLEMENTED",
           "intent_status": "requested",
           "readiness": "future bounded handoff needed"
         },
         "evidence_refs": [
-          "ev-oct8-21176d94b62a"
+          "ev-oct8-21176d94b62a",
+          "ev-post-fill2-20261016"
         ]
       }
     },
@@ -9860,12 +9864,12 @@
     },
     {
       "id": "urn:unruly:release:browser-current",
-      "name": "Current cumulative browser release — FILL2",
+      "name": "Current cumulative browser release — TIME1",
       "type": "Release",
       "layers": [
         "evidence"
       ],
-      "description": "Current FILL2 published source 8a4a94225d01a19716915bc5f7d2551e9b414e73; CI 38322102199 SUCCESS (293 models/281 Chromium scenarios/123 source identities); Pages 38323959608 SUCCESS with 45 hosted assets matched. Browser main is cumulative; native former main retained at archive/native-main-2026-10-11. Physical pen/device latency/50-layer RAM readiness and independent approval remain unverified.",
+      "description": "TIME1 published and verified at 0bab964ad5722c5dc3fd6dbe67c5705125635447; seven published batches/eight checkpoints since FILL2. 386 model tests,348 JSON Chromium scenarios plus2 legacy checks per retained QA receipt;61 hosted files matched. Physical/device/full-release acceptance remains open.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -9884,22 +9888,23 @@
         "ev-checkpoint-paint1-20261011",
         "ev-perf-paint-provider-20261011",
         "ev-refresh-provider",
-        "ev-refresh-fill2"
+        "ev-refresh-fill2",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:release:browser-current",
         "entity_type": "Release",
-        "name": "Current cumulative browser release — FILL2",
-        "description": "Current FILL2 published source 8a4a94225d01a19716915bc5f7d2551e9b414e73; CI 38322102199 SUCCESS (293 models/281 Chromium scenarios/123 source identities); Pages 38323959608 SUCCESS with 45 hosted assets matched. Browser main is cumulative; native former main retained at archive/native-main-2026-10-11. Physical pen/device latency/50-layer RAM readiness and independent approval remain unverified.",
+        "name": "Current cumulative browser release — TIME1",
+        "description": "TIME1 published and verified at 0bab964ad5722c5dc3fd6dbe67c5705125635447; seven published batches/eight checkpoints since FILL2. 386 model tests,348 JSON Chromium scenarios plus2 legacy checks per retained QA receipt;61 hosted files matched. Physical/device/full-release acceptance remains open.",
         "status": "hosted_verified",
         "created_at": "2026-10-09T22:33:59Z",
-        "updated_at": "2026-10-12T23:48:48Z",
+        "updated_at": "2026-10-16T00:55:26Z",
         "attributes": {
           "visual_layer": "evidence",
-          "plain_language_summary": "Current FILL2 published source 8a4a94225d01a19716915bc5f7d2551e9b414e73; CI 38322102199 SUCCESS (293 models/281 Chromium scenarios/123 source identities); Pages 38323959608 SUCCESS with 45 hosted assets matched. Browser main is cumulative; native former main retained at archive/native-main-2026-10-11. Physical pen/device latency/50-layer RAM readiness and independent approval remain unverified.",
-          "revision_id": "unruly-kgp-20261012T234848Z",
+          "plain_language_summary": "TIME1 published and verified at 0bab964ad5722c5dc3fd6dbe67c5705125635447; seven published batches/eight checkpoints since FILL2. 386 model tests,348 JSON Chromium scenarios plus2 legacy checks per retained QA receipt;61 hosted files matched. Physical/device/full-release acceptance remains open.",
+          "revision_id": "unruly-kgp-20261016T005526Z",
           "source_commit": "8a4a94225d01a19716915bc5f7d2551e9b414e73",
           "qa_run": 38322102199,
           "pages_run": 38323959608,
@@ -9916,7 +9921,8 @@
           "ev-checkpoint-paint1-20261011",
           "ev-perf-paint-provider-20261011",
           "ev-refresh-provider",
-          "ev-refresh-fill2"
+          "ev-refresh-fill2",
+          "ev-post-fill2-20261016"
         ]
       }
     },
@@ -10180,12 +10186,12 @@
     },
     {
       "id": "urn:unruly:checkpoint:c04-next",
-      "name": "Next proposed checkpoint — group/layer HSL and levels",
+      "name": "Next proposed checkpoint — stroke stabilization/smoothing",
       "type": "Checkpoint",
       "layers": [
         "functional"
       ],
-      "description": "Proposed next bounded build after FILL2. Group compositing, mask/clip/effect ordering, persistence and preview/Undo require scope/UX lock before implementation.",
+      "description": "Next proposed: adjustable stroke stabilization/smoothing. Then precision drawing (ruler/symmetry/snapping, artwork vector nodes/curve pen/intersections); remaining painting/brush/colour/group effects and compatibility; canvas rotation/gestures, sticky notes/connectors/richer text, Motion mixed-target gap and device/performance acceptance; clean timelapse video export; artboards/dimensions/DPI/PNG/JPG/PDF; release-candidate validation. These are work groups, not fixed build counts. PDF references, artwork interchange, Drive sync and BYOK AI remain first-release scope; no early-access scope cut approved.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -10197,28 +10203,30 @@
         "ev-c04-b02-20261010",
         "ev-oct10-repository-ci",
         "ev-roadmap-20261011",
-        "ev-refresh-user-basis"
+        "ev-refresh-user-basis",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:checkpoint:c04-next",
         "entity_type": "Checkpoint",
-        "name": "Next proposed checkpoint — group/layer HSL and levels",
-        "description": "Proposed next bounded build after FILL2. Group compositing, mask/clip/effect ordering, persistence and preview/Undo require scope/UX lock before implementation.",
+        "name": "Next proposed checkpoint — stroke stabilization/smoothing",
+        "description": "Next proposed: adjustable stroke stabilization/smoothing. Then precision drawing (ruler/symmetry/snapping, artwork vector nodes/curve pen/intersections); remaining painting/brush/colour/group effects and compatibility; canvas rotation/gestures, sticky notes/connectors/richer text, Motion mixed-target gap and device/performance acceptance; clean timelapse video export; artboards/dimensions/DPI/PNG/JPG/PDF; release-candidate validation. These are work groups, not fixed build counts. PDF references, artwork interchange, Drive sync and BYOK AI remain first-release scope; no early-access scope cut approved.",
         "status": "proposed",
         "created_at": "2026-10-09T22:33:59Z",
-        "updated_at": "2026-10-12T23:48:48Z",
+        "updated_at": "2026-10-16T00:55:26Z",
         "attributes": {
           "visual_layer": "functional",
-          "plain_language_summary": "Proposed next bounded build after FILL2. Group compositing, mask/clip/effect ordering, persistence and preview/Undo require scope/UX lock before implementation.",
-          "revision_id": "unruly-kgp-20261012T234848Z"
+          "plain_language_summary": "Next proposed: adjustable stroke stabilization/smoothing. Then precision drawing (ruler/symmetry/snapping, artwork vector nodes/curve pen/intersections); remaining painting/brush/colour/group effects and compatibility; canvas rotation/gestures, sticky notes/connectors/richer text, Motion mixed-target gap and device/performance acceptance; clean timelapse video export; artboards/dimensions/DPI/PNG/JPG/PDF; release-candidate validation. These are work groups, not fixed build counts. PDF references, artwork interchange, Drive sync and BYOK AI remain first-release scope; no early-access scope cut approved.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
         },
         "evidence_refs": [
           "ev-c04-b02-20261010",
           "ev-oct10-repository-ci",
           "ev-roadmap-20261011",
-          "ev-refresh-user-basis"
+          "ev-refresh-user-basis",
+          "ev-post-fill2-20261016"
         ]
       }
     },
@@ -10662,12 +10670,12 @@
     },
     {
       "id": "urn:unruly:roadmap:hsl-levels",
-      "name": "Group/layer hue, saturation and levels",
+      "name": "HSL and levels",
       "type": "Capability",
       "layers": [
         "functional"
       ],
-      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "description": "Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -10678,21 +10686,22 @@
       "evidence_refs": [
         "ev-roadmap-20261011",
         "ev-user-batch-basis-20261011",
-        "ev-refresh-user-basis"
+        "ev-refresh-user-basis",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:roadmap:hsl-levels",
         "entity_type": "Capability",
-        "name": "Group/layer hue, saturation and levels",
-        "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-        "status": "planned",
+        "name": "HSL and levels",
+        "description": "Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.",
+        "status": "published_baseline",
         "created_at": "2026-10-11T13:34:31Z",
-        "updated_at": "2026-10-12T23:48:48Z",
+        "updated_at": "2026-10-16T00:55:26Z",
         "attributes": {
-          "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-          "revision_id": "unruly-kgp-20261012T234848Z",
+          "plain_language_summary": "Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.",
+          "revision_id": "unruly-kgp-20261016T005526Z",
           "visual_layer": "functional",
           "business_area": "Artist workflow roadmap",
           "order_after_paint1": 11
@@ -10700,18 +10709,19 @@
         "evidence_refs": [
           "ev-roadmap-20261011",
           "ev-user-batch-basis-20261011",
-          "ev-refresh-user-basis"
+          "ev-refresh-user-basis",
+          "ev-post-fill2-20261016"
         ]
       }
     },
     {
       "id": "urn:unruly:roadmap:curves-blur",
-      "name": "Curves and Gaussian blur",
+      "name": "Curves and blur",
       "type": "Capability",
       "layers": [
         "functional"
       ],
-      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "description": "Layer/folder curves and blur baseline; no broad closure of all group effects.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -10722,21 +10732,22 @@
       "evidence_refs": [
         "ev-roadmap-20261011",
         "ev-user-batch-basis-20261011",
-        "ev-refresh-user-basis"
+        "ev-refresh-user-basis",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:roadmap:curves-blur",
         "entity_type": "Capability",
-        "name": "Curves and Gaussian blur",
-        "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-        "status": "planned",
+        "name": "Curves and blur",
+        "description": "Layer/folder curves and blur baseline; no broad closure of all group effects.",
+        "status": "published_baseline",
         "created_at": "2026-10-11T13:34:31Z",
-        "updated_at": "2026-10-12T23:48:48Z",
+        "updated_at": "2026-10-16T00:55:26Z",
         "attributes": {
-          "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-          "revision_id": "unruly-kgp-20261012T234848Z",
+          "plain_language_summary": "Layer/folder curves and blur baseline; no broad closure of all group effects.",
+          "revision_id": "unruly-kgp-20261016T005526Z",
           "visual_layer": "functional",
           "business_area": "Artist workflow roadmap",
           "order_after_paint1": 12
@@ -10744,7 +10755,8 @@
         "evidence_refs": [
           "ev-roadmap-20261011",
           "ev-user-batch-basis-20261011",
-          "ev-refresh-user-basis"
+          "ev-refresh-user-basis",
+          "ev-post-fill2-20261016"
         ]
       }
     },
@@ -13337,12 +13349,12 @@
     },
     {
       "id": "urn:unruly:roadmap:tip1-custom-image",
-      "name": "TIP1 — Custom uploaded image brush tips",
+      "name": "Custom image brush tips",
       "type": "Capability",
       "layers": [
         "functional"
       ],
-      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "description": "Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -13351,36 +13363,38 @@
       "state_effect": null,
       "business_area": null,
       "evidence_refs": [
-        "ev-refresh-user-basis"
+        "ev-refresh-user-basis",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:roadmap:tip1-custom-image",
         "entity_type": "Capability",
-        "name": "TIP1 — Custom uploaded image brush tips",
-        "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-        "status": "planned",
-        "updated_at": "2026-10-12T23:48:48Z",
+        "name": "Custom image brush tips",
+        "description": "Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.",
+        "status": "partially_implemented",
+        "updated_at": "2026-10-16T00:55:26Z",
         "created_at": "2026-10-12T23:48:48Z",
         "attributes": {
           "visual_layer": "functional",
-          "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-          "revision_id": "unruly-kgp-20261012T234848Z"
+          "plain_language_summary": "Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
         },
         "evidence_refs": [
-          "ev-refresh-user-basis"
+          "ev-refresh-user-basis",
+          "ev-post-fill2-20261016"
         ]
       }
     },
     {
       "id": "urn:unruly:roadmap:tip2-grain",
-      "name": "TIP2 — Imported grain and textured stamps",
+      "name": "Brush grain",
       "type": "Capability",
       "layers": [
         "functional"
       ],
-      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "description": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -13389,36 +13403,38 @@
       "state_effect": null,
       "business_area": null,
       "evidence_refs": [
-        "ev-refresh-user-basis"
+        "ev-refresh-user-basis",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:roadmap:tip2-grain",
         "entity_type": "Capability",
-        "name": "TIP2 — Imported grain and textured stamps",
-        "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-        "status": "planned",
-        "updated_at": "2026-10-12T23:48:48Z",
+        "name": "Brush grain",
+        "description": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+        "status": "published_baseline",
+        "updated_at": "2026-10-16T00:55:26Z",
         "created_at": "2026-10-12T23:48:48Z",
         "attributes": {
           "visual_layer": "functional",
-          "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-          "revision_id": "unruly-kgp-20261012T234848Z"
+          "plain_language_summary": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
         },
         "evidence_refs": [
-          "ev-refresh-user-basis"
+          "ev-refresh-user-basis",
+          "ev-post-fill2-20261016"
         ]
       }
     },
     {
       "id": "urn:unruly:roadmap:capacity-recovery",
-      "name": "Measured larger-document capacity and recovery",
+      "name": "Measured capacity and recovery",
       "type": "Capability",
       "layers": [
         "functional"
       ],
-      "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
+      "description": "Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open. Document cap remains32;30–50 interactive goal remains open.",
       "purpose": null,
       "used_by": null,
       "before": null,
@@ -13427,25 +13443,1205 @@
       "state_effect": null,
       "business_area": null,
       "evidence_refs": [
-        "ev-refresh-user-basis"
+        "ev-refresh-user-basis",
+        "ev-post-fill2-20261016"
       ],
       "implementation_refs": [],
       "confidence_label": null,
       "raw": {
         "id": "urn:unruly:roadmap:capacity-recovery",
         "entity_type": "Capability",
-        "name": "Measured larger-document capacity and recovery",
-        "description": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-        "status": "planned",
-        "updated_at": "2026-10-12T23:48:48Z",
+        "name": "Measured capacity and recovery",
+        "description": "Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open. Document cap remains32;30–50 interactive goal remains open.",
+        "status": "partially_implemented",
+        "updated_at": "2026-10-16T00:55:26Z",
         "created_at": "2026-10-12T23:48:48Z",
         "attributes": {
           "visual_layer": "functional",
-          "plain_language_summary": "Future roadmap checkpoint; not part of verified FILL2 implementation.",
-          "revision_id": "unruly-kgp-20261012T234848Z"
+          "plain_language_summary": "Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open. Document cap remains32;30–50 interactive goal remains open.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
         },
         "evidence_refs": [
-          "ev-refresh-user-basis"
+          "ev-refresh-user-basis",
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:hsl1",
+      "name": "HSL1 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:hsl1",
+        "entity_type": "Capability",
+        "name": "HSL1 published baseline",
+        "description": "Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Layer/folder HSL and levels; non-destructive baseline. Folder masks, group opacity/blends and effect-order compatibility remain open.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:fx2",
+      "name": "FX2 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Layer/folder curves and blur baseline; no broad closure of all group effects.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:fx2",
+        "entity_type": "Capability",
+        "name": "FX2 published baseline",
+        "description": "Layer/folder curves and blur baseline; no broad closure of all group effects.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Layer/folder curves and blur baseline; no broad closure of all group effects.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:tip1",
+      "name": "TIP1 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:tip1",
+        "entity_type": "Capability",
+        "name": "TIP1 published baseline",
+        "description": "Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Named brush sections and custom image tips, jitter/rotation/count/pressure, portable v12. Custom-tip alpha lock unsupported; proprietary brush import remains open.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:tip2",
+      "name": "TIP2 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:tip2",
+        "entity_type": "Capability",
+        "name": "TIP2 published baseline",
+        "description": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:cap1",
+      "name": "CAP1 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:cap1",
+        "entity_type": "Capability",
+        "name": "CAP1 published baseline",
+        "description": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Portable v13 grain and Splatter/Sprinkle brushes plus measured capacity/recovery. 32-layer document cap retained; renderer-only 50-layer measurements do not establish interactive capacity.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:cap2",
+      "name": "CAP2 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:cap2",
+        "entity_type": "Capability",
+        "name": "CAP2 published baseline",
+        "description": "Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Processed-group retention <=16MiB within 80MiB backing cap; exact reference pixels and conservative fallback. Warm renderer-only 50-layer ~231ms DPR1/~527ms DPR2; device/interactive acceptance remains open.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:motion1",
+      "name": "MOTION1 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:motion1",
+        "entity_type": "Capability",
+        "name": "MOTION1 published baseline",
+        "description": "Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Portable v14 Motion Trace path/camera cues and manual/timed playback, Pause/Stop/restore and one-Undo Commit. Same-layer mixed region/original-object cue invalidation remains open; region commit rasterizes undoably.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:checkpoint:time1",
+      "name": "TIME1 published baseline",
+      "type": "Capability",
+      "layers": [
+        "functional"
+      ],
+      "description": "Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:checkpoint:time1",
+        "entity_type": "Capability",
+        "name": "TIME1 published baseline",
+        "description": "Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.",
+        "status": "published_baseline",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Opt-in completed-operation timelapse recording and read-only replay/scrub/step, 0.5–4x playback and idle skip; paused reload/resume gap, per-board isolation and backup/import/confirmed attachment/discard. Separate IndexedDB schema1; 2000 states/32MiB per board/128MiB global payload, four snapshots/32MiB queue, atomic CAS/tombstones. Native board JSON excludes recording. Continuous pen animation, video export/framing and device/long-session acceptance remain open.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-timelapse-ui.js",
+      "name": "timelapse-ui.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 e68ed1167dfaca4d976c25c0d2b56c7d191a6a26d5a1d269df95d04fcb222eac",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-timelapse-ui.js",
+        "entity_type": "SourceFile",
+        "name": "timelapse-ui.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 e68ed1167dfaca4d976c25c0d2b56c7d191a6a26d5a1d269df95d04fcb222eac",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 e68ed1167dfaca4d976c25c0d2b56c7d191a6a26d5a1d269df95d04fcb222eac",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-timelapse.js",
+      "name": "timelapse.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 cdfe1e338308e2e5aa787ab625ec663735c046a338312f4e68dc93e58d9d90e3",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-timelapse.js",
+        "entity_type": "SourceFile",
+        "name": "timelapse.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 cdfe1e338308e2e5aa787ab625ec663735c046a338312f4e68dc93e58d9d90e3",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 cdfe1e338308e2e5aa787ab625ec663735c046a338312f4e68dc93e58d9d90e3",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-timelapse-store.js",
+      "name": "timelapse-store.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 83dd00b47519a7fb23563916ffb416080135d383a5268276bf6451701192a948",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-timelapse-store.js",
+        "entity_type": "SourceFile",
+        "name": "timelapse-store.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 83dd00b47519a7fb23563916ffb416080135d383a5268276bf6451701192a948",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 83dd00b47519a7fb23563916ffb416080135d383a5268276bf6451701192a948",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-filters.js",
+      "name": "filters.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 c9136f91b66a819b52c5943e5008aa35477d44e9c4c63c1b6aabaf5cbb486ed4",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-filters.js",
+        "entity_type": "SourceFile",
+        "name": "filters.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 c9136f91b66a819b52c5943e5008aa35477d44e9c4c63c1b6aabaf5cbb486ed4",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 c9136f91b66a819b52c5943e5008aa35477d44e9c4c63c1b6aabaf5cbb486ed4",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-adjustments.js",
+      "name": "adjustments.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 e0ea3bbb8f8f54bd6df5484bb01a135cca533e467255df3cb2690afd911721bd",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-adjustments.js",
+        "entity_type": "SourceFile",
+        "name": "adjustments.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 e0ea3bbb8f8f54bd6df5484bb01a135cca533e467255df3cb2690afd911721bd",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 e0ea3bbb8f8f54bd6df5484bb01a135cca533e467255df3cb2690afd911721bd",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-folders.js",
+      "name": "folders.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-folders.js",
+        "entity_type": "SourceFile",
+        "name": "folders.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-motion-region.js",
+      "name": "motion-region.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 063cf411dbb4c63c33d3ede5c2cc7e1c7e1d6cbba6adb164e169b42dadc81a9a",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-motion-region.js",
+        "entity_type": "SourceFile",
+        "name": "motion-region.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 063cf411dbb4c63c33d3ede5c2cc7e1c7e1d6cbba6adb164e169b42dadc81a9a",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 063cf411dbb4c63c33d3ede5c2cc7e1c7e1d6cbba6adb164e169b42dadc81a9a",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-motion.js",
+      "name": "motion.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 82e138ccfba805c460e18ac11d3914ca6f6dcb3fd75806d41885f6280a85a838",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-motion.js",
+        "entity_type": "SourceFile",
+        "name": "motion.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 82e138ccfba805c460e18ac11d3914ca6f6dcb3fd75806d41885f6280a85a838",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 82e138ccfba805c460e18ac11d3914ca6f6dcb3fd75806d41885f6280a85a838",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-model.js",
+      "name": "model.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-model.js",
+        "entity_type": "SourceFile",
+        "name": "model.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-wand.js",
+      "name": "wand.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-wand.js",
+        "entity_type": "SourceFile",
+        "name": "wand.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-lasso-region.js",
+      "name": "lasso-region.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-lasso-region.js",
+        "entity_type": "SourceFile",
+        "name": "lasso-region.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-adjustment-ui.js",
+      "name": "adjustment-ui.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 cc62a248126250a24c203d4bc18487b40edac3c12d4e5da1d7cc8b25155c45af",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-adjustment-ui.js",
+        "entity_type": "SourceFile",
+        "name": "adjustment-ui.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 cc62a248126250a24c203d4bc18487b40edac3c12d4e5da1d7cc8b25155c45af",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 cc62a248126250a24c203d4bc18487b40edac3c12d4e5da1d7cc8b25155c45af",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-motion-ui.js",
+      "name": "motion-ui.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 ec69ed920729407c1a8b822d6191ffba22d0886c4c4ccc219365b5eb254463be",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-motion-ui.js",
+        "entity_type": "SourceFile",
+        "name": "motion-ui.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 ec69ed920729407c1a8b822d6191ffba22d0886c4c4ccc219365b5eb254463be",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 ec69ed920729407c1a8b822d6191ffba22d0886c4c4ccc219365b5eb254463be",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-grain-ui.js",
+      "name": "grain-ui.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 bce61c8fbb151d0742c2c2695c522b65c6a6c56ef1bac1a5c4988af0749ae959",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-grain-ui.js",
+        "entity_type": "SourceFile",
+        "name": "grain-ui.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 bce61c8fbb151d0742c2c2695c522b65c6a6c56ef1bac1a5c4988af0749ae959",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 bce61c8fbb151d0742c2c2695c522b65c6a6c56ef1bac1a5c4988af0749ae959",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-grain.js",
+      "name": "grain.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 8ce67e9b56615c7f035da79a1381571d134d39d17676082438d3ca666708a616",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-grain.js",
+        "entity_type": "SourceFile",
+        "name": "grain.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 8ce67e9b56615c7f035da79a1381571d134d39d17676082438d3ca666708a616",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 8ce67e9b56615c7f035da79a1381571d134d39d17676082438d3ca666708a616",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-image-import.js",
+      "name": "image-import.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-image-import.js",
+        "entity_type": "SourceFile",
+        "name": "image-import.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-custom-tips-ui.js",
+      "name": "custom-tips-ui.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 f34396000de23c002d3b569d5084f3a55c31738d86649bbc9c9bee456cb36462",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-custom-tips-ui.js",
+        "entity_type": "SourceFile",
+        "name": "custom-tips-ui.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 f34396000de23c002d3b569d5084f3a55c31738d86649bbc9c9bee456cb36462",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 f34396000de23c002d3b569d5084f3a55c31738d86649bbc9c9bee456cb36462",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-custom-tips.js",
+      "name": "custom-tips.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 347931af7aec2f52ebb1fb7522403664213ad11f362b4d5f20ff718f00a1e268",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-custom-tips.js",
+        "entity_type": "SourceFile",
+        "name": "custom-tips.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 347931af7aec2f52ebb1fb7522403664213ad11f362b4d5f20ff718f00a1e268",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 347931af7aec2f52ebb1fb7522403664213ad11f362b4d5f20ff718f00a1e268",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-pen-input.js",
+      "name": "pen-input.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-pen-input.js",
+        "entity_type": "SourceFile",
+        "name": "pen-input.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-raster.js",
+      "name": "raster.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-raster.js",
+        "entity_type": "SourceFile",
+        "name": "raster.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-text.js",
+      "name": "text.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-text.js",
+        "entity_type": "SourceFile",
+        "name": "text.js",
+        "description": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Imported browser source module; literal ES module linkage, not call-graph analysis.",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-effect-compositor.js",
+      "name": "effect-compositor.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 271f0157f333f9ced012a4193dd840607ec56f79fc73e832f7328bf666503b16",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-effect-compositor.js",
+        "entity_type": "SourceFile",
+        "name": "effect-compositor.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 271f0157f333f9ced012a4193dd840607ec56f79fc73e832f7328bf666503b16",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 271f0157f333f9ced012a4193dd840607ec56f79fc73e832f7328bf666503b16",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "urn:unruly:source:browser-filter-ui.js",
+      "name": "filter-ui.js",
+      "type": "SourceFile",
+      "layers": [
+        "functional"
+      ],
+      "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 8ef36334cf77bce8299e4cc10140a244ec2683513ae9ba4f97f64669ed41ada9",
+      "purpose": null,
+      "used_by": null,
+      "before": null,
+      "after": null,
+      "rules": null,
+      "state_effect": null,
+      "business_area": null,
+      "evidence_refs": [
+        "ev-post-fill2-20261016"
+      ],
+      "implementation_refs": [],
+      "confidence_label": null,
+      "raw": {
+        "id": "urn:unruly:source:browser-filter-ui.js",
+        "entity_type": "SourceFile",
+        "name": "filter-ui.js",
+        "description": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 8ef36334cf77bce8299e4cc10140a244ec2683513ae9ba4f97f64669ed41ada9",
+        "status": "observed",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "attributes": {
+          "visual_layer": "functional",
+          "plain_language_summary": "Browser source module; literal ES imports only. Source baseline a4f569a; SHA256 8ef36334cf77bce8299e4cc10140a244ec2683513ae9ba4f97f64669ed41ada9",
+          "revision_id": "unruly-kgp-20261016T005526Z"
+        },
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
         ]
       }
     }
@@ -22655,6 +23851,699 @@
           "ev-refresh-fill2"
         ]
       }
+    },
+    {
+      "id": "rel-hsl1-release-20261016",
+      "from": "urn:unruly:checkpoint:hsl1",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-hsl1-release-20261016",
+        "from": "urn:unruly:checkpoint:hsl1",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-fx2-release-20261016",
+      "from": "urn:unruly:checkpoint:fx2",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-fx2-release-20261016",
+        "from": "urn:unruly:checkpoint:fx2",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-tip1-release-20261016",
+      "from": "urn:unruly:checkpoint:tip1",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-tip1-release-20261016",
+        "from": "urn:unruly:checkpoint:tip1",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-tip2-release-20261016",
+      "from": "urn:unruly:checkpoint:tip2",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-tip2-release-20261016",
+        "from": "urn:unruly:checkpoint:tip2",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-cap1-release-20261016",
+      "from": "urn:unruly:checkpoint:cap1",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-cap1-release-20261016",
+        "from": "urn:unruly:checkpoint:cap1",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-cap2-release-20261016",
+      "from": "urn:unruly:checkpoint:cap2",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-cap2-release-20261016",
+        "from": "urn:unruly:checkpoint:cap2",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-motion1-release-20261016",
+      "from": "urn:unruly:checkpoint:motion1",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-motion1-release-20261016",
+        "from": "urn:unruly:checkpoint:motion1",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-time1-release-20261016",
+      "from": "urn:unruly:checkpoint:time1",
+      "to": "urn:unruly:release:browser-current",
+      "type": "PART_OF",
+      "label": "is part of",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-time1-release-20261016",
+        "from": "urn:unruly:checkpoint:time1",
+        "relationship_type": "PART_OF",
+        "to": "urn:unruly:release:browser-current",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-timelapse-ui-timelapse-20261016",
+      "from": "urn:unruly:source:browser-timelapse-ui.js",
+      "to": "urn:unruly:source:browser-timelapse.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-timelapse-ui-timelapse-20261016",
+        "from": "urn:unruly:source:browser-timelapse-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-timelapse.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-timelapse-ui-timelapse-store-20261016",
+      "from": "urn:unruly:source:browser-timelapse-ui.js",
+      "to": "urn:unruly:source:browser-timelapse-store.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-timelapse-ui-timelapse-store-20261016",
+        "from": "urn:unruly:source:browser-timelapse-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-timelapse-store.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-filters-adjustments-20261016",
+      "from": "urn:unruly:source:browser-filters.js",
+      "to": "urn:unruly:source:browser-adjustments.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-filters-adjustments-20261016",
+        "from": "urn:unruly:source:browser-filters.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-adjustments.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-filters-folders-20261016",
+      "from": "urn:unruly:source:browser-filters.js",
+      "to": "urn:unruly:source:browser-folders.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-filters-folders-20261016",
+        "from": "urn:unruly:source:browser-filters.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-folders.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-motion-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-motion.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-motion-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-motion.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-model-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-model.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-model-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-model.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-wand-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-wand.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-wand-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-wand.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-lasso-region-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-lasso-region.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-lasso-region-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-lasso-region.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-adjustment-ui-adjustments-20261016",
+      "from": "urn:unruly:source:browser-adjustment-ui.js",
+      "to": "urn:unruly:source:browser-adjustments.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-adjustment-ui-adjustments-20261016",
+        "from": "urn:unruly:source:browser-adjustment-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-adjustments.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-ui-motion-20261016",
+      "from": "urn:unruly:source:browser-motion-ui.js",
+      "to": "urn:unruly:source:browser-motion.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-ui-motion-20261016",
+        "from": "urn:unruly:source:browser-motion-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-motion.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-grain-ui-grain-20261016",
+      "from": "urn:unruly:source:browser-grain-ui.js",
+      "to": "urn:unruly:source:browser-grain.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-grain-ui-grain-20261016",
+        "from": "urn:unruly:source:browser-grain-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-grain-ui-image-import-20261016",
+      "from": "urn:unruly:source:browser-grain-ui.js",
+      "to": "urn:unruly:source:browser-image-import.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-grain-ui-image-import-20261016",
+        "from": "urn:unruly:source:browser-grain-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-image-import.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-grain-ui-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-grain-ui.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-grain-ui-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain-ui.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-grain-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-grain.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-grain-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-custom-tips-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-custom-tips.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-custom-tips-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-custom-tips.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-image-import-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-image-import.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-image-import-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-image-import.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-grain-20261016",
+      "from": "urn:unruly:source:browser-custom-tips.js",
+      "to": "urn:unruly:source:browser-grain.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-grain-20261016",
+        "from": "urn:unruly:source:browser-custom-tips.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-pen-input-20261016",
+      "from": "urn:unruly:source:browser-custom-tips.js",
+      "to": "urn:unruly:source:browser-pen-input.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-pen-input-20261016",
+        "from": "urn:unruly:source:browser-custom-tips.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-pen-input.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-folders-20261016",
+      "from": "urn:unruly:source:browser-motion.js",
+      "to": "urn:unruly:source:browser-folders.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-folders-20261016",
+        "from": "urn:unruly:source:browser-motion.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-folders.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-raster-20261016",
+      "from": "urn:unruly:source:browser-motion.js",
+      "to": "urn:unruly:source:browser-raster.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-raster-20261016",
+        "from": "urn:unruly:source:browser-motion.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-raster.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-text-20261016",
+      "from": "urn:unruly:source:browser-motion.js",
+      "to": "urn:unruly:source:browser-text.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-text-20261016",
+        "from": "urn:unruly:source:browser-motion.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-text.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-timelapse-store-timelapse-20261016",
+      "from": "urn:unruly:source:browser-timelapse-store.js",
+      "to": "urn:unruly:source:browser-timelapse.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-timelapse-store-timelapse-20261016",
+        "from": "urn:unruly:source:browser-timelapse-store.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-timelapse.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-effect-compositor-filters-20261016",
+      "from": "urn:unruly:source:browser-effect-compositor.js",
+      "to": "urn:unruly:source:browser-filters.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-effect-compositor-filters-20261016",
+        "from": "urn:unruly:source:browser-effect-compositor.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-filters.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-effect-compositor-adjustments-20261016",
+      "from": "urn:unruly:source:browser-effect-compositor.js",
+      "to": "urn:unruly:source:browser-adjustments.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-effect-compositor-adjustments-20261016",
+        "from": "urn:unruly:source:browser-effect-compositor.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-adjustments.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-filter-ui-filters-20261016",
+      "from": "urn:unruly:source:browser-filter-ui.js",
+      "to": "urn:unruly:source:browser-filters.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-filter-ui-filters-20261016",
+        "from": "urn:unruly:source:browser-filter-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-filters.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
     }
   ],
   "overview_nodes": [
@@ -22750,7 +24639,7 @@
     },
     {
       "id": "urn:unruly:cap:timelapse",
-      "name": "Timelapse",
+      "name": "Timelapse recording and replay",
       "type": "Capability",
       "synthetic": false
     },
@@ -23434,7 +25323,7 @@
     },
     {
       "id": "urn:unruly:checkpoint:c04-next",
-      "name": "Next proposed checkpoint — group/layer HSL and levels",
+      "name": "Next proposed checkpoint — stroke stabilization/smoothing",
       "type": "Checkpoint",
       "synthetic": false
     },
@@ -23500,13 +25389,13 @@
     },
     {
       "id": "urn:unruly:roadmap:hsl-levels",
-      "name": "Group/layer hue, saturation and levels",
+      "name": "HSL and levels",
       "type": "Capability",
       "synthetic": false
     },
     {
       "id": "urn:unruly:roadmap:curves-blur",
-      "name": "Curves and Gaussian blur",
+      "name": "Curves and blur",
       "type": "Capability",
       "synthetic": false
     },
@@ -23656,20 +25545,206 @@
     },
     {
       "id": "urn:unruly:roadmap:tip1-custom-image",
-      "name": "TIP1 — Custom uploaded image brush tips",
+      "name": "Custom image brush tips",
       "type": "Capability",
       "synthetic": false
     },
     {
       "id": "urn:unruly:roadmap:tip2-grain",
-      "name": "TIP2 — Imported grain and textured stamps",
+      "name": "Brush grain",
       "type": "Capability",
       "synthetic": false
     },
     {
       "id": "urn:unruly:roadmap:capacity-recovery",
-      "name": "Measured larger-document capacity and recovery",
+      "name": "Measured capacity and recovery",
       "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:hsl1",
+      "name": "HSL1 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:fx2",
+      "name": "FX2 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:tip1",
+      "name": "TIP1 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:tip2",
+      "name": "TIP2 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:cap1",
+      "name": "CAP1 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:cap2",
+      "name": "CAP2 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:motion1",
+      "name": "MOTION1 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:checkpoint:time1",
+      "name": "TIME1 published baseline",
+      "type": "Capability",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-timelapse-ui.js",
+      "name": "timelapse-ui.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-timelapse.js",
+      "name": "timelapse.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-timelapse-store.js",
+      "name": "timelapse-store.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-filters.js",
+      "name": "filters.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-adjustments.js",
+      "name": "adjustments.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-folders.js",
+      "name": "folders.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-motion-region.js",
+      "name": "motion-region.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-motion.js",
+      "name": "motion.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-model.js",
+      "name": "model.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-wand.js",
+      "name": "wand.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-lasso-region.js",
+      "name": "lasso-region.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-adjustment-ui.js",
+      "name": "adjustment-ui.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-motion-ui.js",
+      "name": "motion-ui.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-grain-ui.js",
+      "name": "grain-ui.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-grain.js",
+      "name": "grain.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-image-import.js",
+      "name": "image-import.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-custom-tips-ui.js",
+      "name": "custom-tips-ui.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-custom-tips.js",
+      "name": "custom-tips.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-pen-input.js",
+      "name": "pen-input.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-raster.js",
+      "name": "raster.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-text.js",
+      "name": "text.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-effect-compositor.js",
+      "name": "effect-compositor.js",
+      "type": "SourceFile",
+      "synthetic": false
+    },
+    {
+      "id": "urn:unruly:source:browser-filter-ui.js",
+      "name": "filter-ui.js",
+      "type": "SourceFile",
       "synthetic": false
     }
   ],
@@ -27147,6 +29222,531 @@
         "epistemic_status": "observed",
         "evidence_refs": [
           "ev-refresh-fill2"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-timelapse-ui-timelapse-20261016",
+      "from": "urn:unruly:source:browser-timelapse-ui.js",
+      "to": "urn:unruly:source:browser-timelapse.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-timelapse-ui-timelapse-20261016",
+        "from": "urn:unruly:source:browser-timelapse-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-timelapse.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-timelapse-ui-timelapse-store-20261016",
+      "from": "urn:unruly:source:browser-timelapse-ui.js",
+      "to": "urn:unruly:source:browser-timelapse-store.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-timelapse-ui-timelapse-store-20261016",
+        "from": "urn:unruly:source:browser-timelapse-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-timelapse-store.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-filters-adjustments-20261016",
+      "from": "urn:unruly:source:browser-filters.js",
+      "to": "urn:unruly:source:browser-adjustments.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-filters-adjustments-20261016",
+        "from": "urn:unruly:source:browser-filters.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-adjustments.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-filters-folders-20261016",
+      "from": "urn:unruly:source:browser-filters.js",
+      "to": "urn:unruly:source:browser-folders.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-filters-folders-20261016",
+        "from": "urn:unruly:source:browser-filters.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-folders.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-motion-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-motion.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-motion-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-motion.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-model-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-model.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-model-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-model.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-wand-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-wand.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-wand-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-wand.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-region-lasso-region-20261016",
+      "from": "urn:unruly:source:browser-motion-region.js",
+      "to": "urn:unruly:source:browser-lasso-region.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-region-lasso-region-20261016",
+        "from": "urn:unruly:source:browser-motion-region.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-lasso-region.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-adjustment-ui-adjustments-20261016",
+      "from": "urn:unruly:source:browser-adjustment-ui.js",
+      "to": "urn:unruly:source:browser-adjustments.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-adjustment-ui-adjustments-20261016",
+        "from": "urn:unruly:source:browser-adjustment-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-adjustments.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-ui-motion-20261016",
+      "from": "urn:unruly:source:browser-motion-ui.js",
+      "to": "urn:unruly:source:browser-motion.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-ui-motion-20261016",
+        "from": "urn:unruly:source:browser-motion-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-motion.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-grain-ui-grain-20261016",
+      "from": "urn:unruly:source:browser-grain-ui.js",
+      "to": "urn:unruly:source:browser-grain.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-grain-ui-grain-20261016",
+        "from": "urn:unruly:source:browser-grain-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-grain-ui-image-import-20261016",
+      "from": "urn:unruly:source:browser-grain-ui.js",
+      "to": "urn:unruly:source:browser-image-import.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-grain-ui-image-import-20261016",
+        "from": "urn:unruly:source:browser-grain-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-image-import.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-grain-ui-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-grain-ui.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-grain-ui-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain-ui.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-grain-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-grain.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-grain-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-custom-tips-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-custom-tips.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-custom-tips-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-custom-tips.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-ui-image-import-20261016",
+      "from": "urn:unruly:source:browser-custom-tips-ui.js",
+      "to": "urn:unruly:source:browser-image-import.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-ui-image-import-20261016",
+        "from": "urn:unruly:source:browser-custom-tips-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-image-import.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-grain-20261016",
+      "from": "urn:unruly:source:browser-custom-tips.js",
+      "to": "urn:unruly:source:browser-grain.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-grain-20261016",
+        "from": "urn:unruly:source:browser-custom-tips.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-grain.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-custom-tips-pen-input-20261016",
+      "from": "urn:unruly:source:browser-custom-tips.js",
+      "to": "urn:unruly:source:browser-pen-input.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-custom-tips-pen-input-20261016",
+        "from": "urn:unruly:source:browser-custom-tips.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-pen-input.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-folders-20261016",
+      "from": "urn:unruly:source:browser-motion.js",
+      "to": "urn:unruly:source:browser-folders.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-folders-20261016",
+        "from": "urn:unruly:source:browser-motion.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-folders.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-raster-20261016",
+      "from": "urn:unruly:source:browser-motion.js",
+      "to": "urn:unruly:source:browser-raster.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-raster-20261016",
+        "from": "urn:unruly:source:browser-motion.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-raster.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-motion-text-20261016",
+      "from": "urn:unruly:source:browser-motion.js",
+      "to": "urn:unruly:source:browser-text.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-motion-text-20261016",
+        "from": "urn:unruly:source:browser-motion.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-text.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-timelapse-store-timelapse-20261016",
+      "from": "urn:unruly:source:browser-timelapse-store.js",
+      "to": "urn:unruly:source:browser-timelapse.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-timelapse-store-timelapse-20261016",
+        "from": "urn:unruly:source:browser-timelapse-store.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-timelapse.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-effect-compositor-filters-20261016",
+      "from": "urn:unruly:source:browser-effect-compositor.js",
+      "to": "urn:unruly:source:browser-filters.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-effect-compositor-filters-20261016",
+        "from": "urn:unruly:source:browser-effect-compositor.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-filters.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-effect-compositor-adjustments-20261016",
+      "from": "urn:unruly:source:browser-effect-compositor.js",
+      "to": "urn:unruly:source:browser-adjustments.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-effect-compositor-adjustments-20261016",
+        "from": "urn:unruly:source:browser-effect-compositor.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-adjustments.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
+        ]
+      }
+    },
+    {
+      "id": "rel-import-filter-ui-filters-20261016",
+      "from": "urn:unruly:source:browser-filter-ui.js",
+      "to": "urn:unruly:source:browser-filters.js",
+      "type": "DEPENDS_ON",
+      "label": "depends on",
+      "epistemic_status": "observed",
+      "raw": {
+        "id": "rel-import-filter-ui-filters-20261016",
+        "from": "urn:unruly:source:browser-filter-ui.js",
+        "relationship_type": "DEPENDS_ON",
+        "to": "urn:unruly:source:browser-filters.js",
+        "created_at": "2026-10-16T00:55:26Z",
+        "updated_at": "2026-10-16T00:55:26Z",
+        "status": "current",
+        "epistemic_status": "observed",
+        "evidence_refs": [
+          "ev-post-fill2-20261016"
         ]
       }
     }

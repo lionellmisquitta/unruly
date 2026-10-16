@@ -1,0 +1,30 @@
+{
+  "source": "6c3e49f942675e020cc517f508c3bfd5473d7148",
+  "run": 38440969358,
+  "conclusion": "success",
+  "models": 322,
+  "chromium_scenarios": 299,
+  "new_models": 15,
+  "new_browser_scenarios": 10,
+  "source_identities": 132,
+  "all_identities_match": true,
+  "browser": "151.0.7922.34",
+  "artifact": 11836202732,
+  "artifact_sha256": "aada81ba32cd80e60672af0328f504ada2582280871d639d6dde7fbb85e6fd4f",
+  "screenshots_inspected": [
+    "fx2-narrow-filter.png",
+    "FXB01-curve-preview-pointercancel-apply-undo-reload.png"
+  ],
+  "Gaussian_reference": {
+    "DPR1_max_error_255_scale": 11,
+    "tolerance": 12,
+    "DPR2": "halo/pan verified; no independent kernel comparison in that scenario"
+  },
+  "large_nested_backing_peak_reported": 83458648,
+  "backing_limit": 83886080,
+  "merged_tree_identical": true,
+  "merge": "a88803b302a8dbf9585a7af8c168b0ae48fb81e2",
+  "review": "same-session",
+  "physical_tablet": "NOT_VERIFIED",
+  "graph_changed": false
+}

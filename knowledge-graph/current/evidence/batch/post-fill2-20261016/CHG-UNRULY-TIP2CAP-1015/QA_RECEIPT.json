@@ -1,0 +1,23 @@
+{
+  "source": "3af2a6bdf84dd251c83a7770f26d5cd5fd7f9eba",
+  "ci_run": 38671904693,
+  "ci_job": 116216737347,
+  "result": "SUCCESS",
+  "model_tests": 358,
+  "chromium_scenarios": 320,
+  "source_identity_matches": 142,
+  "new_model_tests": 17,
+  "new_browser_scenarios": 10,
+  "artifact_id": 11945136888,
+  "artifact_sha256": "0450b37bd0ab9adbf34eeea53b38bebfb294369c190a029ca7b2aa534906a9de",
+  "merge": "ff4b756709da36cff77edab0ed56aeb67e39ff52",
+  "merged_tree_equals_tested": true,
+  "TIP2": "PASSED",
+  "CAP1_engineering_measurements_recovery": "PASSED",
+  "interactive_30_50_capacity": "OPEN_CAP2",
+  "admitted_layers": 32,
+  "physical_device": "NOT_VERIFIED",
+  "process_RAM": "NOT_MEASURED",
+  "graph": "UNCHANGED",
+  "verification": "same-session owner-authorized personal-project; no independent approval"
+}

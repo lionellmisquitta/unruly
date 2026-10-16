@@ -14,8 +14,8 @@ urn:unruly:cap:gestures,Capability,Gesture system,current
 urn:unruly:cap:color,Capability,Color system,current
 urn:unruly:cap:effects,Capability,Effects and fill,planned
 urn:unruly:cap:whiteboard,Capability,Whiteboarding objects,planned
-urn:unruly:cap:timelapse,Capability,Timelapse,planned
-urn:unruly:cap:motiontrace,Capability,Motion Trace,planned
+urn:unruly:cap:timelapse,Capability,Timelapse recording and replay,partially_implemented
+urn:unruly:cap:motiontrace,Capability,Motion Trace,partially_implemented
 urn:unruly:cap:exchange,Capability,Import/export and exchange,planned
 urn:unruly:cap:ai,Capability,BYOK AI assistance,planned
 urn:unruly:cap:qa,Capability,Governed delivery and QA,current
@@ -257,14 +257,14 @@ urn:unruly:cap:native-growing-smudge,Capability,Direct growing native-raster smu
 urn:unruly:code:smudge,CodeArtifact,smudge.js,implemented
 urn:unruly:code:pixel-surface,CodeArtifact,pixel-surface.js,implemented
 urn:unruly:code:app,CodeArtifact,app.js,implemented
-urn:unruly:release:browser-current,Release,Current cumulative browser release — FILL2,hosted_verified
+urn:unruly:release:browser-current,Release,Current cumulative browser release — TIME1,hosted_verified
 urn:unruly:ci:qa-workflow,CodeArtifact,Cumulative browser QA workflow,hosted_verified
 urn:unruly:cap:smudge,Capability,Active-layer smudge,hosted_verified
 urn:unruly:module:raster,Module,Bounded v4 raster strokes,hosted_verified
 urn:unruly:cap:performance,Capability,Measured browser performance foundation,hosted_verified
 urn:unruly:branch:main,Branch,Cumulative browser main,current
 urn:unruly:decision:one-preview,Decision,One cumulative browser-main product,implemented
-urn:unruly:checkpoint:c04-next,Checkpoint,Next proposed checkpoint — group/layer HSL and levels,proposed
+urn:unruly:checkpoint:c04-next,Checkpoint,Next proposed checkpoint — stroke stabilization/smoothing,proposed
 urn:unruly:roadmap:folders,Capability,Layer folders and grouping,implemented
 urn:unruly:roadmap:masks,Capability,Layer and folder masks,partially_implemented
 urn:unruly:roadmap:clipping,Capability,Clipping and alpha lock,implemented
@@ -275,8 +275,8 @@ urn:unruly:roadmap:precision-selection,Capability,Magnetic selection and editabl
 urn:unruly:roadmap:bucket,Capability,Paint bucket,implemented
 urn:unruly:roadmap:gap-fill,Capability,Gap-aware fill,planned
 urn:unruly:roadmap:enclosure-fill,Capability,Lasso/enclosure fill,implemented
-urn:unruly:roadmap:hsl-levels,Capability,"Group/layer hue, saturation and levels",planned
-urn:unruly:roadmap:curves-blur,Capability,Curves and Gaussian blur,planned
+urn:unruly:roadmap:hsl-levels,Capability,HSL and levels,published_baseline
+urn:unruly:roadmap:curves-blur,Capability,Curves and blur,published_baseline
 urn:unruly:decision:D-P01,Decision,D-P01 — Keep one cumulative application and the existing preview,partially_superseded
 urn:unruly:decision:D-P02,Decision,D-P02 — Benchmark populated 30–50-layer artist workflows before expanding capacity,recorded_direction
 urn:unruly:decision:D-P03,Decision,D-P03 — Separate document operations from rendering before replacing rendering internals,recorded_direction
@@ -339,6 +339,37 @@ urn:unruly:code:style,CodeArtifact,style.css,implemented
 urn:unruly:code:text,CodeArtifact,text.js,implemented
 urn:unruly:code:u2,CodeArtifact,u2.js,implemented
 urn:unruly:code:wand,CodeArtifact,wand.js,implemented
-urn:unruly:roadmap:tip1-custom-image,Capability,TIP1 — Custom uploaded image brush tips,planned
-urn:unruly:roadmap:tip2-grain,Capability,TIP2 — Imported grain and textured stamps,planned
-urn:unruly:roadmap:capacity-recovery,Capability,Measured larger-document capacity and recovery,planned
+urn:unruly:roadmap:tip1-custom-image,Capability,Custom image brush tips,partially_implemented
+urn:unruly:roadmap:tip2-grain,Capability,Brush grain,published_baseline
+urn:unruly:roadmap:capacity-recovery,Capability,Measured capacity and recovery,partially_implemented
+urn:unruly:checkpoint:hsl1,Capability,HSL1 published baseline,published_baseline
+urn:unruly:checkpoint:fx2,Capability,FX2 published baseline,published_baseline
+urn:unruly:checkpoint:tip1,Capability,TIP1 published baseline,published_baseline
+urn:unruly:checkpoint:tip2,Capability,TIP2 published baseline,published_baseline
+urn:unruly:checkpoint:cap1,Capability,CAP1 published baseline,published_baseline
+urn:unruly:checkpoint:cap2,Capability,CAP2 published baseline,published_baseline
+urn:unruly:checkpoint:motion1,Capability,MOTION1 published baseline,published_baseline
+urn:unruly:checkpoint:time1,Capability,TIME1 published baseline,published_baseline
+urn:unruly:source:browser-timelapse-ui.js,SourceFile,timelapse-ui.js,observed
+urn:unruly:source:browser-timelapse.js,SourceFile,timelapse.js,observed
+urn:unruly:source:browser-timelapse-store.js,SourceFile,timelapse-store.js,observed
+urn:unruly:source:browser-filters.js,SourceFile,filters.js,observed
+urn:unruly:source:browser-adjustments.js,SourceFile,adjustments.js,observed
+urn:unruly:source:browser-folders.js,SourceFile,folders.js,observed
+urn:unruly:source:browser-motion-region.js,SourceFile,motion-region.js,observed
+urn:unruly:source:browser-motion.js,SourceFile,motion.js,observed
+urn:unruly:source:browser-model.js,SourceFile,model.js,observed
+urn:unruly:source:browser-wand.js,SourceFile,wand.js,observed
+urn:unruly:source:browser-lasso-region.js,SourceFile,lasso-region.js,observed
+urn:unruly:source:browser-adjustment-ui.js,SourceFile,adjustment-ui.js,observed
+urn:unruly:source:browser-motion-ui.js,SourceFile,motion-ui.js,observed
+urn:unruly:source:browser-grain-ui.js,SourceFile,grain-ui.js,observed
+urn:unruly:source:browser-grain.js,SourceFile,grain.js,observed
+urn:unruly:source:browser-image-import.js,SourceFile,image-import.js,observed
+urn:unruly:source:browser-custom-tips-ui.js,SourceFile,custom-tips-ui.js,observed
+urn:unruly:source:browser-custom-tips.js,SourceFile,custom-tips.js,observed
+urn:unruly:source:browser-pen-input.js,SourceFile,pen-input.js,observed
+urn:unruly:source:browser-raster.js,SourceFile,raster.js,observed
+urn:unruly:source:browser-text.js,SourceFile,text.js,observed
+urn:unruly:source:browser-effect-compositor.js,SourceFile,effect-compositor.js,observed
+urn:unruly:source:browser-filter-ui.js,SourceFile,filter-ui.js,observed
