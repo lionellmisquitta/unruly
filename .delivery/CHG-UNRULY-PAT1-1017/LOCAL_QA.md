@@ -3,4 +3,6 @@
 
 Static UI validator:0errors; unchanged3emoji/47label/19tiny-type heuristic warnings, inherited controls outside bounded dialog. New numeric controls explicitly labelled. Local draft surface uses full raster<=1MP and full composed preview inside existing renderer budgets; sampling occurs on committed change/release. Desktop1024x768 and390x844 screenshots inspected. Sticky Apply/Reset added after review; note text12px. Phone/dialog scroll is intentional; not a full accessibility audit or physical device acceptance.
 
-Scope review: no model/renderer/storage/history changes. Existing five browser tests change cache identity only. Both new runtime files included offline. Current CI inventory covers new tests. Independent human review/pen/palm/device performance not claimed.
+Scope review: no model/renderer/storage/history changes. Existing14browser tests change cache identity only. Both new runtime files included offline. Current CI inventory covers new tests. Independent human review/pen/palm/device performance not claimed.
+
+CI preserves the existing explicit499-test cumulative command and adds a separate required16-test PAT1 report in the same job. Report515distinct models across those two required reports; never require a nonexistent single515report or sum repeated earlier focused runs. All419structured browser cases are checked from artifact JSON.

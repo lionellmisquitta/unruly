@@ -350,3 +350,6 @@ Publication `00a27382946cf41772a834ba4d95323e36b53486`; Pages `38955027379` SUCC
 
 ## PAT1 authorized — 17-Oct-2026
 Pattern deformation scoped from published TIP4 baseline. Four-corner selected-raster perspective preview/Apply/Cancel/Undo; implementation pending. Advanced wet media and all other pending requirements retained. User also authorized graph catch-up after build verification.
+
+## PAT1 cumulative CI —17-Oct-2026
+Source3e25ee2193cd4e208b11889c7d248d77cc60359a; run38961813222 in progress.515model tests and7focused browser journeys passed locally. Prior candidate ed1f042 CI38961264730 failed old TIP4 offline cache suffix;14existing browserfiles now verified exact cache-only substitutions. No behavioral assertions removed. Publication and authorized graph refresh pending. All original roadmap rows retained.

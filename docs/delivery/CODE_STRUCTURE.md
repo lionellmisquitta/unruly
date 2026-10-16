@@ -223,3 +223,15 @@ All earlier checkpoint notes below their dated headings are historical as-built 
 guides.js owns captured constraints, bounded symmetry copies and aggregate tip replay admission. custom-tips.js owns seeded parity-aware dabs/fallback heading and single-matrix drawing only for native17 reflection metadata; no-metadata legacy translate/rotate/scale path retained. model.js owns strict optional metadata/native17 admission and command promotion; selection.js preserves clipboard/import promotion and rotates fallback heading during similarity transforms. app.js removes the old image-tip symmetry rejection, commits copies once and guards alpha-lock/guide incompatibility. Existing downstream layer/folder mask/effect/clip composition remains in the renderer facade; no facade/engine/history/storage rewrite.
 
 ci-contract.test.mjs verifies actual node invocations for current model/browser inventory, checks a synthetic omitted/comment-only file and rejects three disposable semantic mutants after real baselines. This is executable test-selection/failure-detection coverage, not protected diff-scope enforcement or independent review. Existing logical blocks/import map remains applicable; new feature hooks do not establish global acyclicity. PRIOR_CI_AUDIT and QA/PUBLICATION receipts preserve exact evidence. Source-only preview and all retained product/device/performance gaps are explicit.
+
+## PAT1 localization — implementation verified locally; cumulative publication pending
+pattern-warp.js owns strict clockwise convex-quad validation, inverse perspective mapping, bounded premultiplied bilinear raster resampling and single-raster target guards. It imports only raster.js/folders.js; no DOM/model/storage. pattern-warp-ui.js owns disposable exact-board drafts, local transparent/canvas-composition preview, corner pointer capture/cancel and labelled numeric inputs, Reset/Apply/Cancel. app.js injects existing renderer preview and one model.command; blocked/key/paint hooks prevent concurrent artwork gestures. No renderer/schema/history/storage modifications. Existing raster payload/transform/ID/points and document version retained; identity preserves original codec; Apply bakes pixels and exact Undo restores originals. sw includes both new modules. This is a logical import/responsibility map, not an AST/runtime graph or independent scope enforcement.
+
+```mermaid
+flowchart TD
+  UI["Deformation dialog"] --> W["Pure raster deformation"]
+  UI --> A["App callbacks"]
+  W --> R["Raster codec and layer guards"]
+  A --> C["Existing command and history"]
+  A --> P["Existing renderer preview"]
+```

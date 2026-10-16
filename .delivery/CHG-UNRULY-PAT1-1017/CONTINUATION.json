@@ -1,0 +1,11 @@
+{
+  "checkpoint": "PAT1",
+  "candidate": "3e25ee2193cd4e208b11889c7d248d77cc60359a",
+  "tree": "pending resolve via GitHub commit",
+  "ci_run": 38961813222,
+  "status": "CUMULATIVE_CI_RUNNING",
+  "local_models": 515,
+  "local_browser": 7,
+  "knowledge_refresh": "explicitly authorized; prepared /tmp/refresh_pat1_graph.py; canonical graph baseline still TIME1 until verified app receipt available",
+  "next_action": "Inspect CI conclusion; download exact artifact and validate hashes/counts, merge exact tree, publish pinned artifact, verify72hosted assets, then graph refresh/package/viewer QA/main pointer. No repeated full local suite. Failed prior run38961264730 only stale cache suffix;14existing browserfiles cache-only substitutions verified."
+}
