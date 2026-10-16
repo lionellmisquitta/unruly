@@ -11,6 +11,14 @@
       "run": 38902698222,
       "status": "FAILED_PACKAGING",
       "reason": "Undefined base-tree variable from an earlier turn caused sparse tree; tool installation could not start. No application execution/publication. Reassemble against verified base tree3c686d26052c0bde789eb1a0f4ef31f354585f63 and validate full PR diff before QA."
+    },
+    {
+      "source": "8c23ca9cb83239c3a334efc7438be8627fc3aa5c",
+      "run": 38902949603,
+      "status": "FAILED_TEST_EXPECTATION",
+      "artifact": 12045989567,
+      "artifactDigest": "fa17b946ad2f42ea8f199e7ac0cc90d6ee41550e68e67132aadbfb856ea8aa47",
+      "reason": "9/10 new browser journeys PASS. B07 complete Undo layers equality passed, then incorrectly asserted pre-import literal vector ID; native import remaps IDs. Assert restoration to actual imported original ID plus ink type. App bytes unchanged; all behavioral assertions retained."
     }
   ]
 }
