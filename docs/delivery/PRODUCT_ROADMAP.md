@@ -221,3 +221,7 @@ Publication `d1b75ea4d62e19f4068d708930db7ffe7701c28b`; Pages `38853657882` SUCC
 ### STAB1 retained attempt history
 
 Initial candidate4656ff6159d3b7dddb77868799e3069fad92b5c3 was superseded by browser float-pressure oracle correction. Candidate1fd1542e110922aa57a3097d6c24d3b0ceef8c6f/CI38850337803 failed four legacy cache-date expectations while400models and new stabilization journeys passed. Four date literals were corrected, application bytes unchanged; sourcea56326a64d5f697d40c33ef51d9d738965e4b316/CI38851896377 passed all gates and was published. Full attempt/artifact receipts remain in .delivery/CHG-UNRULY-STAB1-1016/ATTEMPTS.json.
+
+## GUIDE1 + NODE1 combined batch —16 October2026, in progress
+
+Owner explicitly requested "Club geometry and guides" and continued this build. GUIDE1: ruler/symmetry/grid/15degree/nearby vector endpoint snapping. NODE1: artwork point editing, curve pen/handles and native v15 authoring. Local24new model tests PASS; browser/cumulative verification and publication pending. Actual node paths up to512points; curves64anchors/512samples; no automatic simplification. Vector-ink guides only; pixel/mask/smudge and image-tip symmetry compatibility gaps retained. Intersection model coverage does not close physical-device eraser acceptance. All other roadmap rows remain, including custom-tip alpha lock, palettes/composition/wet media, workflow, Motion mixed-target, video/export, Drive/BYOK and release acceptance. No complete-product-today or fixed build count promised. Knowledge graph unchanged.

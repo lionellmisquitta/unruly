@@ -1,3 +1,9 @@
+# Current checkpoint — GUIDE1 + NODE1 active
+
+Active authorized batch: GUIDE1+NODE1, base9833b76d5e1bf548274aa7e223aad68f88ad6faa, branch CHG-UNRULY-DRAW-1016/guides-geometry. Guides and real artwork geometry are combined with separate gates.24new model checks PASS; browser/cumulative QA and publication pending. Last published app remains STAB1 until verified publication. Native v15 preserves optional curve authoring with ordinary sampled replay, bounded64anchors/512points; no renderer/storage/history rewrite. Current gaps and complete scope remain in PRODUCT_ROADMAP and scoped .delivery/CHG-UNRULY-DRAW-1016 records. Knowledge graph and skills unchanged. Resume exact candidate/run from scoped continuation, not a new feature implementation.
+
+## Historical STAB1 closeout
+
 # Current checkpoint — STAB1,16 October2026
 
 STAB1 (REQ-005/C02) published and hosted verified. Source `a56326a64d5f697d40c33ef51d9d738965e4b316`; cumulative CI `38851896377` SUCCESS:400model tests,357structured Chromium scenarios plus2legacy console checks;159source hashes verified from downloaded artifact `12025528906` (SHA256 `b152ff3fa6f198319649f6c0489ec206112aebe526f24b0c3538e98343efe97d`). Same-session owner-authorized personal-project verification/publication; no independent/protected human approval or real-device acceptance claim.

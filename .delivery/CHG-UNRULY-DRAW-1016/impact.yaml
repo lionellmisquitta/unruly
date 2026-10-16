@@ -1,0 +1,31 @@
+{
+  "change_id": "CHG-UNRULY-DRAW-1016",
+  "readiness": "ready",
+  "open_contradictions": [],
+  "hub_suppressed": false,
+  "targets": [
+    "prototypes/browser-workspace/guides.js",
+    "prototypes/browser-workspace/artwork-geometry.js",
+    "prototypes/browser-workspace/drawing-tools-ui.js",
+    "prototypes/browser-workspace/app.js",
+    "prototypes/browser-workspace/model.js",
+    "prototypes/browser-workspace/selection.js"
+  ],
+  "regression_obligations": [
+    {
+      "id": "DRAW-R1",
+      "reason": "Guide math, geometry/native/transform/erase compatibility",
+      "test_id": "DRAW-MODEL"
+    },
+    {
+      "id": "DRAW-R2",
+      "reason": "Pointer draft/Undo/locked/offline/UI safety",
+      "test_id": "DRAW-BROWSER"
+    },
+    {
+      "id": "DRAW-R3",
+      "reason": "Shared input/model cumulative compatibility",
+      "test_id": "DRAW-CUMULATIVE"
+    }
+  ]
+}
