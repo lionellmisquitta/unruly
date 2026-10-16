@@ -1,6 +1,6 @@
 # Current checkpoint — TIP4
 
-TIP4 custom image-tip guides/symmetry verified and merged; publication pending. Source `597b6fa72114c38141c64486d393f5de3ee737cd`; cumulative CI `38952135785` SUCCESS:499model tests,412structured Chromium scenarios plus2legacy console checks. Downloaded artifact `12070636088` SHA256 `af149c09fce5c2e6d3711f4c3d0c5b64fad51ab3639e70a33c87e61952577a13` and177source hashes verified. PR24 merge `6a9a2a7400fd3abe2a24c0aa266b3e2855da9876` has exactly tested tree `8b835c48e9b68bb38fd6b35a270ab577c7c266c0`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
+TIP4 custom image-tip guides/symmetry published and hosted verified. Source `597b6fa72114c38141c64486d393f5de3ee737cd`; cumulative CI `38952135785` SUCCESS:499model tests,412structured Chromium scenarios plus2legacy console checks. Downloaded artifact `12070636088` SHA256 `af149c09fce5c2e6d3711f4c3d0c5b64fad51ab3639e70a33c87e61952577a13` and177source hashes verified. PR24 merge `6a9a2a7400fd3abe2a24c0aa266b3e2855da9876` has exactly tested tree `8b835c48e9b68bb38fd6b35a270ab577c7c266c0`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
 
 Select an image brush in Brush Library, choose Vector ink with Alpha lock off, then Actions → Drawing tools. Ruler/grid/15degree/nearby-endpoint constraints retain their existing controls; vertical/horizontal/both symmetry creates up to4editable tip strokes in one Undo. Shape/grain/seed/scatter/random orientation and effective pressure mirror together, including single taps. Source-only live preview uses the same precision path as the committed identity; copies appear on release. Axis-centred asymmetric image tips can overlap; ordinary-ink axis deduplication remains. Escape/pointercancel commits none. Native reopen/offline/import/clipboard and rotation/scale preserve reflection.
 
@@ -13,6 +13,8 @@ CI audit re-downloaded TIP3/PAL1/COMP1 archives, verified exact digests/source h
 New behavior stays in guides/custom-tips with bounded app/model/selection hooks. No canvas engine, render facade, storage/history rewrite, new runtime asset or capacity increase. Logical CODE_STRUCTURE responsibility map updated; knowledge graph and skills unchanged. Graph remains at TIME1; after TIP4 the app is six batches/seven checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3, PAL1, COMP1, TIP4).
 
 Remaining painting: proprietary brush-format feasibility, pattern deformation/advanced wet media, pixel/alpha-lock guide compatibility. Remaining rotation/gestures/sticky notes/connectors/richer text, Motion mixed-target compatibility, clean video export, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI, device/palm/latency/long-session/30–50interactive capacity and release validation remain retained. Full C02/C05/C06/product scope is not closed; no fixed total build count or scope cut approved. Scoped evidence `.delivery/CHG-UNRULY-TIP4-1017/`.
+
+Publication `00a27382946cf41772a834ba4d95323e36b53486`; Pages `38955027379` SUCCESS; all70hosted application files match reviewed source bytes.
 
 ## Historical COMP1 closeout
 

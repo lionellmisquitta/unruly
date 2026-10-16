@@ -49,5 +49,8 @@
     "PAL1 colour baseline",
     "TIME1 graph gap only; graph unchanged"
   ],
-  "CI_enforced_inventory_not_path_scope": true
+  "CI_enforced_inventory_not_path_scope": true,
+  "final_docs_only_no_redeployment": true,
+  "hosted_matches": 70,
+  "all_requirement_rows_preserved": 27
 }

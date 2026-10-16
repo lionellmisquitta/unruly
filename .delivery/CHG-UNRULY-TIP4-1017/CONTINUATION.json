@@ -1,6 +1,6 @@
 {
   "checkpoint": "TIP4",
-  "status": "verified and merged; publication pending",
+  "status": "published and hosted verified",
   "source": "597b6fa72114c38141c64486d393f5de3ee737cd",
   "tree": "8b835c48e9b68bb38fd6b35a270ab577c7c266c0",
   "run": 38952135785,
@@ -15,5 +15,7 @@
   "source_hashes": 177,
   "prior_CI_audit": "three archives/digests/source hashes verified; three semantic mutants rejected; inventory guarded",
   "knowledge_graph_changed": false,
-  "next": "Wait Pages, verify70hosted hashes, close roadmap without redeployment."
+  "next": "Scope remaining painting work; do not rebuild TIP4 or update KG.",
+  "publication": "00a27382946cf41772a834ba4d95323e36b53486",
+  "pages": 38955027379
 }

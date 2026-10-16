@@ -1,5 +1,5 @@
 # UNRULY — code structure and change boundaries
-Current TIP4 verified and merged; publication pending: `597b6fa72114c38141c64486d393f5de3ee737cd`, CI38952135785SUCCESS499models/412structuredChromium+2legacy;177source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
+Current TIP4 published and hosted verified: `597b6fa72114c38141c64486d393f5de3ee737cd`, CI38952135785SUCCESS499models/412structuredChromium+2legacy;177source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.
 
 ## Current logical blocks
@@ -216,6 +216,7 @@ flowchart TD
 ```
 
 All earlier checkpoint notes below their dated headings are historical as-built evidence. Existing capacities unchanged. Same-session bounded model/browser/pixel/visual verification does not establish physical-device feel or independently approved architectural isolation. Scoped receipts in .delivery/CHG-UNRULY-COMP1-1016/.
+
 
 ## TIP4 current localization
 
