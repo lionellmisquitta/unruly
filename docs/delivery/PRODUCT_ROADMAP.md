@@ -347,3 +347,6 @@ New behavior stays in guides/custom-tips with bounded app/model/selection hooks.
 Remaining painting: proprietary brush-format feasibility, pattern deformation/advanced wet media, pixel/alpha-lock guide compatibility. Remaining rotation/gestures/sticky notes/connectors/richer text, Motion mixed-target compatibility, clean video export, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI, device/palm/latency/long-session/30–50interactive capacity and release validation remain retained. Full C02/C05/C06/product scope is not closed; no fixed total build count or scope cut approved. Scoped evidence `.delivery/CHG-UNRULY-TIP4-1017/`.
 
 Publication `00a27382946cf41772a834ba4d95323e36b53486`; Pages `38955027379` SUCCESS; all70hosted application files match reviewed source bytes.
+
+## PAT1 authorized — 17-Oct-2026
+Pattern deformation scoped from published TIP4 baseline. Four-corner selected-raster perspective preview/Apply/Cancel/Undo; implementation pending. Advanced wet media and all other pending requirements retained. User also authorized graph catch-up after build verification.

@@ -1,0 +1,30 @@
+{
+  "change_id": "CHG-UNRULY-PAT1-1017",
+  "base": "f6810d25e4c86a01bb777d40840f66057eada19d",
+  "readiness": "ready",
+  "open_contradictions": [],
+  "hub_suppressed": false,
+  "targets": [
+    "C05 / effects decisions: pattern deformation",
+    "pattern-warp.js: pure convex perspective resampling",
+    "pattern-warp-ui.js: isolated dialog with numeric and pointer corner controls",
+    "app.js: bounded controller wiring, draft blocking, selected-raster command"
+  ],
+  "regression_obligations": [
+    {
+      "id": "R1",
+      "reason": "Identity exact, convex bounds, premultiplied alpha, work bounds",
+      "test_id": "PAT1-MODEL"
+    },
+    {
+      "id": "R2",
+      "reason": "Locked/hidden ancestors, alpha lock, source identity, history, stale drafts",
+      "test_id": "PAT1-MODEL"
+    },
+    {
+      "id": "R3",
+      "reason": "Import-pattern/placed-raster UX, cancel, Undo, reopen/offline and composition parity",
+      "test_id": "PAT1-BROWSER"
+    }
+  ]
+}

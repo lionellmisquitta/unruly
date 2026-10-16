@@ -1,0 +1,60 @@
+{
+  "change_id": "CHG-UNRULY-PAT1-1017",
+  "base": "f6810d25e4c86a01bb777d40840f66057eada19d",
+  "route": "standard_change",
+  "prohibited_paths": [
+    "prototypes/browser-workspace/canvas2d-renderer.js",
+    "prototypes/browser-workspace/render.js",
+    "prototypes/browser-workspace/storage.js",
+    "prototypes/browser-workspace/model.js",
+    "prototypes/browser-workspace/history-patch.js"
+  ],
+  "checkpoints": [
+    {
+      "id": "PAT1",
+      "allowed_paths": [
+        "prototypes/browser-workspace/pattern-warp.js",
+        "prototypes/browser-workspace/pattern-warp-ui.js",
+        "prototypes/browser-workspace/app.js",
+        "prototypes/browser-workspace/index.html",
+        "prototypes/browser-workspace/style.css",
+        "prototypes/browser-workspace/sw.js",
+        "docs/delivery/",
+        ".delivery/CHG-UNRULY-PAT1-1017/",
+        "AGENTS.md"
+      ],
+      "test_paths": [
+        "tests/browser-workspace/pattern-warp.model.test.mjs",
+        "tests/browser-workspace/pattern-warp.browser.cjs",
+        "tests/browser-workspace/"
+      ],
+      "tests": [
+        {
+          "id": "PAT1-MODEL",
+          "command": [
+            "node",
+            "--test",
+            "tests/browser-workspace/pattern-warp.model.test.mjs"
+          ],
+          "timeout_seconds": 120
+        },
+        {
+          "id": "PAT1-BROWSER",
+          "command": [
+            "node",
+            "tests/browser-workspace/pattern-warp.browser.cjs"
+          ],
+          "timeout_seconds": 240
+        }
+      ]
+    }
+  ],
+  "test_config_changes": [
+    ".github/workflows/browser-workspace.yml",
+    ".github/workflows/browser-workspace-pages.yml"
+  ],
+  "notes": [
+    "Existing browser test edits permitted only exact service-worker cache identity; all assertions retained.",
+    "Explicit owner-authorized graph refresh follows app verification on knowledge branch; separate graph scope/receipt before edits."
+  ]
+}

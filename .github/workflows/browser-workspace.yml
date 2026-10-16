@@ -25,6 +25,20 @@ jobs:
           npm ci --ignore-scripts --no-audit --no-fund --prefix tests/browser-workspace
           cd tests/browser-workspace
           npx playwright install --with-deps chromium
+      - name: Pattern deformation focused gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node --test tests/browser-workspace/pattern-warp.model.test.mjs > tests/browser-workspace/evidence/pattern-warp-model-output.txt 2>&1 || { cat tests/browser-workspace/evidence/pattern-warp-model-output.txt; exit 1; }
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/pattern-warp-server.log 2>&1 &
+          qa_pat1_server_pid=$!
+          trap 'kill "$qa_pat1_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/pattern-warp.browser.cjs > tests/browser-workspace/evidence/pattern-warp-output.txt 2>&1 || { cat tests/browser-workspace/evidence/pattern-warp-output.txt; exit 1; }
       - name: Image-tip guides and CI contract focused gate
         shell: bash
         run: |
