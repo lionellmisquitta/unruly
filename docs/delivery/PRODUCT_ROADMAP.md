@@ -6,7 +6,21 @@ This is the current full-product roadmap index. The painting sequence below is a
 
 Application baseline: TIME1 published at 0bab964ad5722c5dc3fd6dbe67c5705125635447, after MOTION1. Persistent completed-operation recording/replay and recording backups delivered; clean video export/framing and physical-device acceptance remain OPEN. Motion mixed-target compatibility,32layer cap,30–50interactive target and all other retained scope remain. See CURRENT_CHECKPOINT.md for current evidence.
 
-## Near-term painting sequence
+## Current build priority — owner decision, 16 October 2026
+
+Complete the remaining drawing and painting work before export-focused builds. This order supersedes earlier near-term sequences and “video export next” proposals; historical build receipts remain unchanged. Work groups are not fixed build counts. No requirement is removed.
+
+1. **Stroke stabilization/smoothing** — next proposed checkpoint.
+2. **Drawing guides and editable geometry** — ruler, symmetry, snapping, artwork control-point editing and dedicated curve pen; intersection-eraser completeness/device issues.
+3. **Painting and composition completion** — custom-tip alpha-lock compatibility, proprietary brush-import feasibility, expanded palettes/mixing/reference sampling, folder-wide masks, group opacity/blends/effects ordering, pattern deformation and advanced wet-media/watercolour.
+4. **Drawing workflow completion** — whole-canvas rotation/remaining gestures, sticky notes/attached connectors/richer text, Motion Trace mixed region/original-object compatibility, and focused pen/palm/performance acceptance. Earlier drawing-tool deferrals are brought ahead of export by this owner instruction; feasibility/unverified status is not converted to completion.
+5. **Clean timelapse video export** — codecs, framing, cancellation and storage budgets; recording/replay is already published.
+6. **Artboards and artwork export** — finite named artboards, dimensions/DPI and PNG/JPG/PDF export with framing/background controls.
+7. **Release-candidate validation and fixes.**
+
+Selected PDF-page/reference work, artwork interchange, Google Drive sync, BYOK AI and every other retained roadmap row remain in scope. This drawing-before-export decision does not approve removing them from the first release or establish a total remaining build count. Their detailed requirements/statuses remain in the canonical tables below. No new feature implementation is authorized by this documentation update.
+
+## Published painting checkpoints (historical build sequence)
 | Work | Status | Scope |
 | --- | --- | --- |
 | Hue/saturation and levels, including groups | Published — HSL1 | CHG-UNRULY-HSL1-1013: metadata-only layer HSL/levels and isolated combined-group effects. Source 098c8463e86cd9d0c404381616314e306cc69fb4; CI38433660119 SUCCESS307models/289Chromium; PR12 merged; Pages38436283497 SUCCESS48hosted byte matches. Device feel remains unverified. |

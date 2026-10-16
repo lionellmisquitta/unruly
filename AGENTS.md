@@ -18,3 +18,15 @@ User has authorized verified personal-project main/Pages publication; preserve t
 
 ## Graph and skills
 Routine roadmap/code-map/status updates are documentation, not knowledge graph regeneration. Do not modify .knowledge or knowledge-graph without explicit user permission. No skill modifications without a user request.
+
+## Cost-conscious continuation — owner instruction, 16 October 2026
+
+- Read current checkpoint and the relevant roadmap section once; retrieve only affected code/tests. Re-read only when source changed or needed evidence is missing.
+- Run targeted model/browser checks during development. Run cumulative QA once the candidate is stable; repeat only after a relevant change, failure or unresolved regression risk. Preserve every assertion.
+- Keep source identity and concise machine-readable test summaries. Read failure excerpts first; fetch full logs only to diagnose a specific unresolved failure. Account for legacy result formats instead of guessing totals.
+- Avoid rapid CI polling and repeated status commentary. Use a bounded wait/status check; when a long job is still running, save exact source/run/next-action state so continuation never rebuilds completed work. Report honestly if pending.
+- Render/encode video deterministically with browser/CLI tools. Validate dimensions, duration, frame counts and cancellation automatically; inspect a few representative frames and failure samples rather than asking the model to review every frame or full video.
+- Keep screenshots/logs bounded; rerender only changed/uncertain states. No default subagents or automatic knowledge-graph refresh.
+- Documentation-only roadmap/status changes do not require browser tests, full CI or redeployment. Validate preserved requirements and changed paths directly.
+
+Follow the current PRODUCT_ROADMAP build-priority section; do not reconstruct order from superseded chat summaries. As of16-Oct-2026,drawing/painting completion precedes video export and artboards/artwork export. Next proposed: stabilization/smoothing. Scope and implementation still require the normal bounded checkpoint process.
