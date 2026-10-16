@@ -1,1 +1,0 @@
-32 layers/16 folders/eight depth,1024/1MP/4MiB working paint,2048dabs12Mwork,8MiB document,100/16MiB history,8MiB decode,80MiB backing and16MiB combined compositor caches unchanged. Clipping reserve8MiB inside budgets; original sources persist. v7 old-reader backup limitation. No graph/native/storage changes. Physical device/RAM NOT_VERIFIED.

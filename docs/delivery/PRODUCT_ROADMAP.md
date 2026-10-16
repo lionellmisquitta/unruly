@@ -239,3 +239,7 @@ Next proposed group: painting and composition compatibility/completion, scoped b
 Knowledge graph and skills unchanged by explicit instruction. Graph remains at TIME1; after this publication the application is two batches/three checkpoints ahead (STAB1, then GUIDE1+NODE1). Scoped evidence: `.delivery/CHG-UNRULY-DRAW-1016/`.
 
 Publication `ea8d936f031faf5eeab24ca5f7e8425fdca3edfd`; Pages `38899888268` SUCCESS; all 66 hosted application files match reviewed source bytes.
+
+## TIP3 — custom-tip alpha lock, active 16 October 2026
+
+Owner authorized next painting build. Close custom-tip alpha-lock compatibility using existing Vector ink/Alpha lock controls, bounded raster result, deterministic grain/jitter/pressure and one Undo/cancellation. Verification/publication pending. All remaining painting/composition, Motion mixed-target, video/export, PDF/interchange/Drive/BYOK and physical/device/release acceptance remain unchanged. No knowledge graph update. Scoped records: .delivery/CHG-UNRULY-TIP3-1016/.

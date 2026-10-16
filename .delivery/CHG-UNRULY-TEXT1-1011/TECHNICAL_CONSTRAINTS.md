@@ -1,1 +1,0 @@
-32 layers/16folders/8depth,8MiBdocument,100/16MiBhistory,80MiBbacking and existing caches unchanged. Text has fixed bounded local box + affine matrix; corners remain model geometry. v8 introduced only on text commit; masks/clipping preserve8. Offline generic fonts; no custom font uploads. Browser keyboard/physical RAM not verified. No graph/native/storage changes.

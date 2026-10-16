@@ -1,2 +1,0 @@
-# Constraints
-Keep32layer/8MiBboard/16MiBhistory/80MiBbacking contracts. Cache is optional, <=16MiB and limited further by actual backing headroom. On cache allocation failure continue uncached replay; release ownership on replacement/invalidation/auxiliary/reference/geometry changes. Preserve all original cumulative assertions. Only current SW identity literals migrate. No KG/skills/schema/storage/raw-renderer edits. Report measured CI/local results separately from physical-device evidence.

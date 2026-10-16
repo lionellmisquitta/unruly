@@ -1,1 +1,0 @@
-Existing production styles/tokens/labels/native controls and precision-node SVG treatment. No new font/icon/theme system. Scrollable390px panel, reachable Apply/Cancel, UI-only SVG outside exports. Desktop/phone render review and static validator required. Same-session review, no independent human sign-off claim.
