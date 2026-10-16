@@ -4,7 +4,7 @@ Updated: 16 October 2026 (Asia/Kolkata).
 ## Scope preservation
 This is the current full-product roadmap index. The painting sequence below is a near-term subset, not all remaining product work. Omission, summarization, a browser platform change, or a new chat never cancels a requirement. Record any removal or deferral with the user's explicit decision and source. Keep original requirement/checkpoint IDs when splitting work. Completed subfeatures do not close their entire original checkpoint.
 
-Application baseline: GUIDE1 + NODE1 published and hosted verified at 87648265ba312dc3827990968e116c992cd43b7e. Drawing guides, curve pen and artwork point editing are bounded baselines; retained compatibility, device acceptance and the complete remaining scope below stay OPEN. See CURRENT_CHECKPOINT.md for current evidence.
+Application baseline: TIP3 verified; publication pending at 77aaaf02c179e78eaef1526eabb66bd72946147c, following GUIDE1+NODE1. Custom image brushes now support alpha lock within recorded raster bounds. All remaining painting/composition, workflow, export/cloud/AI and device/release acceptance stay OPEN. See CURRENT_CHECKPOINT.md for evidence.
 
 ## Current build priority — owner decision, 16 October 2026
 
@@ -12,7 +12,7 @@ Complete the remaining drawing and painting work before export-focused builds. T
 
 1. **Stroke stabilization/smoothing — STAB1 published and hosted verified.** Physical-device feel remains open; drawing-guide baseline is in the group below.
 2. **Drawing guides and editable geometry — GUIDE1 + NODE1 verified; publication pending.** Ruler, symmetry, snapping, artwork control-point editing and dedicated curve pen baseline delivered within recorded bounds. Image-tip symmetry, broader compatibility and intersection-eraser completeness/device acceptance remain open.
-3. **Painting and composition completion** — custom-tip alpha-lock compatibility, proprietary brush-import feasibility, expanded palettes/mixing/reference sampling, folder-wide masks, group opacity/blends/effects ordering, pattern deformation and advanced wet-media/watercolour.
+3. **Painting and composition completion** — custom-tip alpha-lock compatibility delivered by TIP3; remaining scope: proprietary brush-import feasibility, expanded palettes/mixing/reference sampling, folder-wide masks, group opacity/blends/effects ordering, pattern deformation and advanced wet-media/watercolour.
 4. **Drawing workflow completion** — whole-canvas rotation/remaining gestures, sticky notes/attached connectors/richer text, Motion Trace mixed region/original-object compatibility, and focused pen/palm/performance acceptance. Earlier drawing-tool deferrals are brought ahead of export by this owner instruction; feasibility/unverified status is not converted to completion.
 5. **Clean timelapse video export** — codecs, framing, cancellation and storage budgets; recording/replay is already published.
 6. **Artboards and artwork export** — finite named artboards, dimensions/DPI and PNG/JPG/PDF export with framing/background controls.
@@ -240,7 +240,7 @@ Knowledge graph and skills unchanged by explicit instruction. Graph remains at T
 
 Publication `ea8d936f031faf5eeab24ca5f7e8425fdca3edfd`; Pages `38899888268` SUCCESS; all 66 hosted application files match reviewed source bytes.
 
-## TIP3 — custom-tip alpha lock, active 16 October 2026
+## Historical TIP3 implementation attempt —16 October2026
 
 Owner authorized next painting build. Close custom-tip alpha-lock compatibility using existing Vector ink/Alpha lock controls, bounded raster result, deterministic grain/jitter/pressure and one Undo/cancellation. Verification/publication pending. All remaining painting/composition, Motion mixed-target, video/export, PDF/interchange/Drive/BYOK and physical/device/release acceptance remain unchanged. No knowledge graph update. Scoped records: .delivery/CHG-UNRULY-TIP3-1016/.
 
@@ -249,3 +249,19 @@ TIP3 attempt source96d006fbc516fe3cba0593b5784213afdbaa34cc / CI38902698222 fail
 TIP3 source8c23ca9cb83239c3a334efc7438be8627fc3aa5c / CI38902949603: 9/10 focused browser journeys PASS; remaining assertion expected pre-import vector ID after native import had remapped it. Complete Undo equality already passed. Correct expected ID to captured imported original and retain ink-type check; app unchanged. Verification pending; no publication/graph update.
 
 TIP3 source2999d49f69e183ad47239df98427b3318aff7402 / CI38903322674 PASS:438models/377structured browser+2legacy/167source hashes verified from artifact12047737514. Screenshot review found stale legacy help saying Alpha lock off; correct that sentence, retain all successful application behavior/tests, then verify exact corrected source before publication. No app-logic change or scope removal; graph unchanged.
+
+## TIP3 verified closeout —16 October2026
+
+TIP3 custom image-tip alpha lock verified; publication pending. Source `77aaaf02c179e78eaef1526eabb66bd72946147c`; cumulative CI `38906112838` SUCCESS: 438 model tests, 377 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12049496093` SHA256 `7039676870fd7f1d0cb162d5e0cdba26234649d5d719a23e924d53abe695fae5` and all 167 source hashes verified. PR21 merge `3570fef4fef32cbc535f86be1f5a8a8c67d54ca8` has exactly the tested tree `3040551d0e38731c64dcc13561b5a3a769877e43`. Same-session owner-authorized personal-project verification; no independent human/device acceptance claim.
+
+Select an image brush in Brush Library, keep Vector ink selected, and enable Alpha lock on the layer. Painting uses the imported shape, grain, spacing/scatter/jitter/rotation/flips and effective pressure, then preserves every original source alpha byte. Source/settings are frozen per gesture; dirty preview uses deterministic saved points. Successful release commits one raster edit; Undo restores original vectors/pixels, Redo and native reopen retain the paint. Escape/pointercancel, work/stamp overflow, empty/missed source and incompatible pixel modes preserve artwork. Layer masks/effects/group/clipping metadata stays in the existing composition pipeline. No native-schema, renderer, model, history or storage rewrite.
+
+14 new model checks and 10 new Chromium journeys pass, including exact Canvas pigment oracle with grain/jitter/pressure, partial alpha, real pointer Undo/Redo/reopen, cancellation, locked/hidden layers, incompatible-mode rejection, vector restoration, bounded overflow, offline module and phone controls. Desktop/phone screenshots reviewed with the limits recorded in UI_REVIEW.json. 13 existing pixel-paint model checks also passed locally. All previous browser assertions retained; TIPB10 was deliberately changed from the old compatibility rejection to actual painting/Undo plus incompatible pixel-mode rejection.
+
+Bounds: uses existing <=1024×1024 native-pixel/layer snapshot rules, without layer growth or persisted capacity increase; <=5000 points, existing 4096 stamps/4MiB sampled-mask budget and <=12M conservative clipped-pixel work. Original alpha-locked artwork becomes pixels on commit; Undo restores originals. Preview replays the bounded gesture once per dirty frame, not incremental stamp caching. Physical pen/palm/latency, large-layer/long-session performance, intersection-eraser device acceptance and the 32-layer/30–50 interactive target remain OPEN. Image-tip symmetry/guides and pixel-mode custom tips remain separate compatibility work.
+
+Next proposed painting/composition work: expanded palettes/mixing/reference sampling, folder-wide masks/group blend/effects ordering, proprietary brush-format feasibility, patterns and advanced wet media. Remaining workflow/gestures/text/connectors, Motion Trace mixed-target compatibility, clean timelapse video, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI and release validation all remain in PRODUCT_ROADMAP. This closes the TIP1 custom-tip alpha-lock gap, not all painting/composition or C05/C06. No scope cut or fixed remaining build count approved.
+
+Knowledge graph and skills unchanged. Graph remains at TIME1; after this publication the app is three batches/four checkpoints ahead (STAB1, GUIDE1+NODE1, TIP3). Scoped evidence: `.delivery/CHG-UNRULY-TIP3-1016/`.
+
+Historical TIP1 rows describe the original build; TIP3 above supersedes only their custom-tip alpha-lock compatibility gap. All other retained gaps remain.

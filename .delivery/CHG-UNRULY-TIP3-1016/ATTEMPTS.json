@@ -31,6 +31,14 @@
       "artifact": 12047737514,
       "artifactDigest": "514f9faaddcf494d2b6d3d263d1c6434be1b417e34aad6080333f66f7a1d0c94",
       "reason": "All gates passed. Screenshot review found contradictory legacy brush help still asking Alpha lock off. Correct only that sentence; no paint/control/JS/test changes. New exact-source cumulative verification before publication."
+    },
+    {
+      "source": "77aaaf02c179e78eaef1526eabb66bd72946147c",
+      "run": 38906112838,
+      "status": "PASS",
+      "models": 438,
+      "structuredBrowser": 377,
+      "legacyChecks": 2
     }
   ]
 }

@@ -1,0 +1,63 @@
+{
+  "change_id": "CHG-UNRULY-TIP3-1016",
+  "baseline_id": "92d2d8817e5ab4ebc209355939501abc84b88696",
+  "scope_envelope": {
+    "target": [
+      "image-tip-paint.js bounded adapter",
+      "app.js Alpha lock/Vector ink admission and shared disposable pixel-preview/finish error handling",
+      "Existing brush-library help and offline cache module admission"
+    ],
+    "contract": [
+      "custom-tips.visitTip/drawTip and grain",
+      "pen-input effective dynamics",
+      "raster encoding and nativePixelSnapshot/snapshotLayer",
+      "Pixel-preview/commit/cancel; existing masks and smudge share preview helper"
+    ],
+    "regression": [
+      "TIP3-MODEL pure alpha/config/budget checks",
+      "TIP3-BROWSER Canvas/pointer/history/offline checks",
+      "Full existing cumulative QA, including masks/smudge/effects/clipping/Motion/timelapse"
+    ],
+    "excluded_legacy": [
+      "Proprietary formats, palette/mixing, group masks/blends, wet media",
+      "Image-tip symmetry/guides and custom tips in pixel paint modes",
+      "Renderer/model/storage/history engine rewrites"
+    ],
+    "unknown_boundary": [
+      "Physical pen/palm/long-session feel",
+      "Large-layer interactive performance beyond existing bounded snapshot limits"
+    ]
+  },
+  "confirmed_impacts": [
+    "Existing alpha-lock guard rejected all image brushes",
+    "Adapter now reuses deterministic tip pigment and preserves exact source alpha",
+    "Alpha-lock editing commits raster and Undo restores imported original IDs/vectors",
+    "Shared preview helper suppresses no-op commits; finish error guards preserve all pixel draft types"
+  ],
+  "likely_impacts": [
+    "Full-gesture dirty-frame replay can cost more on long/dense gestures; existing mask/stamp/work admission and physical follow-up retained"
+  ],
+  "regression_obligations": [
+    "TIP3-MODEL: frozen source/brush, RGB blending, alpha/no-op, budget and errors",
+    "TIP3-BROWSER: pointer/native/Undo/cancel/readonly/mode/offline/phone and cumulative suite"
+  ],
+  "technical_constraints": [
+    "Existing <=1024x1024 source snapshot, no growth",
+    "<=5000points;4096stamps/4194304sampled mask pixels;12000000 clipped work",
+    "Existing controls/native raster schema; no new workflow or styling",
+    "Exact tested source and hosted bytes required for publication; no graph update"
+  ],
+  "unknowns": [
+    "No physical-device/independent-human acceptance claim",
+    "No whole-product readiness or global performance claim"
+  ],
+  "ux_route": "not_required",
+  "evidence_refs": [
+    "docs/delivery/PRODUCT_ROADMAP.md TIP1 gap and current priority",
+    "prototypes/browser-workspace/app.js beginPaint/startPointer/pixelPreview/finish paths",
+    "prototypes/browser-workspace/custom-tips.js drawTip/visitTip",
+    "prototypes/browser-workspace/canvas2d-renderer.js snapshotLayer",
+    "tests/browser-workspace/image-tip-paint.model.test.mjs",
+    "tests/browser-workspace/image-tip-paint.browser.cjs"
+  ]
+}

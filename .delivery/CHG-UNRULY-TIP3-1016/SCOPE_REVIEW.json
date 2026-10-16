@@ -1,0 +1,25 @@
+{
+  "base": "92d2d8817e5ab4ebc209355939501abc84b88696",
+  "source": "77aaaf02c179e78eaef1526eabb66bd72946147c",
+  "appFilesUnchanged": 63,
+  "appFilesChanged": [
+    "prototypes/browser-workspace/index.html",
+    "prototypes/browser-workspace/sw.js",
+    "prototypes/browser-workspace/app.js"
+  ],
+  "appFilesAdded": [
+    "prototypes/browser-workspace/image-tip-paint.js"
+  ],
+  "legacyBrowserCacheOnly": 10,
+  "legacyBehaviorUpdated": "TIPB10 intentional correction of former image-tip alpha-lock rejection; painting/Undo and pixel-mode rejection asserted",
+  "protectedEnginesUnchanged": [
+    "model.js",
+    "render.js",
+    "canvas2d-renderer.js",
+    "storage.js",
+    "history-patch.js"
+  ],
+  "knowledgeGraphChanges": 0,
+  "review": "Manual scoped diff review, not centrally enforced protection",
+  "closeoutScope": "Pinned publication workflow and docs/receipts; AGENTS next-step accuracy. Additional impact-analysis.json captures same scoped Pass1 fields with required/type/enum validation; no application scope expansion."
+}
