@@ -182,3 +182,8 @@ flowchart TD
 ```
 
 This is a logical calls/import map,not an executed AST/knowledge graph or global acyclicity proof. Existing app/model hubs remain shared. Recording payload budgets are separate from8MiBboard/16MiBhistory/80MiBrender backing;32layers remain. Recorded state can persist before artwork autosave because transactions are separate. Preview never promotes recorded geometry to live artwork. Paused/reload gaps are marked current states. Video/continuous ink animation/navigation/framing and physical/long-session acceptance remain open. Re-open triggers and future change surfaces: scoped CHANGE_IMPACT_COMPENDIUM.md.
+
+
+## STAB1 input boundary —16 October2026
+
+`stabilization.js` owns pure constant-state distance filtering of x/y only; `stabilization-ui.js` owns device-local range preference and blocked-state/storage-error feedback. app.js snapshots amount/zoom at vector/pixel/mask admission and passes ordered/coalesced points through the filter, with exact release endpoint. Existing renderer/model/history/storage consume ordinary geometry/pixels; no replay metadata or schema changes. Held-shape recognition, smudge, lasso, navigation and artwork erasing retain existing paths. UI range is separate from portable brush/stroke settings. This remains a bounded logical map, not an AST/call graph.

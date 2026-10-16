@@ -1,5 +1,10 @@
 # UNRULY continuation contract
 
+STAB1 (REQ-005/C02) is the active authorized build on `CHG-UNRULY-STAB1-1016/stabilization`, base `6aa05f0b3767fcc45466240c5d6778d9e9d5dc93`. Device-local0–100 smoothing for ink/image tips,pixel paint and masks; Off default. Local14model tests PASS; focused Chromium/cumulative CI and publication pending. Retain TIME1 as latest published source until verified publication. Knowledge graph and skills unchanged; .knowledge remains at TIME1 by explicit instruction. Resume from scoped .delivery/CHG-UNRULY-STAB1-1016 records.
+
+## Historical TIME1 closeout
+
+
 ## Cost-conscious continuation — owner instruction, 16 October 2026
 
 - Read current checkpoint and the relevant roadmap section once; retrieve only affected code/tests. Re-read only when source changed or needed evidence is missing.

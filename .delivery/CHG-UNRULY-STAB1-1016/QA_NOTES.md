@@ -1,0 +1,1 @@
+Local14/14 stabilization model checks PASS. UI static validator0errors; inherited warnings disposition in KNOWN_LIMITS. Local Chromium absent, so focused Chromium gate executes first in existing provider CI, followed by one cumulative candidate suite only after new-feature checks pass. Same-session verification; no independent human/protected approval claimed.

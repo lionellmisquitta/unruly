@@ -201,3 +201,13 @@ Scoped records: .delivery/CHG-UNRULY-TIME1-1015/ includes impact/plan,UX/visual 
 ## Knowledge graph refresh — 16 October 2026
 
 Owner-authorized incremental refresh captures HSL1, FX2, TIP1, TIP2+CAP1, CAP2, MOTION1 and TIME1: seven published batches/eight checkpoints since FILL2. Current graph records drawing/painting before video/artwork export, cost controls and all retained gaps/scope. No roadmap requirement removed or new application build/deployment performed. Counter reset to zero; .knowledge/CURRENT_GRAPH.json binds graph commit and package hashes.
+
+
+## STAB1 —16 October2026, implementation pending verification
+
+REQ-005/C02: adjustable0–100 device-local smoothing for ink/image tips,pixel paint and mask painting. Off preserves raw input. Constant-state geometric filter preserves pressure and exact successful-release endpoint; no board-schema/replay change. Targeted model checks10/10 PASS; browser/cumulative verification and publication pending. Real-device feel/latency remain OPEN. No other scope removed. Knowledge graph unchanged by owner instruction. Next proposed work group: drawing guides (ruler/symmetry/snapping), with vector nodes/curve pen/intersections still retained separately.
+
+
+### STAB1 first cumulative attempt — cache-oracle date repair
+
+Source1fd1542e110922aa57a3097d6c24d3b0ceef8c6f; CI38850337803 FAILED in four legacy offline-cache identity assertions. New stabilization gate passed. Expected full cache date was left at20261015 while actual new cache is20261016-stab1-1. Repair changes those four expected identities only; application code unchanged. Artifact12025775927 SHA25641fdc023827028b77dc77b1f7d84e77c21c5927d9019517bfb52ecb7aaaebaaf retained. Cumulative verification/publication still pending; no scope removed and knowledge graph unchanged.
