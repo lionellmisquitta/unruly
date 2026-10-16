@@ -197,5 +197,16 @@
   ],
   "knowledgeGraphFilesChanged": 0,
   "scopeReview": "New modules and bounded app/model/selection/HTML/CSS/SW integration; CI gate plus nine legacy cache-identity expectations; roadmap/logical structure/scoped governance. Publication workflow and evidence-only main follow-up authorized by AGENTS; no renderer/storage/history rewrite.",
-  "assertions": "Downloaded artifact confirms 164 exact source hashes. Existing roadmap requirement table rows retained. No independent or automated scope-enforcement claim."
+  "assertions": "Downloaded artifact confirms 164 exact source hashes. Existing roadmap requirement table rows retained. No independent or automated scope-enforcement claim.",
+  "closeoutPaths": [
+    ".github/workflows/browser-workspace-pages.yml",
+    "AGENTS.md",
+    "docs/delivery/PRODUCT_ROADMAP.md",
+    "docs/delivery/CURRENT_CHECKPOINT.md",
+    "docs/delivery/CONTINUATION_CONTRACT.md",
+    ".delivery/CHG-UNRULY-DRAW-1016/*"
+  ],
+  "closeoutReason": "Pinned exact verified publication, evidence/status persistence, and replacing stale next-stabilization advice in AGENTS with actual next painting/composition group. No application change after verified source.",
+  "roadmapTableRowsPreserved": 27,
+  "hostedAssetsVerified": 66
 }

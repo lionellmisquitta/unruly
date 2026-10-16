@@ -6,7 +6,7 @@
     "NODE1"
   ],
   "local_models": 24,
-  "state": "verified; publication pending",
+  "state": "published and hosted verified",
   "expected_models": 424,
   "expected_structured_browser": 367,
   "expected_legacy_checks": 2,
@@ -17,5 +17,5 @@
   "pr": 20,
   "merge": "71fa5f5c2e552737942b9adba0fd34e4e70fcf91",
   "tree": "5f03103516c111b9ff00e4b5a5f3eefbe55acf55",
-  "next_action": "Wait pinned Pages publication, verify all hosted bytes, then docs-only closeout"
+  "next_action": "Scope painting/composition completion from current roadmap; no graph update"
 }

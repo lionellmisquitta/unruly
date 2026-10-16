@@ -4,7 +4,7 @@ Updated: 16 October 2026 (Asia/Kolkata).
 ## Scope preservation
 This is the current full-product roadmap index. The painting sequence below is a near-term subset, not all remaining product work. Omission, summarization, a browser platform change, or a new chat never cancels a requirement. Record any removal or deferral with the user's explicit decision and source. Keep original requirement/checkpoint IDs when splitting work. Completed subfeatures do not close their entire original checkpoint.
 
-Application baseline: GUIDE1 + NODE1 verified; publication pending at 87648265ba312dc3827990968e116c992cd43b7e. Drawing guides, curve pen and artwork point editing are bounded baselines; retained compatibility, device acceptance and the complete remaining scope below stay OPEN. See CURRENT_CHECKPOINT.md for current evidence.
+Application baseline: GUIDE1 + NODE1 published and hosted verified at 87648265ba312dc3827990968e116c992cd43b7e. Drawing guides, curve pen and artwork point editing are bounded baselines; retained compatibility, device acceptance and the complete remaining scope below stay OPEN. See CURRENT_CHECKPOINT.md for current evidence.
 
 ## Current build priority — owner decision, 16 October 2026
 
@@ -228,7 +228,7 @@ Owner explicitly requested "Club geometry and guides" and continued this build. 
 
 ## GUIDE1 + NODE1 verified closeout —16 October2026
 
-GUIDE1 + NODE1 verified; publication pending. Source `87648265ba312dc3827990968e116c992cd43b7e`; cumulative CI `38897534474` SUCCESS: 424 model tests, 367 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12045302914` SHA256 `0944a4614dc004015eb9b4d61cf999b9bd571f0f19bb662ad85c3daa96c7a445` and all 164 source hashes verified. PR20 merge `71fa5f5c2e552737942b9adba0fd34e4e70fcf91` has exactly the tested tree `5f03103516c111b9ff00e4b5a5f3eefbe55acf55`. Same-session owner-authorized verification; no independent human or physical-device acceptance claim.
+GUIDE1 + NODE1 published and hosted verified. Source `87648265ba312dc3827990968e116c992cd43b7e`; cumulative CI `38897534474` SUCCESS: 424 model tests, 367 structured Chromium scenarios plus 2 legacy console checks. Downloaded artifact `12045302914` SHA256 `0944a4614dc004015eb9b4d61cf999b9bd571f0f19bb662ad85c3daa96c7a445` and all 164 source hashes verified. PR20 merge `71fa5f5c2e552737942b9adba0fd34e4e70fcf91` has exactly the tested tree `5f03103516c111b9ff00e4b5a5f3eefbe55acf55`. Same-session owner-authorized verification; no independent human or physical-device acceptance claim.
 
 Actions → Drawing tools provides ruler, grid, 15° and nearby active-layer vector-endpoint snapping; native vector symmetry copies commit together in one Undo. Guide settings are device-local and captured per gesture. Guides constrain future freehand Vector ink; pixel/mask/smudge paths and image-tip symmetry limitations remain. Dedicated curve pen authors its own anchors/handles. Artwork point editing changes actual vector artwork; draft Apply is one Undo, while Cancel/Escape preserves source. Native v15 preserves optional curve authoring and ordinary sampled replay. Curves are bounded to 64 anchors/512 samples; ordinary point editing to 512 points, with no automatic simplification. Stale authoring after other geometry changes falls back to current artwork points.
 
@@ -237,3 +237,5 @@ Actions → Drawing tools provides ruler, grid, 15° and nearby active-layer vec
 Next proposed group: painting and composition compatibility/completion, scoped before implementation. Custom-tip alpha lock, proprietary brush import feasibility, palettes/mixing/reference sampling, folder masks/group blending and effects ordering, patterns/wet media, remaining gestures/text/connectors, Motion Trace mixed-target compatibility, clean video export, artboards/dimensions/DPI/PNG-JPG-PDF, PDF references, artwork interchange, Drive sync, BYOK AI and release validation all remain in the full roadmap. Intersection-eraser device acceptance, physical Surface/Xiaomi/Lenovo pen/palm/latency, long sessions, 32-layer cap and 30–50 interactive target remain OPEN. This does not close all of C05/C06 or promise a fixed total build count.
 
 Knowledge graph and skills unchanged by explicit instruction. Graph remains at TIME1; after this publication the application is two batches/three checkpoints ahead (STAB1, then GUIDE1+NODE1). Scoped evidence: `.delivery/CHG-UNRULY-DRAW-1016/`.
+
+Publication `ea8d936f031faf5eeab24ca5f7e8425fdca3edfd`; Pages `38899888268` SUCCESS; all 66 hosted application files match reviewed source bytes.

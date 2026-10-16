@@ -29,4 +29,4 @@ Routine roadmap/code-map/status updates are documentation, not knowledge graph r
 - Keep screenshots/logs bounded; rerender only changed/uncertain states. No default subagents or automatic knowledge-graph refresh.
 - Documentation-only roadmap/status changes do not require browser tests, full CI or redeployment. Validate preserved requirements and changed paths directly.
 
-Follow the current PRODUCT_ROADMAP build-priority section; do not reconstruct order from superseded chat summaries. As of16-Oct-2026,drawing/painting completion precedes video export and artboards/artwork export. Next proposed: stabilization/smoothing. Scope and implementation still require the normal bounded checkpoint process.
+Follow the current PRODUCT_ROADMAP build-priority section; do not reconstruct order from superseded chat summaries. As of16-Oct-2026,drawing/painting completion precedes video export and artboards/artwork export. STAB1 and GUIDE1+NODE1 baselines are published. Next proposed: painting/composition compatibility and completion. Scope and implementation still require the normal bounded checkpoint process.
