@@ -14,6 +14,7 @@ const fs=require('fs'),assert=require('assert/strict');
   await page.locator('#content h2').filter({hasText:'Lasso selection and enclosure fill'}).waitFor({state:'visible'});
   assert.match(await page.locator('#content').innerText(),/blank artwork/);
   assert.equal(await page.locator('#content details').evaluate(e=>e.open),false,'Raw developer detail collapsed');
+  if(!onair) await page.locator('#closePanel').click();
   await page.locator('#search').fill('TIME1 published baseline');
   await page.locator(onair?'#results .result':'#results button').filter({hasText:'TIME1 published baseline'}).first().click();
   await page.locator('#content h2').filter({hasText:'TIME1 published baseline'}).waitFor({state:'visible'});
