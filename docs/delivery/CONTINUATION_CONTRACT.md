@@ -1,3 +1,54 @@
+## CHAIN1 final guard review — 12 targeted browser scenarios PASS
+
+Final scope includes a native-source write guard for hidden/locked groups loaded from project metadata/backups, with regression CHAINF-B12 proving Add layer refuses and saved source remains unchanged. Earlier native-source layer locks continue through existing model commands. All12local browser scenarios PASS; model suite542PASS. Repaired exact-source full cumulative CI remains required; runs39022249190/39022512145 are superseded release candidates. No assertion changes, source flattening, graph or skill modifications. Current active group metadata controls do not offer group lock/visibility toggles, but imported states are enforced safely.
+
+## CHAIN1 final review repair — cumulative rerun required
+
+Sourcec68e1b8 passed the new project/scene/PAT1 pinned-browser gate in run39022249190, but is superseded for release. Self-review moved New board's project-context exit after successful native save so a quota failure preserves the active project. Added regression CHAINF-B11; all11new local Chromium scenarios now PASS. Model coverage remains542passed; no assertion weakened. Exact repaired candidate cumulative CI is required before merge/publication. All earlier scopes/limits and graph/skill prohibitions remain.
+
+## CHAIN1-D/E/F local acceptance evidence — candidate awaiting cumulative CI
+
+All10new actual Chromium153 browser scenarios PASS, including real ink/canvas equality across activation, upstream edit/Undo with downstream native source unchanged, viewport preservation, per-group history, full backup/import, offline reopen/switch, quota rollback, source conflicts, recovery refusal and original standalone Gallery access. Targeted32/32 and complete Node542/542 PASS; zero skipped/failed. Pinned Chromium151/full cumulative CI remains required. Static UI validator0errors; existing3emoji/47form-label/19tiny-type heuristics. Desktop/390px screenshots inspected. Same-session self-verification only; physical Surface/Xiaomi and long-session latency remain OPEN. No merge/publication or full CHAIN1 closure yet. Source replay fallback/aggregate32layer bound remain explicit; no large-capacity claim. Graph/skills unchanged.
+
+## CHAIN1-D/E/F integrated candidate — 17-Oct-2026
+
+CHAIN1-C source `28c48bcdab41402a1f994e40916520a03a07ba6a` passed full cumulative CI `39019592553`. Owner now authorized all remaining CHAIN1 builds sequentially with verified merges/publication. Added persistent project/source atomic IndexedDB transactions and CAS; native board schema/store/renderer internals unchanged. Create Virtual Groups copies the active board and preserves its original. Existing Layers inspector now shows ordered group headings and exactly one expanded/editable source. Switch saves first, preserves view and per-source session Undo, and refuses failed/conflicted/recovered/missing sources. Full-project backup/import assigns fresh identities; existing native export remains active-group-only. Gallery exposes native sources for explicit recovery. All project runtime modules are offline-cached.
+
+Existing aggregate32layer/8MiB/native source and80MiBrenderer bounds remain; cached per-group Undo shares16MiB and older entries are released with a visible notice. Collapsed groups use exact native-source replay fallback, not flattened proxies; no large-document performance claim. Shared paper is fixed while a project is active; reference companions explicitly refuse. Group reordering/removal, cross-group selection/clipping, larger aggregate capacity, physical-device latency and advanced proxy optimization are not implemented by this candidate. No native source artwork is flattened, transformed or overwritten by switching.
+
+Local complete Node suite542/542 PASS. Desktop/390px screenshots inspected; UI static validation zero errors (legacy heuristic warnings recorded). Browser checks are being completed before exact candidate cumulative CI. Implementation is not yet accepted/merged/published. PAT1 remains live. No knowledge graph or skill changes. Main's evaluation register/roadmap references536ca9c merged into the feature candidate and preserved. See scoped INTEGRATION_PLAN/ATTEMPTS for failures and repairs; no pre-existing test assertion weakened or deleted (15existing browser files change only exact cache identity).
+
+## CHAIN1-C CI repair attempt — 17-Oct-2026
+
+Feature-branch push succeeded through the connected GitHub plugin: source `0d9a782e9f96aef2ae699f74ec329f79bdaf257b`, tree `2be03ebae4af358532ceeb467611369d131100f5` identical to local candidate. Cumulative CI run `39019436543` FAILED in the new browser gate: raster lower-board fixture incorrectly retained createBoard's v3 label; existing validation correctly refused it. Repair sets only that fixture to v4. No assertion, application code or existing test weakened. Local model suite previously 538/538; next exact candidate cumulative CI pending. PR26 remains draft; no merge/publication; CHAIN1-C and full CHAIN1 acceptance remain OPEN. Graph/skills unchanged.
+
+## CHAIN1-C verification status — blocked before remote CI
+
+Candidate implementation commit: `98562dd048f8d1f7e9f411b5728be4284215c758` (local only). Targeted checks **28/28 PASS**; full local Node model suite **538/538 PASS**, zero skipped/failed; JavaScript syntax and diff whitespace checks PASS. Browser assertions have not executed: pinned Chromium download returned an invalid ZIP. Full GitHub cumulative CI has not run for this candidate. Automatic approval review rejected the feature-branch push as publication before browser/CI/review gates; no bypass attempted. PR26 remote head confirmed unchanged at `720abbf2d451616866131da646e7af5388faee31`. No merge/deployment; PAT1 remains published. CHAIN1-C acceptance is **NOT demonstrated** and CHAIN1 remains OPEN. Resume by obtaining explicit authorization to push the candidate to the existing PR26 feature branch for CI (not main/Pages), then execute/repair the browser gates and full cumulative workflow. App Layers UI, persistent project lifecycle and offline project recovery remain separate unimplemented acceptance gaps. Knowledge graph and skills unchanged.
+
+## CHAIN1-C attempt — source-backed composition integration, 17 October 2026
+
+Inherited PR26 head `720abbf2d451616866131da646e7af5388faee31`; base main `15a48206d824b4f4afa3683a5a07b40b2fd59304`. Added detached native-source scene projection and an adapter invoking the existing renderer on one caller-owned canvas/view. Namespaced identities retain source-local folders/masks/clipping/blends; collapsed groups use explicit full source replay, not an unsafe flattened proxy. Only the active group is marked editable. Native source/history/storage/renderer code unchanged. Aggregate existing native budgets remain enforced; differing paper, reference companions, recovered/missing/stale/shared sources refuse explicitly. This is a bounded renderer integration, **not the application Layers UI or persistent project lifecycle**.
+
+Targeted manifest/session/scene and CI contract checks pass locally (final exact total recorded in ATTEMPTS). Local pinned Chromium installation failed with an invalid downloaded archive; browser pixel/recovery acceptance and full cumulative CI remain pending. New Chromium tests exercise eight blends with folder masks/clipping, activation appearance, source storage/reopen/recovery and upstream edit/Undo at DPR1/2. No acceptance claimed until execution succeeds. No merge/publication; PAT1 remains live. Knowledge graph and skills unchanged. Next: execute exact candidate cumulative CI, repair actual failures without weakening assertions; then persistent project/switch UI/offline lifecycle require a further bounded integration. CHAIN1 remains OPEN.
+
+# Latest continuation — CHAIN1 bounded foundation, 17 October 2026
+
+## CHAIN1-B continuation update — 17 October 2026
+
+Next bounded integration slice present: virtual-group-session.js source-backed switch preparation and stale-generation guard; tests virtual-group-session.model.test.mjs; existing virtual group foundation remains. Actual canvas switching, persistent multi-board project records, visually faithful proxy rendering, Undo/palm/pen acceptance remain open. Exact-head CI not yet completed. No main merge/live publish, no graph changes.
+
+
+Branch: CHG-UNRULY-CHAIN1-1017/virtual-groups. Base main 15a48206d824b4f4afa3683a5a07b40b2fd59304. PAT1 remains published latest. New approved owner decisions: Drive sync, BYOK AI, 30-50+ layer capacity expansion deferred to later release; keep existing 32-layer limit. Prior Motion Trace is published with narrow mixed-target issue; don't rebuild it.
+
+CHAIN1 user-facing target: a unified artwork with virtual groups backed by native board sources; only one editable at once, other groups visible as accurate proxies above/below. Preserve viewport and editable sources. Upstream changes invalidate revisions, not automatically warp downstream artwork. Compositing must match masks/blends/clipping; unsupported dependencies require safe fallback. First slice is pure project contract and executable model tests only; NOT UI integrated or released. Roadmap has full owner decision and acceptance boundaries. Do not call this a released Virtual Group feature.
+
+Next inspect CI, scoped composition feasibility, then real UI/storage integration. No change to skills or graph. The previously authorized graph catch-up remains pending.
+
+---
+
+## Preserved complete PAT1 and earlier historical records
+
 # UNRULY continuation contract
 
 PAT1 image/pattern perspective deformation published and hosted verified. Source `3e25ee2193cd4e208b11889c7d248d77cc60359a`; CI `38961813222` SUCCESS:515distinct models (499 cumulative +16PAT1),419structured Chromium scenarios plus2legacy console checks. Artifact `12074476064` SHA256 `9dcb1553b6cc2dc7da02f02fccf4f557175e0d6c2617756f9b590aea3a2ae456`;181source hashes verified. PR25 merge `4c02d05552e7730e4ee50c7e0244ce2aa118f9d7` has exactly tested tree `66e11ad39dc1a218673b727fd6ae0f5fce7e637c`. Publication `b3f34be35f1557d04a021c0f0214722387eba1ae`; Pages `38964425092` SUCCESS; all72hosted application files match reviewed bytes. Same-session owner-authorized verification, not independent human/device signoff.
