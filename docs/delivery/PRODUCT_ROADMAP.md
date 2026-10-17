@@ -1,3 +1,5 @@
+CIPAR attempt 2 self-review: preserved the two original fixture-server restarts after browser/selection update journeys; additive CIPAR05 checks these boundaries. Candidate fe0aee0/run39028496379 superseded before release. No application/test assertion weakened. Repaired candidate verification pending.
+
 ## Unattended run — CIPAR parallel CI in progress, 17 October 2026
 
 Owner authorized sequential bounded painting/drawing/video/artboard builds with verified merges and publication; comprehensive physical acceptance deferred until consolidated artwork testing. Start with six isolated cumulative CI runners and a required aggregation gate. Recovery branch `recovery/pre-unattended-20261017` pins main `947df12f5570f30743bbe07038ab6a6912cf717d`; live source remains CHAIN1 `2e70554f7af0fb43a1a5c536485a16e81e3a82e8`. Never reset main or overwrite user storage to roll back.

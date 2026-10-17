@@ -146,7 +146,25 @@ jobs:
           done
           curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
           node tests/browser-workspace/browser.test.cjs > tests/browser-workspace/evidence/browser-output.txt 2>&1 || qa_result_code=1
+          kill "$qa_server_pid"
+          wait "$qa_server_pid" || true
+          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/foundation-server.log 2>&1 &
+          qa_server_pid=$!
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
           node tests/browser-workspace/selection.browser.cjs > tests/browser-workspace/evidence/selection-browser-output.txt 2>&1 || qa_result_code=1
+          kill "$qa_server_pid"
+          wait "$qa_server_pid" || true
+          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/foundation-server.log 2>&1 &
+          qa_server_pid=$!
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
           node tests/browser-workspace/performance.browser.cjs > tests/browser-workspace/evidence/performance-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/u1.browser.cjs > tests/browser-workspace/evidence/u1-browser-output.txt 2>&1 || qa_result_code=1
           node tests/browser-workspace/u2.browser.cjs > tests/browser-workspace/evidence/u2-browser-output.txt 2>&1 || qa_result_code=1
