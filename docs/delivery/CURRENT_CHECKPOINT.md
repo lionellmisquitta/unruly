@@ -1,5 +1,10 @@
 # Current checkpoint — CHAIN1, contract slice in progress (17 October 2026)
 
+## CHAIN1-B update — bounded activation adapter, 17 October 2026
+
+Added pure virtual-group-session.js with injected native-board loading, reject-on-missing/stale/recovered source and generation-stale result protections. Seven new tests and CI invocation are committed. Still no real UI/canvas/storage integration. Latest CI previously passed on an older head; revalidation of exact new head is required. Do not merge/publish before completed verification. Knowledge graph unchanged.
+
+
 Branch CHG-UNRULY-CHAIN1-1017/virtual-groups; base main 15a48206d824b4f4afa3683a5a07b40b2fd59304. PAT1 remains the last published application build.
 
 Owner-approved release decisions and Virtual Group UX are in PRODUCT_ROADMAP.md. CHAIN1 first bounded build introduces only additive, pure virtual-group manifest validation, active-group switching, source-revision invalidation, snapshot freshness and composition-order planning, plus model tests. It is a **foundation contract**, not the user-visible unified layer panel. No renderer/storage/model schema/board content/asset manager changes yet. No live publication authorized before browser-level integration QA. Existing 32-layer limit and all tests remain.
