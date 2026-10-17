@@ -1,4 +1,9 @@
 # UNRULY — full product roadmap
+
+## CHAIN1-B implementation attempt — 17 October 2026
+
+A bounded fail-closed activation adapter now validates source-board identity, source revision, recovery status and asynchronous switch generation before any caller may switch the editable context. Seven negative/positive session tests added alongside seven existing manifest tests. This slice is **not integrated into app.js, the Layers panel, the renderer or IndexedDB project storage**; do not report the user-facing experience built or published. Current PAT1 remains live. Exact-head cumulative CI pending. No knowledge graph or skill changes.
+
 Updated: 17 October 2026 (Asia/Kolkata).
 
 ## Scope preservation
