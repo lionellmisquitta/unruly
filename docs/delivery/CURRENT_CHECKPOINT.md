@@ -1,3 +1,11 @@
+MESH1 final local result:558models,32targeted model/contract checks and13actual browser scenarios PASS. Invalid/overly complex outlines refuse with Apply disabled and original art unchanged; Reset recovers. Original PAT assertions retained;14other browser suites cache-only. Final cumulative CI/publication still required.
+
+## Current unattended run — MESH1 local candidate, WET1 live
+
+CIPAR merged and main verified; WET1 sourcef1a70bf publishedc773dfbe with Pages39039181690SUCCESS,77hosted assets and actual live wash/save/reload verified. MESH1 adds same-canvas nine-point mesh and lasso-guided span fitting/clipping. Existing perspective tool/source art preserved. Source bounds1024² and no renderer/schema/storage dependency change. Targeted32model/CI checks and full558models PASS;12actual Chromium153 browser scenarios PASS including real lasso, keyboard/handle drag/pointercancel, Undo/reload, phone/offline and max-size performance. Screenshot review repaired sticky actions; self-review now makes overly complex/invalid outlines refuse rather than silently truncate; targeted browser rerun required before CI.
+
+MESH1 not yet pushed/merged/published. Next exact candidate cumulative CI, then verified merge/publication. Other unattended work remains pending: remaining painting compatibility/proprietary brush feasibility, drawing/text/connectors/Motion, clean video and artboard/panoramic/named-region exports. Physical acceptance later; graph/skills unchanged. All explicit deferrals and remaining roadmap scope retained below. Earlier statuses are historical where superseded.
+
 ## Current unattended run — WET1 PUBLISHED AND HOSTED VERIFIED
 
 Watercolour sourcef1a70bf6415ef280800ab8245ba1c149b725f67c passed cumulative parallel CI39038552834:552model tests,437structured browser scenarios and2legacy checks. Downloaded artifact12102324496 SHA25645c7c6cbbc2c8fb98fec58953cc24d93bb992efc51b125d66321525b2bc9af8a verified against192source hashes and six shard markers. PR28 mergedfd3c7e5 with exact tested tree0d123f93. Publicationc773dfbe/Pages39039181690 SUCCESS; all77hosted application assets match tested source. Actual isolated live browser watercolour controls/drawing/save/reload PASS, no page errors. Same-session self-review and owner-authorized personal-project release; physical acceptance remains deferred.

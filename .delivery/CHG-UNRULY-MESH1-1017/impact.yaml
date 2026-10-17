@@ -1,0 +1,8 @@
+change_id: CHG-UNRULY-MESH1-1017
+readiness: ready
+open_contradictions: []
+hub_suppressed: []
+targets: [prototypes/browser-workspace/pattern-mesh.js, prototypes/browser-workspace/pattern-mesh-ui.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js]
+regression_obligations:
+  - {id: source-pixels, reason: Original source and existing warp behaviour must remain intact, test_id: MESH01}
+  - {id: lifecycle, reason: Mesh preview cancel Undo reload must be real browser verified, test_id: MESH02}

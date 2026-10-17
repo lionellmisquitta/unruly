@@ -1,0 +1,18 @@
+{
+  "base": "738035f65bbc6fa26412a0ad804345472a1d5480",
+  "runtimePaths": [
+    "pattern-mesh.js",
+    "pattern-mesh-ui.js",
+    "app.js",
+    "index.html",
+    "style.css",
+    "sw.js"
+  ],
+  "originalPATBrowserAssertionsRetained": true,
+  "originalPATModelAssertionsRetained": true,
+  "otherBrowserCacheOnlyFiles": 14,
+  "knowledgeOrSkillsChanged": false,
+  "nativeSchemaStorageRendererChanged": false,
+  "review": "same-session self-review, owner-authorized unattended release",
+  "pending": "final added outline-refusal browser result, full cumulative CI and publication"
+}

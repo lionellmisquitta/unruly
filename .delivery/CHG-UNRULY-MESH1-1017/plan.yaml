@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-MESH1-1017
+route: Standard Change
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/canvas2d-renderer.js]
+checkpoints:
+  - id: MESH1
+    allowed_paths: [prototypes/browser-workspace/pattern-mesh.js, prototypes/browser-workspace/pattern-mesh-ui.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, tests/browser-workspace/, .delivery/CHG-UNRULY-MESH1-1017/, docs/delivery/]
+    test_paths: [tests/browser-workspace/pattern-warp.model.test.mjs, tests/browser-workspace/pattern-warp.browser.cjs]
+    tests:
+      - {id: MESH01, command: [node, --test, tests/browser-workspace/pattern-warp.model.test.mjs], timeout_seconds: 120}
+      - {id: MESH02, command: [node, tests/browser-workspace/pattern-warp.browser.cjs], timeout_seconds: 180}
