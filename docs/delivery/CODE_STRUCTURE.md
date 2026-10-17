@@ -1,3 +1,7 @@
+## GCOMP1 guide adapter — candidate
+
+raster-guides.js projects incoming points through existing guide geometry and dispatches up to4independent path branches on one disposable shared surface. pixel-paint.js/smudge.js keep branch-local previous points with shared original work/dab/surface budgets. Mask sessions reuse pixel paint. image-tip-paint.js renders bounded reflected seeded coverage then preserves original alpha via existing merge. app hooks snapshot guide at gesture start; native command/history/store/renderer unchanged. Existing Off session remains direct. SW caches one new adapter. Test coverage remains in existing tip-guide/pixel/mask/smudge/alpha suites with additive cases; cache-only identity changes elsewhere.
+
 ## MESH1 source map — candidate
 
 pattern-mesh.js owns nine-point piecewise-affine original-source sampling, fold/self-cross guards and lasso span-fit/clipping. pattern-mesh-ui.js owns disposable same-canvas draft, numeric/keyboard/drag handles and trace/preview/Apply/Cancel states. Narrow app hooks use existing native command/Undo, Virtual Groups projection and preview renderer. Native raster payloads retain original affine transform; no schema/store/renderer changes. SW adds2modules; browser assertions preserved with exact cache revision and additive PAT/MESH cases. Full source resampling only at change/release, bounded1024²/4MiBoutput.

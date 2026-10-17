@@ -1,0 +1,199 @@
+{
+  "models": 565,
+  "targetedOriginalRegressions": 83,
+  "guideModels": 25,
+  "browserScenarios": 17,
+  "browserEvidenceRuns": "16cases full focused run plus targeted newly added GCOMPB08; full17cases pinned CI still required",
+  "browserVersion": "Chromium153 local",
+  "allPassed": true,
+  "physicalAcceptance": "deferred",
+  "cases": [
+    {
+      "id": "TIP4B01-independent-reflected-pixels",
+      "status": "PASS",
+      "evidence": {
+        "checks": 24,
+        "maxAlpha": 0,
+        "maxPremultiplied": 0,
+        "tolerance": 2,
+        "postRasterMaxAlpha": 12,
+        "independentWorldTransformBeforeRasterization": true
+      }
+    },
+    {
+      "id": "TIP4B02-pen-four-copies-one-Undo-reopen",
+      "status": "PASS",
+      "evidence": {
+        "cdpPen": true,
+        "fourCopies": true,
+        "oneUndo": true,
+        "native17": true,
+        "reopen": true
+      }
+    },
+    {
+      "id": "TIP4B03-cancel-and-Escape-no-commit",
+      "status": "PASS",
+      "evidence": {
+        "pointerCancel": true,
+        "Escape": true
+      }
+    },
+    {
+      "id": "TIP4B04-ruler-and-grid-constrain-image-tip",
+      "status": "PASS",
+      "evidence": {
+        "ruler": true,
+        "grid": true,
+        "shapePreserved": true
+      }
+    },
+    {
+      "id": "TIP4B05-locked-hidden-alpha-lock-guards",
+      "status": "PASS",
+      "evidence": {
+        "locked": true,
+        "hidden": true,
+        "alphaLockExplicit": true
+      }
+    },
+    {
+      "id": "TIP4B06-render-composition-and-clipboard",
+      "status": "PASS",
+      "evidence": {
+        "composedFolder": true,
+        "exactReference": true,
+        "clipboard17": true,
+        "backingBytes": 1355208
+      }
+    },
+    {
+      "id": "TIP4B07-phone-guide-controls",
+      "status": "PASS",
+      "evidence": {
+        "phone390": true,
+        "existingControls": true
+      }
+    },
+    {
+      "id": "TIP4B08-offline-native17",
+      "status": "PASS",
+      "evidence": {
+        "offline": true,
+        "native17": true
+      }
+    },
+    {
+      "id": "TIP4B09-live-source-prefix-matches-commit-exactly",
+      "status": "PASS",
+      "evidence": {
+        "sourcePreviewExact": true,
+        "releaseCopies": true
+      }
+    },
+    {
+      "id": "GCOMPB01-pixel-symmetry-Undo-reload",
+      "status": "PASS",
+      "evidence": {
+        "counts": [
+          639,
+          639,
+          639,
+          639
+        ],
+        "oneUndo": true,
+        "nativeReopen": true
+      }
+    },
+    {
+      "id": "GCOMPB02-alpha-tip-guide-exact-alpha",
+      "status": "PASS",
+      "evidence": {
+        "counts": [
+          371,
+          369,
+          371,
+          369
+        ],
+        "exactOriginalAlpha": true,
+        "undo": true
+      }
+    },
+    {
+      "id": "GCOMPB03-mask-symmetry-source-preserved",
+      "status": "PASS",
+      "evidence": {
+        "counts": [
+          639,
+          639,
+          639,
+          639
+        ],
+        "artworkExact": true,
+        "oneUndo": true
+      }
+    },
+    {
+      "id": "GCOMPB04-smudge-symmetry-no-bridges",
+      "status": "PASS",
+      "evidence": {
+        "counts": [
+          1479,
+          1478,
+          1479,
+          1478
+        ],
+        "oneUndo": true
+      }
+    },
+    {
+      "id": "GCOMPB05-pixel-and-alpha-tip-cancel",
+      "status": "PASS",
+      "evidence": {
+        "pointerCancel": true,
+        "Escape": true,
+        "tipAndPixel": true
+      }
+    },
+    {
+      "id": "GCOMPB06-phone-offline-pixel-guides",
+      "status": "PASS",
+      "evidence": {
+        "counts": [
+          143,
+          143,
+          143,
+          143
+        ],
+        "offline": true,
+        "phone390": true
+      }
+    },
+    {
+      "id": "GCOMPB07-independent-reflected-alpha-tip-pixels",
+      "status": "PASS",
+      "evidence": {
+        "rotations": 3,
+        "worldTransformOracle": true,
+        "maxDifference": 0,
+        "tolerance": 2,
+        "pigment": 7645,
+        "exactSourceAlpha": true
+      }
+    },
+    {
+      "id": "GCOMPB08-watercolour-four-way-guides",
+      "status": "PASS",
+      "evidence": {
+        "counts": [
+          634,
+          635,
+          635,
+          635
+        ],
+        "watercolour": true,
+        "oneUndo": true
+      }
+    }
+  ]
+}
