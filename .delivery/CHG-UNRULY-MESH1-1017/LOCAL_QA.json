@@ -1,0 +1,135 @@
+{
+  "localModels": 558,
+  "targetedModelsAndContracts": 32,
+  "browserScenarios": 13,
+  "browserVersion": "Chromium153 local; pinned Chromium151 CI pending",
+  "allPassed": true,
+  "physicalAcceptance": "deferred by owner",
+  "runtimeSchemaChange": false,
+  "cases": [
+    {
+      "id": "PATB01-pattern-preview-cancel-reset-apply-undo-reload",
+      "status": "PASS",
+      "evidence": {
+        "draftAtomic": true,
+        "resetNoop": true,
+        "undoRedoExact": true,
+        "reopen": true
+      }
+    },
+    {
+      "id": "PATB02-invalid-geometry-and-escape",
+      "status": "PASS",
+      "evidence": {
+        "crossingRefused": true,
+        "escapeExact": true
+      }
+    },
+    {
+      "id": "PATB03-real-pointer-and-pointercancel",
+      "status": "PASS",
+      "evidence": {
+        "pointerCorner": true,
+        "cancelRestoresDraft": true
+      }
+    },
+    {
+      "id": "PATB04-selection-alpha-lock-and-hidden-guards",
+      "status": "PASS",
+      "evidence": {
+        "emptySelectionRefused": true,
+        "alphaLockRefused": true
+      }
+    },
+    {
+      "id": "PATB05-independent-pixels-and-retained-composition",
+      "status": "PASS",
+      "evidence": {
+        "independentPixelOracle": true,
+        "checks": 6,
+        "backing": 1967104,
+        "dpr": 2
+      }
+    },
+    {
+      "id": "PATB06-phone-portrait-keyboard-controls",
+      "status": "PASS",
+      "evidence": {
+        "fitsViewport": true,
+        "numericControls": true,
+        "portrait": true
+      }
+    },
+    {
+      "id": "PATB07-offline-assets-and-edit",
+      "status": "PASS",
+      "evidence": {
+        "offlineReload": true,
+        "assetsCached": {
+          "name": "unruly-workspace-u1-normal-v3-20261017-mesh1-1",
+          "warp": true,
+          "ui": true
+        }
+      }
+    },
+    {
+      "id": "MESHB01-manual-cancel-apply-undo-reload",
+      "status": "PASS",
+      "evidence": {
+        "cancel": true,
+        "oneUndo": true,
+        "reload": true,
+        "siblings": true
+      }
+    },
+    {
+      "id": "MESHB02-outline-fit-real-pointer",
+      "status": "PASS",
+      "evidence": {
+        "realLasso": true,
+        "autoFit": true,
+        "exactClipping": true,
+        "undo": true
+      }
+    },
+    {
+      "id": "MESHB03-phone-numeric-invalid-and-offline",
+      "status": "PASS",
+      "evidence": {
+        "phone": true,
+        "invalidRefused": true,
+        "reset": true,
+        "offlineModules": true
+      }
+    },
+    {
+      "id": "MESHB04-handle-drag-cancel-keyboard",
+      "status": "PASS",
+      "evidence": {
+        "keyboard": true,
+        "realHandle": true,
+        "pointerCancelRestores": true
+      }
+    },
+    {
+      "id": "MESHB05-bounded-browser-performance",
+      "status": "PASS",
+      "evidence": {
+        "meshMs": 145.10000000009313,
+        "perspectiveMs": 48,
+        "pixelBytes": 4194304,
+        "onlyResamplesAtRelease": true
+      }
+    },
+    {
+      "id": "MESHB06-outline-limit-refuses-without-truncation",
+      "status": "PASS",
+      "evidence": {
+        "complexOutlineRefused": true,
+        "noSilentTruncation": true,
+        "sourceExact": true,
+        "resetRecovers": true
+      }
+    }
+  ]
+}

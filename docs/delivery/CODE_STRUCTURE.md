@@ -1,3 +1,7 @@
+## MESH1 source map — candidate
+
+pattern-mesh.js owns nine-point piecewise-affine original-source sampling, fold/self-cross guards and lasso span-fit/clipping. pattern-mesh-ui.js owns disposable same-canvas draft, numeric/keyboard/drag handles and trace/preview/Apply/Cancel states. Narrow app hooks use existing native command/Undo, Virtual Groups projection and preview renderer. Native raster payloads retain original affine transform; no schema/store/renderer changes. SW adds2modules; browser assertions preserved with exact cache revision and additive PAT/MESH cases. Full source resampling only at change/release, bounded1024²/4MiBoutput.
+
 ## WET1 watercolour — candidate, not published
 
 pixel-paint.js adds deterministic textured translucent dabs and controllable digital RGB mixing on active-layer pixels, sharing existing surface/work/dab limits. app.js chooses undoable active-layer snapshot plus unchanged native command/store/history; index.html adds three conditional Brush Library controls. No renderer, schema or storage migration. sw.js cache revision wet1-1;14other browser suites change only cache identity. Existing pixel-paint suites add wet-specific model/browser cases.
