@@ -1,6 +1,20 @@
 # UNRULY — full product roadmap
 Updated: 17 October 2026 (Asia/Kolkata).
 
+## Reference evaluations — owner request, 17 October 2026
+
+Maintain the running [evaluate-for-reference.md](../../evaluate-for-reference.md) register at repository root. New repository links and ideas supplied in conversation are captured there, assessed, and promoted to implementation only after a bounded experiment and owner decision. These are **evaluation backlog items**, not scheduled feature builds; current delivery priorities and existing BYOK AI deferral remain unchanged.
+
+| Evaluation | Capability to investigate | Reference | Current disposition |
+| --- | --- | --- | --- |
+| EVAL-REF-001 | Character rigging; animal motion extraction from licensed videos and retargeting into UNRULY | [Pose Animator](https://github.com/yemount/pose-animator) | Human SVG rig reference; animal tracking/deformation requires separate feasibility work |
+| EVAL-REF-002 | Pose references/mannequins for drawing | [AnimeDrawingsDataset](https://github.com/dragonmeteor/AnimeDrawingsDataset) | Inspect joint data; asset/annotation rights unresolved before ingestion |
+| EVAL-REF-003 | Messy/freehand sketch cleanup | [Anime2Sketch](https://github.com/Mukosame/Anime2Sketch) | Test real rough sketches; runtime/weight terms and browser feasibility unverified |
+| EVAL-REF-004 | Sketch-and-colour guided regional editing | [SC-FEGAN](https://github.com/run-youngjoo/SC-FEGAN) | Use case undecided; supplied code/model state non-commercial research restrictions |
+| EVAL-REF-005 | Rapid hint-guided painting with separated layers | [Style2Paints](https://github.com/lllyasviel/style2paints) | Workflow candidate; code and pretrained model/binary rights differ |
+
+Evaluation must preserve source art, layers, masks/blends, Undo, recovery and browser-first constraints. Record runtime cost and code/model/data/asset rights separately. No dependency/model/dataset added or knowledge graph/skill changed by this documentation update.
+
 ## Scope preservation
 This is the current full-product roadmap index. The painting sequence below is a near-term subset, not all remaining product work. Omission, summarization, a browser platform change, or a new chat never cancels a requirement. Record any removal or deferral with the user's explicit decision and source. Keep original requirement/checkpoint IDs when splitting work. Completed subfeatures do not close their entire original checkpoint.
 
