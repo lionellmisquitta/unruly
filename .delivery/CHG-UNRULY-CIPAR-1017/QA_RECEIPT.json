@@ -1,0 +1,15 @@
+{
+  "candidate": "570e450d4b251dc2b02c4847517522398e45601d",
+  "tree": "a6c4d27d36620a699c9ef32c1f97159e69fb9487",
+  "run": 39028623671,
+  "artifact": 12100015574,
+  "sha256": "181eda2b8705a91e97d380481ff1c800b8c76698126bfa36a1cabdc23ea1908e",
+  "sourceHashes": 192,
+  "models": 547,
+  "browserScenarios": 433,
+  "legacyChecks": 2,
+  "shards": 6,
+  "elapsedSeconds": 362,
+  "allPassed": true,
+  "review": "same-session self-verification; owner-authorized personal-project merge"
+}

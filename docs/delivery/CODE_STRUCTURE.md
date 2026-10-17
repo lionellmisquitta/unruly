@@ -1,3 +1,7 @@
+## WET1 watercolour — candidate, not published
+
+pixel-paint.js adds deterministic textured translucent dabs and controllable digital RGB mixing on active-layer pixels, sharing existing surface/work/dab limits. app.js chooses undoable active-layer snapshot plus unchanged native command/store/history; index.html adds three conditional Brush Library controls. No renderer, schema or storage migration. sw.js cache revision wet1-1;14other browser suites change only cache identity. Existing pixel-paint suites add wet-specific model/browser cases.
+
 ## CIPAR CI structure — in progress
 
 Cumulative workflow executes unchanged test invocations on six isolated Ubuntu runners. Required aggregation rejects failed/cancelled/skipped shards and missing/mismatched identities before canonical artifact upload. Application modules unchanged.

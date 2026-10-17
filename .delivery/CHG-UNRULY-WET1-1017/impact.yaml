@@ -1,0 +1,9 @@
+change_id: CHG-UNRULY-WET1-1017
+readiness: ready
+open_contradictions: []
+hub_suppressed: []
+targets: [prototypes/browser-workspace/pixel-paint.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/sw.js]
+regression_obligations:
+  - {id: legacy-pixels, reason: Existing round/soft paths must remain byte-identical, test_id: WET01}
+  - {id: source-and-bounds, reason: Wet painting must preserve source on cancellation and respect work budgets, test_id: WET01}
+  - {id: actual-ui, reason: Actual drawing Undo reload and controls require browser evidence, test_id: WET02}
