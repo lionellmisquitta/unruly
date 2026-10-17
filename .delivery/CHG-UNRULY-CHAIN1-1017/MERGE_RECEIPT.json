@@ -1,0 +1,11 @@
+{
+  "pr": 26,
+  "merge": "97ebda7a1fa32195795a2569d7fc438ad4afe9e3",
+  "candidate": "2e70554f7af0fb43a1a5c536485a16e81e3a82e8",
+  "tested_and_merged_tree": "5df1eeccf7a9effcf2054a8bf1fff7782b3f7059",
+  "tree_equality_verified": true,
+  "ci_run": 39022741922,
+  "ci_conclusion": "success",
+  "authorization": "owner explicitly authorized sequential CHAIN1 verified merge/publication",
+  "review": "same-session self-verification; no independent or physical acceptance claim"
+}
