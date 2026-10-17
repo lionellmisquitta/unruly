@@ -1,3 +1,6 @@
+## CHAIN1-C unverified integration candidate — 17-Oct-2026
+`virtual-group-scene.js` imports existing model validation and folder hierarchy plus the CHAIN1 manifest validator. It constructs a detached budget-validated rendering projection with namespaced local identities and delegates to caller-injected existing renderer. Native sources and per-source history remain authoritative. Full source replay preserves backdrop-dependent blends; no flattened proxy equivalence claimed. No app/UI/storage/schema/renderer changes. New model and Chromium oracle/storage-recovery tests are invoked by cumulative CI. Project UI/persistence/offline integration remains OPEN; see current checkpoint for execution status.
+
 # UNRULY — code structure and change boundaries
 Current TIP4 published and hosted verified: `597b6fa72114c38141c64486d393f5de3ee737cd`, CI38952135785SUCCESS499models/412structuredChromium+2legacy;177source hashes verified. Remaining product/capacity/device acceptance stays OPEN.
 This is a logical module map derived from actual source/import reads, not an AST call graph or proof of runtime independence. Update after any build changing module responsibilities, dependencies or document/render contracts.

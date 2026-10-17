@@ -1,0 +1,15 @@
+change_id: CHG-UNRULY-CHAIN1-1017
+route: Standard Change
+prohibited_paths: [prototypes/browser-workspace/app.js, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/render.js, .knowledge, knowledge-graph]
+test_config_changes: [.github/workflows/browser-workspace.yml]
+checkpoints:
+  - id: CHAIN1-C
+    allowed_paths: [prototypes/browser-workspace/virtual-group-scene.js, .delivery/CHG-UNRULY-CHAIN1-1017, docs/delivery/PRODUCT_ROADMAP.md, docs/delivery/CURRENT_CHECKPOINT.md, docs/delivery/CONTINUATION_CONTRACT.md, docs/delivery/CODE_STRUCTURE.md, .github/workflows/browser-workspace.yml]
+    test_paths: [tests/browser-workspace/virtual-group-scene.model.test.mjs, tests/browser-workspace/virtual-group-scene.browser.cjs]
+    tests:
+      - id: CHAINC-model
+        command: [node, --test, tests/browser-workspace/virtual-group-scene.model.test.mjs]
+        timeout_seconds: 60
+      - id: CHAINC-browser
+        command: [node, tests/browser-workspace/virtual-group-scene.browser.cjs]
+        timeout_seconds: 120

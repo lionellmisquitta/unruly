@@ -1,0 +1,13 @@
+change_id: CHG-UNRULY-CHAIN1-1017
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - prototypes/browser-workspace/virtual-group-scene.js
+regression_obligations:
+  - id: CHAINC-SOURCE
+    reason: Source artwork and independent Undo remain authoritative
+    test_id: CHAINC-model
+  - id: CHAINC-COMPOSE
+    reason: Existing renderer must preserve order masks blends and clipping
+    test_id: CHAINC-browser
