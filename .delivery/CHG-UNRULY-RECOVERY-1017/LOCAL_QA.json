@@ -1,0 +1,26 @@
+{
+  "browserCases": [
+    {
+      "id": "REC01-legacy-reader-new-epoch",
+      "status": "PASS",
+      "evidence": {
+        "legacyExact": true,
+        "dbEpoch": 2
+      }
+    },
+    {
+      "id": "REC02-newer-native-non-overwrite",
+      "status": "PASS",
+      "evidence": {
+        "futureReadRefused": true,
+        "futureWriteRefused": true,
+        "currentPreviousExact": true,
+        "dbEpoch": 2
+      }
+    }
+  ],
+  "allPassed": true,
+  "contractTests": 5,
+  "mergePolicy": "never merge into current main",
+  "published": false
+}

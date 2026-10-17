@@ -1,0 +1,9 @@
+change_id: CHG-UNRULY-RECOVERY-1017
+route: Standard Change
+prohibited_paths: [.knowledge/, knowledge-graph/]
+checkpoints:
+  - id: REC
+    allowed_paths: [prototypes/browser-workspace/storage.js, tests/browser-workspace/recovery-reader.browser.cjs, .github/workflows/browser-workspace.yml, .delivery/CHG-UNRULY-RECOVERY-1017/, docs/delivery/]
+    test_paths: [tests/browser-workspace/recovery-reader.browser.cjs]
+    tests:
+      - {id: REC01, command: [node, tests/browser-workspace/recovery-reader.browser.cjs], timeout_seconds: 120}

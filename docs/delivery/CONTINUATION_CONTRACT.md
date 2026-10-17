@@ -1,3 +1,9 @@
+## Recovery fallback branch only — not current main
+
+This branch is based on pre-unattended947df12 and must NOT be merged into current main. A minimal storage reader shim opens an existing database epoch without downgrade and refuses native versions newer than17 on load/save, preserving current+previous records. Original recovery/pre-unattended-20261017 remains unchanged. Local2actual Chromium recovery cases and5CI contract/mutation tests PASS. Full original cumulative CI pending; no recovery publication. Current product/roadmap remains on main with verified watercolour/mesh/guides releases and ongoing richer-text work. No graph/skill changes or feature cancellation. A future rollback publication still requires verified artifact binding and hosted checks; newer-format artwork remains preserved and needs the newer reader.
+
+Earlier statuses below describe the historical pre-run source, not current main.
+
 ## Current CHAIN1 engineering baseline — PUBLISHED AND HOSTED VERIFIED
 
 Live: https://lionellmisquitta.github.io/unruly/ . Source `2e70554f7af0fb43a1a5c536485a16e81e3a82e8`; cumulative CI `39022741922` SUCCESS:542model tests,433structured Chromium scenarios plus2legacy checks;192source hashes and downloaded artifact digest verified. PR26 merge `97ebda7a1fa32195795a2569d7fc438ad4afe9e3` has exactly the tested tree. Publication commit `906d5cbeea344a1cba535d559f43f8407a8b1e05`; Pages run `39024420335` SUCCESS; all77hosted application assets match reviewed bytes. Live isolated-browser create/add-group/reload smoke PASS with no page errors. This is owner-authorized same-session engineering verification, not independent or physical-device acceptance.

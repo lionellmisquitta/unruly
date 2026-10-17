@@ -1,0 +1,8 @@
+change_id: CHG-UNRULY-RECOVERY-1017
+readiness: ready
+open_contradictions: []
+hub_suppressed: []
+targets: [prototypes/browser-workspace/storage.js]
+regression_obligations:
+  - {id: legacy-reader, reason: Pre-run app must read legacy boards in the newer DB epoch, test_id: REC01}
+  - {id: future-guard, reason: Recovery app must never replace newer native art with previous fallback, test_id: REC01}
