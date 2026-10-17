@@ -1,15 +1,80 @@
 change_id: CHG-UNRULY-CHAIN1-1017
 route: Standard Change
-prohibited_paths: [prototypes/browser-workspace/app.js, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/render.js, .knowledge, knowledge-graph]
-test_config_changes: [.github/workflows/browser-workspace.yml]
+prohibited_paths:
+- prototypes/browser-workspace/model.js
+- prototypes/browser-workspace/storage.js
+- prototypes/browser-workspace/render.js
+- .knowledge
+- knowledge-graph
+test_config_changes:
+- .github/workflows/browser-workspace.yml
 checkpoints:
-  - id: CHAIN1-C
-    allowed_paths: [prototypes/browser-workspace/virtual-group-scene.js, .delivery/CHG-UNRULY-CHAIN1-1017, docs/delivery/PRODUCT_ROADMAP.md, docs/delivery/CURRENT_CHECKPOINT.md, docs/delivery/CONTINUATION_CONTRACT.md, docs/delivery/CODE_STRUCTURE.md, .github/workflows/browser-workspace.yml]
-    test_paths: [tests/browser-workspace/virtual-group-scene.model.test.mjs, tests/browser-workspace/virtual-group-scene.browser.cjs]
-    tests:
-      - id: CHAINC-model
-        command: [node, --test, tests/browser-workspace/virtual-group-scene.model.test.mjs]
-        timeout_seconds: 60
-      - id: CHAINC-browser
-        command: [node, tests/browser-workspace/virtual-group-scene.browser.cjs]
-        timeout_seconds: 120
+- id: CHAIN1-C
+  allowed_paths:
+  - prototypes/browser-workspace/virtual-group-scene.js
+  - .delivery/CHG-UNRULY-CHAIN1-1017
+  - docs/delivery/PRODUCT_ROADMAP.md
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - docs/delivery/CONTINUATION_CONTRACT.md
+  - docs/delivery/CODE_STRUCTURE.md
+  - .github/workflows/browser-workspace.yml
+  test_paths:
+  - tests/browser-workspace/virtual-group-scene.model.test.mjs
+  - tests/browser-workspace/virtual-group-scene.browser.cjs
+  tests:
+  - id: CHAINC-model
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/virtual-group-scene.model.test.mjs
+    timeout_seconds: 60
+  - id: CHAINC-browser
+    command:
+    - node
+    - tests/browser-workspace/virtual-group-scene.browser.cjs
+    timeout_seconds: 120
+- id: CHAIN1-DEF
+  allowed_paths:
+  - prototypes/browser-workspace/virtual-project-store.js
+  - prototypes/browser-workspace/virtual-project-ui.js
+  - prototypes/browser-workspace/virtual-group-scene.js
+  - prototypes/browser-workspace/app.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/style.css
+  - prototypes/browser-workspace/sw.js
+  - .delivery/CHG-UNRULY-CHAIN1-1017
+  - docs/delivery/PRODUCT_ROADMAP.md
+  - docs/delivery/CURRENT_CHECKPOINT.md
+  - docs/delivery/CONTINUATION_CONTRACT.md
+  - docs/delivery/CODE_STRUCTURE.md
+  - .github/workflows/browser-workspace.yml
+  test_paths:
+  - tests/browser-workspace/virtual-project.model.test.mjs
+  - tests/browser-workspace/virtual-project.browser.cjs
+  - tests/browser-workspace/composition.browser.cjs
+  - tests/browser-workspace/history-cache.browser.cjs
+  - tests/browser-workspace/layer-compositor.browser.cjs
+  - tests/browser-workspace/raster-tiles.browser.cjs
+  - tests/browser-workspace/render-boundary.browser.cjs
+  - tests/browser-workspace/adjustments.browser.cjs
+  - tests/browser-workspace/drawing-tools.browser.cjs
+  - tests/browser-workspace/image-tip-paint.browser.cjs
+  - tests/browser-workspace/motion.browser.cjs
+  - tests/browser-workspace/palettes.browser.cjs
+  - tests/browser-workspace/pattern-warp.browser.cjs
+  - tests/browser-workspace/pixel-paint.browser.cjs
+  - tests/browser-workspace/stabilization.browser.cjs
+  - tests/browser-workspace/timelapse.browser.cjs
+  - tests/browser-workspace/tip-guides.browser.cjs
+  tests:
+  - id: CHAIND-model
+    command:
+    - node
+    - --test
+    - tests/browser-workspace/virtual-project.model.test.mjs
+    timeout_seconds: 60
+  - id: CHAINDEF-browser
+    command:
+    - node
+    - tests/browser-workspace/virtual-project.browser.cjs
+    timeout_seconds: 240

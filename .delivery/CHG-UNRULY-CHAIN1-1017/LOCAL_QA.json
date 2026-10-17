@@ -1,0 +1,134 @@
+{
+  "checkpoint": "CHAIN1-D/E/F",
+  "status": "LOCAL_TARGETED_PASS_CUMULATIVE_PENDING",
+  "models": {
+    "passed": 542,
+    "failed": 0,
+    "skipped": 0
+  },
+  "targeted": {
+    "passed": 32,
+    "failed": 0
+  },
+  "browser": "Chromium 153.0.8010.0 temporary local executable; pinned Chromium151 remains required in GitHub CI",
+  "browser_results": [
+    {
+      "id": "CHAIND-B01-atomic-native-storage",
+      "status": "PASS",
+      "evidence": {
+        "atomicSave": true,
+        "projectCAS": true,
+        "legacyPreserved": true,
+        "backupCopy": true
+      }
+    },
+    {
+      "id": "CHAINE-B02-ui-switch-reload-undo",
+      "status": "PASS",
+      "evidence": {
+        "safeSwitch": true,
+        "perGroupUndoRedo": true,
+        "reload": true,
+        "oneExpanded": true
+      }
+    },
+    {
+      "id": "CHAINF-B03-project-offline-backup",
+      "status": "PASS",
+      "evidence": {
+        "fullBackup": true,
+        "offlineReloadAndSwitch": true
+      }
+    },
+    {
+      "id": "CHAINF-B04-missing-recovered-fail-closed",
+      "status": "PASS",
+      "evidence": {
+        "recoveryRefused": true,
+        "nativeRecoveryPreserved": true,
+        "missingRefused": true
+      }
+    },
+    {
+      "id": "CHAINE-B05-phone-controls",
+      "status": "PASS",
+      "evidence": {
+        "width": 390,
+        "headingsAccessible": true
+      }
+    },
+    {
+      "id": "CHAINF-B06-real-ink-composition-and-view",
+      "status": "PASS",
+      "evidence": {
+        "actualInk": true,
+        "collapsedCompositionExact": true,
+        "upperSourceUnchanged": true,
+        "upstreamUndo": true,
+        "viewportPreserved": true
+      }
+    },
+    {
+      "id": "CHAINF-B07-full-backup-ui-import",
+      "status": "PASS",
+      "evidence": {
+        "fullProjectImport": true,
+        "originalProjectPreserved": true
+      }
+    },
+    {
+      "id": "CHAINF-B08-quota-atomic-rollback",
+      "status": "PASS",
+      "evidence": {
+        "quotaVisible": true,
+        "nativeAndProjectRollback": true
+      }
+    },
+    {
+      "id": "CHAINF-B09-save-conflict-keeps-active",
+      "status": "PASS",
+      "evidence": {
+        "saveConflictVisible": true,
+        "activeContextPreserved": true
+      }
+    },
+    {
+      "id": "CHAINF-B10-gallery-keeps-original-and-recovery",
+      "status": "PASS",
+      "evidence": {
+        "oneProjectEntry": true,
+        "sourceBackupsExplicit": true,
+        "standaloneOriginalUsable": true
+      }
+    }
+  ],
+  "ui_validation": {
+    "errors": 0,
+    "legacy_warnings": {
+      "emoji": 3,
+      "form_labels": 47,
+      "tiny_type": 19
+    }
+  },
+  "visual_review": {
+    "screenshots": [
+      "CHAIN1-desktop-layers.png",
+      "CHAIN1-phone-layers.png"
+    ],
+    "inspected": true,
+    "bounded_score": {
+      "hierarchy": 16,
+      "consistency": 18,
+      "accessibility": 15,
+      "responsive": 16,
+      "clarity": 16,
+      "total": 81,
+      "out_of": 100
+    },
+    "limitations": "Existing dense inspector and long help copy; scroll required on phone. Not a full accessibility or physical-pen audit."
+  },
+  "review": "same-session self-verification; no independent reviewer or device acceptance claimed",
+  "protected_scope_enforcement": false,
+  "graph_and_skills_changed": false,
+  "publication": "not yet performed"
+}

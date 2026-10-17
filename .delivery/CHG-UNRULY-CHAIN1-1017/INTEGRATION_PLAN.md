@@ -1,0 +1,13 @@
+# CHAIN1-D/E/F continuation — 17-Oct-2026
+
+Inherited source28c48bcdab41402a1f994e40916520a03a07ba6a; cumulative39019592553 SUCCESS. Main documentation536ca9cbeb67a926ec23c6671cbd651dfa01234a must survive merge, including evaluate-for-reference.md.
+
+D: persistent project records and native source saves commit atomically in the existing boards/meta IndexedDB transaction. CAS on project and board revisions; preserve previous native boards and original standalone board. Load rejects missing/stale/recovered sources without modifying them. Source history remains per-source in memory and native storage semantics unchanged after reload.
+E: existing Layers inspector contains virtual-group headings with exactly one expanded editable source, Add group, project backup/import and source recovery through existing Gallery. Create project copies current artwork; original board remains. Same canvas/view; save before switching; keep per-source Undo; failed saves/switches preserve active context. Collapsed groups use tested source replay fallback. Shared paper required; reference companions explicitly unsupported. Existing aggregate32layer/8MiB/16MiBhistory/80MiB renderer limits stay. No proxy flattening or capacity expansion.
+F: targeted IDB/browser tests for create/switch/reload/Undo/backup/conflict/missing/recovered/offline and legacy boards; full cumulative final-candidate CI; scope/self-review; no independent review claimed. No merge/publication until required gates. Graph/skills untouched.
+
+Allowed additions: virtual-project-store.js, virtual-project-ui.js, virtual-project model/browser tests; narrow app.js/index.html/style.css/sw.js hooks; source-scene projection mask identity hook; exact cache suffix only in pre-existing browser fixtures; workflow invocations; scoped records and delivery docs/code-map. Prohibited: native board schema, renderer/model/storage/history internals, knowledge graph, skills, unrelated dependencies/features.
+
+UX lock: inherit existing inspector styling; no extra tabs or file navigation. One group expanded at a time; heading buttons accessible by name/expanded state and visual ordering top-to-bottom matches canvas stack. Busy switch disables repeated actions and drawing. No silent source substitution or previous-revision recovery. Offline errors stay visible; native boards remain exportable. Project backup names clearly distinguish full project from active-group native export. Import preserves originals by assigning fresh identities.
+
+Visual baseline: existing UNRULY typography, buttons, inspector spacing and focus treatment; no design-system change. Compact headings, active-group indicator, helper copy and existing responsive inspector scrolling. No decorative new surfaces.

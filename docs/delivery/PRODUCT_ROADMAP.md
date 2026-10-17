@@ -1,3 +1,15 @@
+## CHAIN1-D/E/F local acceptance evidence — candidate awaiting cumulative CI
+
+All10new actual Chromium153 browser scenarios PASS, including real ink/canvas equality across activation, upstream edit/Undo with downstream native source unchanged, viewport preservation, per-group history, full backup/import, offline reopen/switch, quota rollback, source conflicts, recovery refusal and original standalone Gallery access. Targeted32/32 and complete Node542/542 PASS; zero skipped/failed. Pinned Chromium151/full cumulative CI remains required. Static UI validator0errors; existing3emoji/47form-label/19tiny-type heuristics. Desktop/390px screenshots inspected. Same-session self-verification only; physical Surface/Xiaomi and long-session latency remain OPEN. No merge/publication or full CHAIN1 closure yet. Source replay fallback/aggregate32layer bound remain explicit; no large-capacity claim. Graph/skills unchanged.
+
+## CHAIN1-D/E/F integrated candidate — 17-Oct-2026
+
+CHAIN1-C source `28c48bcdab41402a1f994e40916520a03a07ba6a` passed full cumulative CI `39019592553`. Owner now authorized all remaining CHAIN1 builds sequentially with verified merges/publication. Added persistent project/source atomic IndexedDB transactions and CAS; native board schema/store/renderer internals unchanged. Create Virtual Groups copies the active board and preserves its original. Existing Layers inspector now shows ordered group headings and exactly one expanded/editable source. Switch saves first, preserves view and per-source session Undo, and refuses failed/conflicted/recovered/missing sources. Full-project backup/import assigns fresh identities; existing native export remains active-group-only. Gallery exposes native sources for explicit recovery. All project runtime modules are offline-cached.
+
+Existing aggregate32layer/8MiB/native source and80MiBrenderer bounds remain; cached per-group Undo shares16MiB and older entries are released with a visible notice. Collapsed groups use exact native-source replay fallback, not flattened proxies; no large-document performance claim. Shared paper is fixed while a project is active; reference companions explicitly refuse. Group reordering/removal, cross-group selection/clipping, larger aggregate capacity, physical-device latency and advanced proxy optimization are not implemented by this candidate. No native source artwork is flattened, transformed or overwritten by switching.
+
+Local complete Node suite542/542 PASS. Desktop/390px screenshots inspected; UI static validation zero errors (legacy heuristic warnings recorded). Browser checks are being completed before exact candidate cumulative CI. Implementation is not yet accepted/merged/published. PAT1 remains live. No knowledge graph or skill changes. Main's evaluation register/roadmap references536ca9c merged into the feature candidate and preserved. See scoped INTEGRATION_PLAN/ATTEMPTS for failures and repairs; no pre-existing test assertion weakened or deleted (15existing browser files change only exact cache identity).
+
 ## CHAIN1-C CI repair attempt — 17-Oct-2026
 
 Feature-branch push succeeded through the connected GitHub plugin: source `0d9a782e9f96aef2ae699f74ec329f79bdaf257b`, tree `2be03ebae4af358532ceeb467611369d131100f5` identical to local candidate. Cumulative CI run `39019436543` FAILED in the new browser gate: raster lower-board fixture incorrectly retained createBoard's v3 label; existing validation correctly refused it. Repair sets only that fixture to v4. No assertion, application code or existing test weakened. Local model suite previously 538/538; next exact candidate cumulative CI pending. PR26 remains draft; no merge/publication; CHAIN1-C and full CHAIN1 acceptance remain OPEN. Graph/skills unchanged.
@@ -19,6 +31,20 @@ Targeted manifest/session/scene and CI contract checks pass locally (final exact
 A bounded fail-closed activation adapter now validates source-board identity, source revision, recovery status and asynchronous switch generation before any caller may switch the editable context. Seven negative/positive session tests added alongside seven existing manifest tests. This slice is **not integrated into app.js, the Layers panel, the renderer or IndexedDB project storage**; do not report the user-facing experience built or published. Current PAT1 remains live. Exact-head cumulative CI pending. No knowledge graph or skill changes.
 
 Updated: 17 October 2026 (Asia/Kolkata).
+
+## Reference evaluations — owner request, 17 October 2026
+
+Maintain the running [evaluate-for-reference.md](../../evaluate-for-reference.md) register at repository root. New repository links and ideas supplied in conversation are captured there, assessed, and promoted to implementation only after a bounded experiment and owner decision. These are **evaluation backlog items**, not scheduled feature builds; current delivery priorities and existing BYOK AI deferral remain unchanged.
+
+| Evaluation | Capability to investigate | Reference | Current disposition |
+| --- | --- | --- | --- |
+| EVAL-REF-001 | Character rigging; animal motion extraction from licensed videos and retargeting into UNRULY | [Pose Animator](https://github.com/yemount/pose-animator) | Human SVG rig reference; animal tracking/deformation requires separate feasibility work |
+| EVAL-REF-002 | Pose references/mannequins for drawing | [AnimeDrawingsDataset](https://github.com/dragonmeteor/AnimeDrawingsDataset) | Inspect joint data; asset/annotation rights unresolved before ingestion |
+| EVAL-REF-003 | Messy/freehand sketch cleanup | [Anime2Sketch](https://github.com/Mukosame/Anime2Sketch) | Test real rough sketches; runtime/weight terms and browser feasibility unverified |
+| EVAL-REF-004 | Sketch-and-colour guided regional editing | [SC-FEGAN](https://github.com/run-youngjoo/SC-FEGAN) | Use case undecided; supplied code/model state non-commercial research restrictions |
+| EVAL-REF-005 | Rapid hint-guided painting with separated layers | [Style2Paints](https://github.com/lllyasviel/style2paints) | Workflow candidate; code and pretrained model/binary rights differ |
+
+Evaluation must preserve source art, layers, masks/blends, Undo, recovery and browser-first constraints. Record runtime cost and code/model/data/asset rights separately. No dependency/model/dataset added or knowledge graph/skill changed by this documentation update.
 
 ## Scope preservation
 This is the current full-product roadmap index. The painting sequence below is a near-term subset, not all remaining product work. Omission, summarization, a browser platform change, or a new chat never cancels a requirement. Record any removal or deferral with the user's explicit decision and source. Keep original requirement/checkpoint IDs when splitting work. Completed subfeatures do not close their entire original checkpoint.

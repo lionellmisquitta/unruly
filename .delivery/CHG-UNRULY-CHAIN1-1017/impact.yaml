@@ -11,3 +11,13 @@ regression_obligations:
   - id: CHAINC-COMPOSE
     reason: Existing renderer must preserve order masks blends and clipping
     test_id: CHAINC-browser
+
+  - id: CHAINDEF-PERSIST
+    reason: Atomic project source save, CAS and independent native backups
+    test_id: CHAINDEF-browser
+  - id: CHAINDEF-UI
+    reason: One expanded source, preserved Undo, reload and offline switching
+    test_id: CHAINDEF-browser
+  - id: CHAIND-BACKUP
+    reason: Portable backup assigns fresh identities and rejects stale sources
+    test_id: CHAIND-model
