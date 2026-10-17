@@ -34,3 +34,7 @@ All10new actual Chromium153 browser scenarios PASS, including real ink/canvas eq
 
 ## Final review repair
 Pinned Chromium151 initial new project/scene/PAT1 gate passed in run39022249190 at sourcec68e1b8. Review caught New board leaving project context before a possibly failing standalone save. Move context exit after successful save and add an actual injected-quota browser regression. This invalidates prior candidate as release target; full cumulative CI must run on repaired source. No assertions weakened.
+
+## CHAIN1 final guard review — 12 targeted browser scenarios PASS
+
+Final scope includes a native-source write guard for hidden/locked groups loaded from project metadata/backups, with regression CHAINF-B12 proving Add layer refuses and saved source remains unchanged. Earlier native-source layer locks continue through existing model commands. All12local browser scenarios PASS; model suite542PASS. Repaired exact-source full cumulative CI remains required; runs39022249190/39022512145 are superseded release candidates. No assertion changes, source flattening, graph or skill modifications. Current active group metadata controls do not offer group lock/visibility toggles, but imported states are enforced safely.

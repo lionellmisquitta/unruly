@@ -108,6 +108,14 @@
         "quotaVisible": true,
         "activeProjectPreserved": true
       }
+    },
+    {
+      "id": "CHAINF-B12-locked-project-source-refuses-edits",
+      "status": "PASS",
+      "evidence": {
+        "lockedGroupReadOnly": true,
+        "nativeSourceUnchanged": true
+      }
     }
   ],
   "ui_validation": {
@@ -139,5 +147,5 @@
   "protected_scope_enforcement": false,
   "graph_and_skills_changed": false,
   "publication": "not yet performed",
-  "review_repair": "New standalone board save completes before leaving active project; added quota failure regression"
+  "review_repair": "Preserve project on failed new-board save; enforce imported hidden/locked active-group write guards"
 }

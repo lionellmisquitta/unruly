@@ -1,3 +1,7 @@
+## CHAIN1 final guard review — 12 targeted browser scenarios PASS
+
+Final scope includes a native-source write guard for hidden/locked groups loaded from project metadata/backups, with regression CHAINF-B12 proving Add layer refuses and saved source remains unchanged. Earlier native-source layer locks continue through existing model commands. All12local browser scenarios PASS; model suite542PASS. Repaired exact-source full cumulative CI remains required; runs39022249190/39022512145 are superseded release candidates. No assertion changes, source flattening, graph or skill modifications. Current active group metadata controls do not offer group lock/visibility toggles, but imported states are enforced safely.
+
 ## CHAIN1 final review repair — cumulative rerun required
 
 Sourcec68e1b8 passed the new project/scene/PAT1 pinned-browser gate in run39022249190, but is superseded for release. Self-review moved New board's project-context exit after successful native save so a quota failure preserves the active project. Added regression CHAINF-B11; all11new local Chromium scenarios now PASS. Model coverage remains542passed; no assertion weakened. Exact repaired candidate cumulative CI is required before merge/publication. All earlier scopes/limits and graph/skill prohibitions remain.
