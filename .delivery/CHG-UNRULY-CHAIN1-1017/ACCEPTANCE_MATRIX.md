@@ -1,6 +1,6 @@
 # CHAIN1 — bounded engineering acceptance matrix
 
-Release candidate: 2e70554f7af0fb43a1a5c536485a16e81e3a82e8, tree5df1eeccf7a9effcf2054a8bf1fff7782b3f7059. Final cumulative run39022741922. Local evidence is self-verification, not independent review. Final CI artifact verified:542models,433structured browser scenarios plus2legacy checks,192source hashes. Engineering criteria below PASS within declared boundaries; publication still pending until hosted bytes verified. Physical acceptance remains open.
+Release candidate: 2e70554f7af0fb43a1a5c536485a16e81e3a82e8, tree5df1eeccf7a9effcf2054a8bf1fff7782b3f7059. Final cumulative run39022741922. Local evidence is self-verification, not independent review. Final CI artifact verified:542models,433structured browser scenarios plus2legacy checks,192source hashes. Engineering criteria below PASS within declared boundaries. Pages39024420335 SUCCESS;77hosted files match tested bytes; live isolated-browser project smoke PASS. Physical acceptance remains open.
 
 | Required behavior | Executable evidence | Demonstrated boundary |
 | --- | --- | --- |
