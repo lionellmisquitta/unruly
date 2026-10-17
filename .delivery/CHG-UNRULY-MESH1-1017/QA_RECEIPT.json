@@ -1,0 +1,13 @@
+{
+  "candidate": "05759fc53c538360da09d661a27fe2faf354f535",
+  "tree": "cc3648355117bd449078ed067e7aed4809391b30",
+  "run": 39039682121,
+  "artifact": 12103831006,
+  "sha256": "0e992a6e15274edc8302d2f208c3dfaab6390f3efafe8ce293e20ab400e5f9db",
+  "sourceHashes": 194,
+  "models": 558,
+  "browserScenarios": 443,
+  "legacyChecks": 2,
+  "allPassed": true,
+  "review": "same-session self-verification; owner authorized"
+}
