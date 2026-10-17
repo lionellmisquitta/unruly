@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {prepareVirtualGroupSwitch,assertSwitchStillCurrent} from '../../prototypes/browser-workspace/virtual-group-session.js';
+const fixture=()=>({version:1,id:'p',title:'Art',activeGroupId:'a',groups:[{id:'a',title:'Sketch',boardId:'source-a',sourceRevision:3,visible:true,locked:false},{id:'b',title:'Ink',boardId:'source-b',sourceRevision:7,visible:true,locked:false}]});
+const loader=async id=>({board:{id,revision:id==='source-b'?7:3},dbRevision:2,recovered:false});
+test('CHAINS01 switching validates source before new active identity',async()=>{const p=fixture(),r=await prepareVirtualGroupSwitch(p,'b',loader);assert.equal(r.project.activeGroupId,'b');assert.equal(p.activeGroupId,'a');assert.equal(r.board.id,'source-b');assert.equal(r.visualStatus,'missing');assert.equal(assertSwitchStillCurrent(p,r),true);});
+test('CHAINS02 missing source rejects with original intact',async()=>{const p=fixture();await assert.rejects(prepareVirtualGroupSwitch(p,'b',async()=>{throw Error('missing')}),/unavailable/);assert.equal(p.activeGroupId,'a');});
+test('CHAINS03 identity mismatch rejects',async()=>{await assert.rejects(prepareVirtualGroupSwitch(fixture(),'b',async()=>({board:{id:'wrong',revision:7}})),/identity/);});
+test('CHAINS04 outdated source prevents switching',async()=>{await assert.rejects(prepareVirtualGroupSwitch(fixture(),'b',async()=>({board:{id:'source-b',revision:8}})),/revision changed/);});
+test('CHAINS05 recovered source requires review',async()=>{await assert.rejects(prepareVirtualGroupSwitch(fixture(),'b',async()=>({board:{id:'source-b',revision:7},recovered:true})),/review/);});
+test('CHAINS06 concurrent project revision change invalidates prepared result',async()=>{const p=fixture(),r=await prepareVirtualGroupSwitch(p,'b',loader);const changed=fixture();changed.groups[0].sourceRevision=4;assert.throws(()=>assertSwitchStillCurrent(changed,r),/changed during switch/);});
+test('CHAINS07 nonexistent virtual group rejected without invoking storage',async()=>{let called=false;await assert.rejects(prepareVirtualGroupSwitch(fixture(),'none',async()=>{called=true;}),/Missing virtual group/);assert.equal(called,false);});
