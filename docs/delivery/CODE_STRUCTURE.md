@@ -1,3 +1,7 @@
+## CIPAR CI structure — in progress
+
+Cumulative workflow executes unchanged test invocations on six isolated Ubuntu runners. Required aggregation rejects failed/cancelled/skipped shards and missing/mismatched identities before canonical artifact upload. Application modules unchanged.
+
 ## CHAIN1 persistent-project and UI integration candidate
 `virtual-project-store.js` adds project metadata in existing IndexedDB meta, using one boards/meta transaction for atomic project/source saves, revision CAS, preserved native previous records and full-project backup/import. It validates through model plus source-scene; no native schema/storage.js changes. `virtual-project-ui.js` owns project lifecycle, save-before-switch, group headings, per-source session Undo/shared history budget, backup controls and gallery entries. Narrow app hooks project source-board previews into the existing renderer on the same canvas and clear transient selection/mask state on activation. Mask target IDs are mapped into the disposable scene; scene revision tracks source revision changes for cache invalidation. Standalone app paths preserve original native semantics. sw.js caches all five project/contract modules; cache assertions advance identity only. Current limits/unsupported cases remain in CURRENT_CHECKPOINT. Logical responsibility map; not an AST proof or independent review.
 

@@ -1,0 +1,14 @@
+change_id: CHG-UNRULY-CIPAR-1017
+readiness: ready
+open_contradictions: []
+hub_suppressed: []
+targets:
+  - .github/workflows/browser-workspace.yml
+  - tests/browser-workspace/ci-contract.test.mjs
+regression_obligations:
+  - id: preserve-inventory
+    reason: Every existing invocation and mutation guard must remain executable
+    test_id: CIPAR01
+  - id: all-shards-required
+    reason: Failed or missing shards must block canonical evidence
+    test_id: CIPAR02

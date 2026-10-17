@@ -1,3 +1,13 @@
+## Unattended run — CIPAR parallel CI in progress, 17 October 2026
+
+Owner authorized sequential bounded painting/drawing/video/artboard builds with verified merges and publication; comprehensive physical acceptance deferred until consolidated artwork testing. Start with six isolated cumulative CI runners and a required aggregation gate. Recovery branch `recovery/pre-unattended-20261017` pins main `947df12f5570f30743bbe07038ab6a6912cf717d`; live source remains CHAIN1 `2e70554f7af0fb43a1a5c536485a16e81e3a82e8`. Never reset main or overwrite user storage to roll back.
+
+Scope confirmed: remaining painting compatibility/brush-import feasibility; responsive bounded watercolour texture/buildup/colour mixing (time-dependent spreading/pooling/drying deferred); lasso-guided garment/body fitting with manual mesh (automatic recognition deferred); sticky notes/connectors, richer text with available device fonts/local import/wrapping/alignment/line spacing and Motion mixed-target compatibility; browser-supported timelapse video (MP4 where supported); panoramic/named rectangular export with px/aspect/inches+DPI, fit-with-padding default and crop option. Whole-canvas rotation, Drive/BYOK AI and increased layer capacity remain deferred. Every other roadmap requirement is retained. No knowledge graph or skill edits. No performance parity claim without measurements.
+
+CIPAR attempt 1: nine targeted CI inventory/mutation/shard checks PASS; YAML and all shell blocks parse. Preserved all59 pre-existing test invocation lines byte-for-byte, including repeated focused gates. Browser/source/test assertions unchanged. No full CI yet; no CIPAR merge or publication. Existing CHAIN1 remains live. Canonical artifact is produced only after all six shards succeed and matching commit markers are verified. Runtime code prohibited in this checkpoint. Same-session self-verification; no independent review claim.
+
+Earlier headings below are historical and superseded where they conflict with this status.
+
 ## Current CHAIN1 engineering baseline — PUBLISHED AND HOSTED VERIFIED
 
 Live: https://lionellmisquitta.github.io/unruly/ . Source `2e70554f7af0fb43a1a5c536485a16e81e3a82e8`; cumulative CI `39022741922` SUCCESS:542model tests,433structured Chromium scenarios plus2legacy checks;192source hashes and downloaded artifact digest verified. PR26 merge `97ebda7a1fa32195795a2569d7fc438ad4afe9e3` has exactly the tested tree. Publication commit `906d5cbeea344a1cba535d559f43f8407a8b1e05`; Pages run `39024420335` SUCCESS; all77hosted application assets match reviewed bytes. Live isolated-browser create/add-group/reload smoke PASS with no page errors. This is owner-authorized same-session engineering verification, not independent or physical-device acceptance.

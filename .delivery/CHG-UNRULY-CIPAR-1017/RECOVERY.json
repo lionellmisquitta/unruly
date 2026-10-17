@@ -1,0 +1,7 @@
+{
+  "base": "947df12f5570f30743bbe07038ab6a6912cf717d",
+  "remoteRecoveryBranch": "recovery/pre-unattended-20261017",
+  "publishedSource": "2e70554f7af0fb43a1a5c536485a16e81e3a82e8",
+  "pagesRun": 39024420335,
+  "rollback": "Revert checkpoint commits; republish verified pinned source. Never reset main or overwrite user IndexedDB. Export native/project backups before storage-changing checkpoints."
+}
