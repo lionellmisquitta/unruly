@@ -1,3 +1,7 @@
+## CHAIN1 final review repair — cumulative rerun required
+
+Sourcec68e1b8 passed the new project/scene/PAT1 pinned-browser gate in run39022249190, but is superseded for release. Self-review moved New board's project-context exit after successful native save so a quota failure preserves the active project. Added regression CHAINF-B11; all11new local Chromium scenarios now PASS. Model coverage remains542passed; no assertion weakened. Exact repaired candidate cumulative CI is required before merge/publication. All earlier scopes/limits and graph/skill prohibitions remain.
+
 ## CHAIN1-D/E/F local acceptance evidence — candidate awaiting cumulative CI
 
 All10new actual Chromium153 browser scenarios PASS, including real ink/canvas equality across activation, upstream edit/Undo with downstream native source unchanged, viewport preservation, per-group history, full backup/import, offline reopen/switch, quota rollback, source conflicts, recovery refusal and original standalone Gallery access. Targeted32/32 and complete Node542/542 PASS; zero skipped/failed. Pinned Chromium151/full cumulative CI remains required. Static UI validator0errors; existing3emoji/47form-label/19tiny-type heuristics. Desktop/390px screenshots inspected. Same-session self-verification only; physical Surface/Xiaomi and long-session latency remain OPEN. No merge/publication or full CHAIN1 closure yet. Source replay fallback/aggregate32layer bound remain explicit; no large-capacity claim. Graph/skills unchanged.

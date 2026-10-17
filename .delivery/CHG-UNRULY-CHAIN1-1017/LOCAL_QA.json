@@ -100,6 +100,14 @@
         "sourceBackupsExplicit": true,
         "standaloneOriginalUsable": true
       }
+    },
+    {
+      "id": "CHAINF-B11-new-board-quota-keeps-project",
+      "status": "PASS",
+      "evidence": {
+        "quotaVisible": true,
+        "activeProjectPreserved": true
+      }
     }
   ],
   "ui_validation": {
@@ -130,5 +138,6 @@
   "review": "same-session self-verification; no independent reviewer or device acceptance claimed",
   "protected_scope_enforcement": false,
   "graph_and_skills_changed": false,
-  "publication": "not yet performed"
+  "publication": "not yet performed",
+  "review_repair": "New standalone board save completes before leaving active project; added quota failure regression"
 }
