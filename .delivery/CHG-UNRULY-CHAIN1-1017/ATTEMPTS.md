@@ -1,3 +1,7 @@
+## CHAIN1-C CI repair attempt — 17-Oct-2026
+
+Feature-branch push succeeded through the connected GitHub plugin: source `0d9a782e9f96aef2ae699f74ec329f79bdaf257b`, tree `2be03ebae4af358532ceeb467611369d131100f5` identical to local candidate. Cumulative CI run `39019436543` FAILED in the new browser gate: raster lower-board fixture incorrectly retained createBoard's v3 label; existing validation correctly refused it. Repair sets only that fixture to v4. No assertion, application code or existing test weakened. Local model suite previously 538/538; next exact candidate cumulative CI pending. PR26 remains draft; no merge/publication; CHAIN1-C and full CHAIN1 acceptance remain OPEN. Graph/skills unchanged.
+
 # CHAIN1 attempts
 
 ## 17-Oct-2026 — CHAIN1-C scope pinned before implementation
