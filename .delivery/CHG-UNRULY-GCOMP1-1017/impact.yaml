@@ -1,0 +1,9 @@
+change_id: CHG-UNRULY-GCOMP1-1017
+readiness: ready
+open_contradictions: []
+hub_suppressed: []
+targets: [prototypes/browser-workspace/pixel-paint.js, prototypes/browser-workspace/smudge.js, prototypes/browser-workspace/image-tip-paint.js, prototypes/browser-workspace/raster-guides.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/sw.js]
+regression_obligations:
+  - {id: legacy-paint, reason: Off guides must preserve exact existing paint smudge and mask semantics, test_id: GCOMP01}
+  - {id: budgets-alpha, reason: Multiple mirror branches share original budgets and alpha lock, test_id: GCOMP01}
+  - {id: ui-lifecycle, reason: Actual guide gestures Undo cancel and recovery must remain functional, test_id: GCOMP02}

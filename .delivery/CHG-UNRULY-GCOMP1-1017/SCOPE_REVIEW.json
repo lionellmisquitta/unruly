@@ -1,0 +1,18 @@
+{
+  "runtimePaths": [
+    "pixel-paint.js",
+    "smudge.js",
+    "image-tip-paint.js",
+    "raster-guides.js",
+    "app.js",
+    "index.html",
+    "sw.js"
+  ],
+  "originalTIP4BrowserAssertionsRetained": true,
+  "originalTIP4ModelAssertionsRetained": true,
+  "otherBrowserFilesCacheOnly": 14,
+  "nativeSchemaStorageRendererChanged": false,
+  "knowledgeOrSkillsChanged": false,
+  "physicalAcceptance": "deferred by owner",
+  "review": "same-session self-verification; full CI pending"
+}

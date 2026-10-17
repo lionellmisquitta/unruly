@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-GCOMP1-1017
+route: Standard Change
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/canvas2d-renderer.js]
+checkpoints:
+  - id: GCOMP1
+    allowed_paths: [prototypes/browser-workspace/pixel-paint.js, prototypes/browser-workspace/smudge.js, prototypes/browser-workspace/image-tip-paint.js, prototypes/browser-workspace/raster-guides.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/sw.js, tests/browser-workspace/, .delivery/CHG-UNRULY-GCOMP1-1017/, docs/delivery/]
+    test_paths: [tests/browser-workspace/tip-guides.model.test.mjs, tests/browser-workspace/tip-guides.browser.cjs]
+    tests:
+      - {id: GCOMP01, command: [node, --test, tests/browser-workspace/tip-guides.model.test.mjs, tests/browser-workspace/pixel-paint.model.test.mjs, tests/browser-workspace/masks.model.test.mjs, tests/browser-workspace/smudge.model.test.mjs, tests/browser-workspace/image-tip-paint.model.test.mjs], timeout_seconds: 120}
+      - {id: GCOMP02, command: [node, tests/browser-workspace/tip-guides.browser.cjs], timeout_seconds: 180}
