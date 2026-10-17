@@ -1,3 +1,11 @@
+## Current unattended build — CIPAR merged; WET1 ready for CI
+
+Parallel CI candidate570e450 passed full cumulative run39028623671:547models,433structured browser scenarios,2legacy checks;192source hashes/sixshard markers and downloaded artifact12100015574 SHA256181eda2b8705a91e97d380481ff1c800b8c76698126bfa36a1cabdc23ea1908e verified. PR27 merged as ef03368d5767e9c078bbeb4ec83b216f8c12f771; tree matches exact testeda6c4d27. Six jobs started together and final gate completed in362seconds (~6min versus prior~22min). No app redeployment for CI-only change; CHAIN1 remains live. Same-session self-review, owner-authorized personal-project merge; no independent/device acceptance claim.
+
+WET1 local candidate:552models,18targeted paint models and15pixel-paint browser scenarios PASS, including4watercolour cases. Phone/offline controls and desktop screenshots checked; runtime source limited to existing pixel paint/app/index/SW; no dependency/schema/storage/renderer change. CI/publication pending. Next: push WET1 to parallel cumulative CI, then mesh/lasso-fit checkpoint, remaining compatibility/brush feasibility, drawing/text/connectors/Motion, video and artboard/export scopes. All confirmed unattended decisions below retained. Whole-canvas rotation/time-dependent fluid simulation/automatic garment recognition/Drive/BYOK/layer-capacity expansion remain deferred. Physical acceptance deferred for consolidated artwork test. Graph/skills unchanged.
+
+Earlier headings below are historical where superseded.
+
 Attempt 2: self-review restored original server resets after browser/selection tests (mutable update fixture state). Added CIPAR05 reset-boundary regression; supersedes fe0aee0/run39028496379 for release.
 
 ## Unattended run — CIPAR parallel CI in progress, 17 October 2026

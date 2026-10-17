@@ -1,0 +1,74 @@
+{
+  "executed": true,
+  "checks": [
+    {
+      "gate": "success",
+      "exit": 0
+    },
+    {
+      "gate": "failure",
+      "exit": 1
+    },
+    {
+      "gate": "cancelled",
+      "exit": 1
+    },
+    {
+      "gate": "skipped",
+      "exit": 1
+    },
+    {
+      "gate": "",
+      "exit": 1
+    },
+    {
+      "mismatchedShard": 0,
+      "rejected": true
+    },
+    {
+      "missingShard": 0,
+      "rejected": true
+    },
+    {
+      "mismatchedShard": 1,
+      "rejected": true
+    },
+    {
+      "missingShard": 1,
+      "rejected": true
+    },
+    {
+      "mismatchedShard": 2,
+      "rejected": true
+    },
+    {
+      "missingShard": 2,
+      "rejected": true
+    },
+    {
+      "mismatchedShard": 3,
+      "rejected": true
+    },
+    {
+      "missingShard": 3,
+      "rejected": true
+    },
+    {
+      "mismatchedShard": 4,
+      "rejected": true
+    },
+    {
+      "missingShard": 4,
+      "rejected": true
+    },
+    {
+      "mismatchedShard": 5,
+      "rejected": true
+    },
+    {
+      "missingShard": 5,
+      "rejected": true
+    }
+  ],
+  "wrongCanonicalCommitRejected": true
+}

@@ -1,3 +1,17 @@
+## Current unattended build — CIPAR merged; WET1 ready for CI
+
+Parallel CI candidate570e450 passed full cumulative run39028623671:547models,433structured browser scenarios,2legacy checks;192source hashes/sixshard markers and downloaded artifact12100015574 SHA256181eda2b8705a91e97d380481ff1c800b8c76698126bfa36a1cabdc23ea1908e verified. PR27 merged as ef03368d5767e9c078bbeb4ec83b216f8c12f771; tree matches exact testeda6c4d27. Six jobs started together and final gate completed in362seconds (~6min versus prior~22min). No app redeployment for CI-only change; CHAIN1 remains live. Same-session self-review, owner-authorized personal-project merge; no independent/device acceptance claim.
+
+WET1 local candidate:552models,18targeted paint models and15pixel-paint browser scenarios PASS, including4watercolour cases. Phone/offline controls and desktop screenshots checked; runtime source limited to existing pixel paint/app/index/SW; no dependency/schema/storage/renderer change. CI/publication pending. Next: push WET1 to parallel cumulative CI, then mesh/lasso-fit checkpoint, remaining compatibility/brush feasibility, drawing/text/connectors/Motion, video and artboard/export scopes. All confirmed unattended decisions below retained. Whole-canvas rotation/time-dependent fluid simulation/automatic garment recognition/Drive/BYOK/layer-capacity expansion remain deferred. Physical acceptance deferred for consolidated artwork test. Graph/skills unchanged.
+
+Earlier headings below are historical where superseded.
+
+## WET1 watercolour attempt — in progress, 17 October 2026
+
+Unattended sequence authorized. Responsive texture/flow/digital RGB mixing implemented through existing bounded pixel-paint path. No drying/spreading simulation. Active layer becomes pixels explicitly and undoably; masks/other layers/groups retained. No native schema, storage or renderer rewrite. Targeted18paint models and complete552models PASS; first14browser journeys PASS; added phone/offline test rerun pending. Full pinned GitHub CI still required before merge/publication. CI-only CIPAR candidate570e450 is running separately; no claim merged yet. CHAIN1 remains live.
+
+Other scope in unattended-run record retained; no graph/skill changes. Earlier statuses below are historical where superseded.
+
 CIPAR attempt 2 self-review: preserved the two original fixture-server restarts after browser/selection update journeys; additive CIPAR05 checks these boundaries. Candidate fe0aee0/run39028496379 superseded before release. No application/test assertion weakened. Repaired candidate verification pending.
 
 ## Unattended run — CIPAR parallel CI in progress, 17 October 2026

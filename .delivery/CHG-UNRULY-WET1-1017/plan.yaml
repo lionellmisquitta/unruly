@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-WET1-1017
+route: Standard Change
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/model.js, prototypes/browser-workspace/canvas2d-renderer.js]
+checkpoints:
+  - id: WET1
+    allowed_paths: [prototypes/browser-workspace/pixel-paint.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/sw.js, tests/browser-workspace/, .github/workflows/browser-workspace.yml, .delivery/CHG-UNRULY-WET1-1017/, docs/delivery/]
+    test_paths: [tests/browser-workspace/pixel-paint.model.test.mjs, tests/browser-workspace/pixel-paint.browser.cjs]
+    tests:
+      - {id: WET01, command: [node, --test, tests/browser-workspace/pixel-paint.model.test.mjs], timeout_seconds: 120}
+      - {id: WET02, command: [node, tests/browser-workspace/pixel-paint.browser.cjs], timeout_seconds: 120}
