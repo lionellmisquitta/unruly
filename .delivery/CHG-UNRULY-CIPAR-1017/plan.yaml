@@ -1,0 +1,14 @@
+change_id: CHG-UNRULY-CIPAR-1017
+route: Standard Change
+prohibited_paths: [prototypes/browser-workspace/, .knowledge/, knowledge-graph/]
+checkpoints:
+  - id: CIPAR
+    allowed_paths: [.github/workflows/browser-workspace.yml, tests/browser-workspace/ci-contract.test.mjs, .delivery/CHG-UNRULY-CIPAR-1017/, docs/delivery/]
+    test_paths: [tests/browser-workspace/ci-contract.test.mjs]
+    tests:
+      - id: CIPAR01
+        command: [node, --test, tests/browser-workspace/ci-contract.test.mjs]
+        timeout_seconds: 120
+      - id: CIPAR02
+        command: [node, --test]
+        timeout_seconds: 120

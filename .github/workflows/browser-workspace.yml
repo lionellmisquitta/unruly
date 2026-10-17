@@ -14,8 +14,13 @@ concurrency:
   cancel-in-progress: true
 jobs:
   foundation-qa:
+    name: Cumulative shard ${{ matrix.shard }}
     runs-on: ubuntu-24.04
     timeout-minutes: 26
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -26,6 +31,7 @@ jobs:
           cd tests/browser-workspace
           npx playwright install --with-deps chromium
       - name: Pattern deformation focused gate
+        if: matrix.shard == 0
         shell: bash
         run: |
           set -euo pipefail
@@ -42,7 +48,46 @@ jobs:
           node tests/browser-workspace/virtual-project.browser.cjs > tests/browser-workspace/evidence/virtual-project-output.txt 2>&1 || { cat tests/browser-workspace/evidence/virtual-project-output.txt; exit 1; }
           node tests/browser-workspace/virtual-group-scene.browser.cjs > tests/browser-workspace/evidence/virtual-group-scene-output.txt 2>&1 || { cat tests/browser-workspace/evidence/virtual-group-scene-output.txt; exit 1; }
           node tests/browser-workspace/pattern-warp.browser.cjs > tests/browser-workspace/evidence/pattern-warp-output.txt 2>&1 || { cat tests/browser-workspace/evidence/pattern-warp-output.txt; exit 1; }
+      - name: Stroke stabilization focused gate
+        if: matrix.shard == 0
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/stabilization-server.log 2>&1 &
+          qa_stab_server_pid=$!
+          trap 'kill "$qa_stab_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/stabilization.browser.cjs > tests/browser-workspace/evidence/stabilization-output.txt 2>&1 || { cat tests/browser-workspace/evidence/stabilization-output.txt; exit 1; }
+      - name: Lasso and enclose fill regression
+        if: matrix.shard == 0
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/polygon-fill-server.log 2>&1 &
+          qa_region_server_pid=$!
+          trap 'kill "$qa_region_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/polygon-fill.browser.cjs > tests/browser-workspace/evidence/polygon-fill-output.txt 2>&1 || { cat tests/browser-workspace/evidence/polygon-fill-output.txt; exit 1; }
+      - name: Cumulative foundation partition 0
+        if: matrix.shard == 0
+        shell: bash
+        run: |
+          set -euo pipefail
+          qa_result_code=0
+          mkdir -p tests/browser-workspace/evidence
+          node --version > tests/browser-workspace/evidence/node-version.txt
+          node --test tests/browser-workspace/tip-guides.model.test.mjs tests/browser-workspace/ci-contract.test.mjs tests/browser-workspace/composition.model.test.mjs tests/browser-workspace/palettes.model.test.mjs tests/browser-workspace/image-tip-paint.model.test.mjs tests/browser-workspace/drawing-tools.model.test.mjs tests/browser-workspace/stabilization.model.test.mjs tests/browser-workspace/timelapse.model.test.mjs tests/browser-workspace/motion.model.test.mjs tests/browser-workspace/group-cache.model.test.mjs tests/browser-workspace/capacity.model.test.mjs tests/browser-workspace/grain.model.test.mjs tests/browser-workspace/custom-tips.model.test.mjs tests/browser-workspace/filters.model.test.mjs tests/browser-workspace/adjustments.model.test.mjs tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs tests/browser-workspace/press2.model.test.mjs tests/browser-workspace/g02.model.test.mjs tests/browser-workspace/g02.fit.model.test.mjs tests/browser-workspace/c04.model.test.mjs tests/browser-workspace/airbrush-size.model.test.mjs tests/browser-workspace/brush-size-percent.model.test.mjs tests/browser-workspace/recipe.model.test.mjs tests/browser-workspace/smudge.model.test.mjs tests/browser-workspace/tablet-ux.model.test.mjs tests/browser-workspace/layer-transform.test.mjs tests/browser-workspace/render-contract.model.test.mjs tests/browser-workspace/raster-tiles.model.test.mjs tests/browser-workspace/history-cache.model.test.mjs tests/browser-workspace/layer-compositor.model.test.mjs tests/browser-workspace/pixel-paint.model.test.mjs tests/browser-workspace/folders.model.test.mjs tests/browser-workspace/masks.model.test.mjs tests/browser-workspace/clipping.model.test.mjs tests/browser-workspace/text.model.test.mjs tests/browser-workspace/image-import.model.test.mjs tests/browser-workspace/wand.model.test.mjs tests/browser-workspace/lasso-region.model.test.mjs tests/browser-workspace/large-region.model.test.mjs tests/browser-workspace/path-selection.model.test.mjs tests/browser-workspace/magnetic-selection.model.test.mjs tests/browser-workspace/bucket-fill.model.test.mjs tests/browser-workspace/polygon-fill.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
+          exit "$qa_result_code"
       - name: Image-tip guides and CI contract focused gate
+        if: matrix.shard == 1
         shell: bash
         run: |
           set -euo pipefail
@@ -56,18 +101,79 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/tip-guides.browser.cjs > tests/browser-workspace/evidence/tip-guides-output.txt 2>&1 || { cat tests/browser-workspace/evidence/tip-guides-output.txt; exit 1; }
-      - name: Upload focused tip-guide UI evidence early
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: unruly-tip4-focused-ui
-          path: |
-            tests/browser-workspace/evidence/TIP4-*.png
-            tests/browser-workspace/evidence/TIP4B*-failure.png
-            tests/browser-workspace/evidence/tip-guides-results.json
-          retention-days: 7
-          if-no-files-found: ignore
+      - name: Painting grain and capacity recovery gates
+        if: matrix.shard == 1
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/tip-server.log 2>&1 &
+          qa_tip_server_pid=$!
+          trap 'kill "$qa_tip_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/grain.browser.cjs > tests/browser-workspace/evidence/grain-output.txt 2>&1 || { cat tests/browser-workspace/evidence/grain-output.txt; exit 1; }
+      - name: Gap-aware bucket regression
+        if: matrix.shard == 1
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/bucket-fill-server.log 2>&1 &
+          qa_region_server_pid=$!
+          trap 'kill "$qa_region_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/bucket-fill.browser.cjs > tests/browser-workspace/evidence/bucket-fill-output.txt 2>&1 || { cat tests/browser-workspace/evidence/bucket-fill-output.txt; exit 1; }
+      - name: Cumulative foundation partition 1
+        if: matrix.shard == 1
+        shell: bash
+        run: |
+          set -euo pipefail
+          qa_result_code=0
+          mkdir -p tests/browser-workspace/evidence
+          node --version > tests/browser-workspace/evidence/node-version.txt
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/foundation-server.log 2>&1 &
+          qa_server_pid=$!
+          trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
+          node tests/browser-workspace/browser.test.cjs > tests/browser-workspace/evidence/browser-output.txt 2>&1 || qa_result_code=1
+          kill "$qa_server_pid"
+          wait "$qa_server_pid" || true
+          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/foundation-server.log 2>&1 &
+          qa_server_pid=$!
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
+          node tests/browser-workspace/selection.browser.cjs > tests/browser-workspace/evidence/selection-browser-output.txt 2>&1 || qa_result_code=1
+          kill "$qa_server_pid"
+          wait "$qa_server_pid" || true
+          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/foundation-server.log 2>&1 &
+          qa_server_pid=$!
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
+          node tests/browser-workspace/performance.browser.cjs > tests/browser-workspace/evidence/performance-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/u1.browser.cjs > tests/browser-workspace/evidence/u1-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/u2.browser.cjs > tests/browser-workspace/evidence/u2-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/u3.browser.cjs > tests/browser-workspace/evidence/u3-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/pen.browser.cjs > tests/browser-workspace/evidence/pen-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/curve.browser.cjs > tests/browser-workspace/evidence/curve-browser-output.txt 2>&1 || qa_result_code=1
+          exit "$qa_result_code"
       - name: Folder composition focused gate
+        if: matrix.shard == 2
         shell: bash
         run: |
           set -euo pipefail
@@ -81,94 +187,8 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/composition.browser.cjs > tests/browser-workspace/evidence/composition-output.txt 2>&1 || { cat tests/browser-workspace/evidence/composition-output.txt; exit 1; }
-      - name: Upload focused composition UI evidence early
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: unruly-comp1-focused-ui
-          path: |
-            tests/browser-workspace/evidence/COMP1-*.png
-            tests/browser-workspace/evidence/COMPB*-failure.png
-            tests/browser-workspace/evidence/composition-results.json
-          retention-days: 7
-          if-no-files-found: ignore
-      - name: Palettes mixing and reference picker focused gate
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/palettes-server.log 2>&1 &
-          qa_pal1_server_pid=$!
-          trap 'kill "$qa_pal1_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/palettes.browser.cjs > tests/browser-workspace/evidence/palettes-output.txt 2>&1 || { cat tests/browser-workspace/evidence/palettes-output.txt; exit 1; }
-      - name: Upload focused palette UI evidence early
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: unruly-pal1-focused-ui
-          path: |
-            tests/browser-workspace/evidence/PAL1-*.png
-            tests/browser-workspace/evidence/PALB*-failure.png
-            tests/browser-workspace/evidence/palettes-results.json
-          retention-days: 7
-          if-no-files-found: ignore
-      - name: Image-tip alpha-lock focused gate
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/image-tip-paint-server.log 2>&1 &
-          qa_tip3_server_pid=$!
-          trap 'kill "$qa_tip3_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/image-tip-paint.browser.cjs > tests/browser-workspace/evidence/image-tip-paint-output.txt 2>&1 || { cat tests/browser-workspace/evidence/image-tip-paint-output.txt; exit 1; }
-      - name: Drawing guides and artwork geometry focused gates
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/drawing-tools-server.log 2>&1 &
-          qa_draw_server_pid=$!
-          trap 'kill "$qa_draw_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/drawing-tools.browser.cjs > tests/browser-workspace/evidence/drawing-tools-output.txt 2>&1 || { cat tests/browser-workspace/evidence/drawing-tools-output.txt; exit 1; }
-      - name: Stroke stabilization focused gate
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/stabilization-server.log 2>&1 &
-          qa_stab_server_pid=$!
-          trap 'kill "$qa_stab_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/stabilization.browser.cjs > tests/browser-workspace/evidence/stabilization-output.txt 2>&1 || { cat tests/browser-workspace/evidence/stabilization-output.txt; exit 1; }
-      - name: Painting grain and capacity recovery gates
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/tip-server.log 2>&1 &
-          qa_tip_server_pid=$!
-          trap 'kill "$qa_tip_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/grain.browser.cjs > tests/browser-workspace/evidence/grain-output.txt 2>&1 || { cat tests/browser-workspace/evidence/grain-output.txt; exit 1; }
       - name: Measured layered capacity and recovery
+        if: matrix.shard == 2
         shell: bash
         run: |
           set -euo pipefail
@@ -181,72 +201,8 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/capacity.browser.cjs > tests/browser-workspace/evidence/capacity-output.txt 2>&1 || { cat tests/browser-workspace/evidence/capacity-output.txt; exit 1; }
-      - name: Image brush tips and named sections regression
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/tip-server.log 2>&1 &
-          qa_tip_server_pid=$!
-          trap 'kill "$qa_tip_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/custom-tips.browser.cjs > tests/browser-workspace/evidence/custom-tips-output.txt 2>&1 || { cat tests/browser-workspace/evidence/custom-tips-output.txt; exit 1; }
-      - name: Curves and padded Gaussian blur regression
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/filter-server.log 2>&1 &
-          qa_filter_server_pid=$!
-          trap 'kill "$qa_filter_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/filters.browser.cjs > tests/browser-workspace/evidence/filters-output.txt 2>&1 || { cat tests/browser-workspace/evidence/filters-output.txt; exit 1; }
-      - name: Layer and group colour adjustment regression
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/adjustment-server.log 2>&1 &
-          qa_adjustment_server_pid=$!
-          trap 'kill "$qa_adjustment_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/adjustments.browser.cjs > tests/browser-workspace/evidence/adjustments-output.txt 2>&1 || { cat tests/browser-workspace/evidence/adjustments-output.txt; exit 1; }
-      - name: Lasso and enclose fill regression
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/polygon-fill-server.log 2>&1 &
-          qa_region_server_pid=$!
-          trap 'kill "$qa_region_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/polygon-fill.browser.cjs > tests/browser-workspace/evidence/polygon-fill-output.txt 2>&1 || { cat tests/browser-workspace/evidence/polygon-fill-output.txt; exit 1; }
-      - name: Gap-aware bucket regression
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p tests/browser-workspace/evidence
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/bucket-fill-server.log 2>&1 &
-          qa_region_server_pid=$!
-          trap 'kill "$qa_region_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/bucket-fill.browser.cjs > tests/browser-workspace/evidence/bucket-fill-output.txt 2>&1 || { cat tests/browser-workspace/evidence/bucket-fill-output.txt; exit 1; }
       - name: Magnetic selection regression
+        if: matrix.shard == 2
         shell: bash
         run: |
           set -euo pipefail
@@ -259,7 +215,61 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/magnetic-selection.browser.cjs > tests/browser-workspace/evidence/magnetic-selection-output.txt 2>&1
+      - name: Cumulative foundation partition 2
+        if: matrix.shard == 2
+        shell: bash
+        run: |
+          set -euo pipefail
+          qa_result_code=0
+          mkdir -p tests/browser-workspace/evidence
+          node --version > tests/browser-workspace/evidence/node-version.txt
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/foundation-server.log 2>&1 &
+          qa_server_pid=$!
+          trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
+          node tests/browser-workspace/lset.browser.cjs > tests/browser-workspace/evidence/lset-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/g02.browser.cjs > tests/browser-workspace/evidence/g02-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/fullscreen.browser.cjs > tests/browser-workspace/evidence/fullscreen-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/airbrush-size.browser.cjs > tests/browser-workspace/evidence/airbrush-size-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/size-percent.browser.cjs > tests/browser-workspace/evidence/size-percent-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/compare.browser.cjs > tests/browser-workspace/evidence/compare-browser-output.txt 2>&1 || qa_result_code=1
+          node tests/browser-workspace/recipe.browser.cjs > tests/browser-workspace/evidence/recipe-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/recipe-browser-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/smudge.browser.cjs > tests/browser-workspace/evidence/smudge-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/smudge-browser-output.txt; qa_result_code=1; }
+          exit "$qa_result_code"
+      - name: Palettes mixing and reference picker focused gate
+        if: matrix.shard == 3
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/palettes-server.log 2>&1 &
+          qa_pal1_server_pid=$!
+          trap 'kill "$qa_pal1_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/palettes.browser.cjs > tests/browser-workspace/evidence/palettes-output.txt 2>&1 || { cat tests/browser-workspace/evidence/palettes-output.txt; exit 1; }
+      - name: Image brush tips and named sections regression
+        if: matrix.shard == 3
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/tip-server.log 2>&1 &
+          qa_tip_server_pid=$!
+          trap 'kill "$qa_tip_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/custom-tips.browser.cjs > tests/browser-workspace/evidence/custom-tips-output.txt 2>&1 || { cat tests/browser-workspace/evidence/custom-tips-output.txt; exit 1; }
       - name: Editable path selection regression
+        if: matrix.shard == 3
         shell: bash
         run: |
           set -euo pipefail
@@ -272,7 +282,62 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/path-selection.browser.cjs > tests/browser-workspace/evidence/path-selection-output.txt 2>&1
+      - name: Cumulative foundation partition 3
+        if: matrix.shard == 3
+        shell: bash
+        run: |
+          set -euo pipefail
+          qa_result_code=0
+          mkdir -p tests/browser-workspace/evidence
+          node --version > tests/browser-workspace/evidence/node-version.txt
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/foundation-server.log 2>&1 &
+          qa_server_pid=$!
+          trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null
+          node tests/browser-workspace/tablet-ux.browser.cjs > tests/browser-workspace/evidence/tablet-ux-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/tablet-ux-browser-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/layer-transform.browser.cjs > tests/browser-workspace/evidence/layer-transform-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layer-transform-browser-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/layered-baseline.browser.cjs > tests/browser-workspace/evidence/layered-baseline-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layered-baseline-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/render-boundary.browser.cjs > tests/browser-workspace/evidence/render-boundary-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/render-boundary-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/raster-tiles.browser.cjs > tests/browser-workspace/evidence/raster-tiles-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/raster-tiles-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/history-cache.browser.cjs > tests/browser-workspace/evidence/history-cache-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/history-cache-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/layer-compositor.browser.cjs > tests/browser-workspace/evidence/layer-compositor-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layer-compositor-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/pixel-paint.browser.cjs > tests/browser-workspace/evidence/pixel-paint-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/pixel-paint-output.txt; qa_result_code=1; }
+          node tests/browser-workspace/folders.browser.cjs > tests/browser-workspace/evidence/folders-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/folders-output.txt; qa_result_code=1; }
+          exit "$qa_result_code"
+      - name: Image-tip alpha-lock focused gate
+        if: matrix.shard == 4
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/image-tip-paint-server.log 2>&1 &
+          qa_tip3_server_pid=$!
+          trap 'kill "$qa_tip3_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/image-tip-paint.browser.cjs > tests/browser-workspace/evidence/image-tip-paint-output.txt 2>&1 || { cat tests/browser-workspace/evidence/image-tip-paint-output.txt; exit 1; }
+      - name: Curves and padded Gaussian blur regression
+        if: matrix.shard == 4
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/filter-server.log 2>&1 &
+          qa_filter_server_pid=$!
+          trap 'kill "$qa_filter_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/filters.browser.cjs > tests/browser-workspace/evidence/filters-output.txt 2>&1 || { cat tests/browser-workspace/evidence/filters-output.txt; exit 1; }
       - name: Large-layer region regression
+        if: matrix.shard == 4
         shell: bash
         run: |
           set -euo pipefail
@@ -285,7 +350,46 @@ jobs:
             sleep 0.1
           done
           node tests/browser-workspace/large-region.browser.cjs > tests/browser-workspace/evidence/large-region-output.txt 2>&1
+      - name: CAP2 processed-group retention and capacity/recovery
+        if: matrix.shard == 4
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/cap2-server.log 2>&1 &
+          qa_cap2_pid=$!
+          trap 'kill "$qa_cap2_pid" 2>/dev/null || true' EXIT
+          node tests/browser-workspace/group-cache.browser.cjs > tests/browser-workspace/evidence/group-cache-output.txt 2>&1 || { cat tests/browser-workspace/evidence/group-cache-output.txt; exit 1; }
+          node tests/browser-workspace/capacity.browser.cjs > tests/browser-workspace/evidence/capacity-output.txt 2>&1 || { cat tests/browser-workspace/evidence/capacity-output.txt; exit 1; }
+      - name: Drawing guides and artwork geometry focused gates
+        if: matrix.shard == 5
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/drawing-tools-server.log 2>&1 &
+          qa_draw_server_pid=$!
+          trap 'kill "$qa_draw_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/drawing-tools.browser.cjs > tests/browser-workspace/evidence/drawing-tools-output.txt 2>&1 || { cat tests/browser-workspace/evidence/drawing-tools-output.txt; exit 1; }
+      - name: Layer and group colour adjustment regression
+        if: matrix.shard == 5
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/adjustment-server.log 2>&1 &
+          qa_adjustment_server_pid=$!
+          trap 'kill "$qa_adjustment_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep 0.1
+          done
+          node tests/browser-workspace/adjustments.browser.cjs > tests/browser-workspace/evidence/adjustments-output.txt 2>&1 || { cat tests/browser-workspace/evidence/adjustments-output.txt; exit 1; }
       - name: Actual Chromium layer mask checkpoint
+        if: matrix.shard == 5
         shell: bash
         run: |
           set -euo pipefail
@@ -303,73 +407,8 @@ jobs:
           node tests/browser-workspace/text.browser.cjs > tests/browser-workspace/evidence/text-output.txt 2>&1 || { cat tests/browser-workspace/evidence/text-output.txt; exit 1; }
           node tests/browser-workspace/clipping.browser.cjs > tests/browser-workspace/evidence/clipping-output.txt 2>&1 || { cat tests/browser-workspace/evidence/clipping-output.txt; exit 1; }
           node tests/browser-workspace/masks.browser.cjs > tests/browser-workspace/evidence/masks-output.txt 2>&1 || { cat tests/browser-workspace/evidence/masks-output.txt; exit 1; }
-      - name: Independent unit and actual Chromium journeys
-        shell: bash
-        run: |
-          set -euo pipefail
-          qa_result_code=0
-          mkdir -p tests/browser-workspace/evidence
-          node --version > tests/browser-workspace/evidence/node-version.txt
-          node --test tests/browser-workspace/tip-guides.model.test.mjs tests/browser-workspace/ci-contract.test.mjs tests/browser-workspace/composition.model.test.mjs tests/browser-workspace/palettes.model.test.mjs tests/browser-workspace/image-tip-paint.model.test.mjs tests/browser-workspace/drawing-tools.model.test.mjs tests/browser-workspace/stabilization.model.test.mjs tests/browser-workspace/timelapse.model.test.mjs tests/browser-workspace/motion.model.test.mjs tests/browser-workspace/group-cache.model.test.mjs tests/browser-workspace/capacity.model.test.mjs tests/browser-workspace/grain.model.test.mjs tests/browser-workspace/custom-tips.model.test.mjs tests/browser-workspace/filters.model.test.mjs tests/browser-workspace/adjustments.model.test.mjs tests/browser-workspace/model.test.mjs tests/browser-workspace/selection.test.mjs tests/browser-workspace/u1.model.test.mjs tests/browser-workspace/u2.model.test.mjs tests/browser-workspace/u3.model.test.mjs tests/browser-workspace/pen.model.test.mjs tests/browser-workspace/curve.model.test.mjs tests/browser-workspace/lset.model.test.mjs tests/browser-workspace/press2.model.test.mjs tests/browser-workspace/g02.model.test.mjs tests/browser-workspace/g02.fit.model.test.mjs tests/browser-workspace/c04.model.test.mjs tests/browser-workspace/airbrush-size.model.test.mjs tests/browser-workspace/brush-size-percent.model.test.mjs tests/browser-workspace/recipe.model.test.mjs tests/browser-workspace/smudge.model.test.mjs tests/browser-workspace/tablet-ux.model.test.mjs tests/browser-workspace/layer-transform.test.mjs tests/browser-workspace/render-contract.model.test.mjs tests/browser-workspace/raster-tiles.model.test.mjs tests/browser-workspace/history-cache.model.test.mjs tests/browser-workspace/layer-compositor.model.test.mjs tests/browser-workspace/pixel-paint.model.test.mjs tests/browser-workspace/folders.model.test.mjs tests/browser-workspace/masks.model.test.mjs tests/browser-workspace/clipping.model.test.mjs tests/browser-workspace/text.model.test.mjs tests/browser-workspace/image-import.model.test.mjs tests/browser-workspace/wand.model.test.mjs tests/browser-workspace/lasso-region.model.test.mjs tests/browser-workspace/large-region.model.test.mjs tests/browser-workspace/path-selection.model.test.mjs tests/browser-workspace/magnetic-selection.model.test.mjs tests/browser-workspace/bucket-fill.model.test.mjs tests/browser-workspace/polygon-fill.model.test.mjs > tests/browser-workspace/evidence/model-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/server.log 2>&1 &
-          qa_server_pid=$!
-          trap 'kill "$qa_server_pid" 2>/dev/null || true' EXIT
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/browser.test.cjs > tests/browser-workspace/evidence/browser-output.txt 2>&1 || qa_result_code=1
-          kill "$qa_server_pid"
-          wait "$qa_server_pid" || true
-          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/server.log 2>&1 &
-          qa_server_pid=$!
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/selection.browser.cjs > tests/browser-workspace/evidence/selection-browser-output.txt 2>&1 || qa_result_code=1
-          kill "$qa_server_pid"
-          wait "$qa_server_pid" || true
-          node tests/browser-workspace/server.cjs >> tests/browser-workspace/evidence/server.log 2>&1 &
-          qa_server_pid=$!
-          for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
-            sleep 0.1
-          done
-          node tests/browser-workspace/performance.browser.cjs > tests/browser-workspace/evidence/performance-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/u1.browser.cjs > tests/browser-workspace/evidence/u1-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/u2.browser.cjs > tests/browser-workspace/evidence/u2-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/u3.browser.cjs > tests/browser-workspace/evidence/u3-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/pen.browser.cjs > tests/browser-workspace/evidence/pen-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/curve.browser.cjs > tests/browser-workspace/evidence/curve-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/lset.browser.cjs > tests/browser-workspace/evidence/lset-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/g02.browser.cjs > tests/browser-workspace/evidence/g02-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/fullscreen.browser.cjs > tests/browser-workspace/evidence/fullscreen-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/airbrush-size.browser.cjs > tests/browser-workspace/evidence/airbrush-size-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/size-percent.browser.cjs > tests/browser-workspace/evidence/size-percent-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/compare.browser.cjs > tests/browser-workspace/evidence/compare-browser-output.txt 2>&1 || qa_result_code=1
-          node tests/browser-workspace/recipe.browser.cjs > tests/browser-workspace/evidence/recipe-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/recipe-browser-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/smudge.browser.cjs > tests/browser-workspace/evidence/smudge-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/smudge-browser-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/tablet-ux.browser.cjs > tests/browser-workspace/evidence/tablet-ux-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/tablet-ux-browser-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/layer-transform.browser.cjs > tests/browser-workspace/evidence/layer-transform-browser-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layer-transform-browser-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/layered-baseline.browser.cjs > tests/browser-workspace/evidence/layered-baseline-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layered-baseline-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/render-boundary.browser.cjs > tests/browser-workspace/evidence/render-boundary-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/render-boundary-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/raster-tiles.browser.cjs > tests/browser-workspace/evidence/raster-tiles-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/raster-tiles-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/history-cache.browser.cjs > tests/browser-workspace/evidence/history-cache-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/history-cache-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/layer-compositor.browser.cjs > tests/browser-workspace/evidence/layer-compositor-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/layer-compositor-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/pixel-paint.browser.cjs > tests/browser-workspace/evidence/pixel-paint-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/pixel-paint-output.txt; qa_result_code=1; }
-          node tests/browser-workspace/folders.browser.cjs > tests/browser-workspace/evidence/folders-output.txt 2>&1 || { tail -100 tests/browser-workspace/evidence/folders-output.txt; qa_result_code=1; }
-          exit "$qa_result_code"
-      - name: CAP2 processed-group retention and capacity/recovery
-        shell: bash
-        run: |
-          set -euo pipefail
-          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/cap2-server.log 2>&1 &
-          qa_cap2_pid=$!
-          trap 'kill "$qa_cap2_pid" 2>/dev/null || true' EXIT
-          node tests/browser-workspace/group-cache.browser.cjs > tests/browser-workspace/evidence/group-cache-output.txt 2>&1 || { cat tests/browser-workspace/evidence/group-cache-output.txt; exit 1; }
-          node tests/browser-workspace/capacity.browser.cjs > tests/browser-workspace/evidence/capacity-output.txt 2>&1 || { cat tests/browser-workspace/evidence/capacity-output.txt; exit 1; }
       - name: Motion Trace saved cues and reversible presentation
+        if: matrix.shard == 5
         shell: bash
         run: |
           set -euo pipefail
@@ -389,12 +428,45 @@ jobs:
           mkdir -p tests/browser-workspace/evidence
           git rev-parse HEAD > tests/browser-workspace/evidence/commit.txt
           sha256sum prototypes/browser-workspace/* tests/browser-workspace/*.cjs tests/browser-workspace/*.mjs tests/browser-workspace/package.json tests/browser-workspace/package-lock.json tests/browser-workspace/fixtures/*.txt .github/workflows/browser-workspace.yml > tests/browser-workspace/evidence/source-sha256.txt
+      - name: Record shard completion
+        run: |
+          printf '%s\n' '${{ github.sha }}' > tests/browser-workspace/evidence/shard-${{ matrix.shard }}.txt
       - name: Upload bounded QA evidence only
         if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: unruly-browser-workspace-shard-${{ matrix.shard }}
+          path: tests/browser-workspace/evidence/
+          if-no-files-found: error
+          retention-days: 7
+
+  cumulative-qa:
+    name: All cumulative shards required
+    needs: [foundation-qa]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Reject failed cancelled or skipped shards
+        env:
+          SHARD_RESULT: ${{ needs.foundation-qa.result }}
+        run: test "$SHARD_RESULT" = success
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: unruly-browser-workspace-shard-*
+          path: tests/browser-workspace/evidence
+          merge-multiple: true
+      - name: Require six matching source identities
+        env:
+          CANDIDATE: ${{ github.sha }}
+        run: |
+          for shard in 0 1 2 3 4 5; do
+            test "$(cat tests/browser-workspace/evidence/shard-$shard.txt)" = "$CANDIDATE"
+          done
+          test "$(cat tests/browser-workspace/evidence/commit.txt)" = "$CANDIDATE"
+      - name: Upload canonical cumulative evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: unruly-browser-workspace-qa
           path: tests/browser-workspace/evidence/
           if-no-files-found: error
           retention-days: 7
-
