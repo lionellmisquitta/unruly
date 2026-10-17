@@ -6,7 +6,22 @@ This is the current full-product roadmap index. The painting sequence below is a
 
 Application baseline: PAT1 published and hosted verified, source `3e25ee2193cd4e208b11889c7d248d77cc60359a`. Four-corner image/pattern deformation baseline delivered. Full scope below retained; no broad checkpoint closure inferred.
 
-## Current build priority — owner decision, 16 October 2026
+## Owner-approved release and interaction decisions — 17 October 2026 (CHAIN1)
+
+These decisions supersede earlier **v1 delivery order**, without removing the historic requirement IDs or implementation records:
+
+- **Defer Google Drive synchronization (REQ-010/C11) to a later release.** Local-first project recovery/export remains essential. Keep the full sync/conflict-preservation requirement on the future backlog.
+- **Defer BYOK AI (REQ-011/C12-C13) to a later release.** Do not build AI before the core drawing/whiteboard product and export workflow are usable; retain the original ideas/diagrams/document-output intent.
+- **Defer raising the existing 32-layer document capacity and full 30-50+ interactive capacity optimization.** Do not reduce the existing 32-layer compatibility limit unilaterally. Experiment with 12/16-layer working-set guidance only after device benchmarks. Continue to test responsiveness/pen latency and preserve existing budgets and data.
+- **Next priority: CHAIN1 Virtual Layer Groups**, replacing the prior proposal of user-visible linked files. The experience is one artwork, one continuous canvas, one unified hierarchy. Each virtual group retains an independently editable native-board source; collapsed groups provide rendered proxies above and below the active group, and tapping a group expands/activates it without navigation, viewport reset, or separate document tab.
+- Preserve upstream edits: changing an earlier virtual group never destroys source art or automatically warps downstream editable artwork. Its updated contribution must be visible beneath upper groups. Invalidate source-revision-dependent caches; rebuild safely. Do not silently show a stale proxy as current or silently change blending/clipping/masks. Use an explicit limitation/fallback when compositing cannot be represented faithfully.
+- CHAIN1 must start with a **bounded feasibility/contract slice** before committing to wide model/schema/storage/rendering changes. Confirm payload caps, identity/history, board recovery and correct compositing. No new global renderer or new backend. Later UI/production integration requires a verified implementation checkpoint and regression coverage.
+- Keep Motion Trace MOTION1 classified as **core published** with the narrow same-layer mixed-region/original-object compatibility gap and real-device acceptance still open. Do not rebuild its delivered functionality.
+- Current v1 direction after CHAIN1: essential drawing/painting compatibility, focused motion/gesture/text workflow closure, clean timelapse video export, artboards/dimensions/DPI/PNG-JPG-PDF, device QA and release fixes. PDF-page import, proprietary format interchange, advanced wet media/mesh, large layer-capacity expansion, Google Drive sync and BYOK AI retain explicitly visible later-release or separately triaged status; no silent cancellation.
+
+**CHAIN1 acceptance boundary:** preserved native boards, reversible activate/collapse, full visual context during upstream edits, exact group order, safe revision invalidation, saved-board reopen, missing-source recovery, offline behavior, and tested unchanged legacy boards. A proxy is an optimization, not artwork authority. If any of these cannot be verified, remain on the existing published renderer and report the blocker. Preserve source/history/undo and all prior tests. Target is to keep v1 focused, **not a guaranteed 4-6 build promise**.
+
+## Historical build priority — owner decision, 16 October 2026
 
 Complete the remaining drawing and painting work before export-focused builds. This order supersedes earlier near-term sequences and “video export next” proposals; historical build receipts remain unchanged. Work groups are not fixed build counts. No requirement is removed.
 
