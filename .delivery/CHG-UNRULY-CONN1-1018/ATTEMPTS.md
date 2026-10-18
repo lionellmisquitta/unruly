@@ -5,3 +5,5 @@
 Local complete model run:596 PASS,0 failed/skipped. Scope check:36files,15browser files cache-only; storage.js/render.js/canvas2d-renderer.js byte-identical to RTEXT2. Same-session self-verification only.
 
 2. Source924d19a519fa78a55590185fe1bde742df49fff5, CI39101724783: same4browser scenarios PASS; phone initial selection still FAIL. Corrected diagnosis from CSS: dock is60px wide at left8 (ends68), not52. Fixture x60 still hit dock. Replan fixture to put left object at110–150, start drag at90; add explicit elementFromPoint assertion proving start targets canvas. All original behavior/selection assertions preserved. No application change.
+
+3. Source68a5e384f422f9004f9829005ce35a02e2a2c75a/CI39101913268: all17connector models and5connector browser scenarios PASS, including phone/keyboard/offline; five cumulative shards PASS. Foundation U03 failed because enlarged Selection panel intercepted Reset view. Downloaded artifact12126573233 and screenshots inspected. This is an application UI regression; preserve the original valid test. See REPLAN.md. Move connector controls/help into existing collapsed disclosure pattern, then rerun cumulative QA.

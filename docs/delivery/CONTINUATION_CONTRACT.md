@@ -1,3 +1,7 @@
+## CONN1 layout replan — exact-source cumulative rerun required, 18 October 2026
+
+Source68a5e38/CI39101913268 passed all17connector models/5new browser cases and five cumulative shards, but original selectionU03 failed: expanded Selection panel intercepted Reset view. Original assertion preserved. REPLAN.md records the bounded fix: collapsed Connectors disclosure after existing controls/help. Native connector code unchanged; new browser journeys open disclosure explicitly. Require complete596models/460browser/2legacy results and screenshots before release. No merge/publication. Sticky notes and whole-canvas rotation deferred; all other requirements retained; graph/skills unchanged.
+
 ## CONN1 phone fixture diagnosis corrected — rerun pending, 18 October 2026
 
 Second candidate924d19a/CI39101724783 again passed4connector browser cases; phone drag still hit brush dock. CSS confirms dock spansx8–68. Fixture now startsx90 and puts left artwork at110–150; explicit DOM hit-test assertion requires uncovered canvas before dragging. Application code remains unchanged; original assertions retained. Full596local models PASS. Exact repaired cumulative CI required before release. Sticky notes/whole-canvas rotation deferred; all other roadmap scope retained; graph/skills unchanged. Earlier candidate statuses historical.
