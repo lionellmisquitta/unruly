@@ -1,3 +1,7 @@
+## VIDEO1 scoped — 18 October 2026
+
+Clean timelapse video export REQ-009/C10 is in progress from main7bebb20. Source recording/artwork remain immutable. Scope/UX/budgets and additive tests in `.delivery/CHG-UNRULY-VIDEO1-1018/`. Not yet implemented, verified or published. Next: implement deterministic bounded encoding and framing; verify independent decode, cancel, offline, phone and cumulative regression. Continuous pen-point animation remains open. All other roadmap rows/deferrals retained; no graph/skill edits. Earlier headings below historical where superseded.
+
 ## MOTION2 PUBLISHED — 18 October 2026
 
 User explicitly approved merging PR35. Merge `3db574e7bfd085b04499424de26bf147e7b2ddbe` has the exact reviewed candidate tree. [Publication 39111937116](https://github.com/lionellmisquitta/unruly/actions/runs/39111937116) succeeded: pinned source/artifact evidence verified and all **82 hosted application files** match reviewed bytes. [Live application](https://lionellmisquitta.github.io/unruly/). Tested source `d549e5e3679f542c6b73a38912b228d0c7d405f2`; cumulative CI39109892253 passed **609 model tests, 465 browser scenarios and 2 legacy checks**. Additional post-merge CI39111937083 remains in progress at this record; do not represent it as passed. Publication receipt records identities and hosted hashes.

@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-VIDEO1-1018
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [timelapse-video.js, video-container.js, timelapse-ui.js, app.js, index.html, sw.js]
+regression_obligations:
+  - {id: V-TIMING, reason: Every saved state and bounded duration, test_id: VIDEOM}
+  - {id: V-CONTAINER, reason: Playable correctly labeled files and cancellation, test_id: VIDEOB}
+  - {id: V-ART, reason: Recording artwork view and Undo preserved, test_id: VIDEOB}
+  - {id: V-ALL, reason: Existing cumulative behavior, test_id: CUMULATIVE}
