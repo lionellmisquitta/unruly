@@ -1,3 +1,7 @@
+## POSE1A hair verified adapter — 18 October 2026
+
+Exact-source CI39136090722 allgreen. Original hairMesh returns bounded triangles plus sparse crown/clump flow paths; pose-ui depth-orders around head/body and headStudyZoom fits hairstyle extent/profile radius. Old hairless states normalize optional hair/focus; preset separation and offline backup/import tested. Core native/artwork/render/export/recording modules byte unchanged. Verified receipts/source identities in scoped HAIR_QA_RECEIPT.json. Logical responsibilities, not AST evidence; no physical or independent-review claim. Graph/skills unchanged.
+
 ## POSE1A head-attached hair adapter — 18 October 2026
 
 pose-hair.js owns original deterministic head-local 3D clump geometry (<=808 triangles at default styles; hard bound1000), style catalog/defaults/parameter validation. pose-model adds optional hair normalization and head-camera target, hair preset kind and character/pose separation. pose-ui transforms hair through the FK head rotation/radius, depth-orders front/back projected faces around head guide, clips unsafe near-camera faces, and exposes head study/hair controls. Existing library backup/import/CAS includes optional fields; legacy states default None/body focus. index/SW add controls/asset; new tests extend existing pose model/browser invocations. Native artwork/store/renderer/export/recording unchanged. No external runtime/model/asset; no graph/skill change. Logical responsibilities, not AST/runtime evidence.
