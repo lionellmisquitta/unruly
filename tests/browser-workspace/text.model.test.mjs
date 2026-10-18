@@ -38,7 +38,7 @@ test('FONTM02 injected or unbounded families reject before changing board',()=>{
 import {readFileSync} from 'node:fs';
 test('FONTM03 offline cache migrates to FONT2 without losing normal asset inventory',()=>{
  const sw=readFileSync(new URL('../../prototypes/browser-workspace/sw.js',import.meta.url),'utf8');
- assert.match(sw,/CACHE=NORMAL_PREFIX\+'v3-20261018-export1-1'/);
+ assert.match(sw,/CACHE=NORMAL_PREFIX\+'v3-20261018-pose1a-hair-1'/);
  for(const asset of ['./text.js','./rich-text-layout.js','./app.js','./storage.js'])assert(sw.includes("'"+asset+"'"),'missing offline asset '+asset);
  assert(sw.includes("e.data?.type==='ACTIVATE_UPDATE'"),'existing explicit update gesture retained');
  assert(sw.includes("keys.filter(k=>k.startsWith(NORMAL_PREFIX)&&k!==CACHE)"),'old cache activation cleanup retained');

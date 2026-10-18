@@ -1,6 +1,6 @@
 # POSE1 — Editable drawing pose references
 
-Owner-requested checkpoint, 18 October 2026. Status: scope and source shortlist recorded; application implementation and source-data imports not yet built or published. EXPORT1 remains the live release. This advances pose references ahead of the earlier ML-cleanup trial recommendation; all existing roadmap requirements and explicit deferrals remain.
+Owner-requested checkpoint, 18 October 2026. Status: POSE1A human editor implemented on [PR38](https://github.com/lionellmisquitta/unruly/pull/38), with repaired-source cumulative/browser verification pending; not merged or published. Read [POSE1A_ACTIVE.md](POSE1A_ACTIVE.md) for exact candidate/run/next action. Animal rigs and external imports remain POSE1B/C. EXPORT1 remains the live release. This advances pose references ahead of the earlier ML-cleanup trial recommendation; all existing roadmap requirements and explicit deferrals remain.
 
 ## Outcome
 Reusable movable skeleton references for drawing human/cartoon/anime characters and zoo animals. Extract permitted joint annotations or motion frames; do not require the source ML application, training, inference, subscriptions or runtime AI calls.
@@ -16,8 +16,11 @@ Reusable movable skeleton references for drawing human/cartoon/anime characters 
 - Prop reference attachments support generic objects, swords and hammers with editable size/orientation and grip placement. Two-hand grip needs a specified pin/conflict policy. These are requested authored starter poses, not a claim that every external source contains them.
 - Animal rig families: quadruped, primate, bird and reptile, with species profiles and optional appendage chains such as trunk, tail and wings. Do not force animals onto a human skeleton. Standing, walking, sitting, sleeping, eating, looking toward and interacting with a child remain required starter categories.
 
+## Hair reference extension — owner request, 18 October 2026
+POSE1A includes original parametric manga/chibi hairstyle guides: short spiky, pixie, bob, long flowing, curly clumps, ponytail, pigtails and bun, plus None. Adjust volume, length, parting and bangs. Hair follows head pose and proportion scale, supports camera orbit and close-up head study, and remains reference-only. Save hairstyle-only, character proportions+hair or full pose/profile/hair/camera; switching action poses preserves hairstyle. Legacy hairless presets remain importable. These are simplified silhouette/clump scaffolds for drawing, not finished character artwork or imported commercial assets. Clip Studio/VRoid compatibility is not claimed. External hairstyle assets remain evaluation-only until rights/format support established.
+
 ## Delivery slices
-1. POSE1A: shared validated pose/profile format, human 3D rig/editor and authored action starters, proportions/retargeting, camera projection, reference transforms and independent pose/proportion plus combined-preset save/reopen.
+1. POSE1A: shared validated pose/profile/hair format, original hair guides/head study, human 3D rig/editor and authored action starters, proportions/retargeting, camera projection, reference transforms and independent pose/proportion plus combined-preset save/reopen.
 2. POSE1B: animal family rigs, species profiles and zoo starter poses. A quadruped importer must not be presented as complete bird/reptile/appendage support.
 3. POSE1C: permitted external annotation/motion conversion, source attribution and curated searchable packs.
 These slices retain the whole requested feature; none is cancelled or deferred. Bound pack sizes and measure interaction performance before selecting limits.

@@ -1,0 +1,27 @@
+{
+  "source": "f4f07c8df49f283e2e26a981a2e2cef9322e09ca",
+  "ci": 39136090722,
+  "ci_result": "SUCCESS",
+  "artifact": 12140361036,
+  "sha256": "98630586460289729f9190043597f629d1ee2d140ab923b0167911910d029906",
+  "verified_source_hashes": 210,
+  "matching_shard_markers": 6,
+  "local_models": 664,
+  "pose_hair_models": 34,
+  "pose_hair_browser_cases": 9,
+  "structured_browser_cases": 482,
+  "browser_statuses": {
+    "PASS": 482
+  },
+  "screenshots_reviewed": [
+    "desktop1280x900",
+    "phone375x850"
+  ],
+  "same_session_verification": true,
+  "published": false,
+  "legacy_browser_suites": [
+    "compare-results.json",
+    "smudge-browser-results.json"
+  ],
+  "browser_count_scope": "482 rows in *results.json; supplemental G02 output and two legacy suites are separate, not counted in this subtotal"
+}

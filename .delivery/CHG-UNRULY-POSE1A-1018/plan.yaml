@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-POSE1A-1018
+route: Standard Change
+test_config_changes: [.github/workflows/browser-workspace.yml, .github/workflows/browser-workspace-pages.yml]
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/render.js, prototypes/browser-workspace/canvas2d-renderer.js]
+checkpoints:
+  - id: POSE1A
+    allowed_paths: [.github/workflows/browser-workspace-pages.yml, prototypes/browser-workspace/pose-model.js, prototypes/browser-workspace/pose-hair.js, prototypes/browser-workspace/pose-ui.js, prototypes/browser-workspace/pose.css, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/sw.js, tests/browser-workspace/, .github/workflows/browser-workspace.yml, .delivery/CHG-UNRULY-POSE1A-1018/, docs/delivery/]
+    test_paths: [tests/browser-workspace/pose.model.test.mjs, tests/browser-workspace/pose.browser.cjs]
+    tests:
+      - {id: POSEM, command: [node, --test, tests/browser-workspace/pose.model.test.mjs], timeout_seconds: 120}
+      - {id: POSEB, command: [node, tests/browser-workspace/pose.browser.cjs], timeout_seconds: 300}
+      - {id: CUMULATIVE, command: [GitHubActions, browser-workspace.yml], timeout_seconds: 1560}

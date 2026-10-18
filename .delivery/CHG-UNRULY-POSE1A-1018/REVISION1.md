@@ -1,0 +1,2 @@
+# Scope revision 1 — service-worker fixture version
+Offline regression fixtures pin the previous EXPORT1 cache literal in 17 existing tests. The POSE1A cache must advance so installed users receive modules. Allow only those literal cache replacements in existing tests; preserve every assertion and invocation. plan.yaml test paths retain new pose checks; additional tests are regression fixtures, not removed coverage.

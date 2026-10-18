@@ -1,0 +1,2 @@
+# Authorized release preparation — 18 October 2026
+Owner explicitly requests merging PR38 into main. Extend allowed paths/test_config_changes with .github/workflows/browser-workspace-pages.yml for source/artifact/count/cache pins only. Green runtime/test source f4f07c8 and canonical artifact12140361036 remain unchanged. Execute actual Pages evidence guard locally, compare release runtime diff to green source, then expected-head merge and guarded hosted-byte verification. No new feature, graph or skill change.
