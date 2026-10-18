@@ -1,18 +1,19 @@
-import {hairStyles,hairGeometry} from './pose-hair.js';
-import {POSE_KEY,MAX_BYTES,MAX_PLACEMENTS,neutral,profiles,profileLabels,jointIds,endpoints,starters,starter,fk,euler,toEuler,rotate,add,project,unproject,viewCamera,aimJoint,solveEndpoint,enforcePins,mirror,validateState,blankLibrary,validateLibrary,saveRecord,mergeLibrary,applyRecord} from './pose-model.js';
+import {hairStyles,hairMesh} from './pose-hair.js';
+import {POSE_KEY,MAX_BYTES,MAX_PLACEMENTS,neutral,profiles,profileLabels,jointIds,endpoints,starters,starter,fk,euler,toEuler,rotate,add,project,unproject,viewCamera,headStudyZoom,aimJoint,solveEndpoint,enforcePins,mirror,validateState,blankLibrary,validateLibrary,saveRecord,mergeLibrary,applyRecord} from './pose-model.js';
 const NS='http://www.w3.org/2000/svg';
 function node(tag,attrs={},text){const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text)e.textContent=text;return e;}
 export function drawRig(svg,state,width,height,selected='',floor=false){svg.replaceChildren();const f=fk(state),camera=viewCamera(state),p=id=>project(f[id].p,camera,width,height),point=v=>project(v,camera,width,height);
  const line=(a,b,color,width=5,dash=false)=>svg.append(node('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:color,'stroke-width':width,'stroke-linecap':'round',...(dash?{'stroke-dasharray':'5 5'}:{})}));
  if(floor){for(let i=-3;i<=3;i++){line(point([i,-2.6,-3]),point([i,-2.6,3]),'#454950',1);line(point([-3,-2.6,i]),point([3,-2.6,i]),'#454950',1);}}
+ const mesh=hairMesh(state.hair),hairPoint=v=>point(add(f.head.p,rotate(f.head.q,v.map(n=>n*state.profile.head)))),hair=mesh.faces.map(face=>{const points=face.map(hairPoint);return {points,z:points.reduce((a,p)=>a+p.z,0)/3};}).filter(face=>face.points.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)&&p.z<11&&Math.abs(p.x)<1e5&&Math.abs(p.y)<1e5)).sort((a,b)=>a.z-b.z),headDepth=p('head').z;
+ const guides=mesh.paths.map(path=>path.map(hairPoint)).filter(path=>path.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)&&p.z<11&&Math.abs(p.x)<1e5&&Math.abs(p.y)<1e5));
+ const drawHair=front=>{for(const face of hair){if((face.z>=headDepth)!==front)continue;const color=front?'#5c8295':'#3d6071';svg.append(node('polygon',{points:face.points.map(p=>`${p.x},${p.y}`).join(' '),fill:color,stroke:color,'stroke-width':.3,'stroke-linejoin':'round','data-hair-face':front?'front':'back'}));}for(const path of guides){if((path.reduce((a,p)=>a+p.z,0)/path.length>=headDepth)!==front)continue;const pt=p=>`${p.x},${p.y}`,d=path.length===3?`M${pt(path[0])} Q${pt(path[1])} ${pt(path[2])}`:path.length===4?`M${pt(path[0])} C${pt(path[1])} ${pt(path[2])} ${pt(path[3])}`:'M'+path.map(pt).join(' L');svg.append(node('path',{d,fill:'none',stroke:front?'#a9cbd7':'#6f96a8','stroke-width':.9,'stroke-linecap':'round','data-hair-guide':'flow'}));}};
+ drawHair(false);
  const plane=(ids,color)=>svg.append(node('polygon',{points:ids.map(id=>`${p(id).x},${p(id).y}`).join(' '),fill:color,stroke:'#aac9d7','stroke-width':1.5}));
  plane(['leftShoulder','rightShoulder','rightHip','leftHip'],'#47758b55');
  line(p('leftShoulder'),p('rightShoulder'),'#e7ba7e',4);line(p('leftHip'),p('rightHip'),'#e7ba7e',4);
  const joints=Object.values(f).filter(j=>j.parent).sort((a,b)=>p(a.id).z-p(b.id).z);
  for(const j of joints)line(p(j.parent),p(j.id),j.id.startsWith('left')?'#8fcbd7':j.id.startsWith('right')?'#c0b1ed':'#c6d6e1',j.id==='chest'?9:5);
- const hair=hairGeometry(state.hair).map(face=>{const points=face.map(v=>point(add(f.head.p,rotate(f.head.q,v.map(n=>n*state.profile.head)))));return {points,z:points.reduce((a,p)=>a+p.z,0)/3};}).filter(face=>face.points.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)&&p.z<11&&Math.abs(p.x)<1e5&&Math.abs(p.y)<1e5)).sort((a,b)=>a.z-b.z),headDepth=p('head').z;
- const drawHair=front=>{for(const face of hair){if((face.z>=headDepth)!==front)continue;svg.append(node('polygon',{points:face.points.map(p=>`${p.x},${p.y}`).join(' '),fill:front?'#5c8295':'#3d6071',stroke:front?'#c2dce5':'#87aab9','stroke-width':.55,'stroke-linejoin':'round','data-hair-face':front?'front':'back'}));}};
- drawHair(false);
  const head=p('head'),radius=state.profile.head*height/6*camera.zoom*head.factor;svg.append(node('ellipse',{cx:head.x,cy:head.y,rx:radius*.8,ry:radius,fill:'#344b5dcc',stroke:'#d3e1eb','stroke-width':2}));
  const nose=point(add(f.head.p,rotate(f.head.q,[0,0,state.profile.head*1.1])));line(head,nose,'#edbf86',2);drawHair(true);
  if(state.prop.kind!=='none'){const wrist=f[state.prop.hand],q=wrist.q,angle=state.prop.angle*Math.PI/180,dir=[Math.sin(angle),Math.cos(angle),0],end=point(add(wrist.p,rotate(q,dir.map(x=>x*state.prop.length)))),start=p(state.prop.hand);line(start,end,'#ecc388',state.prop.kind==='sword'?5:9);if(['hammer','box','object'].includes(state.prop.kind)){svg.append(node('rect',{x:end.x-20,y:end.y-12,width:40,height:24,rx:state.prop.kind==='object'?10:2,fill:'#ad895a77',stroke:'#ecc388','stroke-width':3}));}else{const t=.2,guard=point(add(wrist.p,rotate(q,dir.map(x=>x*t))));line({x:guard.x-12,y:guard.y},{x:guard.x+12,y:guard.y},'#ecc388',4);}}
@@ -42,7 +43,7 @@ export function initPoseUI({$,blocked,beforeOpen,getContext,status,focus}){
  $('pose-undo').onclick=()=>{if(!past.length)return;future.push(draft);draft=past.pop();error('');render();};$('pose-redo').onclick=()=>{if(!future.length)return;past.push(draft);draft=future.pop();error('');render();};
  $('pose-hair-style').replaceChildren(...Object.entries(hairStyles).map(([id,label])=>new Option(label,id)));
  for(const key of ['style','volume','length','part','bangs'])$('pose-hair-'+key).onchange=()=>edit(s=>{s.hair[key]=key==='style'?$('pose-hair-'+key).value:Number($('pose-hair-'+key).value);return s;});
- $('pose-head-view').onclick=()=>edit(s=>{s.camera.focus='head';s.camera.zoom=2.5;s.camera.panX=s.camera.panY=0;return s;});
+ $('pose-head-view').onclick=()=>edit(s=>{s.camera.focus='head';s.camera.zoom=headStudyZoom(s);s.camera.panX=s.camera.panY=0;return s;});
  $('pose-body-view').onclick=()=>edit(s=>{s.camera.focus='body';s.camera.zoom=1;s.camera.panX=s.camera.panY=0;return s;});
  $('pose-profile').onchange=()=>edit(s=>{s.profile={...profiles[$('pose-profile').value]};return s;});
  for(const key of Object.keys(profileLabels))$('pose-prop-'+key).onchange=()=>edit(s=>{s.profile[key]=Number($('pose-prop-'+key).value);return s;});

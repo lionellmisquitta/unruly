@@ -1,4 +1,4 @@
-import {defaultHair,validateHair} from './pose-hair.js';
+import {defaultHair,validateHair,hairGeometry} from './pose-hair.js';
 // POSE1A: original authored rig and poses. No downloaded models or inference.
 export const POSE_KEY='unruly-pose-library-v1', MAX_RECORDS=64, MAX_PLACEMENTS=32, MAX_BYTES=524288;
 const I=[0,0,0,1], rad=Math.PI/180;
@@ -20,6 +20,7 @@ export function neutral(){return {version:1,family:'human',dimensions:3,hair:{..
 export function fk(s){const out={};for(const j of rig(s.profile)){const parent=out[j.parent],q=parent?qm(parent.q,s.rotations[j.id]):s.rotations[j.id];out[j.id]={id:j.id,parent:j.parent,q,p:parent?add(parent.p,rotate(q,j.v)):[0,0,0],rest:j.v};}return out;}
 export function cameraQuaternion(c){return euler(c.pitch,c.yaw,0);}
 export function project(point,c,width,height){const v=rotate(inverse(cameraQuaternion(c)),sub(point,c.target||[0,-.2,0])),factor=1+c.perspective*(12/(12-v[2])-1),scale=height/6*c.zoom;return {x:width/2+c.panX+v[0]*scale*factor,y:height/2+c.panY-v[1]*scale*factor,z:v[2],factor};}
+export function headStudyZoom(state){const extent=Math.max(1.3,...hairGeometry(state.hair).flat().map(p=>norm(p)))*state.profile.head;return Math.max(.25,Math.min(3,2.3/(extent*(1+state.camera.perspective*.5))));}
 export function viewCamera(state){return {...state.camera,target:state.camera.focus==='head'?fk(state).head.p:[0,-.2,0]};}
 export function unproject(x,y,depth,c,width,height){const scale=height/6*c.zoom,factor=1+c.perspective*(12/(12-depth)-1);return add(rotate(cameraQuaternion(c),[(x-width/2-c.panX)/(scale*factor),-(y-height/2-c.panY)/(scale*factor),depth]),c.target||[0,-.2,0]);}
 export function aimJoint(state,id,target){if(id==='pelvis')throw Error('Rotate pelvis with the joint controls');const s=structuredClone(state),f=fk(s),j=f[id],par=f[j.parent],local=rotate(inverse(par.q),sub(target,par.p));if(norm(local)<1e-6)throw Error('Joint target is too close to its parent');s.rotations[id]=fromTo(j.rest,local);return s;}
