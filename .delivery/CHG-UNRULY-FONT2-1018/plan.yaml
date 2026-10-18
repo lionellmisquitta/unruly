@@ -1,9 +1,10 @@
 change_id: CHG-UNRULY-FONT2-1018
 route: Standard Change
-prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, .github/workflows/]
+test_config_changes: [.github/workflows/browser-workspace-pages.yml]
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js]
 checkpoints:
   - id: FONT2
-    allowed_paths: [prototypes/browser-workspace/text.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, tests/browser-workspace/, .delivery/CHG-UNRULY-FONT2-1018/]
+    allowed_paths: [prototypes/browser-workspace/text.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, .github/workflows/browser-workspace-pages.yml, tests/browser-workspace/, .delivery/CHG-UNRULY-FONT2-1018/]
     test_paths: [tests/browser-workspace/text.model.test.mjs, tests/browser-workspace/text.browser.cjs]
     tests:
       - {id: FONT01, command: [node, --test, tests/browser-workspace/text.model.test.mjs], timeout_seconds: 120}
