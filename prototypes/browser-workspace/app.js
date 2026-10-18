@@ -14,7 +14,7 @@ import {initStabilizationUI} from './stabilization-ui.js';
 import {initTimelapseUI} from './timelapse-ui.js';
 import {mutateConnector,mutateConnectorAction} from './connectors.js';
 import {initMotionUI} from './motion-ui.js';
-import {prepareMotionRegion} from './motion-region.js';
+import {prepareMotionRegion,prepareMixedMotionRegions} from './motion-region.js';
 import {encodeMotionMask} from './motion.js';
 import {motionCommand,validateBoard} from './model.js';
 import {initTipUI} from './custom-tips-ui.js';
@@ -436,10 +436,11 @@ motionUI=initMotionUI({$,canvas,getBoard:()=>h?.board,getView:()=>({...view}),bl
  beforeOpen:()=>{if(pathEditor?.editing())throw Error('Close & select or Cancel the selection outline first');if(maskTarget)throw Error('Choose Edit artwork before Motion Trace');closePopovers();},
  getTarget:()=>{if(wandRegion&&wandRegion.board===h.board){const r=wandRegion,s=r.snapshot,l=h.board.layers.find(l=>l.id===r.layerId);return{kind:'region',layerId:r.layerId,rect:{x:s.x,y:s.y,width:s.width,height:s.height},mask:encodeMotionMask(r.mask),sourceIds:l.strokes.map(s=>s.id)};}return selected.length?{kind:'objects',ids:[...selected]}:null;},
  prepareRegion:(board,target)=>prepareMotionRegion(board,target,(layer,rect)=>renderer.snapshotRegion(layer,rect)),
+ prepareMixed:(board,cues)=>prepareMixedMotionRegions(board,cues,(layer,rect)=>renderer.snapshotRegion(layer,rect)),
  validate:validateBoard,
  preview:(board,v)=>{motionPreview=board;view={...v};renderer.invalidate('motion-preview',false);painted=null;refresh();},
  saveCue:(action,value,base)=>{if(h.board!==base)throw Error('Motion cue is stale');changed(motionCommand(h,action,value),false,true);},
- commitGeometry:(board,base)=>{if(h.board!==base)throw Error('Motion presentation is stale');const next=command(h,b=>{b.version=Math.max(b.version,board.version);b.layers=structuredClone(board.layers);});const didChange=next!==h;changed(next,true);return didChange;}
+ commitGeometry:(board,base)=>{if(h.board!==base)throw Error('Motion presentation is stale');const next=command(h,b=>{b.version=Math.max(b.version,board.version);b.layers=structuredClone(board.layers);if(board.motion)b.motion=structuredClone(board.motion);});const didChange=next!==h;changed(next,true);return didChange;}
 });
 
 timelapseUI=initTimelapseUI({$,getBoard:()=>h?.board,getView:()=>({...view}),blocked,validate:validateBoard,status,beforeOpen:()=>{if(pathEditor?.editing())throw Error('Close & select or Cancel the selection outline first');if(maskTarget)throw Error('Choose Edit artwork before Timelapse');closePopovers();},preview:(board,v)=>{timelapsePreview=board;view={...v};renderer.invalidate('timelapse-preview',false);painted=null;refresh();}});
