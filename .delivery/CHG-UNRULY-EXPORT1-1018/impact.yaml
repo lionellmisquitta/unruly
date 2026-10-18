@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-EXPORT1-1018
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [artwork-export.js, export-formats.js, artwork-export-ui.js, app.js, index.html, style.css, sw.js]
+regression_obligations:
+  - {id: EXPORT-GEOMETRY, reason: Exact fit crop dimensions and bounds, test_id: EXPORTM}
+  - {id: EXPORT-FILES, reason: Decodable output DPI and physical page size, test_id: EXPORTB}
+  - {id: EXPORT-PRESERVE, reason: Named frames and artwork recovery/preservation, test_id: EXPORTB}
+  - {id: EXPORT-ALL, reason: Existing cumulative product behavior, test_id: CUMULATIVE}

@@ -1,3 +1,7 @@
+## EXPORT1 scoped — 18 October 2026
+
+Owner requested artwork export build before real artwork trial. Basec7a6adb; scoped isolated tiled PNG/JPG/single-page raster PDF output, panoramic/named finite export frames, px/inches/DPI/aspect/fit/crop/background controls. Named frames device-local with separate backup/import; no native schema change. Scope/budgets/UX/tests in `.delivery/CHG-UNRULY-EXPORT1-1018/`. Implementation/QA/publication pending. Other roadmap scope/deferrals and physical acceptance retained; graph/skills unchanged. Earlier statuses historical where superseded.
+
 ## VIDEO1 PUBLISHED — 18 October 2026
 
 [PR36](https://github.com/lionellmisquitta/unruly/pull/36) merged as `b9cae1c1a26696d8392d7c61703fe5113fbdd460`. [Publication39120653796](https://github.com/lionellmisquitta/unruly/actions/runs/39120653796) SUCCESS: exact reviewed source/artifact guard passed and all **84 hosted application assets** match reviewed bytes. [Live application](https://lionellmisquitta.github.io/unruly/). Sourcec0c6cc4; cumulative39113809851/focused39113809920 PASS:619models,471browser scenarios,2legacy checks,201source hashes. Additional post-merge CI39120653782 is still in progress at this record; do not claim it passed. Recovery reused completed implementation/test evidence without rebuilding.
