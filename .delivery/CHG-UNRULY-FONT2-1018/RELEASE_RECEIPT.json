@@ -1,0 +1,57 @@
+{
+  "change_id": "CHG-UNRULY-FONT2-1018",
+  "state": "published_and_verified",
+  "published_date": "2026-10-18",
+  "source_candidate": "374daa780e66e70ac2f6bff1185c79f45eba53c8",
+  "pr_number": 31,
+  "merge_commit": "6f1231278f217e66438c537d7e14157f9b1c60f5",
+  "source_qa": {
+    "run_id": 39085296930,
+    "conclusion": "success",
+    "artifact_id": 12120417082,
+    "digest_sha256": "1e6aeb00f8571a888075980942a86c8ab1d3ccba37afef3b9c69524834738d3e",
+    "source_hashes": 196,
+    "models_passed": 573,
+    "browser_scenarios_passed": 452,
+    "legacy_checks_passed": 2,
+    "shards_passed": 6
+  },
+  "post_merge_qa": {
+    "run_id": 39085969204,
+    "conclusion": "success",
+    "artifact_id": 12120349645,
+    "digest_sha256": "ddfba81620522e53221375839db25bbae259f792b0d0cb5f83942e1ea0ab4aeb",
+    "source_hashes": 196,
+    "models_passed": 573,
+    "browser_scenarios_passed": 452,
+    "legacy_checks_passed": 2,
+    "shards_passed": 6
+  },
+  "publication": {
+    "run_id": 39085969214,
+    "conclusion": "success",
+    "hosted_assets_sha256_matched": 81,
+    "url": "https://lionellmisquitta.github.io/unruly/"
+  },
+  "cache_version": "v3-20261018-font2-1",
+  "backup_branch": "recovery/pre-unattended-20261017",
+  "backup_commit": "947df12f5570f30743bbe07038ab6a6912cf717d",
+  "scope": [
+    "manual local font family",
+    "permissioned local font discovery",
+    "safe fallback",
+    "offline update"
+  ],
+  "not_delivered": [
+    "native font-file import",
+    "font embedding",
+    "automatic text wrapping integration",
+    "configurable text line spacing"
+  ],
+  "next_checkpoint": "RTEXT2",
+  "knowledge_graph_changed": false,
+  "skills_changed": false,
+  "files_deleted": 0,
+  "physical_device_acceptance": "open",
+  "review_note": "same-session engineering verification; owner-authorized release; independent review not claimed"
+}
