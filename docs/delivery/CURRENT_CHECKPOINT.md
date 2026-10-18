@@ -1,6 +1,8 @@
-## EXPORT1 first browser attempt — fixture correction, 18 October 2026
+## EXPORT1 VERIFIED — release ready, 18 October 2026
 
-Source9f6a341 / focused39121697188 stopped before export assertions: shared raster fixture used nativev3 instead of requiredv4. Fixture version corrected; exporter/app and all assertions unchanged. Local629models/31focusedmodels+CI-contract PASS. Next repaired exact-source focused/cumulative execution. No EXPORT1 merge/publication; owner real artwork trial follows verified release. All other roadmap rows/deferrals retained; graph/skills unchanged. Earlier statuses historical where superseded.
+Source `db2611e7e39c470c5ef4af4658ba06865dbb7b08`; [cumulative39121830789](https://github.com/lionellmisquitta/unruly/actions/runs/39121830789) and focused39121830802 SUCCESS: **629 models, 477 browser scenarios, 2 legacy checks**. All six shards and aggregation pass. Artifact12135051429/digest14834dbdc0c460ac0910312ae134b7aa256bd50255d2426a069175996346935d verified against204source hashes/6markers. Actual Pages guard PASS. Export controls/PDF/image outputs reviewed; transparency/tile/effect pixels, DPI/page size, frames/backup/import/conflict, offline/cancel/retry and artwork preservation passed. Release follow-up changes only publication pin/docs, not tested application/tests.
+
+Actions → Export artwork: all-artwork/panorama, current view, selection/custom finite rectangle;16device-local named frames with separate backup/import. Px/inches/DPI/aspect/fit-crop controls; PNG transparent/paper/white and JPG/single-page raster PDF paper/white. Output8192px/side,16MP/48MiB. Native model/history/store/render unchanged. Next exact-head merge and guarded publication/all87hosted bytes, then owner real artwork trial and bounded release fixes. Native frame portability/physical/long-session/interactive-capacity and all other full roadmap rows/deferrals retained. Graph/skills unchanged. Earlier statuses historical where superseded.
 
 ## VIDEO1 PUBLISHED — 18 October 2026
 
