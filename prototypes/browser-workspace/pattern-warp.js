@@ -1,3 +1,4 @@
+import {warpGuide} from './drawing-reference.js';
 // PAT1: bounded projective raster deformation. No DOM, model or storage dependency.
 import {decodePixels,rasterPayload,validateRaster} from './raster.js';
 import {layerState} from './folders.js';
@@ -29,6 +30,6 @@ export function warpTarget(board,layerId,id){
  const l=board.layers.find(l=>l.id===layerId);if(!l||board.activeLayer!==layerId)fail('Select one image or pattern on the active layer');const state=layerState(board,l);if(!state.visible||state.locked)fail('Image layer or its folder is locked or hidden');if(l.alphaLock)fail('Disable alpha lock before deforming image pixels');const s=l.strokes.find(s=>s.id===id);if(!s||s.brush!=='raster')fail('Select one whole image or pattern; region selections and vector strokes cannot deform');validateRaster(s);return s;
 }
 export function warpedStroke(stroke,quad){
- validateRaster(stroke);validateQuad(quad);if(quad.every((p,i)=>p.every((v,k)=>v===warpIdentity()[i][k])))return structuredClone(stroke);const r=stroke.raster,data=warpPixels(decodePixels(r.data),r.width,r.height,quad),out=structuredClone(stroke);out.raster={...r,...rasterPayload(data,r.width,r.height)};return out;
+ validateRaster(stroke);validateQuad(quad);if(quad.every((p,i)=>p.every((v,k)=>v===warpIdentity()[i][k])))return structuredClone(stroke);const r=stroke.raster,data=warpPixels(decodePixels(r.data),r.width,r.height,quad),out=structuredClone(stroke);out.raster={...r,...rasterPayload(data,r.width,r.height)};if(out.guide)out.guide=warpGuide(out.guide,quad,r.width,r.height);return out;
 }
-export function mutateWarp(board,layerId,id,quad){const s=warpTarget(board,layerId,id),next=warpedStroke(s,quad);s.raster=next.raster;}
+export function mutateWarp(board,layerId,id,quad){const s=warpTarget(board,layerId,id),next=warpedStroke(s,quad);s.raster=next.raster;if(next.guide)s.guide=next.guide;}
