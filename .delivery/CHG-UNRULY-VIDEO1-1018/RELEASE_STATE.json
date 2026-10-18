@@ -1,13 +1,29 @@
 {
   "checkpoint": "VIDEO1",
-  "status": "VERIFIED_UNPUBLISHED",
-  "source": "c0c6cc4bca3173eea7973b29106c0cafef2df0c1",
+  "status": "PUBLISHED_HOSTED_BYTES_VERIFIED",
   "pr": 36,
+  "source": "c0c6cc4bca3173eea7973b29106c0cafef2df0c1",
+  "releaseHead": "361cf116fc150bbdd1b904bf908bb33e8eb768d8",
+  "mergeCommit": "b9cae1c1a26696d8392d7c61703fe5113fbdd460",
   "ci": 39113809851,
   "focusedCI": 39113809920,
-  "artifactId": 12131995996,
   "models": 619,
   "browserScenarios": 471,
-  "next": "Merge exact reviewed PR36 head; verify guarded Pages and all84hosted assets. Do not rebuild completed implementation.",
-  "physicalAcceptance": "OPEN"
+  "legacyChecks": 2,
+  "artifactId": 12131995996,
+  "artifactDigest": "1a454ca077f38dac0a24fc69902dc7e849f4a01d1149e259ad70b0f0446776ab",
+  "sourceHashesVerified": 201,
+  "publicationRun": 39120653796,
+  "publicationConclusion": "success",
+  "hostedFilesVerified": 84,
+  "postMergeCI": {
+    "id": 39120653782,
+    "status": "in_progress",
+    "conclusion": null
+  },
+  "physicalAcceptance": "OPEN",
+  "continuousPenAnimation": "OPEN",
+  "knowledgeGraph": "UNCHANGED",
+  "skills": "UNCHANGED",
+  "next": "Check post-merge CI39120653782 completion; next feature is artwork export. Preserve all pending acceptance and roadmap requirements."
 }
