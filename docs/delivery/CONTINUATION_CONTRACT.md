@@ -1,6 +1,6 @@
-## EXPORT1 implemented — browser/cumulative verification pending, 18 October 2026
+## EXPORT1 first browser attempt — fixture correction, 18 October 2026
 
-Bounded tiled artwork export implemented: all-artwork/panorama, current view, selection/custom rectangle and16device-local named frames with backup/import. Pixel/inch/DPI/aspect-ratio/fit-crop controls; PNG transparency, JPG and single-page raster PDF with physical size metadata. Output8192px/side,16MP/48MiB; source/native/history/store/renderer unchanged. Local629models PASS, including10new cases; six additive browser journeys require exact-source GitHub execution. Scope/UX/limits in `.delivery/CHG-UNRULY-EXPORT1-1018/`. No EXPORT1 merge/publication yet. Next: verify decodes/pixels/PDF/cancel/offline/presets/project scene and cumulative suite, then verified release for owner real artwork trial. Native cross-device frame portability/physical acceptance remain open. Every other roadmap row/deferral retained; graph/skills unchanged. Earlier statuses historical where superseded.
+Source9f6a341 / focused39121697188 stopped before export assertions: shared raster fixture used nativev3 instead of requiredv4. Fixture version corrected; exporter/app and all assertions unchanged. Local629models/31focusedmodels+CI-contract PASS. Next repaired exact-source focused/cumulative execution. No EXPORT1 merge/publication; owner real artwork trial follows verified release. All other roadmap rows/deferrals retained; graph/skills unchanged. Earlier statuses historical where superseded.
 
 ## VIDEO1 PUBLISHED — 18 October 2026
 
