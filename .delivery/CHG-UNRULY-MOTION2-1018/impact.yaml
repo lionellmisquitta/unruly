@@ -1,0 +1,11 @@
+change_id: CHG-UNRULY-MOTION2-1018
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+base: 8b642cf6d2746d3e62f54cb73e2624cc38b6b09b
+targets: [motion.js, motion-region.js, motion-ui.js, app.js, sw.js]
+regression_obligations:
+  - {id: MIX-ORDER, reason: Original object references must survive region splitting in either cue order, test_id: MOTION2M}
+  - {id: MIX-SAFETY, reason: Preview/cancel and limits preserve authoritative source and Undo, test_id: MOTION2M}
+  - {id: MIX-UI, reason: Actual manual/timed playback, commit/reopen and offline must preserve composition, test_id: MOTION2B}
+  - {id: MIX-CUMULATIVE, reason: Shared Motion compiler and UI hooks require existing regression suite, test_id: CUMULATIVE}

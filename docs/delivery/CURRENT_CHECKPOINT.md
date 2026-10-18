@@ -1,3 +1,7 @@
+## MOTION2 scoped — implementation in progress, 18 October 2026
+
+Published CONN1 post-merge CI39103537381 now SUCCESS. Current base8b642cf6d2746d3e62f54cb73e2624cc38b6b09b. Next checkpoint fixes same-layer pixel-region/original-object Motion sequences using disposable source-fragment mapping; nonmixed Motion behavior stays intact. Scope/impact/acceptance/budgets in `.delivery/CHG-UNRULY-MOTION2-1018/`. No implementation or QA completion claimed yet. Sticky notes/whole-canvas rotation deferred; video, advanced exports and all remaining requirements retained. Graph/skills unchanged. Earlier statuses below historical where superseded.
+
 ## CONN1 PUBLISHED AND HOSTED VERIFIED — 18 October 2026
 
 User explicitly approved merging into main. [PR34](https://github.com/lionellmisquitta/unruly/pull/34) merged as`a3b33745252e81fff3e3b1165f071f634a1c7646`. Tested source`2e45b9acbdfd2d7fdf1c78f50ab6db175d1f0f33`; cumulative CI[39102686656](https://github.com/lionellmisquitta/unruly/actions/runs/39102686656) SUCCESS:596models,460browser scenarios,2legacy checks; downloaded artifact12127082257/digest92dc86335b4e05aed852fa25b5c7284393fab937cf73d41969af21f9d625bda6 verified against199source hashes/sixcommit markers. Desktop/phone screenshots reviewed; original selectionU03 PASS unchanged.
