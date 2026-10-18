@@ -1,10 +1,12 @@
 {
   "checkpoint": "EXPORT1",
-  "status": "VERIFIED_UNPUBLISHED_APPROVAL_BLOCKED",
+  "status": "PUBLISHED_HOSTED_BYTES_VERIFIED",
   "pr": 37,
-  "branch": "CHG-UNRULY-EXPORT1-1018/artwork-export",
-  "testedSource": "db2611e7e39c470c5ef4af4658ba06865dbb7b08",
-  "testedCI": 39121830789,
+  "source": "db2611e7e39c470c5ef4af4658ba06865dbb7b08",
+  "approvedHead": "b7f08a24cb9b4a6d8678ad4624ce084de1812f9a",
+  "mergeCommit": "631364f19aac2e52462f8240d95aa9bdd33284e8",
+  "mergedTree": "7fada9edaf421043d81432747048584951197692",
+  "ci": 39121830789,
   "focusedCI": 39121830802,
   "models": 629,
   "browserScenarios": 477,
@@ -12,13 +14,17 @@
   "sourceHashesVerified": 204,
   "artifactId": 12135051429,
   "artifactDigest": "14834dbdc0c460ac0910312ae134b7aa256bd50255d2426a069175996346935d",
-  "releaseHeadBeforeStatus": "0a653a034bb19aedf716b5d2d72cab03c423dd12",
-  "mainUnchanged": "c7a6adb03c85b45b90caa3a5a1e56544fe7f1b3a",
-  "mergePerformed": false,
-  "publicationPerformed": false,
-  "blocker": "Automatic approval review requires explicit user-authored authorization to merge PR37 and publish EXPORT1",
-  "next": "After explicit approval, inspect current PR/main heads; merge with expected-head lease; verify guarded Pages publication and all87hosted assets. Do not rebuild or rerun passing implementation.",
-  "physicalArtworkTrial": "PENDING_PUBLICATION",
+  "publicationRun": 39124483944,
+  "publicationConclusion": "success",
+  "hostedAssetsVerified": 87,
+  "postMergeCI": {
+    "id": 39124483988,
+    "status": "in_progress",
+    "conclusion": null
+  },
+  "physicalArtworkTrial": "READY_FOR_OWNER",
+  "nativeFramePortability": "Separate device-local region backup/import; not embedded in native artwork",
   "knowledgeGraph": "UNCHANGED",
-  "skills": "UNCHANGED"
+  "skills": "UNCHANGED",
+  "next": "Owner real artwork trial; check additional post-merge CI39124483988 completion. Do not rebuild completed EXPORT1."
 }
