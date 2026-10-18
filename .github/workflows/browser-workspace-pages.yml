@@ -23,22 +23,22 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: f4f07c8df49f283e2e26a981a2e2cef9322e09ca
+          ref: 6a482a196724e104110764a56302c036f4c0fdf5
           persist-credentials: false
       - name: Verify reviewed candidate identity
-        run: test "$(git rev-parse HEAD)" = "f4f07c8df49f283e2e26a981a2e2cef9322e09ca"
+        run: test "$(git rev-parse HEAD)" = "6a482a196724e104110764a56302c036f4c0fdf5"
       - name: Verify downloaded cumulative QA evidence against pinned source
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          curl --fail --silent --show-error --location --retry 3 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/lionellmisquitta/unruly/actions/artifacts/12140361036/zip" -o /tmp/unruly-cumulative.zip
+          curl --fail --silent --show-error --location --retry 3 -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/lionellmisquitta/unruly/actions/artifacts/12143087516/zip" -o /tmp/unruly-cumulative.zip
           python - <<'PY'
           import hashlib,json,pathlib,re,zipfile
-          candidate="f4f07c8df49f283e2e26a981a2e2cef9322e09ca"
+          candidate="6a482a196724e104110764a56302c036f4c0fdf5"
           archive=pathlib.Path("/tmp/unruly-cumulative.zip")
-          digest="98630586460289729f9190043597f629d1ee2d140ab923b0167911910d029906"
+          digest="8580e3992b8d5fcaeb04532882a6ef1ff5fa914280c985d918083080b584a9c2"
           assert hashlib.sha256(archive.read_bytes()).hexdigest()==digest,"Artifact digest mismatch"
           with zipfile.ZipFile(archive) as z:
               names=z.namelist()
@@ -58,7 +58,7 @@ jobs:
                   assert hashlib.sha256(file.read_bytes()).hexdigest()==sha,("Source mismatch",path)
                   hashes[path]=sha
               assert len(hashes)==210,("Unexpected source hash count",len(hashes))
-              assert "v3-20261018-pose1a-hair-1" in pathlib.Path("prototypes/browser-workspace/sw.js").read_text(), "Offline cache not updated"
+              assert "v4-20261018-draw1a-ui-1" in pathlib.Path("prototypes/browser-workspace/sw.js").read_text(), "Offline cache not updated"
               cases=[]
               def collect(value):
                   if isinstance(value,dict):
@@ -76,16 +76,16 @@ jobs:
               for report,marker,case_id in [("fullscreen-browser-output.txt","FULLSCREENB01 PASS","FULLSCREENB01"),("airbrush-size-browser-output.txt","AIRBRUSH BROWSER PASS","AIRBRUSH-BROWSER")]:
                   assert re.search(r"^"+re.escape(marker)+r"\s*$",read(report),re.M),("Missing console-only PASS",report)
                   legacy_checks.append({"id":case_id,"status":"PASS"})
-              print("POSE1A_QA_SCHEMA="+json.dumps({"sourceHashes":len(hashes),"browserScenarios":len(cases)}))
-              assert len(cases)==486,("Unexpected browser count",len(cases))
+              print("DRAW1A_QA_SCHEMA="+json.dumps({"sourceHashes":len(hashes),"browserScenarios":len(cases)}))
+              assert len(cases)==487,("Unexpected browser count",len(cases))
               assert all(c["status"].upper()=="PASS" for c in cases),"Browser failure"
               reports=["model-output.txt","pattern-warp-model-output.txt","chain1-model-output.txt","connectors-model-output.txt","pose-model-output.txt"]
               for report,count in zip(reports,[564,22,27,17,34]):
                   text=read(report)
                   assert re.search(r"(?:#|ℹ) tests "+str(count)+r"\b",text),("Model count absent",report,count)
                   assert re.search(r"(?:#|ℹ) fail 0\b",text),("Model failure",report)
-              print("POSE1A_CASES="+json.dumps(cases,separators=(",",":")))
-              print("POSE1A_QA_RECEIPT="+json.dumps({"source":candidate,"artifactId":12140361036,"artifactDigest":digest,"modelTests":664,"modelFailures":0,"browserScenarios":len(cases),"sourceHashCount":len(hashes),"sourceHashes":hashes,"modelReports":reports,"legacyConsoleChecks":legacy_checks},separators=(",",":")))
+              print("DRAW1A_CASES="+json.dumps(cases,separators=(",",":")))
+              print("DRAW1A_QA_RECEIPT="+json.dumps({"source":candidate,"artifactId":12143087516,"artifactDigest":digest,"modelTests":664,"modelFailures":0,"browserScenarios":len(cases),"sourceHashCount":len(hashes),"sourceHashes":hashes,"modelReports":reports,"legacyConsoleChecks":legacy_checks},separators=(",",":")))
           PY
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
         with:
@@ -107,7 +107,7 @@ jobs:
             asset=$(basename "$source")
             matched=false
             for attempt in $(seq 1 12); do
-              if curl --fail --silent --show-error "https://lionellmisquitta.github.io/unruly/$asset?pose1a=f4f07c8df49f283e2e26a981a2e2cef9322e09ca" -o "/tmp/unruly-hosted/$asset" && cmp --silent "$source" "/tmp/unruly-hosted/$asset"; then
+              if curl --fail --silent --show-error "https://lionellmisquitta.github.io/unruly/$asset?draw1a=6a482a196724e104110764a56302c036f4c0fdf5" -o "/tmp/unruly-hosted/$asset" && cmp --silent "$source" "/tmp/unruly-hosted/$asset"; then
                 matched=true
                 break
               fi
