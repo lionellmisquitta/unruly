@@ -1,0 +1,20 @@
+{
+  "change_id": "CHG-UNRULY-VIDEO1-1018",
+  "state": "locked_for_implementation",
+  "evidence_sufficiency": "SUFFICIENT",
+  "archetype": "progressive existing-panel export section",
+  "view": "existing Timelapse inspector",
+  "primary_action": "Create video, then Download video",
+  "states": [
+    "preparing",
+    "exporting",
+    "ready",
+    "cancelled",
+    "error",
+    "unavailable"
+  ],
+  "recovery": "Cancel/Escape/hidden/blur release resources; source preserved; retry",
+  "authority": "CONTRACT.md including revision2",
+  "validation": "focused39113809920 PASS; cumulative pending",
+  "independent_review": "not claimed"
+}

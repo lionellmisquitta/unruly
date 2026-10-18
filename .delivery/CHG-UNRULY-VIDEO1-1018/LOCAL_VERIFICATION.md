@@ -1,0 +1,5 @@
+# VIDEO1 revised candidate verification
+
+All619local model tests PASS (609existing +10video). Focused24timelapse/video PASS. Prior candidate6954947 focused GitHub39113532569 passed all21timelapse browser scenarios. Revised candidate adds read-only Virtual Group projection and one browser scenario; exact-source cumulative QA required. Expected471structured browser scenarios plus2legacy checks; source hashes201 and84hosted application assets. No current candidate publication claim.
+
+Native model/store/renderer/recording modules unchanged; CI invocation contract retained. Existing backup test has only a precise storage-details selector adjustment; original assertions preserved. Other unrelated suites cache-identity only. Actual container local remux decoded VP8 and H264640x360/24frames/2seconds; browser evidence additionally verified720pH264/DPR2, WebM/crop/frame counts/browser seek/cancel/offline/capacity on prior source. Same-session self-verification; physical device/long-session/continuous pen interpolation remain open.

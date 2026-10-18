@@ -1,3 +1,11 @@
+## VIDEO1 Virtual Group context adapter
+
+Host additionally supplies the existing read-only scene projection. Both bounds preflight and encoded rendering use it while export blocks edits. Recording retains active-source deltas; other groups remain current context. Native project/history/store/render implementations unchanged.
+
+## VIDEO1 clean video adapter — candidate, 18 October 2026
+
+timelapse-video.js validates sequential recording frames, plans exact 12fps timing/framing, negotiates WebCodecs and renders to isolated disposable canvases through the unchanged reference renderer. video-container.js packages bounded VP8/WebM or AVC/MP4 samples without dependencies. timelapse-ui.js owns export/abort/progress/ready-download/release; app supplies only fixed selection rectangle and viewport dimensions. Existing recording/native/store/model/render code unchanged. New modules offline-cached. Model and existing timelapse browser suites add independent ffprobe/ffmpeg decode and preservation tests; original cumulative invocations retained. This is a logical dependency map, not AST evidence. No graph/skill changes.
+
 ## MOTION2 mixed source ownership — candidate, 18 October 2026
 
 motion-region.js adds disposable source-owned fragment preparation only for sequences mixing pixel regions and object/folder targets on the same layer. It partitions overlapping masks before movement, preserves per-source paint order/native untouched sources, caps processed pixels/fragments and returns existing-schema cue targets. motion.js compiles optional prepared targets; legacy nonmixed path unchanged. motion-ui.js injects preparation and refreshes saved draft references after Commit; app.js commits layers and remapped cues together in one existing command. No native schema/model/store/renderer or CI invocation change. Mixed attached connectors refuse explicitly. This is a scoped logical dependency map, not an AST proof. Graph/skills unchanged.

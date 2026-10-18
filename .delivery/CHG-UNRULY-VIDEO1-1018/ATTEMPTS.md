@@ -1,0 +1,12 @@
+## VIDEO1 first browser attempt — repair and stronger crop verification, 18 October 2026
+
+Candidateb33c242 / focused CI39113099867 decoded real MP4/H.264 and WebM/VP8 with correct dimensions/duration/count in direct export cases; cancel/Escape/retry/offline/unsupported/encoded-cap tests passed. Two fixtures failed: legacy backup details selector became ambiguous with new Video details; UI decode fixture read `frames` instead of timing `count`. Preserve all assertions and correct their references. Review also found selection/navigation padding could reveal out-of-frame artwork: explicit viewport crop now prevents leakage; phone decoded-pixel assertion added and complex MP4 case raised to720p/DPR2. Existing published runtime unaffected. Next exact repaired-source focused/cumulative verification; no VIDEO1 merge/publication. All other scope/deferrals retained; graph/skills unchanged. Earlier candidate statuses historical.
+
+
+Local external container check: independently generated24real VP8/H264 packets were re-muxed by video-container.js; ffprobe confirms640x360/24frames/2seconds for both, ffmpeg decodes both without errors. Initial temporary harness failed on absent WebM extradata; corrected harness skips empty descriptions. This does not replace browser export tests.
+
+## Second focused attempt 5801ab6 / CI39113321985
+All original timelapse scenarios PASS; actual720p MP4/DPR2, cancel/retry and capacity/unsupported PASS. Two newly added frame-extraction helpers failed: JS consumed the ffmpeg expression comma escape; end-relative seek0.08seconds fell after the final12fps frame timestamp, returning no pixels. Replace both with explicit zero-based `select=not(n-index)`; verified locally on real generated VP8 (691200RGB bytes). Keep exact decoder/frame-count/pixel assertions. Add WebM seek index and browser loadeddata/seeked verification; Download reuses existing styled button after visual inspection found default link contrast poor. No changes to recording/schema/rendering. Next exact-source focused/cumulative rerun.
+
+## Third focused attempt6954947 / CI39113532569 — SUCCESS
+All21timelapse/browser scenarios pass. Final contract review adds existing Virtual Group context projection and one actual first-frame/source-preservation journey. Require complete revised-source CI; prior successes do not authorize new bytes.

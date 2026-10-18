@@ -1,0 +1,13 @@
+{
+  "checkpoint": "VIDEO1",
+  "status": "VERIFIED_UNPUBLISHED",
+  "source": "c0c6cc4bca3173eea7973b29106c0cafef2df0c1",
+  "pr": 36,
+  "ci": 39113809851,
+  "focusedCI": 39113809920,
+  "artifactId": 12131995996,
+  "models": 619,
+  "browserScenarios": 471,
+  "next": "Merge exact reviewed PR36 head; verify guarded Pages and all84hosted assets. Do not rebuild completed implementation.",
+  "physicalAcceptance": "OPEN"
+}

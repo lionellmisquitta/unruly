@@ -427,6 +427,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if ! command -v ffprobe >/dev/null || ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y ffmpeg
+          fi
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/motion-server.log 2>&1 &
           qa_motion_pid=$!
           trap 'kill "$qa_motion_pid" 2>/dev/null || true' EXIT

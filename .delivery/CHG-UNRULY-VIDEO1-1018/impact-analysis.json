@@ -1,0 +1,62 @@
+{
+  "change_id": "CHG-UNRULY-VIDEO1-1018",
+  "baseline_id": "7bebb20b18f4d2199034737de7ee5c3313cccc28",
+  "scope_envelope": {
+    "target": [
+      "timelapse-video.js/video-container.js: timing/framing/encoding/mux",
+      "timelapse-ui.js/index/app/sw: lifecycle, host context and offline assets",
+      "timelapse tests and decoder availability"
+    ],
+    "contract": [
+      "immutable recording v1",
+      "native/history/store/render unchanged",
+      "existing Virtual Group scene projection"
+    ],
+    "regression": [
+      "cumulative drawing/painting/history",
+      "TIME1 recording/replay/backup/quotas",
+      "project source/context preservation"
+    ],
+    "excluded_legacy": [
+      "continuous pen-point interpolation",
+      "Motion-to-video coupling",
+      "artwork export/PDF/sync/AI",
+      "physical device/30\u201350interactive capacity acceptance"
+    ],
+    "unknown_boundary": [
+      "device-specific codec availability/performance; probe and fail visibly"
+    ]
+  },
+  "confirmed_impacts": [
+    "host -> Timelapse UI -> video adapter -> existing separate reference renderer",
+    "new muxer returns silent WebM/MP4, no network/storage",
+    "all original CI invocation lines preserved"
+  ],
+  "likely_impacts": [
+    "encoding competes for device CPU/memory while editing blocked"
+  ],
+  "regression_obligations": [
+    "V-TIMING -> VIDEOM",
+    "V-CONTAINER/V-ART -> VIDEOB",
+    "V-ALL -> CUMULATIVE"
+  ],
+  "technical_constraints": [
+    "12fps;640x360/1280x720;60seconds/720frames;32MiB encoded/40MiB file",
+    "at least one frame per saved state; reject overflow without truncation",
+    "runtime-supported AVC/MP4 orVP8/WebM; no cloud",
+    "other Virtual Groups are current context, not historical cross-source recording",
+    "cancel closes encoder/frames/canvases; no partial download"
+  ],
+  "unknowns": [
+    "physical pen/tablet/long-session/process RAM NOT_VERIFIED"
+  ],
+  "ux_route": "ux_architect",
+  "evidence_refs": [
+    "CONTRACT.md incl revisions1\u20132",
+    "impact.yaml/plan.yaml",
+    "LOCAL_VERIFICATION.md/ATTEMPTS.md",
+    "tests/browser-workspace/timelapse.model.test.mjs",
+    "tests/browser-workspace/timelapse.browser.cjs",
+    "focused CI39113809920/sourcec0c6cc4"
+  ]
+}

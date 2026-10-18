@@ -1,7 +1,7 @@
 name: Timelapse preflight
 on:
   push:
-    branches: ['CHG-UNRULY-TIME1-1015/**']
+    branches: ['CHG-UNRULY-TIME1-1015/**', 'CHG-UNRULY-VIDEO1-1018/**']
     paths: ['prototypes/browser-workspace/**', 'tests/browser-workspace/**', '.github/workflows/timelapse-preflight.yml']
 permissions:
   contents: read
@@ -24,6 +24,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if ! command -v ffprobe >/dev/null || ! command -v ffmpeg >/dev/null; then sudo apt-get update -qq; sudo apt-get install -y ffmpeg; fi
           mkdir -p tests/browser-workspace/evidence
           node --test tests/browser-workspace/timelapse.model.test.mjs > tests/browser-workspace/evidence/timelapse-model.txt 2>&1
           node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/timelapse-server.log 2>&1 &
