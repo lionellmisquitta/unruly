@@ -34,3 +34,12 @@ test('FONTM02 injected or unbounded families reject before changing board',()=>{
  for(const name of ['url(http://bad)','Arial, serif','"Arial"','Arial; color:red','a'.repeat(81),' bad','', '<script>','A/B'])assert.throws(()=>text({font:name}));
  let h=seed();const prior=structuredClone(h.board);assert.throws(()=>textCommand(h,h.board.activeLayer,{...h.board.layers[0].strokes[0],text:{...h.board.layers[0].strokes[0].text,font:'a;evil'}}));assert.deepEqual(h.board,prior);
 });
+
+import {readFileSync} from 'node:fs';
+test('FONTM03 offline cache migrates to FONT2 without losing normal asset inventory',()=>{
+ const sw=readFileSync(new URL('../../prototypes/browser-workspace/sw.js',import.meta.url),'utf8');
+ assert.match(sw,/CACHE=NORMAL_PREFIX\+'v3-20261018-font2-1'/);
+ for(const asset of ['./text.js','./rich-text-layout.js','./app.js','./storage.js'])assert(sw.includes("'"+asset+"'"),'missing offline asset '+asset);
+ assert(sw.includes("e.data?.type==='ACTIVATE_UPDATE'"),'existing explicit update gesture retained');
+ assert(sw.includes("keys.filter(k=>k.startsWith(NORMAL_PREFIX)&&k!==CACHE)"),'old cache activation cleanup retained');
+});

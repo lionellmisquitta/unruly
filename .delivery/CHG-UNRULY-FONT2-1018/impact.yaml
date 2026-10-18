@@ -2,8 +2,9 @@ change_id: CHG-UNRULY-FONT2-1018
 readiness: ready
 open_contradictions: []
 hub_suppressed: []
-targets: [prototypes/browser-workspace/text.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, tests/browser-workspace/text.model.test.mjs, tests/browser-workspace/text.browser.cjs]
+targets: [prototypes/browser-workspace/text.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, tests/browser-workspace/text.model.test.mjs, tests/browser-workspace/text.browser.cjs]
 regression_obligations:
   - {id: legacy-text, reason: Existing generic fonts editing and Undo must remain identical, test_id: FONT01}
   - {id: custom-safe, reason: Hostile or invalid local font names must refuse without editing artwork, test_id: FONT01}
   - {id: ui-offline, reason: Actual browser optional local font selection must preserve save history and offline reopen, test_id: FONT02}
+  - {id: offline-refresh, reason: FONT2 cache must atomically update while retaining saved IndexedDB boards and previous update flow, test_id: FONT01}
