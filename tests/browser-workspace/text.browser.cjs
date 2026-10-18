@@ -39,5 +39,58 @@ await run('FONTB01-manual-device-font-and-atomic-refusal',async p=>{
  await p.locator('#undo').click();await settle(p);assert.deepEqual((await board(p)).layers,before.layers);
  return {manualFont:true,invalidAtomic:true,genericSelection:true,undoPreserves:true};
 });
+
+await run('RTEXT2B01-wrap-save-undo-and-reedit',async p=>{
+ const before=await board(p);
+ await p.locator('#text-tool').click();
+ assert(await p.locator('#text-wrap-width').isDisabled());
+ await p.locator('#text-content').fill('The quick brown fox jumps over the lazy dog and wraps into rows');
+ await p.locator('#text-wrap').check();
+ assert(await p.locator('#text-wrap-width').isEnabled());
+ await p.locator('#text-wrap-width').fill('180');
+ await p.locator('#text-line-spacing').fill('2');
+ await p.locator('#text-align').selectOption('right');
+ await p.locator('#text-apply').click();await settle(p);
+ const saved=await board(p),s=saved.layers[0].strokes[0];assert.equal(s.text.wrap,true);assert.equal(s.text.width,180);assert.equal(s.text.lineSpacing,2);assert.equal(s.text.align,'right');
+ assert.equal(s.text.content,'The quick brown fox jumps over the lazy dog and wraps into rows');
+ assert(s.text.height>55);
+ await p.locator('#text-tool').click();
+ assert(await p.locator('#text-wrap').isChecked());assert.equal(await p.locator('#text-wrap-width').inputValue(),'180');assert.equal(await p.locator('#text-line-spacing').inputValue(),'2');
+ await p.locator('#text-cancel').click();assert.deepEqual((await board(p)).layers,saved.layers);
+ await p.locator('#undo').click();await settle(p);assert.deepEqual((await board(p)).layers,before.layers);
+ await p.locator('#redo').click();await settle(p);assert.deepEqual((await board(p)).layers,saved.layers);
+ await p.reload();await ready(p);assert.deepEqual((await board(p)).layers,saved.layers);
+ return{wrap:true,spacing:true,sourcePreserved:true,undoRedoExact:true,reload:true};
+});
+await run('RTEXT2B02-existing-unwrapped-and-invalid-layout',async p=>{
+ const original=await add(p,'Legacy line\nUnwrapped');
+ assert.equal(Object.hasOwn(original.layers[0].strokes[0].text,'wrap'),false);
+ await p.locator('#text-tool').click();
+ assert(await p.locator('#text-wrap').isChecked()===false);
+ assert.equal(await p.locator('#text-line-spacing').inputValue(),'1.4');
+ await p.locator('#text-content').fill('unreasonably long '.repeat(90));
+ await p.locator('#text-wrap').check();await p.locator('#text-wrap-width').fill('100');
+ await p.locator('#text-apply').click();
+ assert(await p.locator('#text-editor').isVisible());assert.match(await p.locator('#text-error').textContent(),/wrapped lines|exceeds 1024/);
+ assert.deepEqual((await board(p)).layers,original.layers);
+ await p.locator('#text-cancel').click();
+ return{legacyDefault:true,noTruncation:true,atomicRefusal:true};
+});
+await run('RTEXT2B03-portrait-dialog-and-offline-wrap',async(p,c)=>{
+ await p.locator('#text-tool').click();
+ await p.locator('#text-content').fill('A short note with a wrapping boundary and a second sentence');
+ await p.locator('#text-wrap').check();await p.locator('#text-wrap-width').fill('200');
+ await p.locator('#text-line-spacing').fill('1.8');
+ await p.locator('#text-apply').scrollIntoViewIfNeeded();
+ const action=await p.locator('#text-apply').boundingBox(),vp=p.viewportSize();
+ assert(action.height>=44);assert(action.y>=0&&action.y+action.height<=vp.height);
+ await p.locator('#text-apply').click();await settle(p);const before=await board(p);
+ await p.evaluate(()=>navigator.serviceWorker.ready);
+ if(!await p.evaluate(()=>!!navigator.serviceWorker.controller)){await p.reload();await ready(p);}
+ await c.setOffline(true);await p.reload();await ready(p);
+ assert.deepEqual((await board(p)).layers,before.layers);
+ assert(await p.evaluate(async()=>(await fetch('./rich-text-layout.js')).ok));
+ return{portrait:true,offline:true,exactReopen:true};
+},{width:390,height:844},2);
 fs.writeFileSync(path.join(out,'text-results.json'),JSON.stringify(results,null,2));console.log(results);if(results.some(r=>r.status!=='PASS'))process.exitCode=1;
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

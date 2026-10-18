@@ -168,3 +168,5 @@ body.focus-mode #focus-exit{display:block}
 #mesh-controls .mesh-actions{position:sticky;bottom:-14px;background:var(--panel);padding:8px 0;margin-bottom:0}
 
 #text-font-family{width:100%;box-sizing:border-box}#text-font-status{font-size:12px;overflow-wrap:anywhere}
+
+#text-form .text-flow-options{display:grid;gap:10px}#text-form .text-flow-options>label{display:grid;gap:5px}#text-form .text-flow-options>label:first-child{display:flex;align-items:center;gap:8px}#text-wrap{width:auto!important;min-height:0!important}#text-wrap-width:disabled{opacity:.55}

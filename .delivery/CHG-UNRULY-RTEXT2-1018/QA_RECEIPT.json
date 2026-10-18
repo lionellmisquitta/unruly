@@ -1,0 +1,13 @@
+{
+  "candidate": "e3287b7c4a51fff9d6049a731e12ec288e1cfbfc",
+  "tree": "f3eb0dfeab2959f6e21eb34de3f4bfdd027d90e3",
+  "run": 39087458397,
+  "artifact": 12121422893,
+  "sha256": "360dcf93806e44882bf8766848412241c6d393f5169a9465df8a050574f09e42",
+  "sourceHashes": 196,
+  "models": 578,
+  "browserScenarios": 455,
+  "legacyChecks": 2,
+  "allPassed": true,
+  "review": "same-session verification, release owner-authorized; physical acceptance open"
+}

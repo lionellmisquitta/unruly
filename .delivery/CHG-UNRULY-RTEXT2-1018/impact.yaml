@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-RTEXT2-1018
+readiness: ready
+open_contradictions: []
+hub_suppressed: []
+targets: [prototypes/browser-workspace/text.js, prototypes/browser-workspace/rich-text-layout.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, .github/workflows/browser-workspace-pages.yml, tests/browser-workspace/text.model.test.mjs, tests/browser-workspace/text.browser.cjs]
+regression_obligations:
+  - {id: legacy-exact, reason: Existing unwrapped v8 text geometry and save format must remain unchanged, test_id: RTEXT2M}
+  - {id: wrap-safe, reason: Wrapping preserves original Unicode content and rejects excess lines without truncation, test_id: RTEXT2M}
+  - {id: persistence, reason: Editor Cancel Undo Redo import and reload must preserve identical content and layout, test_id: RTEXT2B}
+  - {id: offline, reason: Source-compatible wrapping remains available on offline board reopening, test_id: RTEXT2B}
+  - {id: offline-release, reason: Cache namespace advances only with complete, verified application assets and previous offline edit behavior remains unchanged, test_id: RTEXT2M}
+  - {id: source-pin, reason: Hosted Pages must deploy only the exact candidate and its independently downloaded cumulative artifact, test_id: RTEXT2B}
