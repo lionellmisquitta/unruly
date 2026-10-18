@@ -8,3 +8,5 @@
 #reference-editor{width:min(760px,96vw);max-height:94dvh;background:var(--surface);color:var(--text);border:1px solid var(--line);padding:16px}#reference-editor p{font-size:13px;line-height:1.5}#reference-joints{display:block;width:100%;max-height:65dvh;background:#edece8;touch-action:none}#reference-joints [data-guide-joint]{cursor:grab}.reference-edit-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}#reference-edit-error{color:var(--warning)}.hair-only #pose-apply{display:none}.hair-only #pose-preview{background:#20252b}
 
 #pose-apply{font-size:11px;opacity:.75}#pose-layer-apply{font-weight:600;min-height:44px}#reference-editor input,#reference-editor select{min-height:40px;max-width:100%}
+
+#reference-joints{max-height:55dvh}#reference-preset-tools{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}#reference-preset-tools summary{cursor:pointer;min-height:36px}#reference-preset-tools[open]{display:block}#reference-preset-tools input,#reference-preset-tools select{margin:5px 0;width:100%}.reference-edit-actions button{min-height:44px}#reference-edit-apply{background:#405d73;border-color:var(--accent)}
