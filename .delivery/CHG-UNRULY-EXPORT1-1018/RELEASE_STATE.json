@@ -1,0 +1,18 @@
+{
+  "checkpoint": "EXPORT1",
+  "status": "CUMULATIVE_QA_RUNNING",
+  "testedSource": "db2611e7e39c470c5ef4af4658ba06865dbb7b08",
+  "sourceTree": "0aa05d215bff286fb02b1a8f7cdeddd5e74c7420",
+  "base": "c7a6adb03c85b45b90caa3a5a1e56544fe7f1b3a",
+  "pr": 37,
+  "focusedCI": 39121830802,
+  "focusedConclusion": "success",
+  "cumulativeCI": 39121830789,
+  "expectedModels": 629,
+  "expectedBrowserScenarios": 477,
+  "expectedSourceHashes": 204,
+  "expectedHostedFiles": 87,
+  "next": "Read cumulative39121830789 completion. If success download canonical artifact, verify digest/source/6markers/counts, pin Pages to testedSource, merge exact PR head, verify hosted87. Do not rebuild or rerun passing implementation.",
+  "knowledgeGraph": "UNCHANGED",
+  "physicalArtworkTrial": "PENDING"
+}
