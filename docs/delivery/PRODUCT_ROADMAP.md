@@ -246,6 +246,8 @@ Updated: 17 October 2026 (Asia/Kolkata).
 
 ## Reference evaluations — owner request, 17 October 2026
 
+**18-Oct-2026 source evaluation completed:** findings and pinned evidence for REF-001–005 are in [evaluate-for-reference.md](../../evaluate-for-reference.md). Recommend external sketch-cleanup trial first, then hint-guided flat colouring; dataset ingestion and direct model embedding remain on hold as documented. Pose/animal animation is a separate rigging/tracking experiment; SC-FEGAN retained as interaction reference. No inference/model/dataset download, app integration or release-order change. Owner artwork quality trials remain pending; all product scope/deferrals retained.
+
 Maintain the running [evaluate-for-reference.md](../../evaluate-for-reference.md) register at repository root. New repository links and ideas supplied in conversation are captured there, assessed, and promoted to implementation only after a bounded experiment and owner decision. These are **evaluation backlog items**, not scheduled feature builds; current delivery priorities and existing BYOK AI deferral remain unchanged.
 
 | Evaluation | Capability to investigate | Reference | Current disposition |
