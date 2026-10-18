@@ -1,3 +1,7 @@
+## CONN1 browser fixture repair — cumulative rerun required, 18 October 2026
+
+Candidate017cc11/CI39101524391: connector17models PASS,4/5new browser scenarios PASS. Phone scenario selected0objects because synthetic drag started inside existing brush dock (x50); screenshot inspected, start moved to x60 with all assertions retained. Application implementation unchanged. Local full596models PASS. Next: repaired exact-source cumulative CI and browser evidence before merge/publication. Sticky notes/whole-canvas rotation deferred; other roadmap scope retained. Graph/skills unchanged. Earlier candidate statuses below historical.
+
 ## CONN1 implementation candidate — awaiting exact-source cumulative CI, 18 October 2026
 
 Attached Arrow/Line selection actions implemented with strict native v18 attachments. Target movement/text resize/deletion, clipboard/import/duplicate, Motion previews and Virtual Group projection are integrated. 17 connector models and 11 CI-contract checks PASS locally; existing 51-test subset PASS. Five new browser scenarios are registered in cumulative CI; local Chromium download was unavailable, so browser verification is pending GitHub. No merge/publication claim. Next: exact-source CI, inspect browser evidence, repair if needed, then verified release. Sticky notes explicitly deferred; whole-canvas rotation remains deferred. All remaining requirements below retained. Graph/skills unchanged. Earlier status headings below are historical and superseded where conflicting.
