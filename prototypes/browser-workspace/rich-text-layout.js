@@ -2,15 +2,15 @@
 // Not wired into the editor until schema/rendering/browser acceptance is complete.
 const valid=n=>typeof n==='number'&&Number.isFinite(n);
 const graphemes=value=>[...new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(value)].map(item=>item.segment);
-export function layoutRichText({content,font='sans-serif',fontSize=32,maxWidth=600,lineSpacing=1.4,measure}){
+export function layoutRichText({content,font='sans-serif',fontSize=32,maxWidth=600,lineSpacing=1.4,fontCSS,measure}){
   if(typeof content!=='string'||!content.trim()||content.length>2048||/[\u0000-\u0008\u000b-\u001f\u007f]/u.test(content))throw Error('Invalid text content');
-  if(!['sans-serif','serif','monospace'].includes(font)||!valid(fontSize)||fontSize<8||fontSize>256)throw Error('Invalid font');
+  if(!(typeof font==='string'&&font.length>0&&font.length<=80&&/^[\p{L}\p{N}][\p{L}\p{N} ._+\-]*$/u.test(font))||!valid(fontSize)||fontSize<8||fontSize>256)throw Error('Invalid font');
   if(!valid(maxWidth)||maxWidth<1||maxWidth>1024||!valid(lineSpacing)||lineSpacing<1||lineSpacing>3||typeof measure!=='function')throw Error('Invalid text layout');
   const original=content.replace(/\r\n?/g,'\n');
   const paragraphs=original.split('\n');
   if(paragraphs.length>32)throw Error('Too many text lines');
   const lines=[];
-  const widthOf=part=>{const width=measure(part,`${fontSize}px ${font}`);if(!valid(width)||width<0)throw Error('Invalid font measurement');return width;};
+  const widthOf=part=>{const width=measure(part,fontCSS||`${fontSize}px ${font}`);if(!valid(width)||width<0)throw Error('Invalid font measurement');return width;};
   for(let paragraph=0;paragraph<paragraphs.length;paragraph++){
     const chars=graphemes(paragraphs[paragraph]);
     if(!chars.length){lines.push({text:'',paragraph});continue;}

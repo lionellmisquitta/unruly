@@ -43,3 +43,52 @@ test('FONTM03 offline cache migrates to FONT2 without losing normal asset invent
  assert(sw.includes("e.data?.type==='ACTIVATE_UPDATE'"),'existing explicit update gesture retained');
  assert(sw.includes("keys.filter(k=>k.startsWith(NORMAL_PREFIX)&&k!==CACHE)"),'old cache activation cleanup retained');
 });
+
+import {drawText} from '../../prototypes/browser-workspace/text.js';
+test('RTEXT2M01 wraps into one editable v8 text with original source and one history item',()=>{
+ let h=createHistory(createBoard()),before=structuredClone(h.board.layers);
+ const s=text({content:'one two three four five six seven eight',font:'Noto Sans',fontSize:20,wrapWidth:120,lineSpacing:1.8});
+ assert.equal(s.text.content,'one two three four five six seven eight');assert.equal(s.text.wrap,true);
+ assert.equal(s.text.width,120);assert.equal(s.text.lineSpacing,1.8);assert(s.text.height>55);
+ h=textCommand(h,h.board.activeLayer,s);validateBoard(h.board);assert.equal(h.board.version,8);
+ assert.deepEqual(undo(h).board.layers,before);assert.deepEqual(redo(undo(h)).board.layers,h.board.layers);
+ const round=importDocument(JSON.stringify(h.board));
+ assert.equal(round.layers[0].strokes[0].text.content,s.text.content);
+ assert.equal(round.layers[0].strokes[0].text.width,120);
+});
+test('RTEXT2M02 legacy font and text payload remain byte-for-byte compatible',()=>{
+ const s=text(),keys=Object.keys(s.text).sort().join(',');
+ assert.equal(keys,'align,bold,content,font,fontSize,height,italic,transform,width');
+ assert.equal(s.text.height,Math.ceil(2*32*1.4+8));
+ const spaced=text({lineSpacing:2});
+ assert.equal(Object.hasOwn(spaced.text,'wrap'),false);
+ assert.equal(spaced.text.lineSpacing,2);
+ validateText(spaced);validateText(s);
+});
+test('RTEXT2M03 bounded inputs reject without truncating or corrupting history',()=>{
+ for(const options of [{wrapWidth:99},{wrapWidth:1025},{wrapWidth:120.5},{wrapWidth:NaN},{lineSpacing:0.9},{lineSpacing:3.1},{lineSpacing:NaN},{content:'x'.repeat(2049),wrapWidth:200},{content:'a'.repeat(1600),wrapWidth:100}]){
+   assert.throws(()=>text(options),JSON.stringify(options).slice(0,60));
+ }
+ const b=seed(),before=structuredClone(b.board);
+ const forged=structuredClone(b.board.layers[0].strokes[0]);forged.text.wrap=false;
+ assert.throws(()=>textCommand(b,b.board.activeLayer,forged,forged.id));
+ assert.deepEqual(b.board,before);
+});
+test('RTEXT2M04 visual layout respects wrapping, line spacing, alignment, and source Unicode',()=>{
+ const calls=[];
+ const ctx={save(){},restore(){},transform(){},beginPath(){},rect(){},clip(){},measureText:s=>({width:Array.from(s).length*10}),fillText:(s,x,y,w)=>calls.push({s,x,y,w})};
+ const s=text({content:'one two three four five\n👨‍👩‍👧',fontSize:20,align:'center',wrapWidth:140,lineSpacing:2});
+ drawText(ctx,s);
+ assert(calls.length>2,'wrapped text should occupy multiple lines');assert.equal(calls.map(x=>x.s).join(''),'one two three four five👨‍👩‍👧');
+ assert(calls.every(x=>x.x===70&&x.w===122));
+ assert.equal(calls[1].y-calls[0].y,40);
+ const old=text({content:'same\nlegacy'});calls.length=0;drawText(ctx,old);
+ assert.deepEqual(calls.map(x=>x.s),['same','legacy']);
+ assert.equal(calls[1].y-calls[0].y,44.8);
+});
+test('RTEXT2M05 wrap layout is grapheme-safe and rejects unrenderable size',()=>{
+ const source='Hello 👩‍🚀 long sentence';
+ const w=layoutRichText({content:source,font:'Noto Sans',fontSize:18,maxWidth:60,measure:s=>[...new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(s)].length*10});
+ assert.equal(w.lines.map(l=>l.text).join(''),source);
+ assert.throws(()=>text({content:'W',fontSize:256,wrapWidth:150}),/Grapheme wider/);
+});
