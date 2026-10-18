@@ -1,3 +1,7 @@
+## CONN1 native attachment adapter — candidate, 18 October 2026
+
+connectors.js owns strict v18 metadata, facing bounding-box geometry, reference remapping, bounded arrow points and atomic reconciliation. model.command synchronizes links in the same Undo entry as target edits; import/duplicate remap references. selection remaps clipboard links and detaches stationary endpoints when a connector is moved directly. Motion disposable object previews reconcile links; Virtual Group render projections namespace source-local references and preserve maximum source version. app/index reuse Selection actions; sw caches the module. Original renderer/storage code unchanged. Target model/browser coverage and cumulative QA are required; same-session self-review only. Sticky notes deferred; graph/skills unchanged.
+
 ## GCOMP1 guide adapter — candidate
 
 raster-guides.js projects incoming points through existing guide geometry and dispatches up to4independent path branches on one disposable shared surface. pixel-paint.js/smudge.js keep branch-local previous points with shared original work/dab/surface budgets. Mask sessions reuse pixel paint. image-tip-paint.js renders bounded reflected seeded coverage then preserves original alpha via existing merge. app hooks snapshot guide at gesture start; native command/history/store/renderer unchanged. Existing Off session remains direct. SW caches one new adapter. Test coverage remains in existing tip-guide/pixel/mask/smudge/alpha suites with additive cases; cache-only identity changes elsewhere.
