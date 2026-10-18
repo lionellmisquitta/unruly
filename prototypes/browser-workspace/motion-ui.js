@@ -1,6 +1,6 @@
 import {validateCue,validateTarget,targetAnchor,compileMotion,sampleMotion,cameraAt} from './motion.js';
 const clone=x=>structuredClone(x),ns='http://www.w3.org/2000/svg';
-export function initMotionUI({$,canvas,getBoard,getView,getTarget,blocked,beforeOpen,preview,saveCue,commitGeometry,prepareRegion,validate,status}){
+export function initMotionUI({$,canvas,getBoard,getView,getTarget,blocked,beforeOpen,preview,saveCue,commitGeometry,prepareRegion,prepareMixed,validate,status}){
  const panel=$('motion-panel'),stage=$('motion-stage'),transport=$('motion-transport');
  let opened=false,base=null,originalView=null,target=null,draft=null,capture=null,drag=null,session=null,index=0,progress=0,running=false,paused=false,automatic=false,raf=0,started=0,fromProgress=0,lastFrame=null,inert=[];
  const size=()=>({width:canvas.clientWidth,height:canvas.clientHeight});
@@ -29,7 +29,7 @@ export function initMotionUI({$,canvas,getBoard,getView,getTarget,blocked,before
  function advance(){if(!session||running||paused||index>=session.segments.length)return;running=true;started=performance.now();fromProgress=progress;sync();raf=requestAnimationFrame(tick);}
  function pause(){if(!running)return;cancelAnimationFrame(raf);running=false;paused=true;sync();}
  function resume(){if(!paused||!session)return;assertCurrent();paused=false;running=true;fromProgress=progress;started=performance.now();sync();raf=requestAnimationFrame(tick);}
- function present(cues,auto){stop();assertCurrent();session=compileMotion(base,cues,originalView,size(),prepareRegion);for(let i=0;i<session.segments.length;i++){validate(session.segments[i].base);validate(sampleMotion(session,i,1).board);}automatic=auto;index=0;progress=0;render();if(auto){advance();$('motion-pause').focus();}else $('motion-next').focus();}
+ function present(cues,auto){stop();assertCurrent();session=compileMotion(base,cues,originalView,size(),prepareRegion,prepareMixed);for(let i=0;i<session.segments.length;i++){validate(session.segments[i].base);validate(sampleMotion(session,i,1).board);}automatic=auto;index=0;progress=0;render();if(auto){advance();$('motion-pause').focus();}else $('motion-next').focus();}
  function safely(fn){return()=>{try{assertCurrent();clearError();fn();}catch(e){error(e);}};}
  $('motion-open').onclick=()=>open();$('trace-selection').onclick=()=>open();$('motion-close').onclick=close;
  $('motion-new-move').onclick=safely(newMove);$('motion-new-camera').onclick=safely(newCamera);
@@ -39,7 +39,7 @@ export function initMotionUI({$,canvas,getBoard,getView,getTarget,blocked,before
  for(const action of ['delete','up','down'])$('motion-'+action).onclick=safely(()=>{stop();if(!draft)throw Error('Choose a saved cue');saveCue(action,draft.id,base);rememberBase();draft=clone(base.motion?.cues.find(c=>c.id===draft.id)||base.motion?.cues[0]||null);populate();});
  $('motion-preview').onclick=safely(()=>present([read()],true));$('motion-present').onclick=safely(()=>present(base.motion?.cues||[],$('motion-mode').value==='timed'));
  $('motion-next').onclick=safely(advance);$('motion-pause').onclick=pause;$('motion-resume').onclick=safely(resume);$('motion-stop').onclick=()=>{stop();status('Presentation stopped · original layout and view restored');};
- $('motion-commit').onclick=safely(()=>{if(!session||!lastFrame||running)throw Error('Pause or finish playback before committing');const frame=lastFrame;stop();const changed=frame.hasGeometry?commitGeometry(frame.board,base):false;rememberBase();populate();status(changed?'Motion position committed · Undo restores original artwork':'No artwork movement · original artwork unchanged');});
+ $('motion-commit').onclick=safely(()=>{if(!session||!lastFrame||running)throw Error('Pause or finish playback before committing');const frame=lastFrame;stop();const changed=frame.hasGeometry?commitGeometry(frame.board,base):false;rememberBase();draft=clone(base.motion?.cues.find(c=>c.id===draft?.id)||draft);populate();status(changed?'Motion position committed · Undo restores original artwork':'No artwork movement · original artwork unchanged');});
  $('motion-draw').onclick=safely(()=>{stop();draft=read();if(draft.kind!=='move')throw Error('Select an artwork cue');capture='path';sync();stage.focus();});
  $('motion-pick-camera').onclick=safely(()=>{stop();draft=read();capture='camera';sync();stage.focus();});
  $('motion-capture-done').onclick=()=>{capture=null;drag=null;populate();};$('motion-capture-cancel').onclick=()=>{if(drag?.before)draft.path=drag.before;capture=null;drag=null;populate();};
