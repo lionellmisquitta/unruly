@@ -38,7 +38,7 @@ test('FONTM02 injected or unbounded families reject before changing board',()=>{
 import {readFileSync} from 'node:fs';
 test('FONTM03 offline cache migrates to FONT2 without losing normal asset inventory',()=>{
  const sw=readFileSync(new URL('../../prototypes/browser-workspace/sw.js',import.meta.url),'utf8');
- assert.match(sw,/CACHE=NORMAL_PREFIX\+'v3-20261018-font2-1'/);
+ assert.match(sw,/CACHE=NORMAL_PREFIX\+'v3-20261018-rtext2-1'/);
  for(const asset of ['./text.js','./rich-text-layout.js','./app.js','./storage.js'])assert(sw.includes("'"+asset+"'"),'missing offline asset '+asset);
  assert(sw.includes("e.data?.type==='ACTIVATE_UPDATE'"),'existing explicit update gesture retained');
  assert(sw.includes("keys.filter(k=>k.startsWith(NORMAL_PREFIX)&&k!==CACHE)"),'old cache activation cleanup retained');
@@ -77,7 +77,7 @@ test('RTEXT2M03 bounded inputs reject without truncating or corrupting history',
 test('RTEXT2M04 visual layout respects wrapping, line spacing, alignment, and source Unicode',()=>{
  const calls=[];
  const ctx={save(){},restore(){},transform(){},beginPath(){},rect(){},clip(){},measureText:s=>({width:Array.from(s).length*10}),fillText:(s,x,y,w)=>calls.push({s,x,y,w})};
- const s=text({content:'one two three four five\n👨‍👩‍👧',fontSize:20,align:'center',wrapWidth:140,lineSpacing:2});
+ const s=makeText({content:'one two three four five\n👨‍👩‍👧',fontSize:20,align:'center',wrapWidth:140,lineSpacing:2},str=>[...new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(str)].length*10);
  drawText(ctx,s);
  assert(calls.length>2,'wrapped text should occupy multiple lines');assert.equal(calls.map(x=>x.s).join(''),'one two three four five👨‍👩‍👧');
  assert(calls.every(x=>x.x===70&&x.w===122));

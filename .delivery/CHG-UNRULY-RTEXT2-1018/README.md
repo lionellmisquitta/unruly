@@ -9,3 +9,6 @@
 - Do NOT merge/publish before full current-head CI and reviewed scope. Release SW identity bump and pinned Pages publication must follow as separate gated release step.
 - Known limitation: new optional fields may not be readable by older published builds. Retain export backup and hosted migration warnings; never downgrade a new board blindly.
 - Source recovery branch and earlier released main kept unchanged. Physical-device acceptance later.
+
+## Offline release revision (only after candidate validation)
+Bump the normal offline cache identity from FONT2 to RTEXT2 and change only the corresponding cache identity assertions in 15 existing browser suites plus the FONTM03 test; keep all test invocations and behavioral assertions untouched. The published `main` remains unchanged until fresh full cumulative CI and pinned Pages publication pass. If any test fails, do not merge or publish.
