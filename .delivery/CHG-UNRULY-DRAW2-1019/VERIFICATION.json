@@ -1,0 +1,42 @@
+{
+  "change": "CHG-UNRULY-DRAW2-1019",
+  "base": "ffe141f4dc797fa1fbfd1ed0644e51fd9222dd5c",
+  "pr": 45,
+  "status": "CONSOLIDATED_REPAIR_LOCAL_PASS",
+  "localModels": {
+    "tests": 674,
+    "pass": 674,
+    "fail": 0
+  },
+  "syntax": "PASS",
+  "htmlUniqueIds": "PASS",
+  "review": "same-session self-verification",
+  "next": "Run exact consolidated-source cumulative QA; inspect artifact identities and all results before authorized merge/publication.",
+  "firstAttempt": {
+    "candidate": "0cac854401976403cb8e5adf0331efea4daf17c4",
+    "run": 39157610572,
+    "status": "FAILED_DOCK_INTERCEPTION"
+  },
+  "localBrowser": {
+    "poseReferenceHair": 14,
+    "palettes": 13,
+    "timelapseVideo": 23,
+    "fail": 0,
+    "realModelInference": "PASS",
+    "offlineFirstInferenceFailure": "PASS"
+  },
+  "previousCandidate": "6acf8942a900da21d5573dac63eba586d8e2a2a7",
+  "previousRun": 39158366266,
+  "additionalLocalSuites": [
+    "image-import/export",
+    "lset",
+    "workspace",
+    "selection",
+    "u3"
+  ],
+  "remainingAcceptance": [
+    "physical-device redo feel",
+    "owner artwork pose quality",
+    "model accuracy on stylized/occluded subjects"
+  ]
+}

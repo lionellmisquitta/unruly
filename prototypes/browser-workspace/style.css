@@ -186,3 +186,7 @@ body.focus-mode #focus-exit{display:block}
 #pose-detect-cancel{position:fixed;bottom:72px;left:50%;transform:translateX(-50%);z-index:40}#pose-detect-cancel[hidden]{display:none}
 
 .quick-heading{flex-wrap:wrap}
+
+#reference-panel{z-index:3}
+
+#timelapse-status{bottom:36px}

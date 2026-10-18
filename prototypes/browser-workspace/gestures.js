@@ -2,22 +2,25 @@ export const TOUCH_LIMITS=Object.freeze({arrivalMs:120,durationMs:250,movePx:8,h
 const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 export function createTouchTracker(limits=TOUCH_LIMITS){
  let state=null;
+ const redo={arrivalMs:limits.redoArrivalMs??limits.arrivalMs,durationMs:limits.redoDurationMs??limits.durationMs,movePx:limits.redoMovePx??limits.movePx};
  const reset=()=>{state=null;};
- const snapshot=()=>state?{firstDown:state.firstDown,maxCount:state.maxCount,candidate:state.candidate,moved:state.moved,active:[...state.active.values()].map(x=>({...x}))}:null;
+ const snapshot=()=>state?{firstDown:state.firstDown,maxCount:state.maxCount,candidate:state.maxCount===3?state.redoCandidate:state.candidate,moved:state.maxCount===3?state.redoMoved:state.moved,active:[...state.active.values()].map(x=>({...x}))}:null;
  function down(id,x,y,t){
-  if(!state)state={firstDown:t,maxCount:0,candidate:true,moved:false,active:new Map()};
+  if(!state)state={firstDown:t,maxCount:0,candidate:true,moved:false,redoCandidate:true,redoMoved:false,active:new Map()};
   if(state.active.has(id))return snapshot();
   if(t-state.firstDown>limits.arrivalMs)state.candidate=false;
+  if(t-state.firstDown>redo.arrivalMs)state.redoCandidate=false;
   state.active.set(id,{id,start:{x,y},current:{x,y},down:t});
   state.maxCount=Math.max(state.maxCount,state.active.size);
-  if(state.maxCount>3)state.candidate=false;
+  if(state.maxCount>3)state.candidate=state.redoCandidate=false;
   return snapshot();
  }
  function move(id,x,y){
   if(!state?.active.has(id))return {crossed:false,state:snapshot()};
   const c=state.active.get(id);c.current={x,y};
-  const crossed=dist(c.start,c.current)>limits.movePx;
-  if(crossed){state.candidate=false;state.moved=true;}
+  const distance=dist(c.start,c.current),baseCrossed=distance>limits.movePx,crossed=distance>(state.maxCount===3?redo.movePx:limits.movePx);
+  if(baseCrossed){state.candidate=false;state.moved=true;if(state.maxCount<3)state.redoCandidate=false;}
+  if(distance>redo.movePx){state.redoCandidate=false;state.redoMoved=true;}
   return {crossed,state:snapshot()};
  }
  function up(id,t){
@@ -25,7 +28,7 @@ export function createTouchTracker(limits=TOUCH_LIMITS){
   state.active.delete(id);
   if(state.active.size)return {action:null,finished:false,state:snapshot()};
   const duration=t-state.firstDown,count=state.maxCount;
-  const action=state.candidate&&duration<=limits.durationMs&&(count===2||count===3)?(count===2?'undo':'redo'):null;
+  const action=count===3&&state.redoCandidate&&duration<=redo.durationMs?'redo':count===2&&state.candidate&&duration<=limits.durationMs?'undo':null;
   const ended={count,duration,candidate:state.candidate,moved:state.moved};
   reset();
   return {action,finished:true,ended};
