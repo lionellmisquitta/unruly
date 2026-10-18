@@ -30,7 +30,7 @@ export async function prepareVideo(log,options,validate,{signal,onProgress=()=>{
  for(let i=0;i<log.events.length;i++){guard(signal);text=applyEvent(text,log.events[i]);const board=JSON.parse(text);validate(board);if(board.id!==log.boardId)throw Error('Recording board mismatch');if(framing==='all')bounds=unionVideoBounds(bounds,boardBounds(board));if(i%8===0){onProgress({phase:'Preparing',done:i,total:log.events.length});await task();}}
  if(framing==='all'&&!bounds)throw Error('Recording has no visible artwork · choose recorded navigation');
  const view=framing==='navigation'?null:fitVideoView(framing==='selection'?selection:bounds,width,height);
- return{...timing,width,height,framing,view,viewport,bounds};
+ return{...timing,width,height,framing,view,viewport,bounds,selection};
 }
 export function videoConfig(format,width,height){return{codec:format==='mp4'?'avc1.42001f':'vp8',width,height,bitrate:width*height*4,framerate:videoLimits.fps,latencyMode:'realtime',...(format==='mp4'?{avc:{format:'avc'}}:{})};}
 export async function supportedVideoFormats(width=640,height=360){
@@ -57,7 +57,11 @@ export async function exportVideo(log,options,validate,{signal,onProgress=()=>{}
    let changed=false;while(state+1<log.events.length&&plan.states[state+1]<=i){text=applyEvent(text,log.events[++state]);board=JSON.parse(text);changed=true;}
    if(changed){const ratio=1/(window.devicePixelRatio||1),nav=log.events[state].view,navScale=plan.framing==='navigation'?Math.min(plan.width/plan.viewport.width,plan.height/plan.viewport.height):0;
     const v=plan.framing==='navigation'?{x:(plan.width-plan.viewport.width*navScale)/2+nav.x*navScale,y:(plan.height-plan.viewport.height*navScale)/2+nav.y*navScale,scale:nav.scale*navScale}:plan.view;
-    renderer.renderReference(board,{x:v.x*ratio,y:v.y*ratio,scale:v.scale*ratio});ctx.drawImage(canvas,0,0,plan.width,plan.height);
+    renderer.renderReference(board,{x:v.x*ratio,y:v.y*ratio,scale:v.scale*ratio});
+    ctx.fillStyle=board.paper.color;ctx.fillRect(0,0,plan.width,plan.height);ctx.save();
+    if(plan.framing==='selection'){const b=plan.selection;ctx.beginPath();ctx.rect(b.minX*v.scale+v.x,b.minY*v.scale+v.y,b.width*v.scale,b.height*v.scale);ctx.clip();}
+    if(plan.framing==='navigation'){ctx.beginPath();ctx.rect((plan.width-plan.viewport.width*navScale)/2,(plan.height-plan.viewport.height*navScale)/2,plan.viewport.width*navScale,plan.viewport.height*navScale);ctx.clip();}
+    ctx.drawImage(canvas,0,0,plan.width,plan.height);ctx.restore();
    }
    const frame=new VideoFrame(output,{timestamp:Math.round(i*1e6/plan.fps),duration:Math.round((i+1)*1e6/plan.fps)-Math.round(i*1e6/plan.fps)});
    try{encoder.encode(frame,{keyFrame:i%plan.fps===0});}finally{frame.close();}
