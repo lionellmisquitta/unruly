@@ -172,3 +172,11 @@ body.focus-mode #focus-exit{display:block}
 #text-form .text-flow-options{display:grid;gap:10px}#text-form .text-flow-options>label{display:grid;gap:5px}#text-form .text-flow-options>label:first-child{display:flex;align-items:center;gap:8px}#text-wrap{width:auto!important;min-height:0!important}#text-wrap-width:disabled{opacity:.55}
 
 #art-export-dialog{width:440px;max-width:calc(100vw - 16px);max-height:85dvh;overflow-y:auto;overscroll-behavior:contain;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:var(--radius);padding:16px}#art-export-dialog::backdrop{background:#0008}#art-export-dialog h2{font-size:18px}#art-export-fields{border:0;padding:0;min-width:0}#art-export-fields legend{font-size:12px;color:var(--muted)}#art-export-dialog label{display:block;margin:8px 0;font-size:13px}#art-export-dialog input,#art-export-dialog select{width:100%;min-width:0;margin-top:4px}#art-export-dialog .note{font-size:12px;line-height:1.5}#art-export-dialog summary{min-height:44px;padding:12px 0;cursor:pointer}.art-export-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}#art-export-error{color:var(--warning);font-size:13px}#art-export-progress{display:block;margin-top:10px;font-size:13px}#art-export-dialog details{border-top:1px solid var(--line);margin:12px 0}#art-export-dialog .time-actions button{font-size:13px;overflow-wrap:anywhere}
+
+/* DRAW1A: prioritize the layer stack, keep organization controls secondary. */
+#inspector>.layer-organization{margin-top:10px;border-top:1px solid var(--line);padding-top:4px}
+#inspector>.layer-organization>summary{min-height:44px;padding:12px 0;cursor:pointer;font-size:12px}
+#inspector>.layer-organization section[aria-label="Virtual Groups"]{display:grid;gap:6px;margin-top:8px}
+#inspector>.layer-organization section[aria-label="Virtual Groups"] button{width:100%}
+#brush-popover>.panel-heading{margin-bottom:4px}
+#brush-popover>.brush-library{margin-top:4px}
