@@ -1,0 +1,9 @@
+change_id: CHG-UNRULY-RTEXT1-1018
+readiness: ready
+open_contradictions: []
+hub_suppressed: []
+targets: [prototypes/browser-workspace/rich-text-layout.js, tests/browser-workspace/text.model.test.mjs]
+regression_obligations:
+  - {id: text-original, reason: Existing editable text schema and content unchanged, test_id: RTEXT01}
+  - {id: layout-limits, reason: Unicode wrap and capacity limits refuse instead of truncating, test_id: RTEXT01}
+  - {id: text-ui, reason: Existing text editor UI is unchanged, test_id: RTEXT02}
