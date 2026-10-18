@@ -16,8 +16,11 @@ Reusable movable skeleton references for drawing human/cartoon/anime characters 
 - Prop reference attachments support generic objects, swords and hammers with editable size/orientation and grip placement. Two-hand grip needs a specified pin/conflict policy. These are requested authored starter poses, not a claim that every external source contains them.
 - Animal rig families: quadruped, primate, bird and reptile, with species profiles and optional appendage chains such as trunk, tail and wings. Do not force animals onto a human skeleton. Standing, walking, sitting, sleeping, eating, looking toward and interacting with a child remain required starter categories.
 
+## Hair reference extension — owner request, 18 October 2026
+POSE1A includes original parametric manga/chibi hairstyle guides: short spiky, pixie, bob, long flowing, curly clumps, ponytail, pigtails and bun, plus None. Adjust volume, length, parting and bangs. Hair follows head pose and proportion scale, supports camera orbit and close-up head study, and remains reference-only. Save hairstyle-only, character proportions+hair or full pose/profile/hair/camera; switching action poses preserves hairstyle. Legacy hairless presets remain importable. These are simplified silhouette/clump scaffolds for drawing, not finished character artwork or imported commercial assets. Clip Studio/VRoid compatibility is not claimed. External hairstyle assets remain evaluation-only until rights/format support established.
+
 ## Delivery slices
-1. POSE1A: shared validated pose/profile format, human 3D rig/editor and authored action starters, proportions/retargeting, camera projection, reference transforms and independent pose/proportion plus combined-preset save/reopen.
+1. POSE1A: shared validated pose/profile/hair format, original hair guides/head study, human 3D rig/editor and authored action starters, proportions/retargeting, camera projection, reference transforms and independent pose/proportion plus combined-preset save/reopen.
 2. POSE1B: animal family rigs, species profiles and zoo starter poses. A quadruped importer must not be presented as complete bird/reptile/appendage support.
 3. POSE1C: permitted external annotation/motion conversion, source attribution and curated searchable packs.
 These slices retain the whole requested feature; none is cancelled or deferred. Bound pack sizes and measure interaction performance before selecting limits.

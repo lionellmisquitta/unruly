@@ -1,3 +1,9 @@
+## POSE1A hair extension implemented — browser CI pending, 18 October 2026
+
+Owner requested including manga/chibi hairstyle references. Original eight-style 3D guide library (spiky, pixie, bob, long, curls, ponytail, pigtails, bun), volume/length/parting/bangs, head-attached projection, head-study/full-figure camera and hair-only/character/combined presets implemented under PR38. Old hairless states normalize to None without overwriting source; pose-only loads/starter changes retain character hair. Full local662models PASS (32pose/hair); nine pose/hair browser journeys await updated exact-source CI. Prior POSE1A CI39132721085 is now confirmed SUCCESS across all6shards/aggregation; this is baseline evidence, not a pass for new hair code. No merge/publication; EXPORT1 stays live. Animals/external corpus imports and other full roadmap scope/deferrals retained; graph/skills unchanged. Next new-source browser/visual/cumulative evidence, bounded repair if required.
+
+Hair extension is included on the same feature branch/PR. Earlier candidate/run pointers below describe the pre-hair green baseline and are superseded for new-source verification. Inspect current PR head/latest branch CI; exact new source/run will be recorded after upload. Local hair worktree /workspace/scratch/da4e481aed8b/unruly-pose-hair. Never overwrite the older pose worktree.
+
 # POSE1A active build — continuation
 
 18 October 2026. Owner authorized starting this build. **Implemented, not merged or published.** EXPORT1 remains live.
