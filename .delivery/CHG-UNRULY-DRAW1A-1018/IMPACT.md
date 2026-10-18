@@ -14,7 +14,10 @@ Requirement: GitHub issue #39, user feedback items 2, 4, 5 (touch redo discovera
 ## Allowed files
 - `prototypes/browser-workspace/index.html`
 - `prototypes/browser-workspace/style.css`
-- `tests/browser-workspace/draw1a.browser.cjs`
+- `tests/browser-workspace/browser.test.cjs`
+- `tests/browser-workspace/custom-tips.browser.cjs`
+- `tests/browser-workspace/pen.browser.cjs`
+- `tests/browser-workspace/curve.browser.cjs`
 - `docs/delivery/PRODUCT_ROADMAP.md`
 - `docs/delivery/CURRENT_CHECKPOINT.md`
 - `docs/delivery/CONTINUATION_CONTRACT.md`
@@ -24,4 +27,4 @@ Requirement: GitHub issue #39, user feedback items 2, 4, 5 (touch redo discovera
 No image/document limits, native schema, storage, renderer, recording lifecycle, palette extraction/dock, pose data/model, AI/image inference, gesture thresholds, dependency, knowledge graph, skill or unrelated checkpoint changes. Do not claim feedback issue #39 fully resolved.
 
 ## Focused verification
-Add a browser check for DOM/visual order, collapsed secondary sections, reference-state explanation, touch-size Undo/Redo visibility and no horizontal overflow at 375px and desktop widths. Run this check plus relevant existing UI smoke coverage; preserve all cumulative assertions. Physical touch-device redo remains unverified.
+Add a browser check for DOM/visual order, collapsed secondary sections, reference-state explanation, visible Undo/Redo and no horizontal overflow. Update existing pressure-control tests to expand the now-collapsed Brush dynamics section; preserve every existing assertion. Physical touch-device redo remains unverified.
