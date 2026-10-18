@@ -1,0 +1,11 @@
+change_id: CHG-UNRULY-CONN1-1018
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+base: 6ee51f6bf2fe0d9de7bcf8725d680b8de3ed9e74
+targets: [connectors.js, model.js, selection.js, app.js, index.html, virtual-group-scene.js, motion.js, sw.js]
+regression_obligations:
+  - {id: CONN-DOC, reason: Native attachment geometry and imports must be validated, test_id: CONNM}
+  - {id: CONN-HISTORY, reason: Target movement/deletion and clipboard must preserve one Undo and original art, test_id: CONNM}
+  - {id: CONN-UI, reason: Selection actions and offline reopen must work across viewports, test_id: CONNB}
+  - {id: CONN-LEGACY, reason: Shared command and projection hubs require full cumulative QA, test_id: CUMULATIVE}

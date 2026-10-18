@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-CONN1-1018
+route: Standard Change
+test_config_changes: [.github/workflows/browser-workspace.yml, .github/workflows/browser-workspace-pages.yml]
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/canvas2d-renderer.js, prototypes/browser-workspace/render.js]
+checkpoints:
+  - id: CONN1
+    allowed_paths: [prototypes/browser-workspace/connectors.js, prototypes/browser-workspace/model.js, prototypes/browser-workspace/selection.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/virtual-group-scene.js, prototypes/browser-workspace/motion.js, prototypes/browser-workspace/sw.js, tests/browser-workspace/, .github/workflows/browser-workspace.yml, .github/workflows/browser-workspace-pages.yml, docs/delivery/PRODUCT_ROADMAP.md, docs/delivery/CURRENT_CHECKPOINT.md, docs/delivery/CONTINUATION_CONTRACT.md, docs/delivery/CODE_STRUCTURE.md, .delivery/CHG-UNRULY-CONN1-1018/]
+    test_paths: [tests/browser-workspace/connectors.model.test.mjs, tests/browser-workspace/connectors.browser.cjs]
+    tests:
+      - {id: CONNM, command: [node, --test, tests/browser-workspace/connectors.model.test.mjs], timeout_seconds: 120}
+      - {id: CONNB, command: [node, tests/browser-workspace/connectors.browser.cjs], timeout_seconds: 180}
+      - {id: CUMULATIVE, command: [GitHubActions, browser-workspace.yml], timeout_seconds: 1560}

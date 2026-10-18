@@ -1,0 +1,22 @@
+{
+  "checkpoint": "CONN1",
+  "status": "VERIFIED_UNPUBLISHED_APPROVAL_BLOCKED",
+  "pr": 34,
+  "branch": "CHG-UNRULY-CONN1-1018/attached-arrows",
+  "testedSource": "2e45b9acbdfd2d7fdf1c78f50ab6db175d1f0f33",
+  "testedCI": 39102686656,
+  "artifactId": 12127082257,
+  "models": 596,
+  "browserScenarios": 460,
+  "legacyChecks": 2,
+  "sourceHashesVerified": 199,
+  "releaseHeadBeforeStatus": "353c4333cc200fca7f68d6a1bc33c64be108ef20",
+  "mainUnchanged": "6ee51f6bf2fe0d9de7bcf8725d680b8de3ed9e74",
+  "mergePerformed": false,
+  "publicationPerformed": false,
+  "blocker": "Automatic approval review requires explicit trusted user authorization for exact PR34 main merge and Pages deployment",
+  "next": "Receive explicit authorization; inspect current heads; merge PR34 using expected_head_sha; verify guarded Pages deployment and every hosted asset. Do not rebuild already verified implementation.",
+  "physicalAcceptance": "OPEN",
+  "knowledgeGraph": "UNCHANGED",
+  "skills": "UNCHANGED"
+}

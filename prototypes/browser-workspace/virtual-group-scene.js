@@ -1,16 +1,17 @@
 // Disposable render projection, never a document to save or edit. Collapsed groups
 // replay authoritative sources: flattening arbitrary blends is not equivalent.
+import {remapConnectors} from './connectors.js';
 import {validateBoard} from './model.js';
 import {validateVirtualProject} from './virtual-groups.js';
 import {folderRows,layerState} from './folders.js';
 export function prepareVirtualScene(project,sources){
  validateVirtualProject(project);
  const p=structuredClone(project),boards=new Map(),layers=[],folders=[],rows=[];
- let paper,activeLayer,activeIds;
+ let paper,activeLayer,activeIds,maxVersion=17;
  for(const [i,g] of p.groups.entries()){
   const loaded=sources.get(g.boardId);
   if(!loaded||loaded.recovered)throw Error('Source unavailable or recovered; review before composing');
-  const b=structuredClone(validateBoard(loaded.board));
+  const b=structuredClone(validateBoard(loaded.board));maxVersion=Math.max(maxVersion,b.version);
   if(b.id!==g.boardId||b.revision!==g.sourceRevision)throw Error('Source identity or revision changed');
   if(boards.has(g.boardId))throw Error('Shared source boards require an explicit edit policy');
   if(b.reference)throw Error('Project reference composition is not yet supported');
@@ -24,9 +25,10 @@ export function prepareVirtualScene(project,sources){
   if(g.id===p.activeGroupId)for(const r of folderRows(b))rows.push({id:key(r.node.id),sourceId:r.node.id,groupId:g.id,kind:r.folder?'folder':'layer',depth:r.depth+1,editable:editable&&layerState(b,r.node).visible&&!layerState(b,r.node).locked});
   for(const f of b.folders||[]){const n=structuredClone(f);n.id=key(f.id);n.parentId=f.parentId===null?null:key(f.parentId);n.locked||=!editable;if(n.mask?.patch)n.mask.patch.id=key(n.mask.patch.id);folders.push(n);}
   for(const l of b.layers){const n=structuredClone(l);n.id=key(l.id);n.parentId=l.parentId?key(l.parentId):null;n.visible&&=g.visible;n.locked||=!editable;if(n.clipSource)n.clipSource=key(n.clipSource);if(n.mask?.patch)n.mask.patch.id=key(n.mask.patch.id);for(const s of n.strokes)s.id=key(s.id);layers.push(n);}
+  for(const n of layers.slice(-b.layers.length))remapConnectors(n.strokes,ids);
   if(g.id===p.activeGroupId){activeLayer=key(b.activeLayer);activeIds=ids;}
  }
- const scene=validateBoard({version:17,id:'virtual-scene',title:p.title,revision:p.groups.reduce((n,g)=>n+g.sourceRevision,0),paper,layers,folders,activeLayer});
+ const scene=validateBoard({version:maxVersion,id:'virtual-scene',title:p.title,revision:p.groups.reduce((n,g)=>n+g.sourceRevision,0),paper,layers,folders,activeLayer});
  return {board:scene,activeIds,rows,activeBoard:structuredClone(boards.get(p.groups.find(g=>g.id===p.activeGroupId).boardId)),mode:'source-replay',project:p};
 }
 // Uses the existing renderer and caller-owned view; never resets pan/zoom or writes storage.
