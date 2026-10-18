@@ -27,5 +27,10 @@ export function muxWebM(samples,{width,height,fps}){
  const info=ebml('1549a966',num('2ad7b1',1000000),ebml('4489',duration),ebml('4d80',text('UNRULY')),ebml('5741',text('UNRULY')));
  const tracks=ebml('1654ae6b',ebml('ae',num('d7',1),num('73c5',1),num('83',1),ebml('86',text('V_VP8')),num('23e383',Math.round(1e9/fps)),ebml('e0',num('b0',width),num('ba',height))));
  const clusters=samples.map((s,i)=>ebml('1f43b675',num('e7',Math.round(i*1000/fps)),ebml('a3',new Uint8Array([0x81,0,0,s.key?0x80:0]),s.data)));
- return new Blob([header,ebml('18538067',info,tracks,clusters)],{type:'video/webm'});
+ // Segment-relative seek positions: fixed-width offsets keep the index size stable.
+ const seek=(id,pos)=>ebml('4dbb',ebml('53ab',hex(id)),ebml('53ac',uint(pos,4)));
+ const seekHead=(infoAt,tracksAt,cuesAt)=>ebml('114d9b74',seek('1549a966',infoAt),seek('1654ae6b',tracksAt),seek('1c53bb6b',cuesAt));
+ const headSize=seekHead(0,0,0).length;let offset=headSize+info.length+tracks.length;const cues=[];
+ samples.forEach((s,i)=>{if(s.key)cues.push(ebml('bb',num('b3',Math.round(i*1000/fps)),ebml('b7',num('f7',1),ebml('f1',uint(offset,4)))));offset+=clusters[i].length;});
+ return new Blob([header,ebml('18538067',seekHead(headSize,headSize+info.length,offset),info,tracks,clusters,ebml('1c53bb6b',cues))],{type:'video/webm'});
 }
