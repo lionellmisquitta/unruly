@@ -21,3 +21,16 @@ test('RTEXT2 wrapping preserves spaces and Unicode grapheme boundaries',()=>{con
 test('RTEXT3 invalid or impossible layouts are refused without altering source',()=>{for(const c of ['', ' ', 'z'.repeat(2049), 'bad\u0000text',Array(34).fill('x').join('\n')])assert.throws(()=>richLayout(c));assert.throws(()=>richLayout('wide',{maxWidth:5}));assert.throws(()=>richLayout('ok',{measure:()=>NaN}));});
 test('RTEXT4 line and font budgets are enforced, never truncated',()=>{assert.throws(()=>richLayout('a'.repeat(50),{maxWidth:10}));assert.throws(()=>richLayout('a',{fontSize:257}));assert.throws(()=>richLayout('a',{lineSpacing:4}));assert.throws(()=>richLayout('a',{maxWidth:1025}));});
 test('RTEXT5 line spacing changes measured height but not source',()=>{const a=richLayout('hello'),b=richLayout('hello',{lineSpacing:2});assert.equal(a.source,b.source);assert(b.height>a.height);});
+
+import {textFont,validTextFont} from '../../prototypes/browser-workspace/text.js';
+test('FONTM01 safe local family round trip and portable CSS fallback',()=>{
+ const s=text({font:'Noto Sans Devanagari'});validateText(s);
+ assert.equal(s.text.font,'Noto Sans Devanagari');
+ assert.match(textFont(s.text),/"Noto Sans Devanagari", sans-serif/);
+ assert.equal(textFont(text({font:'serif'}).text).endsWith('serif'),true);
+ for(const name of ['Segoe UI','Roboto','Noto Sans','MS Gothic'])assert(validTextFont(name));
+});
+test('FONTM02 injected or unbounded families reject before changing board',()=>{
+ for(const name of ['url(http://bad)','Arial, serif','"Arial"','Arial; color:red','a'.repeat(81),' bad','', '<script>','A/B'])assert.throws(()=>text({font:name}));
+ let h=seed();const prior=structuredClone(h.board);assert.throws(()=>textCommand(h,h.board.activeLayer,{...h.board.layers[0].strokes[0],text:{...h.board.layers[0].strokes[0].text,font:'a;evil'}}));assert.deepEqual(h.board,prior);
+});
