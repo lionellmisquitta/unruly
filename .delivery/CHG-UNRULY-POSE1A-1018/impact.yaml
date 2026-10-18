@@ -1,0 +1,9 @@
+change_id: CHG-UNRULY-POSE1A-1018
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [pose-model, pose-ui, app-host, offline-cache]
+regression_obligations:
+  - {id: R1, reason: fixed bone lengths and safe imports, test_id: POSEM}
+  - {id: R2, reason: artwork preservation and offline usable UI, test_id: POSEB}
+  - {id: R3, reason: cumulative drawing compatibility, test_id: CUMULATIVE}
