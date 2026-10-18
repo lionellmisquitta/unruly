@@ -1,3 +1,7 @@
+## DRAW1A reference entry contract — 18 October 2026
+
+index.html disables Add reference during startup; app.js checks history readiness before reference entry and syncReference enables the appropriate Add/Show action once a board exists. Existing image decoder/editor/reference storage contracts are unchanged. W15 delays actual openStore startup; IMPB05 exercises the complete new entry route. Logical responsibility note; W15/IMPB05 and full cumulative39151055670 PASS on4d3bda3; same-session verification.
+
 ## POSE1A hair verified adapter — 18 October 2026
 
 Exact-source CI39136090722 allgreen. Original hairMesh returns bounded triangles plus sparse crown/clump flow paths; pose-ui depth-orders around head/body and headStudyZoom fits hairstyle extent/profile radius. Old hairless states normalize optional hair/focus; preset separation and offline backup/import tested. Core native/artwork/render/export/recording modules byte unchanged. Verified receipts/source identities in scoped HAIR_QA_RECEIPT.json. Logical responsibilities, not AST evidence; no physical or independent-review claim. Graph/skills unchanged.

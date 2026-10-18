@@ -1,0 +1,33 @@
+{
+  "change": "CHG-UNRULY-DRAW1A-REF-1018",
+  "base": "8a47ceb5271cba78d86fd627b3470db2ab33e642",
+  "candidate": "4d3bda340f75a6def2c76986309580aafe38dd15",
+  "pullRequest": 43,
+  "cumulativeRun": 39151055670,
+  "status": "VERIFIED_UNPUBLISHED",
+  "local": {
+    "javascriptSyntax": "PASS",
+    "actualHandlerStartupAndReady": "PASS",
+    "relatedModels": {
+      "tests": 43,
+      "fail": 0
+    },
+    "scopePaths": 28,
+    "existingChangedTestLinesPreserved": 19
+  },
+  "browserExecution": "GitHub Actions; local Chromium unavailable",
+  "review": "same-session self-verification",
+  "next": "Merge release metadata and publish pinned verified source; verify hosted bytes and record receipt.",
+  "artifactId": 12145298094,
+  "artifactDigest": "3ca8dc35bab5ea11be10b359b3762b8ff39cebc2122d313b1a5304c5c272b8c2",
+  "sourceHashes": 210,
+  "shards": 6,
+  "modelTests": 664,
+  "browserScenarios": 489,
+  "legacyConsoleChecks": 2,
+  "newCases": {
+    "W15-reference-delayed-startup": "PASS",
+    "IMPB05-reference-action-complete-route": "PASS"
+  },
+  "screenshotsReviewed": true
+}
