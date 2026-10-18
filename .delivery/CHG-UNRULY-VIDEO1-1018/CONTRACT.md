@@ -13,3 +13,6 @@ Evidence sufficient: user approved video/framing/codec/cancellation/storage-budg
 Same-session engineering self-verification, not independent QA. Cumulative CI mandatory for exact stable candidate and hosted bytes before release. Revert scoped video adapter/hooks to return to published TIME1; no data migration. Deferred sticky notes/whole-canvas rotation; all remaining roadmap rows retained. No knowledge graph or skill edits.
 
 Primary references: https://www.w3.org/TR/webcodecs/ and https://www.w3.org/TR/webcodecs-avc-codec-registration/ . AVC length-prefixed samples and decoder description required. Encode deterministic timestamps; bounded queue/backpressure and close VideoFrames. VP8 uses WebM, AVC uses ISO BMFF. Validate actual output via independent ffprobe/ffmpeg in CI.
+
+## Revision 1 — decoder evidence execution
+Existing focused timelapse preflight extended to VIDEO1 branch, ffmpeg availability checked in focused and cumulative video shard only. All existing test invocation lines preserved byte-for-byte. This is an explicit scope/config addition for independent container decoding, not a reduced CI suite.

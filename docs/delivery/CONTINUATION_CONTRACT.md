@@ -1,3 +1,7 @@
+## VIDEO1 implemented — exact-source browser QA pending, 18 October 2026
+
+Deterministic 12fps silent WebM/VP8 and browser-supported MP4/H.264 export implemented with all-recorded-artwork, fixed selection rectangle and recorded-navigation framing;360p/720p, speed/idle-gap reuse, explicit download, progress/cancel/hidden-tab safety. Limits60seconds/720frames/32MiB encoded; no dropped saved states or silent truncation. Separate renderer and immutable recording leave artwork/view/Undo unchanged. Local618models PASS; five additive browser cases require GitHub execution including actual ffprobe/ffmpeg decode. MOTION2 post-merge CI39111937083 SUCCESS. No VIDEO1 merge/publication yet. Next: exact-source focused/cumulative QA and evidence review. Continuous pen-point animation/physical acceptance remain open; all roadmap requirements/deferrals retained. Graph/skills unchanged. Earlier statuses historical where superseded.
+
 ## VIDEO1 scoped — 18 October 2026
 
 Clean timelapse video export REQ-009/C10 is in progress from main7bebb20. Source recording/artwork remain immutable. Scope/UX/budgets and additive tests in `.delivery/CHG-UNRULY-VIDEO1-1018/`. Not yet implemented, verified or published. Next: implement deterministic bounded encoding and framing; verify independent decode, cancel, offline, phone and cumulative regression. Continuous pen-point animation remains open. All other roadmap rows/deferrals retained; no graph/skill edits. Earlier headings below historical where superseded.
