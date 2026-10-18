@@ -12,3 +12,7 @@
 
 ## Offline release revision (only after candidate validation)
 Bump the normal offline cache identity from FONT2 to RTEXT2 and change only the corresponding cache identity assertions in 15 existing browser suites plus the FONTM03 test; keep all test invocations and behavioral assertions untouched. The published `main` remains unchanged until fresh full cumulative CI and pinned Pages publication pass. If any test fails, do not merge or publish.
+
+## Verified candidate and guarded publication
+Cumulative GitHub run 39087458397 SUCCESS for source e3287b7c4a51fff9d6049a731e12ec288e1cfbfc; artifact 12121422893 SHA256 360dcf93806e44882bf8766848412241c6d393f5169a9465df8a050574f09e42; 196 source hashes; 529+22+27=578 model tests PASS; 455 structured browser scenarios PASS; two legacy console checks PASS. All six isolated shards and required aggregation gate PASS. RTEXT2B01, RTEXT2B02, RTEXT2B03 pass, with desktop and 390px phone screenshots reviewed (long wrapped text extends below the initial viewport and can be panned). Same-session verification only; physical pen/device acceptance pending. The earlier run 39087211062 failed a synthetic emoji-width oracle and was superseded without assertion weakening.
+Publisher only updates the pinned source/artifact/hash/counts and cache-busting query of the established GitHub Pages workflow. Any artifact/source/hosted-byte mismatch blocks the release. Prior live FONT2 stays available until Pages completes.
