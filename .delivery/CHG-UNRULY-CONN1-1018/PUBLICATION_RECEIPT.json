@@ -1,0 +1,16 @@
+{
+  "checkpoint": "CONN1",
+  "testedSource": "2e45b9acbdfd2d7fdf1c78f50ab6db175d1f0f33",
+  "merge": "a3b33745252e81fff3e3b1165f071f634a1c7646",
+  "pagesRun": 39103537391,
+  "result": "SUCCESS",
+  "sourceIdentityGuard": "PASS",
+  "downloadedArtifactGuard": "PASS",
+  "hostedByteComparison": "PASS",
+  "hostedAssetCount": 82,
+  "url": "https://lionellmisquitta.github.io/unruly/",
+  "postMergeCI": 39103537381,
+  "postMergeResult": "PENDING",
+  "physicalAcceptance": "OPEN",
+  "review": "same-session self-verification"
+}

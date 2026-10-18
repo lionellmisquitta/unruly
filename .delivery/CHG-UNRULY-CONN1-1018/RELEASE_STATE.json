@@ -1,6 +1,6 @@
 {
   "checkpoint": "CONN1",
-  "status": "VERIFIED_UNPUBLISHED_APPROVAL_BLOCKED",
+  "status": "PUBLISHED_HOSTED_VERIFIED",
   "pr": 34,
   "branch": "CHG-UNRULY-CONN1-1018/attached-arrows",
   "testedSource": "2e45b9acbdfd2d7fdf1c78f50ab6db175d1f0f33",
@@ -12,11 +12,18 @@
   "sourceHashesVerified": 199,
   "releaseHeadBeforeStatus": "353c4333cc200fca7f68d6a1bc33c64be108ef20",
   "mainUnchanged": "6ee51f6bf2fe0d9de7bcf8725d680b8de3ed9e74",
-  "mergePerformed": false,
-  "publicationPerformed": false,
-  "blocker": "Automatic approval review requires explicit trusted user authorization for exact PR34 main merge and Pages deployment",
-  "next": "Receive explicit authorization; inspect current heads; merge PR34 using expected_head_sha; verify guarded Pages deployment and every hosted asset. Do not rebuild already verified implementation.",
+  "mergePerformed": true,
+  "publicationPerformed": true,
+  "blocker": null,
+  "next": "Check additional post-merge CI result; collect physical feedback; next bounded roadmap checkpoint. Do not rebuild CONN1.",
   "physicalAcceptance": "OPEN",
   "knowledgeGraph": "UNCHANGED",
-  "skills": "UNCHANGED"
+  "skills": "UNCHANGED",
+  "merge": "a3b33745252e81fff3e3b1165f071f634a1c7646",
+  "publicationRun": 39103537391,
+  "publicationResult": "SUCCESS",
+  "hostedAssetsVerified": 82,
+  "postMergeCI": 39103537381,
+  "postMergeResult": "PENDING",
+  "userApproval": "Explicit user approval to merge into main,18October2026"
 }
