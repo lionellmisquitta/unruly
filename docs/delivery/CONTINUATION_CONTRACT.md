@@ -1,3 +1,7 @@
+## POSE1 checkpoint defined — 18 October 2026
+
+Owner requested editable human/cartoon/anime and animal drawing references, including sword swings and exaggerated actions. [POSE1_CHECKPOINT.md](POSE1_CHECKPOINT.md) records pose/proportion separation, family rigs, staged delivery, import validation, source shortlist and acceptance obligations. Status: definition and source research saved; pose editor/importers not implemented or published. Next engineering work: bounded POSE1A impact/plan from fresh main. EXPORT1 remains published; owner artwork trial and physical/long-session validation remain open. All existing roadmap requirements and explicit deferrals retained; graph/skills unchanged. This owner direction advances pose references ahead of the prior ML-cleanup trial recommendation.
+
 ## EXPORT1 PUBLISHED — 18 October 2026
 
 User explicitly approved [PR37](https://github.com/lionellmisquitta/unruly/pull/37) merge and EXPORT1 publication. Merge `631364f19aac2e52462f8240d95aa9bdd33284e8` matches the reviewed tree. [Publication39124483944](https://github.com/lionellmisquitta/unruly/actions/runs/39124483944) SUCCESS: pinned source/artifact guard and all **87 hosted application asset** byte comparisons passed. [Live application](https://lionellmisquitta.github.io/unruly/). Verified source db2611e7; cumulative39121830789/focused39121830802 passed629models/477browser scenarios/2legacy checks with204source hashes. Additional post-merge CI39124483988 remains in progress at this record; do not claim it passed.
