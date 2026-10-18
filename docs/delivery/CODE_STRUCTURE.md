@@ -1,6 +1,6 @@
 ## DRAW1A reference entry contract — 18 October 2026
 
-index.html disables Add reference during startup; app.js checks history readiness before reference entry and syncReference enables the appropriate Add/Show action once a board exists. Existing image decoder/editor/reference storage contracts are unchanged. W15 delays actual openStore startup; IMPB05 exercises the complete new entry route. Logical responsibility note; browser execution pending.
+index.html disables Add reference during startup; app.js checks history readiness before reference entry and syncReference enables the appropriate Add/Show action once a board exists. Existing image decoder/editor/reference storage contracts are unchanged. W15 delays actual openStore startup; IMPB05 exercises the complete new entry route. Logical responsibility note; W15/IMPB05 and full cumulative39151055670 PASS on4d3bda3; same-session verification.
 
 ## POSE1A hair verified adapter — 18 October 2026
 

@@ -1,3 +1,9 @@
+## DRAW1A reference repair verified — publication pending, 18 October 2026
+
+[PR43](https://github.com/lionellmisquitta/unruly/pull/43), tested source `4d3bda340f75a6def2c76986309580aafe38dd15`: [cumulative39151055670](https://github.com/lionellmisquitta/unruly/actions/runs/39151055670) SUCCESS across all6shards and aggregation. Artifact12145298094 SHA256 `3ca8dc35bab5ea11be10b359b3762b8ff39cebc2122d313b1a5304c5c272b8c2` downloaded and verified against210source hashes and6matching markers:664models,489browser scenarios,2legacy checks PASS. New delayed-startup W15 and complete-reference-route IMPB05 PASS; mobile/desktop screenshots reviewed. Existing changed test lines preserved after cache-identity normalization. Release metadata does not alter tested app/test bytes.
+
+Initial Add reference is disabled until history exists; handler safely ignores early calls. Complete reference import cancel/error/retry/apply/hide/show/Undo/Redo and generic image default verified. Cache v5 included in tested candidate. Same-session self-verification; physical-device acceptance remains open. Existing owner authorization covers verified main/Pages publication; next merge PR43 and verify hosted assets, then record receipt. Other issue39 requirements and the full remaining roadmap stay OPEN; no graph/skill changes. Earlier pending entries below are historical and superseded.
+
 ## DRAW1A reference repair in progress — 18 October 2026
 
 DRAW1A is published: tested source `6a482a196724e104110764a56302c036f4c0fdf5`, cumulative run39145627322 and postmerge39146307114 SUCCESS; Pages39146522140 SUCCESS with all91 hosted files verified. Earlier DRAW1A verification-pending headings are historical and superseded.
