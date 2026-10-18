@@ -27,7 +27,7 @@ export async function prepareVideo(log,options,validate,{signal,onProgress=()=>{
  if(![[640,360],[1280,720]].some(([w,h])=>w===width&&h===height)||!['all','selection','navigation'].includes(framing))throw Error('Invalid video options');
  if(framing==='navigation'&&(!viewport||![viewport.width,viewport.height].every(n=>Number.isFinite(n)&&n>0)))throw Error('Invalid recording viewport');
  const timing=videoTiming(log.events,options);let text='',bounds=null;
- for(let i=0;i<log.events.length;i++){guard(signal);text=applyEvent(text,log.events[i]);const board=JSON.parse(text);validate(board);if(board.id!==log.boardId)throw Error('Recording board mismatch');if(framing==='all')bounds=unionVideoBounds(bounds,boardBounds(board));if(i%8===0){onProgress({phase:'Preparing',done:i,total:log.events.length});await task();}}
+ for(let i=0;i<log.events.length;i++){guard(signal);text=applyEvent(text,log.events[i]);const board=JSON.parse(text);validate(board);if(board.id!==log.boardId)throw Error('Recording board mismatch');const scene=options.projectBoard?options.projectBoard(board):board;validate(scene);if(framing==='all')bounds=unionVideoBounds(bounds,boardBounds(scene));if(i%8===0){onProgress({phase:'Preparing',done:i,total:log.events.length});await task();}}
  if(framing==='all'&&!bounds)throw Error('Recording has no visible artwork · choose recorded navigation');
  const view=framing==='navigation'?null:fitVideoView(framing==='selection'?selection:bounds,width,height);
  return{...timing,width,height,framing,view,viewport,bounds,selection};
@@ -54,7 +54,7 @@ export async function exportVideo(log,options,validate,{signal,onProgress=()=>{}
   encoder.configure(videoConfig(format,plan.width,plan.height));let text='',state=-1,board=null;
   for(let i=0;i<plan.count;i++){
    guard(signal,deadline);if(failure)throw failure;
-   let changed=false;while(state+1<log.events.length&&plan.states[state+1]<=i){text=applyEvent(text,log.events[++state]);board=JSON.parse(text);changed=true;}
+   let changed=false;while(state+1<log.events.length&&plan.states[state+1]<=i){text=applyEvent(text,log.events[++state]);board=JSON.parse(text);if(options.projectBoard)board=options.projectBoard(board);validate(board);changed=true;}
    if(changed){const ratio=1/(window.devicePixelRatio||1),nav=log.events[state].view,navScale=plan.framing==='navigation'?Math.min(plan.width/plan.viewport.width,plan.height/plan.viewport.height):0;
     const v=plan.framing==='navigation'?{x:(plan.width-plan.viewport.width*navScale)/2+nav.x*navScale,y:(plan.height-plan.viewport.height*navScale)/2+nav.y*navScale,scale:nav.scale*navScale}:plan.view;
     renderer.renderReference(board,{x:v.x*ratio,y:v.y*ratio,scale:v.scale*ratio});

@@ -1,3 +1,7 @@
+## VIDEO1 Virtual Group context adapter
+
+Host additionally supplies the existing read-only scene projection. Both bounds preflight and encoded rendering use it while export blocks edits. Recording retains active-source deltas; other groups remain current context. Native project/history/store/render implementations unchanged.
+
 ## VIDEO1 clean video adapter — candidate, 18 October 2026
 
 timelapse-video.js validates sequential recording frames, plans exact 12fps timing/framing, negotiates WebCodecs and renders to isolated disposable canvases through the unchanged reference renderer. video-container.js packages bounded VP8/WebM or AVC/MP4 samples without dependencies. timelapse-ui.js owns export/abort/progress/ready-download/release; app supplies only fixed selection rectangle and viewport dimensions. Existing recording/native/store/model/render code unchanged. New modules offline-cached. Model and existing timelapse browser suites add independent ffprobe/ffmpeg decode and preservation tests; original cumulative invocations retained. This is a logical dependency map, not AST evidence. No graph/skill changes.

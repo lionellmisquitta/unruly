@@ -7,3 +7,6 @@ Local external container check: independently generated24real VP8/H264 packets w
 
 ## Second focused attempt 5801ab6 / CI39113321985
 All original timelapse scenarios PASS; actual720p MP4/DPR2, cancel/retry and capacity/unsupported PASS. Two newly added frame-extraction helpers failed: JS consumed the ffmpeg expression comma escape; end-relative seek0.08seconds fell after the final12fps frame timestamp, returning no pixels. Replace both with explicit zero-based `select=not(n-index)`; verified locally on real generated VP8 (691200RGB bytes). Keep exact decoder/frame-count/pixel assertions. Add WebM seek index and browser loadeddata/seeked verification; Download reuses existing styled button after visual inspection found default link contrast poor. No changes to recording/schema/rendering. Next exact-source focused/cumulative rerun.
+
+## Third focused attempt6954947 / CI39113532569 — SUCCESS
+All21timelapse/browser scenarios pass. Final contract review adds existing Virtual Group context projection and one actual first-frame/source-preservation journey. Require complete revised-source CI; prior successes do not authorize new bytes.

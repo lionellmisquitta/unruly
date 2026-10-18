@@ -16,3 +16,6 @@ Primary references: https://www.w3.org/TR/webcodecs/ and https://www.w3.org/TR/w
 
 ## Revision 1 — decoder evidence execution
 Existing focused timelapse preflight extended to VIDEO1 branch, ffmpeg availability checked in focused and cumulative video shard only. All existing test invocation lines preserved byte-for-byte. This is an explicit scope/config addition for independent container decoding, not a reduced CI suite.
+
+## Revision 2 — existing Virtual Group rendering contract
+Source recording v1 contains only the active source, while existing replay projects it over other current source boards. Reuse the same read-only `virtualUI.scene` projection via optional export callback in bounds and render passes; working-state host blocks edits. Other groups are current context, not invented historical recordings. Add actual project first-frame pixel/preservation test. No Virtual Group/native/store/renderer edits. Source recording remains immutable; unsupported/missing/recovered project context rejects.
