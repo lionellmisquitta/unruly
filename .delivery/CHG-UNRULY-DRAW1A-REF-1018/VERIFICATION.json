@@ -4,7 +4,7 @@
   "candidate": "4d3bda340f75a6def2c76986309580aafe38dd15",
   "pullRequest": 43,
   "cumulativeRun": 39151055670,
-  "status": "VERIFIED_UNPUBLISHED",
+  "status": "PUBLISHED",
   "local": {
     "javascriptSyntax": "PASS",
     "actualHandlerStartupAndReady": "PASS",
@@ -17,7 +17,7 @@
   },
   "browserExecution": "GitHub Actions; local Chromium unavailable",
   "review": "same-session self-verification",
-  "next": "Merge release metadata and publish pinned verified source; verify hosted bytes and record receipt.",
+  "next": "Inspect postmerge result without rebuilding verified candidate; scope next open drawing requirement.",
   "artifactId": 12145298094,
   "artifactDigest": "3ca8dc35bab5ea11be10b359b3762b8ff39cebc2122d313b1a5304c5c272b8c2",
   "sourceHashes": 210,
@@ -29,5 +29,12 @@
     "W15-reference-delayed-startup": "PASS",
     "IMPB05-reference-action-complete-route": "PASS"
   },
-  "screenshotsReviewed": true
+  "screenshotsReviewed": true,
+  "merge": "ae2a2189b34ba79de679242ff475a93aaff25146",
+  "releaseTree": "eea86b5036cea1c2a47a3be659c9b8a91513d0db",
+  "publicationRun": 39151830249,
+  "publicationJob": 117746887109,
+  "hostedFileMatches": 91,
+  "postmergeRun": 39151830195,
+  "postmergeStatus": "PENDING_AT_RECEIPT"
 }
