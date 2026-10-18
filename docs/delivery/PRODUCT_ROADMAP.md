@@ -1,3 +1,7 @@
+## CONN1 phone fixture diagnosis corrected — rerun pending, 18 October 2026
+
+Second candidate924d19a/CI39101724783 again passed4connector browser cases; phone drag still hit brush dock. CSS confirms dock spansx8–68. Fixture now startsx90 and puts left artwork at110–150; explicit DOM hit-test assertion requires uncovered canvas before dragging. Application code remains unchanged; original assertions retained. Full596local models PASS. Exact repaired cumulative CI required before release. Sticky notes/whole-canvas rotation deferred; all other roadmap scope retained; graph/skills unchanged. Earlier candidate statuses historical.
+
 ## CONN1 browser fixture repair — cumulative rerun required, 18 October 2026
 
 Candidate017cc11/CI39101524391: connector17models PASS,4/5new browser scenarios PASS. Phone scenario selected0objects because synthetic drag started inside existing brush dock (x50); screenshot inspected, start moved to x60 with all assertions retained. Application implementation unchanged. Local full596models PASS. Next: repaired exact-source cumulative CI and browser evidence before merge/publication. Sticky notes/whole-canvas rotation deferred; other roadmap scope retained. Graph/skills unchanged. Earlier candidate statuses below historical.
