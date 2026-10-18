@@ -1,6 +1,6 @@
 # POSE1 — Editable drawing pose references
 
-Owner-requested checkpoint, 18 October 2026. Status: scope and source shortlist recorded; application implementation and source-data imports not yet built or published. EXPORT1 remains the live release. This advances pose references ahead of the earlier ML-cleanup trial recommendation; all existing roadmap requirements and explicit deferrals remain.
+Owner-requested checkpoint, 18 October 2026. Status: POSE1A human editor implemented on [PR38](https://github.com/lionellmisquitta/unruly/pull/38), with repaired-source cumulative/browser verification pending; not merged or published. Read [POSE1A_ACTIVE.md](POSE1A_ACTIVE.md) for exact candidate/run/next action. Animal rigs and external imports remain POSE1B/C. EXPORT1 remains the live release. This advances pose references ahead of the earlier ML-cleanup trial recommendation; all existing roadmap requirements and explicit deferrals remain.
 
 ## Outcome
 Reusable movable skeleton references for drawing human/cartoon/anime characters and zoo animals. Extract permitted joint annotations or motion frames; do not require the source ML application, training, inference, subscriptions or runtime AI calls.
