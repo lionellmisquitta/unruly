@@ -1,0 +1,17 @@
+{
+  "change_id": "CHG-UNRULY-EXPORT1-1018",
+  "evidence_sufficiency": "SUFFICIENT",
+  "archetype": "existing-workspace export modal",
+  "states": [
+    "configure",
+    "rendering",
+    "ready",
+    "cancelled",
+    "error"
+  ],
+  "primary_action": "Create export, then Download artwork",
+  "recovery": "Cancel/Escape/hidden and storage failure preserve artwork; explicit retry",
+  "named_frames": "device-local, separate backup/import",
+  "authority": "CONTRACT.md/UX_BASELINE.md",
+  "validation": "focused/cumulative PASS; physical artwork trial pending"
+}

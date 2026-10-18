@@ -1,7 +1,7 @@
 name: Timelapse preflight
 on:
   push:
-    branches: ['CHG-UNRULY-TIME1-1015/**', 'CHG-UNRULY-VIDEO1-1018/**']
+    branches: ['CHG-UNRULY-TIME1-1015/**', 'CHG-UNRULY-VIDEO1-1018/**', 'CHG-UNRULY-EXPORT1-1018/**']
     paths: ['prototypes/browser-workspace/**', 'tests/browser-workspace/**', '.github/workflows/timelapse-preflight.yml']
 permissions:
   contents: read
@@ -21,6 +21,7 @@ jobs:
           cd tests/browser-workspace
           npx playwright install --with-deps chromium
       - name: Timelapse model and actual Chromium gate
+        if: "!startsWith(github.ref, 'refs/heads/CHG-UNRULY-EXPORT1-1018/')"
         shell: bash
         run: |
           set -euo pipefail
@@ -35,11 +36,24 @@ jobs:
             sleep .1
           done
           node tests/browser-workspace/timelapse.browser.cjs > tests/browser-workspace/evidence/timelapse-output.txt 2>&1 || { cat tests/browser-workspace/evidence/timelapse-output.txt; exit 1; }
+      - name: Artwork export focused gate
+        if: startsWith(github.ref, 'refs/heads/CHG-UNRULY-EXPORT1-1018/')
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          if ! command -v pdfinfo >/dev/null || ! command -v pdftoppm >/dev/null; then sudo apt-get update -qq; sudo apt-get install -y poppler-utils; fi
+          node --test tests/browser-workspace/image-import.model.test.mjs > tests/browser-workspace/evidence/export-model.txt 2>&1
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/export-server.log 2>&1 &
+          export_server_pid=$!
+          trap 'kill "$export_server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do if curl --fail --silent http://127.0.0.1:4173/unruly/ >/dev/null; then break; fi; sleep .1; done
+          UNRULY_EXPORT_ONLY=1 node tests/browser-workspace/image-import.browser.cjs > tests/browser-workspace/evidence/export-browser-output.txt 2>&1 || { cat tests/browser-workspace/evidence/export-browser-output.txt; exit 1; }
       - name: Bind exact identities
         if: always()
         run: |
           git rev-parse HEAD > tests/browser-workspace/evidence/commit.txt
-          sha256sum prototypes/browser-workspace/* tests/browser-workspace/timelapse* .github/workflows/timelapse-preflight.yml > tests/browser-workspace/evidence/timelapse-sha256.txt
+          sha256sum prototypes/browser-workspace/* tests/browser-workspace/timelapse* tests/browser-workspace/image-import* .github/workflows/timelapse-preflight.yml > tests/browser-workspace/evidence/timelapse-sha256.txt
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

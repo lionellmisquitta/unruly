@@ -1,3 +1,4 @@
+import {initArtworkExport} from './artwork-export-ui.js';
 import {rasterGuide,guidedRaster} from './raster-guides.js';
 import {initPatternMesh} from './pattern-mesh-ui.js';
 import {initVirtualProjects} from './virtual-project-ui.js';
@@ -62,6 +63,7 @@ let layerScope=[],scopeBoard=null,scopeActive=null,painted=null,transformTouch=n
 let textDraft=null,imageDraft=null,referenceHidden=false,referenceBoard=null,referenceObject=null;
 let wandRegion=null,wandImage=null,lassoMode='region';try{const mode=localStorage.getItem('unruly-lasso-mode');if(['objects','path','magnetic','fill'].includes(mode))lassoMode=mode;}catch{}
 let drawingUI=null,drawingPreview=null;
+let artworkExportUI=null;
 let timelapseUI=null,timelapsePreview=null;
 let motionUI=null,motionPreview=null;
 let warpUI=null,meshUI=null,warpPreview=null;
@@ -88,7 +90,7 @@ const thumbnails=new Map();
 let paletteUI=null;
 let tipUI=null;
 const pressureKey=()=>tipUI?.key()||settings.preset;
-const blocked=()=>!!meshUI?.editing()||!!warpUI?.editing()||!!paletteUI?.editing()||!!drawingUI?.editing()||!!timelapseUI?.editing()||!!motionUI?.editing()||!!tipUI?.editing()||!!filterUI?.editing()||!!adjustmentUI?.editing()||!!imageDraft||!!textDraft||!!active||busy||!!layerDrag||!!opacityDraft||!!pending||!!touchTracker.snapshot()||!!curveUI?.editing()||!!pathEditor?.dragging();
+const blocked=()=>!!artworkExportUI?.editing()||!!meshUI?.editing()||!!warpUI?.editing()||!!paletteUI?.editing()||!!drawingUI?.editing()||!!timelapseUI?.editing()||!!motionUI?.editing()||!!tipUI?.editing()||!!filterUI?.editing()||!!adjustmentUI?.editing()||!!imageDraft||!!textDraft||!!active||busy||!!layerDrag||!!opacityDraft||!!pending||!!touchTracker.snapshot()||!!curveUI?.editing()||!!pathEditor?.dragging();
 const contacts=new Map();
 const status=(text,error=false)=>{$('save').textContent=text;$('save').dataset.error=String(error);};
 const smoothing=initStabilizationUI({$,blocked,status});
@@ -443,6 +445,7 @@ motionUI=initMotionUI({$,canvas,getBoard:()=>h?.board,getView:()=>({...view}),bl
  commitGeometry:(board,base)=>{if(h.board!==base)throw Error('Motion presentation is stale');const next=command(h,b=>{b.version=Math.max(b.version,board.version);b.layers=structuredClone(board.layers);if(board.motion)b.motion=structuredClone(board.motion);});const didChange=next!==h;changed(next,true);return didChange;}
 });
 
+artworkExportUI=initArtworkExport({$,blocked,status,beforeOpen:()=>{if(pathEditor?.editing()||maskTarget)throw Error('Finish selection outline or mask editing before export');closePopovers();},getContext:()=>{const r=canvas.getBoundingClientRect();return{sourceId:h.board.id,board:virtualUI?.scene(h.board)?.board||h.board,viewport:{minX:-view.x/view.scale,minY:-view.y/view.scale,width:r.width/view.scale,height:r.height/view.scale},selection:wandRegion?.bounds||(selected.length?fastBounds(h.board,selected):null)};}});
 timelapseUI=initTimelapseUI({$,getVideoContext:()=>({projectBoard:board=>virtualUI?.scene(board)?.board||board,selection:wandRegion?.bounds||(selected.length?fastBounds(h.board,selected):null),viewport:{width:canvas.getBoundingClientRect().width,height:canvas.getBoundingClientRect().height}}),getBoard:()=>h?.board,getView:()=>({...view}),blocked,validate:validateBoard,status,beforeOpen:()=>{if(pathEditor?.editing())throw Error('Close & select or Cancel the selection outline first');if(maskTarget)throw Error('Choose Edit artwork before Timelapse');closePopovers();},preview:(board,v)=>{timelapsePreview=board;view={...v};renderer.invalidate('timelapse-preview',false);painted=null;refresh();}});
 
 drawingUI=initDrawingTools({$,canvas,getState:()=>{const l=h?.board.layers.find(l=>l.id===h.board.activeLayer);return {board:h?.board,layerId:l?.id,view:{...view},selected:[...selected],strokes:l?.strokes||[],maskTarget,paintMode,alphaLock:!!l?.alphaLock,writable:!!l&&!maskTarget&&!layerState(h.board,l).locked&&layerState(h.board,l).visible,blocked:blocked(),newStroke:()=>({id:crypto.randomUUID(),...structuredClone(settings),dynamics:structuredClone(settings.dynamics),points:[{x:0,y:0,pressure:null},{x:1,y:1,pressure:null}]})};},onStart:()=>{closePopovers();pathEditor?.cancel();setTool('pen');},onPreview:b=>{drawingPreview=b;schedulePaint();},onChange:refresh,onCommit:(stroke,existing,base,layerId)=>{if(h.board!==base||h.board.activeLayer!==layerId)throw Error('Artwork changed; cancel and select it again');changed(command(h,b=>{const l=editable(b);if(stroke.artworkPath){b.version=Math.max(15,b.version);b.folders=b.folders||[];}if(existing){const i=l.strokes.findIndex(x=>x.id===stroke.id);if(i<0)throw Error('Stroke no longer exists');l.strokes[i]=stroke;}else l.strokes.push(stroke);}),true);},status});

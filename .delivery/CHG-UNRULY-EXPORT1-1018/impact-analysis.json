@@ -1,0 +1,57 @@
+{
+  "change_id": "CHG-UNRULY-EXPORT1-1018",
+  "baseline_id": "c7a6adb03c85b45b90caa3a5a1e56544fe7f1b3a",
+  "scope_envelope": {
+    "target": [
+      "isolated artwork export, formats and UI adapters",
+      "host/index/style/cache hooks",
+      "additive image-import/export test cases"
+    ],
+    "contract": [
+      "native model/history/store/renderer unchanged",
+      "existing Virtual Group scene projection",
+      "PNG/JPEG DPI and PDF physical page size"
+    ],
+    "regression": [
+      "cumulative drawing/painting/layers/selection/text/recording",
+      "frame import/storage/cancel/offline preservation"
+    ],
+    "excluded_legacy": [
+      "native cross-device artboard portability",
+      "PDF vector-editability",
+      "artwork interchange/sync/AI",
+      "physical/long-session/interactive capacity acceptance"
+    ],
+    "unknown_boundary": [
+      "physical device feel and process RAM: owner artwork trial pending"
+    ]
+  },
+  "confirmed_impacts": [
+    "host read-only context -> export UI -> isolated tile renderer -> metadata/PDF encoder",
+    "frame catalog outside native artwork and Undo",
+    "original cumulative invocation lines retained"
+  ],
+  "likely_impacts": [
+    "export CPU/output-canvas memory while modal blocks live editing"
+  ],
+  "regression_obligations": [
+    "EXPORT-GEOMETRY -> EXPORTM",
+    "EXPORT-FILES/EXPORT-PRESERVE -> EXPORTB",
+    "EXPORT-ALL -> CUMULATIVE"
+  ],
+  "technical_constraints": [
+    "See TECHNICAL_CONSTRAINTS.md and CONTRACT.md"
+  ],
+  "unknowns": [
+    "Owner real artwork trial not yet performed"
+  ],
+  "ux_route": "ux_architect",
+  "evidence_refs": [
+    "CONTRACT.md",
+    "impact.yaml",
+    "plan.yaml",
+    "UX_BASELINE.md",
+    "QA_RECEIPT.json",
+    "CI39121830789/source db2611e7"
+  ]
+}

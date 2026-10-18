@@ -1,3 +1,7 @@
+## EXPORT1 isolated output adapter — 18 October 2026
+
+artwork-export.js owns finite bounds/output planning, region/catalog validation and disposable512px tile reference rendering; output8192px/side/16MP and exact tile resolution guarded. export-formats.js owns PNG pHYs/JPEG JFIF resolution metadata and single-page raster PDF framing. artwork-export-ui.js owns native-modal editing lock, per-board device-local region CAS/backup/import, progress/cancel/ready URL lifecycle. app.js supplies unchanged Virtual Group scene/view/selection; index/style reuse existing controls and SW caches the3modules. Model/store/render/native/recording files unchanged. Existing image-import suites add export tests and independent PDF decode; original cumulative invocations preserved. Logical dependency map, not AST/runtime proof. Graph/skills unchanged.
+
 ## VIDEO1 Virtual Group context adapter
 
 Host additionally supplies the existing read-only scene projection. Both bounds preflight and encoded rendering use it while export blocks edits. Recording retains active-source deltas; other groups remain current context. Native project/history/store/render implementations unchanged.

@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-EXPORT1-1018
+route: Standard Change
+test_config_changes: [.github/workflows/browser-workspace.yml, .github/workflows/timelapse-preflight.yml, .github/workflows/browser-workspace-pages.yml]
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/render.js, prototypes/browser-workspace/canvas2d-renderer.js]
+checkpoints:
+  - id: EXPORT1
+    allowed_paths: [prototypes/browser-workspace/artwork-export.js, prototypes/browser-workspace/export-formats.js, prototypes/browser-workspace/artwork-export-ui.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, tests/browser-workspace/, .github/workflows/browser-workspace.yml, .github/workflows/timelapse-preflight.yml, .github/workflows/browser-workspace-pages.yml, .delivery/CHG-UNRULY-EXPORT1-1018/, docs/delivery/]
+    test_paths: [tests/browser-workspace/image-import.model.test.mjs, tests/browser-workspace/image-import.browser.cjs]
+    tests:
+      - {id: EXPORTM, command: [node, --test, tests/browser-workspace/image-import.model.test.mjs], timeout_seconds: 120}
+      - {id: EXPORTB, command: [node, tests/browser-workspace/image-import.browser.cjs], timeout_seconds: 360}
+      - {id: CUMULATIVE, command: [GitHubActions, browser-workspace.yml], timeout_seconds: 1560}
