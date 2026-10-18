@@ -18,6 +18,10 @@ Requirement: GitHub issue #39, user feedback items 2, 4, 5 (touch redo discovera
 - `tests/browser-workspace/custom-tips.browser.cjs`
 - `tests/browser-workspace/pen.browser.cjs`
 - `tests/browser-workspace/curve.browser.cjs`
+- `tests/browser-workspace/image-import.browser.cjs`
+- `tests/browser-workspace/virtual-project.browser.cjs`
+- `tests/browser-workspace/lset.browser.cjs`
+- `tests/browser-workspace/timelapse.browser.cjs`
 - `docs/delivery/PRODUCT_ROADMAP.md`
 - `docs/delivery/CURRENT_CHECKPOINT.md`
 - `docs/delivery/CONTINUATION_CONTRACT.md`
@@ -27,4 +31,4 @@ Requirement: GitHub issue #39, user feedback items 2, 4, 5 (touch redo discovera
 No image/document limits, native schema, storage, renderer, recording lifecycle, palette extraction/dock, pose data/model, AI/image inference, gesture thresholds, dependency, knowledge graph, skill or unrelated checkpoint changes. Do not claim feedback issue #39 fully resolved.
 
 ## Focused verification
-Add a browser check for DOM/visual order, collapsed secondary sections, reference-state explanation, visible Undo/Redo and no horizontal overflow. Update existing pressure-control tests to expand the now-collapsed Brush dynamics section; preserve every existing assertion. Physical touch-device redo remains unverified.
+Add a browser check for DOM/visual order, collapsed secondary sections, reference-state explanation, visible Undo/Redo and no horizontal overflow. Update existing pressure-control tests to expand Brush dynamics and project tests to expand the collapsed organization/project controls; preserve every existing assertion. The Virtual Groups browser suite uses a shared helper and must open the section there too. The pen-mapping guard opens both nested disclosures before simulating an active curve draft. Physical touch-device redo remains unverified.
