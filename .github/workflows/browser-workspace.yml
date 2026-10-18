@@ -418,6 +418,7 @@ jobs:
           done
           node tests/browser-workspace/lasso-region.browser.cjs > tests/browser-workspace/evidence/lasso-region-output.txt 2>&1 || { cat tests/browser-workspace/evidence/lasso-region-output.txt; exit 1; }
           node tests/browser-workspace/wand.browser.cjs > tests/browser-workspace/evidence/wand-output.txt 2>&1 || { cat tests/browser-workspace/evidence/wand-output.txt; exit 1; }
+          if ! command -v pdfinfo >/dev/null || ! command -v pdftoppm >/dev/null; then sudo apt-get update -qq; sudo apt-get install -y poppler-utils; fi
           node tests/browser-workspace/image-import.browser.cjs > tests/browser-workspace/evidence/image-import-output.txt 2>&1 || { cat tests/browser-workspace/evidence/image-import-output.txt; exit 1; }
           node tests/browser-workspace/text.browser.cjs > tests/browser-workspace/evidence/text-output.txt 2>&1 || { cat tests/browser-workspace/evidence/text-output.txt; exit 1; }
           node tests/browser-workspace/clipping.browser.cjs > tests/browser-workspace/evidence/clipping-output.txt 2>&1 || { cat tests/browser-workspace/evidence/clipping-output.txt; exit 1; }

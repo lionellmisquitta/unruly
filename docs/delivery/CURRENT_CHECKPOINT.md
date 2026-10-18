@@ -1,6 +1,6 @@
-## EXPORT1 scoped — 18 October 2026
+## EXPORT1 implemented — browser/cumulative verification pending, 18 October 2026
 
-Owner requested artwork export build before real artwork trial. Basec7a6adb; scoped isolated tiled PNG/JPG/single-page raster PDF output, panoramic/named finite export frames, px/inches/DPI/aspect/fit/crop/background controls. Named frames device-local with separate backup/import; no native schema change. Scope/budgets/UX/tests in `.delivery/CHG-UNRULY-EXPORT1-1018/`. Implementation/QA/publication pending. Other roadmap scope/deferrals and physical acceptance retained; graph/skills unchanged. Earlier statuses historical where superseded.
+Bounded tiled artwork export implemented: all-artwork/panorama, current view, selection/custom rectangle and16device-local named frames with backup/import. Pixel/inch/DPI/aspect-ratio/fit-crop controls; PNG transparency, JPG and single-page raster PDF with physical size metadata. Output8192px/side,16MP/48MiB; source/native/history/store/renderer unchanged. Local629models PASS, including10new cases; six additive browser journeys require exact-source GitHub execution. Scope/UX/limits in `.delivery/CHG-UNRULY-EXPORT1-1018/`. No EXPORT1 merge/publication yet. Next: verify decodes/pixels/PDF/cancel/offline/presets/project scene and cumulative suite, then verified release for owner real artwork trial. Native cross-device frame portability/physical acceptance remain open. Every other roadmap row/deferral retained; graph/skills unchanged. Earlier statuses historical where superseded.
 
 ## VIDEO1 PUBLISHED — 18 October 2026
 
