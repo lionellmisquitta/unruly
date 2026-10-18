@@ -13,3 +13,33 @@ test('TEXTM07 import and duplicate preserve text while remapping IDs',()=>{let h
 test('TEXTM08 masks and clipping never downgrade text documents',()=>{let h=seed();h=maskCommand(h,'add',h.board.activeLayer);assert.equal(h.board.version,8);h=clippingCommand(h,'alphaLock',h.board.activeLayer,true);assert.equal(h.board.version,8);validateBoard(h.board);});
 test('TEXTM09 whole eraser hits text interior, partial/intersection preserve editable text',()=>{const h=seed(),sweep=[{a:{x:30,y:40},b:{x:40,y:45}}];assert.equal(eraseGesture(h.board,'whole',sweep,2).layers[0].strokes.length,0);for(const mode of ['partial','intersection'])assert.deepEqual(eraseGesture(h.board,mode,sweep,2).layers,h.board.layers);});
 test('TEXTM10 input text is stored literally with no HTML interpretation',()=>{let h=seed();const s=text({content:'<img src=x onerror=alert(1)> & 👋'});h=textCommand(h,h.board.activeLayer,s);assert.equal(h.board.layers[0].strokes[1].text.content,s.text.content);validateBoard(h.board);});
+
+import {layoutRichText} from '../../prototypes/browser-workspace/rich-text-layout.js';
+const richLayout=(content,options={})=>layoutRichText({content,maxWidth:60,fontSize:16,measure:s=>Array.from(s).length*10,...options});
+test('RTEXT1 preserve source and explicit paragraph boundaries',()=>{const x=richLayout('one two three\n\nagain');assert.equal(x.source,'one two three\n\nagain');assert.deepEqual(x.lines.map(l=>l.paragraph),[0,0,0,1,2]);assert.equal(x.lines.filter(l=>l.paragraph===0).map(l=>l.text).join(''),'one two three');});
+test('RTEXT2 wrapping preserves spaces and Unicode grapheme boundaries',()=>{const x=richLayout('abc defghijkl');assert.equal(x.lines.map(l=>l.text).join(''),'abc defghijkl');assert(x.lines.length>1);assert.equal(richLayout('👨‍👩‍👧').lines.length,1);});
+test('RTEXT3 invalid or impossible layouts are refused without altering source',()=>{for(const c of ['', ' ', 'z'.repeat(2049), 'bad\u0000text',Array(34).fill('x').join('\n')])assert.throws(()=>richLayout(c));assert.throws(()=>richLayout('wide',{maxWidth:5}));assert.throws(()=>richLayout('ok',{measure:()=>NaN}));});
+test('RTEXT4 line and font budgets are enforced, never truncated',()=>{assert.throws(()=>richLayout('a'.repeat(50),{maxWidth:10}));assert.throws(()=>richLayout('a',{fontSize:257}));assert.throws(()=>richLayout('a',{lineSpacing:4}));assert.throws(()=>richLayout('a',{maxWidth:1025}));});
+test('RTEXT5 line spacing changes measured height but not source',()=>{const a=richLayout('hello'),b=richLayout('hello',{lineSpacing:2});assert.equal(a.source,b.source);assert(b.height>a.height);});
+
+import {textFont,validTextFont} from '../../prototypes/browser-workspace/text.js';
+test('FONTM01 safe local family round trip and portable CSS fallback',()=>{
+ const s=text({font:'Noto Sans Devanagari'});validateText(s);
+ assert.equal(s.text.font,'Noto Sans Devanagari');
+ assert.match(textFont(s.text),/"Noto Sans Devanagari", sans-serif/);
+ assert.equal(textFont(text({font:'serif'}).text).endsWith('serif'),true);
+ for(const name of ['Segoe UI','Roboto','Noto Sans','MS Gothic'])assert(validTextFont(name));
+});
+test('FONTM02 injected or unbounded families reject before changing board',()=>{
+ for(const name of ['url(http://bad)','Arial, serif','"Arial"','Arial; color:red','a'.repeat(81),' bad','', '<script>','A/B'])assert.throws(()=>text({font:name}));
+ let h=seed();const prior=structuredClone(h.board);assert.throws(()=>textCommand(h,h.board.activeLayer,{...h.board.layers[0].strokes[0],text:{...h.board.layers[0].strokes[0].text,font:'a;evil'}}));assert.deepEqual(h.board,prior);
+});
+
+import {readFileSync} from 'node:fs';
+test('FONTM03 offline cache migrates to FONT2 without losing normal asset inventory',()=>{
+ const sw=readFileSync(new URL('../../prototypes/browser-workspace/sw.js',import.meta.url),'utf8');
+ assert.match(sw,/CACHE=NORMAL_PREFIX\+'v3-20261018-font2-1'/);
+ for(const asset of ['./text.js','./rich-text-layout.js','./app.js','./storage.js'])assert(sw.includes("'"+asset+"'"),'missing offline asset '+asset);
+ assert(sw.includes("e.data?.type==='ACTIVATE_UPDATE'"),'existing explicit update gesture retained');
+ assert(sw.includes("keys.filter(k=>k.startsWith(NORMAL_PREFIX)&&k!==CACHE)"),'old cache activation cleanup retained');
+});

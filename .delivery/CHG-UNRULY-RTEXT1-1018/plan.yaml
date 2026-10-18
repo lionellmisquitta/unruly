@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-RTEXT1-1018
+route: Standard Change
+prohibited_paths: [.knowledge/, knowledge-graph/, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/model.js, prototypes/browser-workspace/storage.js, prototypes/browser-workspace/sw.js, .github/workflows/]
+checkpoints:
+  - id: RTEXT1-foundation
+    allowed_paths: [prototypes/browser-workspace/rich-text-layout.js, tests/browser-workspace/text.model.test.mjs, .delivery/CHG-UNRULY-RTEXT1-1018/]
+    test_paths: [tests/browser-workspace/text.model.test.mjs, tests/browser-workspace/text.browser.cjs]
+    tests:
+      - {id: RTEXT01, command: [node, --test, tests/browser-workspace/text.model.test.mjs], timeout_seconds: 120}
+      - {id: RTEXT02, command: [node, tests/browser-workspace/text.browser.cjs], timeout_seconds: 180}
