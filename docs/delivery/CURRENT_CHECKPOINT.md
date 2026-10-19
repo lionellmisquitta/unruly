@@ -1,3 +1,7 @@
+## PAINTFLOW seven painting fixes — stable candidate ready for cumulative CI
+
+All seven reports implemented. Local focused model suite82 PASS; cache/text23 PASS. Drawing/node, bucket, wand, timelapse/video and all11 new paint-workflow browser cases PASS. Legacy selection, lasso, editable/magnetic paths and all24 deformation cases PASS. Source-layer selection remains a document-space mask while destination painting/fills, eraser and smudge preserve outside pixels; explicit pasted/imported/text object selections replace the mask. Long strokes use nearby bounded512-point edit windows without point loss. System image paste has its own action. Timelapse was already JSON; v2 structural forward operations and atomic lossless legacy compaction avoid re-recording unchanged artwork, retaining32MiB/128MiB limits and up to20000events. New cache v9-20261019-paintflow-1. Cumulative CI/publication pending; do not claim live or physical-device acceptance. Earlier work-in-progress headings are historical where superseded.
+
 ## PAINTFLOW seven-item repair in local regression — 19 October 2026
 
 Base main7c10ce1bc8a30c73d8dff8289f33f5014a14aa97; scoped CHG-UNRULY-PAINTFLOW-1019. Prior deformation postmerge39210961236 confirmed SUCCESS. Owner evening feedback covers clipboard,32MiB timelapse,node editing,selection persistence,bucket,whole-object wand and source-layer→destination-layer paint.
