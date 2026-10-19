@@ -3,7 +3,7 @@
   "base": "588b734692a9f8c5027f0c46f511b0464a54c595",
   "localModels": 45,
   "legacyBrowserCases": 13,
-  "newSelectionCases": 10,
+  "newSelectionCases": 11,
   "readonlyGuard": "PASS",
   "cumulative": "pending",
   "publication": "pending",
@@ -13,5 +13,8 @@
   "limits": [
     "Existing1024px deformation raster surface retained; vectors pixelize only on Apply"
   ],
-  "localTargetedBrowserCases": 23
+  "localTargetedBrowserCases": 24,
+  "emptyOutline": "PASS path and magnetic",
+  "supersededCandidate": "ce3daa96c47be305bd380a7e2a38096a545eab1d",
+  "supersededRun": 39209283040
 }

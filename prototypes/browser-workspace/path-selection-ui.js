@@ -61,5 +61,5 @@ export function initPathSelection({$,canvas,getState,onBegin,onCancel,onSelect,o
   const delta={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];if(delta){consume(e);modify(nodes=>{const n=nodes[index];if(!n)throw Error('Choose a path point');const step=e.shiftKey?10:1;return moveAnchor(nodes,index,{x:n.x+delta[0]*step,y:n.y+delta[1]*step});});return true;}
   if((e.ctrlKey||e.metaKey)&&['c','x','v'].includes(e.key.toLowerCase())||['t','T','v','V','w','W'].includes(e.key)){consume(e);status('Close & select or Cancel the path first');return true;}return false;
  }
- return {sync,start,edit,close,cancel,history,key,editing,dragging:()=>!!drag,active:()=>!!draft};
+ return {sync,start,edit,close,cancel,history,key,editing,dragging:()=>!!drag,active:()=>!!draft,hasPoints:()=>!!draft?.nodes.length};
 }

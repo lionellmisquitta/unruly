@@ -28,3 +28,5 @@ Exact cache-identity test paths (literal-only except focused pattern-warp suite)
 - tests/browser-workspace/history-cache.browser.cjs
 - tests/browser-workspace/raster-tiles.browser.cjs
 - tests/browser-workspace/composition.browser.cjs
+
+Revision1: final entry audit identified an empty path/magnetic draft as no selection. Additionally allow prototypes/browser-workspace/path-selection-ui.js only to expose a hasPoints getter. Empty drafts cancel without restoring prior selection and use whole-layer fallback; nonempty invalid outlines still require completion. Add DEFORMB08 to test empty path/magnetic fallback. First candidate ce3daa96 / CI39209283040 superseded before publication; rerun cumulative on repaired exact source.

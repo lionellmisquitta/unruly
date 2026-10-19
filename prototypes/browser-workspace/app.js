@@ -435,7 +435,7 @@ $('fill-selection').onclick=()=>{if(blocked()||pathEditor?.editing())return;try{
 // One disposable raster target for every selection mode; original history stays untouched.
 function prepareDeformation(){
  if(maskTarget)throw Error('Choose Edit artwork before deformation');
- if(pathEditor?.editing()&&!pathEditor.close())throw Error('Finish a closed selection outline before deformation');
+ if(pathEditor?.editing()){if(!pathEditor.hasPoints())pathEditor.cancel(false);else if(!pathEditor.close())throw Error('Finish a closed selection outline before deformation');}
  const original=h.board,l=editable(original);let base=original,id;
  if(wandRegion){const prepared=prepareRegionTransform(h,wandRegion);base=prepared.working.board;id=prepared.id;}
  else{
