@@ -1,0 +1,17 @@
+{
+  "status": "LOCAL_VERIFIED_CI_PENDING",
+  "base": "588b734692a9f8c5027f0c46f511b0464a54c595",
+  "localModels": 45,
+  "legacyBrowserCases": 13,
+  "newSelectionCases": 10,
+  "readonlyGuard": "PASS",
+  "cumulative": "pending",
+  "publication": "pending",
+  "remainingAcceptance": [
+    "Physical-device workflow trial"
+  ],
+  "limits": [
+    "Existing1024px deformation raster surface retained; vectors pixelize only on Apply"
+  ],
+  "localTargetedBrowserCases": 23
+}
