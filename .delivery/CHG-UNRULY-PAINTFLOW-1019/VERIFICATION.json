@@ -1,0 +1,10 @@
+{
+  "status": "WIP_LOCAL_REGRESSION_RUNNING",
+  "base": "7c10ce1bc8a30c73d8dff8289f33f5014a14aa97",
+  "localModelTests": 82,
+  "initialWorkflowBrowserCases": 6,
+  "simpleActualPenNodeDrag": "PASS baseline",
+  "cumulative": "NOT_STARTED",
+  "publication": "NOT_PUBLISHED",
+  "next": "Finish current local suites; diagnose first failure excerpts; add migration and dense-node evidence, cache bump, stable candidate CI, source/hosted verification"
+}

@@ -1,5 +1,6 @@
+import {forwardHistory,restoreHistory} from './history-patch.js';
 // Timelapse v1: bounded forward text deltas. No document/DOM/storage mutation.
-export const timeLimits=Object.freeze({events:2000,bytes:32*1024*1024,totalBytes:128*1024*1024,boardBytes:8*1024*1024,pending:4});
+export const timeLimits=Object.freeze({events:20000,bytes:32*1024*1024,totalBytes:128*1024*1024,boardBytes:8*1024*1024,pending:4});
 const bytes=s=>new TextEncoder().encode(s).length;
 const fail=()=>{throw Error('Invalid timelapse recording · original data preserved');};
 const keys=(x,want)=>x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).sort().join(',')===want.split(',').sort().join(',');
@@ -10,10 +11,32 @@ export function sameArtwork(a,b){if(a===b)return true;if(!a||!b)return false;con
 // Retained fragments own their backing; a tiny delta must not pin an8MiB old board.
 function ownedText(text){let out='';for(let start=0;start<text.length;start+=8192){const units=new Uint16Array(Math.min(8192,text.length-start));for(let i=0;i<units.length;i++)units[i]=text.charCodeAt(start+i);out+=String.fromCharCode(...units);}return out;}
 export function textDelta(before,after){let start=0,end=0;while(start<before.length&&start<after.length&&before[start]===after[start])start++;while(end<before.length-start&&end<after.length-start&&before[before.length-1-end]===after[after.length-1-end])end++;return{start,remove:before.length-start-end,insert:ownedText(after.slice(start,after.length-end))};}
-export function validateEvent(e){if(!keys(e,'at,gap,view,delta')||!Number.isSafeInteger(e.at)||e.at<0||e.at>365*86400000||typeof e.gap!=='boolean'||!keys(e.view,'x,y,scale')||![e.view.x,e.view.y].every(n=>Number.isFinite(n)&&Math.abs(n)<=1e9)||!Number.isFinite(e.view.scale)||e.view.scale<.1||e.view.scale>8)fail();const d=e.delta;if(!keys(d,'start,remove,insert')||![d.start,d.remove].every(n=>Number.isSafeInteger(n)&&n>=0&&n<=timeLimits.boardBytes)||typeof d.insert!=='string'||d.insert.length>timeLimits.boardBytes)fail();return e;}
-export function applyEvent(text,event){validateEvent(event);const d=event.delta;if(d.start+d.remove>text.length||text.length-d.remove+d.insert.length>timeLimits.boardBytes)fail();const next=text.slice(0,d.start)+d.insert+text.slice(d.start+d.remove);if(bytes(next)>timeLimits.boardBytes)fail();return next;}
+// Imported operations are bounded before the shared, non-mutating patch kernel runs.
+function validateOperations(patch){
+ let count=0;const integer=n=>Number.isSafeInteger(n)&&n>=0&&n<=timeLimits.boardBytes, key=k=>typeof k==='string'&&k.length<=256&&!['__proto__','prototype','constructor'].includes(k);
+ function value(v,depth){if(++count>500000||depth>64)fail();if(v===null||typeof v==='boolean'||typeof v==='string'||typeof v==='number'&&Number.isFinite(v))return;if(Array.isArray(v)){for(const x of v)value(x,depth+1);return;}if(v&&Object.getPrototypeOf(v)===Object.prototype){for(const[k,x]of Object.entries(v)){if(!key(k))fail();value(x,depth+1);}return;}fail();}
+ function strings(a){if(!Array.isArray(a)||a.some(k=>!key(k))||new Set(a).size!==a.length)fail();}
+ function pairs(a,fn){if(!Array.isArray(a))fail();for(const x of a){if(!Array.isArray(x)||x.length!==2||!key(x[0]))fail();fn(x[1]);}if(new Set(a.map(x=>x[0])).size!==a.length)fail();}
+ function op(p,depth=0){if(++count>500000||depth>64||!Array.isArray(p))fail();switch(p[0]){
+ case 'set':if(p.length!==2)fail();value(p[1],depth+1);break;
+ case 'text':if(p.length!==4||!integer(p[1])||!integer(p[2])||typeof p[3]!=='string')fail();break;
+ case 'splice':if(p.length!==4||!integer(p[1])||!integer(p[2])||!Array.isArray(p[3]))fail();value(p[3],depth+1);break;
+ case 'object':if(p.length!==4&&p.length!==5)fail();pairs(p[1],x=>value(x,depth+1));strings(p[2]);pairs(p[3],x=>op(x,depth+1));if(p[4]!=null)strings(p[4]);break;
+ case 'ids':if(p.length!==4||!Array.isArray(p[2]))fail();strings(p[1]);value(p[2],depth+1);pairs(p[3],x=>op(x,depth+1));break;
+ case 'tiles':if(p.length!==4||!Number.isInteger(p[1])||!Number.isInteger(p[2])||p[1]<1||p[2]<1||p[1]>1024||p[2]>1024||!Array.isArray(p[3]))fail();for(const t of p[3]){if(!Array.isArray(t)||t.length!==3||!integer(t[0])||!integer(t[1])||t[0]>=p[1]||t[1]>=p[2]||t[0]%64||t[1]%64)fail();if(t[2]!==null){if(!['set','text'].includes(t[2]?.[0]))fail();op(t[2],depth+1);}}break;
+ default:fail();}}
+ if(bytes(JSON.stringify(patch))>timeLimits.boardBytes)fail();op(patch);return patch;
+}
+export function operationDelta(before,after){if(!before)return textDelta(before,after);const legacy=textDelta(before,after),patch=forwardHistory(JSON.parse(before),JSON.parse(after)),compact={patch};return bytes(JSON.stringify(compact))<bytes(JSON.stringify(legacy))?compact:legacy;}
+export async function compactRecording(log,validate,yieldTask=()=>Promise.resolve()){
+ await validateRecording(log,validate,yieldTask);let text='',previous='';const events=[];
+ for(let i=0;i<log.events.length;i++){const e=log.events[i];text=applyEvent(text,e);events.push({...e,view:{...e.view},delta:operationDelta(previous,text)});previous=text;if(i%16===15)await yieldTask();}
+ const compact={version:events.some(e=>e.delta.patch)?2:1,boardId:log.boardId,events};return {log:compact,bytes:recordingHeader(compact)};
+}
+export function validateEvent(e){if(!keys(e,'at,gap,view,delta')||!Number.isSafeInteger(e.at)||e.at<0||e.at>365*86400000||typeof e.gap!=='boolean'||!keys(e.view,'x,y,scale')||![e.view.x,e.view.y].every(n=>Number.isFinite(n)&&Math.abs(n)<=1e9)||!Number.isFinite(e.view.scale)||e.view.scale<.1||e.view.scale>8)fail();const d=e.delta;if(keys(d,'patch'))validateOperations(d.patch);else if(!keys(d,'start,remove,insert')||![d.start,d.remove].every(n=>Number.isSafeInteger(n)&&n>=0&&n<=timeLimits.boardBytes)||typeof d.insert!=='string'||d.insert.length>timeLimits.boardBytes)fail();return e;}
+export function applyEvent(text,event){validateEvent(event);const d=event.delta;if(d.patch){if(!text)fail();const next=JSON.stringify(restoreHistory(JSON.parse(text),{historyPatch:1,patch:d.patch}));if(bytes(next)>timeLimits.boardBytes)fail();return next;}if(d.start+d.remove>text.length||text.length-d.remove+d.insert.length>timeLimits.boardBytes)fail();const next=text.slice(0,d.start)+d.insert+text.slice(d.start+d.remove);if(bytes(next)>timeLimits.boardBytes)fail();return next;}
 export function eventBytes(event){validateEvent(event);return bytes(JSON.stringify(event));}
-export function recordingHeader(log){if(!keys(log,'version,boardId,events')||log.version!==1||!validTimeId(log.boardId)||!Array.isArray(log.events)||!log.events.length||log.events.length>timeLimits.events)fail();let at=-1,total=0;for(const e of log.events){validateEvent(e);if(e.at<at)fail();at=e.at;total+=eventBytes(e);if(total>timeLimits.bytes)fail();}if(log.events[0].at!==0||log.events[0].delta.start!==0||log.events[0].delta.remove!==0)fail();return total;}
+export function recordingHeader(log){if(!keys(log,'version,boardId,events')||![1,2].includes(log.version)||!validTimeId(log.boardId)||!Array.isArray(log.events)||!log.events.length||log.events.length>timeLimits.events)fail();let at=-1,total=0;for(const e of log.events){validateEvent(e);if(log.version===1&&e.delta.patch)fail();if(e.at<at)fail();at=e.at;total+=eventBytes(e);if(total>timeLimits.bytes)fail();}if(log.events[0].at!==0||log.events[0].delta.start!==0||log.events[0].delta.remove!==0)fail();return total;}
 export function frameText(log,index,validate){if(!Number.isInteger(index)||index<0||index>=log.events.length)fail();let text='';for(let i=0;i<=index;i++)text=applyEvent(text,log.events[i]);const b=JSON.parse(text);validate(b);if(b.id!==log.boardId)fail();return{text,board:b,view:{...log.events[index].view}};}
 export async function validateRecording(log,validate,yieldTask=()=>Promise.resolve()){const total=recordingHeader(log);let text='';for(let i=0;i<log.events.length;i++){text=applyEvent(text,log.events[i]);const b=JSON.parse(text);validate(b);if(b.id!==log.boardId)fail();if(i%16===15)await yieldTask();}return{bytes:total,text};}
 export function timeline(events,skipIdle=true){let time=0;return events.map((e,i)=>{if(i){const raw=Math.max(16,e.at-events[i-1].at);time+=skipIdle?Math.min(raw,1000):raw;}return time;});}
@@ -21,6 +44,6 @@ export function frameAtTime(times,time){let low=0,high=times.length-1;while(low<
 // Rebind recorded root board identities only, after full validation and explicit UI consent.
 export async function attachRecording(log,boardId,validate,yieldTask=()=>Promise.resolve()){
  if(!validTimeId(boardId))fail();await validateRecording(log,validate,yieldTask);let text='',previous='';const events=[];
- for(let i=0;i<log.events.length;i++){const e=log.events[i];text=applyEvent(text,e);const b=JSON.parse(text);b.id=boardId;validate(b);const next=JSON.stringify(b);events.push({...e,view:{...e.view},delta:textDelta(previous,next)});previous=next;if(i%16===15)await yieldTask();}
- const result={version:1,boardId,events};recordingHeader(result);return result;
+ for(let i=0;i<log.events.length;i++){const e=log.events[i];text=applyEvent(text,e);const b=JSON.parse(text);b.id=boardId;validate(b);const next=JSON.stringify(b);events.push({...e,view:{...e.view},delta:operationDelta(previous,next)});previous=next;if(i%16===15)await yieldTask();}
+ const result={version:events.some(e=>e.delta.patch)?2:1,boardId,events};recordingHeader(result);return result;
 }

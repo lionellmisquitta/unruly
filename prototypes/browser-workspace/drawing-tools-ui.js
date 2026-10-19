@@ -16,7 +16,7 @@ export function initDrawingTools({$,canvas,getState,onStart,onCommit,onPreview,o
   try{const s=editedArtwork(draft.stroke,draft.nodes,draft),b=clone(draft.board),l=b.layers.find(l=>l.id===draft.layerId);if(s.artworkPath){b.version=Math.max(15,b.version);b.folders=b.folders||[];}if(draft.existing)l.strokes=l.strokes.map(x=>x.id===s.id?s:x);else l.strokes.push(s);onPreview(b);draft.error='';}
   catch(e){onPreview(null);draft.error=e.message;}sync();onChange();
  }
- function create(stroke,existing=false){const s=getState(),data=existing?artworkNodes(stroke):{nodes:[],closed:false,authored:true};draft={...data,stroke:clone(stroke),existing,board:s.board,layerId:s.layerId,past:[],future:[],error:''};picking=false;index=0;if(data.stale)status('Curve source changed after erase · editing current artwork points');preview();}
+ function create(stroke,existing=false,near=null){const s=getState(),data=existing?artworkNodes(stroke,near):{nodes:[],closed:false,authored:true};draft={...data,stroke:clone(stroke),existing,board:s.board,layerId:s.layerId,past:[],future:[],error:''};picking=false;index=0;if(near)for(let i=1;i<draft.nodes.length;i++)if(Math.hypot(draft.nodes[i].x-near.x,draft.nodes[i].y-near.y)<Math.hypot(draft.nodes[index].x-near.x,draft.nodes[index].y-near.y))index=i;if(data.stale)status('Curve source changed after erase · editing current artwork points');preview();}
  function begin(mode){
   if(getState().blocked||!getState().writable){status('Finish the current edit and choose an unlocked visible artwork layer',true);return;}
   onStart();const s=getState();if(!s.writable)return;
@@ -29,8 +29,8 @@ export function initDrawingTools({$,canvas,getState,onStart,onCommit,onPreview,o
  function startDrag(e,i,key,before,newPoint=false){drag={id:e.pointerId,index:i,key,before,view:{...getState().view},start:point(e),newPoint};try{e.currentTarget.setPointerCapture(e.pointerId);}catch{}}
  canvas.addEventListener('pointerdown',e=>{
   if(!draft&&!picking||e.pointerType==='touch'||e.button!==0||e.pointerType==='pen'&&e.pressure===0&&!(e.buttons&1))return;consume(e);
-  try{const s=getState(),p=point(e);if(picking){const stroke=nearestArtwork(s.strokes,p,s.view.scale);if(!stroke){status('No vector stroke near that point');return;}create(stroke,true);return;}
-   if(!same()){cancel();return;}if(draft.existing){status('Drag a displayed point/handle or choose its node index');return;}
+  try{const s=getState(),p=point(e);if(picking){const stroke=nearestArtwork(s.strokes,p,s.view.scale);if(!stroke){status('No vector nodes here · pixel artwork uses Transform or Deform');return;}create(stroke,true,p);return;}
+   if(!same()){cancel();return;}if(draft.existing){let nearest=0;for(let i=1;i<draft.nodes.length;i++)if(Math.hypot(draft.nodes[i].x-p.x,draft.nodes[i].y-p.y)<Math.hypot(draft.nodes[nearest].x-p.x,draft.nodes[nearest].y-p.y))nearest=i;index=nearest;sync();if(Math.hypot(draft.nodes[index].x-p.x,draft.nodes[index].y-p.y)*s.view.scale<=18)startDrag(e,index,'anchor',snapshot());status('Drag the selected node · Apply keeps the edit');return;}
    if(draft.nodes.length>=64)throw Error('Curve anchor limit64 · remove a point first');const before=snapshot();draft.nodes.push({...p,pressure:e.pointerType==='pen'?Math.max(0,Math.min(1,e.pressure)):null});index=draft.nodes.length-1;startDrag(e,index,'new',before,true);preview();
   }catch(err){status(err.message,true);}
  },true);
@@ -56,7 +56,7 @@ export function initDrawingTools({$,canvas,getState,onStart,onCommit,onPreview,o
   if(['vertical','both'].includes(guide.symmetry))line(center.x,0,center.x,rect.height);
   if(['horizontal','both'].includes(guide.symmetry))line(0,center.y,rect.width,center.y);
   if(guide.mode==='grid'){let step=guide.spacing*v.scale;while(step<16)step*=2;for(let x=((center.x%step)+step)%step;x<rect.width;x+=step)line(x,0,x,rect.height);for(let y=((center.y%step)+step)%step;y<rect.height;y+=step)line(0,y,rect.width,y);}
-  $('artwork-editor-controls').hidden=!draft&&!picking;$('artwork-state').textContent=picking?'Tap an active-layer ink stroke':draft?(draft.error||draft.nodes.length+' nodes · '+(draft.authored?'curve anchors':'actual artwork points')):'';
+  $('artwork-editor-controls').hidden=!draft&&!picking;$('artwork-state').textContent=picking?'Tap an active-layer ink stroke':draft?(draft.error||draft.nodes.length+' nodes'+(draft.pointCount?' in this section (from '+(draft.pointOffset+1)+')':'')+' · '+(draft.authored?'curve anchors':'actual artwork points')):'';
   for(const id of ['artwork-apply','artwork-undo','artwork-redo','artwork-remove','artwork-corner','artwork-curve','artwork-x','artwork-y','artwork-index','artwork-closed'])$(id).disabled=!draft||!!drag||id==='artwork-apply'&&!!draft.error;
   $('artwork-undo').disabled=!draft?.past.length||!!drag;$('artwork-redo').disabled=!draft?.future.length||!!drag;
   if(draft||picking){$('undo').disabled=true;$('redo').disabled=true;}
