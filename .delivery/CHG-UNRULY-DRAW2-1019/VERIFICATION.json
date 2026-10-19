@@ -1,5 +1,5 @@
 {
-  "status": "VERIFIED_UNPUBLISHED",
+  "status": "PUBLISHED_HOSTED_VERIFIED",
   "source": "766c36c5dff48008c06013be2b75261eca431f19",
   "tree": "a3aeb6f25410a9df862c11a428e83c374b9442a4",
   "qaRun": 39159779031,
@@ -15,5 +15,11 @@
     "Physical tablet gesture feel",
     "Pose starter usefulness on owner artwork",
     "Human model accuracy on stylized or occluded subjects; animal inference unsupported"
-  ]
+  ],
+  "merge": "b5bed3ba73fe42cea6c16ce5fff3b3a767dbc71b",
+  "releaseTree": "7d057feba5f1a9c4ff36e877e1670f15b459e675",
+  "publicationRun": 39192881555,
+  "hostedFilesVerified": 94,
+  "postmergeRun": 39192881633,
+  "postmergeStatus": "pending at receipt"
 }
