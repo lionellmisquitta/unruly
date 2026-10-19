@@ -1,5 +1,5 @@
 {
-  "status": "VERIFIED_UNPUBLISHED",
+  "status": "PUBLISHED_HOSTED_VERIFIED",
   "base": "66e4ca9067357fd769b2a89ab6fad17c94542628",
   "baselineReproduced": [
     "Pinch223.6068% reverted100% on release",
@@ -18,7 +18,7 @@
     "Physical Surface/Xiaomi pen and touch feel"
   ],
   "cumulative": 39205940929,
-  "publication": "pending",
+  "publication": 39206849003,
   "source": "03b7055e1245221c253ad75663c141f5721e460d",
   "artifactId": 12165632355,
   "artifactDigest": "sha256:cfaf9742a1e1ff04246c70b26cf70ea29e90407fce8455bd1cb3865b85fbe351",
@@ -26,5 +26,10 @@
   "browserScenarios": 499,
   "sourceHashes": 213,
   "legacyConsoleChecks": 2,
-  "allPassed": true
+  "allPassed": true,
+  "merge": "8218f000533c71706f2ce74ae2a5353af4452208",
+  "releaseTree": "ef85a9573fd9f2c09da5eb5131ece34a988af82d",
+  "hostedFilesVerified": 94,
+  "postmergeRun": 39206849104,
+  "postmergeStatus": "running at receipt"
 }
