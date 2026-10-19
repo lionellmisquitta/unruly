@@ -1,0 +1,22 @@
+{
+  "status": "LOCAL_VERIFIED_CI_PENDING",
+  "base": "66e4ca9067357fd769b2a89ab6fad17c94542628",
+  "baselineReproduced": [
+    "Pinch223.6068% reverted100% on release",
+    "Real pen scale handle rejected with full document history"
+  ],
+  "localModels": 33,
+  "localBrowserSuite": 34,
+  "additionalPartialPixelCase": "PASS",
+  "regressionCases": [
+    "TRANSFORMB01",
+    "TRANSFORMB02",
+    "TRANSFORMB03"
+  ],
+  "scope": "app.js local capacity only; separate bounded draft history; sw.js cache bump",
+  "remainingAcceptance": [
+    "Physical Surface/Xiaomi pen and touch feel"
+  ],
+  "cumulative": "pending",
+  "publication": "pending"
+}
