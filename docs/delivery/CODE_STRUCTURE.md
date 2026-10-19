@@ -1,3 +1,17 @@
+## DRAW2 cumulative verification PASS — 19 October 2026
+
+Exact candidate `766c36c5dff48008c06013be2b75261eca431f19`, [CI39159779031](https://github.com/lionellmisquitta/unruly/actions/runs/39159779031): all six shards and aggregate SUCCESS. Canonical artifact12148632040 SHA256 `b863b2517931eb00d6c60ac593c2c428db15c7c406f2e12705594f63a34e297d` downloaded and verified:674model tests,496browser scenarios,2legacy checks,213source hashes, all PASS; six shard identities match. Real image inference and separate hair/pose layer screenshots reviewed. Publication guard pins this exact tested source and artifact. PR45 ready for authorized main/Pages publication; publication not yet claimed.
+
+All13 feedback items remain mapped in .delivery/CHG-UNRULY-DRAW2-1019/FEEDBACK_VALIDATION.md. Physical tablet gesture feel, pose usefulness and inference accuracy on stylized/occluded subjects require owner trial. Human inference does not cover animals; all broader roadmap requirements retained. Same-session verification, no independent review claim. No graph or skill changes. Earlier pending headings are historical where superseded.
+
+## DRAW2 gesture and panel integration repair — 19 October 2026
+
+gestures.js accepts optional redo-specific limits while preserving its default Undo/hold contract. app.js supplies only redo overrides; long holds and invalid two-finger chords retain old behavior. Floating dock is below expanded panels/legacy references; recording status is above the update footer. Detection acceptance polls durable storage from Node and verifies source again after reload. Complete674models and targeted browser suites pass locally; cumulative verification pending. Logical responsibilities only, no graph/skill edits.
+
+## DRAW2 native editable drawing references — 19 October 2026
+
+Raster stroke `guide` metadata stores validated pose joints and 3D/proportion/hair source with ordinary native backup/history. drawing-reference.js owns pure validation, joint edits, perspective transport, export projection and image swatches. drawing-reference-ui.js owns native raster generation and a modal joint editor over reference-image layers, edited-pose library backup/import and draft cancellation. pose-ui.js retains legacy overlay compatibility but primary Apply adds/updates a native layer; Hair guides is independent. pose-detection.js lazily downloads pinned MediaPipe runtime/model after explicit action and returns estimated 2D joints; no image upload. app.js binds native commits, layer edit/transform/detection actions, cancellation and video exclusion. model.js validates metadata; pattern-warp.js transports its joints; artwork-export.js filters guide strokes. palettes-ui.js adds extraction/dock; timelapse-ui.js adds opt-out automatic capture. Existing renderer/storage formats and architecture remain; source is additive metadata with raster fallback. This is a logical map, not generated AST evidence. Browser verification pending.
+
 ## DRAW1A reference entry contract — 18 October 2026
 
 index.html disables Add reference during startup; app.js checks history readiness before reference entry and syncReference enables the appropriate Add/Show action once a board exists. Existing image decoder/editor/reference storage contracts are unchanged. W15 delays actual openStore startup; IMPB05 exercises the complete new entry route. Logical responsibility note; W15/IMPB05 and full cumulative39151055670 PASS on4d3bda3; same-session verification.

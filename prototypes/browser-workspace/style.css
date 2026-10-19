@@ -180,3 +180,13 @@ body.focus-mode #focus-exit{display:block}
 #inspector>.layer-organization section[aria-label="Virtual Groups"] button{width:100%}
 #brush-popover>.panel-heading{margin-bottom:4px}
 #brush-popover>.brush-library{margin-top:4px}
+
+#quick-colours{position:fixed;z-index:2;top:64px;right:12px;max-width:min(300px,calc(100vw - 100px));padding:7px;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 12px #0003}.quick-heading{display:flex;gap:5px}.quick-heading button{font-size:12px;min-height:32px;padding:4px 8px}#quick-colours-content>span{display:block;font-size:10px;color:var(--muted);margin:5px 0 3px}#quick-recent,#quick-swatches{display:flex;gap:4px;flex-wrap:wrap}#quick-recent button,#quick-swatches button{width:26px;height:26px;min-width:26px;min-height:26px;border:1px solid #888;border-radius:4px;padding:0}#quick-colours-content[hidden]{display:none}@media(max-width:600px){#quick-colours{top:104px;right:8px;max-width:208px}#quick-swatches button:nth-child(n+7){display:none}}.timelapse-replaying #quick-colours{display:none}
+
+#pose-detect-cancel{position:fixed;bottom:72px;left:50%;transform:translateX(-50%);z-index:40}#pose-detect-cancel[hidden]{display:none}
+
+.quick-heading{flex-wrap:wrap}
+
+#reference-panel{z-index:3}
+
+#timelapse-status{bottom:36px}

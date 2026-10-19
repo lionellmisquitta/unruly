@@ -11,6 +11,8 @@ export function euler(x=0,y=0,z=0){const a=x*rad/2,b=y*rad/2,c=z*rad/2;return qm
 export function toEuler(q){const [x,y,z,w]=q;return [Math.atan2(2*(w*x+y*z),1-2*(x*x+y*y)),Math.asin(Math.max(-1,Math.min(1,2*(w*y-z*x)))),Math.atan2(2*(w*z+x*y),1-2*(y*y+z*z))].map(v=>v/rad);}
 function fromTo(a,b){a=unit(a);b=unit(b);const d=dot(a,b);if(d<-.999999){const axis=unit(cross(a,Math.abs(a[0])<.8?[1,0,0]:[0,1,0]));return [...axis,0];}const q=[...cross(a,b),1+d];return mul(q,1/norm(q));}
 export const profiles={adult:{torso:1.25,shoulders:.75,hips:.48,upperArm:.82,forearm:.76,thigh:1.1,shin:1.05,neck:.25,head:.34},child:{torso:.95,shoulders:.55,hips:.4,upperArm:.62,forearm:.58,thigh:.8,shin:.78,neck:.18,head:.42},chibi:{torso:.7,shoulders:.48,hips:.38,upperArm:.45,forearm:.42,thigh:.52,shin:.5,neck:.15,head:.65}};
+profiles.feminine={...profiles.adult,shoulders:.62,hips:.62,torso:1.18,upperArm:.78,forearm:.72};
+profiles.masculine={...profiles.adult,shoulders:.88,hips:.48,torso:1.3};
 export const profileLabels={torso:'Torso length',shoulders:'Shoulder half-width',hips:'Hip half-width',upperArm:'Upper arm',forearm:'Forearm',thigh:'Thigh',shin:'Shin',neck:'Neck',head:'Head radius'};
 export function rig(p){return [
 {id:'pelvis',parent:null,v:[0,0,0]}, {id:'chest',parent:'pelvis',v:[0,p.torso,0]}, {id:'neck',parent:'chest',v:[0,p.neck,0]}, {id:'head',parent:'neck',v:[0,p.head,0]},
@@ -37,7 +39,7 @@ export function saveRecord(library,state,{id,name,kind,update=false}){const l=va
 export function mergeLibrary(library,incoming,newId){const l=validateLibrary(library),other=validateLibrary(incoming);l.records.push(...other.records.map(r=>({...r,id:newId()})));l.placements.push(...other.placements.filter(r=>!l.placements.some(p=>p.board===r.board)));return validateLibrary(l);}
 // Angles are deliberately stylized, authored here, reusable with any proportion profile.
 const starts=[
-['neutral','Neutral',{}],['carry','Carrying a box',{leftElbow:[0,0,-65],rightElbow:[0,0,65],leftWrist:[0,-75,0],rightWrist:[0,75,0]},'box'],
+['contrapposto','Contrapposto / relaxed S curve',{pelvis:[0,0,-12],chest:[0,0,16],head:[0,0,-5],leftElbow:[0,0,-80],rightElbow:[0,0,75],rightKnee:[0,0,-12]}],['hip-hand','Hand on hip',{pelvis:[0,0,10],chest:[0,0,-12],leftElbow:[0,0,-55],leftWrist:[0,0,-100],rightElbow:[0,0,80]}],['reach','Reaching / stretched line',{pelvis:[0,0,15],chest:[0,0,-25],rightElbow:[0,0,-125],leftElbow:[0,0,-65],leftKnee:[0,0,10]}],['seated','Seated / crossed leg',{pelvis:[0,0,-8],chest:[0,0,12],leftKnee:[-90,0,15],rightKnee:[-95,0,-25],leftAnkle:[90,0,0],rightAnkle:[95,0,0],leftElbow:[0,0,-75],rightElbow:[0,0,70]}],['dance','Dance / arabesque',{pelvis:[10,0,-10],chest:[-10,0,20],leftElbow:[0,0,45],rightElbow:[0,0,-110],leftKnee:[55,0,30],leftAnkle:[0,0,-30]}],['neutral','Neutral',{}],['carry','Carrying a box',{leftElbow:[0,0,-65],rightElbow:[0,0,65],leftWrist:[0,-75,0],rightWrist:[0,75,0]},'box'],
 ['carry-child','Cradling / carrying',{chest:[0,0,8],leftElbow:[0,0,-75],rightElbow:[0,0,60],leftWrist:[0,-85,0],rightWrist:[0,75,-15]},'object'],
 ['pull','Pulling',{pelvis:[-15,0,0],leftElbow:[0,-65,-25],rightElbow:[0,65,25],leftWrist:[0,0,-35],rightWrist:[0,0,35],leftKnee:[-30,0,0],rightKnee:[25,0,0]},'object'],
 ['push','Pushing',{pelvis:[20,0,0],leftElbow:[0,-80,-10],rightElbow:[0,80,10],leftKnee:[-35,0,0],rightKnee:[25,0,0]},'object'],

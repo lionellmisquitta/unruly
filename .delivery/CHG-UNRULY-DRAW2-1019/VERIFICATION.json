@@ -1,0 +1,19 @@
+{
+  "status": "VERIFIED_UNPUBLISHED",
+  "source": "766c36c5dff48008c06013be2b75261eca431f19",
+  "tree": "a3aeb6f25410a9df862c11a428e83c374b9442a4",
+  "qaRun": 39159779031,
+  "artifactId": 12148632040,
+  "artifactDigest": "sha256:b863b2517931eb00d6c60ac593c2c428db15c7c406f2e12705594f63a34e297d",
+  "models": 674,
+  "browserScenarios": 496,
+  "legacyConsoleChecks": 2,
+  "sourceHashes": 213,
+  "allPassed": true,
+  "review": "Same-session verification; no independent review claimed",
+  "remainingAcceptance": [
+    "Physical tablet gesture feel",
+    "Pose starter usefulness on owner artwork",
+    "Human model accuracy on stylized or occluded subjects; animal inference unsupported"
+  ]
+}
