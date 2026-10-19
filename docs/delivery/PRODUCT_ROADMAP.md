@@ -1,3 +1,9 @@
+## TRANSFORM repair cumulative PASS — 19 October 2026
+
+Exact candidate `03b7055e1245221c253ad75663c141f5721e460d`, [CI39205940929](https://github.com/lionellmisquitta/unruly/actions/runs/39205940929) all six shards and aggregate SUCCESS. Canonical artifact12165632355 SHA256 `cfaf9742a1e1ff04246c70b26cf70ea29e90407fce8455bd1cb3865b85fbe351` verified:674model tests,499browser scenarios,2legacy checks,213source hashes; six shard identities match. New full-history CDP pinch/rotation, real pen handles and partial-pixel lasso pass, including release persistence, Apply/Undo/Redo/reload and Cancel preserving100 document entries. Local baseline reproduction captured pinch223.6068% reverting100% and blocked pen resize before repair. First candidate failed cache-name assertions; repaired tests retain offline guarantees.
+
+Draft transform/shape history now has its own bounded100-entry/16MiB budget; document Undo cannot consume the first draft edit. Existing Apply/Cancel workflow and document-history bounds retained. Source and artifact pinned for authorized publication through PR47; not yet claimed live. Physical Surface/Xiaomi feel remains owner acceptance. All broader requirements retained; no graph/skill changes. Earlier pending headings historical where superseded.
+
 ## TRANSFORM cache-test repair — 19 October 2026
 
 Candidate2c4361bf9c7438d75e21b6c33b8113c97aebce95 / CI39205699292 failed offline assertions pinned to prior DRAW2 cache.18 cache-name literals updated to new identity; no offline or module-preservation assertions removed. Scope revision recorded before upload. Full local U3 and all3 full-history cases plus existing pixel-lasso suite PASS. Repaired cumulative pending; repair not published.
