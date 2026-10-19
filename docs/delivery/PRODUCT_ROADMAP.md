@@ -1,3 +1,19 @@
+## TRANSFORM repair cumulative PASS — 19 October 2026
+
+Exact candidate `03b7055e1245221c253ad75663c141f5721e460d`, [CI39205940929](https://github.com/lionellmisquitta/unruly/actions/runs/39205940929) all six shards and aggregate SUCCESS. Canonical artifact12165632355 SHA256 `cfaf9742a1e1ff04246c70b26cf70ea29e90407fce8455bd1cb3865b85fbe351` verified:674model tests,499browser scenarios,2legacy checks,213source hashes; six shard identities match. New full-history CDP pinch/rotation, real pen handles and partial-pixel lasso pass, including release persistence, Apply/Undo/Redo/reload and Cancel preserving100 document entries. Local baseline reproduction captured pinch223.6068% reverting100% and blocked pen resize before repair. First candidate failed cache-name assertions; repaired tests retain offline guarantees.
+
+Draft transform/shape history now has its own bounded100-entry/16MiB budget; document Undo cannot consume the first draft edit. Existing Apply/Cancel workflow and document-history bounds retained. Source and artifact pinned for authorized publication through PR47; not yet claimed live. Physical Surface/Xiaomi feel remains owner acceptance. All broader requirements retained; no graph/skill changes. Earlier pending headings historical where superseded.
+
+## TRANSFORM cache-test repair — 19 October 2026
+
+Candidate2c4361bf9c7438d75e21b6c33b8113c97aebce95 / CI39205699292 failed offline assertions pinned to prior DRAW2 cache.18 cache-name literals updated to new identity; no offline or module-preservation assertions removed. Scope revision recorded before upload. Full local U3 and all3 full-history cases plus existing pixel-lasso suite PASS. Repaired cumulative pending; repair not published.
+
+## TRANSFORM history repair LOCALLY VERIFIED — 19 October 2026
+
+Owner real-artwork feedback: lasso pinch/twist preview reverts on release, capacity warning before edits and pen scale handle rejects. Reproduced on published DRAW2 with105 document commands: real CDP pinch223.6068% reverted to100%; real pen scale rejected. Root cause: shared100-slot document/draft history budget. Scoped repair gives drafts their own bounded100-entry/16MiB history; document Undo remains untouched until Apply. Existing real-local-capacity rejection retained, combined-slot test explicitly revised to the new contract. New regression checks full-history pinch/rotate release, Apply/Undo/Redo/reload and pen scale/rotate/Cancel/history preservation. Scope: .delivery/CHG-UNRULY-TRANSFORM-1019/IMPACT_PLAN.md.
+
+Base main66e4ca9067357fd769b2a89ab6fad17c94542628. Prior DRAW2 postmerge39192881633 SUCCESS. Local33model checks and full34-case U3 browser suite PASS; all three saturated-history regressions including partial-pixel lasso PASS. Cumulative verification and publication of this repair pending. Do not claim this repair live until source and hosted bytes verified. All remaining feedback/user acceptance and broader roadmap retained. No graph or skill changes. Earlier sections historical where superseded.
+
 ## DRAW2 PUBLISHED — 19 October 2026
 
 [PR45](https://github.com/lionellmisquitta/unruly/pull/45) merged as `b5bed3ba73fe42cea6c16ce5fff3b3a767dbc71b`, exact reviewed release tree `7d057feba5f1a9c4ff36e877e1670f15b459e675`. [Publication39192881555](https://github.com/lionellmisquitta/unruly/actions/runs/39192881555) SUCCESS: pinned source/artifact guard and all94hosted-file byte comparisons PASS. [Live application](https://lionellmisquitta.github.io/unruly/). Tested source `766c36c5dff48008c06013be2b75261eca431f19`; cumulative39159779031 all six shards and aggregate PASS:674model tests,496browser scenarios,2legacy checks,213source hashes. Artifact12148632040 SHA256 `b863b2517931eb00d6c60ac593c2c428db15c7c406f2e12705594f63a34e297d`. Cache `v6-20261019-draw2-guides-1`.

@@ -1,0 +1,30 @@
+{
+  "status": "VERIFIED_UNPUBLISHED",
+  "base": "66e4ca9067357fd769b2a89ab6fad17c94542628",
+  "baselineReproduced": [
+    "Pinch223.6068% reverted100% on release",
+    "Real pen scale handle rejected with full document history"
+  ],
+  "localModels": 33,
+  "localBrowserSuite": 34,
+  "additionalPartialPixelCase": "PASS",
+  "regressionCases": [
+    "TRANSFORMB01",
+    "TRANSFORMB02",
+    "TRANSFORMB03"
+  ],
+  "scope": "app.js local capacity only; separate bounded draft history; sw.js cache bump",
+  "remainingAcceptance": [
+    "Physical Surface/Xiaomi pen and touch feel"
+  ],
+  "cumulative": 39205940929,
+  "publication": "pending",
+  "source": "03b7055e1245221c253ad75663c141f5721e460d",
+  "artifactId": 12165632355,
+  "artifactDigest": "sha256:cfaf9742a1e1ff04246c70b26cf70ea29e90407fce8455bd1cb3865b85fbe351",
+  "modelTests": 674,
+  "browserScenarios": 499,
+  "sourceHashes": 213,
+  "legacyConsoleChecks": 2,
+  "allPassed": true
+}
