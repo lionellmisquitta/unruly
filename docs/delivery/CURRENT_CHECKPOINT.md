@@ -1,3 +1,7 @@
+## PAINTFLOW full combined models PASS after compatibility repair
+
+Replacement candidate9ad1a2b9 / cumulative39271874201 found one valid LARGEM03 compatibility defect: exported remainingRegionTiles accepted anonymous layer-shaped inputs, but stable-ID generation assumed layer.id. Added a deterministic fallback for anonymous inputs; actual board-layer IDs remain authoritative. Added PAINTFLOWREGIONM01 asserting repeatable unique bounded IDs, long IDs and source preservation. Full combined local invocation568models PASS; total cumulative expected678 across existing five reports. Existing pixel assertions retained. Three CI browser shards already green; wait for remaining longer suites before final stable source. Prior failed candidates remain unpublished. Exact-source cumulative and all94 hosted-file comparisons still required. Earlier statuses historical where superseded.
+
 ## PAINTFLOW cache fixture alignment before replacement candidate
 
 The first cumulative run also detected offline tests retaining the old cache suffix deform-selection-1 after the release cache became v9-20261019-paintflow-1. Align every remaining exact/suffix offline cache literal, retaining all module, offline and reload assertions. First run is superseded; no runtime changes in manifest/cache-test repair. One replacement exact-source cumulative candidate follows local CI-contract12 PASS and text/cache23 PASS. Earlier statuses historical where superseded.

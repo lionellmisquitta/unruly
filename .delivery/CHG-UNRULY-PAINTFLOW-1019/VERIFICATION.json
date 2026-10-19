@@ -1,5 +1,5 @@
 {
-  "status": "LOCAL_PASS_CUMULATIVE_PENDING",
+  "status": "FULL_LOCAL_MODELS_PASS_FINAL_CANDIDATE_PENDING",
   "base": "7c10ce1bc8a30c73d8dff8289f33f5014a14aa97",
   "localModelTests": 82,
   "workflowBrowserCases": 11,
@@ -18,5 +18,20 @@
   "cache": "v9-20261019-paintflow-1",
   "cumulative": "NOT_STARTED",
   "publication": "NOT_PUBLISHED",
-  "limits": "32MiB recording / 128MiB total / 20000 events; physical-device acceptance remains owner trial"
+  "limits": "32MiB recording / 128MiB total / 20000 events; physical-device acceptance remains owner trial",
+  "combinedLocalModelTests": 568,
+  "expectedCumulativeModels": 678,
+  "expectedBrowserScenarios": 524,
+  "failedCandidates": [
+    {
+      "source": "fade9c8712c3a29245f70e707c5f30fb6f0a877b",
+      "run": 39271504504,
+      "reason": "Additive invocation manifest and cache suffix fixtures"
+    },
+    {
+      "source": "9ad1a2b922037b194ba3b60b646375e0d205a5fc",
+      "run": 39271874201,
+      "reason": "Anonymous utility layer stable-ID compatibility, repaired with regression"
+    }
+  ]
 }
