@@ -94,3 +94,6 @@ export function restoreHistory(current,entry){
  if(entry?.historyPatch!==1||Object.keys(entry).sort().join(',')!=='historyPatch,patch')throw Error('Invalid history entry');
  return apply(copy(current),entry.patch);
 }
+
+// Forward structural operations for bounded timelapse replay; artwork history is unchanged.
+export function forwardHistory(before,after){return ownStrings(difference(after,before)||['object',[],[],[]]);}

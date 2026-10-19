@@ -34,7 +34,7 @@ export function remainingRegionTiles(layer,region,snapshotRegion){
    else if(s.data[i+3])pigment=true;
   }
   if(!pigment)continue;
-  const stroke=rasterStroke(s.data,s.width,s.height,s.x,s.y);bytes+=JSON.stringify(stroke).length;
+  const owner=layer.id??region.layerId??'region',suffix='.tile.'+tile.x+'.'+tile.y,id=owner.length+suffix.length<=128?owner+suffix:owner.slice(0,72)+'.'+Array.from(owner).reduce((h,c)=>Math.imul(h^c.charCodeAt(0),16777619)>>>0,2166136261).toString(16)+suffix;const stroke=rasterStroke(s.data,s.width,s.height,s.x,s.y,id);bytes+=JSON.stringify(stroke).length;
   if(bytes>8*1024*1024)throw Error('Region edit document limit · artwork unchanged');out.push(stroke);
  }
  return out;

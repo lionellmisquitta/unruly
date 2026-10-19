@@ -1,0 +1,50 @@
+{
+  "status": "CUMULATIVE_PASS_PUBLICATION_PREPARED",
+  "base": "7c10ce1bc8a30c73d8dff8289f33f5014a14aa97",
+  "localModelTests": 82,
+  "workflowBrowserCases": 11,
+  "localSuites": [
+    "drawing-tools",
+    "bucket-fill",
+    "wand",
+    "timelapse including video and lossless compaction",
+    "paint-workflow",
+    "selection",
+    "lasso-region",
+    "path-selection",
+    "magnetic-selection",
+    "pattern-warp"
+  ],
+  "cache": "v9-20261019-paintflow-1",
+  "cumulative": "NOT_STARTED",
+  "publication": "NOT_YET_PUBLISHED",
+  "limits": "32MiB recording / 128MiB total / 20000 events; physical-device acceptance remains owner trial",
+  "combinedLocalModelTests": 568,
+  "expectedCumulativeModels": 678,
+  "expectedBrowserScenarios": 524,
+  "failedCandidates": [
+    {
+      "source": "fade9c8712c3a29245f70e707c5f30fb6f0a877b",
+      "run": 39271504504,
+      "reason": "Additive invocation manifest and cache suffix fixtures"
+    },
+    {
+      "source": "9ad1a2b922037b194ba3b60b646375e0d205a5fc",
+      "run": 39271874201,
+      "reason": "Anonymous utility layer stable-ID compatibility, repaired with regression"
+    }
+  ],
+  "candidate": "4e20b9e8da76e958d371e42874c8cc9169b534b1",
+  "sha256": "406e42a58de4aab9cb5a17482b1063f3be56c15515ebc5494cb8fe16ac7d6e69",
+  "sourceHashes": 214,
+  "modelTests": 678,
+  "browserScenarios": 524,
+  "legacyConsoleChecks": 2,
+  "shards": 6,
+  "run": 39273215607,
+  "artifactId": 12197246313,
+  "localCombinedModelTests": 568,
+  "offlineCache": "v9-20261019-paintflow-1",
+  "hostedAssetCount": 94,
+  "review": "Same-session; no independent or physical-device acceptance claim"
+}

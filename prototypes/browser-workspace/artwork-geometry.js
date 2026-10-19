@@ -15,11 +15,11 @@ export function validateArtworkStroke(s,version){
  validateArtworkPath(s.artworkPath);
 }
 export function currentArtworkPath(s){const p=s.artworkPath;if(!p)return false;validateArtworkPath(p);return p.basis.length===s.points.length&&p.basis.every((q,i)=>q.x===s.points[i].x&&q.y===s.points[i].y&&q.pressure===s.points[i].pressure);}
-export function artworkNodes(s){
+export function artworkNodes(s,near=null){
  if(['raster','text'].includes(s.brush)||!Array.isArray(s.points)||s.points.length<2)throw Error('Choose a vector ink stroke with at least two points');
  if(currentArtworkPath(s))return {nodes:copy(s.artworkPath.nodes),closed:s.artworkPath.closed,authored:true,stale:false};
- if(s.points.length>512)throw Error('Node editing supports up to512points; artwork unchanged. No automatic simplification.');
- return {nodes:copy(s.points),closed:false,authored:false,stale:!!s.artworkPath};
+ let center=0;if(near)for(let i=1;i<s.points.length;i++)if(Math.hypot(s.points[i].x-near.x,s.points[i].y-near.y)<Math.hypot(s.points[center].x-near.x,s.points[center].y-near.y))center=i;const pointOffset=s.points.length>512?Math.max(0,Math.min(s.points.length-512,center-256)):0;
+ return {nodes:copy(s.points.slice(pointOffset,pointOffset+512)),closed:false,authored:false,stale:!!s.artworkPath,...(s.points.length>512?{pointOffset,pointCount:512}:{} )};
 }
 export function sampleArtwork(nodes,closed=false){
  if(!Array.isArray(nodes)||nodes.length<2||nodes.length>64||closed&&nodes.length<3)throw Error('Curve needs2–64anchors; closed curves need3');
@@ -30,10 +30,10 @@ export function sampleArtwork(nodes,closed=false){
  }
  return points;
 }
-export function editedArtwork(stroke,nodes,{closed=false,authored=false}={}){
+export function editedArtwork(stroke,nodes,{closed=false,authored=false,pointOffset=0,pointCount=null}={}){
  const out=copy(stroke);delete out.artworkPath;
  if(authored){out.points=sampleArtwork(nodes,closed);out.artworkPath=validateArtworkPath({version:1,nodes:copy(nodes),closed,basis:copy(out.points)});}
- else{if(nodes.length<2||nodes.length>512||nodes.some(n=>!point(n)||!pressure(n.pressure)))throw Error('Invalid artwork points');out.points=nodes.map(n=>({x:n.x,y:n.y,pressure:n.pressure}));}
+ else{if(nodes.length<2||nodes.length>512||nodes.some(n=>!point(n)||!pressure(n.pressure)))throw Error('Invalid artwork points');const edited=nodes.map(n=>({x:n.x,y:n.y,pressure:n.pressure}));if(pointCount!==null){if(!Number.isInteger(pointOffset)||!Number.isInteger(pointCount)||pointOffset<0||pointCount<2||pointOffset+pointCount>stroke.points.length)throw Error('Invalid node editing window');out.points=[...copy(stroke.points.slice(0,pointOffset)),...edited,...copy(stroke.points.slice(pointOffset+pointCount))];}else out.points=edited;}
  return out;
 }
 export function mapArtworkPath(stroke,transform){
