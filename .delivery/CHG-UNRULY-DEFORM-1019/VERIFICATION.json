@@ -1,12 +1,12 @@
 {
-  "status": "VERIFIED_UNPUBLISHED",
+  "status": "PUBLISHED_HOSTED_VERIFIED",
   "base": "588b734692a9f8c5027f0c46f511b0464a54c595",
   "localModels": 45,
   "legacyBrowserCases": 13,
   "newSelectionCases": 11,
   "readonlyGuard": "PASS",
   "cumulative": 39209913637,
-  "publication": "pending",
+  "publication": 39210961241,
   "remainingAcceptance": [
     "Physical-device workflow trial"
   ],
@@ -24,5 +24,10 @@
   "browserScenarios": 510,
   "sourceHashes": 213,
   "legacyConsoleChecks": 2,
-  "allPassed": true
+  "allPassed": true,
+  "merge": "c8418a8289f3a3eef8a8c8699c57517efe9f30d6",
+  "releaseTree": "79994d424f76f5825f048e670d69a0a1c98c61d3",
+  "hostedFilesVerified": 94,
+  "postmergeRun": 39210961236,
+  "postmergeStatus": "running at receipt"
 }
