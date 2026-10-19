@@ -1,5 +1,5 @@
 {
-  "status": "CUMULATIVE_PASS_PUBLICATION_PREPARED",
+  "status": "PUBLISHED_HOSTED_BYTES_VERIFIED",
   "base": "7c10ce1bc8a30c73d8dff8289f33f5014a14aa97",
   "localModelTests": 82,
   "workflowBrowserCases": 11,
@@ -17,7 +17,12 @@
   ],
   "cache": "v9-20261019-paintflow-1",
   "cumulative": "NOT_STARTED",
-  "publication": "NOT_YET_PUBLISHED",
+  "publication": {
+    "run": 39274929722,
+    "conclusion": "SUCCESS",
+    "hostedAssetsCompared": 94,
+    "sourceArtifactGuard": "PASS"
+  },
   "limits": "32MiB recording / 128MiB total / 20000 events; physical-device acceptance remains owner trial",
   "combinedLocalModelTests": 568,
   "expectedCumulativeModels": 678,
@@ -46,5 +51,12 @@
   "localCombinedModelTests": 568,
   "offlineCache": "v9-20261019-paintflow-1",
   "hostedAssetCount": 94,
-  "review": "Same-session; no independent or physical-device acceptance claim"
+  "review": "Same-session; no independent or physical-device acceptance claim",
+  "merge": "0884372c4097ccd6f543f05ad8ef93bb5c8542bd",
+  "mergedTree": "8f5dfe3087c47768c1079822e361381701fc0b6b",
+  "postmerge": {
+    "run": 39274929620,
+    "status": "RUNNING_AT_RECEIPT"
+  },
+  "next": "Owner real-painting trial; existing roadmap retained"
 }
