@@ -7,7 +7,7 @@ import {rasterGuide,guidedRaster} from './raster-guides.js';
 import {initPatternMesh} from './pattern-mesh-ui.js';
 import {initVirtualProjects} from './virtual-project-ui.js';
 import {initPatternWarp} from './pattern-warp-ui.js';
-import {mutateWarp} from './pattern-warp.js';
+import {warpTarget} from './pattern-warp.js';
 import {groupCompositionCommand} from './model.js';
 import {groupBlends,writableGroup} from './group-composition.js';
 import {initPalettes} from './palettes-ui.js';
@@ -432,7 +432,32 @@ $('fill-selection').onclick=()=>{if(blocked()||pathEditor?.editing())return;try{
  commitAreaFill(h.board,layer,region.snapshot,region.mask,paint);
  }catch(e){status(e.message+' · artwork unchanged',true);refresh();}};
 
-warpUI=initPatternWarp({$,getBoard:()=>h?.board,getSelection:()=>maskTarget||wandRegion?[]:selected,blocked,closePopovers,status,focus:()=>canvas.focus(),preview:board=>{const previous=warpPreview;renderer.invalidate();painted=null;if(board){try{renderer.render(board,view);}catch(e){renderer.render(previous||h.board,view);throw e;}warpPreview=board;}else{warpPreview=null;refresh();}},commit:(layerId,id,quad,base)=>{if(h.board!==base)throw Error('Deformation is stale');changed(command(h,b=>mutateWarp(b,layerId,id,quad)),true);selected=[id];}});
+// One disposable raster target for every selection mode; original history stays untouched.
+function prepareDeformation(){
+ if(maskTarget)throw Error('Choose Edit artwork before deformation');
+ if(pathEditor?.editing()){if(!pathEditor.hasPoints())pathEditor.cancel(false);else if(!pathEditor.close())throw Error('Finish a closed selection outline before deformation');}
+ const original=h.board,l=editable(original);let base=original,id;
+ if(wandRegion){const prepared=prepareRegionTransform(h,wandRegion);base=prepared.working.board;id=prepared.id;}
+ else{
+  const ids=selected.length?[...selected]:l.strokes.map(s=>s.id);
+  if(!ids.length)throw Error('Active layer is empty · add artwork before deformation');
+  const items=ids.map(id=>l.strokes.find(s=>s.id===id));if(items.some(s=>!s))throw Error('Select artwork on the active layer before deformation');
+  if(items.length===1&&items[0].brush==='raster')id=items[0].id;
+  else{
+   const snapshot=renderer.snapshotLayer({...l,strokes:items},0,items[0].points[0]);if(!snapshot||!snapshot.data.some((v,i)=>i%4===3&&v))throw Error('Selected artwork has no visible pixels');
+   const stroke=rasterStroke(snapshot.data,snapshot.width,snapshot.height,snapshot.x,snapshot.y);if(items.every(s=>s.guide))stroke.guide={version:1,kind:'image'};
+   base=structuredClone(original);base.version=Math.max(4,base.version);const layer=base.layers.find(t=>t.id===l.id),last=Math.max(...ids.map(id=>layer.strokes.findIndex(s=>s.id===id)));layer.strokes=layer.strokes.flatMap((s,i)=>i===last?[stroke]:ids.includes(s.id)?[]:[s]);id=stroke.id;
+  }
+ }
+ const source=warpTarget(base,l.id,id);return {original,base,layerId:l.id,id,source:structuredClone(source)};
+}
+function commitDeformation(layerId,id,stroke,original,working){
+ if(h.board!==original)throw Error('Deformation is stale');const l=editable(original),state=layerState(original,l);if(l.id!==layerId||state.locked||!state.visible||l.alphaLock)throw Error('Deformation layer is not writable');
+ const layer=working.layers.find(l=>l.id===layerId),source=layer.strokes.find(s=>s.id===id);if(JSON.stringify(stroke)===JSON.stringify(source))return;
+ const strokes=layer.strokes.map(s=>s.id===id?stroke:s);const next=command(h,b=>{b.version=Math.max(4,b.version);b.layers.find(l=>l.id===layerId).strokes=structuredClone(strokes);});changed(next,true);pathEditor?.cancel(false);selected=[id];refresh();
+}
+
+warpUI=initPatternWarp({$,getBoard:()=>h?.board,prepare:prepareDeformation,blocked,closePopovers,status,focus:()=>canvas.focus(),preview:board=>{const previous=warpPreview;renderer.invalidate();painted=null;if(board){try{renderer.render(board,view);}catch(e){renderer.render(previous||h.board,view);throw e;}warpPreview=board;}else{warpPreview=null;refresh();}},commit:commitDeformation});
 adjustmentUI=initAdjustmentUI({$,getBoard:()=>h?.board,blocked,status,preview:board=>{const previous=adjustmentPreview;renderer.invalidate();painted=null;if(board){try{renderer.render(board,view);}catch(error){renderer.render(previous||h.board,view);throw error;}adjustmentPreview=board;painted={board,key:[view.x,view.y,view.scale,canvas.clientWidth,canvas.clientHeight,devicePixelRatio].join(',')};}else{adjustmentPreview=null;refresh();}},commit:(id,value,base)=>{if(h.board!==base)throw Error('Adjustment is stale');changed(adjustmentCommand(h,id,value),true);}});
 
 filterUI=initFilterUI({$,getBoard:()=>h?.board,blocked,status,preview:board=>{const previous=filterPreview;renderer.invalidate();painted=null;if(board){try{renderer.render(board,view);}catch(error){renderer.render(previous||h.board,view);throw error;}filterPreview=board;}else{filterPreview=null;refresh();}},commit:(id,value,base)=>{if(h.board!==base)throw Error('Filter is stale');changed(filterCommand(h,id,value),true);}});
@@ -458,4 +483,4 @@ timelapseUI=initTimelapseUI({$,getVideoContext:()=>({projectBoard:board=>without
 
 drawingUI=initDrawingTools({$,canvas,getState:()=>{const l=h?.board.layers.find(l=>l.id===h.board.activeLayer);return {board:h?.board,layerId:l?.id,view:{...view},selected:[...selected],strokes:l?.strokes||[],maskTarget,paintMode,alphaLock:!!l?.alphaLock,writable:!!l&&!maskTarget&&!layerState(h.board,l).locked&&layerState(h.board,l).visible,blocked:blocked(),newStroke:()=>({id:crypto.randomUUID(),...structuredClone(settings),dynamics:structuredClone(settings.dynamics),points:[{x:0,y:0,pressure:null},{x:1,y:1,pressure:null}]})};},onStart:()=>{closePopovers();pathEditor?.cancel();setTool('pen');},onPreview:b=>{drawingPreview=b;schedulePaint();},onChange:refresh,onCommit:(stroke,existing,base,layerId)=>{if(h.board!==base||h.board.activeLayer!==layerId)throw Error('Artwork changed; cancel and select it again');changed(command(h,b=>{const l=editable(b);if(stroke.artworkPath){b.version=Math.max(15,b.version);b.folders=b.folders||[];}if(existing){const i=l.strokes.findIndex(x=>x.id===stroke.id);if(i<0)throw Error('Stroke no longer exists');l.strokes[i]=stroke;}else l.strokes.push(stroke);}),true);},status});
 
-meshUI=initPatternMesh({$,canvas,getBoard:()=>h?.board,getSelection:()=>maskTarget||wandRegion?[]:selected,getView:()=>view,blocked,closePopovers,status,preview:b=>{warpPreview=b;renderer.invalidate();painted=null;refresh();},commit:(layerId,id,stroke,base)=>{if(h.board!==base)throw Error('Mesh is stale');changed(command(h,b=>{const l=b.layers.find(l=>l.id===layerId),i=l.strokes.findIndex(s=>s.id===id);if(i<0)throw Error('Image missing');l.strokes[i]=stroke;}),true);selected=[id];}});
+meshUI=initPatternMesh({$,canvas,getBoard:()=>h?.board,prepare:prepareDeformation,getView:()=>view,blocked,closePopovers,status,preview:b=>{warpPreview=b;renderer.invalidate();painted=null;refresh();},commit:commitDeformation});
