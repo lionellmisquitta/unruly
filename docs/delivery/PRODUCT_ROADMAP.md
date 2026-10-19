@@ -1,3 +1,11 @@
+## PAINTFLOW cache fixture alignment before replacement candidate
+
+The first cumulative run also detected offline tests retaining the old cache suffix deform-selection-1 after the release cache became v9-20261019-paintflow-1. Align every remaining exact/suffix offline cache literal, retaining all module, offline and reload assertions. First run is superseded; no runtime changes in manifest/cache-test repair. One replacement exact-source cumulative candidate follows local CI-contract12 PASS and text/cache23 PASS. Earlier statuses historical where superseded.
+
+## PAINTFLOW first cumulative attempt: invocation manifest repair
+
+Candidate fade9c8712c3a29245f70e707c5f30fb6f0a877b / run39271504504 caught CIPAR01 exact-list mismatch: the new paint-workflow invocation was additive but its literal was absent from the expected command manifest. Preserve every original command/mutation guard and add exactly the new command to expected lists. No runtime defect or runtime change in this repair. Local manifest test must pass, then new exact-source cumulative run is required before merge/publication. Existing focused green evidence retained. Prior pending headings superseded where applicable.
+
 ## PAINTFLOW seven painting fixes — stable candidate ready for cumulative CI
 
 All seven reports implemented. Local focused model suite82 PASS; cache/text23 PASS. Drawing/node, bucket, wand, timelapse/video and all11 new paint-workflow browser cases PASS. Legacy selection, lasso, editable/magnetic paths and all24 deformation cases PASS. Source-layer selection remains a document-space mask while destination painting/fills, eraser and smudge preserve outside pixels; explicit pasted/imported/text object selections replace the mask. Long strokes use nearby bounded512-point edit windows without point loss. System image paste has its own action. Timelapse was already JSON; v2 structural forward operations and atomic lossless legacy compaction avoid re-recording unchanged artwork, retaining32MiB/128MiB limits and up to20000events. New cache v9-20261019-paintflow-1. Cumulative CI/publication pending; do not claim live or physical-device acceptance. Earlier work-in-progress headings are historical where superseded.
