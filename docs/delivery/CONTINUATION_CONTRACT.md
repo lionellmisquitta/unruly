@@ -1,3 +1,9 @@
+## DRAW2 cumulative verification PASS — 19 October 2026
+
+Exact candidate `766c36c5dff48008c06013be2b75261eca431f19`, [CI39159779031](https://github.com/lionellmisquitta/unruly/actions/runs/39159779031): all six shards and aggregate SUCCESS. Canonical artifact12148632040 SHA256 `b863b2517931eb00d6c60ac593c2c428db15c7c406f2e12705594f63a34e297d` downloaded and verified:674model tests,496browser scenarios,2legacy checks,213source hashes, all PASS; six shard identities match. Real image inference and separate hair/pose layer screenshots reviewed. Publication guard pins this exact tested source and artifact. PR45 ready for authorized main/Pages publication; publication not yet claimed.
+
+All13 feedback items remain mapped in .delivery/CHG-UNRULY-DRAW2-1019/FEEDBACK_VALIDATION.md. Physical tablet gesture feel, pose usefulness and inference accuracy on stylized/occluded subjects require owner trial. Human inference does not cover animals; all broader roadmap requirements retained. Same-session verification, no independent review claim. No graph or skill changes. Earlier pending headings are historical where superseded.
+
 ## DRAW2 consolidated repair locally verified — 19 October 2026
 
 Second candidate `6acf8942a900da21d5573dac63eba586d8e2a2a7` / cumulative39158366266 found three remaining regressions: recording badge covered update controls, dock covered legacy side-reference controls, and global gesture leniency changed a two-finger hold into Undo. Repairs preserve original two-finger semantics and give only three-finger redo 220ms arrival /400ms duration /14px movement allowance. Badge lifted above footer; side references and expanded panels take precedence over the dock. The new inference test also needed explicit Node-side storage polling: async waitForFunction predicates could resolve false without polling again. All provenance/source-preservation assertions retained, and fresh-read/reload durability checks added.
