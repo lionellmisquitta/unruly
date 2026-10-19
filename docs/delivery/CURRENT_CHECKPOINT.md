@@ -1,3 +1,7 @@
+## TRANSFORM cache-test repair — 19 October 2026
+
+Candidate2c4361bf9c7438d75e21b6c33b8113c97aebce95 / CI39205699292 failed offline assertions pinned to prior DRAW2 cache.18 cache-name literals updated to new identity; no offline or module-preservation assertions removed. Scope revision recorded before upload. Full local U3 and all3 full-history cases plus existing pixel-lasso suite PASS. Repaired cumulative pending; repair not published.
+
 ## TRANSFORM history repair LOCALLY VERIFIED — 19 October 2026
 
 Owner real-artwork feedback: lasso pinch/twist preview reverts on release, capacity warning before edits and pen scale handle rejects. Reproduced on published DRAW2 with105 document commands: real CDP pinch223.6068% reverted to100%; real pen scale rejected. Root cause: shared100-slot document/draft history budget. Scoped repair gives drafts their own bounded100-entry/16MiB history; document Undo remains untouched until Apply. Existing real-local-capacity rejection retained, combined-slot test explicitly revised to the new contract. New regression checks full-history pinch/rotate release, Apply/Undo/Redo/reload and pen scale/rotate/Cancel/history preservation. Scope: .delivery/CHG-UNRULY-TRANSFORM-1019/IMPACT_PLAN.md.
