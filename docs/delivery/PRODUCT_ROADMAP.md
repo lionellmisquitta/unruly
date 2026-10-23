@@ -1,3 +1,7 @@
+## ERASERLIMIT1 CI registration repair — 23 October 2026
+
+Candidate 0960377 failed CIG01/CIG02 because indirect test import is not a direct workflow invocation. Preserve all six capacity tests directly inside the already invoked model.test.mjs, remove the separate file/import and keep the CI guard unchanged. This resolves registration without changing runtime or weakening assertions. Replacement cumulative pending; not published.
+
 ## ERASERLIMIT1 locally verified — 23 October 2026
 
 Base bbe3f624250ce7b747394f278171432a66949da9. Long pen-button erasure can exceed cumulative work/precision or 2000-sweep capacity and cancel the preview. Controller now stops admitting samples at capacity, retains last valid erase, and commits it as one Undo step on normal release. Actual pointer cancellation and noncapacity failures still roll back. 23 targeted controller/model tests PASS; browser/device and cumulative CI pending. Not published. Gallery repair remains separate. No model-limit, renderer or graph changes.
