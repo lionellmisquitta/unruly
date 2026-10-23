@@ -1,3 +1,7 @@
+## Selection exit added to MOTIONENTRY1 — 23 October 2026
+
+Owner confirmed painting clips correctly but selection is difficult to dismiss. Add a visible Deselect canvas action using the existing selection clear path; preserve artwork/history and selection while changing brushes. No outside-click or fullscreen behaviour changed. 36 local motion/selection/controller checks PASS; DPR2 paint-after-deselect browser regression added, not locally executed. Cumulative/browser and publication pending; not live.
+
 ## MOTIONENTRY1 locally verified — 23 October 2026
 
 Base bbe3f62. Motion Trace entry now completes a valid pending path selection, cancels empty outlines and explains invalid/blocked entry. Camera fallback explicitly says no artwork is selected; selected-target entry describes Draw path and Preview cue. 28 motion/controller tests PASS. Browser and cumulative verification pending; not published. No graph changes.
