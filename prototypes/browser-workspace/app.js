@@ -484,7 +484,7 @@ filterUI=initFilterUI({$,getBoard:()=>h?.board,blocked,status,preview:board=>{co
 tipUI=initTipUI({$,settings,renderer,blocked,status,onSelect:()=>{u2.refresh();settings.dynamics=resolveBrushDynamics(penConfig.dynamics,penConfig.overrides,pressureKey());syncPenControls();curveUI?.sync();$('brush-advanced').hidden=true;sample();}});
 
 motionUI=initMotionUI({$,canvas,getBoard:()=>h?.board,getView:()=>({...view}),blocked,status,
- beforeOpen:()=>{if(pathEditor?.editing())throw Error('Close & select or Cancel the selection outline first');if(maskTarget)throw Error('Choose Edit artwork before Motion Trace');closePopovers();},
+ beforeOpen:()=>{if(maskTarget)throw Error('Choose Edit artwork before Motion Trace');if(pathEditor?.editing()){if(!pathEditor.hasPoints())pathEditor.cancel(false);else if(!pathEditor.close())throw Error('Finish a closed selection outline before Motion Trace');}closePopovers();},
  getTarget:()=>{if(wandRegion&&wandRegion.board===h.board){const r=wandRegion,s=r.snapshot,l=h.board.layers.find(l=>l.id===r.layerId);return{kind:'region',layerId:r.layerId,rect:{x:s.x,y:s.y,width:s.width,height:s.height},mask:encodeMotionMask(r.mask),sourceIds:l.strokes.map(s=>s.id)};}return selected.length?{kind:'objects',ids:[...selected]}:null;},
  prepareRegion:(board,target)=>prepareMotionRegion(board,target,(layer,rect)=>renderer.snapshotRegion(layer,rect)),
  prepareMixed:(board,cues)=>prepareMixedMotionRegions(board,cues,(layer,rect)=>renderer.snapshotRegion(layer,rect)),
