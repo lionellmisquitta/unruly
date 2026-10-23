@@ -29,3 +29,6 @@ test('ERASE1-C01 dense parallel strokes erase to intersection without work-limit
  assert.doesNotThrow(()=>m.eraseGesture(b,'intersection',sweep(250,0),2));
  assert.deepEqual(b,before);
 });
+
+// Capacity recovery must run in the existing cumulative model invocation.
+import './eraser-capacity.model.test.mjs';
