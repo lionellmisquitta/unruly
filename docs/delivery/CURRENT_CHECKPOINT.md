@@ -1,3 +1,11 @@
+## ERASERLIMIT1 CI registration repair — 23 October 2026
+
+Candidate 0960377 failed CIG01/CIG02 because indirect test import is not a direct workflow invocation. Preserve all six capacity tests directly inside the already invoked model.test.mjs, remove the separate file/import and keep the CI guard unchanged. This resolves registration without changing runtime or weakening assertions. Replacement cumulative pending; not published.
+
+## ERASERLIMIT1 locally verified — 23 October 2026
+
+Base bbe3f624250ce7b747394f278171432a66949da9. Long pen-button erasure can exceed cumulative work/precision or 2000-sweep capacity and cancel the preview. Controller now stops admitting samples at capacity, retains last valid erase, and commits it as one Undo step on normal release. Actual pointer cancellation and noncapacity failures still roll back. 23 targeted controller/model tests PASS; browser/device and cumulative CI pending. Not published. Gallery repair remains separate. No model-limit, renderer or graph changes.
+
 ## PAINTFLOW seven painting fixes PUBLISHED — 19 October 2026
 
 [PR51](https://github.com/lionellmisquitta/unruly/pull/51) merged as `0884372c4097ccd6f543f05ad8ef93bb5c8542bd`, exact reviewed tree `8f5dfe3087c47768c1079822e361381701fc0b6b`. [Publication39274929722](https://github.com/lionellmisquitta/unruly/actions/runs/39274929722) SUCCESS: source/artifact guard and all94 hosted-file byte comparisons PASS. [Live application](https://lionellmisquitta.github.io/unruly/). Tested source `4e20b9e8da76e958d371e42874c8cc9169b534b1`; cumulative39273215607 all six shards/aggregate SUCCESS:678models,524browser scenarios,2legacy checks,214source hashes. Artifact12197246313 SHA256 `406e42a58de4aab9cb5a17482b1063f3be56c15515ebc5494cb8fe16ac7d6e69`. Cache `v9-20261019-paintflow-1`. Automatic postmerge39274929620 still running at receipt; publication uses exact-source green candidate and merged-tree equality.
