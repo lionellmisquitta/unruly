@@ -12,7 +12,7 @@ import {validateClipping,mutateClipping} from './clipping.js';
 import {validateMasks,mutateMask} from './masks.js';
 import {validateFolders,layerState,mutateFolder,ancestors} from './folders.js';
 import {inverseHistory,restoreHistory} from './history-patch.js';
-import {validateRaster,decodePixels,rasterPayload,sampleTransform} from './raster.js';
+import {validateRaster,decodePixels,rasterPayload} from './raster.js';
 import {validateRecipe} from './brush-recipe.js';
 import {validateDynamics} from './pen-input.js';
 import {getPreset,presetCompatible,replayWork} from './brushes.js';

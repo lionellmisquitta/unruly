@@ -49,7 +49,7 @@ import {initBrushComparison} from './brush-compare.js';
 import {brushWidthFromPercent,brushPercentFromWidth} from './brush-size.js';
 import {initPressureUI} from './pressure-ui.js';
 import {readPenConfig,validateDynamics,resolveBrushDynamics,penAction} from './pen-input.js';
-import {makeText,textContains,textFonts,validTextFont} from './text.js';
+import {makeText,textFonts,validTextFont} from './text.js';
 import {selectLasso,selectionBounds,copySelection,deleteSelection,moveSelection,pasteSelection,transformSelection} from './selection.js';
 import {limits,createBoard,createHistory,command,textCommand,clippingCommand,maskCommand,addStroke,editable,layerCommand,folderCommand,undo,redo,eraseGesture,importDocument,toDocument,zoomAt} from './model.js';
 import {createRenderer} from './render.js';
