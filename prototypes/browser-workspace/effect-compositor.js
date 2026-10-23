@@ -1,5 +1,5 @@
 import {isolatesGroup,applyCanvasFilter} from './filters.js';
-import {hasAdjustment,applyCanvasAdjustment} from './adjustments.js';
+import {applyCanvasAdjustment} from './adjustments.js';
 // Effects, enabled masks or explicit group controls isolate; legacy folders pass through.
 export function effectDepth(board){const map=new Map((board.folders||[]).map(f=>[f.id,f]));let depth=0;for(const l of board.layers){let n=0,p=l.parentId;while(p){const f=map.get(p);if(!f)throw Error('Invalid effect folder');if(isolatesGroup(f))n++;p=f.parentId;}depth=Math.max(depth,n);}return depth;}
 export function composeEffects({board,target,g,background,drawLayer,scratch,processGroup=null,afterGroup=null,cache=null,live=null,makeCanvas=()=>document.createElement('canvas')}){
