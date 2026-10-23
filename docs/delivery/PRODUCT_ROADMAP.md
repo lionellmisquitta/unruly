@@ -1,3 +1,11 @@
+## Selection exit added to MOTIONENTRY1 — 23 October 2026
+
+Owner confirmed painting clips correctly but selection is difficult to dismiss. Add a visible Deselect canvas action using the existing selection clear path; preserve artwork/history and selection while changing brushes. No outside-click or fullscreen behaviour changed. 36 local motion/selection/controller checks PASS; DPR2 paint-after-deselect browser regression added, not locally executed. Cumulative/browser and publication pending; not live.
+
+## MOTIONENTRY1 locally verified — 23 October 2026
+
+Base bbe3f62. Motion Trace entry now completes a valid pending path selection, cancels empty outlines and explains invalid/blocked entry. Camera fallback explicitly says no artwork is selected; selected-target entry describes Draw path and Preview cue. 28 motion/controller tests PASS. Browser and cumulative verification pending; not published. No graph changes.
+
 ## PAINTFLOW seven painting fixes PUBLISHED — 19 October 2026
 
 [PR51](https://github.com/lionellmisquitta/unruly/pull/51) merged as `0884372c4097ccd6f543f05ad8ef93bb5c8542bd`, exact reviewed tree `8f5dfe3087c47768c1079822e361381701fc0b6b`. [Publication39274929722](https://github.com/lionellmisquitta/unruly/actions/runs/39274929722) SUCCESS: source/artifact guard and all94 hosted-file byte comparisons PASS. [Live application](https://lionellmisquitta.github.io/unruly/). Tested source `4e20b9e8da76e958d371e42874c8cc9169b534b1`; cumulative39273215607 all six shards/aggregate SUCCESS:678models,524browser scenarios,2legacy checks,214source hashes. Artifact12197246313 SHA256 `406e42a58de4aab9cb5a17482b1063f3be56c15515ebc5494cb8fe16ac7d6e69`. Cache `v9-20261019-paintflow-1`. Automatic postmerge39274929620 still running at receipt; publication uses exact-source green candidate and merged-tree equality.
