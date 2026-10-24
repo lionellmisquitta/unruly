@@ -1,0 +1,15 @@
+{
+  "status": "LOCAL_PASS_UNPUBLISHED",
+  "modelAndCIGuardTests": 61,
+  "passed": 61,
+  "browserTestsAdded": [
+    "POSENAVB01-fit-pan-pinch-and-cancel-preserve-source",
+    "POSENAVB02-off-frame-joint-apply-undo-redo-reload"
+  ],
+  "browser": "NOT_EXECUTED_LOCAL_CHROMIUM_UNAVAILABLE",
+  "roadmapAndExistingDocumentation": "unchanged",
+  "schema": "unchanged; compensate raster transform for off-frame joints",
+  "cumulative": "pending",
+  "publication": "not published",
+  "limitation": "navigation pans the combined view; independent image placement remains a canvas-layer transform"
+}
