@@ -1,4 +1,4 @@
-import {brushPercentFromWidth,maxBrushWidth} from './brush-size.js';
+import {brushPercentFromWidth} from './brush-size.js';
 import {EXTRA_BRUSH_PRESETS,BRUSH_PRESETS,BRUSH_CATEGORIES,getPreset,presetsFor,presetLabel} from './brushes.js';
 const KEY='unruly-u2-ui-v1';
 const DEFAULT_PALETTE=['#203d48','#171c24','#c14f43','#d69b28','#517a58','#4877a3','#8a63a2','#f2eee3'];

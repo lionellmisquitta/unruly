@@ -1,4 +1,4 @@
-import {remapConnectors,syncConnectors,detachMovedConnectors} from './connectors.js';
+import {remapConnectors,detachMovedConnectors} from './connectors.js';
 import {mapArtworkPath} from './artwork-geometry.js';
 import {tipRadius} from './custom-tips.js';
 import {transformText} from './text.js';
