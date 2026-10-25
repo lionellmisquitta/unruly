@@ -1,0 +1,8 @@
+# Publish verified core repairs
+Owner requests live publication. Base main2b2f77982a7a6be666cbcefb697fede8c423d168 has the exact tested tree b9d8f93448af165ba20e8078e4e11279d1c43318.
+
+Scope: publication workflow and this scoped record only. Pin source daf4f6aa4bd40d1594c9823dab73d7baa78d9fee, successful cumulative CI40170494526, artifact12590655220, SHA256e4726c426e3bf6871b6be2bf6fbfcada1d7eb23b966e93926b491d87d5984c03. Require six matching source identities,217 file hashes,116 test files with explicit node invocations,689 unique model checks with0 failures/skips/cancellations/todos,530 browser scenario PASS results and2 legacy console PASS markers. Duplicate focused model reports are not double-counted. Existing deployment and all94 hosted-asset byte comparisons retained. Cachev10-20261025-core1 already tested; no runtime change. Existing roadmap, QA records and graph untouched; no deletions.
+
+Coverage limitation: automated coverage does not establish universal bug freedom or Surface/pen/second-screen/screen-sharing acceptance. Pending PR53,54,55,57 remain excluded. Publication guard is executed locally before upload; actual Pages and every hosted byte must pass before claiming live. Rollback by repinning the previous verified publication and artifact; no board data migration.
+
+Local exact publication Python guard PASS:689 model checks,0 failures/skips/cancellations/todos;530 browser PASS;2 legacy console markers;217 hashes;116 test files all explicitly invoked and bound to hashes. Actual CIG01/CIPAR01/CIPAR03 TAP passes required. Damaged-artifact negative probe rejected on digest mismatch, original archive restored. Application source unchanged. Publication/hosted-byte verification pending.
