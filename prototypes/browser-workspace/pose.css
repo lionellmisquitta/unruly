@@ -10,3 +10,10 @@
 #pose-apply{font-size:11px;opacity:.75}#pose-layer-apply{font-weight:600;min-height:44px}#reference-editor input,#reference-editor select{min-height:40px;max-width:100%}
 
 #reference-joints{max-height:55dvh}#reference-preset-tools{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}#reference-preset-tools summary{cursor:pointer;min-height:36px}#reference-preset-tools[open]{display:block}#reference-preset-tools input,#reference-preset-tools select{margin:5px 0;width:100%}.reference-edit-actions button{min-height:44px}#reference-edit-apply{background:#405d73;border-color:var(--accent)}
+
+/* Pose alignment uses the full window, keeping primary editing and exit actions visible. */
+#reference-editor[open]{position:fixed;inset:0;margin:0;box-sizing:border-box;width:100vw;max-width:none;height:100dvh;max-height:none;padding:10px;display:flex;flex-direction:column;gap:6px;overflow:hidden}
+#reference-editor h2{font-size:18px;margin:0}#reference-editor p{margin:0;font-size:12px}#reference-editor .reference-edit-actions{margin-top:0;flex-shrink:0;gap:4px}#reference-editor .reference-edit-actions button{min-height:36px}
+.reference-edit-canvas{flex:1;min-height:100px;position:relative;overflow:hidden}#reference-joints{position:absolute;inset:0;width:100%;height:100%;max-height:none;margin:0}
+#reference-editor #reference-preset-tools{margin-top:0;padding-top:0;max-height:25dvh;overflow:auto;flex-shrink:0}#reference-editor #reference-edit-error:empty{display:none}#reference-editor button[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+@media(max-height:600px){#reference-editor>p{display:none}#reference-editor h2{font-size:15px}}
