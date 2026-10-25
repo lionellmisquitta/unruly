@@ -1,12 +1,14 @@
 // Sparse persisted RGBA payloads. Empty means all four bytes are zero, not just alpha.
 // Tiles are reconstructed before Canvas2D sampling: interpolation never sees tile edges.
 export const tileSize=64;
-const prefix='T2:',dimension=1024;
+const prefix='T2:',dimension=4096;
 const fail=()=>{throw Error('Invalid raster pixels');};
-const dimensions=(w,h)=>Number.isInteger(w)&&Number.isInteger(h)&&w>=1&&h>=1&&w<=dimension&&h<=dimension;
+const dimensions=(w,h)=>Number.isInteger(w)&&Number.isInteger(h)&&w>=1&&h>=1&&w<=dimension&&h<=dimension&&w*h<=1024*1024;
+const pixelLimit=1024*1024;
 const encodedLength=n=>4*Math.ceil(n/3);
-export function decodeTile(text,n){
+export function decodeTile(text,n,{deep=true}={}){
  if(typeof text!=='string'||text.length!==encodedLength(n)||!/^[A-Za-z0-9+/]*={0,2}$/.test(text))fail();
+ if(!deep)return null;
  let raw;try{raw=atob(text);}catch{fail();}if(raw.length!==n||btoa(raw)!==text)fail();
  const data=new Uint8ClampedArray(n);let occupied=false;for(let i=0;i<n;i++){data[i]=raw.charCodeAt(i);occupied=occupied||data[i]!==0;}if(!occupied)fail();return data;
 }
@@ -27,7 +29,7 @@ export function encodeSparsePixels(data,width,height,encode){
 }
 export function readSparsePixels(text,expectedWidth,expectedHeight,decode=decodeTile){
  // Bound the string before JSON.parse, then bound tile count and bytes before decode.
- if(typeof text!=='string'||!text.startsWith(prefix)||text.length>encodedLength(dimension*dimension*4))fail();
+ if(typeof text!=='string'||!text.startsWith(prefix)||text.length>encodedLength(pixelLimit*4))fail();
  let value;try{value=JSON.parse(text.slice(prefix.length));}catch{fail();}
  if(!value||Object.keys(value).join(',')!=='width,height,tiles'||!dimensions(value.width,value.height)||!Array.isArray(value.tiles)||value.tiles.length>Math.ceil(value.width/tileSize)*Math.ceil(value.height/tileSize))fail();
  const {width,height,tiles}=value;

@@ -2,10 +2,10 @@ import {validateRaster} from './raster.js';
 import {nativePixelSnapshot} from './pixel-surface.js';
 import {createPaintSession} from './pixel-paint.js';
 // Sparse alpha coverage: normally hides; inverted coverage reveals. Outside is uniform.
-export function validateMasks(board,ids){
+export function validateMasks(board,ids,options){
  for(const l of [...board.layers,...(board.folders||[])]){if(!Object.hasOwn(l,'mask'))continue;const m=l.mask;
   if(board.version<(board.layers.includes(l)?6:16)||!m||Object.keys(m).sort().join(',')!=='enabled,inverted,patch'||typeof m.enabled!=='boolean'||typeof m.inverted!=='boolean')throw Error('Invalid layer mask');
-  if(m.patch!==null){const s=m.patch;if(!s||s.brush!=='raster'||typeof s.id!=='string'||!s.id||s.id.length>128||ids.has(s.id))throw Error('Invalid mask patch');validateRaster(s);const [a,b,c,d,x,y]=s.raster.transform;if(a!==1||b!==0||c!==0||d!==1||!Number.isInteger(x)||!Number.isInteger(y))throw Error('Mask must use document pixels');ids.add(s.id);}
+  if(m.patch!==null){const s=m.patch;if(!s||s.brush!=='raster'||typeof s.id!=='string'||!s.id||s.id.length>128||ids.has(s.id))throw Error('Invalid mask patch');validateRaster(s,options);const [a,b,c,d,x,y]=s.raster.transform;if(a!==1||b!==0||c!==0||d!==1||!Number.isInteger(x)||!Number.isInteger(y))throw Error('Mask must use document pixels');ids.add(s.id);}
  }
 }
 export function mutateMask(b,l,action,value){

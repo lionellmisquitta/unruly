@@ -30,6 +30,21 @@ jobs:
           npm ci --ignore-scripts --no-audit --no-fund --prefix tests/browser-workspace
           cd tests/browser-workspace
           npx playwright install --with-deps chromium
+      - name: CORE1 edit persistence and paint extent gate
+        if: matrix.shard == 5
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p tests/browser-workspace/evidence
+          node --test tests/browser-workspace/core-perf.model.test.mjs tests/browser-workspace/raster-extent.model.test.mjs > tests/browser-workspace/evidence/core-model-output.txt 2>&1 || { cat tests/browser-workspace/evidence/core-model-output.txt; exit 1; }
+          node tests/browser-workspace/server.cjs > tests/browser-workspace/evidence/core-server.log 2>&1 &
+          qa_core_pid=$!
+          trap 'kill "$qa_core_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/unruly/ > /dev/null; then break; fi
+            sleep .1
+          done
+          node tests/browser-workspace/save-flush.browser.cjs > tests/browser-workspace/evidence/core-save-flush-output.txt 2>&1 || { cat tests/browser-workspace/evidence/core-save-flush-output.txt; exit 1; }
       - name: POSE1A focused reference gate
         if: matrix.shard == 5
         shell: bash
@@ -471,7 +486,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: unruly-browser-workspace-shard-${{ matrix.shard }}
+          name: unruly-browser-workspace-shard-${{ matrix.shard }}-attempt-${{ github.run_attempt }}
           path: tests/browser-workspace/evidence/
           if-no-files-found: error
           retention-days: 7

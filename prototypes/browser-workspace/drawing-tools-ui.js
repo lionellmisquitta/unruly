@@ -5,6 +5,8 @@ const clone=x=>structuredClone(x),NS='http://www.w3.org/2000/svg';
 export function initDrawingTools({$,canvas,getState,onStart,onCommit,onPreview,onChange,status}){
  let guide={...guideDefaults},draft=null,picking=false,drag=null,index=0,hasSavedGuide=false;
  try{const raw=localStorage.getItem('unruly-guides-v1');guide=validateGuide({...guide,...JSON.parse(raw||'{}')});hasSavedGuide=!!raw;}catch{guide={...guideDefaults};}
+ let shapeHold=false;try{shapeHold=localStorage.getItem('unruly-shape-hold-v1')==='true';}catch{}
+ $('guide-shape-hold').checked=shapeHold;$('guide-shape-hold').onchange=()=>{if(draft||picking||getState().blocked){$('guide-shape-hold').checked=shapeHold;return;}shapeHold=$('guide-shape-hold').checked;try{localStorage.setItem('unruly-shape-hold-v1',String(shapeHold));}catch{status('Shape recognition changed for this session · preference could not be saved',true);}};
  const panel=$('drawing-tools'),overlay=$('drawing-overlay'),art=$('artwork-node-overlay'),guides=$('drawing-guide-overlay');
  const consume=e=>{e.preventDefault();e.stopImmediatePropagation();};
  const point=(e,v=getState().view)=>{const r=canvas.getBoundingClientRect();return {x:(e.clientX-r.left-v.x)/v.scale,y:(e.clientY-r.top-v.y)/v.scale};};
@@ -66,7 +68,7 @@ export function initDrawingTools({$,canvas,getState,onStart,onCommit,onPreview,o
    const lo=Math.max(0,index-31),hi=Math.min(draft.nodes.length,lo+64);
    for(let i=lo;i<hi;i++){const n=draft.nodes[i],a=screen(n);for(const k of ['in','out'])if(n[k]){const b=screen(n[k]);art.append(svg('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:'drawing-handle-line'}),svg('circle',{cx:b.x,cy:b.y,r:7,class:'drawing-handle','data-art-node':i,'data-art-handle':k}));}art.append(svg('circle',{cx:a.x,cy:a.y,r:i===index?9:7,class:'drawing-anchor'+(i===index?' current':''),'data-art-node':i}));}
   }
-  for(const k of Object.keys(guideDefaults))$('guide-'+k).disabled=!!draft||picking||s.blocked;
+  $('guide-shape-hold').disabled=!!draft||picking||s.blocked;for(const k of Object.keys(guideDefaults))$('guide-'+k).disabled=!!draft||picking||s.blocked;
  }
  $('drawing-tools-open').onclick=()=>{if(getState().blocked)return;onStart();panel.hidden=false;if(!hasSavedGuide){const v=getState().view,r=canvas.getBoundingClientRect();guide.x=(r.width/2-v.x)/v.scale;guide.y=(r.height/2-v.y)/v.scale;}syncGuideFields();sync();};
  $('guide-center').onclick=()=>{if(draft||picking||getState().blocked)return;const v=getState().view,r=canvas.getBoundingClientRect();guide.x=(r.width/2-v.x)/v.scale;guide.y=(r.height/2-v.y)/v.scale;syncGuideFields();try{localStorage.setItem('unruly-guides-v1',JSON.stringify(guide));hasSavedGuide=true;}catch{status('Guide centre changed for this session',true);}sync();onChange();};
@@ -81,5 +83,5 @@ export function initDrawingTools({$,canvas,getState,onStart,onCommit,onPreview,o
  $('artwork-closed').onchange=()=>{if(!draft)return;const before=snapshot();draft.closed=$('artwork-closed').checked;remember(before);preview();};
  for(const k of Object.keys(guideDefaults))$('guide-'+k).onchange=()=>{if(draft||picking||getState().blocked){syncGuideFields();return;}try{const next={...guide};for(const f of Object.keys(guideDefaults))next[f]=['mode','symmetry'].includes(f)?$('guide-'+f).value:Number($('guide-'+f).value);guide=validateGuide(next);hasSavedGuide=true;try{localStorage.setItem('unruly-guides-v1',JSON.stringify(guide));}catch{status('Guides changed for this session · preference could not be saved',true);}sync();onChange();}catch(e){syncGuideFields();status(e.message,true);}};
  function key(e){if(!draft&&!picking)return false;if(e.key==='Escape'){consume(e);cancel();return true;}if(e.target.closest('input,select,textarea'))return false;if(e.target.closest('button')&&['Enter',' '].includes(e.key))return false;if(e.key==='Enter'){consume(e);apply();return true;}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){consume(e);history(e.shiftKey);return true;}if(['Delete','Backspace'].includes(e.key)){consume(e);$('artwork-remove').click();return true;}const delta={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key];if(delta&&draft){consume(e);modify(nodes=>{const n=nodes[index];if(!n)return nodes;for(const [k,d]of [['x',delta[0]],['y',delta[1]]]){n[k]+=d*(e.shiftKey?10:1);for(const h of ['in','out'])if(n[h])n[h][k]+=d*(e.shiftKey?10:1);}return nodes;});return true;}consume(e);return true;}
- syncGuideFields();return {sync,key,cancel,editing:()=>!!draft||picking,config:()=>clone(guide)};
+ syncGuideFields();return {sync,key,cancel,editing:()=>!!draft||picking,shapeHold:()=>shapeHold,config:()=>clone(guide)};
 }

@@ -1,3 +1,4 @@
+import {rasterLimits} from './raster.js';
 // Inverse history records: unchanged entities/pixels are not retained in each entry.
 // Commands still clone and validate the board; these records are session memory only.
 const copy=x=>structuredClone(x);
@@ -21,7 +22,7 @@ function tilePatch(before,after){
  // Both payloads have already passed raster admission; never decode unchanged pixels.
  if(!before.startsWith('T2:')||!after.startsWith('T2:'))return null;
  let a,b;try{a=JSON.parse(before.slice(3));b=JSON.parse(after.slice(3));}catch{return null;}
- const payload=x=>{if(!x||Object.keys(x).join(',')!=='width,height,tiles'||!Number.isInteger(x.width)||!Number.isInteger(x.height)||x.width<1||x.height<1||x.width>1024||x.height>1024||!Array.isArray(x.tiles))return false;let last=-1;return x.tiles.every(t=>{if(!Array.isArray(t)||t.length!==3||!Number.isInteger(t[0])||!Number.isInteger(t[1])||t[0]<0||t[1]<0||t[0]>=x.width||t[1]>=x.height||t[0]%64||t[1]%64||typeof t[2]!=='string')return false;const index=t[1]/64*Math.ceil(x.width/64)+t[0]/64;if(index<=last)return false;last=index;return true;});};
+ const payload=x=>{if(!x||Object.keys(x).join(',')!=='width,height,tiles'||!Number.isInteger(x.width)||!Number.isInteger(x.height)||x.width<1||x.height<1||x.width>rasterLimits.dimension||x.height>rasterLimits.dimension||x.width*x.height>rasterLimits.pixels||!Array.isArray(x.tiles))return false;let last=-1;return x.tiles.every(t=>{if(!Array.isArray(t)||t.length!==3||!Number.isInteger(t[0])||!Number.isInteger(t[1])||t[0]<0||t[1]<0||t[0]>=x.width||t[1]>=x.height||t[0]%64||t[1]%64||typeof t[2]!=='string')return false;const index=t[1]/64*Math.ceil(x.width/64)+t[0]/64;if(index<=last)return false;last=index;return true;});};
  if(!payload(a)||!payload(b)||before!=='T2:'+JSON.stringify(a)||after!=='T2:'+JSON.stringify(b)||a.width!==b.width||a.height!==b.height)return null;
  const key=t=>t[0]+','+t[1],old=new Map(a.tiles.map(t=>[key(t),t])),next=new Map(b.tiles.map(t=>[key(t),t])),changes=[];
  for(const [k,t]of old){const n=next.get(k);if(!n)changes.push([t[0],t[1],set(t[2])]);else if(t[2]!==n[2])changes.push([t[0],t[1],textPatch(t[2],n[2])]);}
@@ -59,7 +60,7 @@ function broadGeometry(before,after){
  for(const layer of before.layers){const strokes=new Map((next.get(layer.id)?.strokes||[]).map(s=>[s.id,s]));for(const stroke of layer.strokes||[]){const points=stroke.points;if(!Array.isArray(points))continue;total+=points.length;const other=strokes.get(stroke.id)?.points;if(Array.isArray(other)&&points.length&&(!same(points[0],other[0])||!same(points.at(-1),other.at(-1))))changed+=points.length;}}
  return changed>4000&&changed>total/2;
 }
-export function inverseHistory(before,after){if((before?.version===3||before?.version===4||before?.version===5)&&broadGeometry(before,after))return copy(before);const patch=difference(before,after,true),entry={historyPatch:1,patch:patch||['object',[],[],[]]};const legacy=before?.version===3||before?.version===4||before?.version===5;return !legacy||size(entry)<size(before)?ownStrings(entry):patch?.[0]==='set'?patch[1]:copy(before);}
+export function inverseHistory(before,after,{compactOnly=false}={}){if((before?.version===3||before?.version===4||before?.version===5)&&broadGeometry(before,after))return copy(before);const patch=difference(before,after,true),entry={historyPatch:1,patch:patch||['object',[],[],[]]};const legacy=before?.version===3||before?.version===4||before?.version===5;return compactOnly||!legacy||size(entry)<size(before)?ownStrings(entry):patch?.[0]==='set'?patch[1]:copy(before);}
 function apply(value,p){
  if(!Array.isArray(p))throw Error('Invalid history patch');
  switch(p[0]){
@@ -97,3 +98,8 @@ export function restoreHistory(current,entry){
 
 // Forward structural operations for bounded timelapse replay; artwork history is unchanged.
 export function forwardHistory(before,after){return ownStrings(difference(after,before)||['object',[],[],[]]);}
+
+// Session-only cached sizes; never add bookkeeping fields to boards or history records.
+const historySizes=new WeakMap();
+export function historyEntryBytes(entry){if(!historySizes.has(entry))historySizes.set(entry,size(entry));return historySizes.get(entry);}
+export function historyBytes(history){return [...history.past,...history.future].reduce((n,e)=>n+historyEntryBytes(e),0);}

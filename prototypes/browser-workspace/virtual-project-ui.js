@@ -1,3 +1,4 @@
+import {historyBytes} from './history-patch.js';
 import {createBoard,createHistory,limits} from './model.js';
 import {projectFromBoard,virtualProjectStore,encodeProject,decodeProject} from './virtual-project-store.js';
 import {prepareVirtualScene} from './virtual-group-scene.js';
@@ -7,11 +8,11 @@ export function initVirtualProjects({$,getState,setState,transition,status,refre
  const group=()=>state?.project.groups.find(g=>g.id===state.project.activeGroupId);
  function assertEditable(){if(state&&(!group().visible||group().locked))throw Error('Virtual group is locked or hidden; activate another group');}
  function scene(board){if(!state)return null;const project=structuredClone(state.project),sources=new Map(state.sources),g=project.groups.find(g=>g.id===project.activeGroupId);g.sourceRevision=board.revision;sources.set(board.id,{board});return prepareVirtualScene(project,sources);}
- function trackHistory(h){if(!state)return;histories.delete(h.board.id);histories.set(h.board.id,h);const bytes=x=>new TextEncoder().encode(JSON.stringify([...x.past,...x.future])).length;let total=[...histories.values()].reduce((n,x)=>n+bytes(x),0);for(const [id,old] of histories){if(total<=limits.historyBytes)break;if(id===h.board.id)continue;histories.delete(id);total-=bytes(old);historyWarning=true;}}
+ function trackHistory(h){if(!state)return;histories.delete(h.board.id);histories.set(h.board.id,h);const bytes=historyBytes;let total=[...histories.values()].reduce((n,x)=>n+bytes(x),0);for(const [id,old] of histories){if(total<=limits.historyBytes)break;if(id===h.board.id)continue;histories.delete(id);total-=bytes(old);historyWarning=true;}}
  function remember(){if(state)trackHistory(getState().h);}
  function apply(loaded,preserveView=true){remember();state=loaded;const g=group(),r=state.sources.get(g.boardId),prior=histories.get(g.boardId);setState({h:prior?.board.revision===r.board.revision?prior:createHistory(r.board),expected:r.dbRevision,saved:r.board.revision,...(!preserveView?{view:loaded.view}:{})});refresh();panels();}
  async function save(board,expected){
-  if(!state)return getState().store.save(board,expected);
+  if(!state)return getState().store.save(board,expected,true,{deep:false});
   const project=structuredClone(state.project),g=project.groups.find(g=>g.boardId===board.id);if(!g||g.id!==project.activeGroupId)throw Error('Active project source changed');g.sourceRevision=board.revision;g.title=board.title||g.title;
   const revision=await storage().commit(project,state.revision,[{board,expected}],getState().view);state={...state,project,revision,sources:new Map(state.sources).set(board.id,{board:structuredClone(board),dbRevision:expected+1,recovered:false})};return expected+1;
  }
@@ -26,7 +27,7 @@ export function initVirtualProjects({$,getState,setState,transition,status,refre
  $('virtual-create').onclick=()=>transition(create);$('virtual-add').onclick=()=>transition(add);
  $('virtual-export').onclick=()=>transition(async()=>{const loaded=await storage().load(state.project.id);download(encodeProject(loaded.project,loaded.sources),'Unruly-project.unruly-project.json');status('Full project backup downloaded');});
  $('virtual-import').onclick=()=>{if(getState().blocked())return;$('virtual-file').click();};
- $('virtual-file').onchange=async()=>{const file=$('virtual-file').files[0];$('virtual-file').value='';if(!file)return;try{if(file.size>8*1024*1024+65536)throw Error('Project backup exceeds limit');const p=decodeProject(await file.text());await transition(async()=>{await storage().commit(p.project,0,p.sources.map(board=>({board,expected:0})),getState().view);await open(p.project.id,true);});}catch(e){status(e.message,true);}};
+ $('virtual-file').onchange=async()=>{const file=$('virtual-file').files[0];$('virtual-file').value='';if(!file)return;try{if(file.size>limits.bytes+65536)throw Error('Project backup exceeds limit');const p=decodeProject(await file.text());await transition(async()=>{await storage().commit(p.project,0,p.sources.map(board=>({board,expected:0})),getState().view);await open(p.project.id,true);});}catch(e){status(e.message,true);}};
  async function gallery(list){const projects=await storage().list(),sources=new Set(projects.flatMap(p=>p.sourceIds)),recovery=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Native source backups · recovery';recovery.append(summary);for(const row of [...list.children])if(sources.has(row.dataset.boardId)){const b=row.querySelector('button');b.textContent='Source backup · '+b.textContent;recovery.append(row);}if(recovery.children.length>1)list.append(recovery);for(const p of projects){const row=document.createElement('div');row.className='board-row';const b=document.createElement('button');b.textContent='Project · '+p.title;b.onclick=()=>transition(async()=>{await open(p.id);$('gallery').close();});row.append(b);list.prepend(row);}}
  return {scene,save,open,leave,decorate,gallery,trackHistory,assertEditable,hasArtwork:board=>!!state&&[board,...[...state.sources.values()].filter(r=>r.board.id!==board.id).map(r=>r.board)].some(b=>b.layers.some(l=>l.strokes.length)),last:()=>storage().last(),active:()=>!!state};
 }

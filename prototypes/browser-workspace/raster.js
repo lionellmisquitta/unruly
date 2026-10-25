@@ -1,14 +1,14 @@
-import {encodeSparsePixels,readSparsePixels,decodeSparsePixels} from './raster-tiles.js';
+import {encodeSparsePixels,readSparsePixels,decodeSparsePixels,decodeTile} from './raster-tiles.js';
 // Bounded document-space RGBA snapshots for raster drawing. No DOM or storage.
-export const rasterLimits=Object.freeze({dimension:1024,pixels:1024*1024,work:12000000,dabs:2048});
+export const rasterLimits=Object.freeze({dimension:4096,pixels:1024*1024,work:12000000,dabs:2048});
 const finite=x=>typeof x==='number'&&Number.isFinite(x),fail=m=>{throw Error(m);};
 export function encodePixels(data){let text='';for(let i=0;i<data.length;i+=8192)text+=String.fromCharCode(...data.subarray(i,i+8192));return btoa(text);}
 export function decodePixels(data){if(typeof data==='string'&&data.startsWith('T2:'))return decodeSparsePixels(data);const raw=atob(data),out=new Uint8ClampedArray(raw.length);for(let i=0;i<raw.length;i++)out[i]=raw.charCodeAt(i);return out;}
 export function rasterPoints(r){const [a,b,c,d,e,f]=r.transform;return [[0,0],[r.width,0],[r.width,r.height],[0,r.height],[0,0]].map(([x,y])=>({x:a*x+c*y+e,y:b*x+d*y+f,pressure:null}));}
-export function validateRaster(s){
+export function validateRaster(s,{deep=true}={}){
  const r=s.raster;if(!r||Object.keys(r).sort().join(',')!=='data,height,transform,version,width'||![1,2].includes(r.version)||!Number.isInteger(r.width)||!Number.isInteger(r.height)||r.width<1||r.height<1||r.width>rasterLimits.dimension||r.height>rasterLimits.dimension||r.width*r.height>rasterLimits.pixels)fail('Invalid raster dimensions');
  if(!Array.isArray(r.transform)||r.transform.length!==6||r.transform.some(x=>!finite(x)||Math.abs(x)>1e7))fail('Invalid raster transform');const [a,b,c,d]=r.transform,det=a*d-b*c;if(Math.abs(det)<.0025||Math.abs(det)>400)fail('Raster transform limit');
- if(r.version===2){readSparsePixels(r.data,r.width,r.height);}else{const n=r.width*r.height*4;if(typeof r.data!=='string'||r.data.length!==4*Math.ceil(n/3)||!/^[A-Za-z0-9+/]*={0,2}$/.test(r.data))fail('Invalid raster pixels');let raw;try{raw=atob(r.data);}catch{fail('Invalid raster pixels');}if(raw.length!==n||btoa(raw)!==r.data)fail('Invalid raster pixels');}
+ if(r.version===2){readSparsePixels(r.data,r.width,r.height,(text,n)=>decodeTile(text,n,{deep}));}else{const n=r.width*r.height*4;if(typeof r.data!=='string'||r.data.length!==4*Math.ceil(n/3)||!/^[A-Za-z0-9+/]*={0,2}$/.test(r.data))fail('Invalid raster pixels');if(deep){let raw;try{raw=atob(r.data);}catch{fail('Invalid raster pixels');}if(raw.length!==n||btoa(raw)!==r.data)fail('Invalid raster pixels');}}
  if(s.preset!==undefined||s.recipe!==undefined||s.dynamics!==undefined||s.size!==1||s.opacity!==1||s.color!=='#000000'||(!Array.isArray(s.points)||s.points.length!==5||s.points.some((p,i)=>{const q=rasterPoints(r)[i];return !p||p.x!==q.x||p.y!==q.y||p.pressure!==null;})))fail('Invalid raster stroke metadata');
  for(const p of s.points)if(Math.abs(p.x)>1e7||Math.abs(p.y)>1e7)fail('Raster coordinate limit');return r;
 }
