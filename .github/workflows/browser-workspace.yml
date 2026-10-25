@@ -486,7 +486,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: unruly-browser-workspace-shard-${{ matrix.shard }}
+          name: unruly-browser-workspace-shard-${{ matrix.shard }}-attempt-${{ github.run_attempt }}
           path: tests/browser-workspace/evidence/
           if-no-files-found: error
           retention-days: 7
