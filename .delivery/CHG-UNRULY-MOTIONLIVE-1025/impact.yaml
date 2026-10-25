@@ -1,0 +1,9 @@
+change_id: CHG-UNRULY-MOTIONLIVE-1025
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - .github/workflows/browser-workspace-pages.yml
+regression_obligations:
+  - {id: exact-source, reason: Deploy only verified bytes and complete QA evidence, test_id: release-guard}
+  - {id: hosted-bytes, reason: Verify actual published source, test_id: hosted-comparison}

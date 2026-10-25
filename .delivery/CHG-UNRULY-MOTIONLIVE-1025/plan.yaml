@@ -1,0 +1,16 @@
+change_id: CHG-UNRULY-MOTIONLIVE-1025
+route: standard
+prohibited_paths: [prototypes/, tests/, docs/, .knowledge/, knowledge-graph/]
+test_config_changes: [.github/workflows/browser-workspace-pages.yml]
+checkpoints:
+  - id: publish
+    allowed_paths: [.github/workflows/browser-workspace-pages.yml, .delivery/CHG-UNRULY-MOTIONLIVE-1025/]
+    test_paths: []
+    tests:
+      - id: release-guard
+        command: ["python","-c","import pathlib,textwrap; s=pathlib.Path('.github/workflows/browser-workspace-pages.yml').read_text(); exec(textwrap.dedent(s.split(\"          python - <<'PY'\\n\",1)[1].split('\\n          PY',1)[0]))"]
+        timeout_seconds: 120
+      - id: hosted-comparison
+        command: ["bash","-c","for source in prototypes/browser-workspace/*; do curl --fail --silent \"https://lionellmisquitta.github.io/unruly/$(basename \"$source\")?motiondock=c0c54fe\" | cmp --silent \"$source\" - || exit 1; done"]
+        timeout_seconds: 600
+# Precondition: download pinned artifact to /tmp/unruly-cumulative.zip as in the workflow. The first command executes that exact workflow guard. No protected-plan enforcement is claimed.
