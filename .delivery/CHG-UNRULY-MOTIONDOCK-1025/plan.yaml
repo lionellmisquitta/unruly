@@ -1,0 +1,11 @@
+change_id: CHG-UNRULY-MOTIONDOCK-1025
+route: standard
+prohibited_paths: [docs/delivery/PRODUCT_ROADMAP.md, .knowledge/, knowledge-graph/, .github/workflows/]
+checkpoints:
+  - id: motion-dock
+    allowed_paths: [prototypes/browser-workspace/motion-ui.js, prototypes/browser-workspace/motion.js, prototypes/browser-workspace/palettes-ui.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, .delivery/CHG-UNRULY-MOTIONDOCK-1025/]
+    test_paths: [tests/browser-workspace/motion.model.test.mjs, tests/browser-workspace/motion.browser.cjs, tests/browser-workspace/palettes.browser.cjs, tests/browser-workspace/pose.browser.cjs, tests/browser-workspace/]
+    tests:
+      - {id: motion-model, command: [node, --test, tests/browser-workspace/motion.model.test.mjs], timeout_seconds: 120}
+      - {id: motion-browser, command: [node, tests/browser-workspace/motion.browser.cjs], timeout_seconds: 300}
+      - {id: palette-browser, command: [node, tests/browser-workspace/palettes.browser.cjs, tests/browser-workspace/pose.browser.cjs, tests/browser-workspace/], timeout_seconds: 300}

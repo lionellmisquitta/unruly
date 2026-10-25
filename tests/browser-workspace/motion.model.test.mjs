@@ -41,3 +41,19 @@ test('MOTION2M10 fragment budget rejects without mutating saved artwork',()=>{co
 test('MOTION2M11 attached connector compatibility refuses instead of silently detaching links',()=>{const b=mixedFixture(),h=command(createHistory(b),b=>mutateConnector(b,['red','blue'],'arrow')),source=structuredClone(h.board);assert.throws(()=>nativeOnly(h.board,[mixedRegion(h.board),mixedObject()]),/Detach connectors/);assert.deepEqual(h.board,source);assert.doesNotThrow(()=>compileMotion(h.board,[mixedObject()],view,size));});
 test('MOTION2M12 mixed preparation accounts bounded snapshot pixels and leaves original revision unchanged',()=>{const b=mixedFixture(),cues=[mixedRegion(b),mixedObject()],p=nativeOnly(b,cues);assert(p.diagnostics.pixels>0&&p.diagnostics.pixels<=16*1024*1024);assert(p.diagnostics.fragments>0&&p.diagnostics.fragments<=256);assert.equal(p.board.revision,b.revision);assert.equal(p.diagnostics.mixedLayers,1);assert(!JSON.stringify(p.board).includes('diagnostics'));});
 test('MOTION2M13 pixel work budget fails before unbounded source preparation and preserves source',()=>{const b=mixedFixture(),data=new Uint8ClampedArray(1024*1024*4);data.set([120,30,40,255]);const source=rasterStroke(data,1024,1024,100,100,'large');b.layers[0].strokes=Array.from({length:17},(_,i)=>({...structuredClone(source),id:'large'+i}));const before=JSON.stringify(b);assert.throws(()=>nativeOnly(b,[mixedRegion(b,'one-pixel',{x:100,y:100,width:1,height:1}),mixedObject('large',['large0'])]),/pixel work limit/);assert.equal(JSON.stringify(b),before);});
+
+
+import {cameraAt,cameraView,panMotionView,zoomMotionView} from '../../prototypes/browser-workspace/motion.js';
+test('MOTIONUXM01 explicit start/end persist through native import and Undo, camera only changes view',()=>{
+ const b=fixture(),h=createHistory(b),start={x:-4000,y:2000,scale:.5},target={x:9000,y:-3000,scale:2};
+ const c={id:'framed-camera',name:'Travel',kind:'camera',start,target,duration:2000},n=motionCommand(h,'save',c);
+ assert.equal(n.board.motion.version,2);assert.deepEqual(n.board.layers,b.layers);assert.deepEqual({...undo(n).board,revision:b.revision},b);assert.deepEqual({...redo(undo(n)).board,revision:n.board.revision},n.board);
+ const imported=importDocument(JSON.stringify(n.board));assert.deepEqual(imported.motion.cues[0].start,start);assert.deepEqual(imported.motion.cues[0].target,target);
+ const sequence=compileMotion(imported,imported.motion.cues,view,size);assert.deepEqual(cameraAt(sampleMotion(sequence,0,0).view,size),start);assert.deepEqual(cameraAt(sampleMotion(sequence,0,1).view,size),target);assert.equal(sampleMotion(sequence,0,1).hasGeometry,false);assert.deepEqual(sampleMotion(sequence,0,1).board.layers,imported.layers);
+ const legacy=structuredClone(n.board);legacy.motion.version=1;assert.throws(()=>validateBoard(legacy),/v2/);for(const bad of [null,{...start,scale:0},{...start,x:Infinity},{...start,unknown:1}])assert.throws(()=>motionCommand(h,'save',{...c,start:bad}));
+});
+test('MOTIONUXM02 off-screen navigation and zoom keep pointer anchor, bounded scale, reject invalid input',()=>{
+ const v={x:0,y:0,scale:1},p={x:220,y:120},pan=panMotionView(v,-2400,1100);assert.equal(cameraAt(pan,size).x,size.width/2+2400);assert.deepEqual(v,{x:0,y:0,scale:1});
+ const z=zoomMotionView(pan,2,p);assert.equal((p.x-z.x)/z.scale,(p.x-pan.x)/pan.scale);assert.equal((p.y-z.y)/z.scale,(p.y-pan.y)/pan.scale);
+ assert.equal(zoomMotionView(v,100,p).scale,8);assert.equal(zoomMotionView(v,.0001,p).scale,.1);assert.throws(()=>zoomMotionView(v,NaN,p));assert.throws(()=>panMotionView(v,Infinity,0));assert.deepEqual(cameraView(cameraAt(pan,size),size),pan);
+});

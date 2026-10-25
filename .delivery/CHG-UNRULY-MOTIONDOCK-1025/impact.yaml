@@ -1,0 +1,16 @@
+change_id: CHG-UNRULY-MOTIONDOCK-1025
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+base: e20961b26d8310b4b65d18af91fe86af03534084
+targets:
+  - prototypes/browser-workspace/motion-ui.js
+  - prototypes/browser-workspace/motion.js
+  - prototypes/browser-workspace/palettes-ui.js
+  - prototypes/browser-workspace/index.html
+  - prototypes/browser-workspace/style.css
+regression_obligations:
+  - {id: camera-navigation, reason: Off-screen destinations must be reachable without artwork edits, test_id: motion-browser}
+  - {id: camera-persistence, reason: Explicit start and end frames survive save and reload, test_id: motion-model}
+  - {id: legacy-motion, reason: Existing v1 cues and geometry Undo remain valid, test_id: motion-browser}
+  - {id: dock, reason: Reversible remembered UI preference preserves palettes and artwork, test_id: palette-browser}
