@@ -407,7 +407,7 @@ function pickLassoRegion(polygon){try{
  const l=editable(h.board);if(maskTarget)throw Error('Choose Edit artwork before selecting pixels');if(!layerState(h.board,l).visible)throw Error('Active layer is hidden');const anchor=l.strokes[0]?.points[0];if(!anchor)throw Error('Active layer is empty');
  const window=polygonWindow(polygon);let cropped=false,snapshot=l.strokes.length===1?nativePixelSnapshot(l.strokes[0]):null;
  if(!snapshot){try{snapshot=renderer.snapshotLayer(l,0,anchor);}catch(e){if(!e.message.startsWith('Smudge layer exceeds'))throw e;cropped=true;snapshot=renderer.snapshotRegion(l,window);}}
- if(!snapshot)throw Error('Active layer is empty');const {mask,bounds}=polygonPixels(snapshot,polygon);
+ if(snapshot&&(snapshot.width>1024||snapshot.height>1024)){cropped=true;snapshot=renderer.snapshotRegion(l,window);}if(!snapshot)throw Error('Active layer is empty');const {mask,bounds}=polygonPixels(snapshot,polygon);
  const region=makePixelRegion(l,snapshot,mask,bounds,cropped);
  wandRegion=region;wandImage=null;selected=[];layerScope=[l.id];scopeBoard=h.board.id;scopeActive=l.id;status(bounds?bounds.count.toLocaleString()+' pixels selected · drag highlighted pixels, then Apply':'No layer pixels inside lasso');return !!bounds;
  }catch(e){status(e.message.replace('Smudge layer','Region lasso layer')+' · prior selection retained',true);return false;}}
