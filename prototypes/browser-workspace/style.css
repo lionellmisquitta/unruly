@@ -190,3 +190,19 @@ body.focus-mode #focus-exit{display:block}
 #reference-panel{z-index:3}
 
 #timelapse-status{bottom:36px}
+
+/* Framing keeps the whole drawing surface available; controls stay above it. */
+#motion-stage[data-mode=camera-start],#motion-stage[data-mode=camera-end],#motion-stage[data-mode=move-end]{cursor:grab}
+.motion-frame-crosshair{stroke:var(--focus);stroke-width:2;vector-effect:non-scaling-stroke;pointer-events:none}
+#motion-navigation{align-items:center;margin:0}#motion-navigation button{min-width:44px;flex:none}#motion-frame-zoom{min-width:50px;text-align:center}
+#motion-capture-bar{max-height:42dvh;overflow:auto}#motion-help{font-size:13px;color:var(--text);margin-bottom:12px}
+#motion-camera-fields summary{min-height:44px;padding:12px 0;cursor:pointer}
+#quick-colours .quick-heading{flex-wrap:wrap}#quick-colours-undock{width:100%;margin-bottom:8px}
+.motion-open #quick-colours{visibility:hidden}
+
+.motion-primary-actions{position:sticky;bottom:-16px;background:var(--panel);padding:10px 0;z-index:2}.motion-primary-actions button{min-height:44px}
+
+/* Motion status must not resize the camera viewport on narrow screens. */
+.motion-open footer{flex-wrap:nowrap}.motion-open #save{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.motion-bar #motion-frame-zoom{flex:0 0 auto}

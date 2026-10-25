@@ -1,0 +1,13 @@
+# Motion framing and colour docking — candidate receipt
+
+Base: e20961b26d8310b4b65d18af91fe86af03534084. User authorized clearer Motion Trace and reversible docking into colour wheel.
+
+Implemented: explicit Camera start/end framing with pen/mouse/finger pan, pinch/wheel/button zoom, keyboard navigation and view confirmation; full canvas remains available while framing. Off-screen artwork endpoint placement uses navigable crosshair. Camera start/target use strict motion envelope v2; existing v1 files and sequential camera semantics remain loadable and unchanged. Both frames save/reload/import and Undo atomically. Framing and preview do not edit geometry; Cancel/Stop restores source view. Fixed narrow-screen status wrapping that resized canvas during restore. Primary framing controls precede naming/timing and Preview/Save remain accessible.
+
+Quick colours: Dock hides floating panel; Undock colours in colour-wheel inspector restores it. Separate local preference persists across reload; failed preference writes retain session state with feedback. Palettes/current artwork unchanged. Focus moves to appropriate control. Default remains floating.
+
+Local self-verification executed with Chromium 151.0.7922.34: 18 motion browser scenarios PASS (existing 15 + 3 new desktop/phone framing/pinch/offscreen/cancel/reload cases), 16 palette scenarios PASS (existing 13 + 3 new dock/undock/reload/quota cases). Motion + CI invocation/mutation guards + text/cache models 61 PASS, zero skips/cancellations/todos. Palette models 18 PASS separately. New camera schema/navigation model tests are additive. Desktop and 390px camera/framing screenshots visually inspected. Subsequent CSS-only correction keeps zoom controls on a single row; exact final source awaits cumulative CI.
+
+Development findings retained: initial local server isolation blocked browser access (environment, no product conclusion); new Undo fixture corrected for existing monotonic revision behavior; queued repaint assertion waits for actual pixels; phone restore then exposed real status-wrap viewport resize, fixed without weakening pixel equality. Previous QA files/tests are preserved. Only cache identity literals aligned in older offline fixtures.
+
+Full cumulative CI, merge and publication pending. No independent-review/device-feel claim. No roadmap, graph, existing QA-record deletion, renderer/model/storage engine or other pending PR changes. Rollback runtime: restore six affected application files from base; boards with motion v2 start frames require this release or newer. Back up before reverting to a release that supports only motion v1.

@@ -18,6 +18,16 @@ export function initPalettes({$,getColour,setColour,blocked,getReference,onRefer
  function action(fn){if(blocked()){render();note('Finish the current edit first.',true);return;}try{fn();}catch(e){note(e.message,true);render();}}
  $('palette-image-import').onclick=()=>{if(!blocked())$('palette-image-file').click();};
  $('palette-image-file').onchange=async()=>{const file=$('palette-image-file').files[0];$('palette-image-file').value='';if(!file||blocked())return;try{const pixels=await decodeImageFile(file);if(blocked())throw Error('Finish the current edit and import again');const colours=imageSwatches(pixels.data);if(!colours.length)throw Error('Image has no visible colours');let name=file.name.replace(/\.[^.]+$/,'').slice(0,54)||'Image';let suffix=1;const base=name;while(library.palettes.some(p=>p.name.toLowerCase()===name.toLowerCase()))name=base+' '+(++suffix);let next=paletteCommand(library,'create',{id:crypto.randomUUID(),name});for(const colour of colours)next=paletteCommand(next,'add',{colour});apply(next,'Created '+colours.length+' swatches from '+file.name);}catch(e){note(e.message,true);}};
+ const dockKey='unruly-quick-colours-docked-v1';
+ let coloursDocked=false;
+ try{coloursDocked=localStorage.getItem(dockKey)==='true';}catch{}
+ function setDocked(value,persist=false){
+  coloursDocked=value;$('quick-colours').hidden=value;$('quick-colours-undock').hidden=!value;
+  if(persist){try{localStorage.setItem(dockKey,String(value));$('quick-colours-notice').textContent='';}catch{$('quick-colours-notice').textContent='Colour panel position is remembered for this session only.';}}
+ }
+ $('quick-colours-dock').onclick=()=>{if(blocked())return;setDocked(true,true);$('colour-toggle').focus();};
+ $('quick-colours-undock').onclick=()=>{if(blocked())return;setDocked(false,true);$('colour-toggle').click();$('quick-colours-dock').focus();};
+ setDocked(coloursDocked);
  function dock(){for(const [target,source]of [['quick-recent','recent-colours'],['quick-swatches','saved-palette']]){const host=$(target);host.replaceChildren();for(const b of [...$(source).querySelectorAll('button')].slice(0,12)){const copy=b.cloneNode(true);copy.removeAttribute('id');copy.onclick=()=>b.click();host.append(copy);}}$('quick-undo').disabled=$('undo').disabled;$('quick-redo').disabled=$('redo').disabled;}
  new MutationObserver(dock).observe($('recent-colours'),{childList:true});new MutationObserver(dock).observe($('saved-palette'),{childList:true});new MutationObserver(dock).observe($('undo'),{attributes:true,attributeFilter:['disabled']});new MutationObserver(dock).observe($('redo'),{attributes:true,attributeFilter:['disabled']});$('quick-palette-image').onclick=()=>$('palette-image-import').click();$('quick-undo').onclick=()=>$('undo').click();$('quick-redo').onclick=()=>$('redo').click();$('quick-colours-toggle').onclick=()=>{const content=$('quick-colours-content');content.hidden=!content.hidden;$('quick-colours-toggle').setAttribute('aria-expanded',String(!content.hidden));};queueMicrotask(dock);
  $('palette-select').onchange=()=>action(()=>apply(paletteCommand(library,'select',{id:$('palette-select').value}),'Palette selected.'));

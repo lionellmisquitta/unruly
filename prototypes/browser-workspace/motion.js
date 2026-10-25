@@ -17,19 +17,20 @@ export function validateTarget(t){
  else if(t?.kind==='region'){keys(t,['kind','layerId','rect','mask','sourceIds']);if(!id(t.layerId))fail('Invalid motion region layer');ids(t.sourceIds);keys(t.rect,['x','y','width','height']);const r=t.rect;if(![r.x,r.y,r.width,r.height].every(Number.isInteger)||![r.x,r.y,r.x+r.width,r.y+r.height].every(n=>number(n))||!number(r.width,1,1024)||!number(r.height,1,1024))fail('Invalid motion region rectangle');decodeMotionMask(t);}
  else fail('Invalid motion target');return t;
 }
+function validateCamera(c){keys(c,['x','y','scale']);if(!number(c.x)||!number(c.y)||!number(c.scale,.1,8))fail('Invalid motion camera');return c;}
 export function validateCue(c){
  if(c?.kind==='move'){keys(c,['id','name','kind','target','path','duration']);validateTarget(c.target);if(!Array.isArray(c.path)||c.path.length<2||c.path.length>motionLimits.path)fail('Motion path needs 2–128 points');for(const p of c.path){keys(p,['x','y']);if(!number(p.x)||!number(p.y))fail('Invalid motion path point');}if(c.path[0].x!==0||c.path[0].y!==0||!c.path.some(p=>p.x!==0||p.y!==0))fail('Motion path must start at zero and move');}
- else if(c?.kind==='camera'){keys(c,['id','name','kind','target','duration']);keys(c.target,['x','y','scale']);if(!number(c.target.x)||!number(c.target.y)||!number(c.target.scale,.1,8))fail('Invalid motion camera');}
+ else if(c?.kind==='camera'){keys(c,['id','name','kind','target','duration',...(Object.hasOwn(c,'start')?['start']:[])]);validateCamera(c.target);if(Object.hasOwn(c,'start'))validateCamera(c.start);}
  else fail('Invalid motion cue kind');
  if(!id(c.id)||typeof c.name!=='string'||!c.name.trim()||c.name.length>64||!Number.isInteger(c.duration)||!number(c.duration,250,30000))fail('Invalid motion cue name or duration');return c;
 }
 export function validateMotion(board,used=new Set()){
  if(!Object.hasOwn(board,'motion'))return;
- if(board.version<14)fail('Motion cues require v14');keys(board.motion,['version','cues']);if(board.motion.version!==1||!Array.isArray(board.motion.cues)||board.motion.cues.length>motionLimits.cues||new TextEncoder().encode(JSON.stringify(board.motion)).length>motionLimits.bytes)fail('Motion cue capacity exceeded');
- const seen=new Set(used);for(const c of board.motion.cues){validateCue(c);if(seen.has(c.id))fail('Duplicate motion identity');seen.add(c.id);}
+ if(board.version<14)fail('Motion cues require v14');keys(board.motion,['version','cues']);if(![1,2].includes(board.motion.version)||!Array.isArray(board.motion.cues)||board.motion.cues.length>motionLimits.cues||new TextEncoder().encode(JSON.stringify(board.motion)).length>motionLimits.bytes)fail('Motion cue capacity exceeded');
+ const seen=new Set(used);for(const c of board.motion.cues){validateCue(c);if(c.start&&board.motion.version<2)fail('Camera start frame requires motion v2');if(seen.has(c.id))fail('Duplicate motion identity');seen.add(c.id);}
 }
 export function mutateMotion(board,action,value){
- if(action==='save'){validateCue(value);board.version=Math.max(14,board.version);board.folders=board.folders||[];board.motion=board.motion||{version:1,cues:[]};const at=board.motion.cues.findIndex(c=>c.id===value.id);if(at<0)board.motion.cues.push(clone(value));else board.motion.cues[at]=clone(value);}
+ if(action==='save'){validateCue(value);board.version=Math.max(14,board.version);board.folders=board.folders||[];board.motion=board.motion||{version:1,cues:[]};if(value.start)board.motion.version=2;const at=board.motion.cues.findIndex(c=>c.id===value.id);if(at<0)board.motion.cues.push(clone(value));else board.motion.cues[at]=clone(value);}
  else{const cues=board.motion?.cues,at=cues?.findIndex(c=>c.id===value);if(at===undefined||at<0)fail('Motion cue no longer exists');if(action==='delete')cues.splice(at,1);else if(action==='up'||action==='down'){const to=at+(action==='up'?-1:1);if(to>=0&&to<cues.length)[cues[at],cues[to]]=[cues[to],cues[at]];}else fail('Invalid motion action');}
  validateMotion(board);
 }
@@ -49,7 +50,18 @@ export function cameraView(camera,size){return{x:size.width/2-camera.x*camera.sc
 export function cameraAt(view,size){if(!view||![view.x,view.y].every(n=>number(n))||!number(view.scale,.1,8)||!size||![size.width,size.height].every(n=>number(n,1,100000)))fail('Invalid motion viewport');return{x:(size.width/2-view.x)/view.scale,y:(size.height/2-view.y)/view.scale,scale:view.scale};}
 export function compileMotion(board,cues,view,size,prepareRegion,prepareMixed){
  if(!Array.isArray(cues)||!cues.length||cues.length>24)fail('Save or select a motion cue first');const prepared=prepareMixed?.(board,cues);let current=prepared?.board||board,camera=cameraAt(view,size);const segments=[],regions=new Map();
- for(const [i,cue]of cues.entries()){validateCue(cue);let target=prepared?.targets[i]||cue.target,base=current;if(cue.kind==='move'){if(target.kind==='region'&&regions.has(JSON.stringify(target))){target=regions.get(JSON.stringify(target));resolveTarget(base,target);}else{resolveTarget(base,target);if(target.kind==='region'){if(!prepareRegion)fail('Motion region preparation unavailable');const key=JSON.stringify(target),prepared=prepareRegion(base,target);base=prepared.board;target=prepared.target;regions.set(key,target);}}const end=pathPosition(cue.path,1);current=moveTarget(base,target,end.x,end.y);}const nextCamera=cue.kind==='camera'?clone(cue.target):camera;segments.push({cue:clone(cue),target,base,from:camera,to:nextCamera});camera=nextCamera;}
+ for(const [i,cue]of cues.entries()){validateCue(cue);let target=prepared?.targets[i]||cue.target,base=current;if(cue.kind==='move'){if(target.kind==='region'&&regions.has(JSON.stringify(target))){target=regions.get(JSON.stringify(target));resolveTarget(base,target);}else{resolveTarget(base,target);if(target.kind==='region'){if(!prepareRegion)fail('Motion region preparation unavailable');const key=JSON.stringify(target),prepared=prepareRegion(base,target);base=prepared.board;target=prepared.target;regions.set(key,target);}}const end=pathPosition(cue.path,1);current=moveTarget(base,target,end.x,end.y);}const nextCamera=cue.kind==='camera'?clone(cue.target):camera;segments.push({cue:clone(cue),target,base,from:clone(cue.kind==='camera'&&cue.start?cue.start:camera),to:nextCamera});camera=nextCamera;}
  return{original:board,view:clone(view),size:clone(size),segments};
 }
 export function sampleMotion(session,index,progress){if(!Number.isInteger(index)||index<0||index>=session.segments.length||!number(progress,0,1))fail('Invalid motion playback position');const s=session.segments[index];let board=s.base;if(s.cue.kind==='move'){const p=pathPosition(s.cue.path,progress);board=moveTarget(s.base,s.target,p.x,p.y);}const camera={x:s.from.x+(s.to.x-s.from.x)*progress,y:s.from.y+(s.to.y-s.from.y)*progress,scale:s.from.scale*Math.pow(s.to.scale/s.from.scale,progress)};const hasGeometry=session.segments.slice(0,index).some(x=>x.cue.kind==='move'&&Math.hypot(...Object.values(pathPosition(x.cue.path,1)))>0)||(s.cue.kind==='move'&&Math.hypot(...Object.values(pathPosition(s.cue.path,progress)))>0);return{board,view:cameraView(camera,session.size),hasGeometry};}
+
+// Disposable framing math: bounded pan and zoom never change artwork or saved views.
+export function panMotionView(view,dx,dy){
+ if(!number(dx)||!number(dy))fail('Invalid camera pan');
+ const next={x:view.x+dx,y:view.y+dy,scale:view.scale};cameraAt(next,{width:1,height:1});return next;
+}
+export function zoomMotionView(view,factor,point){
+ if(!Number.isFinite(factor)||factor<=0||![point.x,point.y].every(n=>number(n)))fail('Invalid camera zoom');
+ const scale=Math.max(.1,Math.min(8,view.scale*factor)),ratio=scale/view.scale;
+ const next={x:point.x-(point.x-view.x)*ratio,y:point.y-(point.y-view.y)*ratio,scale};cameraAt(next,{width:1,height:1});return next;
+}
