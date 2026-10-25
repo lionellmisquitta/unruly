@@ -6,3 +6,13 @@ test('LASM03 reversed winding, duplicate closing point and clipping are exact',(
 test('LASM04 malformed/degenerate polygons and oversized surface reject',()=>{for(const p of [[],[poly[0],poly[1],poly[1]],poly.map(p=>({...p,x:NaN})),Array(513).fill(poly[0])])assert.throws(()=>polygonPixels(surface(),p));assert.throws(()=>polygonPixels({...surface(),width:1025},poly));});
 test('LASM05 full1MP boundary has bounded edge work and pixel fill',()=>{const s={width:1024,height:1024,x:0,y:0,data:new Uint8ClampedArray(4194304)},p=[{x:0,y:0},{x:1024,y:0},{x:1024,y:1024},{x:0,y:1024}],r=polygonPixels(s,p);assert.equal(r.edgesTested,4096);assert.equal(r.filled,1048576);assert.equal(r.mask.byteLength,1048576);});
 test('LASM06 move preview isolates exact fragment and single undo restores continuous original',()=>{const s=surface();let h=command(createHistory(createBoard()),b=>{b.version=4;b.layers[0].strokes=[rasterStroke(s.data,8,8,10,20)];});const r={board:h.board,layerId:h.board.activeLayer,snapshot:s,mask:polygonPixels(s,poly).mask},p=prepareRegionTransform(h,r),q=transformSelection(p.working,[p.id],{dx:5,dy:0}),n=commitRegionTransform(h,r,q);assert.equal(h.board.layers[0].strokes.length,1);assert.equal(n.board.layers[0].strokes.length,2);assert.deepEqual(undo(n).board.layers,h.board.layers);});
+
+import vm from 'node:vm';
+import {readFileSync} from 'node:fs';
+const selectionSource=readFileSync(new URL('../../prototypes/browser-workspace/app.js',import.meta.url),'utf8');
+for(const kind of ['region','objects'])test('DESELECT removes '+kind+' selection without altering saved artwork/history',()=>{
+ const h=createHistory(createBoard('selection-exit')),before=structuredClone(h);let cancelled=0,focused=0;
+ const c={h,blocked:()=>false,selected:kind==='objects'?['sample']:[],wandRegion:kind==='region'?{bounds:{count:4}}:null,pathEditor:{cancel:()=>cancelled++},refresh(){},status(){},closePopovers(){},canvas:{focus:()=>focused++}};
+ vm.createContext(c);for(const name of ['selectionAction','wandAction','deselect'])vm.runInContext(selectionSource.split('\n').find(s=>s.startsWith('function '+name+'(')),c);
+ c.deselect();assert.equal(c.selected.length,0);assert.equal(c.wandRegion,null);assert.deepEqual(c.h,before);assert.equal(cancelled,1);assert.equal(focused,1);
+});
