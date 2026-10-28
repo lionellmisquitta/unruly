@@ -57,3 +57,17 @@ test('MOTIONUXM02 off-screen navigation and zoom keep pointer anchor, bounded sc
  const z=zoomMotionView(pan,2,p);assert.equal((p.x-z.x)/z.scale,(p.x-pan.x)/pan.scale);assert.equal((p.y-z.y)/z.scale,(p.y-pan.y)/pan.scale);
  assert.equal(zoomMotionView(v,100,p).scale,8);assert.equal(zoomMotionView(v,.0001,p).scale,.1);assert.throws(()=>zoomMotionView(v,NaN,p));assert.throws(()=>panMotionView(v,Infinity,0));assert.deepEqual(cameraView(cameraAt(pan,size),size),pan);
 });
+
+import {motionEdgePan,appendMotionPoint} from '../../prototypes/browser-workspace/motion.js';
+test('MOTIONEDGEM01 all edge directions, diagonal, neutral centre and bounded frame delay',()=>{
+ const s={width:1000,height:700};assert.deepEqual(motionEdgePan({x:500,y:350},s,16),{dx:0,dy:0});
+ assert(motionEdgePan({x:0,y:350},s,16).dx>0);assert(motionEdgePan({x:1000,y:350},s,16).dx<0);assert(motionEdgePan({x:500,y:0},s,16).dy>0);assert(motionEdgePan({x:500,y:700},s,16).dy<0);
+ const corner=motionEdgePan({x:1000,y:0},s,16);assert(corner.dx<0&&corner.dy>0);assert.deepEqual(motionEdgePan({x:1000,y:0},s,10000),motionEdgePan({x:1000,y:0},s,50));assert.equal(motionEdgePan({x:1000,y:350},s,0).dx,0);
+ assert.throws(()=>motionEdgePan({x:NaN,y:0},s,16));assert.throws(()=>motionEdgePan({x:0,y:0},{width:0,height:10},16));assert.throws(()=>motionEdgePan({x:0,y:0},s,-1));
+});
+test('MOTIONEDGEM02 straight travel remains lossless and bounded, turns and backtracking retained',()=>{
+ const initial=[{x:0,y:0}];let path=initial;for(let i=1;i<=10000;i++)path=appendMotionPoint(path,{x:i,y:-i});assert.deepEqual(path,[{x:0,y:0},{x:10000,y:-10000}]);assert.deepEqual(initial,[{x:0,y:0}]);
+ path=appendMotionPoint(path,{x:9999,y:-9999});assert.equal(path.length,3);path=appendMotionPoint(path,{x:9998,y:-9999});assert.equal(path.length,4);
+ let curve=[{x:0,y:0}];for(let i=1;i<128;i++)curve=appendMotionPoint(curve,{x:i,y:i*i});const before=structuredClone(curve);assert.throws(()=>appendMotionPoint(curve,{x:128,y:128*128}),/128/);assert.deepEqual(curve,before);
+ const v={x:340,y:-100,scale:2},delta=motionEdgePan({x:999,y:350},{width:1000,height:700},50),next=panMotionView(v,delta.dx,delta.dy);assert(Math.abs((999-next.x)/next.scale-(999-v.x)/v.scale+delta.dx/2)<1e-8);
+});

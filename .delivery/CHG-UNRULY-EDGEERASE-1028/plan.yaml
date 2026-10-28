@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-EDGEERASE-1028
+route: standard
+prohibited_paths: [docs/, .knowledge/, knowledge-graph/, .github/workflows/]
+checkpoints:
+  - id: edge-and-erase
+    allowed_paths: [prototypes/browser-workspace/motion-ui.js, prototypes/browser-workspace/motion.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/sw.js, .delivery/CHG-UNRULY-EDGEERASE-1028/]
+    test_paths: [tests/browser-workspace/motion.browser.cjs, tests/browser-workspace/motion.model.test.mjs, tests/browser-workspace/model.test.mjs, tests/browser-workspace/pen.browser.cjs, tests/browser-workspace/]
+    tests:
+      - {id: models, command: [node, --test, tests/browser-workspace/model.test.mjs, tests/browser-workspace/motion.model.test.mjs, tests/browser-workspace/pen.model.test.mjs, tests/browser-workspace/ci-contract.test.mjs], timeout_seconds: 120}
+      - {id: motion-browser, command: [node, tests/browser-workspace/motion.browser.cjs], timeout_seconds: 300}
+      - {id: erase-browser, command: [node, tests/browser-workspace/pen.browser.cjs], timeout_seconds: 300}
+# Existing offline fixtures may change matching cache literals only. No invocation, assertion or existing QA-record deletion.
