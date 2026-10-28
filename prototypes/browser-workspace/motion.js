@@ -65,3 +65,18 @@ export function zoomMotionView(view,factor,point){
  const scale=Math.max(.1,Math.min(8,view.scale*factor)),ratio=scale/view.scale;
  const next={x:point.x-(point.x-view.x)*ratio,y:point.y-(point.y-view.y)*ratio,scale};cameraAt(next,{width:1,height:1});return next;
 }
+
+// CSS-pixel edge velocity, integrated with bounded elapsed time by the path controller.
+export function motionEdgePan(pointer,size,elapsed){
+ if(!pointer||!size||![pointer.x,pointer.y].every(n=>number(n))||![size.width,size.height].every(n=>number(n,1,100000))||!number(elapsed,0,100000))fail('Invalid motion edge navigation');
+ const axis=(p,extent)=>{const band=Math.min(48,extent/4);if(p<band)return 520*Math.pow(1-Math.max(0,p)/band,2);if(p>extent-band)return -520*Math.pow(1-Math.max(0,extent-p)/band,2);return 0;};
+ const seconds=Math.min(50,elapsed)/1000;return{dx:axis(pointer.x,size.width)*seconds||0,dy:axis(pointer.y,size.height)*seconds||0};
+}
+export function appendMotionPoint(path,point){
+ if(!Array.isArray(path)||!path.length||path.length>128||!point||![point.x,point.y].every(n=>number(n)))fail('Invalid motion path point');
+ const last=path.at(-1);if(Math.hypot(point.x-last.x,point.y-last.y)<1e-9)return path;
+ if(path.length>1){const a=path.at(-2),ux=last.x-a.x,uy=last.y-a.y,vx=point.x-last.x,vy=point.y-last.y;
+  if(ux*vx+uy*vy>=0&&Math.abs(ux*vy-uy*vx)<=1e-10*Math.hypot(ux,uy)*Math.hypot(vx,vy))return [...path.slice(0,-1),{...point}];
+ }
+ if(path.length>=128)fail('128 path points reached · release to finish');return [...path,{...point}];
+}

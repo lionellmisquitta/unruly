@@ -1,0 +1,14 @@
+change_id: CHG-UNRULY-EDGEERASE-1028
+base: 7022ce5b27917e87c1123aa2e2c94916c386fa26
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets:
+  - prototypes/browser-workspace/motion-ui.js
+  - prototypes/browser-workspace/motion.js
+  - prototypes/browser-workspace/app.js
+regression_obligations:
+  - {id: edge-navigation, reason: Continuous motion drawing must cross viewport edges in document coordinates, test_id: motion-browser}
+  - {id: path-cancellation, reason: Edge pan must stop and restore source view on release/cancel/blur, test_id: motion-browser}
+  - {id: long-erasure, reason: Capacity cannot restore previous successful erasure; release commits once and explicit cancellation restores, test_id: erase-browser}
+  - {id: precision-work, reason: Existing model budgets and noncapacity failures remain enforced, test_id: models}
