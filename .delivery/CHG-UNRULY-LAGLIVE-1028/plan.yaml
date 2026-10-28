@@ -1,0 +1,16 @@
+change_id: CHG-UNRULY-LAGLIVE-1028
+route: standard
+prohibited_paths: [prototypes/, tests/, docs/, .knowledge/, knowledge-graph/]
+test_config_changes: [.github/workflows/browser-workspace-pages.yml]
+checkpoints:
+  - id: publish
+    allowed_paths: [.github/workflows/browser-workspace-pages.yml, .delivery/CHG-UNRULY-LAGLIVE-1028/]
+    test_paths: []
+    tests:
+      - id: release-guard
+        command: ["python","-c","import pathlib,textwrap; s=pathlib.Path('.github/workflows/browser-workspace-pages.yml').read_text(); exec(textwrap.dedent(s.split(\"          python - <<'PY'\\n\",1)[1].split('\\n          PY',1)[0]))"]
+        timeout_seconds: 120
+      - id: hosted-bytes
+        command: ["bash","-c","for source in prototypes/browser-workspace/*; do curl --fail --silent \"https://lionellmisquitta.github.io/unruly/$(basename \"$source\")?laggallery=4ffc7d\" | cmp --silent \"$source\" - || exit 1; done"]
+        timeout_seconds: 600
+# Precondition: download pinned archive to /tmp/unruly-cumulative.zip, as in publication workflow. No protected-plan enforcement claimed.

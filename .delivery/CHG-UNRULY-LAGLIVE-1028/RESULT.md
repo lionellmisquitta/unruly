@@ -1,0 +1,7 @@
+# Background recording and saved-board gallery publication
+
+Tested source4ffc7d1383fc7f2f9a3591655ed5cce937c64fc1, merged0b4cf3a4fbc70bbd88f158d60fa52966f491ed8d byPR64 with identical treebb59bdbcb29a3b0e4981ad4fe2b7d68c71991591. Cumulative40655265634 SUCCESS all six groups/aggregate. Artifact12800979190 SHA2567f23e3504c317e035928d35698f6269e251200b593841765ae9b5b28b41afcf9. Exact guard locally PASS:699models zero failures/skips/cancellations/todos,549browser scenarios PASS,2legacy checks,116test files all invoked,218source hashes.
+
+CI5.33MiB test:old foreground capture330.5ms vs input dispatch43ms after background worker; exact recorded native artwork preserved. This is not Surface/screen-sharing end-to-end latency. Local recording worker preserves saved logs on failure and performs ordinary read/validation/compaction/capture/append off main thread. Immutable scene cache avoids repeated projection. Existing native boards remain in browser IndexedDB; no cloud sync/reset/migration. Gallery desktop/390px restores old ink after New/switch/reload. Long-hold shape setting remains optional in Actions→Drawing tools.
+
+Release-only update to existing Pages source/evidence pin and scoped records. Runtime/tests/roadmap/graph/old QA untouched by release PR. Cachev10-20261028-lag-gallery-1. Publication must compare all95hosted assets, including the new local worker. Physical device acceptance remains owner trial. Rollback uses an earlier verified source while preserving native data/logs.
