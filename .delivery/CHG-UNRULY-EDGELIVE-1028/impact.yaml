@@ -1,0 +1,8 @@
+change_id: CHG-UNRULY-EDGELIVE-1028
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [.github/workflows/browser-workspace-pages.yml]
+regression_obligations:
+  - {id: tested-bytes, reason: Only verified exact-source evidence may be deployed, test_id: release-guard}
+  - {id: hosted, reason: Verify deployed bytes independently, test_id: hosted-bytes}
