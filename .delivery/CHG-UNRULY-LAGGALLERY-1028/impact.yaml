@@ -1,0 +1,11 @@
+change_id: CHG-UNRULY-LAGGALLERY-1028
+base: e15c12b83ff6815ba7d6e605f97c6b72d132fc6f
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [prototypes/browser-workspace/timelapse-ui.js, prototypes/browser-workspace/timelapse-capture-worker.js, prototypes/browser-workspace/virtual-project-ui.js, prototypes/browser-workspace/virtual-group-scene.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js]
+regression_obligations:
+  - {id: input, reason: Capture serialization and recording load must not monopolize drawing thread, test_id: timelapse-browser}
+  - {id: recording, reason: Keep every admitted snapshot, ordering, conflict and gap behavior, test_id: timelapse-browser}
+  - {id: scene, reason: Cache only identical immutable boards/project sources and preserve validation defaults, test_id: virtual-model}
+  - {id: gallery, reason: Existing saved boards and project sources stay discoverable and intact, test_id: gallery-browser}

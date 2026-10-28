@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-LAGGALLERY-1028
+route: standard
+prohibited_paths: [docs/, .knowledge/, knowledge-graph/]
+checkpoints:
+  - id: input-gallery
+    allowed_paths: [prototypes/browser-workspace/timelapse-ui.js, prototypes/browser-workspace/timelapse-capture-worker.js, prototypes/browser-workspace/virtual-project-ui.js, prototypes/browser-workspace/virtual-group-scene.js, prototypes/browser-workspace/app.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/style.css, prototypes/browser-workspace/sw.js, .delivery/CHG-UNRULY-LAGGALLERY-1028/]
+    test_paths: [tests/browser-workspace/]
+    tests:
+      - {id: timelapse-browser, command: [node, tests/browser-workspace/timelapse.browser.cjs], timeout_seconds: 300}
+      - {id: gallery-browser, command: [node, tests/browser-workspace/virtual-project.browser.cjs], timeout_seconds: 300}
+      - {id: virtual-model, command: [node, --test, tests/browser-workspace/virtual-group-scene.model.test.mjs, tests/browser-workspace/virtual-project.model.test.mjs, tests/browser-workspace/timelapse.model.test.mjs, tests/browser-workspace/ci-contract.test.mjs], timeout_seconds: 120}
+# Existing offline fixtures may align worker identities; cumulative invocations/assertions retained.

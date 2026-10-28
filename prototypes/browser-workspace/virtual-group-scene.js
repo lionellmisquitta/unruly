@@ -4,14 +4,14 @@ import {remapConnectors} from './connectors.js';
 import {validateBoard} from './model.js';
 import {validateVirtualProject} from './virtual-groups.js';
 import {folderRows,layerState} from './folders.js';
-export function prepareVirtualScene(project,sources){
+export function prepareVirtualScene(project,sources,options){
  validateVirtualProject(project);
  const p=structuredClone(project),boards=new Map(),layers=[],folders=[],rows=[];
  let paper,activeLayer,activeIds,maxVersion=17;
  for(const [i,g] of p.groups.entries()){
   const loaded=sources.get(g.boardId);
   if(!loaded||loaded.recovered)throw Error('Source unavailable or recovered; review before composing');
-  const b=structuredClone(validateBoard(loaded.board));maxVersion=Math.max(maxVersion,b.version);
+  const b=structuredClone(validateBoard(loaded.board,options));maxVersion=Math.max(maxVersion,b.version);
   if(b.id!==g.boardId||b.revision!==g.sourceRevision)throw Error('Source identity or revision changed');
   if(boards.has(g.boardId))throw Error('Shared source boards require an explicit edit policy');
   if(b.reference)throw Error('Project reference composition is not yet supported');
@@ -28,7 +28,7 @@ export function prepareVirtualScene(project,sources){
   for(const n of layers.slice(-b.layers.length))remapConnectors(n.strokes,ids);
   if(g.id===p.activeGroupId){activeLayer=key(b.activeLayer);activeIds=ids;}
  }
- const scene=validateBoard({version:maxVersion,id:'virtual-scene',title:p.title,revision:p.groups.reduce((n,g)=>n+g.sourceRevision,0),paper,layers,folders,activeLayer});
+ const scene=validateBoard({version:maxVersion,id:'virtual-scene',title:p.title,revision:p.groups.reduce((n,g)=>n+g.sourceRevision,0),paper,layers,folders,activeLayer},options);
  return {board:scene,activeIds,rows,activeBoard:structuredClone(boards.get(p.groups.find(g=>g.id===p.activeGroupId).boardId)),mode:'source-replay',project:p};
 }
 // Uses the existing renderer and caller-owned view; never resets pan/zoom or writes storage.

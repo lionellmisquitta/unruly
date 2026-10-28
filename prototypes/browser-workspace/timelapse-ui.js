@@ -1,16 +1,24 @@
 import {exportVideo,supportedVideoFormats} from './timelapse-video.js';
-import {attachRecording,timeLimits,boardText,sameArtwork,operationDelta,compactRecording,applyEvent,eventBytes,validateRecording,timeline,frameAtTime} from './timelapse.js';
+import {attachRecording,timeLimits,applyEvent,validateRecording,timeline,frameAtTime} from './timelapse.js';
 import {openTimelapseStore} from './timelapse-store.js';
 // Owns recording/replay lifecycle; artwork authority is supplied read-only by host.
 export function initTimelapseUI({$,getBoard,getView,blocked,beforeOpen,validate,preview,status,getVideoContext}){
  const panel=$('timelapse-panel'),badge=$('timelapse-status');
  let auto=true,autoStarting=false;try{auto=localStorage.getItem('unruly-timelapse-auto')!=='false';}catch{}$('timelapse-auto').checked=auto;
- async function autoStart(){if(!auto||autoStarting||!getBoard()||recording||playing)return;const boardId=id;autoStarting=true;try{if(!await load()||id!==boardId||!auto)return;recording=true;clock=Date.now();clockAt=log?.events.at(-1)?.at||0;enqueue(boardText(getBoard(),validate),getView(),!!log);}catch(e){recording=false;error(e);}finally{autoStarting=false;sync();if(auto&&id!==boardId)queueMicrotask(autoStart);}}
+ async function autoStart(){if(!auto||autoStarting||!getBoard()||recording||playing)return;const boardId=id;autoStarting=true;try{if(!await load()||id!==boardId||!auto)return;recording=true;clock=Date.now();clockAt=log?.events.at(-1)?.at||0;enqueue(getBoard(),getView(),!!log,true);}catch(e){recording=false;error(e);}finally{autoStarting=false;sync();if(auto&&id!==boardId)queueMicrotask(autoStart);}}
  $('timelapse-auto').onchange=()=>{auto=$('timelapse-auto').checked;try{localStorage.setItem('unruly-timelapse-auto',String(auto));}catch{}if(auto)autoStart();else recording=false;sync();};
- let opened=false,working=false,recording=false,id=null,log=null,revision=0,lastText='',queuedText='',queued=0,pendingBytes=0,chain=Promise.resolve(),failure=null,db=null,loadGeneration=0;
+ let opened=false,working=false,recording=false,id=null,log=null,revision=0,queued=0,chain=Promise.resolve(),failure=null,db=null,loadGeneration=0;
  let playing=false,running=false,raf=0,originalView=null,base=null,cursor=0,cursorText='',cursorIndex=-1,times=[],position=0,started=0,startPosition=0,inert=[],clock=0,clockAt=0,savedBytes=0,pendingImport=null;
  let videoController=null,videoReady=null,videoURL=null,videoFormats=[];
  const yieldTask=()=>new Promise(ok=>setTimeout(ok,0));
+ let captureWorker=null,requestId=0;const requests=new Map();
+ function stopWorker(message){captureWorker?.terminate();captureWorker=null;for(const job of requests.values()){clearTimeout(job.timer);job.reject(Error(message));}requests.clear();}
+ function background(action,payload){
+  return new Promise((resolve,reject)=>{try{
+   if(!captureWorker){captureWorker=new Worker(new URL('./timelapse-capture-worker.js',import.meta.url),{type:'module'});captureWorker.onmessage=({data})=>{const job=requests.get(data.request);if(!job)return;requests.delete(data.request);clearTimeout(job.timer);data.error?job.reject(Error(data.error)):job.resolve(data.result);};captureWorker.onerror=e=>{e.preventDefault();stopWorker('Background recording failed · saved history preserved. Reopen Timelapse to retry.');};}
+   const request=++requestId,timer=setTimeout(()=>stopWorker('Background recording timed out · saved history preserved. Reopen Timelapse to retry.'),30000);requests.set(request,{resolve,reject,timer});captureWorker.postMessage({request,action,payload});
+  }catch(e){stopWorker('Background recording unavailable · saved history preserved');reject(e);}});
+ }
  const consume=e=>{e.preventDefault();e.stopImmediatePropagation();};
  function error(e){recording=false;failure=e.message||String(e);$('timelapse-error').textContent=failure;status('Timelapse · '+failure,true);sync();}
  function clearError(){failure=null;$('timelapse-error').textContent='';}
@@ -19,17 +27,18 @@ export function initTimelapseUI({$,getBoard,getView,blocked,beforeOpen,validate,
  function pause(){if(!running)return;cancelAnimationFrame(raf);raf=0;running=false;sync();}
  function stop(){cancelAnimationFrame(raf);raf=0;running=false;if(playing){playing=false;preview(null,originalView);for(const[el,value]of inert)el.inert=value;inert=[];document.body.classList.remove('timelapse-replaying');}cursorText='';cursorIndex=-1;cursor=0;position=0;sync();}
  function close(){if(working)return;clearVideo();stop();opened=false;panel.hidden=true;$('timelapse-discard-confirm').hidden=true;$('timelapse-attach-confirm').hidden=true;pendingImport=null;$('actions-toggle').focus();}
- function attach(boardId){if(id===boardId)return;recording=false;loadGeneration++;if(opened)close();id=boardId;log=null;revision=0;lastText=queuedText='';savedBytes=0;clearError();sync();if(auto)queueMicrotask(autoStart);}
- async function load(){const generation=++loadGeneration,boardId=id;await chain;const r=await(await storage()).read(boardId);if(generation!==loadGeneration||boardId!==id)return false;if(r.log){const checked=await validateRecording(r.log,validate,yieldTask);if(generation!==loadGeneration||boardId!==id)return false;if(r.log.version===1&&r.log.events.length>1){const compact=await compactRecording(r.log,validate,yieldTask);if(compact.bytes<checked.bytes){r.revision=await(await storage()).rewriteLog(compact.log,r.revision);r.log=compact.log;checked.bytes=compact.bytes;}}lastText=queuedText=checked.text;savedBytes=checked.bytes;}else{lastText=queuedText='';savedBytes=0;}log=r.log;revision=r.revision;return true;}
+ function attach(boardId){if(id===boardId)return;recording=false;loadGeneration++;if(opened)close();id=boardId;log=null;revision=0;savedBytes=0;clearError();sync();if(auto)queueMicrotask(autoStart);}
+ async function load(){const generation=++loadGeneration,boardId=id;await chain;const r=await background('load',{boardId});if(generation!==loadGeneration||boardId!==id)return false;log=r.log;revision=r.revision;savedBytes=r.bytes;return true;}
+
  async function open(){if(opened||blocked()||!getBoard())return;try{beforeOpen();attach(getBoard().id);opened=true;panel.hidden=false;working=true;clearError();sync();$('timelapse-heading').focus();if(recording){await chain;}else await load();await detectVideo();}catch(e){error(e);}finally{working=false;sync();}}
- function enqueue(text,view,gap=false){
+ function enqueue(board,view,gap=false,force=false){
   if(queued>=timeLimits.pending){recording=false;error(Error('Capture queue full · saved states preserved. Pause and reopen before resuming.'));return;}
-  const boardId=id,previous=queuedText,at=log?.events.length||queued?Math.max(clockAt,clockAt+Math.max(0,Date.now()-clock)):0;
-  const event={at,gap,view:{...view},delta:operationDelta(previous,text)};queuedText=text;queued++;pendingBytes+=eventBytes(event);sync();
-  chain=chain.then(async()=>{if(failure)return;try{const next=await(await storage()).append(boardId,revision,event);if(id!==boardId)return;revision=next;if(!log)log={version:1,boardId,events:[]};if(event.delta.patch)log.version=2;log.events.push(event);savedBytes+=eventBytes(event);lastText=applyEvent(lastText,event);}catch(e){recording=false;error(e);}}).finally(()=>{queued--;pendingBytes-=eventBytes(event);sync();});
+  const boardId=id,at=log?.events.length||queued?Math.max(clockAt,clockAt+Math.max(0,Date.now()-clock)):0;queued++;sync();
+  chain=chain.then(async()=>{if(failure||id!==boardId)return;try{const result=await background('capture',{board,view:{...view},at,gap,force,expected:revision});if(id!==boardId||!result.event)return;revision=result.revision;if(!log)log={version:1,boardId,events:[]};if(result.event.delta.patch)log.version=2;log.events.push(result.event);savedBytes+=result.bytes;}catch(e){recording=false;error(e);}}).finally(()=>{queued--;sync();});
  }
- function observe(board,view){if(id!==board.id){attach(board.id);return;}if(!recording)return;try{const text=boardText(board,validate);if(!sameArtwork(queuedText,text))enqueue(text,view);}catch(e){recording=false;error(e);}}
- async function start(){if(working||recording||playing)return;working=true;clearError();try{await chain;if(!await load())return;const board=getBoard();if(board.id!==id)throw Error('Board changed · reopen Timelapse');const text=boardText(board,validate);clock=Date.now();clockAt=log?.events.at(-1).at||0;recording=true;enqueue(text,getView(),!!log);await chain;if(!failure){working=false;close();status('Timelapse recording · completed changes save locally');}}catch(e){recording=false;error(e);}finally{working=false;sync();}}
+ function observe(board,view){if(id!==board.id){attach(board.id);return;}if(recording)enqueue(board,view);}
+
+ async function start(){if(working||recording||playing)return;working=true;clearError();try{await chain;if(!await load())return;const board=getBoard();if(board.id!==id)throw Error('Board changed · reopen Timelapse');clock=Date.now();clockAt=log?.events.at(-1).at||0;recording=true;enqueue(board,getView(),!!log,true);await chain;if(!failure){working=false;close();status('Timelapse recording · completed changes save locally');}}catch(e){recording=false;error(e);}finally{working=false;sync();}}
  async function pauseRecording(){auto=false;$('timelapse-auto').checked=false;try{localStorage.setItem('unruly-timelapse-auto','false');}catch{}recording=false;await chain;sync();}
  function show(index){if(getBoard()!==base)throw Error('Artwork changed · replay stopped');if(index<cursorIndex){cursorText='';cursorIndex=-1;}while(cursorIndex<index)cursorText=applyEvent(cursorText,log.events[++cursorIndex]);const board=JSON.parse(cursorText);validate(board);if(board.id!==id)throw Error('Recording board mismatch');cursor=index;preview(board,log.events[index].view);sync();}
  function tick(now){if(!running)return;try{position=Math.min(times.at(-1),Math.max(startPosition,startPosition+Math.max(0,now-started)*Number($('timelapse-speed').value)));const index=frameAtTime(times,position);if(index!==cursor)show(index);if(position>=times.at(-1)){running=false;sync();}else raf=requestAnimationFrame(tick);}catch(e){stop();error(e);}}
