@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-POLYGONS-1029
+base: f8fb100c3afd2722e9c67e00951f7f4869798b75
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [prototypes/browser-workspace/shapes.js]
+regression_obligations:
+  - {id: polygons, reason: Recognize three and four sides without regularizing the drawn proportions, test_id: shape-model}
+  - {id: compatibility, reason: Preserve line curve circle ellipse rectangle and input rejection, test_id: shape-model}
+  - {id: lifecycle, reason: Held drafts scale and move without saving until Apply and retain Cancel Undo Redo reload, test_id: shape-browser}

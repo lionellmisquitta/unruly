@@ -25,6 +25,32 @@ function closedFit(points,scale,pressure){
  if(Math.max(...error)<=Math.max(5/scale,Math.max(rx,ry)*.12))return{kind:'rectangle',center,rx,ry,angle:b.angle,pressure,points:loopPoints(center,rx,ry,b.angle,pressure,true)};
  return null;
 }
+// Work only on the fixed-size resample, so corner search never grows with pen-event count.
+function segmentDistance(p,a,b){const dx=b.x-a.x,dy=b.y-a.y,t=clamp(((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy||1),0,1);return Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy);}
+function simplifySide(points,tolerance){
+ let index=0,error=0;for(let i=1;i<points.length-1;i++){const d=segmentDistance(points[i],points[0],points.at(-1));if(d>error){error=d;index=i;}}
+ if(error<=tolerance)return[points[0],points.at(-1)];
+ return[...simplifySide(points.slice(0,index+1),tolerance).slice(0,-1),...simplifySide(points.slice(index),tolerance)];
+}
+function polygonFit(points,diameter,scale,pressure){
+ const ring=points.slice(0,-1);let first=0,last=1,longest=0;
+ for(let i=0;i<ring.length;i++)for(let j=i+1;j<ring.length;j++){const d=hypot(ring[i],ring[j]);if(d>longest){longest=d;first=i;last=j;}}
+ const tolerance=diameter*.035,a=ring.slice(first,last+1),b=[...ring.slice(last),...ring.slice(0,first+1)];
+ let corners=[...simplifySide(a,tolerance).slice(0,-1),...simplifySide(b,tolerance).slice(0,-1)];
+ // A stroke can start midway along a side; remove that cyclic collinear seam too.
+ let changed=true;while(changed&&corners.length>2){changed=false;for(let i=0;i<corners.length;i++)if(segmentDistance(corners[i],corners[(i+corners.length-1)%corners.length],corners[(i+1)%corners.length])<=tolerance){corners.splice(i,1);changed=true;break;}}
+ const n=corners.length;if(n!==3&&n!==4)return null;
+ let perimeter=0,area=0;for(let i=0;i<n;i++){const a=corners[i],b=corners[(i+1)%n],prev=corners[(i+n-1)%n],edge=hypot(a,b);if(edge<diameter*.12||edge*scale<8)return null;perimeter+=edge;area+=a.x*b.y-a.y*b.x;const sine=Math.abs((a.x-prev.x)*(b.y-a.y)-(a.y-prev.y)*(b.x-a.x))/(hypot(prev,a)*edge);if(sine<.18)return null;}
+ if(Math.abs(area)<diameter*diameter*.08)return null;
+ const cross=(a,b,c)=>(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);
+ const intersects=(a,b,c,d)=>cross(a,b,c)*cross(a,b,d)<=0&&cross(c,d,a)*cross(c,d,b)<=0;
+ if(n===4&&(intersects(corners[0],corners[1],corners[2],corners[3])||intersects(corners[1],corners[2],corners[3],corners[0])))return null;
+ const errors=points.map(p=>Math.min(...corners.map((a,i)=>segmentDistance(p,a,corners[(i+1)%n]))));
+ let length=0;for(let i=1;i<points.length;i++)length+=hypot(points[i-1],points[i]);length+=hypot(points.at(-1),points[0]);
+ if(length/perimeter>1.12||Math.max(...errors)>diameter*.055||Math.sqrt(errors.reduce((s,d)=>s+d*d,0)/errors.length)>diameter*.025)return null;
+ const center={x:corners.reduce((s,p)=>s+p.x,0)/n,y:corners.reduce((s,p)=>s+p.y,0)/n};
+ const out=corners.map(p=>withPressure(p,pressure));out.push({...out[0]});return{kind:n===3?'triangle':'quadrilateral',center,pressure,points:out};
+}
 function smoothCurve(points,pressure,diameter){
  const pts=uniform(points,65),a=pts[0],b=pts.at(-1);let aa=0,bb=0,ab=0,ax=0,ay=0,bx=0,by=0;
  for(let i=1;i<pts.length-1;i++){const t=i/(pts.length-1),u=1-t,w1=3*u*u*t,w2=3*u*t*t,x=pts[i].x-u*u*u*a.x-t*t*t*b.x,y=pts[i].y-u*u*u*a.y-t*t*t*b.y;aa+=w1*w1;bb+=w2*w2;ab+=w1*w2;ax+=w1*x;ay+=w1*y;bx+=w2*x;by+=w2*y;}
@@ -39,7 +65,7 @@ export function recognizeHeldShape(points,scale=1){
  const pressure=meanPressure(points),pts=uniform(points),a=pts[0],b=pts.at(-1),xs=pts.map(p=>p.x),ys=pts.map(p=>p.y),diameter=Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys));let path=0;for(let i=1;i<points.length;i++)path+=hypot(points[i-1],points[i]);
  if(diameter*scale<SHAPE_HOLD.minExtentCss||path*scale>SHAPE_HOLD.maxPathCss)return null;
  const chord=hypot(a,b),closed=chord<=diameter*.22;
- if(closed){const original=legacyRecognize(points,scale);if(original?.kind==='circle')return original;return points.length>=10?closedFit(pts,scale,pressure):null;}
+ if(closed){const polygon=polygonFit(pts,diameter,scale,pressure);if(polygon){const fit=polygon.kind==='quadrilateral'?closedFit(pts,scale,pressure):null;return fit?.kind==='rectangle'?fit:polygon;}const original=legacyRecognize(points,scale);if(original?.kind==='circle')return original;return points.length>=10?closedFit(pts,scale,pressure):null;}
  if(chord*scale<20)return null;
  const dx=b.x-a.x,dy=b.y-a.y,dev=pts.map(p=>Math.abs(dy*(p.x-a.x)-dx*(p.y-a.y))/chord);
  let backwards=0;for(let i=1;i<pts.length;i++)backwards+=Math.max(0,-((pts[i].x-pts[i-1].x)*dx+(pts[i].y-pts[i-1].y)*dy)/chord);
@@ -109,7 +135,7 @@ export function reshapeRecognized(recognized,point,{snap15=false}={}){
   for(let i=0;i<=128;i++){const a=Math.PI*2*i/128;out.push({x:c.x+Math.cos(a)*r,y:c.y+Math.sin(a)*r,pressure:recognized.pressure});}
   return {...recognized,radius:r,points:out};
  }
- if(['ellipse','rectangle','curve','arc'].includes(recognized.kind)){
+ if(['ellipse','rectangle','triangle','quadrilateral','curve','arc'].includes(recognized.kind)){
   const center=recognized.center||recognized.points[0],end=recognized.points.at(-1),base=recognized.dragRadius||hypot(center,end)||1,factor=clamp(hypot(center,point)/base,.02,20);let q=scaleRecognized(recognized,factor,center);if(snap15)q=constrainRecognized(q);return q;
  }
  return recognized;
