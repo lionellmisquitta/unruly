@@ -1,0 +1,7 @@
+change_id: CHG-UNRULY-POLYLIVE-1029
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [.github/workflows/browser-workspace-pages.yml]
+regression_obligations:
+  - {id: exact-source, reason: Publish only the tested polygon source with complete cumulative evidence, test_id: artifact-guard}
