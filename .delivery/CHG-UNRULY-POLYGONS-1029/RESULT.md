@@ -1,0 +1,9 @@
+# Held polygons
+
+Requirement: add triangles and quadrilaterals to existing 650ms opt-in hold recognition. Base main f8fb100. Bounded logic extension; no new interaction, regular-polygon constraint or per-vertex editor. Preserve rectangle/square and curved recognizers, pressure, draft move/scale, cancellation and artwork history. Native persisted output remains an ordinary closed vector stroke. No renderer, storage, roadmap, graph or limits changes.
+
+Design: simplify two halves of a bounded uniformly sampled closed path; accept only three/four substantial corners with straight sides, small residuals, no crossings and no retracing. Preserve the drawn proportions. Polygon geometry uses ordinary points plus a center for existing edit controls. Existing rectangle fit takes priority over general quadrilateral when its fit succeeds.
+
+Local verification: 59 model tests PASS (shape, U2/U3, text/cache and CI contract). All 16 tablet UX browser scenarios PASS, including four new pen-hold polygon cases across 1024x768 and 768x1024. New cases prove held drag, numeric move/scale, Cancel, Apply, Undo/Redo and saved reload. Existing 12 tablet scenarios retained. First model run caught a too-strict shallow concave-corner threshold; corrected the classifier, preserving that regression assertion. No candidate sent to CI before the final local pass. Cumulative CI/publication pending. Same-session verification, not independent review or physical-device acceptance.
+
+First cumulative candidate a6be9669 / run40804690113 failed offline cache-suffix fixtures (PALB11, TIP3B09, CONNB04), which still expected lag-gallery-1. Align all remaining browser cache suffix assertions to polygons-1 without changing their checks. No polygon runtime change. New exact-source cumulative run required; failed run retained.

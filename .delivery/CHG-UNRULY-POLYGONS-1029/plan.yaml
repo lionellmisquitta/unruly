@@ -1,0 +1,11 @@
+change_id: CHG-UNRULY-POLYGONS-1029
+route: standard
+prohibited_paths: [docs/, .knowledge/, knowledge-graph/]
+checkpoints:
+  - id: hold-polygons
+    allowed_paths: [prototypes/browser-workspace/shapes.js, prototypes/browser-workspace/sw.js, .delivery/CHG-UNRULY-POLYGONS-1029/]
+    test_paths: [tests/browser-workspace/tablet-ux.model.test.mjs, tests/browser-workspace/tablet-ux.browser.cjs, tests/browser-workspace/]
+    tests:
+      - {id: shape-model, command: [node, --test, tests/browser-workspace/tablet-ux.model.test.mjs], timeout_seconds: 60}
+      - {id: shape-browser, command: [node, tests/browser-workspace/tablet-ux.browser.cjs], timeout_seconds: 300}
+# Existing offline assertions may align the cache identity; no invocation changes or removed assertions.
