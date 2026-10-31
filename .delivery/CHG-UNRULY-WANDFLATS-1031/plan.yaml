@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-WANDFLATS-1031
+route: standard
+prohibited_paths: [docs/, .knowledge/, knowledge-graph/]
+checkpoints:
+  - id: area-reference
+    allowed_paths: [prototypes/browser-workspace/app.js, prototypes/browser-workspace/wand.js, prototypes/browser-workspace/index.html, prototypes/browser-workspace/sw.js, .delivery/CHG-UNRULY-WANDFLATS-1031/]
+    test_paths: [tests/browser-workspace/]
+    tests:
+      - {id: wand-model, command: [node, --test, tests/browser-workspace/wand.model.test.mjs, tests/browser-workspace/bucket-fill.model.test.mjs, tests/browser-workspace/ci-contract.test.mjs], timeout_seconds: 120}
+      - {id: wand-browser, command: [node, tests/browser-workspace/wand.browser.cjs], timeout_seconds: 300}
+      - {id: paint-browser, command: [node, tests/browser-workspace/paint-workflow.browser.cjs], timeout_seconds: 300}
+# Existing tests declaring whole-object wand now select that explicit mode; matching-colour tests choose matching pixels. Offline cache identities may align, all original behavior assertions retained.

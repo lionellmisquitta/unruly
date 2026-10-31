@@ -13,6 +13,20 @@ export function selectPixels(s,x,y,{tolerance=12,contiguous=true}={}){
 }
 export function combineMasks(previous,next,mode='replace'){if(!(next instanceof Uint8Array)||next.length>wandLimits.pixels||!['replace','add','subtract'].includes(mode)||previous!==null&&(!(previous instanceof Uint8Array)||previous.length!==next.length)||next.some(v=>v>1)||previous?.some(v=>v>1))fail('Invalid wand selection mask');const out=new Uint8Array(next.length);for(let i=0;i<out.length;i++)out[i]=mode==='replace'?next[i]:mode==='add'?(previous?.[i]||next[i]):(previous?.[i]&&!next[i]?1:0);return out;}
 export function regionBounds(s,mask){validateSnapshot(s);if(!(mask instanceof Uint8Array)||mask.length!==s.width*s.height||mask.some(v=>v>1))fail('Invalid wand selection mask');let minX=s.width,minY=s.height,maxX=0,maxY=0,count=0;for(let i=0;i<mask.length;i++)if(mask[i]){const x=i%s.width,y=Math.floor(i/s.width);minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x+1);maxY=Math.max(maxY,y+1);count++;}return count?{minX:minX+s.x,minY:minY+s.y,maxX:maxX+s.x,maxY:maxY+s.y,width:maxX-minX,height:maxY-minY,cx:s.x+(minX+maxX)/2,cy:s.y+(minY+maxY)/2,count}:null;}
+// Area taps have different search windows. Combine coverage in document coordinates,
+// cropping to selected bounds so shifting a tap never silently discards earlier areas.
+export function combineAreaSelections(previous,next,mode='replace'){
+ if(!['replace','add','subtract'].includes(mode))fail('Invalid wand selection operation');
+ const inspect=r=>{validateSnapshot(r.snapshot);return regionBounds(r.snapshot,r.mask);},nb=inspect(next),pb=previous?inspect(previous):null;
+ const boxes=mode==='replace'?[nb]:mode==='subtract'?[pb]:[pb,nb],valid=boxes.filter(Boolean);if(!valid.length)return null;
+ const x=Math.min(...valid.map(b=>b.minX)),y=Math.min(...valid.map(b=>b.minY)),width=Math.max(...valid.map(b=>b.maxX))-x,height=Math.max(...valid.map(b=>b.maxY))-y;
+ if(width>wandLimits.dimension||height>wandLimits.dimension||width*height>wandLimits.pixels)fail('Combined selection exceeds1024 ×1024 pixels · prior selection retained');
+ const snapshot={x,y,width,height,data:new Uint8ClampedArray(width*height*4)},mask=new Uint8Array(width*height);
+ const value=(r,px,py)=>{if(!r)return 0;const s=r.snapshot,xx=px-s.x,yy=py-s.y;return xx>=0&&yy>=0&&xx<s.width&&yy<s.height?r.mask[yy*s.width+xx]:0;};
+ for(let yy=0;yy<height;yy++)for(let xx=0;xx<width;xx++){const i=yy*width+xx,px=x+xx,py=y+yy,a=value(previous,px,py),b=value(next,px,py);mask[i]=mode==='replace'?b:mode==='add'?a||b:a&&!b?1:0;
+  const source=value(next,px,py)?next:previous;if(source&&mask[i]){const s=source.snapshot,k=((py-s.y)*s.width+px-s.x)*4;if(k>=0&&k+4<=s.data.length)snapshot.data.set(s.data.subarray(k,k+4),i*4);}}
+ const bounds=regionBounds(snapshot,mask);return bounds?{snapshot,mask,bounds}:null;
+}
 export function splitPixels(s,mask){const bounds=regionBounds(s,mask);if(!bounds)fail('No pixels selected');const selected=new Uint8ClampedArray(bounds.width*bounds.height*4),rest=new Uint8ClampedArray(s.data);let pigment=false,remaining=false;for(let i=0;i<mask.length;i++){if(mask[i]){const x=i%s.width+s.x-bounds.minX,y=Math.floor(i/s.width)+s.y-bounds.minY,o=(y*bounds.width+x)*4;for(let k=0;k<4;k++)selected[o+k]=s.data[i*4+k];if(s.data[i*4+3])pigment=true;rest.fill(0,i*4,i*4+4);}else if(s.data[i*4+3])remaining=true;}return {bounds,pigment,selected:rasterStroke(selected,bounds.width,bounds.height,bounds.minX,bounds.minY),remaining:remaining?rasterStroke(rest,s.width,s.height,s.x,s.y):null};}
 function checkRegion(h,r){if(!r||h.board!==r.board)fail('Pixel selection is stale');const l=h.board.layers.find(l=>l.id===r.layerId);if(!l)fail('Selection layer missing');const state=layerState(h.board,l);if(state.locked||!state.visible)fail('Selection layer is locked or hidden');return l;}
 export function regionClipboard(h,r){checkRegion(h,r);const split=splitPixels(r.snapshot,r.mask);if(!split.pigment)fail('Selected region has no pigment to copy');return {version:1,strokes:[split.selected],bounds:split.bounds};}
