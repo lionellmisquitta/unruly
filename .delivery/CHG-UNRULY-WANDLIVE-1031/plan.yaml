@@ -1,0 +1,10 @@
+change_id: CHG-UNRULY-WANDLIVE-1031
+route: standard
+prohibited_paths: [prototypes/, tests/, docs/, .knowledge/, knowledge-graph/]
+checkpoints:
+  - id: publish
+    allowed_paths: [.github/workflows/browser-workspace-pages.yml, .delivery/CHG-UNRULY-WANDLIVE-1031/]
+    test_paths: []
+    tests:
+      - {id: artifact-guard, command: [python, /tmp/wand-flats-guard.py], timeout_seconds: 120}
+test_config_changes: [.github/workflows/browser-workspace-pages.yml]
