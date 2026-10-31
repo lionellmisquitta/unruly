@@ -1,0 +1,12 @@
+change_id: CHG-UNRULY-WANDFLATS-1031
+base: b01ebccc3a10cbfe9c0ccc5399408c318145c432
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [prototypes/browser-workspace/app.js, prototypes/browser-workspace/wand.js, prototypes/browser-workspace/index.html]
+regression_obligations:
+  - {id: area, reason: First wand tap selects enclosed area independently of remembered lasso mode, test_id: wand-browser}
+  - {id: reference, reason: Locked line source may guide selection and bucket without changing destination or source, test_id: paint-browser}
+  - {id: masks, reason: Add subtract preserves document-space areas across shifted tap windows without dropping prior coverage, test_id: wand-model}
+  - {id: compatibility, reason: Explicit matching pixels and whole objects retain original behavior, test_id: wand-browser}
+  - {id: paint, reason: Persistent area clips flats on another layer with exact Undo and source preservation, test_id: paint-browser}
