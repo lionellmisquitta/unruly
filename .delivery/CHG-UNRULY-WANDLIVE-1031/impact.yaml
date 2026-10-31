@@ -1,0 +1,7 @@
+change_id: CHG-UNRULY-WANDLIVE-1031
+readiness: ready
+open_contradictions: []
+hub_suppressed: false
+targets: [.github/workflows/browser-workspace-pages.yml]
+regression_obligations:
+  - {id: tested-source, reason: Publish only exact-source cumulative-verified area wand and line reference, test_id: artifact-guard}
